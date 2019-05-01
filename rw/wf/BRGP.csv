@@ -1,0 +1,411 @@
+id,desc,lat,lng,modes,extra,equiv
+BRGP:ADATUNCO,Adams Tunnel  CO,40.3278,-105.5775,QC=QJ=0;CH=CJ=1,,,,37.4529;Rc520d0bbbbe2c641,Wind River O1 L6 Drainage:14km2 AvgFlow:11cfs AvgPrecip:774mm AvgTemp:2C
+BRGP:ADAWPLCO,Adams Tunnel  West Portal  CO *GLARESCO*,40.2417,-105.8022,QC=QJ=0;CH=CJ=1,,,,768.9397;R7d3f7df394f3d941,East Inlet O2 L6 Drainage:71km2 AvgFlow:45cfs AvgPrecip:633mm AvgTemp:2C
+BRGP:ADNE,Akers Draw into Tri-State Canal NE,41.975,-103.8917,CH=CJ=1,,
+BRGP:AGR,Angostura Reservoir  Cheyenne River near Hot Springs  SD,43.3433,-103.4383,Q=QD=0;QC=QJ=0;GH=GJ=1,,,,793.954;R9eefc3766253e641, O2 L4 Drainage:6km2 AvgFlow:0cfs AvgPrecip:439mm AvgTemp:9C
+BRGP:AINE,Lake Alice Reservoir Inflow NE,41.998,-103.6328,CH=CJ=1,,,,922.7185;R0456be7c8e34d041, O1 L6 Drainage:100km2 AvgFlow:4cfs AvgPrecip:379mm AvgTemp:8C
+BRGP:ALFVALMT,Alfalfa Valley Canal Diversion MT,48.6103,-109.2442,QC=QJ=0;CH=CJ=1;WF=WF=2;WC=WC=3,,,,143.1587;R21b07e924cdbe441,Lodge Creek O3 L4 Drainage:2770km2 AvgFlow:56cfs AvgPrecip:334mm AvgTemp:6C
+BRGP:ALTUS,Altus Dam North Fork Red River OK,34.8875,-99.2964,Q=QD=0,,,,91.3954;Rc976f6729223e041,North Fork Red River O5 L2 Drainage:6698km2 AvgFlow:69cfs AvgPrecip:736mm AvgTemp:16C
+BRGP:ANAD,Washita River near Anadarko  OK,35.085,-98.243,GH=GJ=1,,,,38.1432;R8fc255ecc0f0b241,Washita River O6 L2 Drainage:9455km2 AvgFlow:564cfs AvgPrecip:823mm AvgTemp:16C
+BRGP:ARGY,Aragon Ditch WY,43.1917,-108.7839,QC=QJ=0;CH=CJ=1,,,,57.7843;Ra8c673e5d9d9df41,Wind River O6 L4 Drainage:5643km2 AvgFlow:1207cfs AvgPrecip:223mm AvgTemp:7C
+BRGP:ARKAVOCO,Arkansas River near Avondale  CO,38.248,-104.3986,Q=QD=0;GH=GJ=1,,,,502.321;R21b072bf26408041,Arkansas River O6 L2 Drainage:16326km2 AvgFlow:927cfs AvgPrecip:299mm AvgTemp:11C
+BRGP:ARKCANCO,Arkansas River at Canyon City  CO,38.425,-105.2617,Q=QD=0;GH=GJ=1,,,,884.3621;Rc74beff296ccd241,Arkansas River O5 L2 Drainage:6536km2 AvgFlow:766cfs AvgPrecip:378mm AvgTemp:10C
+BRGP:ARKGRNCO,Arkansas River at Grainite  CO,39.0428,-106.2653,Q=QD=0;GH=GJ=1,,,,21.4593;R31089c7bd740c541,Arkansas River O4 L2 Drainage:1112km2 AvgFlow:450cfs AvgPrecip:331mm AvgTemp:2C
+BRGP:ARKNATCO,Arkansas River near Nathrop CO,38.6522,-106.0506,Q=QD=0;GH=GJ=1,,,,314.0045;R73686577b3fbea41,Arkansas River O4 L2 Drainage:2748km2 AvgFlow:590cfs AvgPrecip:262mm AvgTemp:6C
+BRGP:ARKNEPCO,Arkansas River near Nepesta  CO,38.1842,-104.1728,Q=QD=0;GH=GJ=1,,,,361.7425;Rf628fc803e22ed41,Arkansas River O7 L2 Drainage:23702km2 AvgFlow:794cfs AvgPrecip:269mm AvgTemp:12C
+BRGP:ARKPORCO,Arkansas River above Pueblo Reservoir  CO,38.3883,-105.0156,Q=QD=0;GH=GJ=1;WC=WC=3,,,,569.7813;R560e2d660cc2b941,Arkansas River O6 L2 Drainage:10278km2 AvgFlow:812cfs AvgPrecip:333mm AvgTemp:11C
+BRGP:ARKPUECO,Arkansas River below Pueblo Reservoir  CO,38.2714,-104.7183,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,700.6803;Rbc7433f0c1bcd841,Arkansas River O6 L2 Drainage:11948km2 AvgFlow:726cfs AvgPrecip:331mm AvgTemp:11C
+BRGP:ARKSALCO,Arkansas River above Salida  CO,38.5458,-106.01,Q=QD=0;GH=GJ=1,,,,854.4131;R6abc68a0ae2ce041,Arkansas River O4 L2 Drainage:3063km2 AvgFlow:588cfs AvgPrecip:230mm AvgTemp:7C
+BRGP:ARKWELCO,Arkansas River near Wellsville  CO,38.5028,-105.9397,Q=QD=0;GH=GJ=1,,,,916.2458;R14aec7a0d9dab941,Arkansas River O5 L2 Drainage:3745km2 AvgFlow:745cfs AvgPrecip:246mm AvgTemp:7C
+BRGP:ARMT,Atascosa River near McCoy  TX,28.8458,-98.3361,Q=QD=0;GH=GJ=1,,,,430.0348;R295c3fa99f30c741,Atascosa River O5 L3 Drainage:1368km2 AvgFlow:86cfs AvgPrecip:736mm AvgTemp:21C
+BRGP:ARNE,Lake Alice Reservoir Elevation  NE,41.9867,-103.6322,QC=QJ=0,,,,412.7578;R0456be7c8e34d041, O1 L6 Drainage:100km2 AvgFlow:4cfs AvgPrecip:379mm AvgTemp:8C
+BRGP:ARWT,Atascosa River at Whitsett  TX,28.6219,-98.2811,Q=QD=0;GH=GJ=1,,,,627.4831;Ra01a17155377e041,Atascosa River O5 L3 Drainage:2954km2 AvgFlow:150cfs AvgPrecip:683mm AvgTemp:22C
+BRGP:BABM,St. Mary River near Babb  MT,48.8333,-113.4189,Q=QD=0;GH=GJ=1,,,,820.7493;R0ad7230c2772e741,Swiftcurrent Creek O4 L5 Drainage:261km2 AvgFlow:302cfs AvgPrecip:667mm AvgTemp:4C
+BRGP:BACK,Battle Creek near Chinook  MT,48.5844,-109.0986,Q=QD=0;GH=GJ=1,,,,528.7149;R5a64436291f4ec41,Battle Creek O4 L4 Drainage:3831km2 AvgFlow:84cfs AvgPrecip:321mm AvgTemp:6C
+BRGP:BANE,Bartley Diversion NE,40.2236,-100.3822,QC=QJ=0;CH=CJ=1,,,,987.7919;Ree7c578526e5e441, O2 L5 Drainage:29km2 AvgFlow:1cfs AvgPrecip:553mm AvgTemp:11C
+BRGP:BAWNE,Bartley Canal Wasteway NE,40.265,-100.0458,QC=QJ=0;CH=CJ=1,,,,752.5348;R0456660d7888e641, O2 L5 Drainage:20km2 AvgFlow:1cfs AvgPrecip:572mm AvgTemp:11C
+BRGP:BBNE,Box Butte Dam  NE,42.4583,-103.0667,GH=GJ=1,,,,761.0102;R89415cfd0af4e941,Niobrara River O5 L3 Drainage:3729km2 AvgFlow:22cfs AvgPrecip:431mm AvgTemp:8C
+BRGP:BBR,Buffalo Bill Reservoir  Shoshone River near Cody  WY,44.5014,-109.1833,Q=QD=0,,,,208.7543;Rf628f451866dee41, O6 L5 Drainage:3900km2 AvgFlow:1200cfs AvgPrecip:325mm AvgTemp:6C
+BRGP:BBTM,Boulder River at Big Timber  MT,45.8342,-109.9381,Q=QD=0;GH=GJ=1,,,,24.8068;R3f35de39b97b9041,Boulder River O5 L4 Drainage:1365km2 AvgFlow:564cfs AvgPrecip:412mm AvgTemp:8C
+BRGP:BBWY,Bighorn River at Basin  WY,44.3833,-108.0356,Q=QD=0;GH=GJ=1,,,,59.7645;R3d0affdbfbbbe241,Bighorn River O7 L4 Drainage:34250km2 AvgFlow:2093cfs AvgPrecip:182mm AvgTemp:8C
+BRGP:BCCM,Big Coulee below Beale Canal  MT,47.917,-112.6186,Q=QD=0;GH=GJ=1,,,,422.9193;Rfa7ed2718b21d941, O1 L7 Drainage:11km2 AvgFlow:3cfs AvgPrecip:601mm AvgTemp:4C
+BRGP:BCHM,Beaver Creek Near Hinsdale  MT,48.4194,-107.1706,Q=QD=0;GH=GJ=1,,,,886.6302;R9318982778fbec41,Beaver Creek O5 L4 Drainage:4394km2 AvgFlow:75cfs AvgPrecip:332mm AvgTemp:6C
+BRGP:BCIB,Battle Creek at International Boundary,49.002,-109.4217,Q=QD=0;GH=GJ=1,,,,788.6949;Rf0a7665e08ffc541,Battle Creek O1 L4 Drainage:7km2 AvgFlow:0cfs AvgPrecip:315mm AvgTemp:5C
+BRGP:BCLM,Big Coulee Lower  MT,47.5178,-111.89,GH=GJ=1,,,,609.9117;R23db796cca709041,Sun River O6 L3 Drainage:3365km2 AvgFlow:505cfs AvgPrecip:309mm AvgTemp:7C
+BRGP:BCWY,Bluff Canal WY,43.8728,-108.1345,CH=CJ=1,,,,996.1844;Re3a5a7cdad93ef41,Bighorn River O7 L4 Drainage:24385km2 AvgFlow:1586cfs AvgPrecip:241mm AvgTemp:8C
+BRGP:BDCM,Badger Creek Below Four Horns Canal  near Browning  MT,48.37,-112.802,Q=QD=0;GH=GJ=1,,,,53.4827;Rdf4f2d47daa8c641,Badger Creek O4 L4 Drainage:397km2 AvgFlow:181cfs AvgPrecip:401mm AvgTemp:5C
+BRGP:BDNE,Bartley Canal Diversion Dam NE,40.2292,-100.3833,GH=GJ=1,,,,848.4953;R17d93e2e6d7ad941,Republican River O6 L4 Drainage:28783km2 AvgFlow:103cfs AvgPrecip:551mm AvgTemp:11C
+BRGP:BFCE,Belle Fourche Inlet Canal East  South Dakota,44.7014,-103.7333,QC=QJ=0;CH=CJ=1,,,,976.7301;R8941903b2286d741,Belle Fourche River O6 L4 Drainage:11641km2 AvgFlow:110cfs AvgPrecip:516mm AvgTemp:8C
+BRGP:BFR,Belle Fourche Reservoir  Belle Fourche River nr Rapid City  SD,44.7367,-103.6742,Q=QD=0,,,,612.0782;R7b147664d156dc41,Owl Creek O4 L5 Drainage:536km2 AvgFlow:14cfs AvgPrecip:501mm AvgTemp:8C
+BRGP:BFWY,Belle Fourche River at WY-SD State  SD,44.7497,-104.0469,Q=QD=0;GH=GJ=1,,,,13.0916;Rbc742fea3c27ee41,Belle Fourche River O6 L4 Drainage:8354km2 AvgFlow:101cfs AvgPrecip:435mm AvgTemp:8C
+BRGP:BGBM,Beaverhead River at Giem Bridge MT,45.4736,-112.3631,Q=QD=0;GH=GJ=1,,,,547.6601;R508d7b260596e541,Beaverhead River O7 L2 Drainage:9469km2 AvgFlow:448cfs AvgPrecip:258mm AvgTemp:6C
+BRGP:BHDM,Big Hole River at Maiden Rock  near Divide  MT *BRDM*,46.2181,-112.655,Q=QD=0;GH=GJ=1,,,,848.9849;R85ebf10df076b741,North Fork Dry Cottonwood Creek O1 L3 Drainage:10km2 AvgFlow:1cfs AvgPrecip:496mm AvgTemp:3C
+BRGP:BHGM,Big Hole River near Glen  MT,45.4406,-112.5556,Q=QD=0;GH=GJ=1,,,,26.6307;R9643e3ce0bfced41,Big Hole River O5 L3 Drainage:6876km2 AvgFlow:1190cfs AvgPrecip:246mm AvgTemp:6C
+BRGP:BHMT,Bighorn River above Tullock Creek near Bighorn  MT,46.1247,-107.4683,Q=QD=0;GH=GJ=1,,,,110.851;Rbe9f32fee864d741,Bighorn River O7 L4 Drainage:58032km2 AvgFlow:3906cfs AvgPrecip:332mm AvgTemp:8C
+BRGP:BHRW,Bighorn River near Worland  WY,44.0147,-107.9689,Q=QD=0;GH=GJ=1,,,,825.0867;Rba49107d6537e441,Bighorn River O7 L4 Drainage:26674km2 AvgFlow:1618cfs AvgPrecip:213mm AvgTemp:8C
+BRGP:BHSX,Bighorn River near St. Xavier  MT,45.3167,-107.918,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1;WF=WF=2;WC=WC=3,,,,467.9767;R48e1da975e1fde41,Bighorn River O7 L4 Drainage:50902km2 AvgFlow:3496cfs AvgPrecip:481mm AvgTemp:9C
+BRGP:BHWM,Big Hole River below Mudd Creek  near Wisdom  MT,45.8075,-113.3125,Q=QD=0;GH=GJ=1,,,,854.5077;R52b8fede8c44e141,Big Hole River O5 L3 Drainage:3196km2 AvgFlow:827cfs AvgPrecip:395mm AvgTemp:3C
+BRGP:BHWY,Big Horn Canal WY,43.9453,-108.0169,QC=QJ=0;CH=CJ=1,,,,803.9285;Rdd24029084cde741, O1 L5 Drainage:12km2 AvgFlow:0cfs AvgPrecip:210mm AvgTemp:8C
+BRGP:BIL,Yellowstone River near Billings  MT,45.7967,-108.47,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,917.8197;R713de6ed63abea41,Yellowstone River O7 L3 Drainage:29695km2 AvgFlow:7434cfs AvgPrecip:359mm AvgTemp:9C
+BRGP:BLAY,Bull Lake Creek above Bull Lake Reservoir  WY,43.1769,-109.2022,Q=QD=0;GH=GJ=1,,,,742.4913;Rbe9fb248ed92da41,Bull Lake Creek O4 L5 Drainage:481km2 AvgFlow:252cfs AvgPrecip:393mm AvgTemp:4C
+BRGP:BLCK,Bull Lake Creek below Bull Lake Reservoir near Lenore  WY,43.2425,-109.0222,Q=QD=0;GH=GJ=1,,,,223.6522;Rc1ca856065fee241,Bull Lake Creek O4 L5 Drainage:548km2 AvgFlow:275cfs AvgPrecip:248mm AvgTemp:6C
+BRGP:BLDM,Boulder River near Boulder  MT,46.2111,-112.0908,Q=QD=0;GH=GJ=1,,,,213.229;R33330f28ecc1e341,Boulder River O4 L4 Drainage:865km2 AvgFlow:187cfs AvgPrecip:314mm AvgTemp:5C
+BRGP:BLR,Bull Lake Reservoir near Lenore  WY,43.2097,-109.0417,Q=QD=0,,,,70.7215;R7b14decfcabced41,Bull Lake Creek O4 L5 Drainage:544km2 AvgFlow:295cfs AvgPrecip:255mm AvgTemp:6C
+BRGP:BLUDILCO,Blue River Below Dillon  CO,39.6255,-106.0658,Q=QD=0;GH=GJ=1,,,,786.5405;R21b032798aa4c941,Blue River O4 L5 Drainage:830km2 AvgFlow:229cfs AvgPrecip:350mm AvgTemp:3C
+BRGP:BLUGRECO,Blue River below Green Mt. Reservoir  CO,39.8803,-106.3333,Q=QD=0;GH=GJ=1,,,,573.8383;R2b87c69d2313d341,Blue River O4 L5 Drainage:1467km2 AvgFlow:455cfs AvgPrecip:379mm AvgTemp:3C
+BRGP:BOCM,Broken-O Canal  Montana *BOMT*,47.5206,-112.2469,QC=QJ=0;CH=CJ=1
+BRGP:BOUTUNCO,Charles H. Boustead Tunnel  CO,39.2778,-106.4278,Q=QD=0;GH=GJ=1,,,,530.0578;R5a64bb49803acb41,Lake Fork O3 L5 Drainage:71km2 AvgFlow:75cfs AvgPrecip:524mm AvgTemp:1C
+BRGP:BRTB,Beaverhead River at Twin Bridges  MT,45.5469,-112.3372,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,728.639;R7d3fd5e614acb741,Beaverhead River O7 L2 Drainage:19201km2 AvgFlow:721cfs AvgPrecip:254mm AvgTemp:7C
+BRGP:BSCK,Big Sandy Creek near Havre  MT,48.5564,-109.8081,GH=GJ=1,,,,42.972;R022b076da03c9241,Big Sandy Creek O5 L4 Drainage:4563km2 AvgFlow:94cfs AvgPrecip:309mm AvgTemp:6C
+BRGP:BTABCMCO,Big Thompson River above Cedar Cove CO,40.415,-105.2611,Q=QD=0;GH=GJ=1,,,,648.1348;Ra245d6a7b969dd41, O4 L4 Drainage:791km2 AvgFlow:111cfs AvgPrecip:472mm AvgTemp:9C
+BRGP:BTABESCO,Big Thompson River above Lake Estes CO,40.3783,-106.4864,Q=QD=0;GH=GJ=1,,,,394.2452;R7b142240a9cde241,Diamond Creek O1 L7 Drainage:12km2 AvgFlow:3cfs AvgPrecip:660mm AvgTemp:2C
+BRGP:BTBLESCO,Big Thompson River below Lake Estes  CO,40.3764,-105.4858,Q=QD=0;GH=GJ=1,,,,898.5995;Rae47356fc549e441,Fish Creek O2 L5 Drainage:40km2 AvgFlow:11cfs AvgPrecip:399mm AvgTemp:5C
+BRGP:BTNFDRCO,Big Thompson River at Drake CO,40.4333,-105.3389,GH=GJ=1,,,,927.1347;R448becc330fad341, O1 L6 Drainage:2km2 AvgFlow:0cfs AvgPrecip:496mm AvgTemp:6C
+BRGP:BTPPMCCO,Power Plant at Big Thompson River Canyon Mouth CO,40.4236,-105.2281,Q=QD=0,,,,839.3129;R1b2f8d402ef1e341, O1 L5 Drainage:7km2 AvgFlow:0cfs AvgPrecip:474mm AvgTemp:8C
+BRGP:BUSTUNCO,Busk-Ivanhoe Tunnel  CO,39.2486,-106.4706,Q=QD=0;GH=GJ=1,,,,142.1183;R10583176b391de41,Busk Creek O1 L6 Drainage:4km2 AvgFlow:11cfs AvgPrecip:970mm AvgTemp:-1C
+BRGP:BVB,Beaverhead River at Barretts  MT,45.1164,-112.7497,Q=QD=0;GH=GJ=1,,,,943.1625;R621088ffdcdccf41,Beaverhead River O7 L2 Drainage:6897km2 AvgFlow:464cfs AvgPrecip:289mm AvgTemp:5C
+BRGP:BVTB,Beaverhead River near Twin Bridges  MT,45.3836,-112.4519,Q=QD=0;GH=GJ=1,,,,231.7921;R9318bcf2a76fec41,Beaverhead River O7 L2 Drainage:9343km2 AvgFlow:442cfs AvgPrecip:264mm AvgTemp:6C
+BRGP:BWNE,Blackwood Wasteway NE (includes CXNE) *CXNE*,40.3055,-100.8561,QC=QJ=0;CH=CJ=1,,,,786.5571;R5a64a3ab454aec41,Blackwood Creek O4 L5 Drainage:637km2 AvgFlow:24cfs AvgPrecip:537mm AvgTemp:10C
+BRGP:CAAWNE,Cambridge Canal  Wasteway  Alma  NE,40.1172,-99.4158,CH=CJ=1,,,,102.2551;R5a64f30efd0de741,Rope Creek O3 L5 Drainage:71km2 AvgFlow:4cfs AvgPrecip:605mm AvgTemp:11C
+BRGP:CAOXNE,Cambridge Canal at Oxford  NE,40.2511,-99.6369,QC=QJ=0;CH=CJ=1,,,,661.8525;R85ebf1255792c641, O2 L5 Drainage:48km2 AvgFlow:3cfs AvgPrecip:588mm AvgTemp:11C
+BRGP:CARCONCO,Carter Conduit Flow Meter  CO,40.5889,-105.3733,QC=QJ=0,,,,98.9624;R54e3dd83e7ffde41, O1 L6 Drainage:4km2 AvgFlow:0cfs AvgPrecip:534mm AvgTemp:6C
+BRGP:CARDIVCO,Carter Diversion/Bypass  CO,39.3667,-106.5444,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,623.4331;R8b6c376aeb0feb41,Carter Creek O1 L8 Drainage:6km2 AvgFlow:4cfs AvgPrecip:872mm AvgTemp:0C
+BRGP:CARE,North Fork Red River at Carter  OK,35.1681,-99.5069,Q=QD=0;GH=GJ=1,,,,499.8793;R46b6631aa029c541,North Fork Red River O5 L2 Drainage:6255km2 AvgFlow:131cfs AvgPrecip:712mm AvgTemp:16C
+BRGP:CASM,Missouri River Bridge near Cascade  MT,47.2694,-111.6922,GH=GJ=1,,,,294.507;Rc9761e1f9081da41,Missouri River O7 L2 Drainage:46758km2 AvgFlow:5910cfs AvgPrecip:410mm AvgTemp:8C
+BRGP:CAWNE,Cambridge Canal  Wasteway  NE,40.1439,-99.4619,CH=CJ=1,,,,775.1535;R1b2f758d037ce441, O1 L6 Drainage:1km2 AvgFlow:0cfs AvgPrecip:603mm AvgTemp:11C
+BRGP:CAWY,Casper Canal  WY,42.7333,-106.6442,CH=CJ=1,,,,588.9499;R8b6c3b4d3de9e941, O3 L5 Drainage:64km2 AvgFlow:1cfs AvgPrecip:316mm AvgTemp:8C
+BRGP:CBCM,Cut Bank Creek at Cut Bank  MT,48.6333,-112.3461,GH=GJ=1,,,,107.4967;R3f351ea72771bf41,Cut Bank Creek O5 L4 Drainage:2668km2 AvgFlow:262cfs AvgPrecip:315mm AvgTemp:5C
+BRGP:CCFRNE,Center Creek at Franklin  NE,40.0917,-98.9661,Q=QD=0;GH=GJ=1,,,,808.8733;Rd34d2e917de4e541,Center Creek O3 L5 Drainage:173km2 AvgFlow:9cfs AvgPrecip:647mm AvgTemp:11C
+BRGP:CCNE,Courtland Canal  Mile 0.7  NE,40.0597,-98.3692,QC=QJ=0;CH=CJ=1,,,,994.9111;Ree7c8b209c38ea41, O3 L5 Drainage:50949km2 AvgFlow:4cfs AvgPrecip:687mm AvgTemp:11C
+BRGP:CCR,Clark Canyon Reservoir  Beaverhead River near Dillon  MT,45.0017,-112.8575,Q=QD=0,,,,779.3416;R5839040e537bcb41,Clark Canyon Reservoir O7 L2 Drainage:5826km2 AvgFlow:878cfs AvgPrecip:264mm AvgTemp:5C
+BRGP:CCWY,Cherry Creek Drain WY,42.0394,-104.1686,GH=GJ=1,,,,706.009;Rdf4f4d9542bec141,North Platte River O7 L4 Drainage:55073km2 AvgFlow:907cfs AvgPrecip:369mm AvgTemp:9C
+BRGP:CDNE,Cambridge Diversion  NE,40.2853,-100.1208,GH=GJ=1;CH=CJ=1,,,,727.4745;R3d0ab379391def41, O3 L5 Drainage:71km2 AvgFlow:4cfs AvgPrecip:566mm AvgTemp:11C
+BRGP:CEGM,St. Mary Canal at Emmigrant Gap  near Babb  MT,48.9464,-113.0953,CH=CJ=1,,,,991.154;R355efa194801ad41,North Fork Milk River O4 L4 Drainage:90km2 AvgFlow:20cfs AvgPrecip:553mm AvgTemp:4C
+BRGP:CFBM,Clarks Fork Yellowstone River near Belfry  MT,45.0103,-109.0647,Q=QD=0;GH=GJ=1,,,,893.6909;R5c8faa41f859ef41,Clarks Fork Yellowstone River O6 L4 Drainage:3336km2 AvgFlow:953cfs AvgPrecip:217mm AvgTemp:8C
+BRGP:CFR,Canyon Ferry Lake  Missouri River near Helena  MT *CFRSAT* *SCADACF* *SCADACFT*,46.6492,-111.7275,Q=QD=0,,,,925.3934;Ra01ac7d0e960e041, O3 L3 Drainage:26km2 AvgFlow:0cfs AvgPrecip:301mm AvgTemp:7C
+BRGP:CHPDIVCO,Chapman Creek Diversion/Bypass  CO,39.263,-106.6303,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,779.2439;Rf0a7663e6cfbe641, O2 L7 Drainage:27km2 AvgFlow:14cfs AvgPrecip:674mm AvgTemp:1C
+BRGP:CLAFORCO,Cacha La Poudre River nr Fort Collins CO,40.5892,-105.0692,GH=GJ=1,,,,977.2916;Rc976622718bde841,Dry Creek O4 L5 Drainage:206km2 AvgFlow:7cfs AvgPrecip:385mm AvgTemp:9C
+BRGP:CLAFTCCO,Cache La Poudre River at Canyon Mouth  CO,40.6645,-105.2239,Q=QD=0;GH=GJ=1,,,,809.3872;Rd9cef73d1089b341,Cache la Poudre River O6 L4 Drainage:2735km2 AvgFlow:332cfs AvgPrecip:421mm AvgTemp:9C
+BRGP:CLCK,Clear Creek near Chinook MT,48.5892,-109.4017,Q=QD=0;GH=GJ=1,,,,79.7038;R23dbb926f839b341,Clear Creek O3 L4 Drainage:352km2 AvgFlow:28cfs AvgPrecip:331mm AvgTemp:6C
+BRGP:CLMT,Missouri River near Culbertson  MT,48.1233,-104.475,Q=QD=0;GH=GJ=1,,,,49.3116;Re92671f0491ee641,Missouri River O8 L2 Drainage:226641km2 AvgFlow:10744cfs AvgPrecip:341mm AvgTemp:6C
+BRGP:COBC,Cobb Creek near Oakly OK,35.2833,-98.5939,Q=QD=0;GH=GJ=1,,,,672.4239;R60e5302ffc7aba41,Cobb Creek O4 L3 Drainage:366km2 AvgFlow:32cfs AvgPrecip:796mm AvgTemp:16C
+BRGP:COLCAMCO,Colorado River near Cameo  CO,39.2389,-108.2667,Q=QD=0;GH=GJ=1,,,,896.1163;R713dba9b84e9cc41,Colorado River O6 L4 Drainage:20645km2 AvgFlow:3848cfs AvgPrecip:308mm AvgTemp:10C
+BRGP:COLDITCO,Columbine Ditch  CO,39.3736,-106.2272,Q=QD=0;GH=GJ=1,,,,941.7967;R621038c3bd5dc841, O1 L4 Drainage:1km2 AvgFlow:0cfs AvgPrecip:661mm AvgTemp:0C
+BRGP:COLGBYCO,Colorado River below Granby Reservoir  CO,40.1439,-106.1331,Q=QD=0;GH=GJ=1,,,,802.7443;R894144fb6d12e241,Smith Creek O1 L6 Drainage:4km2 AvgFlow:1cfs AvgPrecip:713mm AvgTemp:1C
+BRGP:COLGLECO,Colorado River below Glenwood Springs  CO,39.555,-107.3369,Q=QD=0;GH=GJ=1,,,,877.709;R1d5a6c00e006e641,Colorado River O6 L4 Drainage:11766km2 AvgFlow:2269cfs AvgPrecip:469mm AvgTemp:8C
+BRGP:COLNGBCO,Colorado River near Granby Reservoir  CO,40.1208,-105.9,Q=QD=0;GH=GJ=1,,USGS:09019500,,52.6114;R448bfc3375a5d041,Colorado River O4 L4 Drainage:849km2 AvgFlow:52cfs AvgPrecip:375mm AvgTemp:3C
+BRGP:COLPALCO,Colorado River near Palisade  CO,39.0994,-108.3575,Q=QD=0;GH=GJ=1,,,,843.0221;R1b2ff58c3254d841,Colorado River O6 L4 Drainage:22605km2 AvgFlow:3327cfs AvgPrecip:270mm AvgTemp:11C
+BRGP:COLUTACO,Colorado River near Colorado-Utah state line (CCUC),39.1328,-109.0264,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,683.5051;Rd9ce5b658f28e741,Colorado River O7 L4 Drainage:45990km2 AvgFlow:6081cfs AvgPrecip:277mm AvgTemp:12C
+BRGP:CONE,Courtland Canal at State Line  NE,40.0031,-98.1328,QC=QJ=0;CH=CJ=1,,,,975.068;R666606b08134ee41, O1 L6 Drainage:0km2 AvgFlow:0cfs AvgPrecip:705mm AvgTemp:11C
+BRGP:CRBT,Canadian River near Amarillo (HWY 87 and 287)  TX,35.4703,-101.8792,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,586.8652;R1d5a546671edc141,Canadian River O7 L3 Drainage:47095km2 AvgFlow:162cfs AvgPrecip:490mm AvgTemp:14C
+BRGP:CRED,Cheyenne River near Edgemont  SD,43.3055,-103.8206,Q=QD=0;GH=GJ=1,,,,834.4508;Rd578693b7025b741,Cheyenne River O7 L3 Drainage:18568km2 AvgFlow:178cfs AvgPrecip:421mm AvgTemp:8C
+BRGP:CUNE,Culbertson Canal  Mile 0.53  NE,40.3592,-101.0931,CH=CJ=1,,,,987.7348;R583954b5a0a9ce41, O4 L6 Drainage:5811km2 AvgFlow:78cfs AvgPrecip:540mm AvgTemp:10C
+BRGP:DCABNE,Mirdan Canal Inlet to Davis Creek Dam  NE,41.4464,-98.7917,CH=CJ=1,,,,987.0046;R9cc43881f575eb41, O1 L8 Drainage:2km2 AvgFlow:0cfs AvgPrecip:645mm AvgTemp:9C
+BRGP:DCBY,Dinwoody Creek abv Lakes  near Burris  WY,43.3456,-109.4095,Q=QD=0;GH=GJ=1,,,,919.6577;Re926b145211ee041,Dinwoody Creek O4 L5 Drainage:239km2 AvgFlow:143cfs AvgPrecip:281mm AvgTemp:4C
+BRGP:DCCY,Dry Creek Canal near Burris WY,43.3431,-109.2911,QC=QJ=0;CH=CJ=1,,,,812.1169;Ra8c663a51e5be241,Dry Creek O2 L5 Drainage:140km2 AvgFlow:64cfs AvgPrecip:415mm AvgTemp:3C
+BRGP:DFR,Deerfield Reservoir  Castle Creek near Rapid City  SD,44.0281,-103.7858,Q=QD=0,,,,335.0405;R39b4c8791a4eb441,Castle Creek O3 L5 Drainage:247km2 AvgFlow:14cfs AvgPrecip:569mm AvgTemp:4C
+BRGP:DFRT,Dry Frio River nr Reagan Wells  TX,29.5044,-99.7811,Q=QD=0;GH=GJ=1,,,,705.7355;Rb29d5f817e70cc41,Dry Frio River O3 L3 Drainage:281km2 AvgFlow:26cfs AvgPrecip:766mm AvgTemp:19C
+BRGP:DILTUNCO,Dillie Tunnel at Thompson River near Drake CO,40.4194,-105.2458,QC=QJ=0;CH=CJ=1,,,,803.2686;R14aea73f3ed6c141, O4 L4 Drainage:783km2 AvgFlow:111cfs AvgPrecip:481mm AvgTemp:8C
+BRGP:DODM,Dodson Diversion Dam MT,48.4119,-108.3075,CH=CJ=1;WF=WF=2,,,,148.9203;Rc1ca81096bc5cb41,Milk River O6 L3 Drainage:26653km2 AvgFlow:259cfs AvgPrecip:300mm AvgTemp:6C
+BRGP:DPCM,Dodson Pumps Canal MT,48.4131,-108.2683,QC=QJ=0;CH=CJ=1;WF=WF=2,,,,986.0542;R6de7cb64fd28d941,Dodson Creek O3 L4 Drainage:288km2 AvgFlow:5cfs AvgPrecip:301mm AvgTemp:6C
+BRGP:DRMT,Dearborn River near Craig  MT,47.2,-112.0833,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,581.9685;R46b6d3d77efdc141,Dearborn River O6 L3 Drainage:835km2 AvgFlow:180cfs AvgPrecip:361mm AvgTemp:7C
+BRGP:DSCM,Dodson South Canal MT,48.4058,-108.3061,QC=QJ=0;CH=CJ=1;WF=WF=2,,,,828.9441;R643b5f3524bdad41,Milk River O6 L3 Drainage:26671km2 AvgFlow:134cfs AvgPrecip:299mm AvgTemp:6C
+BRGP:DSNE,Dry Spotted Tail Diversion into Tri-State Canal NE,41.9864,-103.8294,CH=CJ=1,,,,829.8716;R5c8f82ec5f2dc241,Dry Spottedtail Creek O3 L5 Drainage:200km2 AvgFlow:6cfs AvgPrecip:362mm AvgTemp:9C
+BRGP:DUKT,Dove Creek at Knickerbocker  TX,31.2833,-100.3,GH=GJ=1,,,,28.3205;R21b04ac7e801e941,Dry Lipan Creek O1 L4 Drainage:54km2 AvgFlow:5cfs AvgPrecip:584mm AvgTemp:18C
+BRGP:DUNE,Dunlap Diversion  NE,42.4625,-102.9236,CH=CJ=1,,,,521.0322;Raaf18ab6457ad941, O2 L6 Drainage:18km2 AvgFlow:0cfs AvgPrecip:439mm AvgTemp:8C
+BRGP:EAPR,E. A. Patterson Lake  Heart River near Dickinson  ND,46.8697,-102.8269,Q=QD=0,,,,774.5577;Ra470093db01de741, O2 L4 Drainage:9km2 AvgFlow:0cfs AvgPrecip:420mm AvgTemp:6C
+BRGP:ECAMNE,Elm Creek at Amboy  NE,40.0908,-98.4361,Q=QD=0;GH=GJ=1,,,,952.8479;Rdbf9ce678428d341,Elm Creek O3 L5 Drainage:132km2 AvgFlow:7cfs AvgPrecip:676mm AvgTemp:11C
+BRGP:EDEN,Smith River near Eden  MT,47.2,-111.3833,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,963.1156;R81954b923e8ddb41,Smith River O6 L3 Drainage:4166km2 AvgFlow:385cfs AvgPrecip:416mm AvgTemp:7C
+BRGP:EWIDITCO,Ewing Ditch  CO,39.3611,-106.3061,GH=GJ=1,,,,385.977;R08aca0beed42e441,South Fork Eagle River O1 L6 Drainage:15km2 AvgFlow:4cfs AvgPrecip:515mm AvgTemp:0C
+BRGP:FBCM,Fort Belknap BIA Canal  MT,48.4842,-108.7536,QC=QJ=0;CH=CJ=1;WC=WC=3,,,,999.9639;R42607d9fbd13e341,Milk River O6 L3 Drainage:22816km2 AvgFlow:578cfs AvgPrecip:303mm AvgTemp:7C
+BRGP:FCABNE,Frenchman Creek above Enders Reservoir  NE,40.4292,-101.6236,Q=QD=0;GH=GJ=1,,,,229.2513;R295c8f3171f8d241,Frenchman Creek O4 L5 Drainage:2856km2 AvgFlow:34cfs AvgPrecip:498mm AvgTemp:10C
+BRGP:FCNE,Ft. Laramie Canal at Milepost 85.3 NE,41.8094,-104.0547,CH=CJ=1,,
+BRGP:FCWDCNE,Franklin Canal Wasteway at Dry Creek  NE,40.0836,-98.4647,QC=QJ=0;CH=CJ=1,,,,975.2978;Rfca909e054b5df41, O7 L5 Drainage:50537km2 AvgFlow:0cfs AvgPrecip:672mm AvgTemp:11C
+BRGP:FCWICNE,Franklin Canal Wasteway at Indian Creek  NE,40.0931,-98.5736,QC=QJ=0;CH=CJ=1,,,,920.5834;R89412462049fe241, O1 L6 Drainage:2km2 AvgFlow:0cfs AvgPrecip:667mm AvgTemp:11C
+BRGP:FCWY,Ft. Laramie Canal at Milepost 0.8 WY,42.2431,-104.63,QC=QJ=0;CH=CJ=1,,,,874.8527;Rd7a3d0debb34db41, O7 L5 Drainage:40552km2 AvgFlow:0cfs AvgPrecip:343mm AvgTemp:9C
+BRGP:FLWY,Laramie River near Fort Laramie  WY,42.2006,-104.5378,Q=QD=0;GH=GJ=1,,,,893.4482;R46b6c3b96354d141,Laramie River O6 L5 Drainage:11678km2 AvgFlow:156cfs AvgPrecip:356mm AvgTemp:9C
+BRGP:FMSY,Fivemile Creek near Shoshoni  WY,43.2222,-108.2183,Q=QD=0;GH=GJ=1,,,,38.1927;Rec519860bca6e241,Fivemile Creek O4 L5 Drainage:1205km2 AvgFlow:181cfs AvgPrecip:177mm AvgTemp:7C
+BRGP:FOUPINCO,Fountain Creek near Pinon  CO,38.4397,-104.5931,Q=QD=0;GH=GJ=1,,,,907.0731;R3f358abb20b8ec41,Fountain Creek O5 L3 Drainage:2227km2 AvgFlow:132cfs AvgPrecip:341mm AvgTemp:11C
+BRGP:FOUPUECO,Fountain Creek at Pueblo  CO,38.2878,-104.6006,Q=QD=0;GH=GJ=1,,,,907.6659;R9cc4c85c48aceb41,Fountain Creek O5 L3 Drainage:2394km2 AvgFlow:131cfs AvgPrecip:324mm AvgTemp:11C
+BRGP:FPNE,Franklin Pump Canal  NE,40.0744,-98.8855,CH=CJ=1,,,,951.0168;Re5d0827cf913d141,Republican River O7 L4 Drainage:49100km2 AvgFlow:175cfs AvgPrecip:652mm AvgTemp:11C
+BRGP:FRAWINCO,Fraser River abv Windy Gap nr Granby  CO,39.9203,-105.7847,Q=QD=0;GH=GJ=1,,,,405.3394;R52b80e3a60b4e841,Fraser River O3 L5 Drainage:154km2 AvgFlow:39cfs AvgPrecip:552mm AvgTemp:2C
+BRGP:FRCT,Frio River at Concan  TX,29.4883,-99.7044,Q=QD=0;GH=GJ=1,,,,539.1859;R60e5300a3089b141,Frio River O4 L2 Drainage:1043km2 AvgFlow:155cfs AvgPrecip:761mm AvgTemp:20C
+BRGP:FRDT,Frio River Near Derby  TX,28.7364,-99.1444,GH=GJ=1,,USGS:08205500,,635.6392;R1d5a90016a91e841,Frio River O6 L2 Drainage:8936km2 AvgFlow:174cfs AvgPrecip:651mm AvgTemp:21C
+BRGP:FRNE,Franklin Canal NE,40.0733,-99.2072,QC=QJ=0,,,,921.5181;R48e1a6163863ee41,Republican River O7 L4 Drainage:47913km2 AvgFlow:112cfs AvgPrecip:616mm AvgTemp:11C
+BRGP:FRR,Fresno Reservoir  Milk River near Havre  MT,48.6083,-109.9458,Q=QD=0,,,,764.4177;Rbe9fd67bb2b1eb41,Milk River O5 L3 Drainage:7681km2 AvgFlow:623cfs AvgPrecip:301mm AvgTemp:6C
+BRGP:FRTT,Frio River at Tilden  TX,28.4672,-98.5472,Q=QD=0;GH=GJ=1,,,,93.8104;Rf2d2854e4f4fde41,Frio River O6 L2 Drainage:11383km2 AvgFlow:249cfs AvgPrecip:607mm AvgTemp:22C
+BRGP:FRUT,Frio River Below Dry Frio River near Uvalde  TX,29.2456,-99.6742,GH=GJ=1,,USGS:08197500,,994.5939;Rbc7497268483ea41,Frio River O5 L2 Drainage:1701km2 AvgFlow:53cfs AvgPrecip:663mm AvgTemp:21C
+BRGP:FRYDIVCO,Fryingpan River Diversion/Bypass  CO,39.245,-106.5311,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,17.5221;R66669ec515c2dc41,Fryingpan River O1 L6 Drainage:27km2 AvgFlow:17cfs AvgPrecip:926mm AvgTemp:-1C
+BRGP:FRYMERCO,Fryingpan River near Meredith  CO,39.3625,-106.7264,Q=QD=0;GH=GJ=1,,,,526.882;Ra01aafabeab9be41,Fryingpan River O4 L6 Drainage:468km2 AvgFlow:144cfs AvgPrecip:455mm AvgTemp:4C
+BRGP:FRYNFNCO,North Fork Fryingpan River near Norrie  CO,39.3428,-106.6653,GH=GJ=1,,,,709.5492;R3789d163d8dddb41,North Fork Fryingpan River O3 L7 Drainage:77km2 AvgFlow:34cfs AvgPrecip:580mm AvgTemp:2C
+BRGP:FRYRUDCO,Fryingpan River near Ruedi  Eagle County  CO,39.3655,-106.825,Q=QD=0;GH=GJ=1,,,,890.0332;Rb81e116bf98bee41,Fryingpan River O4 L6 Drainage:639km2 AvgFlow:188cfs AvgPrecip:530mm AvgTemp:4C
+BRGP:FRYTHOCO,Fryingpan River at Thomasville  CO,39.3447,-106.6731,Q=QD=0;GH=GJ=1,,,,134.1754;R96436353266cdf41,Fryingpan River O3 L6 Drainage:233km2 AvgFlow:64cfs AvgPrecip:545mm AvgTemp:3C
+BRGP:FSDM,Fort Shaw Diversion Dam near Simms MT,47.5083,-112.075,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,930.3129;Rcdcc045335bedc41, 
+BRGP:FTBELKMT,Ft. Belknap Canal Main Diversion MT,48.6028,-108.3944,QC=QJ=0;CH=CJ=1;WF=WF=2;WC=WC=3,,
+BRGP:FUNE,Fullerton Canal below Davis Creek Dam NE,41.4117,-98.7467,QC=QJ=0;CH=CJ=1,,,,606.6418;Ra245b699a6958541, O2 L7 Drainage:13km2 AvgFlow:0cfs AvgPrecip:645mm AvgTemp:9C
+BRGP:GDSNE,Guide Rock Diversion Dam  South Channel  NE,40.0667,-98.3833,Q=QD=0;GH=GJ=1,,,,979.2314;R5c8f923ae785cb41,Republican River O7 L4 Drainage:50871km2 AvgFlow:225cfs AvgPrecip:685mm AvgTemp:11C
+BRGP:GFNE,Gering Canal at Parshall Flume NE,41.8533,-103.7155,CH=CJ=1,,,,888.8869;R0e2da26739c5db41,North Platte River O7 L4 Drainage:61176km2 AvgFlow:913cfs AvgPrecip:377mm AvgTemp:9C
+BRGP:GGWY,N. Platte River below Gray Reef Reservoir  WY,42.5742,-106.692,GH=GJ=1,,,,860.0387;Rd5786156be3fed41, O1 L5 Drainage:3km2 AvgFlow:0cfs AvgPrecip:254mm AvgTemp:8C
+BRGP:GHCM,Grasshopper Creek at Bannack State Park MT,45.1553,-112.9786,Q=QD=0;GH=GJ=1,,,,12.8253;R666622035e78e641,Grasshopper Creek O4 L3 Drainage:752km2 AvgFlow:111cfs AvgPrecip:287mm AvgTemp:4C
+BRGP:GHICANCO,Government Highline Canal  Grand Junction  CO,39.1733,-108.3006,QC=QJ=0;CH=CJ=1,,,,499.7424;R5839949cf045e641,Colorado River O6 L4 Drainage:22243km2 AvgFlow:4033cfs AvgPrecip:307mm AvgTemp:11C
+BRGP:GLASGOMT,Glasgow Irr. District Canal near Vandalia MT,48.3722,-106.9731,QC=QJ=0;GH=GJ=1;CH=CJ=1;WF=WF=2,,,,292.9609;Re3a58355b34be541,Milk River O6 L3 Drainage:48283km2 AvgFlow:444cfs AvgPrecip:318mm AvgTemp:6C
+BRGP:GLWY,N. Platte River below Glendo Dam  WY,42.4569,-104.9472,Q=QD=0;GH=GJ=1,,,,78.7237;R7368a1ca95ead341, O2 L5 Drainage:18km2 AvgFlow:0cfs AvgPrecip:369mm AvgTemp:8C
+BRGP:GOWY,N. Platte River below Guernsey Dam  WY,42.2806,-104.7542,Q=QD=0;GH=GJ=1,,,,813.2601;R9cc4f87d0c7fe241,North Platte River O7 L4 Drainage:40324km2 AvgFlow:1746cfs AvgPrecip:362mm AvgTemp:9C
+BRGP:GRDVALCO,Grand Valley Irrigation Canal  Grand Junction  CO,39.0983,-108.3533,QC=QJ=0;CH=CJ=1,,,,34.9769;Rc74b5760138be141,Colorado River O6 L4 Drainage:22595km2 AvgFlow:3326cfs AvgPrecip:314mm AvgTemp:11C
+BRGP:GREELCCO,Elliot Creek Canal near Green Mountain Reservoir  CO,39.8744,-106.3292,QC=QJ=0;CH=CJ=1,,,,962.0419;Rf4fd144b2ce4d541, O3 L6 Drainage:39km2 AvgFlow:15cfs AvgPrecip:396mm AvgTemp:3C
+BRGP:GRGM,Gallatin River near Gallatin Gateway  MT,45.4975,-111.42,Q=QD=0;GH=GJ=1,,,,602.5994;R1b2f3d5a4699b241, O1 L7 Drainage:2km2 AvgFlow:0cfs AvgPrecip:539mm AvgTemp:5C
+BRGP:GRMY,Greybull River at Meeteetse WY,44.1556,-108.8764,Q=QD=0;GH=GJ=1,,,,542.5173;Rb81e85c9b750df41,Greybull River O6 L5 Drainage:1773km2 AvgFlow:388cfs AvgPrecip:314mm AvgTemp:6C
+BRGP:GRNDIVCO,Granite Diversion/Bypass  CO,39.2675,-106.5542,CH=CJ=1,,,,611.5025;Rcdccb42b1136d541,Granite Creek O1 L7 Drainage:9km2 AvgFlow:5cfs AvgPrecip:857mm AvgTemp:0C
+BRGP:GRWY,North Platte River near Glenrock  WY,42.8361,-105.7583,Q=QD=0;GH=GJ=1,,,,96.4167;R0681b183074ced41,North Platte River O7 L4 Drainage:33396km2 AvgFlow:1661cfs AvgPrecip:317mm AvgTemp:8C
+BRGP:HALDIVCO,Halfmoon Diversion  CO,39.1861,-106.3833,Q=QD=0;GH=GJ=1,,,,31.994;R21b0823087c2cb41,Halfmoon Creek O2 L3 Drainage:65km2 AvgFlow:33cfs AvgPrecip:440mm AvgTemp:1C
+BRGP:HANE,Highline Canal above Minatare Diversion NE,41.9395,-103.4808,CH=CJ=1,,
+BRGP:HAUM,Missouri River Below Hauser Dam  MT,46.7672,-111.8908,Q=QD=0;GH=GJ=1,,,,555.0574;Rb6f399d95c5bec41,Missouri River O7 L2 Drainage:42838km2 AvgFlow:5661cfs AvgPrecip:308mm AvgTemp:7C
+BRGP:HCHT,Hondo Creek at State Highway 173 near Hondo  TX,29.3761,-99.1167,GH=GJ=1,,,,531.9048;R9eef73fcd42de641,Hondo Creek O4 L3 Drainage:391km2 AvgFlow:20cfs AvgPrecip:766mm AvgTemp:20C
+BRGP:HCTT,Hondo Creek near Tarpley  TX,29.5694,-99.2464,Q=QD=0;GH=GJ=1,,,,781.9424;R5a64ab0f7fe5db41,Hondo Creek O4 L3 Drainage:231km2 AvgFlow:27cfs AvgPrecip:814mm AvgTemp:19C
+BRGP:HDCO,Hondo Creek near Tarpley TX,39.6208,-102.1694,QC=QJ=0;CH=CJ=1,,,,856.9045;R643bab985d24e141,South Fork Republican River O4 L5 Drainage:4483km2 AvgFlow:11cfs AvgPrecip:474mm AvgTemp:10C
+BRGP:HDHM,Huntley Diversion near Huntley  MT,45.9042,-108.3169,QC=QJ=0;CH=CJ=1,,,,999.3467;Rb81e81d3ccc3e141, O7 L5 Drainage:30001km2 AvgFlow:0cfs AvgPrecip:365mm AvgTemp:8C
+BRGP:HDNE,Highline Canal NE,41.9994,-103.6319,CH=CJ=1,,
+BRGP:HEBR,Hebgen Lake  Madison River near West Yellowstone  MT,44.8642,-111.3358,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,948.88;Re7fb69e79662b341,Cabin Creek O4 L4 Drainage:79km2 AvgFlow:61cfs AvgPrecip:794mm AvgTemp:2C
+BRGP:HEWY,North Platte River at WY-NE State Line  WY,41.9903,-104.0492,Q=QD=0;GH=GJ=1,,,,661.1421;R6891ddc900f5d441,North Platte River O7 L4 Drainage:55204km2 AvgFlow:909cfs AvgPrecip:369mm AvgTemp:9C
+BRGP:HFC930CO,Charles Hansen Feeder Canal 930 Section CO,40.3942,-105.2164,QC=QJ=0;CH=CJ=1,
+BRGP:HFCBBSCO,Hansen Feeder Canal Flow North  Loveland  CO,40.4222,-105.2258,QC=QJ=0;CH=CJ=1,,,,963.3721;R46b6f3af71dfe541, O4 L4 Drainage:801km2 AvgFlow:111cfs AvgPrecip:432mm AvgTemp:9C
+BRGP:HFCFLTCO,Hansen Feeder Canal at Flatiron Reservoir  CO,40.375,-105.2308,Q=QD=0;QC=QJ=0;CH=CJ=1,,,,863.1169;R46b6eb6fe0d8e641, 
+BRGP:HFCWASCO,Charles Hansen Feeder Canal Wasteway to Big Thompson  CO,40.4167,-105.2261,GH=GJ=1,,,,597.6168;Ra245d6a7b969dd41, O4 L4 Drainage:791km2 AvgFlow:111cfs AvgPrecip:472mm AvgTemp:9C
+BRGP:HGHM,So. Fork Flathead Riv nr Columbia Falls at Hungry Horse  MT,48.3567,-114.0367,Q=QD=0;GH=GJ=1,,,,901.3784;R23dbb9799008e241,South Fork Flathead River O5 L3 Drainage:4331km2 AvgFlow:3565cfs AvgPrecip:840mm AvgTemp:5C
+BRGP:HHWY,Highland Hanover Canal WY,43.9328,-107.9647,QC=QJ=0;CH=CJ=1,,,,978.8877;Rcdcc1060bd09e741,Nowater Creek O4 L5 Drainage:1077km2 AvgFlow:17cfs AvgPrecip:217mm AvgTemp:8C
+BRGP:HMMC,Halfmoon Creek near Malta  CO,39.1722,-106.3886,Q=QD=0;GH=GJ=1,,,,49.1349;R21b0823087c2cb41,Halfmoon Creek O2 L3 Drainage:65km2 AvgFlow:33cfs AvgPrecip:440mm AvgTemp:1C
+BRGP:HMNE,Lake Minatare Inflow-Highline NE,41.9408,-103.3936,CH=CJ=1,,
+BRGP:HNTDIVCO,Hunter Creek Diversion/Bypass  CO,39.2078,-106.6789,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,27.3054;R5a64e3c844eedb41,Hunter Creek O1 L6 Drainage:26km2 AvgFlow:13cfs AvgPrecip:790mm AvgTemp:0C
+BRGP:HOLM,Missouri River Below Holter Dam  Near Wolf Creek  MT,46.9911,-112.0047,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,991.6156;R91ed4c13b13cd741,Missouri River O7 L2 Drainage:43502km2 AvgFlow:5628cfs AvgPrecip:318mm AvgTemp:8C
+BRGP:HOMTUNCO,Homestake Tunnel  CO,39.2811,-106.4411,GH=GJ=1,,,,765.0595;R448b60ede799ed41,Lake Fork O3 L5 Drainage:47km2 AvgFlow:63cfs AvgPrecip:610mm AvgTemp:1C
+BRGP:HUNTASCO,Hunter Creek nr Aspen  CO,39.2058,-106.7969,Q=QD=0;GH=GJ=1,,,,333.2064;Rf0a76e7d0623e341,Hunter Creek O2 L6 Drainage:112km2 AvgFlow:47cfs AvgPrecip:603mm AvgTemp:4C
+BRGP:ICWY,Interstate Canal at Milepost 1.0 WY,42.2431,-104.6125,CH=CJ=1,,,,177.2563;R17d94eaeb7959241,North Platte River O7 L4 Drainage:40857km2 AvgFlow:704cfs AvgPrecip:349mm AvgTemp:9C
+BRGP:ILLRANCO,Illinois River near Rand CO,40.7175,-107.0667,Q=QD=0;GH=GJ=1,,,,753.7943;Rf4fdb4e4979cef41, O1 L10 Drainage:6km2 AvgFlow:3cfs AvgPrecip:845mm AvgTemp:3C
+BRGP:IVNDIVCO,Ivanhoe Creek Diversion/Bypass  CO,39.2875,-106.5589,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,16.7539;R17d912e1ff1ee841,Ivanhoe Creek O2 L7 Drainage:34km2 AvgFlow:18cfs AvgPrecip:777mm AvgTemp:0C
+BRGP:JAMR,Jamestown Reservoir  James River near Jamestown  ND,46.9306,-98.7064,Q=QD=0,,,,742.5217;R1058a976bce3c741,James River O4 L3 Drainage:4069km2 AvgFlow:125cfs AvgPrecip:471mm AvgTemp:5C
+BRGP:JHNY,Johnstown Ditch at Headworks near Kinnear WY,43.1508,-108.7283,CH=CJ=1,,,,73.6315;Rf2d2cdc89ae2a841,Wind River O6 L4 Drainage:5755km2 AvgFlow:1207cfs AvgPrecip:232mm AvgTemp:7C
+BRGP:JRMT,Jefferson River near Twin Bridges  MT,45.6167,-112.3167,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,870.4701;Rdd241250d760eb41,Jefferson River O7 L2 Drainage:19448km2 AvgFlow:2155cfs AvgPrecip:253mm AvgTemp:7C
+BRGP:KAWY,Bighorn River at Kane  WY,44.8436,-108.2022,Q=QD=0;GH=GJ=1
+BRGP:KCWY,Kirby Canal WY,43.68,-108.1825,CH=CJ=1,,,,552.5811;R378941ef10d2e941, O7 L5 Drainage:20891km2 AvgFlow:0cfs AvgPrecip:379mm AvgTemp:5C
+BRGP:KDNE,Kent Diversion  NE,41.7625,-99.25,CH=CJ=1,,,,988.098;R5eba85c14796e641,North Loup River O4 L5 Drainage:5793km2 AvgFlow:527cfs AvgPrecip:615mm AvgTemp:9C
+BRGP:KDWY,Katzer Drain WY,41.9792,-104.0708,Q=QD=0;GH=GJ=1,,,,715.5753;Rd34d0a9e5f5bd041,North Platte River O7 L4 Drainage:55204km2 AvgFlow:909cfs AvgPrecip:369mm AvgTemp:9C
+BRGP:KEYR,Keyhole Reservoir  Belle Fourche River near Moorcroft  WY,44.3819,-104.7792,Q=QD=0,,,,914.6479;R1d5a90310e2ee041,Belle Fourche River O6 L4 Drainage:4946km2 AvgFlow:34cfs AvgPrecip:416mm AvgTemp:7C
+BRGP:KOWY,N. Platte River below Kortes Reservoir  WY,42.1783,-106.8758,Q=QD=0;GH=GJ=1,,,,671.0141;Rbe9ffa2f451fbd41,North Platte River O7 L4 Drainage:17912km2 AvgFlow:1340cfs AvgPrecip:357mm AvgTemp:6C
+BRGP:KWKS,Kirwin Reservoir at Kirwin  KS,39.6636,-99.1247,QC=QJ=0;CH=CJ=1,,,,859.9493;R560e75c77e56d741,North Fork Solomon River O5 L4 Drainage:3634km2 AvgFlow:30cfs AvgPrecip:622mm AvgTemp:11C
+BRGP:LAKBTLCO,Lake Creek below Twin Lake  CO,39.0761,-106.3097,Q=QD=0;GH=GJ=1,,,,522.6022;Rbe9f766f25d2e441,Lake Creek O3 L3 Drainage:271km2 AvgFlow:190cfs AvgPrecip:288mm AvgTemp:2C
+BRGP:LANE,Little Lake Alice Reservoir El-Outflow NE,41.9625,-103.5722,CH=CJ=1,,,,22.145;R39b470380fa5d741, O1 L6 Drainage:111km2 AvgFlow:4cfs AvgPrecip:381mm AvgTemp:9C
+BRGP:LBHM,Little Bighorn River near Hardin  MT,45.7358,-107.5567,Q=QD=0;GH=GJ=1,,,,929.2214;R1f85c3fbf6d5d841,Little Bighorn River O5 L5 Drainage:3361km2 AvgFlow:297cfs AvgPrecip:306mm AvgTemp:9C
+BRGP:LBSM,Little Bighorn River at Stateline Near Wyola  MT,45.0069,-107.6144,Q=QD=0;GH=GJ=1,,,,800.6473;R5839ec042318dc41,Little Bighorn River O4 L5 Drainage:504km2 AvgFlow:154cfs AvgPrecip:477mm AvgTemp:6C
+BRGP:LCCY,LeClair Diversion Canal WY,43.1058,-108.5561,QC=QJ=0;CH=CJ=1,,,,141.6025;Rfa7e5aba7dccdb41, 
+BRGP:LCKS,Lower Courtland Canal  Mile 38.0  KS,39.8839,-98.0253,QC=QJ=0;CH=CJ=1,,,,716.7705;R5839ec25c123d141,White Rock Creek O4 L5 Drainage:901km2 AvgFlow:34cfs AvgPrecip:701mm AvgTemp:11C
+BRGP:LFCBSLCO,Lake Fork Creek  CO,39.2514,-106.3744,Q=QD=0;GH=GJ=1,,,,597.3588;R5a64bb49803acb41,Lake Fork O3 L5 Drainage:71km2 AvgFlow:75cfs AvgPrecip:524mm AvgTemp:1C
+BRGP:LGMT,Gallatin River near Logan  MT,45.8845,-111.4267,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,826.2326;Rd7a348ae050eef41,Gallatin River O6 L3 Drainage:4606km2 AvgFlow:1191cfs AvgPrecip:323mm AvgTemp:7C
+BRGP:LHDY,Lefthand Ditch at Headworks Near Riverton WY,43.0261,-108.52,QC=QJ=0;CH=CJ=1,,,,824.321;R448bd4e50bc9e541,Wind River O6 L4 Drainage:5925km2 AvgFlow:1208cfs AvgPrecip:221mm AvgTemp:7C
+BRGP:LHWY,Lower Hanover Canal WY,43.975,-107.9919,CH=CJ=1,,,,843.0944;R3f357e1bff43eb41, O2 L5 Drainage:13km2 AvgFlow:0cfs AvgPrecip:208mm AvgTemp:8C
+BRGP:LIMR,Lima Reservoir  upstream of Clark Canyon Reservoir  MT,44.6561,-112.3706,Q=QD=0;GH=GJ=1,,,,921.964;R1f8563362ca3d341,Red Rock River O5 L3 Drainage:1482km2 AvgFlow:419cfs AvgPrecip:395mm AvgTemp:3C
+BRGP:LINGRRCO,Lincoln Creek below Grizzly Reservoir  CO,39.0689,-106.6103,Q=QD=0;GH=GJ=1,,,,636.9864;Ra69b1cb4e400d941,Lincoln Creek O2 L6 Drainage:30km2 AvgFlow:16cfs AvgPrecip:756mm AvgTemp:0C
+BRGP:LKCTURCO,Lake Fork Creek near Merdith CO,39.2697,-106.3944,GH=GJ=1,,,,66.7867;R5a64bb49803acb41,Lake Fork O3 L5 Drainage:71km2 AvgFlow:75cfs AvgPrecip:524mm AvgTemp:1C
+BRGP:LOMT,Powder River at Locate  MT,46.4333,-105.3,Q=QD=0;GH=GJ=1,,,,816.3375;Rcba12580123abb41,Powder River O6 L4 Drainage:33820km2 AvgFlow:577cfs AvgPrecip:341mm AvgTemp:7C
+BRGP:LPLY,Little Popo Agie River near Lander WY,42.7167,-108.6428,Q=QD=0;GH=GJ=1,,,,25.6446;R14ae07c1f02eae41,Little Popo Agie River O4 L7 Drainage:335km2 AvgFlow:92cfs AvgPrecip:298mm AvgTemp:6C
+BRGP:LPPWCM,Little Prickly Pear Creek at Wolf Creek  MT,47.0053,-112.0694,Q=QD=0;GH=GJ=1,,,,946.5044;Rc520c03456c0d341,Little Prickly Pear Creek O5 L3 Drainage:910km2 AvgFlow:97cfs AvgPrecip:470mm AvgTemp:4C
+BRGP:LTR,Lake Tschida  Heart River near Elgin  ND,46.5967,-101.8094,Q=QD=0,,,,690.0362;R9cc420c38eb2de41,Heart River O6 L3 Drainage:4445km2 AvgFlow:87cfs AvgPrecip:441mm AvgTemp:6C
+BRGP:LVABKS,Lovewell above Kansas  NE,39.9056,-98.025,QC=QJ=0;CH=CJ=1,,,,829.2974;Rc74bff368ca7ee41, O1 L6 Drainage:1km2 AvgFlow:0cfs AvgPrecip:701mm AvgTemp:11C
+BRGP:LWRV,Little Wind River near Riverton  WY,42.9975,-108.3747,Q=QD=0;GH=GJ=1,,,,877.7461;Rbe9f1ae1f4a47141,Little Wind River O6 L5 Drainage:4913km2 AvgFlow:462cfs AvgPrecip:212mm AvgTemp:7C
+BRGP:LWWY,So Fk Little Wind Rvr abv Washakie Reservoir nr Fort Washakie WY,42.9683,-109.0369,Q=QD=0;GH=GJ=1,,,,787.0262;Rd9ce2bd21c13e841, O4 L6 Drainage:227km2 AvgFlow:0cfs AvgPrecip:446mm AvgTemp:4C
+BRGP:MAMT,Madison River near McAllister  MT,45.4445,-111.7314,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,903.2628;Rcdcc20e20839ef41, O1 L5 Drainage:3km2 AvgFlow:0cfs AvgPrecip:356mm AvgTemp:7C
+BRGP:MARDITCO,Marion Ditch near Leadville CO,39.248,-106.2708,CH=CJ=1,,
+BRGP:MARI,Marias River near Chester  MT,48.3058,-111.0789,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,138.9884;Rf85373c9a2e2ec41,Marias River O6 L3 Drainage:11387km2 AvgFlow:941cfs AvgPrecip:268mm AvgTemp:7C
+BRGP:MARM,Marias River near Shelby  MT,48.4272,-111.8889,Q=QD=0;GH=GJ=1,,,,90.2996;R9eef8be78f9de541,Marias River O6 L3 Drainage:7052km2 AvgFlow:890cfs AvgPrecip:285mm AvgTemp:6C
+BRGP:MBWY,Medicine Bow River Above Seminoe Reservoir near Hanna  WY,42.0097,-106.5125,Q=QD=0;GH=GJ=1,,,,388.8877;R17d9ce570b644441,Medicine Bow River O6 L5 Drainage:5234km2 AvgFlow:265cfs AvgPrecip:292mm AvgTemp:6C
+BRGP:MCABNE,Medicine Creek above Harry Strunk Lake  NE,40.5028,-100.3222,Q=QD=0;GH=GJ=1,,,,412.5462;R79e9763721f7d441,Medicine Creek O5 L5 Drainage:2010km2 AvgFlow:52cfs AvgPrecip:550mm AvgTemp:10C
+BRGP:MCARNE,Medicine Creek at Arapahoe  NE,40.3064,-99.9114,Q=QD=0;GH=GJ=1,,,,991.2513;R0ad723cd9f729741,Muddy Creek O4 L5 Drainage:619km2 AvgFlow:25cfs AvgPrecip:577mm AvgTemp:11C
+BRGP:MCBLNE,Medicine Creek below Harry Strunk Lake  NE,40.3714,-100.222,Q=QD=0;GH=GJ=1,,,,395.8163;R8195e387a8c8cb41,Medicine Creek O5 L5 Drainage:2302km2 AvgFlow:50cfs AvgPrecip:554mm AvgTemp:10C
+BRGP:MCCUNE,Medicine Creek near Curtis  NE *MCSONE*,41.3356,-101.3756,GH=GJ=1
+BRGP:MCNE,Mirdan Canal  Calamus Dam  NE,41.8239,-99.2111,CH=CJ=1,,,,813.0484;Ra245b66a569fe141,Calamus River O3 L6 Drainage:2364km2 AvgFlow:341cfs AvgPrecip:616mm AvgTemp:9C
+BRGP:MCPM,Muddy Creek near Power MT,48.1844,-112.2014,Q=QD=0;GH=GJ=1,,,,980.5184;Rc1ca69e36b5dd241,Spring Creek O2 L5 Drainage:75km2 AvgFlow:2cfs AvgPrecip:342mm AvgTemp:6C
+BRGP:MCUDIVCO,Middle Cunningham Diversion/Bypass  CO,39.3286,-106.5522,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,7.1849;R1b2f51ddf7b5eb41,Middle Cunningham Creek O1 L9 Drainage:6km2 AvgFlow:3cfs AvgPrecip:844mm AvgTemp:0C
+BRGP:MCVM,Muddy Creek at Vaughn  MT,47.5617,-111.5425,Q=QD=0;GH=GJ=1,,,,50.0135;R3789053d6e48ef41,Muddy Creek O4 L4 Drainage:696km2 AvgFlow:130cfs AvgPrecip:330mm AvgTemp:7C
+BRGP:MDNE,Meeker-Driftwood Canal  NE,40.1514,-101.0583,CH=CJ=1,,,,619.7184;Rd9ce0f2e9ef0ed41, O5 L6 Drainage:17718km2 AvgFlow:0cfs AvgPrecip:533mm AvgTemp:10C
+BRGP:MDWNE,Meeker-Driftwood Canal  Wasteway  NE,40.1964,-100.4914,CH=CJ=1,,,,294.3963;R4a0c8278fc2db041, O1 L6 Drainage:1km2 AvgFlow:0cfs AvgPrecip:547mm AvgTemp:11C
+BRGP:MELM,Big Hole River Near Melrose  MT,45.5267,-112.7008,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,878.0534;R5a644b5385d3d641,Big Hole River O5 L3 Drainage:6407km2 AvgFlow:1134cfs AvgPrecip:247mm AvgTemp:6C
+BRGP:MFBM,Missouri River at Fort Benton  MT,47.8175,-110.6664,Q=QD=0;GH=GJ=1,,,,442.5896;Ra245ba120552e841,Missouri River O7 L2 Drainage:62559km2 AvgFlow:7521cfs AvgPrecip:350mm AvgTemp:7C
+BRGP:MFPM,Missouri River below Fort Peck Dam  MT,48.0442,-106.3558,GH=GJ=1;WF=WF=2;WC=WC=3,,,,33.5474;R83c02e58bf74ec41,Missouri River O8 L2 Drainage:145788km2 AvgFlow:10071cfs AvgPrecip:288mm AvgTemp:7C
+BRGP:MGFM,Missouri River at Great Falls  MT,47.5844,-111.0597,Q=QD=0;GH=GJ=1,,,,968.4877;R1b2fc58689f7e541,Missouri River O7 L2 Drainage:58908km2 AvgFlow:7235cfs AvgPrecip:361mm AvgTemp:7C
+BRGP:MGNE,Mitchell-Gering Canal NE,41.9828,-104.0578,QC=QJ=0;CH=CJ=1,,,,948.9557;R9eeff7e579d2dd41, O7 L5 Drainage:55204km2 AvgFlow:0cfs AvgPrecip:369mm AvgTemp:9C
+BRGP:MHVM,Milk River at Havre  MT,48.5639,-109.695,Q=QD=0;GH=GJ=1,,,,75.0903;R08ac3c2263dddb41,Milk River O6 L3 Drainage:12799km2 AvgFlow:414cfs AvgPrecip:325mm AvgTemp:6C
+BRGP:MIDDIVCO,Midway Creek Diversion/Bypass  CO,39.185,-106.6858,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,429.191;R0e2d529895e3c341,Midway Creek O1 L7 Drainage:23km2 AvgFlow:11cfs AvgPrecip:762mm AvgTemp:0C
+BRGP:MINE,Lake Minatare Reservoir Inflow NE,41.9486,-103.515,CH=CJ=1,,
+BRGP:MLS,Yellowstone River near Miles City  MT,46.4217,-105.8606,Q=QD=0;GH=GJ=1,,,,93.6938;R295c47f877c0ea41,Yellowstone River O8 L3 Drainage:123247km2 AvgFlow:11995cfs AvgPrecip:336mm AvgTemp:8C
+BRGP:MLTO,Tongue River near Miles City  MT,46.3456,-105.8028,GH=GJ=1;WF=WF=2;WC=WC=3,,,,53.9345;Rd578b9418b5ed241,Tongue River O6 L4 Drainage:13961km2 AvgFlow:528cfs AvgPrecip:336mm AvgTemp:8C
+BRGP:MONE,Lake Minatare Reservoir Outflow NE,41.9161,-103.4919,CH=CJ=1,,
+BRGP:MORDIVCO,Mormon Diversion/Bypass  CO *MORWEACO*,39.3553,-106.5339,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,12.8829;Rd578153ea098e841,Mormon Creek O1 L8 Drainage:9km2 AvgFlow:5cfs AvgPrecip:843mm AvgTemp:0C
+BRGP:MPWY,Middle Popo Agie River below Sinks near Lander WY,42.7572,-108.7986,GH=GJ=1,,,,502.7103;Rbe9f127a005cd341,Middle Popo Agie River O3 L6 Drainage:225km2 AvgFlow:124cfs AvgPrecip:532mm AvgTemp:5C
+BRGP:MRCM,Madison River at Kirby Ranch near Cameron  MT,44.8894,-111.5794,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,936.1266;R7d3fe5ccb1e5ee41,Madison River O6 L3 Drainage:3237km2 AvgFlow:1490cfs AvgPrecip:604mm AvgTemp:4C
+BRGP:MRDM,Milk River at Dodson  MT,48.4031,-108.293,Q=QD=0;GH=GJ=1,,,,515.1162;R643b5f3524bdad41,Milk River O6 L3 Drainage:26671km2 AvgFlow:134cfs AvgPrecip:299mm AvgTemp:6C
+BRGP:MREC,Milk River at Eastern Crossing near International Boundary,48.9847,-110.4708,Q=QD=0;GH=GJ=1,,,,30.2787;R1283f0929e42d241,Milk River O5 L3 Drainage:6199km2 AvgFlow:607cfs AvgPrecip:299mm AvgTemp:5C
+BRGP:MRHM,Milk River near Harlem  MT,48.4728,-108.7578,Q=QD=0;GH=GJ=1,,,,628.8535;R48e11af2a310e341, 
+BRGP:MRLM,Marias River near Loma  MT,47.9331,-111.5172,Q=QD=0;GH=GJ=1;WC=WC=3,,,,729.6639;Rae47916c383cc141,Teton River O5 L4 Drainage:3168km2 AvgFlow:368cfs AvgPrecip:302mm AvgTemp:7C
+BRGP:MRMM,Milk River at Malta  MT,48.3617,-107.8628,Q=QD=0;GH=GJ=1,,,,797.4814;Rcba18558b502ea41,Milk River O6 L3 Drainage:28110km2 AvgFlow:151cfs AvgPrecip:322mm AvgTemp:6C
+BRGP:MRMR,Milk River at Milk River Alberta,49.1436,-112.0789,Q=QD=0;GH=GJ=1,,,,826.1523;Rd122431c688ae841, O1
+BRGP:MRNE,Merritt Dam  NE,42.635,-100.8722,QC=QJ=0;CH=CJ=1,,,,325.8204;R736855ac937ae641, O3 L5 Drainage:1257km2 AvgFlow:39cfs AvgPrecip:537mm AvgTemp:9C
+BRGP:MRTM,Milk River at Tampico  MT,48.3081,-106.822,Q=QD=0;GH=GJ=1,,,,683.6217;R7368b1936972e941,Milk River O6 L3 Drainage:48711km2 AvgFlow:449cfs AvgPrecip:282mm AvgTemp:6C
+BRGP:MRWC,Milk River at Western Crossing near International Boundary,49.0075,-112.545,Q=QD=0;GH=GJ=1,,,,974.048;Rbc7413f299efc241, O0
+BRGP:MUDKRECO,Muddy Creek blw Wolford Reservoir nr Kremmling  CO,40.1086,-106.4133,Q=QD=0;GH=GJ=1,,,,577.1963;R19048645e400de41,Muddy Creek O5 L5 Drainage:697km2 AvgFlow:125cfs AvgPrecip:316mm AvgTemp:4C
+BRGP:MUTT,Middle Concho above Tankersley  TX,31.4272,-100.7108,GH=GJ=1,,,,697.2506;R2fddecb03af0d241,Middle Concho River O4 L4 Drainage:5681km2 AvgFlow:23cfs AvgPrecip:534mm AvgTemp:18C
+BRGP:MWYM,Madison River near West Yellowstone MT,44.6569,-111.0675,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,554.8582;R39b4c87220f0b141,Madison River O4 L3 Drainage:1126km2 AvgFlow:502cfs AvgPrecip:647mm AvgTemp:2C
+BRGP:NAMT,Milk River near Nashua  MT,48.1297,-106.3639,Q=QD=0;GH=GJ=1,,,,25.8794;R3108b427bef4da41,Milk River O6 L3 Drainage:51967km2 AvgFlow:612cfs AvgPrecip:290mm AvgTemp:6C
+BRGP:NCOT,Nueces River at Cotulla  TX,28.4261,-99.2397,Q=QD=0;GH=GJ=1,,,,829.4484;R5a64fb403da2d041,Nueces River O6 L1 Drainage:13403km2 AvgFlow:238cfs AvgPrecip:600mm AvgTemp:22C
+BRGP:NCUDIVCO,North Cunningham Diversion/Bypass  CO,39.3367,-106.543,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,8.0827;Rae4791cc34efe541,Cunningham Creek O1 L8 Drainage:7km2 AvgFlow:3cfs AvgPrecip:833mm AvgTemp:0C
+BRGP:NELFDRMT,Nelson Feeder Canal Malta Irr. District east of Malta MT,48.4597,-107.6331,QC=QJ=0;CH=CJ=1,,
+BRGP:NFKDIVCO,North Fork Diversion/Bypass  CO,39.3617,-106.5378,QC=QJ=0;CH=CJ=1,,,,301.3148;Ra69be08065f9e941,North Fork Fryingpan River O2 L7 Drainage:15km2 AvgFlow:8cfs AvgPrecip:769mm AvgTemp:0C
+BRGP:NFMA,North Fork Milk River above Canal near Browning  MT,48.9708,-113.0553,Q=QD=0;GH=GJ=1,,,,894.1059;R77beefd2ce4ddd41,North Fork Milk River O4 L4 Drainage:148km2 AvgFlow:29cfs AvgPrecip:512mm AvgTemp:4C
+BRGP:NFMB,North Fork Milk River near International Boundary,49.0219,-112.9711,Q=QD=0;GH=GJ=1,,,,915.3043;Rbc74133cf400c541, O0
+BRGP:NFNE,Northport Canal at Parshall Flume NE,41.7908,-103.2067,CH=CJ=1,,
+BRGP:NFS,North Fork Shoshone River near Wapiti  WY,44.4792,-109.4911,Q=QD=0;GH=GJ=1,,,,781.4792;R7d3f85dd6a0fcc41,North Fork Shoshone River O5 L5 Drainage:1721km2 AvgFlow:787cfs AvgPrecip:299mm AvgTemp:6C
+BRGP:NFSM,North Fork Sun River near Augusta  MT,47.6408,-112.8594,Q=QD=0;GH=GJ=1,,,,132.5612;R1b2f49826367e341,North Fork Sun River O4 L4 Drainage:688km2 AvgFlow:461cfs AvgPrecip:560mm AvgTemp:4C
+BRGP:NGCL,North Platte River near Northgate  CO,40.9375,-106.3378,Q=QD=0;GH=GJ=1,,,,971.283;R6de7cf3de231ec41,North Platte River O6 L4 Drainage:3676km2 AvgFlow:798cfs AvgPrecip:375mm AvgTemp:3C
+BRGP:NONDIVCO,No Name Creek Diversion/Bypass  CO,39.1886,-106.6792,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,218.8193;R0e2d529895e3c341,Midway Creek O1 L7 Drainage:23km2 AvgFlow:11cfs AvgPrecip:762mm AvgTemp:0C
+BRGP:NPCW,North Platte River at Casper  WY,42.8536,-106.3311,Q=QD=0;GH=GJ=1,,,,7.3056;R0c029fb63eb1e541,North Platte River O7 L4 Drainage:31419km2 AvgFlow:1492cfs AvgPrecip:331mm AvgTemp:8C
+BRGP:NPOW,North Platte River at Orin  WY,42.6525,-105.1592,Q=QD=0;GH=GJ=1,,,,967.3481;R9eef2b970d5fe241,North Platte River O7 L4 Drainage:37237km2 AvgFlow:1694cfs AvgPrecip:343mm AvgTemp:8C
+BRGP:NRBT,Nueces River at Bluntzer  TX,27.9333,-97.7667,Q=QD=0;GH=GJ=1,,,,341.7511;R4e62b871d4a6d241,Nueces River O7 L1 Drainage:43043km2 AvgFlow:626cfs AvgPrecip:816mm AvgTemp:22C
+BRGP:NRMT,Nueces River near Mathis  TX,28.0381,-97.86,Q=QD=0;GH=GJ=1,,,,954.9629;R448b7c6e8bdde741,Nueces River O7 L1 Drainage:42740km2 AvgFlow:708cfs AvgPrecip:820mm AvgTemp:22C
+BRGP:NRTT,Nueces River near Tilden  TX,28.3086,-98.557,GH=GJ=1,,,,51.2777;R2db289df20e8ec41,Nueces River O6 L1 Drainage:20998km2 AvgFlow:373cfs AvgPrecip:621mm AvgTemp:22C
+BRGP:NSCM,Nelson South Canal MT,48.5278,-107.5167,QC=QJ=0;WF=WF=2,,,,787.7103;R6666a60527f6bc41, O2 L4 Drainage:92km2 AvgFlow:2cfs AvgPrecip:271mm AvgTemp:6C
+BRGP:NTRT,Nueces River near Three Rivers  TX,28.4272,-98.1778,Q=QD=0;GH=GJ=1,,,,126.1676;Rb6f30dda0bc3e141,Nueces River O7 L1 Drainage:39983km2 AvgFlow:658cfs AvgPrecip:680mm AvgTemp:22C
+BRGP:OCAW,Owl Creek at Arapahoe Ranch Bridge WY,43.6833,-108.3,Q=QD=0;GH=GJ=1,,,,865.8106;Rf4fdd4f1725ad041,Owl Creek O5 L5 Drainage:1247km2 AvgFlow:69cfs AvgPrecip:315mm AvgTemp:8C
+BRGP:OLYTUNCO,Olympus Tunnel  CO,40.375,-105.4869,QC=QJ=0;CH=CJ=1,,,,722.1756;Rae47356fc549e441,Fish Creek O2 L5 Drainage:40km2 AvgFlow:11cfs AvgPrecip:399mm AvgTemp:5C
+BRGP:ORCHIDCO,Orchard Mesa Irrig District Canal  Gr Jnct  CO,39.1,-108.32,QC=QJ=0;CH=CJ=1,,,,694.9271;R1f85e30c1864d441,Watson Creek O1 L5 Drainage:12km2 AvgFlow:0cfs AvgPrecip:413mm AvgTemp:9C
+BRGP:OSKS,Osborne Canal  KS,39.4472,-99.0986,QC=QJ=0;CH=CJ=1,,,,913.7806;R295cf36391f7eb41,South Fork Solomon River O5 L5 Drainage:4055km2 AvgFlow:60cfs AvgPrecip:633mm AvgTemp:12C
+BRGP:PARDISMT,Paradise Valley Irr. District Canal near Chinook MT,48.5642,-109.1808,QC=QJ=0;CH=CJ=1;WF=WF=2;WC=WC=3,,,,983.4107;R2fddd45f4ab4e441, O1 L5 Drainage:39km2 AvgFlow:1cfs AvgPrecip:343mm AvgTemp:6C
+BRGP:PAWY,North Platte River below Pathfinder Dam  WY,42.465,-106.8464,Q=QD=0;GH=GJ=1,,,,688.2754;Ra245d6deb37bd941,North Platte River O7 L4 Drainage:26917km2 AvgFlow:1494cfs AvgPrecip:246mm AvgTemp:7C
+BRGP:PCHM,Peoples Creek near Hays MT,48.2236,-108.7133,GH=GJ=1,,,,22.9939;Rdd2466486db3df41,Peoples Creek O4 L4 Drainage:593km2 AvgFlow:11cfs AvgPrecip:349mm AvgTemp:7C
+BRGP:PCPB,Pilot canal below Pilot Butte Reservoir WY,43.1922,-108.7442,QC=QJ=0;CH=CJ=1,,
+BRGP:PIST,Pipestem Dam  Pipestem Creek near Jamestown  ND,46.9564,-98.7528,Q=QD=0,,,,642.1864;R96430ba3f7bfbb41,Pipestem Creek O4 L4 Drainage:2219km2 AvgFlow:60cfs AvgPrecip:473mm AvgTemp:5C
+BRGP:PLACAMCO,Plateau Creek near Cameo  CO,39.1836,-108.2683,Q=QD=0;GH=GJ=1,,,,529.9244;R60e5a0ee3d1cd341,Plateau Creek O5 L5 Drainage:1556km2 AvgFlow:197cfs AvgPrecip:343mm AvgTemp:10C
+BRGP:PSHR,Pishkun Reservoir near Augusta MT,47.6767,-112.4967,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,
+BRGP:PTR,Pactola Reservoir  Rapid Creek near Rapid City  SD,44.0722,-103.4881,Q=QD=0,,,,345.4864;R19043275a016eb41,Rapid Creek O4 L4 Drainage:838km2 AvgFlow:55cfs AvgPrecip:528mm AvgTemp:6C
+BRGP:PURBTRCO,Purgatorie River below Trinidad Reservoir  CO.,37.1439,-104.5472,Q=QD=0;GH=GJ=1,,,,805.181;R6de7f3f9792eeb41, O2 L4 Drainage:16km2 AvgFlow:0cfs AvgPrecip:458mm AvgTemp:10C
+BRGP:PURLASCO,Purgatorie River near Las Animas  CO,38.0339,-103.2,Q=QD=0;GH=GJ=1,,,,76.7248;R81950fd83252ed41,Purgatoire River O5 L3 Drainage:8930km2 AvgFlow:62cfs AvgPrecip:335mm AvgTemp:12C
+BRGP:PURMADCO,Purgatorie River at Madrid  CO,37.1294,-104.6394,Q=QD=0;GH=GJ=1,,,,995.1375;Rfed4e87de2bfc841, O2 L4 Drainage:79km2 AvgFlow:4cfs AvgPrecip:476mm AvgTemp:9C
+BRGP:PURNINCO,Purgatorie River at Ninemile Dam  near Higbee  CO,37.7147,-103.5078,Q=QD=0;GH=GJ=1,,,,872.6921;Rfa7e9a48d2c1e041, O3 L4 Drainage:132km2 AvgFlow:5cfs AvgPrecip:378mm AvgTemp:12C
+BRGP:PURTHACO,Purgatorie River near Thatcher  CO,37.3564,-103.8997,Q=QD=0;GH=GJ=1,,,,42.6912;Rc520544a8cd6e941,Purgatoire River O5 L3 Drainage:4962km2 AvgFlow:61cfs AvgPrecip:340mm AvgTemp:11C
+BRGP:PURTRICO,Purgatorie River at Trinidad  CO,37.1708,-104.5086,Q=QD=0;GH=GJ=1,,,,747.9814;Re9267124c899cb41,Purgatoire River O5 L3 Drainage:1959km2 AvgFlow:45cfs AvgPrecip:394mm AvgTemp:10C
+BRGP:RBMT,Missouri River near Landusky  MT,47.6308,-108.6869,Q=QD=0;GH=GJ=1,,,,919.6344;R819563bc6490ba41,Missouri River O7 L2 Drainage:102695km2 AvgFlow:9582cfs AvgPrecip:358mm AvgTemp:8C
+BRGP:RCSOK,Rock Creek near Sulphur  OK,34.4953,-96.9883,GH=GJ=1,,,,977.7757;Raaf142fffe31ed41,Rock Creek O4 L3 Drainage:112km2 AvgFlow:63cfs AvgPrecip:1055mm AvgTemp:16C
+BRGP:RCWY,Rawhide Creek near Lingle WY,42.1255,-104.3267,GH=GJ=1,,,,773.3142;Rd1226b6e91ebe141,Rawhide Creek O4 L5 Drainage:1283km2 AvgFlow:33cfs AvgPrecip:353mm AvgTemp:9C
+BRGP:RFCMERCO,Rocky Fork Creek nr Meredith  CO,39.3655,-106.8247,Q=QD=0;GH=GJ=1,,,,631.2371;R31089876539dea41,Rocky Fork Creek O1 L7 Drainage:32km2 AvgFlow:11cfs AvgPrecip:676mm AvgTemp:2C
+BRGP:RIFRESCO,Rifle Gap Reservoir nr Rifle  CO,39.63,-107.7622,Q=QD=0;GH=GJ=1,,,,242.9972;R5ebad1b39859e241,Rifle Creek O4 L5 Drainage:356km2 AvgFlow:63cfs AvgPrecip:410mm AvgTemp:8C
+BRGP:ROAASPCO,Roaring Fork River near Aspen  CO,39.18,-106.8014,Q=QD=0;GH=GJ=1,,,,183.4991;R1b2f451f4c82ed41,Roaring Fork River O3 L5 Drainage:283km2 AvgFlow:105cfs AvgPrecip:606mm AvgTemp:4C
+BRGP:ROABMCCO,Roaring Fork River below Maroon Creek nr Aspen  CO,39.225,-106.8555,Q=QD=0;GH=GJ=1,,,,239.5005;R713d4a0b8f31df41,Roaring Fork River O4 L5 Drainage:756km2 AvgFlow:362cfs AvgPrecip:555mm AvgTemp:5C
+BRGP:ROADIFCO,Roaring Fork River abv Difficult Ck nr Aspen  CO,39.1411,-106.7736,Q=QD=0;GH=GJ=1,,,,776.044;R643bf7400f1ed341,Roaring Fork River O3 L5 Drainage:244km2 AvgFlow:95cfs AvgPrecip:669mm AvgTemp:2C
+BRGP:ROAEMMCO,Roaring Fork River near Emma  CO,39.3733,-107.0833,Q=QD=0;GH=GJ=1,,,,20.6077;R3bdfdbe09298e941,Roaring Fork River O5 L5 Drainage:2247km2 AvgFlow:789cfs AvgPrecip:425mm AvgTemp:7C
+BRGP:ROAGLECO,Roaring Fork River at Glenwood Sprins  CO,39.5436,-107.3289,Q=QD=0;GH=GJ=1,,,,16.6357;R0456d683c345dd41,Roaring Fork River O5 L5 Drainage:3767km2 AvgFlow:1252cfs AvgPrecip:490mm AvgTemp:8C
+BRGP:ROALMCCO,Roaring Fork River above Lost Man Creek  CO,39.1203,-106.6242,Q=QD=0;GH=GJ=1,,,,387.054;R3d0a271525dae341,Roaring Fork River O2 L5 Drainage:57km2 AvgFlow:28cfs AvgPrecip:712mm AvgTemp:0C
+BRGP:ROBTUNCO,Denver Roberts Tunnel  CO,39.4839,-106.3233,Q=QD=0;GH=GJ=1,,,,632.8068;Rac1c2a080e0dee41, O1 L6 Drainage:7km2 AvgFlow:2cfs AvgPrecip:632mm AvgTemp:1C
+BRGP:RPRVNE,Republican River near Riverton  NE,40.0917,-98.7695,Q=QD=0;GH=GJ=1,,,,994.9974;R4a0c8a9d0285d941,Republican River O7 L4 Drainage:49915km2 AvgFlow:200cfs AvgPrecip:659mm AvgTemp:11C
+BRGP:RRAM,Ruby River above Reservoir near Alder  MT,45.1753,-112.1478,Q=QD=0;GH=GJ=1,,,,223.81;Rf0a74ac8c5f8ed41,Ruby River O5 L3 Drainage:1322km2 AvgFlow:259cfs AvgPrecip:340mm AvgTemp:5C
+BRGP:RRBM,Ruby River below Reservoir near Alder  MT,45.2422,-112.11,Q=QD=0;GH=GJ=1,,,,903.3727;R643bdf29b5348841,Ruby River O5 L3 Drainage:1590km2 AvgFlow:217cfs AvgPrecip:357mm AvgTemp:5C
+BRGP:RRCM,Red Rock Creek above Lakes near Lakeview  MT,44.6169,-111.6558,Q=QD=0;GH=GJ=1,,,,967.7065;R3333a3c83bd6c841,Red Rock Creek O4 L3 Drainage:98km2 AvgFlow:71cfs AvgPrecip:532mm AvgTemp:2C
+BRGP:RUMT,Musselshell River at Roundup  MT,46.4167,-108.5667,Q=QD=0;GH=GJ=1,,,,915.0358;R0ad7bb7f49b1ea41,Halfbreed Creek O3 L4 Drainage:169km2 AvgFlow:1cfs AvgPrecip:340mm AvgTemp:8C
+BRGP:RVCY,Riverton Valley Diversion Canal WY,43.0264,-108.5058,QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,984.2047;R3f35e62a1519da41, 
+BRGP:RWABNE,Red Willow Creek above Hugh Butler Lake  NE,40.4014,-100.7792,Q=QD=0;GH=GJ=1,,,,520.6926;R508df76d784ddc41,Red Willow Creek O4 L5 Drainage:1369km2 AvgFlow:48cfs AvgPrecip:528mm AvgTemp:10C
+BRGP:SACO,Milk River near Saco  MT,48.5089,-107.2172,Q=QD=0;GH=GJ=1,,,,119.9795;Rf0a7921b454fe941,Milk River O6 L3 Drainage:40222km2 AvgFlow:368cfs AvgPrecip:298mm AvgTemp:6C
+BRGP:SAYR,North Fork Red River near Sayre OK,37.2847,-99.6217,Q=QD=0;GH=GJ=1,,,,900.9339;R7f6abcc3f71f9541,Bluff Creek O4 L4 Drainage:703km2 AvgFlow:28cfs AvgPrecip:618mm AvgTemp:13C
+BRGP:SCNE,Sheep Creek Diversion into Tristate Canal NE,41.9694,-103.9614,CH=CJ=1,,,,376.71;R3108dcf3b707db41, O3 L5 Drainage:984km2 AvgFlow:57cfs AvgPrecip:370mm AvgTemp:9C
+BRGP:SCWY,Shell Creek at Shell Wyoming,44.5645,-107.7128,Q=QD=0;GH=GJ=1,,,,508.1834;R871659d27a81bc41,Shell Creek O4 L5 Drainage:369km2 AvgFlow:160cfs AvgPrecip:434mm AvgTemp:7C
+BRGP:SDCM,Sun River Ditch Company MT,47.5,-111.9333,Q=QD=0;GH=GJ=1,,,,208.1428;R04569604169be941,Sun River O6 L3 Drainage:3362km2 AvgFlow:513cfs AvgPrecip:310mm AvgTemp:7C
+BRGP:SDWM,Sun River Ditch Company Wasteway into Muddy Creek  MT,47.568,-111.5556,CH=CJ=1,,,,593.5763;R83c0821ebdebdb41,Muddy Creek O4 L4 Drainage:653km2 AvgFlow:19cfs AvgPrecip:318mm AvgTemp:7C
+BRGP:SEDT,Seco Creek at Rowe Ranch near D'Hanis  TX,29.3706,-99.2875,GH=GJ=1,,,,83.3252;Rfa7e62878b1ce741,Seco Creek O3 L4 Drainage:430km2 AvgFlow:11cfs AvgPrecip:740mm AvgTemp:20C
+BRGP:SEUT,Seco Creek at Miller Ranch near Utopia  TX,29.5731,-99.4028,Q=QD=0;GH=GJ=1,,,,539.444;R0e2d527ee43bcb41,Seco Creek O3 L4 Drainage:133km2 AvgFlow:23cfs AvgPrecip:833mm AvgTemp:19C
+BRGP:SFKDIVCO,South Fork Diversion/Bypass  CO,39.2378,-106.5897,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1,,,,13.2;R6666a6aa15bfda41,South Fork Fryingpan River O1 L7 Drainage:45km2 AvgFlow:14cfs AvgPrecip:809mm AvgTemp:0C
+BRGP:SFKSM,South Fork Sun River near Augusta  MT,47.6333,-112.8667,Q=QD=0;GH=GJ=1,,,,488.3773;R713d4eafb114ea41,South Fork Sun River O5 L3 Drainage:646km2 AvgFlow:412cfs AvgPrecip:544mm AvgTemp:4C
+BRGP:SFOC,South Fork Owl Creek WY,43.6639,-108.7936,Q=QD=0;GH=GJ=1,,,,243.1419;Rbc7443b0c578e741,South Fork Owl Creek O4 L5 Drainage:342km2 AvgFlow:24cfs AvgPrecip:368mm AvgTemp:5C
+BRGP:SFOY,South Fork Owl Creek above Anchor Reservoir WY,43.6669,-108.855,Q=QD=0;GH=GJ=1,,,,919.622;R643b7baa3a15e141,South Fork Owl Creek O3 L5 Drainage:222km2 AvgFlow:57cfs AvgPrecip:441mm AvgTemp:4C
+BRGP:SFS,South Fork Shoshone River above Buffalo Bill Reservoir  WY,44.4192,-109.2572,Q=QD=0;GH=GJ=1,,,,130.0797;Rb07268bbb991a441,South Fork Shoshone River O5 L6 Drainage:1505km2 AvgFlow:581cfs AvgPrecip:266mm AvgTemp:6C
+BRGP:SFVY,South Fork Shoshone River near Valley  WY,44.2083,-109.5542,Q=QD=0;GH=GJ=1,,,,664.3576;R2731e80a065cdd41,South Fork Shoshone River O4 L6 Drainage:677km2 AvgFlow:388cfs AvgPrecip:421mm AvgTemp:5C
+BRGP:SHAM,North Fork Red River near Shamrock  TX,35.2642,-100.2414,Q=QD=0;GH=GJ=1,,,,894.162;R1d5aa448a3d6ab41,North Fork Red River O5 L2 Drainage:2901km2 AvgFlow:73cfs AvgPrecip:613mm AvgTemp:15C
+BRGP:SHER,Lake Sherburne  Swift Current Creek near Babb  MT,48.8283,-113.5211,Q=QD=0,,,,53.5354;R643bf7e745d0e741,Swiftcurrent Creek O3 L5 Drainage:173km2 AvgFlow:226cfs AvgPrecip:991mm AvgTemp:3C
+BRGP:SHR,Shadehill Reservoir  Grand River near Lemmon  SD,45.7533,-102.2033,Q=QD=0,,,,739.1817;Rd9ce777886bbe741, O1 L4 Drainage:2km2 AvgFlow:0cfs AvgPrecip:428mm AvgTemp:7C
+BRGP:SIDM,Yellowstone River near Sidney  MT,47.6783,-104.1561,Q=QD=0;GH=GJ=1,,,,116.3272;R7d3f7d507118e941,Yellowstone River O8 L3 Drainage:177171km2 AvgFlow:12484cfs AvgPrecip:360mm AvgTemp:6C
+BRGP:SIWY,North Platte River Above Seminoe Reservoir near Sinclair  WY,41.8722,-107.057,Q=QD=0;GH=GJ=1,,,,659.8433;Rc9762e8417b4c341,North Platte River O6 L4 Drainage:10925km2 AvgFlow:1361cfs AvgPrecip:264mm AvgTemp:6C
+BRGP:SMGM,Swift Current Creek at Many Glacier  MT,48.7992,-113.6558,Q=QD=0;GH=GJ=1,,,,911.5442;R643b9f5b8c78ed41,Swiftcurrent Creek O3 L5 Drainage:88km2 AvgFlow:148cfs AvgPrecip:1104mm AvgTemp:4C
+BRGP:SMIM,St. Mary Canal at Intake  near Babb  MT,48.8528,-113.4139,CH=CJ=1,,,,650.713;Rc976ee65a7e0dc41, O1 L6 Drainage:2km2 AvgFlow:1cfs AvgPrecip:717mm AvgTemp:4C
+BRGP:SMLM,Smith River below Eagle Creek near Fort Logan  MT,46.8281,-111.1914,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,831.5029;R27312007f3bcd341,Smith River O5 L3 Drainage:2681km2 AvgFlow:255cfs AvgPrecip:384mm AvgTemp:5C
+BRGP:SMTT,San Miguel Near Tilden  TX,28.5872,-98.5456,Q=QD=0;GH=GJ=1,,,,504.7327;R4e62b05d67dcb341,San Miguel Creek O4 L3 Drainage:2035km2 AvgFlow:48cfs AvgPrecip:660mm AvgTemp:22C
+BRGP:SNST,Sabinal River near Sabinal  TX,29.4908,-99.4925,Q=QD=0;GH=GJ=1,,,,319.8272;R560edd192aa7da41,Sabinal River O4 L3 Drainage:544km2 AvgFlow:85cfs AvgPrecip:785mm AvgTemp:20C
+BRGP:SNYD,Otter Creek near Snyder  OK,34.6378,-98.9981,Q=QD=0;GH=GJ=1,,,,315.3558;R022b0f79677fde41,Otter Creek O5 L3 Drainage:566km2 AvgFlow:24cfs AvgPrecip:763mm AvgTemp:16C
+BRGP:SPNE,Superior Canal  NE,40.0639,-98.3222,CH=CJ=1,,,,807.3604;Rf4fd104a4f17ef41,Republican River O7 L4 Drainage:51049km2 AvgFlow:202cfs AvgPrecip:690mm AvgTemp:11C
+BRGP:SRAM,Stillwater River near Absarokee  MT,45.5511,-109.3867,Q=QD=0;GH=GJ=1;WC=WC=3,,,,675.6315;R10587911ba73a541,Stillwater River O6 L4 Drainage:2448km2 AvgFlow:942cfs AvgPrecip:396mm AvgTemp:8C
+BRGP:SRBB,Shoshone River below Buffalo Bill Reservoir near Cody  WY,44.5167,-109.0972,Q=QD=0;GH=GJ=1,,,,767.8418;R022b4bbc8d49e241,Shoshone River O6 L5 Drainage:3923km2 AvgFlow:1200cfs AvgPrecip:296mm AvgTemp:7C
+BRGP:SRBD,Sun River Below Diversion Dam near Augusta MT,47.6183,-112.692,Q=QD=0;GH=GJ=1,,,,830.04;Rbe9f2a6d6b3ecd41,Sun River O5 L3 Drainage:1578km2 AvgFlow:902cfs AvgPrecip:465mm AvgTemp:5C
+BRGP:SRBM,Sun River at Augusta Bridge  MT,47.5469,-112.3672,Q=QD=0;GH=GJ=1,,,,42.6542;R83c04a69c524a541,Sun River O6 L3 Drainage:2118km2 AvgFlow:913cfs AvgPrecip:350mm AvgTemp:7C
+BRGP:SRDM,Sun River Diversion Dam  MT,47.6208,-112.7067,Q=QD=0;QC=QJ=0;GH=GJ=1,,,,875.8342;R621068e28758e141,Sun River O5 L3 Drainage:1554km2 AvgFlow:898cfs AvgPrecip:453mm AvgTemp:5C
+BRGP:SREM,Sun River below Elk Creek  MT,47.5067,-112.2819,GH=GJ=1,,,,217.8255;R4a0ca27615bdc641,Sun River O6 L3 Drainage:2784km2 AvgFlow:972cfs AvgPrecip:340mm AvgTemp:7C
+BRGP:SRLM,Shields River near Livingston  MT,45.7383,-110.4792,Q=QD=0;GH=GJ=1,,,,585.1354;R5c8fea4f0a60da41,Shields River O5 L4 Drainage:2199km2 AvgFlow:291cfs AvgPrecip:388mm AvgTemp:8C
+BRGP:SRLY,Shoshone River near Lovell  WY,44.8386,-108.4344,Q=QD=0;GH=GJ=1,,,,667.1679;Rba49bc414eaed541,Shoshone River O6 L5 Drainage:6308km2 AvgFlow:910cfs AvgPrecip:174mm AvgTemp:7C
+BRGP:SRSM,Sun River at Simms  MT,47.5017,-111.9322,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,11.048;R04569604169be941,Sun River O6 L3 Drainage:3362km2 AvgFlow:513cfs AvgPrecip:310mm AvgTemp:7C
+BRGP:SRST,Sabinal River at Sabinal  TX,29.3906,-99.4794,Q=QD=0;GH=GJ=1,,,,198.6823;R9643b7362fa9e941,Sabinal River O4 L3 Drainage:598km2 AvgFlow:89cfs AvgPrecip:694mm AvgTemp:20C
+BRGP:SRWY,Shoshone River at Willwood Dam  WY,44.6683,-108.9083,GH=GJ=1;CH=CJ=1,,,,676.8051;R27313ce62a11e241,Shoshone River O6 L5 Drainage:4785km2 AvgFlow:1014cfs AvgPrecip:225mm AvgTemp:7C
+BRGP:STMB,St. Mary River at International Boundary,49.0033,-113.3133,Q=QD=0;GH=GJ=1,,,,751.2799;R85ebb9e23629e141, 
+BRGP:STMC,St. Mary Canal at St. Mary crossing near Babb  MT,48.9472,-113.3744,QC=QJ=0;CH=CJ=1,,,,715.7538;R9a99b9ee6731e341,Saint Mary River O5 L4 Drainage:1023km2 AvgFlow:906cfs AvgPrecip:508mm AvgTemp:4C
+BRGP:SUCT,South Concho at Christoval  TX,31.1878,-100.5017,Q=QD=0;GH=GJ=1,,,,187.663;Rba4904f4e29fe041,South Concho River O4 L2 Drainage:1074km2 AvgFlow:49cfs AvgPrecip:560mm AvgTemp:18C
+BRGP:SUKT,Sweetwater Creek near Kelton  TX,35.4667,-100.1206,Q=QD=0;GH=GJ=1,,,,724.309;R378965824e02e841,Sweetwater Creek O3 L3 Drainage:779km2 AvgFlow:14cfs AvgPrecip:600mm AvgTemp:15C
+BRGP:SUTT,Spring Creek at Tankersley  TX,31.33,-100.64,GH=GJ=1,,,,932.2267;Re3a5435dda6fe041,Spring Creek O3 L3 Drainage:1088km2 AvgFlow:51cfs AvgPrecip:543mm AvgTemp:18C
+BRGP:SVCPLACO,St. Vrain Creek  near Platteville  CO,40.2581,-104.8792,Q=QD=0;GH=GJ=1,,,,678.7089;R6210682fae13cd41,Saint Vrain Creek O5 L4 Drainage:2527km2 AvgFlow:167cfs AvgPrecip:344mm AvgTemp:10C
+BRGP:SWNE,Stinking Water Creek at Palisade  NE,40.373,-101.1169,Q=QD=0;GH=GJ=1,,,,15.7254;Ra01a2f5eeaf7d941,Stinking Water Creek O4 L6 Drainage:2422km2 AvgFlow:77cfs AvgPrecip:538mm AvgTemp:10C
+BRGP:SWTR,Swift Reservoir  Birch Creek  MT,48.15,-112.8667,Q=QD=0,,,,951.4908;R713d1e3d8641e041,Swift Reservoir O3 L4 Drainage:128km2 AvgFlow:90cfs AvgPrecip:657mm AvgTemp:4C
+BRGP:SWWY,Sweetwater River Above Alcova  WY,42.4925,-107.1381,Q=QD=0;GH=GJ=1,,,,190.6224;Rb072fcce1434e741,Sweetwater River O5 L5 Drainage:6103km2 AvgFlow:189cfs AvgPrecip:265mm AvgTemp:7C
+BRGP:SXBM,St. Xavier Bridge near Hardin  MT,45.4608,-107.7486,Q=QD=0;GH=GJ=1,,,,879.3309;R986e76001768ee41,Rotten Grass Creek O3 L5 Drainage:415km2 AvgFlow:21cfs AvgPrecip:383mm AvgTemp:8C
+BRGP:TCEDNE,Turkey Creek at Edison  NE,40.2711,-99.7339,Q=QD=0;GH=GJ=1,,,,89.5027;R643b77213acbd541,Turkey Creek O4 L5 Drainage:209km2 AvgFlow:8cfs AvgPrecip:585mm AvgTemp:11C
+BRGP:TCNPNE,Turkey Creek at Naponee  NE,40.0778,-99.1403,Q=QD=0;GH=GJ=1,,,,227.7165;Rd9ce1388c7cceb41,Turkey Creek O4 L5 Drainage:388km2 AvgFlow:19cfs AvgPrecip:621mm AvgTemp:11C
+BRGP:TCPM,Tank Coulee near Power MT,48.0347,-112.3525,Q=QD=0;GH=GJ=1,,,,833.8645;R60e540c01cd7d241,Jones Creek O1 L6 Drainage:12km2 AvgFlow:0cfs AvgPrecip:376mm AvgTemp:5C
+BRGP:TCRVNE,Thompson Creek at Riverton  NE,40.0908,-98.7653,Q=QD=0;GH=GJ=1,,,,349.8216;Rfca96da32603ec41,Thompson Creek O4 L5 Drainage:648km2 AvgFlow:33cfs AvgPrecip:659mm AvgTemp:11C
+BRGP:TDNE,Tub Springs Diversion into Tri-State Canal NE,41.9333,-103.6869,CH=CJ=1,,,,226.9797;R14ae1f5c2117ef41, O1 L6 Drainage:6km2 AvgFlow:0cfs AvgPrecip:352mm AvgTemp:9C
+BRGP:TETM,Teton River near Dutton  MT,47.9303,-111.552,Q=QD=0;GH=GJ=1,,,,236.9369;Rcba1693989c9e141,Teton River O5 L4 Drainage:3116km2 AvgFlow:367cfs AvgPrecip:305mm AvgTemp:7C
+BRGP:TFMT,Jefferson River near Three Forks  MT,45.8978,-111.5958,Q=QD=0;GH=GJ=1;WC=WC=3,,,,980.7814;R3d0a833b095bef41,Jefferson River O7 L2 Drainage:24466km2 AvgFlow:2607cfs AvgPrecip:300mm AvgTemp:7C
+BRGP:TFOM,Teton River below Freeze Out Reservoir  MT,47.8114,-112.0886,Q=QD=0;GH=GJ=1,,,,626.6691;Rf628fc57aef2e841,Teton River O4 L4 Drainage:1314km2 AvgFlow:299cfs AvgPrecip:325mm AvgTemp:7C
+BRGP:TFWY,Tie Down Flats Canal WY,43.8594,-108.1328,QC=QJ=0,,,,373.148;Rd1229f901ac1ee41,Bighorn River O7 L4 Drainage:24384km2 AvgFlow:1586cfs AvgPrecip:252mm AvgTemp:8C
+BRGP:TLBM,Two Leggins Bridge near Hardin  MT,45.6442,-107.6575,Q=QD=0;GH=GJ=1,,,,895.9422;R9a99097551a6c441,Two Leggins Creek O3 L5 Drainage:135km2 AvgFlow:4cfs AvgPrecip:343mm AvgTemp:9C
+BRGP:TMRM,Two Medicine River below South Fork near Browning  MT,48.4267,-112.9889,GH=GJ=1,,,,980.6997;Rb81ea5ad1187ed41,Two Medicine River O5 L3 Drainage:633km2 AvgFlow:432cfs AvgPrecip:478mm AvgTemp:5C
+BRGP:TOMT,Missouri River near Toston  MT,46.1461,-111.4197,Q=QD=0;GH=GJ=1;WC=WC=3,,,,40.4385;R1058e1f876e7e241,Missouri River O7 L2 Drainage:37586km2 AvgFlow:5312cfs AvgPrecip:328mm AvgTemp:7C
+BRGP:TRCM,Teton River below South Fork  near Choteau  MT,47.883,-112.6111,Q=QD=0;GH=GJ=1,,,,17.917;Ra470b99fc1c5eb41,Teton River O3 L4 Drainage:304km2 AvgFlow:190cfs AvgPrecip:498mm AvgTemp:4C
+BRGP:TRDM,Tongue River at Tongue River Dam near Decker MT,45.1414,-106.7708,Q=QD=0;GH=GJ=1,,,,854.6256;Rcba11d8dd123e641,Tongue River O5 L4 Drainage:4625km2 AvgFlow:445cfs AvgPrecip:350mm AvgTemp:7C
+BRGP:TRLM,Teton River at Loma  MT,47.9325,-111.5636,Q=QD=0;GH=GJ=1;WC=WC=3,,,,752.6622;R3bdf3fde7210c141,Teton River O5 L4 Drainage:3151km2 AvgFlow:368cfs AvgPrecip:305mm AvgTemp:7C
+BRGP:TRMT,Tongue River at State Line  near Decker  MT,45.0089,-106.8356,Q=QD=0;GH=GJ=1,,,,23.788;R4a0c22b3205ce941,Tongue River O5 L4 Drainage:3762km2 AvgFlow:450cfs AvgPrecip:301mm AvgTemp:7C
+BRGP:TSNE,Tristate Dam NE,41.9844,-104.0311,CH=CJ=1,,,,967.2209;R508d97bc74ec8941, O7 L6 Drainage:55217km2 AvgFlow:0cfs AvgPrecip:373mm AvgTemp:9C
+BRGP:TWITUNCO,Twin Lakes Tunnel  CO,39.0822,-106.54,Q=QD=0;GH=GJ=1,,,,69.2951;Rf8531342a782ca41,North Fork Lake Creek O2 L4 Drainage:61km2 AvgFlow:71cfs AvgPrecip:675mm AvgTemp:0C
+BRGP:UHWY,Upper Hanover Canal WY,43.8533,-108.175,QC=QJ=0;CH=CJ=1,,,,524.5278;R068191fd17bde241,Bighorn River O7 L4 Drainage:23271km2 AvgFlow:1561cfs AvgPrecip:291mm AvgTemp:8C
+BRGP:ULGE,Missouri River near Ulm  MT,47.435,-111.3853,Q=QD=0;GH=GJ=1,,,,167.9567;Re3a593c6fe1ee641,Missouri River O7 L2 Drainage:53049km2 AvgFlow:6544cfs AvgPrecip:393mm AvgTemp:7C
+BRGP:UWAY,Upper Wind River A Canal at Headworks WY,43.4083,-109.3125,CH=CJ=1,,,,826.5637;R894160adfc0edd41, O1 L5 Drainage:7km2 AvgFlow:0cfs AvgPrecip:235mm AvgTemp:6C
+BRGP:VAMT,Sun River near Vaughn  MT,47.5269,-111.4847,Q=QD=0;GH=GJ=1;WC=WC=3,,,,770.2851;R6891858c95efef41,Sun River O6 L3 Drainage:4642km2 AvgFlow:655cfs AvgPrecip:360mm AvgTemp:7C
+BRGP:VIMT,Missouri River near Virgelle  MT,48.0039,-110.2553,Q=QD=0;GH=GJ=1,,,,477.9428;Rba496c6d815cdb41,Missouri River O7 L2 Drainage:85882km2 AvgFlow:8795cfs AvgPrecip:331mm AvgTemp:7C
+BRGP:VNMT,Big Dry Creek near Van Normon  MT,47.3333,-106.35,Q=QD=0;GH=GJ=1,,,,965.5533;R643baff1350ccf41, O2 L5 Drainage:18km2 AvgFlow:0cfs AvgPrecip:320mm AvgTemp:7C
+BRGP:WASCH,Washita River near Cheyenne  OK,35.6264,-99.668,GH=GJ=1,,,,820.2024;R9eef6f22e6f4d441,Washita River O4 L2 Drainage:2018km2 AvgFlow:21cfs AvgPrecip:655mm AvgTemp:15C
+BRGP:WCFM,Willow Creek Feeder Canal  MT,47.5444,-112.4278,QC=QJ=0;CH=CJ=1,,,,317.6833;R426055a13d09d241,Willow Creek O5 L4 Drainage:278km2 AvgFlow:39cfs AvgPrecip:363mm AvgTemp:6C
+BRGP:WCNE,Winters Creek Reservoir  NE,41.9575,-103.5322,CH=CJ=1,,,,889.5608;R1d5a340afb4de041,Winters Creek O2 L5 Drainage:74km2 AvgFlow:3cfs AvgPrecip:387mm AvgTemp:9C
+BRGP:WCR,Willow Creek Reservoir  Willow Creek near Augusta  MT,47.5467,-112.4292,Q=QD=0;GH=GJ=1,,,,45.9272;R426055a13d09d241,Willow Creek O5 L4 Drainage:278km2 AvgFlow:39cfs AvgPrecip:363mm AvgTemp:6C
+BRGP:WDWY,Winchester Ditch WY,43.2317,-109.0256,CH=CJ=1,,,,872.3277;R9a99b1662a96ec41, O1 L5 Drainage:0km2 AvgFlow:0cfs AvgPrecip:248mm AvgTemp:6C
+BRGP:WHWY,North Platte River below Whalen Dam  near Guernsey  WY,42.2405,-104.6269,Q=QD=0;GH=GJ=1,,,,875.6695;R54e301908cdde041,North Platte River O7 L4 Drainage:40558km2 AvgFlow:1641cfs AvgPrecip:343mm AvgTemp:9C
+BRGP:WILCANCO,Willow Creek Pump Canal  CO,40.1442,-105.9028,QC=QJ=0;CH=CJ=1
+BRGP:WILWCRCO,Willow Creek below Willow Creek Reservoir  CO,40.1458,-105.94,Q=QD=0;GH=GJ=1,,,,539.9489;R8fc2f512b1727841,Willow Creek O3 L5 Drainage:341km2 AvgFlow:97cfs AvgPrecip:393mm AvgTemp:3C
+BRGP:WINBYPCO,Wind River bypass at East Postal near Estes Park CO,40.3272,-105.5814,Q=QD=0;GH=GJ=1,,,,25.9343;Rc520d0bbbbe2c641,Wind River O1 L6 Drainage:14km2 AvgFlow:11cfs AvgPrecip:774mm AvgTemp:2C
+BRGP:WINDESCO,Wind River nr Estes Park CO,40.3272,-105.5819,Q=QD=0;GH=GJ=1,,,,56.4913;Rc520d0bbbbe2c641,Wind River O1 L6 Drainage:14km2 AvgFlow:11cfs AvgPrecip:774mm AvgTemp:2C
+BRGP:WISM,Big Hole River below Big Lake Creek  at Wisdom  MT,45.6186,-113.4569,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,902.3376;R62105c418d50e841,Big Hole River O5 L3 Drainage:1272km2 AvgFlow:353cfs AvgPrecip:311mm AvgTemp:3C
+BRGP:WPMT,Missouri River near Wolf Point  MT,48.0658,-105.5367,Q=QD=0;GH=GJ=1,,,,848.0069;R68918574dff4e141,Missouri River O8 L2 Drainage:203947km2 AvgFlow:10782cfs AvgPrecip:333mm AvgTemp:6C
+BRGP:WRBD,Wind River below Boysen Reservoir near Thermopolis WY,43.425,-108.1783,Q=QD=0;GH=GJ=1,,,,953.9214;R7b14aeac6836b141,Wind River O7 L4 Drainage:19954km2 AvgFlow:1563cfs AvgPrecip:239mm AvgTemp:8C
+BRGP:WRCH,Wind River near Crowheart  WY,43.2425,-109.0097,Q=QD=0;GH=GJ=1,,,,25.3669;R96435bee2b54e541,Wind River O6 L4 Drainage:4909km2 AvgFlow:1209cfs AvgPrecip:249mm AvgTemp:6C
+BRGP:WRDY,Wind River Above Red Creek near Dubois  WY,43.4417,-109.4581,Q=QD=0;GH=GJ=1,,,,913.3061;Rf4fdf48376bac641,Wind River O6 L4 Drainage:2806km2 AvgFlow:688cfs AvgPrecip:262mm AvgTemp:5C
+BRGP:WRKY,Wind River near Kinnear  WY,43.1428,-108.7089,Q=QD=0;GH=GJ=1,,,,41.4188;Rf2d2cdc89ae2a841,Wind River O6 L4 Drainage:5755km2 AvgFlow:1207cfs AvgPrecip:232mm AvgTemp:7C
+BRGP:WRND,Wind River near Dubois  WY,43.5786,-109.7592,Q=QD=0;GH=GJ=1,,,,604.9413;R1283c0a351948441,Wind River O5 L4 Drainage:578km2 AvgFlow:229cfs AvgPrecip:319mm AvgTemp:3C
+BRGP:WRNE,Winters Creek Reservoir (Outflow) NE,41.9581,-103.5011,CH=CJ=1,,
+BRGP:WRRY,Wind River at Riverton  WY,43.0106,-108.3756,Q=QD=0;GH=GJ=1,,,,465.4371;Rf853a3c8fe25a741,Wind River O6 L4 Drainage:5985km2 AvgFlow:1208cfs AvgPrecip:213mm AvgTemp:7C
+BRGP:WRSH,Sweetwater  OK,35.4222,-99.9689,Q=QD=0;GH=GJ=1,,,,728.3356;R5a648395a7ebde41,Sweetwater Creek O3 L3 Drainage:1090km2 AvgFlow:17cfs AvgPrecip:599mm AvgTemp:15C
+BRGP:WRWD,Wind River below WYoming Diversion Dam WY,43.1922,-108.8083,Q=QD=0;GH=GJ=1,,,,423.9198;R355e720e9454eb41,Wind River O6 L4 Drainage:5637km2 AvgFlow:1207cfs AvgPrecip:234mm AvgTemp:6C
+BRGP:WSNE,Wet Spotted Tail Diversion into Tri-State Canal NE,41.9861,-103.8011,CH=CJ=1,,,,43.1002;R96437feef109ec41,Spottedtail Creek O2 L6 Drainage:148km2 AvgFlow:5cfs AvgPrecip:359mm AvgTemp:9C
+BRGP:WURDITCO,Wurtz near Tennessee Pass  CO,39.3542,-106.3525,Q=QD=0;GH=GJ=1,,,,834.1871;Rc3f5187be0fbd541,North Fork West Tennessee Creek O2 L4 Drainage:8km2 AvgFlow:13cfs AvgPrecip:514mm AvgTemp:0C
+BRGP:WYCY,Wyoming Canal 1/4 Mile below Diversion Dam WY,43.2317,-108.9483,QC=QJ=0;CH=CJ=1,,,,498.4964;R77be07e2596de241, O1 L5 Drainage:7km2 AvgFlow:0cfs AvgPrecip:241mm AvgTemp:6C
+BRGP:YRCM,Yellowstone River at Corwin Springs  MT,45.1119,-110.7936,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,279.7143;Rcdccd028e8c0e441,Yellowstone River O6 L3 Drainage:6754km2 AvgFlow:3144cfs AvgPrecip:338mm AvgTemp:5C
+BRGP:YRFM,Yellowstone River at Forsyth  MT,46.2661,-106.69,Q=QD=0;GH=GJ=1,,,,489.5311;R39b4f8262977e841,Yellowstone River O8 L3 Drainage:102184km2 AvgFlow:12058cfs AvgPrecip:347mm AvgTemp:8C
+BRGP:YRGM,Yellowstone River near Glendive  MT,47.1,-104.7167,GH=GJ=1,,,,330.8889;Rb4c882669123e541,Yellowstone River O8 L3 Drainage:170991km2 AvgFlow:12797cfs AvgPrecip:343mm AvgTemp:7C
+BRGP:YRLM,Yellowstone River near Livingston  MT,45.5972,-110.5653,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,925.8184;Rc52000698bafce41,Yellowstone River O6 L3 Drainage:9193km2 AvgFlow:4331cfs AvgPrecip:756mm AvgTemp:1C
+BRGP:ZURICHMT,Zurich Irr. District Canal near Zurich MT,48.5989,-109.1661,QC=QJ=0;CH=CJ=1;WF=WF=2;WC=WC=3,,,,758.7504;Rcdcc74f07507e941, O1 L5 Drainage:6km2 AvgFlow:0cfs AvgPrecip:329mm AvgTemp:6C

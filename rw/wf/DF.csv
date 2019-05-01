@@ -1,0 +1,603 @@
+id,desc,lat,lng,modes,extra,equiv
+DF:1,Smith At Jedediah Smith,41.79111,-124.07616,001,,,,630.1686;Ra8c6f39dff7ce741,Smith River O5 L1 Drainage:1689km2 AvgFlow:5194cfs AvgPrecip:2120mm AvgTemp:13C
+DF:10,Trinity At Hoopa,41.0498,-123.6737,010,,,,492.971;R621038e6a060cc41,Trinity River O6 L2 Drainage:7444km2 AvgFlow:5017cfs AvgPrecip:1492mm AvgTemp:14C
+DF:100,Kings At Rodgers Crossing,36.8633,-119.1233,100,,,,352.9739;Raaf13a2bc45edc41,Kings River O6 L4 Drainage:2458km2 AvgFlow:1200cfs AvgPrecip:635mm AvgTemp:16C
+DF:101,Kings Rel Pine Flat Lake,36.8307,-119.3352,101,,COESPK:PNFO,,881.1196;R2db24d75a119dc41,Kings River O6 L4 Drainage:3999km2 AvgFlow:1913cfs AvgPrecip:516mm AvgTemp:17C
+DF:102,Kaweah Inflow Terminus Res,36.4170,-119.0025,102,,,,993.7273;Ra24516b1744bbb41,Kaweah River O5 L5 Drainage:1454km2 AvgFlow:624cfs AvgPrecip:351mm AvgTemp:17C
+DF:103,Kaweah At Three Rivers,36.44397,-118.90383,103,,COESPK:TRM2,,847.58;R00009073f63be841,Kaweah River O5 L5 Drainage:1088km2 AvgFlow:565cfs AvgPrecip:506mm AvgTemp:17C
+DF:104,No. Kern At Kernville,35.7538,-118.42339,104,,COESPK:ISB1,,533.364;Ra69b8cda9b48db41,Kern River O5 L4 Drainage:2619km2 AvgFlow:814cfs AvgPrecip:306mm AvgTemp:16C
+DF:105,Kern Rel Lake Isabella,35.58606,-118.52527,105,,,,843.8733;R7b144e783d9fbb41,Kern River O6 L4 Drainage:5148km2 AvgFlow:592cfs AvgPrecip:313mm AvgTemp:16C
+DF:106,Truckee Below Lake Tahoe,39.16720,-120.14385,106,,,,873.3167;R6f12efa74ac2e341,Truckee River O4 L4 Drainage:1332km2 AvgFlow:249cfs AvgPrecip:922mm AvgTemp:6C
+DF:107,Grande Ronde Near Perry,45.35269,-118.18437,107,,,,879.6357;R0681a54401dee241,Grande Ronde River O5 L4 Drainage:1736km2 AvgFlow:414cfs AvgPrecip:539mm AvgTemp:8C
+DF:108,E. Fk Carson Near Gardnerville,38.84497,-119.70623,108,,,,791.0552;Rdbf9fec18914b141,Indian Creek O3 L5 Drainage:67km2 AvgFlow:14cfs AvgPrecip:355mm AvgTemp:9C
+DF:109,West Walker At Walker,38.5160,-119.4550,109,,CDEC:CVL,,609.222;Rcdcc545f43a0ec41,West Walker River O5 L5 Drainage:589km2 AvgFlow:299cfs AvgPrecip:313mm AvgTemp:7C
+DF:11,No. Trinity At Helena,40.78197,-123.12837,011,,,,652.5528;Rfca9617466efdd41,East Fork North Fork Trinity River O3 L4 Drainage:111km2 AvgFlow:84cfs AvgPrecip:998mm AvgTemp:12C
+DF:111,No. Mokelumne Salt Springs Inflow,38.4985,-120.2144,111,,,,873.3209;R83c0ba8a6240c641, O1 L3 Drainage:2km2 AvgFlow:2cfs AvgPrecip:1316mm AvgTemp:10C
+DF:112,So. San Joaquin Below Florence Lake,37.27504,-118.96623,112,,,,769.5614;R6891d593dd8ce341, O1 L3 Drainage:10km2 AvgFlow:9cfs AvgPrecip:876mm AvgTemp:5C
+DF:113,Eel Below Outlet Creek,39.68900,-123.35907,113,,,,636.9721;R508d6fe8ea20e341,Eel River O6 L1 Drainage:1836km2 AvgFlow:1153cfs AvgPrecip:1307mm AvgTemp:14C
+DF:114,So. Eel At Miranda,40.1817,-123.7761,114,,,,989.2061;R9a99fdfd8e0ce441,Williams Creek O1 L3 Drainage:2km2 AvgFlow:3cfs AvgPrecip:1480mm AvgTemp:14C
+DF:115,Noyo River Below South Fork,39.4283,-123.7367,115,,,,932.7334;R8b6c97fcdd63ec41,Noyo River O4 L1 Drainage:201km2 AvgFlow:162cfs AvgPrecip:1184mm AvgTemp:12C
+DF:116,Sacramento At Vina-Woodson Bridge,39.9089,-122.0911,116,,,,857.0307;R583968861d79eb41,Sacramento River O7 L1 Drainage:26160km2 AvgFlow:15075cfs AvgPrecip:575mm AvgTemp:17C
+DF:117,Big Sulphur Cr Near Cloverdale,38.8261,-122.9958,117,,,,510.2208;R643be7c91173e241,Big Sulphur Creek O4 L2 Drainage:222km2 AvgFlow:182cfs AvgPrecip:1083mm AvgTemp:15C
+DF:118,San Lorenzo At Santa Cruz,36.9908,-122.0308,118,,,,47.1396;Rd9cec702bca9ef41,San Lorenzo River O4 L1 Drainage:297km2 AvgFlow:134cfs AvgPrecip:920mm AvgTemp:14C
+DF:119,Sauk Above White Chuck River,48.16863,-121.47079,119,,USGS:12186000,,604.3784;Rbe9f1a9251bcee41,Sauk River O4 L2 Drainage:397km2 AvgFlow:1130cfs AvgPrecip:2550mm AvgTemp:8C
+DF:12,New River At Denny,40.94580,-123.38364,012,,,,907.2945;R91ed4ca8dbccc141,New River O4 L3 Drainage:454km2 AvgFlow:522cfs AvgPrecip:1300mm AvgTemp:13C
+DF:120,Sauk Near Sauk,48.4247,-121.5672,120,,USGS:12189500,,40.5079;Ra47011da5670ef41,Sauk River O5 L2 Drainage:1859km2 AvgFlow:4422cfs AvgPrecip:2233mm AvgTemp:9C
+DF:121,Elder Creek At Lowrey Road,40.02400,-122.51172,121,,,,7.1114;Re3a52b304fb3e841,Elder Creek O4 L2 Drainage:244km2 AvgFlow:108cfs AvgPrecip:687mm AvgTemp:17C
+DF:122,Antelope Creek Above Cone Grove Rd,40.2026,-122.1273,122,,,,31.4241;Rba49cc980c16c641,Antelope Creek O4 L3 Drainage:321km2 AvgFlow:150cfs AvgPrecip:845mm AvgTemp:16C
+DF:123,Butte Creek Near Chico,39.7260,-121.7089,123,,USGS:11390000,,34.6626;R355e7635709fe741,Butte Creek O4 L2 Drainage:391km2 AvgFlow:436cfs AvgPrecip:852mm AvgTemp:16C
+DF:124,Deer Creek Near Smartville,39.22484,-121.26794,124,,USGS:11418500,,561.8843;Ra8c6cb76b6f8b041,Deer Creek O4 L4 Drainage:214km2 AvgFlow:172cfs AvgPrecip:894mm AvgTemp:16C
+DF:125,Mi. Eel Near Dos Rios,39.7064,-123.3242,125,,USGS:11473900,,895.2678;R5c8f8a038379d841,Middle Fork Eel River O6 L2 Drainage:1938km2 AvgFlow:1524cfs AvgPrecip:1303mm AvgTemp:14C
+DF:126,Colorado In Cataract Canyon,38.1800,-109.8955,126,,,,499.22;R1b2fc1fc2714e641,Colorado River O8 L4 Drainage:182133km2 AvgFlow:13585cfs AvgPrecip:211mm AvgTemp:13C
+DF:127,E. Fk Carson Near Markleeville,38.71472,-119.76503,127,,,,908.9687;Rae4751e74c0cc641,East Fork Carson River O5 L4 Drainage:725km2 AvgFlow:539cfs AvgPrecip:651mm AvgTemp:8C
+DF:128,San Lorenzo At Felton,37.04469,-122.07231,128,,,,834.3639;Re5d002ba1dc5c941,San Lorenzo River O4 L1 Drainage:203km2 AvgFlow:106cfs AvgPrecip:1131mm AvgTemp:15C
+DF:129,Sultan Below Powerplant,47.90767,-121.81563,129,,USGS:12138160,,387.5638;R12833473f2f5e941,Sultan River O3 L2 Drainage:261km2 AvgFlow:780cfs AvgPrecip:1485mm AvgTemp:10C
+DF:13,Hayfork Creek At Hyampom,40.6261,-123.4336,013,,,,2.8555;R4a0c661a9d62ec41,Hayfork Creek O4 L4 Drainage:982km2 AvgFlow:681cfs AvgPrecip:1249mm AvgTemp:13C
+DF:130,Tuolumne Below Early Intake,37.88156,-119.97083,130,,USGS:11276900,,740.8593;R5839a4dc4184cc41,Tuolumne River O6 L2 Drainage:1869km2 AvgFlow:1047cfs AvgPrecip:1006mm AvgTemp:14C
+DF:131,Merced At Pohono Bridge,37.71645,-119.6656,131,,USGS:11266500,,675.5343;Ra01a7baf6d63ea41,Merced River O5 L2 Drainage:839km2 AvgFlow:671cfs AvgPrecip:1059mm AvgTemp:11C
+DF:132,Deer Creek Near Vina,40.01379,-121.94796,132,,,,715.8635;R3d0adfba43bcde41,Deer Creek O4 L2 Drainage:544km2 AvgFlow:341cfs AvgPrecip:772mm AvgTemp:16C
+DF:133,No. Stanislaus At Avery,38.24394,-120.29029,133,,,,352.9541;Rd7a3f8f31e6fe841,North Fork Stanislaus River O5 L3 Drainage:438km2 AvgFlow:46cfs AvgPrecip:1230mm AvgTemp:13C
+DF:134,Mi. Tuolumne Above SF Confluence,37.8283,-120.0106,134,,,,844.9532;R448bd05e8257e141,Middle Tuolumne River O3 L4 Drainage:186km2 AvgFlow:134cfs AvgPrecip:1020mm AvgTemp:13C
+DF:135,So. Tuolumne At Rainbow Pool,37.8217,-120.0119,135,,CDEC:STO,,973.1293;Rc1caa1e833e2ca41,Middle Tuolumne River O3 L4 Drainage:188km2 AvgFlow:87cfs AvgPrecip:929mm AvgTemp:13C
+DF:137,So. Snoqualmie Near Garcia,47.41489,-121.58719,137,,USGS:12143400,,901.9554;R6f12e3b79b8eb241,South Fork Snoqualmie River O3 L3 Drainage:103km2 AvgFlow:272cfs AvgPrecip:2593mm AvgTemp:7C
+DF:138,Calaveras Below New Hogan Dam,38.1485,-120.8245,138,,,,975.9119;Rd578c96a7dd5c041,Calaveras River O6 L2 Drainage:997km2 AvgFlow:233cfs AvgPrecip:549mm AvgTemp:16C
+DF:139,Merced At Red Bud,37.6698,-119.8174,139,,,,849.746;R58396c703a42ef41,Merced River O5 L2 Drainage:1019km2 AvgFlow:766cfs AvgPrecip:901mm AvgTemp:14C
+DF:14,So. Trinity Below Hyampom,40.6500,-123.4931,014,,,,745.3174;R39b47c45c9abee41,Mill Creek O1 L4 Drainage:6km2 AvgFlow:11cfs AvgPrecip:1669mm AvgTemp:11C
+DF:140,West Walker Below Little Walker River,38.37977,-119.45046,140,,USGS:10296000,,522.5075;R560e2d37f8529c41,West Walker River O5 L5 Drainage:489km2 AvgFlow:283cfs AvgPrecip:671mm AvgTemp:5C
+DF:142,Deschutes At Moody,45.6222,-120.9044,142,,USGS:14103000,,87.4858;R1f850b4e8ba6e041,Deschutes River O6 L2 Drainage:25189km2 AvgFlow:5988cfs AvgPrecip:333mm AvgTemp:11C
+DF:143,McKenzie Near Vida,44.1250,-122.4694,143,,,,946.4589;R448b5cb95379e941,McKenzie River O5 L3 Drainage:2334km2 AvgFlow:4590cfs AvgPrecip:1478mm AvgTemp:11C
+DF:144,Illinois Near Kerby,42.23122,-123.66310,144,,,,947.999;R105811476478e741,Illinois River O5 L2 Drainage:961km2 AvgFlow:1545cfs AvgPrecip:1607mm AvgTemp:12C
+DF:145,Rogue Near Agness,42.57873,-124.05916,145,,,,944.0827;R1f851f6e810be541,Rogue River O6 L1 Drainage:10188km2 AvgFlow:6490cfs AvgPrecip:2258mm AvgTemp:13C
+DF:146,Lochsa Near Lowell,46.1508,-115.5872,146,,,,982.3058;R713d42afebe8ec41,Lochsa River O5 L4 Drainage:3048km2 AvgFlow:3023cfs AvgPrecip:832mm AvgTemp:9C
+DF:147,Selway Near Lowell,46.0867,-115.5139,147,,,,607.1572;R560edddf02e6cb41,Selway River O6 L3 Drainage:5118km2 AvgFlow:3897cfs AvgPrecip:998mm AvgTemp:9C
+DF:148,Salmon At White Bird,45.7503,-116.3239,148,,,,746.2931;Rba498c86c0a8d941,Salmon River O7 L3 Drainage:33430km2 AvgFlow:12915cfs AvgPrecip:441mm AvgTemp:11C
+DF:149,Little Salmon At Riggins,45.4131,-116.3253,149,,,,928.0432;R9eef27249ac39e41,Little Salmon River O5 L4 Drainage:1494km2 AvgFlow:780cfs AvgPrecip:446mm AvgTemp:11C
+DF:15,Redwood Creek At Orick,41.2994,-124.0500,015,,,,35.6532;R333337cc44eee441,Redwood Creek O4 L1 Drainage:615km2 AvgFlow:865cfs AvgPrecip:1523mm AvgTemp:12C
+DF:150,No. Payette At Cascade,44.52468,-116.04591,150,,,,389.071;R508d97f15bc7b741,North Fork Payette River O6 L5 Drainage:1593km2 AvgFlow:1083cfs AvgPrecip:583mm AvgTemp:5C
+DF:151,So. Payette At Lowman,44.08498,-115.62262,151,,,,999.3583;R89410c81e867ef41,South Fork Payette River O4 L4 Drainage:1006km2 AvgFlow:677cfs AvgPrecip:676mm AvgTemp:7C
+DF:152,Snake Near Irwin,43.3508,-111.2189,152,,,,792.7018;Rcff7b37c5d87c941,Snake River O6 L2 Drainage:13190km2 AvgFlow:6518cfs AvgPrecip:535mm AvgTemp:6C
+DF:153,Snake At Milner Total Flow,42.50000,-114.15394,153,,,,658.1761;Rdf4fb1870082e741,Snake River O7 L2 Drainage:44122km2 AvgFlow:4052cfs AvgPrecip:266mm AvgTemp:9C
+DF:154,Rio Grande Below Taos Junction Br,36.3200,-105.7544,154,,,,117.8837;R8fc2856170d0dc41,Rio Grande O6 L1 Drainage:16731km2 AvgFlow:1271cfs AvgPrecip:325mm AvgTemp:9C
+DF:155,Colorado Near Cisco,38.8106,-109.2928,155,,USGS:09180500,,65.874;R5eba891bb121c641,Colorado River O7 L4 Drainage:61945km2 AvgFlow:7361cfs AvgPrecip:253mm AvgTemp:12C
+DF:156,Green Near Jensen,40.4094,-109.2347,156,,,,766.4169;R23db991d3329bd41,Green River O8 L5 Drainage:65023km2 AvgFlow:4476cfs AvgPrecip:230mm AvgTemp:9C
+DF:157,Green At Green River,38.9861,-110.1506,157,,USGS:09315000,,719.014;R560e09b73d72eb41,Green River O8 L5 Drainage:104531km2 AvgFlow:5950cfs AvgPrecip:189mm AvgTemp:12C
+DF:158,McCloud Below McCloud Dam,41.1223,-122.0642,158,,,,960.9896;R4e6268a66ea6e941,McCloud River O5 L3 Drainage:1052km2 AvgFlow:1025cfs AvgPrecip:1501mm AvgTemp:12C
+DF:159,Colorado Near Lees Ferry,36.8647,-111.5875,159,,USGS:09380000,,869.8954;Rc3f5201c8178d541,Colorado River O8 L4 Drainage:276438km2 AvgFlow:14730cfs AvgPrecip:167mm AvgTemp:16C
+DF:160,Battle Creek At Coleman Fish Hatchery,40.3982,-122.1464,160,,,,18.2714;Rb29def3c652d8641,Battle Creek O5 L2 Drainage:935km2 AvgFlow:517cfs AvgPrecip:736mm AvgTemp:16C
+DF:161,Owyhee Near Rome,42.8664,-117.6492,161,,,,771.4573;Ra69b881d8d87ec41,Owyhee River O7 L3 Drainage:16159km2 AvgFlow:742cfs AvgPrecip:221mm AvgTemp:10C
+DF:162,No. Smith At Gasquet,41.85534,-123.96986,162,,,,846.0415;R560e112884aeed41, O4 L2 Drainage:381km2 AvgFlow:832cfs AvgPrecip:2654mm AvgTemp:12C
+DF:163,Mi. Smith At Gasquet,41.84712,-123.96677,163,,,,913.2036;R9a995d5540ffed41, O4 L2 Drainage:408km2 AvgFlow:883cfs AvgPrecip:2514mm AvgTemp:12C
+DF:164,So. Smith Near Hiouchi,41.7917,-124.0250,164,,,,251.751;Rc1ca31e2c25ce241,South Fork Smith River O4 L2 Drainage:706km2 AvgFlow:1314cfs AvgPrecip:2435mm AvgTemp:12C
+DF:165,Truckee Near Floriston,39.42794,-120.03381,165,,,,920.7203;Rc97686568117ed41,Truckee River O5 L4 Drainage:2432km2 AvgFlow:816cfs AvgPrecip:658mm AvgTemp:8C
+DF:167,No. Kings Below Dinkey Creek,36.8797,-119.1278,167,,USGS:11218400,,752.7005;Ra2459682983be441,North Fork Kings River O5 L5 Drainage:1002km2 AvgFlow:341cfs AvgPrecip:597mm AvgTemp:17C
+DF:168,Deschutes At Benham Falls,43.9303,-121.4108,168,,,,572.0858;Rf4fde416751ed741,Deschutes River O5 L2 Drainage:3608km2 AvgFlow:1279cfs AvgPrecip:496mm AvgTemp:7C
+DF:169,Bruneau Near Hot Springs,42.7711,-115.7203,169,,,,567.8645;Rc3f5bc102578ea41,Bruneau River O6 L3 Drainage:6985km2 AvgFlow:403cfs AvgPrecip:237mm AvgTemp:11C
+DF:17,Mad River At Arcata,40.9099,-124.0606,017,,,,18.1619;R689125a3dd16e141,Mad River O4 L1 Drainage:1259km2 AvgFlow:1351cfs AvgPrecip:1218mm AvgTemp:12C
+DF:170,San Joaquin Inflow Millerton Lake,37.0005,-119.7040,170,,COESPK:MILO,,530.7182;R6abc5824f2b7ec41,San Joaquin River O5 L1 Drainage:4238km2 AvgFlow:234cfs AvgPrecip:396mm AvgTemp:17C
+DF:171,No. Clearwater Near Canyon Ranger Stn,46.8406,-115.6211,171,,,,408.5301;Rb4c802be98b8e041,North Fork Clearwater River O5 L4 Drainage:3358km2 AvgFlow:3764cfs AvgPrecip:965mm AvgTemp:8C
+DF:172,So. Clearwater At Stites,46.08640,-115.97647,172,,,,977.5062;Rb6f36d494051e541,South Fork Clearwater River O5 L4 Drainage:3036km2 AvgFlow:1033cfs AvgPrecip:640mm AvgTemp:10C
+DF:173,Highland Creek Near No. Stan Confluence,38.39055,-120.00074,173,,,,859.3878;R00008cb1e3ede941,Highland Creek O4 L4 Drainage:121km2 AvgFlow:154cfs AvgPrecip:1158mm AvgTemp:7C
+DF:174,No. Yuba At Sierra City,39.5625,-120.6583,174,,,,814.6281;Ra470f9450534e341, O2 L4 Drainage:4km2 AvgFlow:8cfs AvgPrecip:1729mm AvgTemp:10C
+DF:175,No. Kaweah At Kaweah,36.49080,-118.92147,175,,,,884.413;R9eefa7951d0ba641,North Fork Kaweah River O4 L6 Drainage:329km2 AvgFlow:169cfs AvgPrecip:616mm AvgTemp:17C
+DF:176,Coffee Creek Above Trinity River,41.09294,-122.75440,176,,,,138.9773;R713dce7177c2e441,Coffee Creek O4 L3 Drainage:275km2 AvgFlow:310cfs AvgPrecip:1721mm AvgTemp:10C
+DF:177,Trinity Above Coffee Creek,41.1114,-122.7044,177,,,,346.9458;R6f120b00b22cd041,Trinity River O4 L2 Drainage:379km2 AvgFlow:385cfs AvgPrecip:1527mm AvgTemp:11C
+DF:178,Navarro Near Navarro,39.1706,-123.6669,178,,,,986.2705;R2731d86f6151c541,Navarro River O5 L1 Drainage:794km2 AvgFlow:513cfs AvgPrecip:1128mm AvgTemp:13C
+DF:179,Jarbidge Below Jarbidge,41.89046,-115.42894,179,,,,957.9485;R871639270021df41, O3 L4 Drainage:72km2 AvgFlow:39cfs AvgPrecip:647mm AvgTemp:5C
+DF:18,Van Duzen At Bridgeville,40.4806,-123.8897,018,,,,575.7555;Re7fbc9d9f6ddc341,Van Duzen River O4 L2 Drainage:570km2 AvgFlow:691cfs AvgPrecip:1458mm AvgTemp:13C
+DF:180,Elwha At McDonald Bridge,48.05475,-123.58361,180,,,,945.9229;Rdf4fcdc1e454dc41,Elwha River O4 L1 Drainage:693km2 AvgFlow:1877cfs AvgPrecip:1280mm AvgTemp:9C
+DF:181,So. Merced At Wawona,37.5389,-119.6611,181,,,,997.7314;R2fdd244377b68541, O1 L4 Drainage:2km2 AvgFlow:2cfs AvgPrecip:1096mm AvgTemp:12C
+DF:182,So. Merced At Hwy 140 Bridge,37.65138,-119.88556,182,,,,427.6053;R8941f8119d8fd041,Merced River O5 L2 Drainage:1713km2 AvgFlow:1146cfs AvgPrecip:770mm AvgTemp:15C
+DF:183,Upper Truckee At South Lake Tahoe,38.92235,-119.99070,183,,,,887.9104;Rf2d21d0164d2cd41,Upper Truckee River O3 L5 Drainage:138km2 AvgFlow:106cfs AvgPrecip:705mm AvgTemp:7C
+DF:184,So. American Below Kyburz,38.7637,-120.3272,184,,,,755.7672;R73680da2b1f5ef41,South Fork American River O4 L3 Drainage:490km2 AvgFlow:424cfs AvgPrecip:1425mm AvgTemp:11C
+DF:185,Eb. No. Feather Below Virgilia,40.0106,-121.2175,185,,,,856.7136;Ra01aef50664dd741,North Fork Feather River O6 L2 Drainage:4308km2 AvgFlow:834cfs AvgPrecip:1328mm AvgTemp:12C
+DF:186,No. Umpqua Below Steamboat Creek,43.3210,-122.8091,186,,,,801.5886;R31082c90af23e241,Bogus Creek O1 L3 Drainage:3km2 AvgFlow:3cfs AvgPrecip:1488mm AvgTemp:11C
+DF:187,Fall River Near Squirrel,44.0686,-111.2414,187,,,,452.117;R1904465300edcb41,Fall River O5 L4 Drainage:847km2 AvgFlow:678cfs AvgPrecip:558mm AvgTemp:4C
+DF:188,Henrys Fork Near Ashton,44.0697,-111.5106,188,,,,425.0989;R7d3f81a488d9e941,Henrys Fork O6 L3 Drainage:2849km2 AvgFlow:1759cfs AvgPrecip:412mm AvgTemp:5C
+DF:189,Payette Near Horseshoe Bend,43.9433,-116.1967,189,,,,518.9598;R068161dde45be041,Payette River O6 L4 Drainage:5696km2 AvgFlow:3361cfs AvgPrecip:481mm AvgTemp:10C
+DF:19,Tuolumne Above Early Intake,37.8794,-119.9461,019,,USGS:11276600,,31.3844;R7d3f410e0cbee241,Tuolumne River O5 L2 Drainage:1260km2 AvgFlow:432cfs AvgPrecip:936mm AvgTemp:13C
+DF:190,Deadwood Below Deadwood Dam,44.2919,-115.6419,190,,,,985.4398;R7593ecb0a2a1e441,Deadwood River O4 L5 Drainage:248km2 AvgFlow:181cfs AvgPrecip:806mm AvgTemp:4C
+DF:191,Teton Near St. Anthony,43.9272,-111.6139,191,,,,994.4534;R81958b2b21e4df41,Teton River O5 L4 Drainage:2242km2 AvgFlow:934cfs AvgPrecip:359mm AvgTemp:6C
+DF:192,So. Boise Below Anderson Ranch Dam,43.34351,-115.47721,192,,,,965.4891;R87164d3a0c3ce941, O1 L5 Drainage:1km2 AvgFlow:0cfs AvgPrecip:563mm AvgTemp:7C
+DF:193,Boise Near Twin Springs,43.66777,-115.72543,193,,,,985.2439;R52b8ba4f8381ee41,Boise River O5 L3 Drainage:2142km2 AvgFlow:1222cfs AvgPrecip:542mm AvgTemp:8C
+DF:194,Russian Near Healdsburg,38.6133,-122.8353,194,,,,956.6811;R5a6433d00ce4dd41,Russian River O5 L1 Drainage:2049km2 AvgFlow:1330cfs AvgPrecip:1054mm AvgTemp:15C
+DF:195,Sacramento At Bend Bridge,40.28862,-122.18714,195,,,,4.694;R3f358e1c3478e541,Sacramento River O7 L1 Drainage:21781km2 AvgFlow:13009cfs AvgPrecip:701mm AvgTemp:17C
+DF:196,Scott Near Fort Jones,41.6408,-123.0139,196,,,,432.8072;Rcff79368c05bc441,Scott River O5 L2 Drainage:1719km2 AvgFlow:641cfs AvgPrecip:638mm AvgTemp:12C
+DF:198,No. Salmon Near Forks of Salmon,41.2676,-123.30480,198,,,,757.1643;R1b2fd13e20efe541, O1 L5 Drainage:1km2 AvgFlow:1cfs AvgPrecip:1258mm AvgTemp:13C
+DF:2,Klamath J.C. Boyle Schedule,42.09275,-122.07214,002,,,,927.2731;R355eeaeeff0fc241,Klamath River O6 L1 Drainage:13854km2 AvgFlow:1569cfs AvgPrecip:573mm AvgTemp:8C
+DF:20,Eel Rel Lake Pillsbury,39.4081,-122.9703,020,,,,951.0278;Re5d0c2f34257cb41,Eel River O5 L1 Drainage:498km2 AvgFlow:434cfs AvgPrecip:1232mm AvgTemp:13C
+DF:200,No. Cottonwood Above Middle Fork,40.44193,-122.55072,200,,,,883.2079;R2506c1bfc327ef41, O3 L3 Drainage:247km2 AvgFlow:158cfs AvgPrecip:883mm AvgTemp:16C
+DF:201,Mi. Cottonwood Above North Fork,40.36717,-122.57241,201,,,,874.3183;R871609b83aceed41, O1 L3 Drainage:2km2 AvgFlow:1cfs AvgPrecip:864mm AvgTemp:16C
+DF:202,No. Mi. American At Mosquito Ridge Rd,39.0239,-120.7178,202,,,,260.2747;Ra470e5d6ffffe541,North Fork of Middle Fork American River O4 L4 Drainage:229km2 AvgFlow:258cfs AvgPrecip:1210mm AvgTemp:14C
+DF:203,Snake At Milner River Only,42.52810,-114.01733,203,,,,894.3916;R46b66fa0d528ee41,Snake River O7 L2 Drainage:44012km2 AvgFlow:6040cfs AvgPrecip:266mm AvgTemp:9C
+DF:206,Mi. Salmon At Middle Fork Lodge,44.72156,-115.01479,206,,,,804.434;Rb29daf8538e3e941,Middle Fork Salmon River O6 L4 Drainage:2726km2 AvgFlow:2004cfs AvgPrecip:493mm AvgTemp:6C
+DF:207,So. Umpqua At Tiller,42.9306,-122.9472,207,,,,530.6903;Rdf4f95ec2020d041,South Umpqua River O5 L1 Drainage:1391km2 AvgFlow:1190cfs AvgPrecip:1054mm AvgTemp:12C
+DF:208,Steamboat Creek Below Canton Creek,43.34917,-122.72897,208,,,,23.3558;R14ae4730d3d2a641,Steamboat Creek O4 L3 Drainage:424km2 AvgFlow:476cfs AvgPrecip:1237mm AvgTemp:11C
+DF:209,So. Coquille At Powers,42.8917,-124.0694,209,,,,872.3724;R3d0a3f977d5edf41,Woodward Creek O1 L2 Drainage:14km2 AvgFlow:16cfs AvgPrecip:1626mm AvgTemp:12C
+DF:210,Chetco Near Brookings,42.12362,-124.18681,210,,,,853.4135;R4c3741b2151fe941,Chetco River O4 L1 Drainage:711km2 AvgFlow:2283cfs AvgPrecip:2295mm AvgTemp:13C
+DF:211,Lavezzola Creek Above Downie River,39.5834,-120.8188,211,,,,11.0603;Rd57855890a38ed41,Lavezzola Creek O4 L5 Drainage:74km2 AvgFlow:105cfs AvgPrecip:1656mm AvgTemp:11C
+DF:212,Pauley Creek At Pauley Creek Falls,39.57015,-120.81995,212,,,,64.136;R666626380f01e741,Pauley Creek O3 L5 Drainage:65km2 AvgFlow:94cfs AvgPrecip:1633mm AvgTemp:11C
+DF:213,Pit Below Pit 1 Powerhouse,40.98330,-121.51205,213,,,,29.7168;R4c3759c4b4dfda41,Pit River O6 L2 Drainage:9364km2 AvgFlow:1999cfs AvgPrecip:509mm AvgTemp:11C
+DF:214,Tuolumne At Mushroom,37.87817,-119.99834,214,,,,919.2423;R5839a4dc4184cc41,Tuolumne River O6 L2 Drainage:1869km2 AvgFlow:1047cfs AvgPrecip:1006mm AvgTemp:14C
+DF:215,So. Salmon At Krassel,44.9869,-115.7250,215,,,,946.8648;R759320bb78dce741,Krassel Creek O1 L5 Drainage:2km2 AvgFlow:0cfs AvgPrecip:599mm AvgTemp:5C
+DF:216,Indian Creek Near Happy Camp (Klamath),41.8353,-123.3819,216,,,,297.5375;R8716013bd506e141,Indian Creek O4 L2 Drainage:316km2 AvgFlow:423cfs AvgPrecip:1328mm AvgTemp:12C
+DF:217,Shasta Near Yreka,41.8231,-122.5944,217,,,,79.0219;R96434b8f28fab441,Shasta River O5 L2 Drainage:1934km2 AvgFlow:191cfs AvgPrecip:513mm AvgTemp:11C
+DF:219,Carmel Near Carmel,36.53885,-121.87941,219,,,,957.5323;Re5d0d62e3461ef41,Carmel River O5 L1 Drainage:648km2 AvgFlow:112cfs AvgPrecip:484mm AvgTemp:13C
+DF:22,Eel At Fort Seward,40.2183,-123.6314,022,,,,921.5641;R643b9f67b372d041,Eel River O7 L1 Drainage:5454km2 AvgFlow:5685cfs AvgPrecip:1322mm AvgTemp:14C
+DF:220,Arroyo Seco Near Soledad,36.28094,-121.32173,220,,,,872.0998;R1d5a803d529aec41,Arroyo Seco O5 L2 Drainage:629km2 AvgFlow:189cfs AvgPrecip:440mm AvgTemp:15C
+DF:221,Arroyo Hondo Near San Jose,37.46183,-121.76931,221,,,,223.174;R448b701dacc3e541,Arroyo Hondo O4 L3 Drainage:203km2 AvgFlow:59cfs AvgPrecip:659mm AvgTemp:15C
+DF:222,Arroyo Mocho Near Livermore,37.62655,-121.70414,222,,,,675.4427;Rb29d17b1ba62de41,Arroyo Mocho O3 L2 Drainage:105km2 AvgFlow:7cfs AvgPrecip:471mm AvgTemp:15C
+DF:223,Big Sulphur Cr At Geysers Resort,38.7978,-122.8014,223,,,,849.4396;R5eba09492153dd41,Big Sulphur Creek O2 L2 Drainage:22km2 AvgFlow:28cfs AvgPrecip:1478mm AvgTemp:15C
+DF:224,Spanish Creek Near Keddie,40.0031,-120.9533,224,,USGS:11402000,,957.1648;R6666ee887306ee41,Spanish Creek O5 L4 Drainage:463km2 AvgFlow:325cfs AvgPrecip:943mm AvgTemp:11C
+DF:225,Merced Below Briceburg,37.59965,-119.98062,225,,,,983.3753;R3108a4bd24ace241,Merced River O5 L2 Drainage:1892km2 AvgFlow:1207cfs AvgPrecip:721mm AvgTemp:15C
+DF:226,W. Fk Hood Above East Fork,45.59910,-121.63629,226,,OWRD:14118500,,926.3038;R23dba194017aef41, O5 L2 Drainage:403km2 AvgFlow:616cfs AvgPrecip:1032mm AvgTemp:9C
+DF:227,Hood At Tucker Bridge,45.65492,-121.54799,227,,USGS:14120000,,661.3835;R8d9776803b17e141,Hood River O5 L2 Drainage:757km2 AvgFlow:1014cfs AvgPrecip:812mm AvgTemp:10C
+DF:228,Siletz Near Siletz,44.71504,-123.88620,228,,,,431.0589;R5a64ffcde7cae341,Siletz River O5 L1 Drainage:534km2 AvgFlow:1477cfs AvgPrecip:1953mm AvgTemp:11C
+DF:229,Nehalem Near Foss,45.70388,-123.75476,229,,,,339.0532;R0e2db21fb095da41,Nehalem River O5 L1 Drainage:1831km2 AvgFlow:3018cfs AvgPrecip:3277mm AvgTemp:10C
+DF:230,Wilson Near Tillamook,45.4761,-123.7239,230,,,,5.8811;Ree7cffbf4da3d941,Wilson River O4 L2 Drainage:421km2 AvgFlow:1158cfs AvgPrecip:2957mm AvgTemp:10C
+DF:231,Trask Near Tillamook,45.44616,-123.70908,231,,,,20.1071;Rcff743c94d8ece41,Trask River O5 L2 Drainage:378km2 AvgFlow:1139cfs AvgPrecip:3107mm AvgTemp:10C
+DF:232,Alsea Near Tidewater,44.3861,-123.8306,232,,,,993.7414;R2506d1d03968cf41,Alsea River O5 L1 Drainage:839km2 AvgFlow:1468cfs AvgPrecip:2089mm AvgTemp:11C
+DF:233,No. Umpqua At Winchester,43.2722,-123.4111,233,,,,976.5266;Raaf1922620e0a141,North Umpqua River O5 L2 Drainage:3518km2 AvgFlow:4162cfs AvgPrecip:923mm AvgTemp:12C
+DF:234,Umpqua Near Elkton,43.5861,-123.5542,234,,,,444.2486;R0c02b34ae8e3d041,Umpqua River O6 L1 Drainage:9450km2 AvgFlow:7452cfs AvgPrecip:1333mm AvgTemp:12C
+DF:235,Blue Below Tidbits Creek,44.21971,-122.26573,235,,,,57.6998;Rc976f66ba917e441,Blue River O3 L4 Drainage:91km2 AvgFlow:183cfs AvgPrecip:2313mm AvgTemp:10C
+DF:236,So. Santiam Below Cascadia,44.39242,-122.49684,236,,,,973.8423;R17d9e66270c6e341,South Santiam River O4 L3 Drainage:441km2 AvgFlow:836cfs AvgPrecip:1646mm AvgTemp:10C
+DF:237,Breitenbush Near Detroit,44.7528,-122.1278,237,,OWRD:14179000,,636.6923;R8fc285397dc4c341,Breitenbush River O4 L5 Drainage:278km2 AvgFlow:608cfs AvgPrecip:2233mm AvgTemp:9C
+DF:238,Nestucca Below Beaver,45.26650,-123.84714,238,,,,46.7283;R39b4d8864fa6e041,Nestucca River O4 L1 Drainage:474km2 AvgFlow:1077cfs AvgPrecip:2343mm AvgTemp:11C
+DF:239,Arroyo Seco Near Greenfield,36.23690,-121.48067,239,,,,702.5589;R54e3c5da9e6ad841,Arroyo Seco O4 L2 Drainage:292km2 AvgFlow:178cfs AvgPrecip:557mm AvgTemp:15C
+DF:24,So. Eel At Leggett,39.8744,-123.7206,024,,,,294.2946;R7368497a335ee941,South Fork Eel River O5 L2 Drainage:653km2 AvgFlow:776cfs AvgPrecip:1844mm AvgTemp:13C
+DF:240,No. Santiam Below Boulder Creek,44.7069,-122.1000,240,,,,769.3272;Ra4704d930a85c641,North Santiam River O4 L4 Drainage:573km2 AvgFlow:1057cfs AvgPrecip:2122mm AvgTemp:9C
+DF:241,No. Santiam At Niagara,44.75407,-122.29723,241,,OWRD:14181500,,132.1163;R0681a585b2d6e741,Little Sardine Creek O1 L5 Drainage:5km2 AvgFlow:9cfs AvgPrecip:2376mm AvgTemp:8C
+DF:242,No. Santiam At Mehama,44.78868,-122.61687,242,,OWRD:14183000,,737.1509;R5c8fe28dbe88b741,Little North Santiam River O3 L5 Drainage:292km2 AvgFlow:747cfs AvgPrecip:1908mm AvgTemp:10C
+DF:243,Li. No. Santiam Near Mehama,44.79207,-122.57898,243,,OWRD:14182500,,16.2503;R5c8fe28dbe88b741,Little North Santiam River O3 L5 Drainage:292km2 AvgFlow:747cfs AvgPrecip:1908mm AvgTemp:10C
+DF:244,Clackamas Above Three Lynx Creek,45.12500,-122.07341,244,,USGS:14209500,,991.1298;R6de7cbde3b0ec041,Clackamas River O5 L3 Drainage:1245km2 AvgFlow:2095cfs AvgPrecip:1833mm AvgTemp:9C
+DF:245,Collawash Below Hot Springs Fork,44.98892,-122.06550,245,,,,501.471;R4a0c523947b6e341,Collawash River O5 L4 Drainage:379km2 AvgFlow:709cfs AvgPrecip:1752mm AvgTemp:9C
+DF:246,Sandy Near Marmot,45.39926,-122.13608,246,,USGS:14137000,,249.6989;R643bffb92f7db641,Sandy River O5 L2 Drainage:676km2 AvgFlow:1357cfs AvgPrecip:1915mm AvgTemp:10C
+DF:247,Sandy Below Bull Run River,45.4492,-122.2439,247,,USGS:14142500,,914.5893;Rdbf9668fba86ea41,Sandy River O5 L2 Drainage:1133km2 AvgFlow:2192cfs AvgPrecip:1678mm AvgTemp:11C
+DF:248,John Day At Service Creek,44.7939,-120.0056,248,,,,918.7992;R8d974ef64c9eb841,John Day River O6 L2 Drainage:13349km2 AvgFlow:2173cfs AvgPrecip:351mm AvgTemp:11C
+DF:249,No. John Day At Monument,44.81494,-119.43129,249,,,,945.8949;Raaf1923c15a1b641,North Fork John Day River O6 L3 Drainage:5935km2 AvgFlow:1190cfs AvgPrecip:387mm AvgTemp:10C
+DF:25,Russian At Hopland,39.0267,-123.1306,025,,,,490.1962;R736845a039c9ee41,Russian River O5 L1 Drainage:907km2 AvgFlow:692cfs AvgPrecip:959mm AvgTemp:15C
+DF:250,Grande Ronde At Troy,45.9458,-117.4500,250,,,,104.6572;R7b14f6bd2ae8de41,Grande Ronde River O6 L3 Drainage:7627km2 AvgFlow:2582cfs AvgPrecip:541mm AvgTemp:10C
+DF:251,Snake Below Hells Canyon Dam,45.2514,-116.6965,251,,,,730.314;R60e5d0897d63a041,Snake River O8 L2 Drainage:155172km2 AvgFlow:21155cfs AvgPrecip:470mm AvgTemp:10C
+DF:252,Truckee Near Truckee,39.2964,-120.2044,252,,,,58.225;Rf4fdf42709d8e341,Truckee River O4 L4 Drainage:1451km2 AvgFlow:344cfs AvgPrecip:966mm AvgTemp:6C
+DF:253,Mad River Above Ruth Lake,40.28470,-123.33600,253,,USGS:11480390,,810.74;R7f6a9087b4d1eb41,Mad River O4 L1 Drainage:230km2 AvgFlow:257cfs AvgPrecip:1595mm AvgTemp:11C
+DF:254,So. Cottonwood At Bowman Road,40.3162,-122.4494,254,,,,586.689;R1904d67f7e34ad41,Dry Creek O4 L4 Drainage:396km2 AvgFlow:135cfs AvgPrecip:787mm AvgTemp:16C
+DF:255,Trinity At Douglas City,40.64528,-122.95744,255,,,,383.6709;Rec51f0d2bf61e441,Trinity River O5 L2 Drainage:2331km2 AvgFlow:777cfs AvgPrecip:926mm AvgTemp:13C
+DF:256,Napa Near Napa,38.36833,-122.30335,256,,,,539.8378;Ra245a61dfc9dc541,Napa River O4 L1 Drainage:490km2 AvgFlow:183cfs AvgPrecip:704mm AvgTemp:15C
+DF:257,So. Trinity At Forest Glen,40.37421,-123.32772,257,,,,103.6721;Rb072444708ccec41,South Fork Trinity River O5 L3 Drainage:539km2 AvgFlow:620cfs AvgPrecip:1601mm AvgTemp:11C
+DF:258,Smith At Oregon Hole Gorge,41.81479,-124.04238,258,,,,785.9055;Rb4c88a94e1daef41,Smith River O5 L1 Drainage:805km2 AvgFlow:1557cfs AvgPrecip:2338mm AvgTemp:12C
+DF:259,No. Tuolumne At Riverside Campground,37.98128,-120.20558,259,,,,202.2064;R736879ad1bacd941,North Fork Tuolumne River O4 L3 Drainage:176km2 AvgFlow:104cfs AvgPrecip:1035mm AvgTemp:13C
+DF:26,Russian At Hacienda Bridge,38.50825,-122.92740,026,,,,795.9898;Rd9ce9fee6611e141,Russian River O5 L1 Drainage:3460km2 AvgFlow:2121cfs AvgPrecip:1165mm AvgTemp:15C
+DF:260,White Salmon Near Underwood,45.75202,-121.52675,260,,USGS:14123500,,685.6869;Ra69bd4f344cbe941,White Salmon River O4 L2 Drainage:889km2 AvgFlow:1156cfs AvgPrecip:812mm AvgTemp:11C
+DF:261,E. Fk Lewis Near Heisson,45.8369,-122.4650,261,,USGS:14222500,,806.7419;R1d5a7cb17ba7da41,Basket Creek O1 L4 Drainage:2km2 AvgFlow:4cfs AvgPrecip:2003mm AvgTemp:10C
+DF:262,Muddy River Below Clear Creek,46.07570,-121.99884,262,,,,887.4522;Ra69b04c4fa7dc741,Muddy River O4 L3 Drainage:350km2 AvgFlow:902cfs AvgPrecip:2850mm AvgTemp:9C
+DF:263,San Joaquin At Patterson Bend,37.13168,-119.53125,263,,USGS:11246700,,663.2078;Rcba129d980bae341,San Joaquin River O5 L1 Drainage:3780km2 AvgFlow:353cfs AvgPrecip:555mm AvgTemp:16C
+DF:265,San Joaquin At Horseshoe Bend,37.14243,-119.46297,265,,,,363.9805;Rb072e06a2040e441,San Joaquin River O5 L1 Drainage:3358km2 AvgFlow:505cfs AvgPrecip:623mm AvgTemp:16C
+DF:267,Beaver Creek At Troutdale,45.51927,-122.38928,267,,USGS:14142800,,722.7929;Re17a487ab0aaec41,Beaver Creek O3 L3 Drainage:16km2 AvgFlow:16cfs AvgPrecip:1350mm AvgTemp:12C
+DF:268,Oak Grove Clackamas At Ripplebrook Campground,45.07960,-122.04306,268,,USGS:14209250,,393.3242;Ra01aef9a5fbbdc41,Oak Grove Fork Clackamas River O4 L4 Drainage:362km2 AvgFlow:554cfs AvgPrecip:1706mm AvgTemp:9C
+DF:269,Yampa At Deerlodge Park,40.4517,-108.5244,269,,,,753.6719;R022bd398db32e241,Yampa River O7 L6 Drainage:20367km2 AvgFlow:2314cfs AvgPrecip:314mm AvgTemp:8C
+DF:27,Tuolumne Below Hetch Hetchy,37.93777,-119.79780,027,,USGS:11276500,,47.1862;R6de743e92ab3e841,Tuolumne River O5 L2 Drainage:1197km2 AvgFlow:393cfs AvgPrecip:971mm AvgTemp:11C
+DF:270,No. Willow Creek Near Sugar Pine,37.3978,-119.5653,270,,,,63.2653;R8fc21dd49f6eee41, O2 L2 Drainage:50km2 AvgFlow:25cfs AvgPrecip:1188mm AvgTemp:11C
+DF:271,Cispus Near Randle,46.4442,-121.8389,271,,USGS:14231900,,854.7271;R560e11352bdae241,Cispus River O5 L3 Drainage:824km2 AvgFlow:1484cfs AvgPrecip:1780mm AvgTemp:9C
+DF:272,Cowlitz At Packwood,46.6131,-121.6781,272,,USGS:14226500,,21.4319;R7368a104e15bc441,Cowlitz River O4 L2 Drainage:736km2 AvgFlow:1562cfs AvgPrecip:1535mm AvgTemp:9C
+DF:273,Tilton Near Cinebar,46.5956,-122.4583,273,,,,75.3556;R1283c09460619641,Tilton River O4 L3 Drainage:361km2 AvgFlow:701cfs AvgPrecip:1952mm AvgTemp:9C
+DF:274,Nisqually At La Grande,46.83931,-122.32930,274,,USGS:12086500,,671.1793;Re5d0a2e0e3d5c141,Nisqually River O4 L1 Drainage:758km2 AvgFlow:1535cfs AvgPrecip:1069mm AvgTemp:10C
+DF:275,Nisqually At McKenna,46.93320,-122.55990,275,,,,695.351;Rc9761e254b5cb641,Nisqually River O5 L1 Drainage:1370km2 AvgFlow:2066cfs AvgPrecip:1103mm AvgTemp:10C
+DF:276,Puyallup At Alderton,47.1853,-122.2283,276,,,,522.7417;Rfed4987ba088b641,Puyallup River O5 L1 Drainage:1136km2 AvgFlow:1731cfs AvgPrecip:1030mm AvgTemp:11C
+DF:277,Carbon Near Fairfax,47.0281,-122.0314,277,,,,697.9944;R8b6c277d0dcfd241,Carbon River O3 L2 Drainage:204km2 AvgFlow:350cfs AvgPrecip:1628mm AvgTemp:9C
+DF:278,So. Prairie Creek At South Prairie,47.13955,-122.09239,278,,,,982.9679;R6de78bee3730e841,South Prairie Creek O4 L3 Drainage:207km2 AvgFlow:272cfs AvgPrecip:1217mm AvgTemp:10C
+DF:279,Green Near Palmer,47.30539,-121.85025,279,,USGS:12106700,,446.2687;R6891d9521f18e241,Green River O5 L1 Drainage:585km2 AvgFlow:1021cfs AvgPrecip:2308mm AvgTemp:8C
+DF:28,Rancheria Creek At Mountain View Rd,38.99280,-123.43434,028,,,,240.5017;R77be5f812e3db341,Rancheria Creek O3 L1 Drainage:177km2 AvgFlow:145cfs AvgPrecip:1140mm AvgTemp:14C
+DF:280,No. Snoqualmie Near Snoqualmie Falls,47.61502,-121.71300,280,,USGS:12142000,,14.3893;Rbc74577d0a6de941,North Fork Snoqualmie River O4 L3 Drainage:167km2 AvgFlow:507cfs AvgPrecip:2267mm AvgTemp:8C
+DF:281,Skykomish Near Gold Bar,47.83749,-121.66737,281,,USGS:12134500,,41.2516;R08ac7c950b99d841,Skykomish River O5 L1 Drainage:1386km2 AvgFlow:4026cfs AvgPrecip:2092mm AvgTemp:10C
+DF:282,Wenatchee At Peshastin,47.58311,-120.61862,282,,,,456.4789;Rac1c8e8af37fe341,Wenatchee River O5 L2 Drainage:2602km2 AvgFlow:3126cfs AvgPrecip:518mm AvgTemp:9C
+DF:283,Cache La Poudre At Canyon Mouth,40.6644,-105.2242,283,,,,831.8728;Rd9cef73d1089b341,Cache la Poudre River O6 L4 Drainage:2735km2 AvgFlow:332cfs AvgPrecip:421mm AvgTemp:9C
+DF:284,Redwood Creek At Hwy 299,40.9061,-123.8142,284,,,,849.7492;R68916d4b8796da41,Redwood Creek O3 L1 Drainage:199km2 AvgFlow:247cfs AvgPrecip:1598mm AvgTemp:13C
+DF:285,Eel At Scotia,40.4917,-124.0986,285,,,,896.5176;R79e9a69871c6a041,Eel River O7 L1 Drainage:8068km2 AvgFlow:7824cfs AvgPrecip:1239mm AvgTemp:12C
+DF:286,Russian Near Cloverdale,38.8794,-123.0525,286,,,,483.807;R52b8561a4799ec41,Russian River O5 L1 Drainage:1260km2 AvgFlow:880cfs AvgPrecip:1015mm AvgTemp:15C
+DF:287,San Joaquin At Squaw Leap Falls,37.07908,-119.56112,287,,,,795.0101;R52b8dea298c2d741,San Joaquin River O5 L1 Drainage:3841km2 AvgFlow:194cfs AvgPrecip:510mm AvgTemp:17C
+DF:289,Quartzville Cr Near Cascadia,44.5403,-122.4347,289,,OWRD:14185900,,754.9393;R60e5b473b462e541,Quartzville Creek O4 L5 Drainage:248km2 AvgFlow:548cfs AvgPrecip:2093mm AvgTemp:10C
+DF:29,Mark West Creek Near Santa Rosa,38.5094,-122.7686,029,,,,45.6891;Rcdccac90c3a5b741,Mark West Creek O3 L2 Drainage:113km2 AvgFlow:75cfs AvgPrecip:920mm AvgTemp:15C
+DF:290,Deschutes Below Bend,44.08283,-121.30788,290,,,,824.6095;Rc3f54c07a6fde241,Deschutes River O5 L2 Drainage:3890km2 AvgFlow:567cfs AvgPrecip:299mm AvgTemp:8C
+DF:291,Clackamas At Estacada,45.30048,-122.35374,291,,USGS:14210000,,382.9043;R8fc2d576cc9ee441,Clackamas River O5 L3 Drainage:1758km2 AvgFlow:3010cfs AvgPrecip:1420mm AvgTemp:11C
+DF:292,So. Yamhill Near Willamina,45.04724,-123.50281,292,,,,864.7308;R1b2f65050433d241,Cockerham Creek O1 L4 Drainage:5km2 AvgFlow:5cfs AvgPrecip:1478mm AvgTemp:11C
+DF:293,McKenzie Below Trail Bridge Dam,44.26843,-122.05071,293,,,,940.3881;R73689188d7888541,McKenzie River O3 L3 Drainage:380km2 AvgFlow:774cfs AvgPrecip:2033mm AvgTemp:8C
+DF:294,Big Butte Creek Near McLeod,42.65139,-122.69134,294,,,,4.3931;R5ebae55208f7e641,Big Butte Creek O4 L2 Drainage:640km2 AvgFlow:237cfs AvgPrecip:869mm AvgTemp:11C
+DF:295,Klamath Below Seiad Valley,41.8539,-123.2311,295,,,,52.2629;Rbc741f28884ee241,Klamath River O6 L1 Drainage:21171km2 AvgFlow:3857cfs AvgPrecip:1333mm AvgTemp:12C
+DF:296,Henrys Fork Below Coffee Pot Rapids,44.48323,-111.39460,296,,,,640.5327;R9cc408d58cadde41,Henrys Fork O4 L3 Drainage:666km2 AvgFlow:371cfs AvgPrecip:804mm AvgTemp:3C
+DF:297,Johnson Creek At Yellow Pine,44.9617,-115.5000,297,,,,10.5526;Ra470d5a0b2d1d641,Johnson Creek O4 L6 Drainage:565km2 AvgFlow:350cfs AvgPrecip:744mm AvgTemp:3C
+DF:298,Saint Joe At Calder,47.27435,-116.18814,298,,,,21.7795;Rae4761b11ac5bf41,Saint Joe River O5 L2 Drainage:2661km2 AvgFlow:2371cfs AvgPrecip:828mm AvgTemp:7C
+DF:299,Crystal Above Avalanche Creek,39.23227,-107.22723,299,,,,699.7076;R3d0a07f39b54d541,Crystal River O3 L6 Drainage:431km2 AvgFlow:289cfs AvgPrecip:712mm AvgTemp:5C
+DF:3,Klamath Below Iron Gate Dam,41.9281,-122.4431,003,,,,858.3551;R333367b9f918e941,Klamath River O6 L1 Drainage:15135km2 AvgFlow:1768cfs AvgPrecip:433mm AvgTemp:11C
+DF:300,Colorado Near Kremmling,40.0366,-106.4393,300,,,,887.7359;R5c8f9611f7d6e541,Colorado River O6 L4 Drainage:6137km2 AvgFlow:1072cfs AvgPrecip:417mm AvgTemp:4C
+DF:301,So. McKenzie Above Cougar Res,44.04744,-122.21778,301,,,,999.3573;R986e92b23353e041,Ridge Creek O1 L5 Drainage:5km2 AvgFlow:7cfs AvgPrecip:2073mm AvgTemp:9C
+DF:302,Raging River Near Fall City,47.53979,-121.90867,302,,USGS:12145500,,4.8348;R6f12b3a72246e941,Raging River O3 L3 Drainage:84km2 AvgFlow:138cfs AvgPrecip:1614mm AvgTemp:10C
+DF:303,Rogue Inflow Lost Creek Lake,42.67442,-122.67308,303,,,,738.1545;Rae478529d2a5ea41,Rogue River O5 L1 Drainage:1768km2 AvgFlow:1990cfs AvgPrecip:849mm AvgTemp:11C
+DF:305,Row River Below Dorena Lake,43.79317,-122.99030,305,,,,876.2683;R66667e6222e9d041,Row River O5 L4 Drainage:695km2 AvgFlow:745cfs AvgPrecip:1245mm AvgTemp:11C
+DF:306,No. Umpqua Above Copeland Creek,43.2961,-122.5356,306,,,,963.1426;R2731d0d09b5fde41,North Umpqua River O4 L2 Drainage:1321km2 AvgFlow:1576cfs AvgPrecip:1162mm AvgTemp:10C
+DF:307,So. Kern Near Onyx,35.7375,-118.1728,307,,USGS:11189500,,623.5524;Rdf4fa930d8f7e141, O1 L7 Drainage:4km2 AvgFlow:0cfs AvgPrecip:318mm AvgTemp:16C
+DF:309,Mi. Willamette Inflow Lookout Point Res,43.9152,-122.7509,309,,,,429.823;Ra245b6868a73ba41,Middle Fork Willamette River O5 L2 Drainage:2582km2 AvgFlow:3134cfs AvgPrecip:1214mm AvgTemp:11C
+DF:310,No. Mi. Willamette At Westfir,43.7569,-122.5042,310,,,,513.6504;Rd1228bf5ebebce41,North Fork Middle Fork Willamette River O4 L3 Drainage:636km2 AvgFlow:779cfs AvgPrecip:1407mm AvgTemp:11C
+DF:311,Siuslaw Near Mapleton,44.0625,-123.8819,311,,,,792.7586;R1283705fd022ed41,Siuslaw River O5 L1 Drainage:1538km2 AvgFlow:1992cfs AvgPrecip:2106mm AvgTemp:11C
+DF:312,No. Rogue Above North Fork Res,42.77534,-122.49945,312,,,,832.1182;R81954b8342eddd41,Rogue River O4 L1 Drainage:805km2 AvgFlow:951cfs AvgPrecip:1193mm AvgTemp:10C
+DF:313,Mi. Rogue Above Butte Falls Rd,42.73376,-122.40283,313,,,,980.0498;Rd9ce4fdad6dbe341,Svinth Creek O1 L4 Drainage:7km2 AvgFlow:5cfs AvgPrecip:1266mm AvgTemp:9C
+DF:314,So. Rogue Below MF Confluence,42.71833,-122.47769,314,,,,900.9229;Rbc74833b22b7e541,Beaver Dam Creek O3 L3 Drainage:76km2 AvgFlow:55cfs AvgPrecip:1097mm AvgTemp:10C
+DF:315,Fall Creek Inflow Fall Creek Res,43.9463,-122.7554,315,,,,802.3232;Rd7a3786b4580e941,Fall Creek O4 L3 Drainage:336km2 AvgFlow:438cfs AvgPrecip:1308mm AvgTemp:11C
+DF:316,Fall Creek Below Fall Creek Dam,43.94444,-122.77361,316,,,,15.8754;R3789796054bed941,Fall Creek O4 L3 Drainage:489km2 AvgFlow:597cfs AvgPrecip:1210mm AvgTemp:11C
+DF:317,Wiley Creek Near Foster,44.37227,-122.62251,317,,,,469.6576;Rd57879211b7bcf41,Wiley Creek O3 L4 Drainage:90km2 AvgFlow:156cfs AvgPrecip:1575mm AvgTemp:11C
+DF:318,Klickitat Near Pitt,45.75630,-121.20946,318,,USGS:14113000,,43.9961;Re7fb29e68870b741,Klickitat River O5 L2 Drainage:3302km2 AvgFlow:1628cfs AvgPrecip:484mm AvgTemp:10C
+DF:319,White Salmon Below Trout Lake Creek,45.99153,-121.49589,319,,,,428.5299;R60e59cabb8b2e941,White Salmon River O4 L2 Drainage:165km2 AvgFlow:259cfs AvgPrecip:1092mm AvgTemp:8C
+DF:32,Putah Creek Below Hwy 29,38.77891,-122.51719,032,,,,199.5903;R508dbfe6c876e341,Putah Creek O4 L4 Drainage:298km2 AvgFlow:194cfs AvgPrecip:967mm AvgTemp:15C
+DF:320,White Salmon At BZ Corner,45.86247,-121.50466,320,,,,712.6451;R3789f1a7e896c941,White Salmon River O4 L2 Drainage:651km2 AvgFlow:920cfs AvgPrecip:856mm AvgTemp:9C
+DF:321,No. South Platte At Grant,39.4579,-105.6583,321,,,,457.7442;R85ebb5208dc5e341,Geneva Creek O3 L5 Drainage:200km2 AvgFlow:72cfs AvgPrecip:469mm AvgTemp:2C
+DF:322,South Platte Near Lake George,38.9053,-105.4728,322,,,,429.8044;R9318e039ab08ee41,South Platte River O5 L3 Drainage:2467km2 AvgFlow:73cfs AvgPrecip:335mm AvgTemp:4C
+DF:323,Roaring Fork Below Maroon Creek,39.22436,-106.85899,323,,,,7.0753;R713d4a0b8f31df41,Roaring Fork River O4 L5 Drainage:756km2 AvgFlow:362cfs AvgPrecip:555mm AvgTemp:5C
+DF:324,Rio Grande Near Lobatos,37.0784,-105.7565,324,,,,33.6451;R4e6210d3e42cc641,Rio Grande O6 L1 Drainage:11726km2 AvgFlow:878cfs AvgPrecip:257mm AvgTemp:6C
+DF:325,Colorado Near Dotsero,39.6446,-107.0780,325,,,,5.9451;R333313343a1dc841,Colorado River O6 L4 Drainage:11337km2 AvgFlow:2170cfs AvgPrecip:382mm AvgTemp:7C
+DF:326,Bear Creek Above Cache Creek,38.95794,-122.34259,326,,,,725.3733;R83c0023c3fcde641,Bear Creek O4 L4 Drainage:244km2 AvgFlow:66cfs AvgPrecip:601mm AvgTemp:16C
+DF:327,Clear Creek At Golden,39.7531,-105.2347,327,,,,8.0947;Rd1224b94a2d8c041,Clear Creek O4 L4 Drainage:1027km2 AvgFlow:197cfs AvgPrecip:487mm AvgTemp:9C
+DF:329,Mi. Santiam Above Green Peter Lake,44.51547,-122.37153,329,,OWRD:14185800,,260.3488;R8941f8c2f9dedb41,Middle Santiam River O3 L4 Drainage:261km2 AvgFlow:545cfs AvgPrecip:2075mm AvgTemp:10C
+DF:33,No. Cache Creek Rel Indian Valley Dam,39.07544,-122.53434,033,,,,486.1227;R25061536d686eb41,North Fork Cache Creek O4 L4 Drainage:312km2 AvgFlow:149cfs AvgPrecip:751mm AvgTemp:15C
+DF:330,Animas At Durango,37.27907,-107.88055,330,,,,40.2834;R355eb605a038e141,Animas River O5 L6 Drainage:1761km2 AvgFlow:842cfs AvgPrecip:510mm AvgTemp:8C
+DF:331,Rogue At Raygold,42.43681,-122.98832,331,,,,457.0082;R0ad763b83f72d241,Rogue River O5 L1 Drainage:5293km2 AvgFlow:3066cfs AvgPrecip:525mm AvgTemp:12C
+DF:332,Skagit At Marblemount,48.5339,-121.4286,332,,USGS:12181000,,66.1705;R17d9e2b8bf36e041,Skagit River O5 L1 Drainage:3581km2 AvgFlow:5863cfs AvgPrecip:2084mm AvgTemp:10C
+DF:333,Chehalis Near Doty,46.61760,-123.27712,333,,,,40.0738;Rfed4a8404553c641,Chehalis River O4 L1 Drainage:297km2 AvgFlow:580cfs AvgPrecip:1431mm AvgTemp:10C
+DF:334,Salmon Near Clayton,44.2683,-114.7328,334,,,,912.1274;Rdbf956bd6b78d141,Salmon River O5 L5 Drainage:2086km2 AvgFlow:935cfs AvgPrecip:583mm AvgTemp:3C
+DF:335,Mi. Payette Near Crouch,44.1086,-115.9822,335,,,,890.6681;R2506b176e38dec41,Middle Fork Payette River O4 L5 Drainage:868km2 AvgFlow:388cfs AvgPrecip:637mm AvgTemp:9C
+DF:336,Toutle At Tower Road,46.33375,-122.83948,336,,,,611.8136;R8d972eb03751b541,Toutle River O5 L3 Drainage:1277km2 AvgFlow:0cfs AvgPrecip:1313mm AvgTemp:11C
+DF:337,Carmel At Robles Del Rio,36.4744,-121.7278,337,,,,986.3694;Rfa7e0e7de814eb41,Carmel River O5 L1 Drainage:503km2 AvgFlow:100cfs AvgPrecip:504mm AvgTemp:15C
+DF:338,Piru Creek Above Lake Piru,34.52313,-118.75719,338,,,,701.1511;R713dfede3980e441,Piru Creek O5 L2 Drainage:952km2 AvgFlow:64cfs AvgPrecip:484mm AvgTemp:17C
+DF:339,Stehekin At Stehekin,48.32938,-120.69206,339,,,,682.5622;R3789b1adcf5fc841,Stehekin River O5 L2 Drainage:884km2 AvgFlow:1489cfs AvgPrecip:937mm AvgTemp:8C
+DF:340,Boulder Creek Near Orodell,40.00641,-105.33022,340,,,,975.4705;Rd578c9acb7e1ec41,Boulder Creek O4 L5 Drainage:259km2 AvgFlow:99cfs AvgPrecip:532mm AvgTemp:9C
+DF:341,South Boulder Cr Below Gross Reservoir,39.9384,-105.3480,341,,,,12.3279;R508d2327ee71e041,South Boulder Creek O3 L6 Drainage:250km2 AvgFlow:154cfs AvgPrecip:557mm AvgTemp:7C
+DF:342,San Juan At Pagosa Springs,37.2655,-107.0110,342,,USGS:09342500,,201.0794;R5839dcb70f4aee41,San Juan River O4 L5 Drainage:783km2 AvgFlow:407cfs AvgPrecip:524mm AvgTemp:6C
+DF:344,Arkansas Near Nathrop,38.65212,-106.05082,344,,USGS:07091200,,317.6518;R73686577b3fbea41,Arkansas River O4 L2 Drainage:2748km2 AvgFlow:590cfs AvgPrecip:262mm AvgTemp:6C
+DF:345,Arkansas At Parkdale,38.4872,-105.3729,345,,,,676.5528;R7368ed4e014ee041,Arkansas River O5 L2 Drainage:5602km2 AvgFlow:784cfs AvgPrecip:401mm AvgTemp:10C
+DF:346,Salt At Salt River Canyon,33.7981,-110.4990,346,,USGS:09497500,,43.8855;Rf8534313e8a6e341,Salt River O6 L6 Drainage:7338km2 AvgFlow:784cfs AvgPrecip:490mm AvgTemp:14C
+DF:347,Salt Above Roosevelt Lake,33.61920,-110.92126,347,,USGS:09498500,,388.1153;R295cc3474ac3e141,Salt River O6 L6 Drainage:10588km2 AvgFlow:1058cfs AvgPrecip:382mm AvgTemp:19C
+DF:348,Verde Near Camp Verde,34.4481,-111.7889,348,,USGS:09506000,,794.5192;R713d7634d2f8e341,Verde River O6 L7 Drainage:11843km2 AvgFlow:404cfs AvgPrecip:420mm AvgTemp:17C
+DF:349,Verde Above Horseshoe Reservoir,34.0728,-111.7154,349,,USGS:09508500,,957.4794;R37893116e899e941,Verde River O6 L7 Drainage:13947km2 AvgFlow:644cfs AvgPrecip:420mm AvgTemp:20C
+DF:35,Pit Above Pit 1 Powerhouse,40.9888,-121.5012,035,,,,74.4467;R4c3759c4b4dfda41,Pit River O6 L2 Drainage:9364km2 AvgFlow:1999cfs AvgPrecip:509mm AvgTemp:11C
+DF:351,Arkansas Below Granite,38.99490,-106.21985,351,,,,639.0076;R3333bbf964a1e341,Arkansas River O4 L2 Drainage:1414km2 AvgFlow:460cfs AvgPrecip:315mm AvgTemp:3C
+DF:352,Queets Near Clearwater,47.5381,-124.3144,352,,,,422.233;Raaf142949ddbc141,Queets River O4 L1 Drainage:1160km2 AvgFlow:4576cfs AvgPrecip:2821mm AvgTemp:10C
+DF:353,Fryingpan Near Thomasville,39.3447,-106.6731,353,,,,134.1754;R96436353266cdf41,Fryingpan River O3 L6 Drainage:233km2 AvgFlow:64cfs AvgPrecip:545mm AvgTemp:3C
+DF:354,Lake Creek Above Twin Lakes Res,39.06295,-106.40755,354,,,,2.4995;Rc1caf521473eed41,Lake Creek O3 L3 Drainage:193km2 AvgFlow:163cfs AvgPrecip:596mm AvgTemp:0C
+DF:355,Eagle Below Gypsum,39.6492,-106.9530,355,,,,695.3682;R9cc4c8bc05cbd141,Eagle River O5 L5 Drainage:2458km2 AvgFlow:589cfs AvgPrecip:300mm AvgTemp:7C
+DF:356,Eagle Near Minturn,39.5539,-106.4019,356,,,,2.6535;Rcff763c69e94c941,Eagle River O4 L5 Drainage:483km2 AvgFlow:137cfs AvgPrecip:466mm AvgTemp:3C
+DF:357,Rio Chama Below El Vado Dam,36.58050,-106.72504,357,,,,961.4658;R2731b85b2001e141,Rio Chama O4 L2 Drainage:2058km2 AvgFlow:531cfs AvgPrecip:384mm AvgTemp:7C
+DF:365,Fremont Near Caineville,38.2782,-111.0665,365,,,,430.2418;R9eefaf6c485fe241,Fremont River O5 L5 Drainage:3080km2 AvgFlow:77cfs AvgPrecip:183mm AvgTemp:12C
+DF:366,Ogden Below Pineview Res,41.25409,-111.85507,366,,USGS:10140100,,975.0432;R333303779cb5ec41,Ogden River O4 L5 Drainage:792km2 AvgFlow:227cfs AvgPrecip:803mm AvgTemp:8C
+DF:368,San Juan At Mexican Hat,37.15068,-109.86669,368,,,,874.7164;Ra01aefc3ccb4ba41,San Juan River O7 L5 Drainage:57918km2 AvgFlow:2518cfs AvgPrecip:170mm AvgTemp:14C
+DF:37,Clear Creek Below Whiskeytown Lake,40.51351,-122.52492,037,,,,556.422;Re3a5e729161ceb41,Clear Creek O4 L2 Drainage:596km2 AvgFlow:162cfs AvgPrecip:1097mm AvgTemp:16C
+DF:371,No. Virgin Near Springdale,37.21023,-112.97827,371,,USGS:09405500,,727.4189;R8716bdf1fd5ae341,North Fork Virgin River O4 L6 Drainage:807km2 AvgFlow:95cfs AvgPrecip:447mm AvgTemp:12C
+DF:374,Lower Colorado Below Hoover Dam,36.0051,-114.7425,374,,,,659.4438;R190446f09028df41, O1 L5 Drainage:9km2 AvgFlow:0cfs AvgPrecip:139mm AvgTemp:21C
+DF:375,Entiat Near Ardenvoir,47.81834,-120.42298,375,,,,452.4106;Ra470adc806bae141,Entiat River O4 L2 Drainage:498km2 AvgFlow:414cfs AvgPrecip:388mm AvgTemp:8C
+DF:378,Mi. Feather Below Sloat,39.8643,-120.7608,378,,,,937.7895;R3f35cebe1bded541, O1 L9 Drainage:1km2 AvgFlow:1cfs AvgPrecip:1108mm AvgTemp:9C
+DF:38,Sacramento Below Box Canyon Dam,41.26526,-122.31006,038,,,,383.3468;Rd34d969ae49ce641,Sacramento River O3 L1 Drainage:318km2 AvgFlow:288cfs AvgPrecip:1267mm AvgTemp:11C
+DF:383,Brush Creek At Take-Out Bridge,35.9661,-118.4782,383,,,,721.9906;R9eef67d0e00dc441,Brush Creek O3 L5 Drainage:75km2 AvgFlow:35cfs AvgPrecip:608mm AvgTemp:12C
+DF:384,No. Mokelumne Below Salt Springs Res,38.49414,-120.22090,384,,,,668.0156;R4c37c9fea9fdaf41,North Fork Mokelumne River O4 L2 Drainage:439km2 AvgFlow:356cfs AvgPrecip:1238mm AvgTemp:12C
+DF:385,No. Mokelumne Above Tiger Cr Afterbay,38.4467,-120.4892,385,,,,908.5856;R273124195a7de341, O3 L3 Drainage:31km2 AvgFlow:29cfs AvgPrecip:1175mm AvgTemp:14C
+DF:386,No. Mokelumne Below Tiger Creek Dam,38.43983,-120.50493,386,,,,955.1918;R17d99281e93ce541,North Fork Mokelumne River O4 L2 Drainage:892km2 AvgFlow:444cfs AvgPrecip:1180mm AvgTemp:14C
+DF:387,No. Mokelumne Below West Point P.H.,38.4196,-120.5512,387,,,,832.7786;Raaf192f73083a341, O1 L4 Drainage:3km2 AvgFlow:3cfs AvgPrecip:995mm AvgTemp:14C
+DF:388,Mokelumne Below Electra Powerhouse,38.33001,-120.67623,388,,,,780.9321;Ree7ca7d8aadadc41,Mokelumne River O5 L2 Drainage:1398km2 AvgFlow:589cfs AvgPrecip:764mm AvgTemp:16C
+DF:391,South Silver At Autobahn,38.8250,-120.3002,391,,,,10.6163;R79e926f3c0a1b441,South Fork Silver Creek O3 L5 Drainage:56km2 AvgFlow:53cfs AvgPrecip:1350mm AvgTemp:9C
+DF:393,Kings Inflow Pine Flat Res,36.8325,-119.3257,393,,,,102.9796;R8d97eeaf48d4bd41,Kings River O6 L4 Drainage:4000km2 AvgFlow:2466cfs AvgPrecip:505mm AvgTemp:17C
+DF:394,Cache Creek Below Clear Lake,38.92423,-122.56605,394,,,,134.5201;R1b2f85183ad4d541,Cache Creek O5 L3 Drainage:1318km2 AvgFlow:584cfs AvgPrecip:730mm AvgTemp:15C
+DF:395,Mattole Near Ettersburg,40.13920,-123.99113,395,,,,670.9894;R6abc74ff75acdb41,Mattole River O3 L1 Drainage:127km2 AvgFlow:166cfs AvgPrecip:1701mm AvgTemp:13C
+DF:396,No. Cache Creek Above Indian Valley Res,39.1656,-122.6189,396,,,,989.3782;R39b40c7269eced41,North Fork Cache Creek O4 L4 Drainage:188km2 AvgFlow:129cfs AvgPrecip:1007mm AvgTemp:15C
+DF:397,Arroyo Valle Above Lake Del Valle,37.56144,-121.68365,397,,,,870.5012;Rac1c8ece6c91eb41,Arroyo Valle O4 L3 Drainage:341km2 AvgFlow:39cfs AvgPrecip:610mm AvgTemp:15C
+DF:399,Canyon Creek Below French Lake,39.4211,-120.5429,399,,USGS:11414410,,745.013;R23db894d6b27e141,Canyon Creek O2 L5 Drainage:17km2 AvgFlow:27cfs AvgPrecip:1787mm AvgTemp:6C
+DF:4,Klamath At Orleans,41.30428,-123.53394,004,,,,537.2716;R310814998f3fd141,Klamath River O6 L1 Drainage:25164km2 AvgFlow:8654cfs AvgPrecip:1345mm AvgTemp:14C
+DF:40,Sacramento At Delta,40.93829,-122.41696,040,,,,617.4894;R6abcd48ed0f9ea41,Sacramento River O4 L1 Drainage:1102km2 AvgFlow:1227cfs AvgPrecip:1829mm AvgTemp:15C
+DF:400,Clark Fork At St. Regis,47.3017,-115.0868,400,,,,607.0965;R0681412a645cef41,Clark Fork O7 L1 Drainage:26328km2 AvgFlow:7286cfs AvgPrecip:554mm AvgTemp:7C
+DF:401,Blackfoot Near Bonner,46.8997,-113.7554,401,,,,701.0245;R3d0a2fdf5fd8ec41,Blackfoot River O6 L2 Drainage:5840km2 AvgFlow:1764cfs AvgPrecip:456mm AvgTemp:6C
+DF:402,No. Blackfoot Near Ovando,46.9797,-113.0914,402,,,,957.5674;Rc1ca6d1eb04eeb41, O1 L4 Drainage:3km2 AvgFlow:0cfs AvgPrecip:416mm AvgTemp:5C
+DF:403,Prospect Creek At Thompson Falls,47.58599,-115.35533,403,,,,96.1636;Rf2d245ade7f1e541,Prospect Creek O4 L2 Drainage:378km2 AvgFlow:244cfs AvgPrecip:628mm AvgTemp:8C
+DF:404,CF Yellowstone Near Belfry,45.0102,-109.0645,404,,,,885.6501;R5c8faa41f859ef41,Clarks Fork Yellowstone River O6 L4 Drainage:3336km2 AvgFlow:953cfs AvgPrecip:217mm AvgTemp:8C
+DF:405,Mi. Flathead Near West Glacier,48.49592,-114.00963,405,,,,938.3011;Rd578e1567255e141,Rubideau Creek O3 L3 Drainage:13km2 AvgFlow:6cfs AvgPrecip:759mm AvgTemp:6C
+DF:406,So. Flathead Above Hungry Horse Res,47.9792,-113.5600,406,,,,669.2957;R3bdf1fa2105ad541,South Fork Flathead River O5 L3 Drainage:3124km2 AvgFlow:2377cfs AvgPrecip:687mm AvgTemp:5C
+DF:407,No. Flathead Near Columbia Falls,48.4956,-114.1267,407,,,,361.7138;Re17af415e1c6d541, O1 L4 Drainage:1km2 AvgFlow:0cfs AvgPrecip:704mm AvgTemp:6C
+DF:408,Swan Near Bigfork,48.02432,-113.97958,408,,,,548.6008;R0681cdc9b509ee41,Swan River O5 L3 Drainage:1708km2 AvgFlow:1243cfs AvgPrecip:725mm AvgTemp:6C
+DF:409,Flathead Near Polson,47.6799,-114.2459,409,,,,935.742;Rcba18500058fc541,Flathead River O6 L2 Drainage:18100km2 AvgFlow:11698cfs AvgPrecip:395mm AvgTemp:7C
+DF:410,Kootenai Below Libby Dam,48.4008,-115.3197,410,,,,74.8796;R355e6a897206e541,Kootenai River O5 L2 Drainage:23307km2 AvgFlow:10988cfs AvgPrecip:433mm AvgTemp:7C
+DF:411,Yaak Near Troy,48.5619,-115.9692,411,,,,632.4233;R964303333d7dde41,Yaak River O5 L3 Drainage:2032km2 AvgFlow:859cfs AvgPrecip:632mm AvgTemp:8C
+DF:412,Madison Below Hebgen Lake,44.86729,-111.33881,412,,,,858.2605;R986e4e5ae635eb41,Madison River O6 L3 Drainage:2492km2 AvgFlow:1177cfs AvgPrecip:715mm AvgTemp:2C
+DF:413,Madison Below Ennis Lake,45.48952,-111.63453,413,,,,569.9979;R355e6a74387dd941,Madison River O6 L3 Drainage:5547km2 AvgFlow:1889cfs AvgPrecip:449mm AvgTemp:6C
+DF:414,Gallatin Near Gallatin Gateway,45.49832,-111.27043,414,,,,613.5442;Rba498c7f124b9a41,Gallatin River O5 L3 Drainage:1896km2 AvgFlow:1024cfs AvgPrecip:528mm AvgTemp:5C
+DF:415,Stillwater Near Absarokee,45.55128,-109.38764,415,,,,607.3017;R10587911ba73a541,Stillwater River O6 L4 Drainage:2448km2 AvgFlow:942cfs AvgPrecip:396mm AvgTemp:8C
+DF:416,West Rosebud Cr Near Roscoe,45.2431,-109.7306,416,,,,695.9289;R022b5752654fc641,West Rosebud Creek O3 L5 Drainage:161km2 AvgFlow:123cfs AvgPrecip:673mm AvgTemp:4C
+DF:417,Rock Creek Near Red Lodge,45.08609,-109.33061,417,,,,610.1357;R9a9965a55550ef41,Rock Creek O3 L5 Drainage:285km2 AvgFlow:189cfs AvgPrecip:678mm AvgTemp:4C
+DF:418,Boulder At Big Timber,45.8342,-109.9381,418,,,,24.8068;R3f35de39b97b9041,Boulder River O5 L4 Drainage:1365km2 AvgFlow:564cfs AvgPrecip:412mm AvgTemp:8C
+DF:419,Yellowstone Near Livingston,45.5972,-110.5653,419,,,,925.8184;Rc52000698bafce41,Yellowstone River O6 L3 Drainage:9193km2 AvgFlow:4331cfs AvgPrecip:756mm AvgTemp:1C
+DF:42,McCloud Above McCloud Res,41.1885,-122.0640,042,,,,935.8898;R4e6284d9c9f5eb41,McCloud River O5 L3 Drainage:883km2 AvgFlow:876cfs AvgPrecip:1451mm AvgTemp:11C
+DF:420,Yellowstone At Corwin Springs,45.1116,-110.7930,420,,,,223.3394;Rcdccd028e8c0e441,Yellowstone River O6 L3 Drainage:6754km2 AvgFlow:3144cfs AvgPrecip:338mm AvgTemp:5C
+DF:421,Alameda Creek Near Niles,37.5872,-121.9608,421,,,,29.7664;Rd578416ce59adb41,Alameda Creek O5 L1 Drainage:1643km2 AvgFlow:147cfs AvgPrecip:574mm AvgTemp:15C
+DF:422,Mokelumne Inflow Pardee Res,38.2573,-120.8493,422,,,,491.3297;Rec5120c8ae04d441,Mokelumne River O5 L2 Drainage:1480km2 AvgFlow:1060cfs AvgPrecip:603mm AvgTemp:16C
+DF:423,Yellowstone Below Yellowstone Lake,44.5675,-110.3800,423,,,,529.9309;Rac1cda7c3aae9b41,Yellowstone River O5 L3 Drainage:2574km2 AvgFlow:1430cfs AvgPrecip:552mm AvgTemp:0C
+DF:424,Kaweah Below Terminus Dam,36.41420,-119.01172,424,,COERG:TRMQ,,993.3;R8fc2a56f5745ec41,Kaweah River O5 L5 Drainage:1428km2 AvgFlow:623cfs AvgPrecip:392mm AvgTemp:17C
+DF:425,Tule Near Springville,36.1006,-118.8686,425,,COESPK:SCC1,,819.9216;R7f6a70d34d15e541, O5 L4 Drainage:643km2 AvgFlow:175cfs AvgPrecip:314mm AvgTemp:18C
+DF:426,Truckee At Boca Bridge,39.3853,-120.0867,426,,,,660.1563;R8d978a3b2d62ed41,Truckee River O4 L4 Drainage:1823km2 AvgFlow:605cfs AvgPrecip:618mm AvgTemp:6C
+DF:43,McCloud At Ah-Di-Na,41.11080,-122.09575,043,,,,549.9548;R4e6268a66ea6e941,McCloud River O5 L3 Drainage:1052km2 AvgFlow:1025cfs AvgPrecip:1501mm AvgTemp:12C
+DF:430,Cache Creek At Rumsey Bridge (Calc),38.89320,-122.24248,430,,,,461.3411;R5a64d3ff9cbede41,Cache Creek O6 L3 Drainage:2433km2 AvgFlow:450cfs AvgPrecip:554mm AvgTemp:16C
+DF:431,Pescadero Creek Near Pescadero,37.26104,-122.32901,431,,,,947.6276;Rbe9f1af1ce327641,Pescadero Creek O3 L1 Drainage:131km2 AvgFlow:47cfs AvgPrecip:734mm AvgTemp:13C
+DF:433,Rogue Near McLeod,42.65481,-122.71388,433,,,,845.6211;R8195f35f2124c741,Rogue River O5 L1 Drainage:2428km2 AvgFlow:2262cfs AvgPrecip:837mm AvgTemp:11C
+DF:434,Suiattle Near Darrington,48.30100,-121.41750,434,,USGS:12188380,,959.807;R85eb190f6474d641,Suiattle River O5 L3 Drainage:762km2 AvgFlow:1633cfs AvgPrecip:2539mm AvgTemp:8C
+DF:436,Klickitat Near Glenwood,46.08961,-121.26028,436,,,,843.2722;R8b6c53817b5eec41,Klickitat River O5 L2 Drainage:919km2 AvgFlow:781cfs AvgPrecip:894mm AvgTemp:7C
+DF:437,Li. White Salmon At Willard Fish Hatchery,45.76678,-121.63011,437,,,,738.8947;R3108f49f591be841,Lapham Creek O1 L3 Drainage:8km2 AvgFlow:6cfs AvgPrecip:1194mm AvgTemp:8C
+DF:438,Cherry Creek Below Cherry Lake,37.9678,-119.9164,438,,USGS:11277300,,890.7026;R964307d41e07e441,Cherry Creek O4 L4 Drainage:297km2 AvgFlow:250cfs AvgPrecip:1156mm AvgTemp:11C
+DF:439,Cherry Creek Above Holm Powerhouse,37.8944,-119.9617,439,,USGS:11278300,,38.2244;Rf2d239e048dce041,Cherry Creek O5 L4 Drainage:591km2 AvgFlow:170cfs AvgPrecip:976mm AvgTemp:13C
+DF:44,McCloud At Shasta Lake,40.95820,-122.21967,044,,,,498.4158;Rbe9fcad185afef41,McCloud River O5 L3 Drainage:1510km2 AvgFlow:681cfs AvgPrecip:1941mm AvgTemp:14C
+DF:441,San Joaquin Chawanakee Gorge,37.20743,-119.33019,441,,USGS:11238600,,297.6147;R713d1e449638e341,San Joaquin River O5 L1 Drainage:2751km2 AvgFlow:438cfs AvgPrecip:848mm AvgTemp:15C
+DF:442,Rubicon Below Hell Hole Dam,39.05197,-120.41150,442,,,,919.966;R79e9aa8e989ae141,Rubicon River O4 L4 Drainage:290km2 AvgFlow:204cfs AvgPrecip:1604mm AvgTemp:9C
+DF:443,So. Battle Creek Above NF Confluence,40.4058,-121.9807,443,,,,469.6045;R7b1406ee1fb0d441, O1 L3 Drainage:5km2 AvgFlow:2cfs AvgPrecip:830mm AvgTemp:16C
+DF:445,Battle Creek Above Baldwin Creek,40.42337,-122.00023,445,,,,775.1377;R713dfa3455bedf41,Battle Creek O5 L2 Drainage:863km2 AvgFlow:509cfs AvgPrecip:882mm AvgTemp:16C
+DF:446,Mi. Yuba Below Jackson Meadows,39.5101,-120.5556,446,,USGS:11407815,,795.6643;R7d3fa5d0fa90d241,Middle Yuba River O4 L4 Drainage:102km2 AvgFlow:121cfs AvgPrecip:1900mm AvgTemp:7C
+DF:449,Truckee At Reno,39.5303,-119.7944,449,,,,12.8067;R1b2f8d4c42a2e241,Truckee River O5 L4 Drainage:2724km2 AvgFlow:742cfs AvgPrecip:219mm AvgTemp:11C
+DF:450,No. Kings Below Balch Diversion Dam,36.90293,-119.04850,450,,CDEC:NKB,,272.4867;R9cc4c01ceafeb641,Weir Creek O1 L6 Drainage:6km2 AvgFlow:4cfs AvgPrecip:880mm AvgTemp:10C
+DF:452,No. Kings Above Dinkey Creek,36.9031,-119.1216,452,,USGS:11216500,,104.5094;R14ae4793a8288441,North Fork Kings River O5 L5 Drainage:994km2 AvgFlow:173cfs AvgPrecip:670mm AvgTemp:16C
+DF:453,Dinkey Creek Above North Fork Kings,36.91662,-119.13287,453,,,,6.4696;Rbc745344ff92b041,Dinkey Creek O4 L6 Drainage:343km2 AvgFlow:205cfs AvgPrecip:734mm AvgTemp:15C
+DF:454,Dinkey Creek At Dinkey Meadow,37.04713,-119.14819,454,,,,827.0345;R3108e8c166e3e541,Dinkey Creek O3 L6 Drainage:125km2 AvgFlow:97cfs AvgPrecip:939mm AvgTemp:9C
+DF:455,So. Kings Below Cedar Grove,36.80685,-118.75028,455,,,,747.7618;R713ddabcd504ef41,South Fork Kings River O6 L4 Drainage:1031km2 AvgFlow:539cfs AvgPrecip:917mm AvgTemp:11C
+DF:456,Rogue At Grants Pass,42.42922,-123.31711,456,,,,31.2995;R9eef77868573e641,Rogue River O5 L1 Drainage:6370km2 AvgFlow:3488cfs AvgPrecip:811mm AvgTemp:12C
+DF:457,Klamath At Klamath Glen,41.51102,-123.97723,457,,,,13.8965;Rcff733355d77ed41,Klamath River O7 L1 Drainage:34550km2 AvgFlow:17441cfs AvgPrecip:1986mm AvgTemp:12C
+DF:458,Eagle At Red Cliff,39.5083,-106.3661,458,,,,597.5034;Rec5128ca4360ee41,Eagle River O4 L5 Drainage:259km2 AvgFlow:66cfs AvgPrecip:479mm AvgTemp:2C
+DF:459,Cuyama Below Buckhorn Canyon,35.0219,-120.2275,459,,,,431.897;R79e9065fb8a7d041,Cuyama River O5 L1 Drainage:2203km2 AvgFlow:22cfs AvgPrecip:489mm AvgTemp:16C
+DF:46,Pit At Big Bend,41.02073,-121.91012,046,,,,826.679;R8fc2e9831b65e941,Pit River O6 L2 Drainage:10996km2 AvgFlow:699cfs AvgPrecip:1888mm AvgTemp:13C
+DF:460,Santa Margarita Near Temecula,33.4739,-117.1414,460,,USGS:11044000,,41.288;Rba491c4e783acc41,Santa Margarita River O6 L1 Drainage:1495km2 AvgFlow:26cfs AvgPrecip:472mm AvgTemp:18C
+DF:461,Teton Near Driggs,43.7819,-111.2092,461,,,,809.1974;Rb29deb864b0fe941,Teton River O4 L4 Drainage:811km2 AvgFlow:443cfs AvgPrecip:393mm AvgTemp:5C
+DF:462,So. Payette Below Deer Creek,44.08583,-116.10017,462,,,,978.0362;Rf62840c24d0cee41,Phillips Creek O1 L6 Drainage:5km2 AvgFlow:1cfs AvgPrecip:696mm AvgTemp:8C
+DF:463,So. Payette Near Garden Valley,44.0611,-115.9194,463,,,,574.2243;R0681d537cd52cf41,Poorman Creek O1 L5 Drainage:6km2 AvgFlow:1cfs AvgPrecip:645mm AvgTemp:9C
+DF:466,Colorado Near CO-UT State Line,39.1328,-109.0264,466,,,,683.5051;Rd9ce5b658f28e741,Colorado River O7 L4 Drainage:45990km2 AvgFlow:6081cfs AvgPrecip:277mm AvgTemp:12C
+DF:467,Gunnison Below Gunnison Tunnel,38.52923,-107.64844,467,,USGS:09128000,,231.3543;R85eb115b5782ec41,Gunnison River O6 L5 Drainage:10300km2 AvgFlow:1175cfs AvgPrecip:388mm AvgTemp:7C
+DF:468,Encampment Near Encampment,41.3033,-106.7147,468,,,,822.3936;Rae4761cc209a9d41,Encampment River O4 L5 Drainage:679km2 AvgFlow:259cfs AvgPrecip:264mm AvgTemp:5C
+DF:469,North Platte Near Northgate,40.9366,-106.3392,469,,,,990.1379;Rdbf9ae9489b5d641,North Platte River O6 L4 Drainage:3736km2 AvgFlow:451cfs AvgPrecip:369mm AvgTemp:3C
+DF:47,Santa Ynez Below Los Laureles Canyon,34.5436,-119.8639,047,,,,967.6324;Ree7cd7ab858ed841,Santa Ynez River O5 L1 Drainage:720km2 AvgFlow:110cfs AvgPrecip:625mm AvgTemp:16C
+DF:470,Yampa Near Maybell,40.5028,-108.0330,470,,,,330.1884;Rfca911bd92e4b641,Yampa River O6 L6 Drainage:8757km2 AvgFlow:1639cfs AvgPrecip:364mm AvgTemp:6C
+DF:471,No. Payette At McCall,44.9072,-116.1192,471,,,,553.345;R77be6b482155ee41,North Fork Payette River O4 L5 Drainage:374km2 AvgFlow:349cfs AvgPrecip:776mm AvgTemp:4C
+DF:473,Kern Above Borel Powerhouse,35.64064,-118.48223,473,,COESPK:ISBO,,636.117;R736831acf4b7c641,Kern River O6 L4 Drainage:4973km2 AvgFlow:928cfs AvgPrecip:304mm AvgTemp:17C
+DF:475,Kern Below Democrat,35.5203,-118.6790,475,,,,683.3136;R21b07af5c6cfde41,Kern River O6 L4 Drainage:5450km2 AvgFlow:610cfs AvgPrecip:508mm AvgTemp:15C
+DF:476,Applegate Below Applegate Dam,42.0639,-123.1103,476,,,,992.5033;Ree7c2fadc46ec241,Applegate River O4 L2 Drainage:576km2 AvgFlow:454cfs AvgPrecip:677mm AvgTemp:11C
+DF:477,Carberry Creek Above Applegate Lake,42.0269,-123.1709,477,,,,608.0074;Rb4c8e6120069c041,Carberry Creek O3 L3 Drainage:193km2 AvgFlow:169cfs AvgPrecip:806mm AvgTemp:11C
+DF:479,So. Feather Below Little Grass Valley,39.7247,-121.0200,479,,,,969.3348;Rc1cad5f1b292ec41,South Fork Feather River O3 L4 Drainage:51km2 AvgFlow:81cfs AvgPrecip:1812mm AvgTemp:10C
+DF:48,Mill Creek At End of Canyon,40.0547,-122.0231,048,,,,2.5479;Rfed43837a5c8bc41,Mill Creek O3 L4 Drainage:341km2 AvgFlow:314cfs AvgPrecip:724mm AvgTemp:16C
+DF:480,Mill Creek Above Kings River,36.8186,-119.3408,480,,COESPK:PNF2,,999.1551;Rb4c876402c2c9c41,Mill Creek O4 L5 Drainage:329km2 AvgFlow:42cfs AvgPrecip:486mm AvgTemp:17C
+DF:481,Susan At Susanville,40.4138,-120.6641,481,,,,908.5462;R62101491f697e641,Susan River O4 L4 Drainage:591km2 AvgFlow:100cfs AvgPrecip:395mm AvgTemp:9C
+DF:484,So. Silver Creek Below Ice House Reservoir,38.81886,-120.36398,484,,USGS:11441500,,715.6443;R0ad7a3423a31cc41,South Fork Silver Creek O3 L5 Drainage:71km2 AvgFlow:67cfs AvgPrecip:1470mm AvgTemp:10C
+DF:485,So. Salmon At Forks of Salmon,41.25678,-123.31962,485,,,,931.9836;R8941ecdb1f6bef41,Horn Creek O1 L3 Drainage:5km2 AvgFlow:7cfs AvgPrecip:1364mm AvgTemp:13C
+DF:486,Putah Creek Below Lake Berryessa,38.51501,-122.08198,486,,,,916.388;R8716914d9f8fe841, O5 L4 Drainage:1491km2 AvgFlow:553cfs AvgPrecip:725mm AvgTemp:16C
+DF:487,So. Feather Below Forbestown Div Dam,39.55137,-121.21138,487,,,,785.1399;Rd578c91e698ddd41,Oroleve Creek O2 L5 Drainage:14km2 AvgFlow:22cfs AvgPrecip:1693mm AvgTemp:13C
+DF:488,Piru Creek Above Pyramid Lake,34.66569,-118.82370,488,,USGS:11109375,,985.2203;Ra4708d0c18d5d741,Piru Creek O5 L2 Drainage:490km2 AvgFlow:140cfs AvgPrecip:367mm AvgTemp:15C
+DF:489,Sespe Creek Near Fillmore,34.44167,-118.92693,489,,,,409.9286;Rb29d6f9731209f41,Sespe Creek O4 L2 Drainage:663km2 AvgFlow:162cfs AvgPrecip:527mm AvgTemp:17C
+DF:49,Pit Below Pit 4 Dam,40.97356,-121.77941,049,,,,976.5482;R79e9965cda07e341,Pit River O6 L2 Drainage:10821km2 AvgFlow:2546cfs AvgPrecip:1320mm AvgTemp:12C
+DF:490,Elwha Above Lake Mills,47.97030,-123.59055,490,,,,609.5118;R819583dfbe1bc641,Elwha River O4 L1 Drainage:572km2 AvgFlow:1590cfs AvgPrecip:1725mm AvgTemp:9C
+DF:491,Mono Creek Below Lake Edison,37.36139,-118.99111,491,,USGS:11231500,,934.7434;R6abcd0b6e086ec41,Mono Creek O4 L3 Drainage:259km2 AvgFlow:178cfs AvgPrecip:876mm AvgTemp:7C
+DF:492,Boise At Glenwood Bridge,43.6606,-116.2792,492,,,,982.4148;Rc74bd3f15908e741,Boise River O6 L3 Drainage:7185km2 AvgFlow:1354cfs AvgPrecip:302mm AvgTemp:10C
+DF:494,Mi. San Joaquin At Devils Postpile,37.6319,-119.0864,494,,USGS:11224000,,992.0578;R2fddc4807a08d041,Minaret Creek O2 L2 Drainage:24km2 AvgFlow:20cfs AvgPrecip:736mm AvgTemp:5C
+DF:495,Kidder Creek Below Babs Fork,41.50382,-123.01864,495,,,,830.9483;Rb4c84a0a99d2e041,Kidder Creek O2 L3 Drainage:26km2 AvgFlow:26cfs AvgPrecip:1008mm AvgTemp:10C
+DF:496,Canton Creek Above Steamboat Creek,43.34945,-122.73198,496,,,,5.0958;R77bed391c387e841,Canton Creek O4 L4 Drainage:164km2 AvgFlow:200cfs AvgPrecip:1261mm AvgTemp:11C
+DF:497,Carson Near Carson City,39.1078,-119.7122,497,,,,896.1907;R9a9981987a0ee841,Carson River O5 L4 Drainage:2096km2 AvgFlow:397cfs AvgPrecip:341mm AvgTemp:9C
+DF:498,No. Yuba Above Slate Creek,39.52437,-121.09135,498,,CDEC:NYS,,952.4404;R4c377916d0aed841, O1 L4 Drainage:1km2 AvgFlow:2cfs AvgPrecip:1778mm AvgTemp:13C
+DF:499,Washougal At Hathaway Park,45.5839,-122.3433,499,,WECY:28B080,,388.6333;R52b86ebf91a3d741,Washougal River O4 L2 Drainage:371km2 AvgFlow:1077cfs AvgPrecip:1414mm AvgTemp:12C
+DF:5,Fresno Above Hensley Lake,37.1506,-119.8561,005,,,,876.1046;R0e2d1a1337e8de41,Fresno River O4 L4 Drainage:601km2 AvgFlow:122cfs AvgPrecip:396mm AvgTemp:17C
+DF:50,Big Sur Near Big Sur,36.24638,-121.77283,050,,,,485.3006;Rcff7472512eae741,Big Sur River O4 L1 Drainage:125km2 AvgFlow:108cfs AvgPrecip:558mm AvgTemp:14C
+DF:500,No. Nooksack Below Cascade Creek,48.90522,-121.84328,500,,USGS:12205000,,573.887;Rf8533f59d133ec41,Fossil Creek 
+DF:501,So. Stillaguamish Near Granite Falls,48.1036,-121.9456,501,,,,868.3223;Rae47a92e21c9da41,South Fork Stillaguamish River O3 L2 Drainage:304km2 AvgFlow:1011cfs AvgPrecip:1705mm AvgTemp:10C
+DF:503,Eel Inflow Van Arsdale,39.38104,-123.08494,503,,,,559.2091;R6abc803af3afee41,Eel River O5 L1 Drainage:898km2 AvgFlow:686cfs AvgPrecip:1246mm AvgTemp:13C
+DF:506,Joseph Creek Near Mouth,46.02943,-117.01605,506,,,,428.2145;R75937042cd15ec41,Joseph Creek O5 L4 Drainage:1409km2 AvgFlow:60cfs AvgPrecip:428mm AvgTemp:11C
+DF:508,Tuolumne Outflow New Don Pedro Res,37.7009,-120.4207,508,,,,482.9426;R91ed0c05ef05de41,Tuolumne River O6 L2 Drainage:3967km2 AvgFlow:1636cfs AvgPrecip:452mm AvgTemp:17C
+DF:509,Piru Creek Below Lake Piru,34.45891,-118.75118,509,,,,839.3906;Rac1c5a978a6d8f41,Piru Creek O5 L2 Drainage:1087km2 AvgFlow:54cfs AvgPrecip:495mm AvgTemp:17C
+DF:51,No. Feather Below Rock Creek Dam,39.97973,-121.27682,051,,USGS:11403200,,956.4231;R295cb370ea22ed41,North Fork Feather River O6 L2 Drainage:4583km2 AvgFlow:1058cfs AvgPrecip:1566mm AvgTemp:12C
+DF:510,Gila Near Gila,33.0615,-108.5374,510,,,,37.0818;R23db59e040b9b441,Gila River O6 L5 Drainage:4811km2 AvgFlow:201cfs AvgPrecip:462mm AvgTemp:14C
+DF:511,Gila Near Redrock,32.7269,-108.6756,511,,,,600.4393;R10589dd0ebbde741,Gila River O6 L5 Drainage:7326km2 AvgFlow:267cfs AvgPrecip:352mm AvgTemp:15C
+DF:512,Blackfoot Near Shelley,43.2628,-112.0478,512,,,,890.1915;Rae479144b11ddd41,Blackfoot River O5 L3 Drainage:2269km2 AvgFlow:397cfs AvgPrecip:332mm AvgTemp:7C
+DF:513,Camas Creek Near Blaine,43.3328,-114.5419,513,,,,729.8731;Rd34d420b1349d141,Camas Creek O5 L5 Drainage:1440km2 AvgFlow:171cfs AvgPrecip:344mm AvgTemp:6C
+DF:514,So. Rogue Below Imnaha Creek,42.7083,-122.3917,514,,,,946.7439;R6f12eb161dabea41,Daniel Creek O1 L4 Drainage:5km2 AvgFlow:4cfs AvgPrecip:1205mm AvgTemp:9C
+DF:515,Mi. Willamette Below Hills Creek Res,43.72081,-122.43785,515,,,,585.8445;R0e2dd2abeaccc641,Middle Fork Willamette River O4 L2 Drainage:1311km2 AvgFlow:1610cfs AvgPrecip:1279mm AvgTemp:11C
+DF:516,Row River Above Dorena Lake,43.73564,-122.87223,516,,,,895.3686;R5c8f42b6cd2cea41,Row River O5 L4 Drainage:538km2 AvgFlow:687cfs AvgPrecip:1282mm AvgTemp:11C
+DF:517,No. Rogue Above Lost Creek Lake,42.72980,-122.51563,517,,,,887.1103;R27314858c4face41, 
+DF:518,Winberry Creek Near Lowell,43.91400,-122.68790,518,,,,66.2893;R2db27d91f468bf41,Winberry Creek O3 L4 Drainage:117km2 AvgFlow:128cfs AvgPrecip:1285mm AvgTemp:11C
+DF:519,Klamath Below J.C. Boyle Plant,42.08475,-122.07274,519,,,,905.1434;R6210806197e0dc41,Klamath River O6 L1 Drainage:13834km2 AvgFlow:1566cfs AvgPrecip:571mm AvgTemp:8C
+DF:52,No. Feather Below Grizzly Creek,39.8525,-121.3914,052,,USGS:11404330,,101.6891;R1904b6a7ab51bc41,North Fork Feather River O6 L2 Drainage:4962km2 AvgFlow:918cfs AvgPrecip:1759mm AvgTemp:13C
+DF:520,Deschutes Near Culver,44.4989,-121.3200,520,,,,10.4757;R9318cc89d714e241,Deschutes River O5 L2 Drainage:6032km2 AvgFlow:959cfs AvgPrecip:327mm AvgTemp:9C
+DF:521,Crooked At Crooked River Ranch,44.4271,-121.2317,521,,,,565.7358;Rb07244d219a0ec41,Crooked River O6 L3 Drainage:10185km2 AvgFlow:476cfs AvgPrecip:255mm AvgTemp:9C
+DF:522,Crooked Below Opal Springs,44.4925,-121.2972,522,,,,90.0896;Raaf1bae72b6bed41,Crooked River O6 L3 Drainage:10245km2 AvgFlow:1587cfs AvgPrecip:297mm AvgTemp:9C
+DF:523,Metolius Above Lake Billy Chinook,44.62634,-121.48344,523,,,,885.6506;R7368911a3bb8bf41,Metolius River O4 L3 Drainage:825km2 AvgFlow:1531cfs AvgPrecip:409mm AvgTemp:9C
+DF:524,Smith Steel Pipe At Gasquet,41.8481,-123.9678,524,,,,126.7377;Rcba10522d9aed841,Smith River O5 L1 Drainage:759km2 AvgFlow:1378cfs AvgPrecip:2431mm AvgTemp:12C
+DF:525,Cascade At Marblemount,48.52677,-121.41432,525,,USGS:12182500,,807.1044;R000054ff5e6ceb41,Cascade River O4 L2 Drainage:480km2 AvgFlow:1007cfs AvgPrecip:2091mm AvgTemp:10C
+DF:526,Methow Near Pateros,48.0775,-119.9839,526,,,,681.1748;Rd12257ece740eb41,Methow River O6 L2 Drainage:4580km2 AvgFlow:1713cfs AvgPrecip:338mm AvgTemp:9C
+DF:527,Chiwawa Near Plain,47.83764,-120.66095,527,,,,875.8604;Rbe9f9a3bd9d6a741,Chiwawa River O4 L3 Drainage:426km2 AvgFlow:512cfs AvgPrecip:950mm AvgTemp:7C
+DF:528,Mi. Cosumnes At Mt Aukum Rd,38.6245,-120.7025,528,,,,436.3525;Rec51e07a9a14e341, O2 L5 Drainage:3km2 AvgFlow:2cfs AvgPrecip:964mm AvgTemp:15C
+DF:529,West Br Feather At Whiskey Flat Bridge,39.8141,-121.5711,529,,CDEC:WFR,,169.054;R3bdfe325c4f0e541,West Branch Feather River O4 L3 Drainage:282km2 AvgFlow:379cfs AvgPrecip:1610mm AvgTemp:14C
+DF:53,No. Feather Below Poe Dam,39.8045,-121.4410,053,,,,567.9385;Rb81ee50876c4e541,North Fork Feather River O6 L2 Drainage:5061km2 AvgFlow:843cfs AvgPrecip:1662mm AvgTemp:14C
+DF:530,Indian Creek Below Indian Falls,40.05604,-120.96119,530,,CDEC:ICR,,427.1704;R08ac4c5dc758de41,Indian Creek O5 L3 Drainage:1925km2 AvgFlow:477cfs AvgPrecip:1119mm AvgTemp:10C
+DF:531,Tuolumne Above Hetch Hetchy Res,37.91644,-119.65884,531,,USGS:11274790,,477.8302;Re7fbcd9d3f1fe841,Tuolumne River O5 L2 Drainage:791km2 AvgFlow:532cfs AvgPrecip:1121mm AvgTemp:9C
+DF:532,E. Fk Russian Above Lake Mendocino,39.24751,-123.12970,532,,,,976.7112;Re7fb31052dded141,East Fork Russian River O4 L2 Drainage:187km2 AvgFlow:147cfs AvgPrecip:1070mm AvgTemp:14C
+DF:533,Umatilla Near Umatilla,45.90306,-119.32677,533,,,,3.7679;R295c9710ab7ee041,Umatilla River O6 L2 Drainage:5582km2 AvgFlow:549cfs AvgPrecip:222mm AvgTemp:12C
+DF:534,Mi. Snoqualmie Near Tanner,47.48563,-121.64838,534,,USGS:12141300,,950.1829;R931804dc54e4e241,Granite Creek O1 L3 Drainage:11km2 AvgFlow:32cfs AvgPrecip:3246mm AvgTemp:7C
+DF:535,Bear Below Dutch Flat Afterbay,39.21373,-120.84521,535,,USGS:11421790,,814.6734;R190426ff3fb3dc41,Bear River O2 L3 Drainage:44km2 AvgFlow:25cfs AvgPrecip:1489mm AvgTemp:13C
+DF:536,Canyon Creek Below Bowman Lake,39.43987,-120.66138,536,,USGS:11416500,,846.4563;Re92631685b3b3c41,Canyon Creek O3 L5 Drainage:74km2 AvgFlow:92cfs AvgPrecip:1733mm AvgTemp:8C
+DF:537,Mi. Yuba Below Milton Dam,39.5219,-120.5825,537,,,,694.3579;R7d3fa5d0fa90d241,Middle Yuba River O4 L4 Drainage:102km2 AvgFlow:121cfs AvgPrecip:1900mm AvgTemp:7C
+DF:538,Mi. Applegate Above Applegate Lake,42.00869,-123.15465,538,,,,833.838;R60e56877dcb6d341,Applegate River O4 L2 Drainage:279km2 AvgFlow:240cfs AvgPrecip:805mm AvgTemp:11C
+DF:539,Nason Creek Near Mouth,47.80052,-120.71674,539,,,,9.6983;R448bf8103501ee41,Nason Creek O4 L3 Drainage:282km2 AvgFlow:391cfs AvgPrecip:891mm AvgTemp:7C
+DF:54,Mi. Feather At Milsap Bar,39.70810,-121.27076,054,,CDEC:MER,,257.4314;Ra47055176a93d341,Middle Fork Feather River O5 L3 Drainage:2817km2 AvgFlow:1588cfs AvgPrecip:1691mm AvgTemp:14C
+DF:540,Pilchuck Creek At I-5 Bridge,48.21363,-122.21881,540,,,,22.5397;R2b877a0e6de9ec41,Pilchuck Creek O4 L2 Drainage:189km2 AvgFlow:270cfs AvgPrecip:1173mm AvgTemp:11C
+DF:541,Squire Creek At Squire Creek Park,48.2703,-121.6714,541,,,,389.2128;Rb6f39553e38cd441,Squire Creek O2 L2 Drainage:68km2 AvgFlow:204cfs AvgPrecip:1890mm AvgTemp:10C
+DF:542,Deer Creek Near Oso,48.2842,-121.9264,542,,,,43.7098;R1058a9aa99e3ce41,Deer Creek O3 L2 Drainage:187km2 AvgFlow:560cfs AvgPrecip:1501mm AvgTemp:10C
+DF:543,Jim Creek At Whites Road,48.1781,-122.0519,543,,,,320.8886;R60e560a7f305eb41,Jim Creek O3 L3 Drainage:118km2 AvgFlow:228cfs AvgPrecip:1313mm AvgTemp:11C
+DF:545,Big Quilcene Near Mouth,47.8187,-122.8716,545,,,,4.2465;R8b6cdf011c2ad341,Big Quilcene River O4 L1 Drainage:177km2 AvgFlow:287cfs AvgPrecip:1069mm AvgTemp:11C
+DF:546,Grays Below Hwy-4 Bridge,46.35476,-123.58139,546,,,,15.5658;R190406cce89bd941,Grays River O4 L2 Drainage:246km2 AvgFlow:681cfs AvgPrecip:2720mm AvgTemp:10C
+DF:547,Germany Creek At Mouth,46.1914,-123.1250,547,,,,214.9925;Rb81ecda12343e541,Germany Creek O2 L2 Drainage:59km2 AvgFlow:102cfs AvgPrecip:1386mm AvgTemp:11C
+DF:548,Little Klickitat Near Wahkiacus,45.84256,-121.05802,548,,WECY:30C070,,58.0029;R3f357af6b317ef41,Little Klickitat River O4 L3 Drainage:725km2 AvgFlow:173cfs AvgPrecip:377mm AvgTemp:10C
+DF:549,Peshastin Creek Near Wenatchee Confluence,47.55264,-120.60171,549,,,,405.3439;R7368f139412bda41,Peshastin Creek O3 L3 Drainage:351km2 AvgFlow:216cfs AvgPrecip:473mm AvgTemp:9C
+DF:551,Naches Near Cliffdell,46.90053,-121.01669,551,,,,563.324;R355e3a346a63e241,Naches River O5 L4 Drainage:1030km2 AvgFlow:1169cfs AvgPrecip:765mm AvgTemp:7C
+DF:552,Teanaway Below Forks,47.24643,-120.86176,552,,,,525.1507;Ra24516360d3ab141,Teanaway River O5 L4 Drainage:433km2 AvgFlow:419cfs AvgPrecip:864mm AvgTemp:7C
+DF:553,Cle Elum Below Cle Elum Dam,47.2444,-121.0685,553,,,,946.1347;Rb29d3fa88a82cb41,Cle Elum River O5 L4 Drainage:519km2 AvgFlow:835cfs AvgPrecip:987mm AvgTemp:7C
+DF:554,So. Yuba Near Cisco,39.3215,-120.5640,554,,,,803.8602;R0456f6b88092e941,South Yuba River O3 L4 Drainage:148km2 AvgFlow:216cfs AvgPrecip:1858mm AvgTemp:8C
+DF:555,Bear Below Drum Afterbay,39.2542,-120.7752,555,,USGS:11421770,,27.1373;Rc520dcb55585e241,Bear River O1 L3 Drainage:39km2 AvgFlow:30cfs AvgPrecip:1661mm AvgTemp:12C
+DF:556,Bear At Hwy 20 Bridge,39.3064,-120.6789,556,,USGS:11421710,,32.3881;R3333b3b1d3599f41,Bear River O1 L3 Drainage:9km2 AvgFlow:15cfs AvgPrecip:1804mm AvgTemp:11C
+DF:557,Cle Elum Inflow Cle Elum Lake,47.2500,-121.0667,557,,,,702.8417;Rb29d3fa88a82cb41,Cle Elum River O5 L4 Drainage:519km2 AvgFlow:835cfs AvgPrecip:987mm AvgTemp:7C
+DF:558,Bumping Below Bumping Dam,46.87995,-121.28443,558,,,,752.2058;R3f350e13e57fe141,Bumping River O5 L4 Drainage:201km2 AvgFlow:267cfs AvgPrecip:1215mm AvgTemp:5C
+DF:559,Tieton At Rimrock,46.66242,-121.12476,559,,,,525.1987;R643ba713d930d441,Tieton River O5 L5 Drainage:530km2 AvgFlow:494cfs AvgPrecip:636mm AvgTemp:6C
+DF:560,Crooked At Smith Rock State Park,44.36785,-121.13931,560,,,,9.5182;Rb072e43006cde441,Crooked River O6 L3 Drainage:10102km2 AvgFlow:475cfs AvgPrecip:237mm AvgTemp:9C
+DF:561,Deschutes Below Wickiup Reservoir,43.68662,-121.68686,561,,,,420.4746;R3f35de3ed596d741,Deschutes River O4 L2 Drainage:657km2 AvgFlow:484cfs AvgPrecip:553mm AvgTemp:6C
+DF:565,Cherry Creek Above Cherry Lake Calc,38.0362,-119.9013,565,,,,715.191;R7593d03601e0d141,Cherry Creek O4 L4 Drainage:270km2 AvgFlow:235cfs AvgPrecip:1165mm AvgTemp:10C
+DF:566,New River New River Gorge,40.8575,-123.4606,566,,,,780.6357;R83c02ee469aeea41,New River O4 L3 Drainage:605km2 AvgFlow:654cfs AvgPrecip:1319mm AvgTemp:13C
+DF:567,No. Saint Vrain Cr Above Buttonrock Res,40.2122,-105.3928,567,,CDWR:NSVABRCO,,516.2023;R96431fc0c525e141,North Saint Vrain Creek O4 L4 Drainage:251km2 AvgFlow:103cfs AvgPrecip:488mm AvgTemp:7C
+DF:569,American Folsom Elev SF Paddle Out,38.7078,-121.1566,569,,,,401.7703;Rfa7e0ab526edc141,North Fork American River O6 L2 Drainage:2620km2 AvgFlow:2038cfs AvgPrecip:667mm AvgTemp:16C
+DF:57,No. Yuba Below Goodyears Bar,39.52546,-120.93711,057,,USGS:11413000,,97.889;R5839e0432f3ce141,North Yuba River O5 L3 Drainage:652km2 AvgFlow:801cfs AvgPrecip:1672mm AvgTemp:12C
+DF:571,No. Payette At Otters Run,44.1139,-116.1069,571,,,,50.0887;Rb4c8068f4f55de41,North Fork Payette River O6 L5 Drainage:2385km2 AvgFlow:1364cfs AvgPrecip:715mm AvgTemp:8C
+DF:572,Rock Creek At Stevenson,45.69847,-121.90518,572,,,,193.589;Rf0a7d60b8143ec41,Rock Creek O3 L2 Drainage:101km2 AvgFlow:265cfs AvgPrecip:2127mm AvgTemp:10C
+DF:573,Wind River At Stabler,45.80776,-121.90877,573,,WECY:29C100,,13.281;R2db229ed32a4e841,Wind River O4 L2 Drainage:278km2 AvgFlow:706cfs AvgPrecip:2470mm AvgTemp:9C
+DF:574,Panther Creek Near Carson,45.7711,-121.8483,574,,,,12.4064;Rb81e31cb75bee541,Panther Creek O3 L3 Drainage:105km2 AvgFlow:257cfs AvgPrecip:2096mm AvgTemp:10C
+DF:575,East Walker Near Bridgeport,38.32730,-119.21401,575,,USGS:10293000,,200.8463;R77be2f14d9c5cf41,East Walker River O5 L4 Drainage:927km2 AvgFlow:214cfs AvgPrecip:252mm AvgTemp:7C
+DF:576,Mi. Nooksack Near Deming,48.77926,-122.10647,576,,USGS:12208000,,820.4923;R105839ec66225841, O1 L3 Drainage:9km2 AvgFlow:12cfs AvgPrecip:1830mm AvgTemp:9C
+DF:577,So. Nooksack At Saxon Bridge,48.6778,-122.1653,577,,USGS:12210000,,30.7925;R4e62c0b03921eb41,South Fork Nooksack River O3 L2 Drainage:334km2 AvgFlow:1012cfs AvgPrecip:1930mm AvgTemp:9C
+DF:578,Mi. Powder Near Barnum,43.5778,-107.1378,578,,,,776.7115;R6891edc614e4a941, O1 L6 Drainage:0km2 AvgFlow:0cfs AvgPrecip:555mm AvgTemp:4C
+DF:579,Saint Joe At Red Ives Ranger Stn,47.05600,-115.35229,579,,,,39.9321;R21b0b20f4ee4c541,Saint Joe River O4 L2 Drainage:278km2 AvgFlow:306cfs AvgPrecip:1175mm AvgTemp:5C
+DF:58,No. Yuba Inflow New Bullards Bar,39.3928,-121.1404,058,,,,494.6968;R3bdfcfa18fd4ca41,Cottage Creek O1 L4 Drainage:4km2 AvgFlow:7cfs AvgPrecip:1775mm AvgTemp:14C
+DF:580,White Below Clearwater River,47.14625,-121.85894,580,,USGS:12097850,,164.9321;R1f85ffd5a80def41,White River O5 L2 Drainage:989km2 AvgFlow:1310cfs AvgPrecip:1748mm AvgTemp:9C
+DF:581,Elk Creek Above Rogue River,42.6789,-122.7408,581,,,,991.5761;R8195cf4bb4ece441,Elk Creek O4 L2 Drainage:346km2 AvgFlow:219cfs AvgPrecip:801mm AvgTemp:11C
+DF:582,Spokane At Spokane,47.6594,-117.4481,582,,,,600.305;Ra470d52f4bbfdd41,Spokane River O7 L2 Drainage:12268km2 AvgFlow:6791cfs AvgPrecip:444mm AvgTemp:9C
+DF:583,Canyon Creek Near Amboy,45.9400,-122.3158,583,,USGS:14219000,,16.7288;R643b3b2c9f66ee41,Canyon Creek O2 L3 Drainage:118km2 AvgFlow:424cfs AvgPrecip:2906mm AvgTemp:10C
+DF:584,So. Skokomish Near Union,47.34060,-123.27921,584,,,,19.2414;Rf853cb21be45dc41,South Fork Skokomish River O3 L1 Drainage:205km2 AvgFlow:810cfs AvgPrecip:2221mm AvgTemp:10C
+DF:585,No. Skokomish Below Staircase,47.51416,-123.33071,585,,,,871.4364;R6de72b3ae623e841,North Fork Skokomish River O3 L2 Drainage:134km2 AvgFlow:427cfs AvgPrecip:2700mm AvgTemp:8C
+DF:586,American Near Nile,46.97768,-121.16869,586,,USGS:12488500,,17.8447;R3f358e5bed3bcb41,American River O3 L5 Drainage:206km2 AvgFlow:238cfs AvgPrecip:1189mm AvgTemp:5C
+DF:587,Cache Creek At Rumsey Bridge,38.8900,-122.2380,587,,,,899.5539;R5a64d3ff9cbede41,Cache Creek O6 L3 Drainage:2433km2 AvgFlow:450cfs AvgPrecip:554mm AvgTemp:16C
+DF:588,Chewuch At Winthrop,48.47693,-120.18562,588,,,,763.0048;R0000408766d1e241,Chewuch River O5 L3 Drainage:1359km2 AvgFlow:496cfs AvgPrecip:399mm AvgTemp:7C
+DF:589,Dungeness Near Sequim,48.00011,-123.12473,589,,,,6.8044;Rf0a7debe73ddeb41,Dungeness River O4 L1 Drainage:396km2 AvgFlow:507cfs AvgPrecip:932mm AvgTemp:9C
+DF:59,No. Yuba Below New Bullards Bar,39.39097,-121.14379,059,,USGS:11413517,,384.2628;R3bdfcfa18fd4ca41,Cottage Creek O1 L4 Drainage:4km2 AvgFlow:7cfs AvgPrecip:1775mm AvgTemp:14C
+DF:590,Icicle Creek Above Snow Creek,47.5411,-120.7189,590,,,,997.8307;Ra24556d9f0d2c841,Icicle Creek O4 L3 Drainage:534km2 AvgFlow:681cfs AvgPrecip:941mm AvgTemp:8C
+DF:591,Palouse At Hooper,46.7586,-118.1478,591,,,,614.8423;R1058c5cc1787e541,Palouse River O6 L3 Drainage:7984km2 AvgFlow:677cfs AvgPrecip:320mm AvgTemp:11C
+DF:592,Indian Creek Near Douglas City,40.65199,-122.91452,592,,,,4.2228;Rba49a086b99ae241,Indian Creek O3 L3 Drainage:87km2 AvgFlow:67cfs AvgPrecip:929mm AvgTemp:12C
+DF:596,Yampa At Steamboat Springs,40.4830,-106.8324,596,,,,898.6049;Rb29d6fedeb26a341,Yampa River O5 L6 Drainage:1551km2 AvgFlow:526cfs AvgPrecip:606mm AvgTemp:5C
+DF:598,So. Stanislaus At Strawberry,38.1975,-120.0075,598,,USGS:11296500,,864.2413;R6666265b308bb041,Herring Creek O3 L4 Drainage:45km2 AvgFlow:43cfs AvgPrecip:1070mm AvgTemp:9C
+DF:599,So. Stanislaus Below Philadelphia Div,38.1777,-120.0470,599,,,,973.1297;R77be5f646a83c341,South Fork Stanislaus River O4 L3 Drainage:123km2 AvgFlow:134cfs AvgPrecip:1064mm AvgTemp:10C
+DF:6,Salmon At Somes Bar,41.37747,-123.47648,006,,,,460.5886;R1d5af4c6d338db41,Salmon River O5 L2 Drainage:1931km2 AvgFlow:1716cfs AvgPrecip:1517mm AvgTemp:14C
+DF:60,Trinity At Pigeon Point,40.76706,-123.13326,060,,,,940.8054;Rd7a3046582f7e741,Trinity River O5 L2 Drainage:2944km2 AvgFlow:1068cfs AvgPrecip:976mm AvgTemp:12C
+DF:600,San Joaquin Below Friant Dam,36.98446,-119.72392,600,,USGS:11251000,,363.8884;R3bdfd7bd4ba8e641,San Joaquin River O5 L1 Drainage:4341km2 AvgFlow:233cfs AvgPrecip:347mm AvgTemp:17C
+DF:601,San Joaquin At Mendota,36.8106,-120.3772,601,,,,88.6779;R736851246eafc641,San Joaquin River O5 L1 Drainage:13405km2 AvgFlow:680cfs AvgPrecip:218mm AvgTemp:17C
+DF:602,San Joaquin At Donny Bridge,36.8335,-119.9658,602,,,,19.0525;R0e2df2e904ddd841,San Joaquin River O5 L1 Drainage:4662km2 AvgFlow:690cfs AvgPrecip:302mm AvgTemp:17C
+DF:603,San Joaquin At Gravelly Ford,36.7980,-120.1600,603,,,,27.84;R8195dbec5d25d641,San Joaquin River O5 L1 Drainage:4744km2 AvgFlow:680cfs AvgPrecip:257mm AvgTemp:17C
+DF:604,Fall Creek Above North Fork,43.9672,-122.6297,604,,,,743.496;Rd122df6516cde741,Fall Creek O4 L3 Drainage:307km2 AvgFlow:422cfs AvgPrecip:1377mm AvgTemp:11C
+DF:605,Guadalupe At San Jose,37.37360,-121.93275,605,,,,7.4243;Ra69b8c5e19bbec41,Guadalupe River O4 L1 Drainage:408km2 AvgFlow:67cfs AvgPrecip:394mm AvgTemp:15C
+DF:606,Mi. Santiam Near Cascadia,44.51545,-122.37148,606,,OWRD:14185800,,258.6365;R8941f8c2f9dedb41,Middle Santiam River O3 L4 Drainage:261km2 AvgFlow:545cfs AvgPrecip:2075mm AvgTemp:10C
+DF:607,Yuba Below Deer Creek,39.2307,-121.2827,607,,CDEC:YPB,,981.7105;R508d6b1b5d93e141,Yuba River O5 L3 Drainage:2871km2 AvgFlow:782cfs AvgPrecip:835mm AvgTemp:16C
+DF:608,Escalante Near Escalante,37.7781,-111.5739,608,,USGS:09337500,,114.8384;R426065610ebfde41,Escalante River O5 L5 Drainage:573km2 AvgFlow:36cfs AvgPrecip:259mm AvgTemp:10C
+DF:609,Slate Creek Below Diversion Dam,39.6144,-121.0519,609,,USGS:11413300,,611.4745;R48e1aab65669c441,Slate Creek O4 L4 Drainage:122km2 AvgFlow:167cfs AvgPrecip:2122mm AvgTemp:11C
+DF:61,Mi. Yuba Below Our House Dam,39.41078,-120.99850,061,,USGS:11408870,,283.586;R60e5109226c6c541,Middle Yuba River O4 L4 Drainage:376km2 AvgFlow:129cfs AvgPrecip:1511mm AvgTemp:14C
+DF:610,Lost Creek Below Lost Creek Res,39.5739,-121.1408,610,,USGS:11396000,,982.5392;R1b2f9d475fa1ea41,Lost Creek O2 L5 Drainage:64km2 AvgFlow:103cfs AvgPrecip:2059mm AvgTemp:11C
+DF:611,So. Feather Below SF Diversion Dam,39.6481,-121.1186,611,,USGS:11395200,,4.6783;R9a9949f4e071e941,South Fork Feather River O3 L4 Drainage:103km2 AvgFlow:30cfs AvgPrecip:2083mm AvgTemp:11C
+DF:613,No. Lewis Above Muddy River,46.06022,-121.98335,613,,USGS:14216000,,786.1256;R643beb737ae0e541,Lewis River O4 L2 Drainage:532km2 AvgFlow:1309cfs AvgPrecip:3071mm AvgTemp:9C
+DF:614,No. Cosumnes At Sand Ridge Rd,38.5890,-120.8445,614,,,,958.2827;R5839dc14b05fde41,North Fork Cosumnes River O5 L3 Drainage:528km2 AvgFlow:264cfs AvgPrecip:829mm AvgTemp:16C
+DF:615,Coyote Creek Above Coyote Lake,37.07754,-121.49346,615,,,,783.1656;R77be3fc73f4dc541,Coyote Creek O4 L1 Drainage:271km2 AvgFlow:51cfs AvgPrecip:627mm AvgTemp:15C
+DF:616,So. Gualala Near Sea Ranch,38.7092,-123.4256,616,,,,888.8988;R6de7d3d1e2c7ef41, O1 L3 Drainage:1km2 AvgFlow:1cfs AvgPrecip:1236mm AvgTemp:13C
+DF:617,San Antonio Near Lockwood,35.89719,-121.08843,617,,,,971.9455;R68918d132bbbdd41,San Antonio River O4 L2 Drainage:554km2 AvgFlow:125cfs AvgPrecip:405mm AvgTemp:15C
+DF:618,San Francisquito Cr At Stanford University,37.42334,-122.18951,618,,,,7.5466;Rf6284cc321bad341,San Francisquito Creek O4 L1 Drainage:103km2 AvgFlow:26cfs AvgPrecip:470mm AvgTemp:15C
+DF:62,Mi. Yuba Above Our House Dam,39.4145,-120.9925,062,,,,944.9596;R60e5109226c6c541,Middle Yuba River O4 L4 Drainage:376km2 AvgFlow:129cfs AvgPrecip:1511mm AvgTemp:14C
+DF:620,San Joaquin Below Stevenson Creek,37.1671,-119.3625,620,,,,330.7053;R8b6c03736fddee41,San Joaquin River O5 L1 Drainage:3127km2 AvgFlow:599cfs AvgPrecip:840mm AvgTemp:15C
+DF:621,Roaring Fork At Glenwood Springs,39.54355,-107.32908,621,,,,0;R0456d683c345dd41,Roaring Fork River O5 L5 Drainage:3767km2 AvgFlow:1252cfs AvgPrecip:490mm AvgTemp:8C
+DF:622,So. American Slab Creek Res Elevation,38.7732,-120.6984,622,,,,981.6999;R6891ed5ffcffa041,South Fork American River O5 L3 Drainage:1305km2 AvgFlow:686cfs AvgPrecip:1056mm AvgTemp:14C
+DF:623,Silver Fk American Below Oyster Creek,38.6794,-120.1324,623,,,,527.2269;R6f120bd4d789db41,Silver Fork American River O3 L4 Drainage:61km2 AvgFlow:59cfs AvgPrecip:1330mm AvgTemp:7C
+DF:624,Silver Fk American Above SF American,38.7667,-120.3120,624,,,,992.4746;Ree7c3f8fd5ff7d41,Silver Fork American River O4 L4 Drainage:278km2 AvgFlow:246cfs AvgPrecip:1402mm AvgTemp:10C
+DF:625,Pit Below Pit 3 Dam,41.0213,-121.6757,625,,,,318.6657;Ra245ce6a10ccdc41,Pit River O6 L2 Drainage:10713km2 AvgFlow:2483cfs AvgPrecip:724mm AvgTemp:11C
+DF:626,San Joaquin At Highway 41,36.8762,-119.7932,626,,CDEC:H41,,1.6986;R273148a364cab441,San Joaquin River O5 L1 Drainage:4610km2 AvgFlow:696cfs AvgPrecip:313mm AvgTemp:17C
+DF:627,San Joaquin Below Skaggs Bridge,36.8229,-120.0884,627,,,,48.3592;R8195dbec5d25d641,San Joaquin River O5 L1 Drainage:4744km2 AvgFlow:680cfs AvgPrecip:257mm AvgTemp:17C
+DF:628,Colorado Above Diamond Creek,35.7736,-113.3628,628,,,,784.8251;Rcba1515b5e6fe741,Colorado River O9 L4 Drainage:361827km2 AvgFlow:14774cfs AvgPrecip:222mm AvgTemp:20C
+DF:629,Big Sur Andrew Molera State Park,36.28667,-121.84937,629,,,,368.4493;R0e2d52d054b6da41,Big Sur River O4 L1 Drainage:148km2 AvgFlow:112cfs AvgPrecip:530mm AvgTemp:13C
+DF:63,Fordyce Creek Below Fordyce Dam,39.3801,-120.4991,063,,USGS:11414100,,565.3296;Rd34d62406e6a9f41,Fordyce Creek O3 L5 Drainage:71km2 AvgFlow:107cfs AvgPrecip:1715mm AvgTemp:6C
+DF:630,Sauk At Darrington,48.25187,-121.59404,630,,,,15.3072;Rc520f02e1c41de41,Sauk River O4 L2 Drainage:767km2 AvgFlow:2162cfs AvgPrecip:2323mm AvgTemp:9C
+DF:631,Clear Creek Above Clear Creek Res,39.0181,-106.2772,631,,,,444.5999;R7368d10dc02dd941,Clear Creek O3 L3 Drainage:178km2 AvgFlow:55cfs AvgPrecip:296mm AvgTemp:3C
+DF:632,Castle Creek At Aspen,39.1938,-106.8337,632,,,,2.149;R91ed4c3683fed741,Castle Creek O3 L6 Drainage:187km2 AvgFlow:99cfs AvgPrecip:620mm AvgTemp:3C
+DF:633,Belt Creek Near Monarch,47.20783,-110.93239,633,,,,8.9136;R931864867f55da41,Belt Creek O4 L3 Drainage:939km2 AvgFlow:204cfs AvgPrecip:462mm AvgTemp:6C
+DF:634,Mi. Salmon At Mouth,45.2936,-114.5964,634,,,,701.2075;Rc74bb32de8c3e441,Salmon River O7 L3 Drainage:22539km2 AvgFlow:7653cfs AvgPrecip:453mm AvgTemp:7C
+DF:635,Smith Below Eagle Creek,46.82802,-111.19205,635,,,,838.057;R27312007f3bcd341,Smith River O5 L3 Drainage:2681km2 AvgFlow:255cfs AvgPrecip:384mm AvgTemp:5C
+DF:636,Green At Ouray,40.0847,-109.6761,636,,,,841.4115;R022b27c40271c241,Green River O8 L5 Drainage:68296km2 AvgFlow:4629cfs AvgPrecip:186mm AvgTemp:9C
+DF:637,Rio Grande Near Cerro,36.74004,-105.68367,637,,,,749.2703;Rcba165e0be17db41,Rio Grande O6 L1 Drainage:14068km2 AvgFlow:998cfs AvgPrecip:339mm AvgTemp:7C
+DF:638,Boundary Creek Near Porthill,48.99740,-116.56845,638,,,,960.8784;R23db498d8df6d841, O1 L3 Drainage:3km2 AvgFlow:1cfs AvgPrecip:826mm AvgTemp:6C
+DF:64,So. Yuba At Lang Crossing,39.3186,-120.6576,064,,USGS:11414250,,4.4777;Rf0a7b6d08408ed41,South Yuba River O4 L4 Drainage:320km2 AvgFlow:115cfs AvgPrecip:1822mm AvgTemp:10C
+DF:640,Dirty Devil Near Hanksville,38.0942,-110.4067,640,,USGS:09333500,,517.9606;Ra47019837a23ea41,Dirty Devil River O6 L5 Drainage:10932km2 AvgFlow:104cfs AvgPrecip:216mm AvgTemp:14C
+DF:641,No. Stillaguamish Near Arlington,48.26138,-122.04641,641,,,,909.3893;Rb29d673a48f0e241, O1 L2 Drainage:7km2 AvgFlow:7cfs AvgPrecip:1791mm AvgTemp:10C
+DF:642,So. American Below Weber Creek,38.7631,-121.0072,642,,,,811.0294;R08ac04a2fb18e041,South Fork American River O5 L3 Drainage:1822km2 AvgFlow:1380cfs AvgPrecip:781mm AvgTemp:16C
+DF:643,Silver Creek Below Camino Dam,38.8240,-120.5380,643,,USGS:11441900,,481.5648;R3d0a97affa3aec41,Silver Creek O4 L4 Drainage:433km2 AvgFlow:347cfs AvgPrecip:1345mm AvgTemp:13C
+DF:644,Imnaha At Imnaha,45.56204,-116.83373,644,,,,793.2156;Rae47212b3ee4ac41,Imnaha River O5 L3 Drainage:1615km2 AvgFlow:537cfs AvgPrecip:442mm AvgTemp:9C
+DF:645,Mi. Stanislaus Near Kennedy Meadow,38.2975,-119.7403,645,,USGS:11292000,,948.0075;R6f12af67a7a5e241,Kennedy Creek O3 L3 Drainage:54km2 AvgFlow:58cfs AvgPrecip:1313mm AvgTemp:5C
+DF:646,Molalla Near Canby,45.2444,-122.6861,646,,USGS:14200000,,978.0184;R6f12236d059ec141,Molalla River O5 L3 Drainage:829km2 AvgFlow:1397cfs AvgPrecip:1082mm AvgTemp:12C
+DF:647,Chelan Below Lake Chelan,47.8347,-120.0119,647,,,,118.599;R1283349485eeed41,Chelan River O5 L2 Drainage:2411km2 AvgFlow:2221cfs AvgPrecip:286mm AvgTemp:10C
+DF:648,Rio Chama Above Abiquiu Reservoir,36.31856,-106.59960,648,,,,665.4619;Rf853f7f95fa1e441,Rio Chama O6 L2 Drainage:3968km2 AvgFlow:509cfs AvgPrecip:339mm AvgTemp:9C
+DF:649,Rio Chama Near La Puente,36.66273,-106.6331,649,,,,825.8525;R85eb6d586d26e541,Rio Chama O4 L2 Drainage:1066km2 AvgFlow:454cfs AvgPrecip:399mm AvgTemp:7C
+DF:65,So. Yuba At Hwy 49 Bridge,39.29236,-121.10397,065,,USGS:11417500,,796.8925;R355e0a7003d5e941,South Yuba River O4 L4 Drainage:802km2 AvgFlow:490cfs AvgPrecip:1267mm AvgTemp:15C
+DF:650,E. Fk Owyhee At Crutcher Crossing,42.2614,-116.8684,650,,,,680.259;Rba49b4809b02eb41,Owyhee River O6 L3 Drainage:5435km2 AvgFlow:309cfs AvgPrecip:246mm AvgTemp:8C
+DF:651,Bruneau At Rowland,41.93394,-115.67575,651,,,,36.0429;Rdbf9d2f412c6ed41,Bruneau River O5 L3 Drainage:991km2 AvgFlow:115cfs AvgPrecip:332mm AvgTemp:7C
+DF:652,Marble Fk Kaweah Near Lodgepole,36.61139,-118.70175,652,,,,118.9443;Rc1ca2152565aec41,Marble Fork Kaweah River O2 L6 Drainage:22km2 AvgFlow:28cfs AvgPrecip:1412mm AvgTemp:4C
+DF:653,Tuolumne At Wards Ferry,37.87813,-120.29424,653,,,,580.3599;Rd34d16360fd9ee41,Tuolumne River O6 L2 Drainage:3278km2 AvgFlow:1512cfs AvgPrecip:742mm AvgTemp:15C
+DF:654,Tuolumne New Don Pedro Paddle Out,37.70301,-120.42016,654,,,,308.614;R0c028b52024cde41,Tuolumne River O6 L2 Drainage:3972km2 AvgFlow:1636cfs AvgPrecip:427mm AvgTemp:17C
+DF:655,Green Near Greendale,40.90832,-109.42230,655,,,,641.0296;R4260d5447ef3ef41,Green River O7 L5 Drainage:38326km2 AvgFlow:2485cfs AvgPrecip:306mm AvgTemp:7C
+DF:658,Animas At Silverton,37.81120,-107.65914,658,,USGS:09358000,,216.2317;Rcba15525fe8ed241,Animas River O3 L6 Drainage:239km2 AvgFlow:159cfs AvgPrecip:744mm AvgTemp:2C
+DF:659,So. Kings Above Roaring River,36.78696,-118.61657,659,,CDEC:KRR,,970.7869;Rb07298c9ac8ad541,South Fork Kings River O5 L4 Drainage:905km2 AvgFlow:318cfs AvgPrecip:979mm AvgTemp:11C
+DF:66,Yuba Below Englebright Dam,39.2352,-121.2729,066,,USGS:11417980,,909.1215;R7593c8335ed9dd41,Yuba River O5 L3 Drainage:3105km2 AvgFlow:3794cfs AvgPrecip:828mm AvgTemp:16C
+DF:660,So. Kings Above Boyden Cave,36.80888,-118.77804,660,,CDEC:KBC,,838.5117;Rf628a4920455d941, O1 L5 Drainage:2km2 AvgFlow:1cfs AvgPrecip:983mm AvgTemp:9C
+DF:661,Stony Creek Above Black Butte Lake,39.73180,-122.41396,661,,,,990.9478;R4e62ccdbaadbe941,Stony Creek O6 L2 Drainage:1613km2 AvgFlow:554cfs AvgPrecip:563mm AvgTemp:17C
+DF:662,Stony Creek Above Stony Creek Res,39.48480,-122.51410,662,,,,352.2993;R1f85d7e09c17ef41,Stony Creek O5 L2 Drainage:721km2 AvgFlow:297cfs AvgPrecip:553mm AvgTemp:16C
+DF:663,Piru Creek Above Frenchmans Flat,34.63069,-118.74769,663,,USGS:11109550,,977.6523;R91ed5c6a471ac841,Piru Creek O5 L2 Drainage:767km2 AvgFlow:43cfs AvgPrecip:494mm AvgTemp:16C
+DF:664,Colorado At Potash,38.50513,-109.65774,664,,USGS:09185600,,767.9746;Rd1227b207241ca41,Colorado River O7 L4 Drainage:65678km2 AvgFlow:7458cfs AvgPrecip:224mm AvgTemp:13C
+DF:665,Cherry Creek Above Cherry Lake,38.03130,-119.9014,665,,CDEC:UCC,,775.8277;R7f6a84b57acddc41,Cherry Creek O4 L4 Drainage:263km2 AvgFlow:231cfs AvgPrecip:1171mm AvgTemp:9C
+DF:666,Grindstone Creek Near Grindstone Rancheria,39.67890,-122.53055,666,,,,847.2491;Rec5144a88038eb41,Grindstone Creek O4 L3 Drainage:390km2 AvgFlow:195cfs AvgPrecip:551mm AvgTemp:16C
+DF:667,Kern Below Kern Canyon PH Div,35.46011,-118.78023,667,,,,386.9705;R022bdf2e73a5e041,Kern River O6 L4 Drainage:5559km2 AvgFlow:683cfs AvgPrecip:294mm AvgTemp:17C
+DF:668,Icicle Creek Above Snow Creek,47.54117,-120.71887,668,,,,992.8722;Ra24556d9f0d2c841,Icicle Creek O4 L3 Drainage:534km2 AvgFlow:681cfs AvgPrecip:941mm AvgTemp:8C
+DF:669,Klickitat Below Summit Creek,45.96253,-121.10184,669,,USGS:14111400,,15.0705;R0681514cdf31ef41,Klickitat River O5 L2 Drainage:1905km2 AvgFlow:1331cfs AvgPrecip:671mm AvgTemp:9C
+DF:67,Bear At Hwy 174 Bridge,39.1314,-120.9590,067,,USGS:11422500,,721.4905;Re5d0ea36eb81e441,Bear River O5 L3 Drainage:264km2 AvgFlow:250cfs AvgPrecip:1251mm AvgTemp:14C
+DF:670,So. American Below Slab Creek Dam,38.77293,-120.70086,670,,USGS:11443500,,766.4289;R6891ed5ffcffa041,South Fork American River O5 L3 Drainage:1305km2 AvgFlow:686cfs AvgPrecip:1056mm AvgTemp:14C
+DF:671,San Rafael Near Green River,38.85832,-110.36988,671,,USGS:09328500,,57.7085;R91ed9090236eed41,San Rafael River O5 L6 Drainage:4301km2 AvgFlow:118cfs AvgPrecip:196mm AvgTemp:12C
+DF:672,Green At Mineral Bottom,38.52428,-109.99468,672,,USGS:09328920,,584.6817;Ra69bf43373ffdf41,Green River O8 L5 Drainage:113320km2 AvgFlow:6113cfs AvgPrecip:206mm AvgTemp:13C
+DF:673,Los Angeles Below Sepulveda Dam,34.16173,-118.46653,673,,USGS:11092450,,3.8859;R21b04202bbe8c341,Los Angeles River O4 L1 Drainage:464km2 AvgFlow:9cfs AvgPrecip:438mm AvgTemp:18C
+DF:674,Los Angeles Above Rio Hondo,33.94893,-118.17323,674,,,,7.2471;Rf8538332d69ab241,Los Angeles River O5 L1 Drainage:1595km2 AvgFlow:64cfs AvgPrecip:403mm AvgTemp:19C
+DF:675,Duckabush Near Brinnon,47.68356,-123.01194,675,,,,34.4547;R6de76b131526dd41,Duckabush River O3 L1 Drainage:179km2 AvgFlow:442cfs AvgPrecip:1874mm AvgTemp:9C
+DF:676,Mi. Santiam Below Green Peter Dam,44.44832,-122.55003,676,,OWRD:14186200,,766.3811;Re7fbc9498742b441, O1 L5 Drainage:1km2 AvgFlow:2cfs AvgPrecip:2155mm AvgTemp:10C
+DF:677,Rio Brazos At Fishtail Road,36.73789,-106.47080,677,,,,13.1642;Rd9ced74ce045b841,Rio Brazos O3 L3 Drainage:339km2 AvgFlow:116cfs AvgPrecip:681mm AvgTemp:5C
+DF:678,Rio Chama Above Chama,36.93490,-106.55460,678,,,,3.203;R4a0c069d83feed41,Rio Chama O4 L2 Drainage:250km2 AvgFlow:101cfs AvgPrecip:675mm AvgTemp:5C
+DF:679,W. Fk Hood Above East Fork,45.59910,-121.63629,679,,OWRD:14118500,,926.3038;R23dba194017aef41, O5 L2 Drainage:403km2 AvgFlow:616cfs AvgPrecip:1032mm AvgTemp:9C
+DF:680,Big Quilcene Below Big Quilcene Dam,47.78458,-122.97840,680,,,,160.9226;Ra4706d05dcdfe941,Big Quilcene River O3 L1 Drainage:68km2 AvgFlow:109cfs AvgPrecip:1780mm AvgTemp:9C
+DF:681,No. Kern Above Fairview Dam,35.94622,-118.47704,681,,USGS:11186000,,154.2834;Rb6f3b5cc2d66e341, O2 L5 Drainage:11km2 AvgFlow:4cfs AvgPrecip:537mm AvgTemp:13C
+DF:682,No. Kern Below Fairview Dam,35.94512,-118.47803,682,,USGS:11186000,,904.1986;Rd7a3b8bdcd97e441,Kern River O5 L4 Drainage:2201km2 AvgFlow:773cfs AvgPrecip:527mm AvgTemp:13C
+DF:683,E. Fk So. Salmon Above Sugar Creek,44.93370,-115.33619,683,,,,998.4422;R85ebd12134f39841,Sugar Creek O3 L6 Drainage:44km2 AvgFlow:27cfs AvgPrecip:825mm AvgTemp:2C
+DF:684,Rubicon Below Rubicon Dam,38.98959,-120.22353,684,,,,618.6459;R7368517fb5f5ad41,Rubicon River O3 L4 Drainage:61km2 AvgFlow:62cfs AvgPrecip:1275mm AvgTemp:7C
+DF:687,Sespe Creek Near Wheeler Springs,34.57807,-119.25804,687,,USGS:11111500,,755.5525;Rd9cea7698f5eda41,Sespe Creek O4 L2 Drainage:120km2 AvgFlow:57cfs AvgPrecip:703mm AvgTemp:12C
+DF:688,Lolo Creek Near Greer,46.37235,-116.16251,688,,,,546.689;R21b02258c471e141,Lolo Creek O4 L4 Drainage:629km2 AvgFlow:329cfs AvgPrecip:658mm AvgTemp:11C
+DF:689,Gros Ventre At Kelly,43.62074,-110.62302,689,,,,259.7858;R23dba9205b3fc541,Gros Ventre River O5 L3 Drainage:1584km2 AvgFlow:728cfs AvgPrecip:629mm AvgTemp:3C
+DF:69,No. American Inflow Lake Clementine,38.9361,-121.0228,069,,USGS:11427000,,998.6556;Ra470914b7bd9e441,North Fork American River O5 L2 Drainage:908km2 AvgFlow:844cfs AvgPrecip:895mm AvgTemp:15C
+DF:690,Snake Near Alpine,43.19588,-110.88944,690,,,,544.6522;Rc976f61e4ef8e941,Snake River O6 L2 Drainage:8866km2 AvgFlow:4460cfs AvgPrecip:623mm AvgTemp:4C
+DF:691,American Folsom Elev NF Paddle Out,38.7078,-121.1566,691,,,,401.7703;Rfa7e0ab526edc141,North Fork American River O6 L2 Drainage:2620km2 AvgFlow:2038cfs AvgPrecip:667mm AvgTemp:16C
+DF:692,Eel Below Van Arsdale Dam,39.38843,-123.11595,692,,,,624.3049;R3bdf9f9db6e9e541,Eel River O5 L1 Drainage:913km2 AvgFlow:527cfs AvgPrecip:1231mm AvgTemp:13C
+DF:693,Trinity Inflow Trinity Lake,40.80099,-122.76200,693,,,,447.6449;R85eba1ec1cfad841,Trinity River O5 L2 Drainage:1800km2 AvgFlow:1462cfs AvgPrecip:930mm AvgTemp:12C
+DF:694,West Rosebud Cr At Emerald Lake CG,45.25428,-109.69913,694,,,,910.7494;R25064da7fa79ec41,West Rosebud Creek O3 L5 Drainage:166km2 AvgFlow:125cfs AvgPrecip:681mm AvgTemp:4C
+DF:695,Kettle Near Laurier,48.98449,-118.21604,695,,,,424.4576;R2b87927bcd06e841, O5 L2 Drainage:9958km2 AvgFlow:3125cfs AvgPrecip:846mm AvgTemp:4C
+DF:696,Embudo Creek Near Dixon,36.21076,-105.91363,696,,,,18.6972;Rbc74cfeb3fc0e741,Embudo Creek O4 L2 Drainage:830km2 AvgFlow:93cfs AvgPrecip:308mm AvgTemp:10C
+DF:697,San Miguel Near Placerville,38.04250,-108.13348,697,,USGS:09172500,,2.1621;R508def3dc6b2db41,San Miguel River O4 L6 Drainage:810km2 AvgFlow:254cfs AvgPrecip:506mm AvgTemp:6C
+DF:698,So. Tuolumne At Rainbow Pool,37.8217,-120.0119,698,,DF:135,,973.1293;Rc1caa1e833e2ca41,Middle Tuolumne River O3 L4 Drainage:188km2 AvgFlow:87cfs AvgPrecip:929mm AvgTemp:13C
+DF:699,South Silver Above Ice House Reservoir,38.81966,-120.31562,699,,,,222.2719;Rd34d22434f2eaa41,South Fork Silver Creek O3 L5 Drainage:65km2 AvgFlow:61cfs AvgPrecip:1444mm AvgTemp:10C
+DF:7,Trinity Inflow Clair Engle Lake,40.8015,-122.7623,007,,,,500.9769;R85eba1ec1cfad841,Trinity River O5 L2 Drainage:1800km2 AvgFlow:1462cfs AvgPrecip:930mm AvgTemp:12C
+DF:70,Mi. American Above Tunnel Chute,39.0061,-120.7597,070,,USGS:11433300,,975.8993;R713d0a09bb55bd41,Middle Fork American River O5 L3 Drainage:1107km2 AvgFlow:432cfs AvgPrecip:1078mm AvgTemp:15C
+DF:701,South Boulder Cr Above Gross Reservoir,39.93165,-105.42249,701,,,,310.2744;Rc1ca99749abed241,South Boulder Creek O3 L6 Drainage:208km2 AvgFlow:152cfs AvgPrecip:576mm AvgTemp:6C
+DF:702,Weber At Gateway,41.13704,-111.83199,702,,,,465.1936;R0681197b5c78e141,Weber River O5 L4 Drainage:4170km2 AvgFlow:830cfs AvgPrecip:661mm AvgTemp:9C
+DF:703,So. Battle Creek Below Coleman Div Dam,40.40247,-121.96913,703,,,,752.0474;Rb29d171958add341,South Fork Battle Creek O4 L3 Drainage:794km2 AvgFlow:216cfs AvgPrecip:818mm AvgTemp:16C
+DF:71,No. Weber Creek Inflow Weber Res,38.7160,-120.6921,071,,,,909.4398;R2b879e65e1c9ed41, O1 L6 Drainage:1km2 AvgFlow:1cfs AvgPrecip:1097mm AvgTemp:15C
+DF:72,Rubicon At Ellicott Bridge,38.9580,-120.4861,072,,,,255.5024;R0ad73b3ea571e541,Rubicon River O4 L4 Drainage:500km2 AvgFlow:98cfs AvgPrecip:1514mm AvgTemp:11C
+DF:74,So. American Below Slab Creek Dam,38.77293,-120.70086,074,,,,766.4289;R6891ed5ffcffa041,South Fork American River O5 L3 Drainage:1305km2 AvgFlow:686cfs AvgPrecip:1056mm AvgTemp:14C
+DF:75,So. American At Chili Bar,38.77111,-120.81554,075,,USGS:11444500,,770.5194;Rc520d04ba0a7d241,South Fork American River O5 L3 Drainage:1556km2 AvgFlow:1472cfs AvgPrecip:899mm AvgTemp:15C
+DF:76,American Below Lake Natoma,38.63512,-121.22753,076,,,,945.3667;Rcba1d90c8662ef41, O1 L3 Drainage:3km2 AvgFlow:1cfs AvgPrecip:600mm AvgTemp:17C
+DF:77,Cosumnes At Michigan Bar,38.5003,-121.0442,077,,,,690.5419;Rfed4206c13e8d441,Cosumnes River O6 L3 Drainage:1391km2 AvgFlow:527cfs AvgPrecip:586mm AvgTemp:16C
+DF:8,Trinity Below Lewiston Dam,40.7247,-122.8011,008,,,,752.4914;R00000c87e9d5ed41,Trinity River O5 L2 Drainage:1887km2 AvgFlow:589cfs AvgPrecip:854mm AvgTemp:12C
+DF:81,Tuolumne Below La Grange Dam,37.66645,-120.44225,081,,,,675.6535;Rb4c8f6c58b5bef41,Tuolumne River O6 L2 Drainage:3982km2 AvgFlow:1636cfs AvgPrecip:394mm AvgTemp:17C
+DF:82,Mi. Stanislaus Inflow Donnell Lake,38.3304,-119.9600,082,,USGS:11292615,,656.7379;R7b14d6dd25fde041, O1 L3 Drainage:1km2 AvgFlow:1cfs AvgPrecip:1160mm AvgTemp:9C
+DF:83,Mi. Stanislaus Below Sand Bar Flat Dam,38.1829,-120.1592,083,,,,828.7639;R39b434c1c6fbe441, O1 L3 Drainage:1km2 AvgFlow:1cfs AvgPrecip:1066mm AvgTemp:12C
+DF:84,Stanislaus At Camp Nine,38.1387,-120.3710,084,,,,636.9184;R2db23d22f261e741,Stanislaus River O6 L2 Drainage:1622km2 AvgFlow:747cfs AvgPrecip:879mm AvgTemp:16C
+DF:85,Stanislaus Inflow New Melones Lake,37.9492,-120.5229,085,,,,921.8214;Rd122effffd70e941,Stanislaus River O6 L2 Drainage:2343km2 AvgFlow:1054cfs AvgPrecip:625mm AvgTemp:16C
+DF:86,Stanislaus At Orange Blossom Bridge,37.7881,-120.7623,086,,,,31.6722;R560e8d1f3b35ee41,Stanislaus River O6 L2 Drainage:2653km2 AvgFlow:786cfs AvgPrecip:410mm AvgTemp:16C
+DF:88,Cherry Creek Below Holm Powerhouse,37.89047,-119.97037,088,,USGS:11278400,,470.1604;Rf2d239e048dce041,Cherry Creek O5 L4 Drainage:591km2 AvgFlow:170cfs AvgPrecip:976mm AvgTemp:13C
+DF:89,Sacramento Below Keswick Dam,40.6011,-122.4433,089,,,,996.6165;Rb81e859542a6d541,Sacramento River O6 L1 Drainage:15504km2 AvgFlow:10252cfs AvgPrecip:1104mm AvgTemp:17C
+DF:9,Trinity At Cedar Flat,40.78946,-123.43948,009,,,,962.6342;R310814d5c735ed41,Trinity River O5 L2 Drainage:3761km2 AvgFlow:1854cfs AvgPrecip:1234mm AvgTemp:13C
+DF:90,Tuolumne At Merals Pool,37.8366,-120.0536,090,,CDEC:TLS,,657.317;R736819f02b95e441,Tuolumne River O6 L2 Drainage:1970km2 AvgFlow:1093cfs AvgPrecip:865mm AvgTemp:15C
+DF:91,Tuolumne Inflow New Don Pedro Res,37.7009,-120.4207,091,,,,482.9426;R91ed0c05ef05de41,Tuolumne River O6 L2 Drainage:3967km2 AvgFlow:1636cfs AvgPrecip:452mm AvgTemp:17C
+DF:93,Clavey Near Hunter Bend,37.9006,-120.0708,093,,,,886.015;R3108340adffed741,Clavey River O4 L3 Drainage:385km2 AvgFlow:232cfs AvgPrecip:1032mm AvgTemp:13C
+DF:94,Merced Inflow Lake McClure,37.5854,-120.2695,094,,,,324.8462;R9eefe39d5501eb41,Merced River O5 L2 Drainage:2647km2 AvgFlow:1394cfs AvgPrecip:507mm AvgTemp:17C
+DF:95,San Joaquin At Miller Crossing,37.5106,-119.1964,095,,,,681.7378;R5c8f9a317456e741,San Joaquin River O4 L1 Drainage:661km2 AvgFlow:619cfs AvgPrecip:1063mm AvgTemp:10C
+DF:96,San Joaquin Below Mammoth Pool Res,37.31667,-119.32861,096,,USGS:11234760,,499.0568;Rb4c81eafd074ee41,San Joaquin River O5 L1 Drainage:2610km2 AvgFlow:383cfs AvgPrecip:986mm AvgTemp:14C
+DF:97,San Joaquin Below Redinger Lake,37.1446,-119.4523,097,,,,821.644;Rc74b375ab9cded41,San Joaquin River O5 L1 Drainage:3702km2 AvgFlow:345cfs AvgPrecip:637mm AvgTemp:16C

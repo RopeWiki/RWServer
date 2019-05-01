@@ -1,0 +1,400 @@
+id,desc,lat,lng,modes,extra,equiv
+BRPN:ACAO,Ashland Creek Mouth near Ashland,42.2147,-122.7167,Q=QD=0;GH=GJ=1;WF=WF=2,,,,44.3855;R48e1fef6ba0eeb41,Ashland Creek O3 L3 Drainage:65km2 AvgFlow:32cfs AvgPrecip:604mm AvgTemp:10C
+BRPN:AFCI,ST. ANTHONY UNION CANAL FEEDER,43.9603,-111.6981,QC=QJ=0;CH=CJ=1,,,,991.0336;Rf2d2a1a5a823e541, 
+BRPN:AGA,Agate Dam and Reservoir near Medford OR,42.415,-122.7722,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1;WF=WF=2,,,,926.5464;Rb072b019295eea41,Dry Creek O2 L4 Drainage:42km2 AvgFlow:11cfs AvgPrecip:547mm AvgTemp:12C
+BRPN:ALF,ALBENI FALLS DAM ON PEND OREILLE R BL LAKE,48.18,-117.03,Q=QD=0,,,,185.071;Rd7a370629a31dc41,Pend Oreille River O8 L1 Drainage:61812km2 AvgFlow:25521cfs AvgPrecip:722mm AvgTemp:8C
+BRPN:ALNO,Allen Canal at Echo OR,45.7336,-119.2042,QC=QJ=0;CH=CJ=1,,,,749.1208;R37895dc19006e341,Umatilla River O6 L2 Drainage:3640km2 AvgFlow:549cfs AvgPrecip:265mm AvgTemp:12C
+BRPN:ALPY,Snake River above Reservoir near Alpine WY,43.1961,-110.8894,Q=QD=0;GH=GJ=1;WF=WF=2,,,,542.4287;Rc976f61e4ef8e941,Snake River O6 L2 Drainage:8866km2 AvgFlow:4460cfs AvgPrecip:623mm AvgTemp:4C
+BRPN:ALTO,A-Line Canal (Terminus) nr Hermiston OR,45.8136,-119.3578,QC=QJ=0;CH=CJ=1,,,,926.6889;R8195d388e513c041,Umatilla River O6 L2 Drainage:5466km2 AvgFlow:600cfs AvgPrecip:234mm AvgTemp:12C
+BRPN:AMFI,Snake River at Neeley ID,42.7683,-112.8783,Q=QD=0;GH=GJ=1;WF=WF=2,,,,732.3393;Rd7a3c02d708fc441,Snake River O7 L2 Drainage:36807km2 AvgFlow:8503cfs AvgPrecip:307mm AvgTemp:8C
+BRPN:AMRW,American River near Nile WA,46.98,-121.17,Q=QD=0,,,,234.8541;R3f358e5bed3bcb41,American River O3 L5 Drainage:206km2 AvgFlow:238cfs AvgPrecip:1189mm AvgTemp:5C
+BRPN:ANCI,ANDERSON CANAL NR RIRIE ID,43.6222,-111.6694,QC=QJ=0;CH=CJ=1,,,,958.4754;R5ebae942a8aae641, 
+BRPN:AND,Anderson Ranch Dam and Reservoir,43.3583,-115.4444,GH=GJ=1;WF=WF=2,,,,640.3599;Re9266136ba88d641,Elk Creek O2 L5 Drainage:10km2 AvgFlow:2cfs AvgPrecip:542mm AvgTemp:7C
+BRPN:ANDI,South Fork Boise River at Anderson Ranch Dam,43.3417,-115.4778,Q=QD=0;GH=GJ=1,,,,496.7141;Rd34d6241f745c341,South Fork Boise River O6 L4 Drainage:2568km2 AvgFlow:1018cfs AvgPrecip:525mm AvgTemp:8C
+BRPN:ANTI,Henrys Fork at St. Anthony ID,43.9667,-111.6722,Q=QD=0;GH=GJ=1,,,,993.005;Rf2d225ccee4cdf41,Henrys Fork O6 L3 Drainage:4616km2 AvgFlow:2255cfs AvgPrecip:353mm AvgTemp:6C
+BRPN:ANTO,Antelope Creek and Diversion at Dam,42.4111,-122.7433,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1;WF=WF=2,,,,275.3556;Rd9cef7f7c107ef41,Antelope Creek O3 L3 Drainage:104km2 AvgFlow:45cfs AvgPrecip:574mm AvgTemp:12C
+BRPN:APPO,Applegate River near Copper (US Army Corps of Engineers),42.07,-123.12,Q=QD=0,,,,985.4984;R21b052fee690b541,Applegate River O4 L2 Drainage:580km2 AvgFlow:443cfs AvgPrecip:675mm AvgTemp:11C
+BRPN:ARNO,Arnold Canal,43.9944,-121.3778,QC=QJ=0;CH=CJ=1;WF=WF=2,,,,683.9321;Ra01a6f3fea96e741,Deschutes River O5 L2 Drainage:3712km2 AvgFlow:1282cfs AvgPrecip:379mm AvgTemp:7C
+BRPN:ASCI,ABERDEEN-SPRINGFIELD CANAL,43.2806,-112.2569,QC=QJ=0;CH=CJ=1,,,,998.4722;R3108cc9e4d75ee41, 
+BRPN:ASLO,Ashland Lateral near Ashland OR,42.1621,-122.5111,QC=QJ=0;CH=CJ=1;WF=WF=2,,,,711.5005;R04566ebe4b5eb441,Right Fork Sampson Creek O1 L4 Drainage:4km2 AvgFlow:2cfs AvgPrecip:788mm AvgTemp:8C
+BRPN:AUCI,ST. ANTHONY UNION CANAL,43.975,-111.65,QC=QJ=0;CH=CJ=1,,,,622.7045;Rf2d225ccee4cdf41,Henrys Fork O6 L3 Drainage:4616km2 AvgFlow:2255cfs AvgPrecip:353mm AvgTemp:6C
+BRPN:AUGW,Ahtanum Creek at Union Gap,46.5353,-120.4717,Q=QD=0;GH=GJ=1,,,,680.6925;Rb6f3813c3b33e741,Ahtanum Creek O4 L4 Drainage:430km2 AvgFlow:81cfs AvgPrecip:222mm AvgTemp:11C
+BRPN:BASO,Bear Creek below Ashland Cr. at Ashland OR,42.2161,-122.7211,Q=QD=0;GH=GJ=1;WF=WF=2,,,,715.8705;R045616846128da41,Bear Creek O4 L2 Drainage:388km2 AvgFlow:98cfs AvgPrecip:585mm AvgTemp:11C
+BRPN:BBBO,Big Butte Creek below Butte Falls OR,42.5497,-122.5678,GH=GJ=1;WF=WF=2;Q=QD=0,,,,973.0723;R1904068ddfe8c441,Hukill Creek O1 L3 Drainage:6km2 AvgFlow:3cfs AvgPrecip:903mm AvgTemp:10C
+BRPN:BCAO,Bear Creek above Ashland OR,42.195,-122.6686,Q=QD=0;GH=GJ=1;WF=WF=2,,,,12.9857;R7d3fa5093eafc741,Bear Creek O4 L2 Drainage:355km2 AvgFlow:104cfs AvgPrecip:558mm AvgTemp:11C
+BRPN:BCCO,Bear Creek Canal at Medford OR,42.3331,-122.8706,QC=QJ=0;CH=CJ=1,,,,954.7695;R4a0c42f3f8efe941,Bear Creek O4 L2 Drainage:748km2 AvgFlow:120cfs AvgPrecip:489mm AvgTemp:12C
+BRPN:BCGO,Little Butte Ck Grinding Mill Race,42.4769,-122.7931,CH=CJ=1;QC=QJ=0,,,,898.9376;R643b97e32aabea41,Little Butte Creek O4 L2 Drainage:741km2 AvgFlow:196cfs AvgPrecip:678mm AvgTemp:12C
+BRPN:BCMO,Bear Creek at Mouth below Central Point OR,42.4264,-122.9569,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,0.7572;Rf0a786e3d830d041,Bear Creek O4 L2 Drainage:936km2 AvgFlow:155cfs AvgPrecip:513mm AvgTemp:12C
+BRPN:BCSO,Beaver Creek and Beaver Siphon at Howard Prairie Can,42.1506,-122.3958,Q=QD=0;GH=GJ=1,,,,146.8975;Rb29d4fc8fc1fed41,Beaver Creek O2 L4 Drainage:15km2 AvgFlow:8cfs AvgPrecip:824mm AvgTemp:8C
+BRPN:BCTO,Bear Creek below Phoenix Diversion near Talent,42.2536,-122.7889,Q=QD=0;GH=GJ=1;WF=WF=2,,,,850.3402;Rc520701cb222a641,Bear Creek O4 L2 Drainage:572km2 AvgFlow:131cfs AvgPrecip:493mm AvgTemp:12C
+BRPN:BDDI,Boise River below Diversion Dam near Boise,43.5397,-116.0936,GH=GJ=1,,,,865.6896;R666626575653a541,Boise River O6 L3 Drainage:6982km2 AvgFlow:1836cfs AvgPrecip:356mm AvgTemp:10C
+BRPN:BENO,Deschutes River at Benham Falls OR,43.9303,-121.4108,Q=QD=0;GH=GJ=1;WF=WF=2,,,,572.0858;Rf4fde416751ed741,Deschutes River O5 L2 Drainage:3608km2 AvgFlow:1279cfs AvgPrecip:496mm AvgTemp:7C
+BRPN:BEUO,North Fork Malheur River at Beulah,43.9089,-118.1522,Q=QD=0;GH=GJ=1;WF=WF=2,,,,959.3258;R6de703f0ab8dd741,North Fork Malheur River O5 L4 Drainage:1134km2 AvgFlow:141cfs AvgPrecip:302mm AvgTemp:8C
+BRPN:BFCI,BLACKFOOT CANAL,43.3208,-112.1719,QC=QJ=0;CH=CJ=1,,,,865.3543;Rec51e8f631cee541,Snake River O7 L2 Drainage:24209km2 AvgFlow:6515cfs AvgPrecip:298mm AvgTemp:7C
+BRPN:BFKY,Buffalo Fork above Lava Creek near Moran WY,43.8381,-110.4411,Q=QD=0;GH=GJ=1,,,,102.5516;R8fc2851697a5d841,Buffalo Fork O4 L3 Drainage:848km2 AvgFlow:551cfs AvgPrecip:723mm AvgTemp:2C
+BRPN:BFTI,Snake River near Blackfoot ID,43.1253,-112.5183,Q=QD=0;GH=GJ=1;WF=WF=2,,,,987.36;Re3a5571b2916ec41,Snake River O7 L2 Drainage:24923km2 AvgFlow:5292cfs AvgPrecip:268mm AvgTemp:8C
+BRPN:BICW,Moxee Drain at Birchfield Road,46.5461,-120.4369,GH=GJ=1,,,,760.723;R9cc4d8c9c2f7ee41, O1 L6 Drainage:37km2 AvgFlow:0cfs AvgPrecip:220mm AvgTemp:11C
+BRPN:BIGI,Boise River at Glenwood Bridge,43.6603,-116.2783,Q=QD=0;GH=GJ=1,,,,958.5311;Rdf4f8d08022cc441,Boise River O6 L3 Drainage:7179km2 AvgFlow:1354cfs AvgPrecip:297mm AvgTemp:10C
+BRPN:BILI,Billingsly Creek near Haggerman at Hwy 30,42.8353,-114.8939,Q=QD=0;GH=GJ=1,,,,940.0389;R33339b2065ebdd41,Billingsley Creek O2 L3 Drainage:212km2 AvgFlow:2cfs AvgPrecip:263mm AvgTemp:11C
+BRPN:BIRO,Birch Creek near Reith OR,45.6514,-118.8775,Q=QD=0;GH=GJ=1;WF=WF=2,,,,105.1366;Rdbf936f0efb7e041,Birch Creek O5 L3 Drainage:735km2 AvgFlow:127cfs AvgPrecip:342mm AvgTemp:11C
+BRPN:BJBO,Bear Creek at Jackson St. Bridge Medford OR,42.3317,-122.8694,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,187.1001;R986e9a1fc540e841,Bear Creek O4 L2 Drainage:748km2 AvgFlow:131cfs AvgPrecip:513mm AvgTemp:12C
+BRPN:BKPI,BOELKY PUMP,43.8636,-111.2544,QC=QJ=0,,,,476.3397;R3d0ae7694bc1d941, O1 L5 Drainage:2km2 AvgFlow:0cfs AvgPrecip:464mm AvgTemp:4C
+BRPN:BMCI,BUTTE & MARKET LAKE CANAL,43.7458,-112.1028,QC=QJ=0;CH=CJ=1,,,,475.4552;R54e3a982c0e8e941,Snake River O7 L2 Drainage:22822km2 AvgFlow:6059cfs AvgPrecip:271mm AvgTemp:6C
+BRPN:BOMI,Boise River near Middleton ID,43.68,-116.57,Q=QD=0;GH=GJ=1,,,,941.9858;Rbc74dbabb127d941,Boise River O6 L3 Drainage:7480km2 AvgFlow:1370cfs AvgPrecip:274mm AvgTemp:11C
+BRPN:BON,BONNEVILLE DAM & LAKE ON COLUMBIA R,45.63,-121.95,Q=QD=0,,,,853.4833;R508d878f48c0e041,Tanner Creek O2 L2 Drainage:38km2 AvgFlow:103cfs AvgPrecip:1963mm AvgTemp:11C
+BRPN:BOOI,RUDY CANAL,43.6542,-111.7775,QC=QJ=0;CH=CJ=1,,,,527.5901;R83c04a93a3dfbc41, 
+BRPN:BPPI,BOB PARKINSON PUMP,43.9194,-111.4594,QC=QJ=0,,,,887.6866;Rba493cd20ecac741,Teton River O5 L4 Drainage:2111km2 AvgFlow:923cfs AvgPrecip:470mm AvgTemp:5C
+BRPN:BRFI,South Fork Boise River near Featherville,43.4958,-115.3075,Q=QD=0;GH=GJ=1;WF=WF=2,,,,964.1532;R5eba3111c829da41,South Fork Boise River O5 L4 Drainage:1668km2 AvgFlow:764cfs AvgPrecip:609mm AvgTemp:7C
+BRPN:BSCO,Bieberstedt Creek abv Willow Lake nr Butte Falls OR,42.1506,-122.3958,Q=QD=0;GH=GJ=1;WF=WF=2,,,,299.0019;Rbc74c34b16dec941,South Fork Beaver Creek O1 L5 Drainage:3km2 AvgFlow:2cfs AvgPrecip:798mm AvgTemp:8C
+BRPN:BSEI,New York Canal Diversion from Boise River,43.5494,-116.1092,QC=QJ=0;CH=CJ=1,,,,929.2637;Rbc7483434e46d541,Boise River O6 L3 Drainage:6980km2 AvgFlow:1836cfs AvgPrecip:372mm AvgTemp:10C
+BRPN:BTSI,Boise River near Twin Springs Idaho,43.6586,-115.7272,Q=QD=0;GH=GJ=1;WF=WF=2,,,,804.9849;Ra4704d3b0c38c541,Boise River O5 L3 Drainage:2167km2 AvgFlow:1250cfs AvgPrecip:542mm AvgTemp:9C
+BRPN:BUFO,South Fork Big Butte Creek near Butte Falls OR,42.53,-122.55,Q=QD=0;GH=GJ=1;WF=WF=2,,,,757.8274;R91edb43c4c3bd241,South Fork Big Butte Creek O4 L2 Drainage:355km2 AvgFlow:202cfs AvgPrecip:914mm AvgTemp:10C
+BRPN:BUL,Bully Creek Dam and Reservoir near Vale OR,44.0306,-117.4125,QC=QJ=0;CH=CJ=1,,,,898.8945;R2db29585d6ffde41,Bully Creek O5 L4 Drainage:1433km2 AvgFlow:64cfs AvgPrecip:281mm AvgTemp:10C
+BRPN:BUM,BUMPING RESERVOIR RIVER AND WEATHER STATION,46.8686,-121.2989,Q=QD=0;GH=GJ=1,,,,663.3056;R91edbc4761a8dd41,Bumping River O5 L4 Drainage:176km2 AvgFlow:236cfs AvgPrecip:1305mm AvgTemp:5C
+BRPN:BURI,BURGESS CANAL NR RIRIE IDAHO,43.6561,-111.7825,QC=QJ=0;CH=CJ=1,,,,972.789;R83c04a93a3dfbc41, 
+BRPN:BUSO,Silvies River near Burns OR,43.7153,-119.1764,Q=QD=0;GH=GJ=1,,,,73.2082;Rba49fca4d38ec141,Silvies River O6 L4 Drainage:2371km2 AvgFlow:227cfs AvgPrecip:344mm AvgTemp:6C
+BRPN:CACO,Cascade Canal near Fish Lake,42.4056,-122.2681,QC=QJ=0;CH=CJ=1,,,,873.4074;Rae4795571fa0e841, 
+BRPN:CAPO,Crooked River at Prineville OR,44.112,-120.7959,Q=QD=0;GH=GJ=1;WF=WF=2,,,,736.4164;R000078144b5cef41,Crooked River O6 L3 Drainage:6420km2 AvgFlow:331cfs AvgPrecip:261mm AvgTemp:8C
+BRPN:CBCI,CORBETT CANAL,43.2533,-112.2717,QC=QJ=0;CH=CJ=1,,,,964.6975;R9a99713d9fdfe641, 
+BRPN:CCPI,CANYON CK LATERAL PUMP,43.9033,-111.5381,QC=QJ=0,,,,800.9863;R2b871e6dd913dc41,Teton River O5 L4 Drainage:2149km2 AvgFlow:920cfs AvgPrecip:398mm AvgTemp:5C
+BRPN:CCR,Conconully Dam and Reservoir near Conconully WA,48.5381,-119.7472,Q=QD=0,,,,707.5639;Re7fb9929e2a6c141, O4 L4 Drainage:137km2 AvgFlow:30cfs AvgPrecip:424mm AvgTemp:6C
+BRPN:CECI,CLARK & EDWARDS CANAL,43.6569,-111.7833,QC=QJ=0;CH=CJ=1,,,,380.7014;R713dda611fb4e241, 
+BRPN:CENO,Central Oregon Canal,44.0303,-121.2947,QC=QJ=0;CH=CJ=1;WF=WF=2,,,,689.9908;R0c02c33211c2d341, 
+BRPN:CFCI,Consolidated Farmers Weir,43.94,-111.7275,QC=QJ=0;CH=CJ=1,,,,927.6668;Rc5208400cc9ce541, 
+BRPN:CFMM,Flathead River at Columbia Falls MT,48.3619,-114.1839,Q=QD=0;GH=GJ=1;WC=WC=3,,,,90.3704;Rd34d2a647812ec41,Flathead River O6 L2 Drainage:11565km2 AvgFlow:8874cfs AvgPrecip:502mm AvgTemp:6C
+BRPN:CGWW,Cowiche Creek,46.6584,-120.7592,GH=GJ=1,,,,921.3753;R83c05a2e6e56eb41, O2 L6 Drainage:9km2 AvgFlow:1cfs AvgPrecip:399mm AvgTemp:8C
+BRPN:CHCW,CHANDLER-PROSSER POWER CANAL,46.2328,-119.6744,QC=QJ=0;CH=CJ=1,,,,936.2263;R33330b7eebbfdc41,Spring Creek O4 L4 Drainage:114km2 AvgFlow:1cfs AvgPrecip:215mm AvgTemp:11C
+BRPN:CHEI,Falls River near Chester ID,44.0183,-111.5667,Q=QD=0;GH=GJ=1,,,,869.313;Rcff78b56d500de41,Fall River 
+BRPN:CHRW,CHERRY CREEK (THRALL RD. KITTITAS VAL),46.9258,-120.5003,Q=QD=0;GH=GJ=1,,,,240.7697;R3f358aa5969eec41,Cherry Creek O5 L4 Drainage:435km2 AvgFlow:41cfs AvgPrecip:231mm AvgTemp:9C
+BRPN:CIBW,Columbia River at International Boundary,48.9714,-117.6469,GH=GJ=1;WC=WC=3,,,,598.5899;R6210684ccf58c241,Columbia River O8 L1 Drainage:153845km2 AvgFlow:87905cfs AvgPrecip:1165mm AvgTemp:1C
+BRPN:CKKO,Crooked Rver near Terrebonne OR,44.3583,-121.1178,Q=QD=0;GH=GJ=1;WF=WF=2,,,,215.144;R85ebb9895fe0da41,Crooked River O6 L3 Drainage:10061km2 AvgFlow:474cfs AvgPrecip:262mm AvgTemp:9C
+BRPN:CLE,CLE ELUM RESERVOIR RIVER AND WEATHER STATION,47.2456,-121.0733,Q=QD=0;GH=GJ=1,,,,662.0095;Rb29d3fa88a82cb41,Cle Elum River O5 L4 Drainage:519km2 AvgFlow:835cfs AvgPrecip:987mm AvgTemp:7C
+BRPN:CLFW,NACHES RIVER NEAR CLIFFDELL WA.,46.9006,-120.0181,Q=QD=0;GH=GJ=1;WF=WF=2,,,,381.3457;R9eefefd61e86e941, O2 L4 Drainage:23km2 AvgFlow:0cfs AvgPrecip:202mm AvgTemp:10C
+BRPN:CLYW,CLEAR LAKE OUTFLOW (N FORK TIETON R. BLW CLEAR LAKE),46.6308,-121.2678,GH=GJ=1,,,,936.9203;R7b14fe6c3d52d341, O3 L6 Drainage:55km2 AvgFlow:56cfs AvgPrecip:801mm AvgTemp:6C
+BRPN:CRAO,Deschutes River below Crane Prairie Res. OR,43.7536,-121.7825,Q=QD=0;GH=GJ=1;WF=WF=2,,,,257.1629;Rb4c8161f27accf41,Deschutes River O4 L2 Drainage:479km2 AvgFlow:394cfs AvgPrecip:698mm AvgTemp:6C
+BRPN:CRCI,CROSSCUT CANAL AT END,43.9206,-111.6119,QC=QJ=0;CH=CJ=1,,,,883.0803;Rae47adae97aae041,Teton River O5 L4 Drainage:2244km2 AvgFlow:935cfs AvgPrecip:359mm AvgTemp:6C
+BRPN:CRCO,Crooked River Feed Canal near Prineville OR,44.2389,-120.8625,QC=QJ=0;CH=CJ=1;WF=WF=2,,,,116.6987;Rd578919a2acfed41,Crooked River O6 L3 Drainage:6680km2 AvgFlow:373cfs AvgPrecip:282mm AvgTemp:8C
+BRPN:CREO,Crescent Creek at Crescent Lake OR,43.5031,-121.9722,Q=QD=0;GH=GJ=1;WF=WF=2,,,,234.4069;Rba497cd3508bda41,Crescent Creek O3 L4 Drainage:155km2 AvgFlow:62cfs AvgPrecip:863mm AvgTemp:6C
+BRPN:CROO,CROO-Crooked Riv below Opal Springs nr Culver />,44.29,-121.18,Q=QD=0,,,,,
+BRPN:CRPO,Crooked River above Prineville Reservoir nr Post OR,44.1792,-120.5878,Q=QD=0;GH=GJ=1;WF=WF=2,,,,197.1273;R2b8716b62b3a9041,Crooked River O6 L3 Drainage:5652km2 AvgFlow:322cfs AvgPrecip:281mm AvgTemp:8C
+BRPN:CRSO,Crooked Riv at Smith Rock St. Park nr Terrebonne OR,44.3675,-121.1389,Q=QD=0;GH=GJ=1;WF=WF=2,,,,39.8571;Rb072e43006cde441,Crooked River O6 L3 Drainage:10102km2 AvgFlow:475cfs AvgPrecip:237mm AvgTemp:9C
+BRPN:CSAO,US A Line Canal at Cold Springs Res nr Hermiston OR,45.8539,-119.1719,QC=QJ=0;CH=CJ=1,,,,950.9284;R0ad70b509ae1d541, O4 L2 Drainage:520km2 AvgFlow:0cfs AvgPrecip:242mm AvgTemp:12C
+BRPN:CSCI,North Fork Payette River at Cascade Idaho,44.5289,-116.0478,Q=QD=0;GH=GJ=1;WF=WF=2,,,,541.4816;R508d97f15bc7b741,North Fork Payette River O6 L5 Drainage:1593km2 AvgFlow:1083cfs AvgPrecip:583mm AvgTemp:5C
+BRPN:CSRI,East Fork Salmon River nr Clayton ID,44.2592,-114.4011,Q=QD=0;GH=GJ=1,,,,250.2843;R022b274dd554bc41, O1 L6 Drainage:2km2 AvgFlow:0cfs AvgPrecip:473mm AvgTemp:3C
+BRPN:CSRO,Cold Springs Recharge Canal near Hermiston OR,45.8664,-119.1672,QC=QJ=0;CH=CJ=1,,,,559.8826;R0ad70b509ae1d541, O4 L2 Drainage:520km2 AvgFlow:0cfs AvgPrecip:242mm AvgTemp:12C
+BRPN:CULO,CULO-Deschutes River near Culver OR />,44.4987,-121.3212,Q=QD=0,,,,16.0372;R9318cc89d714e241,Deschutes River O5 L2 Drainage:6032km2 AvgFlow:959cfs AvgPrecip:327mm AvgTemp:9C
+BRPN:CVPI,CLEMENTSVILLE PUMP,43.8747,-111.2472,QC=QJ=0,,,,224.8539;R3d0ae7694bc1d941, O1 L5 Drainage:2km2 AvgFlow:0cfs AvgPrecip:464mm AvgTemp:4C
+BRPN:CXCI,CROSSCUT CANAL NR CHESTER,44.0167,-111.5833,QC=QJ=0;CH=CJ=1,,,,852.0181;Rcdcc2c645faae241,Fall River O5 L4 Drainage:1312km2 AvgFlow:814cfs AvgPrecip:379mm AvgTemp:6C
+BRPN:CXMI,Crosscut Middle Weir,43.9761,-111.6042,QC=QJ=0;CH=CJ=1,,,,,
+BRPN:DCIO,Deer Creek near Izee OR,44.1969,-119.4686,Q=QD=0;GH=GJ=1;WF=WF=2,,,,750.2268;Re7fb39a78880ce41,Deer Creek O3 L4 Drainage:118km2 AvgFlow:5cfs AvgPrecip:414mm AvgTemp:7C
+BRPN:DCMO,Deschutes County MID Canal,44.0689,-121.3125,QC=QJ=0,,,,881.4192;Rb6f329f6be7be041,Deschutes River O5 L2 Drainage:3904km2 AvgFlow:567cfs AvgPrecip:300mm AvgTemp:8C
+BRPN:DEBO,Deschutes River Below Bend OR,44.0831,-121.3067,Q=QD=0;GH=GJ=1;WF=WF=2,,,,850.6452;Rc3f54c07a6fde241,Deschutes River O5 L2 Drainage:3890km2 AvgFlow:567cfs AvgPrecip:299mm AvgTemp:8C
+BRPN:DEDI,Deadwood River below Deadwood Dam,44.2961,-115.6456,Q=QD=0;GH=GJ=1;WF=WF=2,,,,829.1075;R713dc69acc08e541,Deadwood River O4 L5 Drainage:228km2 AvgFlow:168cfs AvgPrecip:804mm AvgTemp:4C
+BRPN:DEPW,DEEP CREEK BELOW COPPER CREEK,46.8325,-121.3178,GH=GJ=1;WF=WF=2,,,,889.5531;R736855923f0dec41,Deep Creek O4 L5 Drainage:59km2 AvgFlow:78cfs AvgPrecip:1620mm AvgTemp:4C
+BRPN:DGGI,TETON RIVER ab. S. LEIGH CREEK,43.7792,-111.2083,Q=QD=0,,,,923.5378;Rf8532723e7bde841,Teton River O4 L4 Drainage:829km2 AvgFlow:416cfs AvgPrecip:389mm AvgTemp:5C
+BRPN:DICO,Dead Indian Collection Canal nr. Pinehurst OR,42.2639,-122.4492,QC=QJ=0;CH=CJ=1,,,,307.9356;R378919e9860fd041,Dead Indian Creek O2 L3 Drainage:25km2 AvgFlow:13cfs AvgPrecip:912mm AvgTemp:7C
+BRPN:DLEO,Dillon Canal near Stanfield OR,45.7661,-119.2161,QC=QJ=0;CH=CJ=1,,,,23.3858;R37895dc19006e341,Umatilla River O6 L2 Drainage:3640km2 AvgFlow:549cfs AvgPrecip:265mm AvgTemp:12C
+BRPN:DLLO,Tualatin River near Dilley Oregon,45.48,-123.12,Q=QD=0;GH=GJ=1;WF=WF=2,,,,920.6973;Rbc749704f432ed41,Tualatin River O4 L3 Drainage:319km2 AvgFlow:381cfs AvgPrecip:1147mm AvgTemp:12C
+BRPN:DNCI,DANSKIN CANAL,43.2208,-112.3542,QC=QJ=0;CH=CJ=1,,,,660.0704;R0c02bb8da747ed41,Snake River O7 L2 Drainage:24488km2 AvgFlow:5703cfs AvgPrecip:273mm AvgTemp:7C
+BRPN:DRCO,Deer Creek above Phillips Lake,44.6917,-118.0639,Q=QD=0;GH=GJ=1,,,,10.1084;Ree7c37f42d44e641,Deer Creek O3 L4 Drainage:76km2 AvgFlow:22cfs AvgPrecip:436mm AvgTemp:6C
+BRPN:DRII,Deadwood River above Deadwood Reservoir ID,44.3483,-115.6497,GH=GJ=1;WF=WF=2,,,,927.8435;R986e529697aba341,Deadwood River O3 L5 Drainage:178km2 AvgFlow:137cfs AvgPrecip:816mm AvgTemp:4C
+BRPN:DRMI,Deadwood River at Mouth near Lowman ID,44.0861,-115.6611,GH=GJ=1;WF=WF=2,,,,269.3392;R2fdddcb4f1b3df41,Deadwood River O4 L5 Drainage:613km2 AvgFlow:433cfs AvgPrecip:719mm AvgTemp:7C
+BRPN:DRYI,Dry Bed near Ririe ID,43.6392,-111.7153,Q=QD=0;GH=GJ=1,,,,,
+BRPN:EASW,YAKIMA RIVER AT EASTON WA.,47.2389,-121.1778,Q=QD=0;GH=GJ=1,,,,968.6003;R1f855389dd05dc41,Yakima River O5 L3 Drainage:470km2 AvgFlow:993cfs AvgPrecip:1272mm AvgTemp:7C
+BRPN:EBCO,East Birch Creek at Pilot Rock OR,45.4842,-118.8344,Q=QD=0;GH=GJ=1;WF=WF=2,,,,622.9885;Rb81e7d80c763da41,East Birch Creek O4 L4 Drainage:217km2 AvgFlow:61cfs AvgPrecip:383mm AvgTemp:10C
+BRPN:EGCI,EGIN CANAL,43.9653,-111.6861,QC=QJ=0;CH=CJ=1,,,,987.8604;R4260a5ce1ce0e241, 
+BRPN:EGLO,EGLO-Rogue River at Dodge Bridge>,42.53,-122.85,Q=QD=0,,,,941.9206;R8d97e28881e2e241,Rogue River O5 L1 Drainage:3155km2 AvgFlow:2551cfs AvgPrecip:568mm AvgTemp:12C
+BRPN:EGSO,Emigrant Creek Above Green Springs Powerplant OR,42.1222,-122.5464,Q=QD=0;GH=GJ=1;WF=WF=2,,,,891.6584;Rd122739ffc03d441,Emigrant Creek O2 L2 Drainage:47km2 AvgFlow:13cfs AvgPrecip:623mm AvgTemp:10C
+BRPN:ELCI,Eagle Rock Canal near Hwy 26,43.6042,-111.7978,QC=QJ=0;CH=CJ=1,,,,977.1543;Rec5108e78c90c541, O1 L5 Drainage:2km2 AvgFlow:0cfs AvgPrecip:358mm AvgTemp:6C
+BRPN:ELKW,ELKW-Elwha River above Lake Mills turbidity>--><!--,47.97,-123.58,GH=GJ=1,,,,966.4067;R14ae83e38b2ae241, O2 L2 Drainage:10km2 AvgFlow:18cfs AvgPrecip:1552mm AvgTemp:9C
+BRPN:ELNW,YAKIMA RIVER NEAR ELLENSBURG WA.,47,-120.6,Q=QD=0;GH=GJ=1;WF=WF=2,,,,937.2469;R08ac00f68258ef41,Yakima River O6 L3 Drainage:2886km2 AvgFlow:2668cfs AvgPrecip:235mm AvgTemp:9C
+BRPN:ELWW,ELWW-Elwha River at McDonald Bridge turbidity>-->,48.05,-123.58,Q=QD=0,,,,961.6569;R295c8703a02ad841,Elwha River O4 L1 Drainage:692km2 AvgFlow:1877cfs AvgPrecip:1286mm AvgTemp:9C
+BRPN:EMI,Emigrant Dam and Lake near Ashland OR,42.1639,-122.6042,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1;WF=WF=2,,,,682.3728;Rf6281cb7e5b6e841,Emigrant Creek O3 L2 Drainage:140km2 AvgFlow:60cfs AvgPrecip:573mm AvgTemp:11C
+BRPN:EMM,Black Canyon Dam and Reservoir near Emmett ID,43.9306,-116.4417,Q=QD=0;GH=GJ=1;CH=CJ=1,,,,873.5727;R1058a18f6c35e241, 
+BRPN:ENTI,ENTERPRIZE CANAL,43.6306,-111.6847,QC=QJ=0;CH=CJ=1,,,,967.3723;R06811565d9b7e641, 
+BRPN:EPCO,Canal blw Cobleigh Rd nr Butte Falls OR,42.5789,-122.6219,QC=QJ=0;CH=CJ=1;WF=WF=2,,,,944.3434;R2506396a3a1ce441,Big Butte Creek O4 L2 Drainage:497km2 AvgFlow:203cfs AvgPrecip:864mm AvgTemp:11C
+BRPN:EPTO,Antelope Creek near Eagle Point OR,42.4556,-122.8267,Q=QD=0;GH=GJ=1;WF=WF=2,,,,7.5672;R8b6c37611158e641,Antelope Creek O3 L3 Drainage:195km2 AvgFlow:65cfs AvgPrecip:544mm AvgTemp:12C
+BRPN:ERCI,EAGLE ROCK CANAL NR HEISE,43.6306,-111.6875,QC=QJ=0;CH=CJ=1,,,,979.4697;Rd9ceebf443b0e741,Snake River O6 L2 Drainage:14570km2 AvgFlow:7104cfs AvgPrecip:360mm AvgTemp:6C
+BRPN:ETCW,Ellensburg Town Canal,47.3383,-120.5964,QC=QJ=0;CH=CJ=1,,,,415.3894;R6de79ffa599bed41, O1 L5 Drainage:2km2 AvgFlow:1cfs AvgPrecip:853mm AvgTemp:6C
+BRPN:ETNI,Emmett I.D Northside Canal,43.93,-116.43,QC=QJ=0;CH=CJ=1,,,,510.2326;Rfed4303956aeef41,Payette River O6 L3 Drainage:7068km2 AvgFlow:3017cfs AvgPrecip:415mm AvgTemp:10C
+BRPN:ETSI,Emmett I.D. Southside Canal,43.925,-116.4403,QC=QJ=0;CH=CJ=1,,,,958.9823;R17d9e699289be341,Spring Creek O2 L4 Drainage:11km2 AvgFlow:1cfs AvgPrecip:365mm AvgTemp:10C
+BRPN:FALI,Falls River near Squirrel ID,44.0686,-111.2403,Q=QD=0;GH=GJ=1,,,,368.0352;R1904465300edcb41,Fall River O5 L4 Drainage:847km2 AvgFlow:678cfs AvgPrecip:558mm AvgTemp:4C
+BRPN:FARI,FARMERS FRIEND CANAL NR ST ANTHONY IDAHO,43.9739,-111.6381,QC=QJ=0;CH=CJ=1,,,,955.5286;R4e620cb7f055e141, 
+BRPN:FCEO,Umatilla Project Feed Canal near Echo OR,45.7294,-119.1783,QC=QJ=0;CH=CJ=1,,,,882.5964;Ra01a8f84ebc1b441,Umatilla River O6 L2 Drainage:3474km2 AvgFlow:546cfs AvgPrecip:298mm AvgTemp:11C
+BRPN:FCFM,North Fork Flathead River near Columbia Falls MT,48.4956,-114.1267,Q=QD=0;GH=GJ=1;WC=WC=3,,,,342.8614;Ree7c27a74f9fdc41,North Fork Flathead River O5 L3 Drainage:4032km2 AvgFlow:2984cfs AvgPrecip:689mm AvgTemp:6C
+BRPN:FCSO,Umatilla Project Feed Canal near Hermiston OR,45.8539,-119.1719,QC=QJ=0;CH=CJ=1,,,,950.9284;R0ad70b509ae1d541, O4 L2 Drainage:520km2 AvgFlow:0cfs AvgPrecip:242mm AvgTemp:12C
+BRPN:FFCI,FARMERS FRIEND CANAL NR HEISE,43.6306,-111.6889,QC=QJ=0;CH=CJ=1,,,,966.0965;R77bec7ad82ffdd41,Snake River O6 L2 Drainage:14570km2 AvgFlow:7104cfs AvgPrecip:357mm AvgTemp:6C
+BRPN:FHPI,Fort Hall Michaud Pump,43.9283,-112.5667,QC=QJ=0;CH=CJ=1,,,,,
+BRPN:FIS,Fish Lake near Ashland OR,42.3778,-122.3472,Q=QD=0,,,,94.4602;R23dbed9b05eae241,North Fork Little Butte Creek O1 L3 Drainage:62km2 AvgFlow:49cfs AvgPrecip:1126mm AvgTemp:7C
+BRPN:FLGY,Snake River near Flagg Ranch WY,44.0989,-110.6672,Q=QD=0;GH=GJ=1;WF=WF=2,,,,237.8979;Rb81e851775c47b41,Snake River O4 L2 Drainage:1207km2 AvgFlow:959cfs AvgPrecip:1079mm AvgTemp:2C
+BRPN:FOR,Fourmile Lake near Ashland OR,42.4569,-122.2417,QC=QJ=0;CH=CJ=1,,,,127.9065;Rd9cec7a4ae91c841,Fourmile Creek O1 L3 Drainage:2km2 AvgFlow:3cfs AvgPrecip:1398mm AvgTemp:6C
+BRPN:FRCI,FALL RIVER CANAL,43.9992,-111.5281,QC=QJ=0;CH=CJ=1,,,,932.8241;R5c8f6282cf85e841,Fall River O5 L4 Drainage:1293km2 AvgFlow:848cfs AvgPrecip:386mm AvgTemp:6C
+BRPN:FRMO,Tualatin River at Farmington,45.45,-122.95,Q=QD=0;GH=GJ=1,,,,6.6497;Re5d0fa620823d541,Tualatin River O5 L3 Drainage:1456km2 AvgFlow:1482cfs AvgPrecip:1018mm AvgTemp:12C
+BRPN:FSHO,NF Little Butte Cr below Fish Lake,42.3772,-122.3594,Q=QD=0;GH=GJ=1;WF=WF=2,,,,915.3593;Rb29da7f84458d241, O1 L3 Drainage:41km2 AvgFlow:41cfs AvgPrecip:1277mm AvgTemp:6C
+BRPN:FURO,Furnish Canal above Crayne-Lisle Canal near Echo OR,45.6911,-119.1236,QC=QJ=0;CH=CJ=1,,,,558.4565;R426049fe3345e841,Furnish Ditch 
+BRPN:GCCO,Griffin Creek mouth at Central Point OR,42.3583,-122.5086,Q=QD=0;GH=GJ=1;WF=WF=2,,,,671.2293;Rb81ed101770de741,Soda Creek O2 L3 Drainage:26km2 AvgFlow:12cfs AvgPrecip:800mm AvgTemp:10C
+BRPN:GCJO,Griffin Cr below Murphy Cr,42.2693,-122.9142,Q=QD=0;GH=GJ=1;WF=WF=2,,,,210.3107;R583908935a94e341,Griffin Creek O2 L3 Drainage:20km2 AvgFlow:6cfs AvgPrecip:586mm AvgTemp:11C
+BRPN:GCL,Grand Coulee Dam WA,47.95,-118.98,Q=QD=0,,,,713.5956;R0e2d0a0dbca7dc41,Columbia River O8 L1 Drainage:191846km2 AvgFlow:107942cfs AvgPrecip:270mm AvgTemp:10C
+BRPN:GILO,South Fork Little Butte Creek at Gilkey OR,42.3586,-122.5086,Q=QD=0;GH=GJ=1;WF=WF=2,,,,610.0857;Rae473113a9b5dc41,South Fork Little Butte Creek O3 L2 Drainage:274km2 AvgFlow:135cfs AvgPrecip:768mm AvgTemp:10C
+BRPN:GPLO,Grande Ronde at Pierce Lane OR,45.3499,-117.9634,GH=GJ=1,,,,250.6059;R8195033afe78b441,Grande Ronde River O5 L4 Drainage:1793km2 AvgFlow:421cfs AvgPrecip:411mm AvgTemp:9C
+BRPN:GRAO,Rogue River at Grant's Pass (US Army Corps of Engineers),42.43,-123.32,Q=QD=0,,,,4.713;R9eef77868573e641,Rogue River O5 L1 Drainage:6370km2 AvgFlow:3488cfs AvgPrecip:811mm AvgTemp:12C
+BRPN:GREY,Greys River above Reservoir near Alpine WY,43.1428,-110.9767,Q=QD=0;GH=GJ=1,,,,878.8017;Re926a9ab352ed041,Greys River O4 L3 Drainage:1175km2 AvgFlow:674cfs AvgPrecip:642mm AvgTemp:4C
+BRPN:GRRO,Grande Ronde at Rinehart Ln OR,45.4966,-117.9242,GH=GJ=1,,,,830.4472;Rcdccb09e1ffee941,Grande Ronde River O6 L3 Drainage:2949km2 AvgFlow:687cfs AvgPrecip:551mm AvgTemp:8C
+BRPN:GRS,Grassy Lake near Moran WY,44.1292,-110.8181,GH=GJ=1,,,,805.3139;R91edfc3c7ed1cb41, O2 L5 Drainage:73km2 AvgFlow:77cfs AvgPrecip:1316mm AvgTemp:2C
+BRPN:GSPO,Green Springs Powerplant near Ashland OR,42.1222,-122.5464,Q=QD=0;WF=WF=2,,,,891.6584;Rd1220bdb1e3cd941,Tyler Creek O2 L3 Drainage:17km2 AvgFlow:5cfs AvgPrecip:619mm AvgTemp:10C
+BRPN:GSTO,Tualatin River at Gaston Oregon,45.4389,-123.1397,Q=QD=0;GH=GJ=1;WF=WF=2,,,,820.2601;R14ae377d78c3d441,Tualatin River O3 L3 Drainage:127km2 AvgFlow:192cfs AvgPrecip:1198mm AvgTemp:11C
+BRPN:GWCI,GREAT WESTERN CANAL NR LEWISVILLE,43.5875,-112.0611,QC=QJ=0;CH=CJ=1,,,,298.9724;R2b8716c7a194b941,Snake River O7 L2 Drainage:23527km2 AvgFlow:6529cfs AvgPrecip:313mm AvgTemp:6C
+BRPN:HARI,HARRISON CANAL nr Ririe Id,43.6442,-111.7644,QC=QJ=0;CH=CJ=1,,,,955.2848;R8b6c47f03ecbe641, 
+BRPN:HAY,Haystack Reservoir near Culver OR,44.5,-121.1533,Q=QD=0,,,,652.2237;R00006435fe3de741, 
+BRPN:HCDI,Snake River at Hells Canyon Dam (Idaho Power),45.25,-116.7,Q=QD=0;GH=GJ=1,,,,565.131;R60e5d0897d63a041,Snake River O8 L2 Drainage:155172km2 AvgFlow:21155cfs AvgPrecip:470mm AvgTemp:10C
+BRPN:HEII,Snake River near Heise ID,43.6125,-111.66,Q=QD=0;GH=GJ=1,,,,632.6398;R9a99995cd46c9241,Snake River O6 L2 Drainage:14555km2 AvgFlow:7214cfs AvgPrecip:367mm AvgTemp:6C
+BRPN:HENI,Henrys Fork near Lake ID,44.595,-111.35,Q=QD=0;GH=GJ=1,,,,796.0986;Rb29df3baecf6ec41, O2 L5 Drainage:28km2 AvgFlow:1cfs AvgPrecip:744mm AvgTemp:2C
+BRPN:HFAI,Henrys Fork near Ashton ID,44.0697,-111.5106,Q=QD=0;GH=GJ=1,,,,425.0989;R7d3f81a488d9e941,Henrys Fork O6 L3 Drainage:2849km2 AvgFlow:1759cfs AvgPrecip:412mm AvgTemp:5C
+BRPN:HGH,Hungry Horse Reservoir near Hungry Horse MT,48.3411,-114.0133,Q=QD=0;GH=GJ=1,,,,900.6682;Rac1c5addc7ef9e41,South Fork Flathead River O5 L3 Drainage:4289km2 AvgFlow:3490cfs AvgPrecip:872mm AvgTemp:4C
+BRPN:HGHM,S.Fk. Flathead Riv nr Columbia Falls at Hungry Horse,48.3567,-114.0367,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,901.3784;R23dbb9799008e241,South Fork Flathead River O5 L3 Drainage:4331km2 AvgFlow:3565cfs AvgPrecip:840mm AvgTemp:5C
+BRPN:HPCO,Howard Prairie Delivery Canal & Keene Creek Dam OR,42.1289,-122.4772,Q=QD=0;QC=QJ=0;CH=CJ=1;WF=WF=2,,,,435.3822;R426091660623ee41,Keene Creek O2 L3 Drainage:52km2 AvgFlow:29cfs AvgPrecip:879mm AvgTemp:8C
+BRPN:HPD,Howard Prairie Lake and Dam near Ashland OR,42.2167,-122.3761,Q=QD=0;QC=QJ=0;CH=CJ=1;WF=WF=2,,,,889.622;R4260a53a1428aa41, O1 L2 Drainage:59km2 AvgFlow:32cfs AvgPrecip:889mm AvgTemp:7C
+BRPN:HRSI,Payette River near Horseshoe Bend ID,43.945,-116.1969,Q=QD=0;GH=GJ=1;WF=WF=2,,,,355.5852;R068161dde45be041,Payette River O6 L4 Drainage:5696km2 AvgFlow:3361cfs AvgPrecip:481mm AvgTemp:10C
+BRPN:HYA,Hyatt Dam and Reservoir near Ashland OR,42.1722,-122.4667,Q=QD=0;GH=GJ=1;WF=WF=2,,,,134.423;R8d970aa4a105e441,Keene Creek O1 L3 Drainage:32km2 AvgFlow:19cfs AvgPrecip:902mm AvgTemp:7C
+BRPN:IDCI,IDAHO CANAL NR LEWISVILLE,43.6139,-112.0528,QC=QJ=0;CH=CJ=1,,,,970.4044;R295c8f01a7d09541,Snake River O7 L2 Drainage:23339km2 AvgFlow:5538cfs AvgPrecip:300mm AvgTemp:6C
+BRPN:INCI,INDEPENDENT CANAL,43.9589,-111.7011,QC=QJ=0;CH=CJ=1,,,,47.9894;R8d978699a479dc41,Independent Canal 
+BRPN:ISCI,ISLAND CANAL,43.6917,-111.8542,QC=QJ=0;CH=CJ=1,,,,862.1485;Re9266d3d16e9e641, 
+BRPN:ISL,Island Park Dam and Reservoir ID,44.4197,-111.4139,Q=QD=0,,,,352.9364;R3108547f9b57d841,Henrys Fork O6 L3 Drainage:1288km2 AvgFlow:702cfs AvgPrecip:741mm AvgTemp:3C
+BRPN:ISLI,Henrys Fork near Island Park ID,44.4164,-111.3947,Q=QD=0;GH=GJ=1;WF=WF=2,,,,804.3961;Rdbf94e9c834ae041,Henrys Fork O6 L3 Drainage:1407km2 AvgFlow:761cfs AvgPrecip:725mm AvgTemp:3C
+BRPN:JCCO,Jackson Creek at Central Point,42.4128,-122.9422,Q=QD=0;GH=GJ=1;WF=WF=2,,,,666.9824;R333373e6b64be441,Jackson Creek O3 L3 Drainage:56km2 AvgFlow:12cfs AvgPrecip:491mm AvgTemp:12C
+BRPN:JCJO,Jackson Cr at Jacksonville,42.3209,-122.9586,Q=QD=0;GH=GJ=1;WF=WF=2,,,,525.6282;R000080324265a241,Jackson Creek O3 L3 Drainage:26km2 AvgFlow:7cfs AvgPrecip:518mm AvgTemp:12C
+BRPN:JCK,Jackson Lake at Dam on Snake River near Moran WY,43.8592,-110.5897,Q=QD=0;GH=GJ=1;WF=WF=2,,,,979.4346;Rc1ca31982515e141,Pilgrim Creek O3 L3 Drainage:126km2 AvgFlow:84cfs AvgPrecip:618mm AvgTemp:3C
+BRPN:JCTO,Joint System Canal bel Junction nr Lakecreek,42.4218,-122.6225,QC=QJ=0;CH=CJ=1,,,,634.9381;R1b2f9d5806f3df41,North Fork Little Butte Creek O3 L3 Drainage:146km2 AvgFlow:68cfs AvgPrecip:636mm AvgTemp:11C
+BRPN:JDA,JOHN DAY DAM & LAKE UMATILLA ON COLUMBIA R,45.72,-120.7,Q=QD=0,,,,759.8981;R7368c9999adcde41,Columbia River O9 L1 Drainage:542844km2 AvgFlow:182972cfs AvgPrecip:315mm AvgTemp:11C
+BRPN:JDIO,South Fork John Day River above Izee Falls,44.1236,-119.4906,Q=QD=0;GH=GJ=1;WF=WF=2,,,,965.253;R986e928da548ec41,South Fork John Day River O4 L3 Drainage:536km2 AvgFlow:49cfs AvgPrecip:414mm AvgTemp:7C
+BRPN:JDMO,John Day River at McDonald Ferry OR,45.5878,-120.4083,Q=QD=0;GH=GJ=1,,,,854.6359;Ree7cff2f4ed4d841,John Day River O6 L2 Drainage:19784km2 AvgFlow:2302cfs AvgPrecip:248mm AvgTemp:11C
+BRPN:JKSY,Snake River below Flat Creek near Jackson WY,43.3722,-110.7386,Q=QD=0;GH=GJ=1,,,,805.1673;R3d0ae7998e10d941,Snake River O6 L2 Drainage:6930km2 AvgFlow:3738cfs AvgPrecip:471mm AvgTemp:4C
+BRPN:JRPI,J. Ricks Pipeline (Teton River),43.8514,-111.2533,QC=QJ=0,,,,7.962;R68918d654c0cc841,Teton River O5 L4 Drainage:1189km2 AvgFlow:555cfs AvgPrecip:451mm AvgTemp:4C
+BRPN:KAC,KACHESS RESERVOIR RIVER AND WEATHER STATION,47.2647,-121.2044,Q=QD=0;GH=GJ=1,,,,316.0981;R9eef67d87e9aaa41,Kachess River O4 L4 Drainage:168km2 AvgFlow:331cfs AvgPrecip:1322mm AvgTemp:7C
+BRPN:KEE,KEECHELUS RESERVOIR-YAK AT MARTIN AND WEATHER STA.,47.3222,-121.3389,Q=QD=0;GH=GJ=1,,,,797.947;R46b60319c553cd41,Price Creek O1 L5 Drainage:2km2 AvgFlow:3cfs AvgPrecip:2197mm AvgTemp:6C
+BRPN:KERM,POLSON KERR DAM,47.68,-114.23,Q=QD=0,,,,436.8155;Rcba18500058fc541,Flathead River O6 L2 Drainage:18100km2 AvgFlow:11698cfs AvgPrecip:395mm AvgTemp:7C
+BRPN:KIOW,YAKIMA RIVER AT KIONA WA,46.2533,-119.4772,Q=QD=0;GH=GJ=1;WF=WF=2,,,,174.1127;R6210d065ee95ee41,Yakima River O7 L2 Drainage:14145km2 AvgFlow:3609cfs AvgPrecip:218mm AvgTemp:11C
+BRPN:KNCW,KENNEWICK CANAL,46.2653,-119.5694,QC=QJ=0;CH=CJ=1,,,,866.0435;R4c37e9257155b141, 
+BRPN:KTCW,KITTITAS CANAL,47.2389,-121.1833,QC=QJ=0;CH=CJ=1,,,,606.6094;R1f855389dd05dc41,Yakima River O5 L3 Drainage:470km2 AvgFlow:993cfs AvgPrecip:1272mm AvgTemp:7C
+BRPN:LABI,WEST LABELLE & LONG ISLAND CANAL NR RIGBY,46.6906,-111.7639,QC=QJ=0;CH=CJ=1,,,,105.0936;R19046e09023cd041, O1 L3 Drainage:3km2 AvgFlow:0cfs AvgPrecip:330mm AvgTemp:6C
+BRPN:LACI,East Labelle Weir,43.6733,-111.8042,QC=QJ=0;CH=CJ=1,,,,309.3133;Re7fb1ded9d30ee41, 
+BRPN:LAPO,Little Deschutes River near LaPine OR,43.6892,-121.5017,Q=QD=0;GH=GJ=1;WF=WF=2,,,,813.893;R022b877190d7a341,Little Deschutes River O4 L3 Drainage:1928km2 AvgFlow:226cfs AvgPrecip:622mm AvgTemp:7C
+BRPN:LBCO,Little Butte Creek at Lakecreek OR,42.4222,-122.6222,Q=QD=0;GH=GJ=1;WF=WF=2;WC=WC=3,,,,134.9995;R9a99b107cfdfed41,Little Butte Creek O4 L2 Drainage:510km2 AvgFlow:121cfs AvgPrecip:610mm AvgTemp:11C
+BRPN:LBEO,Little Butte Creek below Eagle Point OR,42.4628,-122.8153,Q=QD=0;GH=GJ=1;WF=WF=2,,,,54.5319;R89414887934dd341,Little Butte Creek O4 L2 Drainage:760km2 AvgFlow:199cfs AvgPrecip:567mm AvgTemp:12C
+BRPN:LBGO,WT-Water Turbidity-FNU,42.4766,-122.7931,GH=GJ=1;WF=WF=2;WC=WC=3;Q=QD=0,,,,913.2672;R643b97e32aabea41,Little Butte Creek O4 L2 Drainage:741km2 AvgFlow:196cfs AvgPrecip:678mm AvgTemp:12C
+BRPN:LEFO,Tualatin River below Lee Falls nr Cherry Grove OR,45.5058,-123.2183,Q=QD=0;GH=GJ=1;WF=WF=2,,,,181.1918;R9cc49c39322ae441, O1 L5 Drainage:9km2 AvgFlow:9cfs AvgPrecip:1324mm AvgTemp:11C
+BRPN:LNRW,LITTLE NACHES RIVER NEAR NILE WA,46.9875,-121.0986,Q=QD=0;GH=GJ=1;WF=WF=2,,,,323.9881;R583904f55f51cf41,Little Naches River O4 L5 Drainage:386km2 AvgFlow:423cfs AvgPrecip:915mm AvgTemp:7C
+BRPN:LORI,Snake River at Lorenzo ID,43.7353,-111.8781,Q=QD=0;GH=GJ=1;WF=WF=2,,,,901.4731;R8b6cc778ce53db41,Snake River O6 L2 Drainage:14696km2 AvgFlow:4886cfs AvgPrecip:326mm AvgTemp:6C
+BRPN:LOS,Rogue River at Lost Creek Dam (US Army Corps of Engineers),42.67,-122.68,Q=QD=0,,,,442.9836;R48e10ab09c53c141,Rogue River O5 L1 Drainage:1780km2 AvgFlow:1997cfs AvgPrecip:878mm AvgTemp:11C
+BRPN:LPPI,PA LATERAL (PUMPING PLANT) NR MILNER,42.5333,-113.9667,QC=QJ=0;CH=CJ=1,,,,457.3011;R3bdf27e231a8d241, O1 L3 Drainage:1km2 AvgFlow:0cfs AvgPrecip:264mm AvgTemp:9C
+BRPN:LUC,Lucky Peak Lake near Boise ID,43.5419,-116.0542,Q=QD=0,,,,902.073;R8b6ce7dbf0cc8a41, O2 L4 Drainage:13km2 AvgFlow:1cfs AvgPrecip:401mm AvgTemp:10C
+BRPN:LWG,LOWER GRANITE DAM & LAKE ON SNAKE RIV,46.67,-117.43,Q=QD=0,,,,972.3063;R77beaffd2398cc41,Snake River O8 L2 Drainage:231057km2 AvgFlow:52776cfs AvgPrecip:457mm AvgTemp:12C
+BRPN:LWOI,Little Wood River above High Five Creek ID,43.4931,-114.0572,Q=QD=0;GH=GJ=1,,,,997.7877;R7368254d6d26e541,Little Wood River O5 L5 Drainage:298km2 AvgFlow:66cfs AvgPrecip:369mm AvgTemp:5C
+BRPN:MABO,North Fork Malheur River abv Beulah Res OR,43.9503,-118.1744,Q=QD=0;GH=GJ=1;WF=WF=2,,,,787.4264;Rfa7e2ada87dfef41,North Fork Malheur River O5 L4 Drainage:889km2 AvgFlow:137cfs AvgPrecip:299mm AvgTemp:9C
+BRPN:MADO,Malheur River near Drewsey OR,43.7847,-118.3306,Q=QD=0;GH=GJ=1;WF=WF=2,,,,778.8528;R986e0a461847e941,Malheur River O5 L3 Drainage:2040km2 AvgFlow:265cfs AvgPrecip:261mm AvgTemp:8C
+BRPN:MAFO,Maxwell Diversion,45.8019,-119.3556,QC=QJ=0;WF=WF=2,,,,22.3685;R8b6c0753f130e741,Maxwell Canal 
+BRPN:MALO,Malheur River at 36th St. Bridge near Ontario OR,44.0403,-117.0206,Q=QD=0;GH=GJ=1;WF=WF=2,,,,4.7109;R25060d8e0e9ee841,Malheur River O6 L3 Drainage:12173km2 AvgFlow:381cfs AvgPrecip:265mm AvgTemp:10C
+BRPN:MAXO,Maxwell Canal near Hermiston OR,45.8047,-119.3578,QC=QJ=0;CH=CJ=1,,,,354.9678;R8b6c0753f130e741,Maxwell Canal 
+BRPN:MCFO,McKay Ck. Adult Fish Barrier,45.6681,-118.8408,GH=GJ=1;WF=WF=2,,,,498.0486;R7b14ae511a19bf41,McKay Creek O4 L3 Drainage:516km2 AvgFlow:111cfs AvgPrecip:345mm AvgTemp:11C
+BRPN:MCGI,Mann Creek at Mann Creek Guard Station ID,44.5014,-116.9492,GH=GJ=1,,,,378.1413;R5839d4c61bc7b941,Mann Creek O3 L4 Drainage:75km2 AvgFlow:38cfs AvgPrecip:919mm AvgTemp:8C
+BRPN:MCII,Mann Creek bel Adams Cr abv Reservoir,44.4803,-116.9325,GH=GJ=1;WF=WF=2,,,,672.6796;R448b6c4628deba41,Mann Creek O3 L4 Drainage:113km2 AvgFlow:56cfs AvgPrecip:740mm AvgTemp:8C
+BRPN:MCKO,Mckay Creek near Pendleton OR,45.6094,-118.7986,Q=QD=0;GH=GJ=1;WF=WF=2,,,,501.1235;R7368314b6c69c441,McKay Creek O4 L3 Drainage:500km2 AvgFlow:104cfs AvgPrecip:372mm AvgTemp:11C
+BRPN:MCN,MCNARY DAM & LAKE WALLULA ON COLUMBIA RIV,45.93,-119.3,Q=QD=0,,,,651.1654;Rdbf97e7a95e79541,Columbia River O9 L1 Drainage:509716km2 AvgFlow:179733cfs AvgPrecip:220mm AvgTemp:12C
+BRPN:MDCO,McDonald Creek above McDonald Ditch,42.1015,-122.799,Q=QD=0;GH=GJ=1;WF=WF=2,,,,838.3816;R81955bdc632ee141,McDonald Creek O1 L4 Drainage:7km2 AvgFlow:6cfs AvgPrecip:1304mm AvgTemp:6C
+BRPN:MDDO,McDonald Ditch at McDonald Creek,48.0894,-123.2366,QC=QJ=0;CH=CJ=1,,,,20.9904;R448b8c65587bbc41,McDonald Creek O2 L1 Drainage:58km2 AvgFlow:38cfs AvgPrecip:562mm AvgTemp:10C
+BRPN:MDNI,Main Drain North near Heyburn ID,42.5506,-113.8664,Q=QD=0;GH=GJ=1,,,,686.978;R643b87b4b4dbee41,Main Drain 
+BRPN:MDWO,McDonald Ditch at Wagner Gap,42.1393,-122.8028,QC=QJ=0;CH=CJ=1,,,,908.0572;Re17aaca2e30cd741, O1 L3 Drainage:5km2 AvgFlow:3cfs AvgPrecip:921mm AvgTemp:8C
+BRPN:MEDW,Meadow Creek (Inflow to Keechelus),47.3141,-121.3516,Q=QD=0;GH=GJ=1,,,,13.3711;Ra01a0768150fe241,Meadow Creek O2 L4 Drainage:21km2 AvgFlow:46cfs AvgPrecip:1975mm AvgTemp:6C
+BRPN:MFDO,Bear Creek at Medford OR,42.3308,-122.8717,Q=QD=0;GH=GJ=1,,,,33.1003;R986e9a1fc540e841,Bear Creek O4 L2 Drainage:748km2 AvgFlow:131cfs AvgPrecip:513mm AvgTemp:12C
+BRPN:MFPI,Middle Fork Payette River at Crouch ID,44.1,-115.98,Q=QD=0;GH=GJ=1,,,,817.7431;R91edac0c1c3fce41,Middle Fork Payette River O4 L5 Drainage:878km2 AvgFlow:391cfs AvgPrecip:662mm AvgTemp:9C
+BRPN:MHPI,Milner Power Plant (Idaho Power Co.),42.52,-114.03,Q=QD=0,,,,495.2937;Rae4751a2c746c541,Snake River O7 L2 Drainage:44117km2 AvgFlow:4052cfs AvgPrecip:269mm AvgTemp:9C
+BRPN:MIDO,Medford ID Canal at Bradshaw Drop nr Brownsboro,42.4136,-122.6067,QC=QJ=0;CH=CJ=1,,,,976.244;R1b2f9d5806f3df41,North Fork Little Butte Creek O3 L3 Drainage:146km2 AvgFlow:68cfs AvgPrecip:636mm AvgTemp:11C
+BRPN:MIII,MILNER-GOODING CANAL,42.5275,-114.0103,QC=QJ=0;CH=CJ=1,,,,781.9508;R3333b7f45506e341,Snake River O7 L2 Drainage:44011km2 AvgFlow:7589cfs AvgPrecip:266mm AvgTemp:9C
+BRPN:MILI,Snake River at Milner Idaho,42.5283,-114.0183,Q=QD=0;GH=GJ=1,,,,977.4082;R46b66fa0d528ee41,Snake River O7 L2 Drainage:44012km2 AvgFlow:6040cfs AvgPrecip:266mm AvgTemp:9C
+BRPN:MIN,Minidoka Dam and Lake Walcott ID,42.6708,-113.4833,GH=GJ=1;CH=CJ=1,,,,706.3773;R2db28d3eb582cd41,Snake River O7 L2 Drainage:41576km2 AvgFlow:7620cfs AvgPrecip:255mm AvgTemp:9C
+BRPN:MINI,Snake River near Minidoka ID,42.6731,-113.4994,Q=QD=0;GH=GJ=1;WF=WF=2,,,,59.0029;R2db28d3eb582cd41,Snake River O7 L2 Drainage:41576km2 AvgFlow:7620cfs AvgPrecip:255mm AvgTemp:9C
+BRPN:MLCI,MILNER LOW-LIFT CANAL NR MILNER,42.5194,-114.01,QC=QJ=0,,,,846.3857;R7f6ac86f5c1dea41, 
+BRPN:MLCO,Mill Creek nr Prineville OR,44.4072,-120.6397,Q=QD=0;GH=GJ=1;WF=WF=2,,,,122.964;Ra470bdc00f4c9541,Mill Creek O3 L5 Drainage:120km2 AvgFlow:12cfs AvgPrecip:403mm AvgTemp:7C
+BRPN:MNNI,Snake River near Menan (USGS),43.7528,-111.9792,Q=QD=0;GH=GJ=1,,,,998.1815;R2fddc4515e8fd741,Snake River O7 L2 Drainage:22565km2 AvgFlow:6057cfs AvgPrecip:308mm AvgTemp:6C
+BRPN:MORI,Mores Creek above Robie Creek ID,43.6481,-115.9889,Q=QD=0;GH=GJ=1,,,,720.234;R3bdf8f08e6d7e341,Mores Creek O5 L4 Drainage:1020km2 AvgFlow:380cfs AvgPrecip:536mm AvgTemp:9C
+BRPN:MPCI,MINIDOKA NO SIDE PUMP CANAL NR BURLEY,42.5336,-113.9469,QC=QJ=0,,,,414.3901;R250635e14cd5e841, O1 L3 Drainage:2km2 AvgFlow:0cfs AvgPrecip:260mm AvgTemp:9C
+BRPN:MRYI,MARYSVILLE CANAL NR SQUIRREL IDAHO,44.0617,-111.3283,QC=QJ=0;CH=CJ=1,,,,910.5882;Rf6285c09f3b6c241, 
+BRPN:MSEY,Snake River at Moose WY (USGS),43.654,-110.7153,Q=QD=0;GH=GJ=1,,,,24.0499;Rb81e6db4cc59ea41,Snake River O5 L2 Drainage:4360km2 AvgFlow:2985cfs AvgPrecip:611mm AvgTemp:3C
+BRPN:MUCO,Murderers Creek near Mouth,44.3158,-119.5342,Q=QD=0;GH=GJ=1;WF=WF=2,,,,678.0498;R08ac3c3f14cfc741,Murderers Creek O3 L4 Drainage:337km2 AvgFlow:11cfs AvgPrecip:390mm AvgTemp:9C
+BRPN:MXCI,N.S. X-CUT DIVERSION FROM GOODING,42.5586,-114.0514,QC=QJ=0;CH=CJ=1,,,,,
+BRPN:MYKO,Mckay Creek near Pilot Rock OR,45.5492,-118.7733,Q=QD=0;GH=GJ=1;WF=WF=2,,,,38.5701;Ra47051f02576e341,McKay Creek O4 L3 Drainage:479km2 AvgFlow:115cfs AvgPrecip:444mm AvgTemp:10C
+BRPN:NACW,NACHES RIVER NEAR NACHES WA.,46.7456,-120.7681,Q=QD=0;GH=GJ=1;WF=WF=2,,,,981.1493;R91ede8f1a607eb41,Naches River O6 L4 Drainage:2436km2 AvgFlow:2069cfs AvgPrecip:411mm AvgTemp:8C
+BRPN:NCAO,North Canal near Bend OR,44.0772,-121.3019,QC=QJ=0;CH=CJ=1;WF=WF=2,,,,803.9313;Rac1c5afcd7488641,Deschutes River O5 L2 Drainage:3889km2 AvgFlow:1062cfs AvgPrecip:389mm AvgTemp:7C
+BRPN:NCDO,Neil Creek mouth at Dead Indian rd nr Ashland OR,42.1856,-122.6544,Q=QD=0;GH=GJ=1;WF=WF=2,,,,794.2889;R17d9ae07a20cd041,Neil Creek O2 L3 Drainage:44km2 AvgFlow:13cfs AvgPrecip:539mm AvgTemp:11C
+BRPN:NCFO,Neil Creek Above Dunn Cr Nr Ashland OR,42.1328,-122.6367,Q=QD=0;GH=GJ=1;WF=WF=2,,,,42.9069;R1b2f3dd06652ed41,Neil Creek O1 L3 Drainage:28km2 AvgFlow:10cfs AvgPrecip:756mm AvgTemp:9C
+BRPN:NFBO,North Fork Little Butte Creek Canal nr Lakecreek OR,42.4274,-122.6023,QC=QJ=0;CH=CJ=1,,,,212.3896;R0681fd26f801d941,North Fork Little Butte Creek O3 L3 Drainage:144km2 AvgFlow:68cfs AvgPrecip:665mm AvgTemp:11C
+BRPN:NFFO,North Fork Big Butte Creek near Butte Falls OR,42.5542,-122.5456,GH=GJ=1;WF=WF=2;Q=QD=0,,,,109.5782;Re7fbe907ecf4c641,North Fork Big Butte Creek O3 L3 Drainage:90km2 AvgFlow:52cfs AvgPrecip:957mm AvgTemp:10C
+BRPN:NFLO,North Fork Little Butte Creek at 140 OR,42.4028,-122.5367,Q=QD=0;GH=GJ=1;WF=WF=2,,,,464.8025;R2fddccee4d0be141,North Fork Little Butte Creek O2 L3 Drainage:108km2 AvgFlow:78cfs AvgPrecip:742mm AvgTemp:10C
+BRPN:NLCI,NEW LAVASIDE CANAL,43.2992,-112.225,QC=QJ=0;CH=CJ=1,,,,780.3759;Rf6288c3b8a89e641,Snake River O7 L2 Drainage:24227km2 AvgFlow:5914cfs AvgPrecip:291mm AvgTemp:7C
+BRPN:NMCI,Minidoka Northside Canal,42.67,-113.48,QC=QJ=0;CH=CJ=1,,,,801.648;R2db28d3eb582cd41,Snake River O7 L2 Drainage:41576km2 AvgFlow:7620cfs AvgPrecip:255mm AvgTemp:9C
+BRPN:NMCO,North Unit Main Canal,44.0772,-121.3019,QC=QJ=0;CH=CJ=1,,,,803.9313;Rac1c5afcd7488641,Deschutes River O5 L2 Drainage:3889km2 AvgFlow:1062cfs AvgPrecip:389mm AvgTemp:7C
+BRPN:NPAO,N. Powder River bel Anthony Cr nr North Powder,45.0128,-118.0531,Q=QD=0;GH=GJ=1,,,,912.7977;Rf0a74a13250ae041, 
+BRPN:NPDO,Powder River abv Thief Valley Res nr. North Powder,45.0575,-117.8408,Q=QD=0;GH=GJ=1;WF=WF=2,,,,953.6295;R46b64bdc402ed541,Powder River O5 L3 Drainage:2186km2 AvgFlow:270cfs AvgPrecip:436mm AvgTemp:8C
+BRPN:NRYW,NACHES RIVER NEAR YAKIMA WA,46.6283,-120.5194,Q=QD=0;GH=GJ=1;WF=WF=2,,,,3.1932;R3f35de8fa710d441,Naches River O6 L4 Drainage:2852km2 AvgFlow:2125cfs AvgPrecip:242mm AvgTemp:10C
+BRPN:NSCW,NACHES SELAH CANAL,46.7467,-120.7689,QC=QJ=0;CH=CJ=1,,,,938.1799;Rd7a3f0e108ad9d41,Naches River O6 L4 Drainage:2447km2 AvgFlow:2071cfs AvgPrecip:559mm AvgTemp:7C
+BRPN:OCHO,Ochoco Creek below Ochoco Reservoir OR,44.2989,-120.7278,Q=QD=0;QC=QJ=0;GH=GJ=1;CH=CJ=1;WF=WF=2,,,,792.0413;Rdf4f8d40c09aa841,Ochoco Creek O4 L4 Drainage:752km2 AvgFlow:65cfs AvgPrecip:301mm AvgTemp:8C
+BRPN:OCRO,Ochoco Cr. above Reservoir nr Prineville OR,44.3333,-120.5828,Q=QD=0;GH=GJ=1;WF=WF=2,,,,425.2015;Ra8c6ebf90fd0bc41,Ochoco Creek O4 L4 Drainage:232km2 AvgFlow:31cfs AvgPrecip:359mm AvgTemp:8C
+BRPN:OSCI,OSGOOD CANAL,43.6292,-112.0792,QC=QJ=0;CH=CJ=1,,,,,
+BRPN:OWY,Lake Owyhee and Owyhee River near Nyssa OR,43.6583,-117.2583,Q=QD=0;GH=GJ=1;WF=WF=2,,,,795.1562;R0c0287f95726eb41,Owyhee River O7 L3 Drainage:26436km2 AvgFlow:620cfs AvgPrecip:255mm AvgTemp:10C
+BRPN:PABI,MFPI-Middle Fork Payette River near Crouch (USGS) />,44.12,-116.1,Q=QD=0,,,,846.7107;R8fc20561fdeacd41,North Fork Payette River O6 L5 Drainage:2397km2 AvgFlow:1344cfs AvgPrecip:683mm AvgTemp:9C
+BRPN:PAL,Palisades Reservoir near Irwin ID,43.3347,-111.2056,GH=GJ=1,,,,934.9592;R426005d83716c341,Little Sheep Creek O2 L3 Drainage:6km2 AvgFlow:1cfs AvgPrecip:549mm AvgTemp:5C
+BRPN:PALI,Snake River near Irwin ID,43.3508,-111.2183,Q=QD=0;GH=GJ=1;WF=WF=2,,,,753.7905;Rcff7b37c5d87c941,Snake River O6 L2 Drainage:13190km2 AvgFlow:6518cfs AvgPrecip:535mm AvgTemp:6C
+BRPN:PARI,Boise River near Parma ID,43.7817,-116.9714,Q=QD=0;GH=GJ=1;WF=WF=2,,,,829.567;Rc74b573d9682d441,Boise River O6 L3 Drainage:10105km2 AvgFlow:1627cfs AvgPrecip:256mm AvgTemp:11C
+BRPN:PARW,YAKIMA RIVER NEAR PARKER WA.,46.5061,-120.4519,Q=QD=0;GH=GJ=1;WF=WF=2,,,,359.702;R9eefa7a273d7c741,Yakima River O7 L3 Drainage:9422km2 AvgFlow:2512cfs AvgPrecip:217mm AvgTemp:11C
+BRPN:PAYI,North Fork Payette River at McCall Idaho,44.9083,-116.1194,Q=QD=0;GH=GJ=1;WF=WF=2,,,,433.6985;R77be6b482155ee41,North Fork Payette River O4 L5 Drainage:374km2 AvgFlow:349cfs AvgPrecip:776mm AvgTemp:4C
+BRPN:PCKY,Pacific Creek at Moran WY,43.8503,-110.5178,Q=QD=0;GH=GJ=1,,,,453.2731;R85eba9ac0b4ad341,Pacific Creek O3 L3 Drainage:429km2 AvgFlow:280cfs AvgPrecip:669mm AvgTemp:3C
+BRPN:PDTO,Umatilla River at Pendleton OR,45.6722,-118.7917,Q=QD=0;GH=GJ=1;WF=WF=2,,,,7.8051;R1283584c4a80eb41,Umatilla River O5 L2 Drainage:1664km2 AvgFlow:527cfs AvgPrecip:356mm AvgTemp:11C
+BRPN:PECI,PEOPLES CANAL,43.2842,-112.25,QC=QJ=0;CH=CJ=1,,,,,
+BRPN:PHL,Mason Dam and Phillips Lake near Sumpter OR,44.6722,-117.9944,Q=QD=0;GH=GJ=1;WF=WF=2,,,,733.2034;R0e2df21ed220d041, O1 L4 Drainage:6km2 AvgFlow:1cfs AvgPrecip:601mm AvgTemp:6C
+BRPN:PHXO,Phoenix Canal at Talent OR,42.2525,-122.7928,QC=QJ=0;CH=CJ=1,,,,499.9913;R2db29534a356ed41,Bear Creek O4 L2 Drainage:584km2 AvgFlow:118cfs AvgPrecip:525mm AvgTemp:12C
+BRPN:PLCI,PALISADES CANAL NR IRWIN,43.7458,-112.1028,QC=QJ=0;CH=CJ=1,,,,475.4552;R54e3a982c0e8e941,Snake River O7 L2 Drainage:22822km2 AvgFlow:6059cfs AvgPrecip:271mm AvgTemp:6C
+BRPN:PLEI,Payette River near Letha ID,43.8964,-116.6258,Q=QD=0;GH=GJ=1,,,,770.3579;R819573b71541d241,Payette River O6 L3 Drainage:7242km2 AvgFlow:3028cfs AvgPrecip:276mm AvgTemp:11C
+BRPN:PNRI,PN Region USBR Hydromet Test Site-Boise ID,43.6225,-116.1933,Q=QD=0,,,,932.26;Rac1cb63e25a4ea41,Freestone Creek O2 L4 Drainage:11km2 AvgFlow:1cfs AvgPrecip:363mm AvgTemp:10C
+BRPN:POCI,PORTER CANAL,43.5031,-112.0481,QC=QJ=0;CH=CJ=1,,,,959.8916;Raaf186997b3be741,North Fork Willow Creek O1 L3 Drainage:8km2 AvgFlow:0cfs AvgPrecip:298mm AvgTemp:6C
+BRPN:PRD,PRIEST RAPIDS DAM & RES ON COLUMBIA RIV,46.63,-119.87,Q=QD=0,,,,212.8997;Rbe9f02173dcede41,Columbia River O8 L1 Drainage:242745km2 AvgFlow:120386cfs AvgPrecip:198mm AvgTemp:11C
+BRPN:PRHO,Powder River at Hudspeth Lane near Sumpter OR,44.6861,-118.1,Q=QD=0;GH=GJ=1;WF=WF=2,,,,664.8381;Rec51b8569a23ab41,Powder River O4 L3 Drainage:219km2 AvgFlow:61cfs AvgPrecip:402mm AvgTemp:6C
+BRPN:PRKI,PARKS & LEWISVILLE CANAL NR RIGBY,43.6889,-111.8661,QC=QJ=0;CH=CJ=1,,,,871.5927;Rbc74e3ebe75dc441, 
+BRPN:PRLI,South Fork Payette River at Lowman ID,44.0847,-115.6028,Q=QD=0;GH=GJ=1;WF=WF=2,,,,747.2546;R2fdd74e6fd11d241,South Fork Payette River O4 L4 Drainage:1157km2 AvgFlow:872cfs AvgPrecip:692mm AvgTemp:7C
+BRPN:PRPI,Payette River near Payette ID,44.0425,-116.9242,Q=QD=0;GH=GJ=1;WF=WF=2,,,,242.9649;Rfed4181e3c3ee241,Payette River O6 L3 Drainage:8537km2 AvgFlow:3069cfs AvgPrecip:266mm AvgTemp:11C
+BRPN:PRRO,Powder River nr. Richland OR,44.7785,-117.2893,Q=QD=0;GH=GJ=1,,,,488.6991;R39b480e4abdee141,Powder River O5 L3 Drainage:3447km2 AvgFlow:272cfs AvgPrecip:381mm AvgTemp:9C
+BRPN:PRVO,Crooked River near Prineville OR,44.1139,-120.7944,Q=QD=0;GH=GJ=1;WF=WF=2,,,,644.1709;R000078144b5cef41,Crooked River O6 L3 Drainage:6420km2 AvgFlow:331cfs AvgPrecip:261mm AvgTemp:8C
+BRPN:PWDO,Powder River at Baker OR,44.7683,-117.8306,Q=QD=0;GH=GJ=1,,,,668.421;Ra01a2759ea45e441,Powder River O5 L3 Drainage:728km2 AvgFlow:142cfs AvgPrecip:319mm AvgTemp:7C
+BRPN:RBDW,YAKIMA RIVER BELOW ROZA DAM,46.75,-120.4667,Q=QD=0;GH=GJ=1,,,,102.7496;R5a64fba63ea0a741,Yakima River O6 L3 Drainage:4664km2 AvgFlow:1465cfs AvgPrecip:274mm AvgTemp:9C
+BRPN:RDWI,Reid Weir,43.7156,-111.8142,QC=QJ=0;CH=CJ=1,,,,823.8759;R6891155d55ded641,Snake River O6 L2 Drainage:14685km2 AvgFlow:4886cfs AvgPrecip:335mm AvgTemp:6C
+BRPN:RECI,RESERVATION CANAL,43.3722,-112.15,QC=QJ=0;CH=CJ=1,,,,254.9686;Rac1c0a23101cc241,Reservation Canal 
+BRPN:REXI,Henrys Fork near Rexburg ID,43.8258,-111.905,Q=QD=0;GH=GJ=1;WF=WF=2,,,,728.511;Rb6f32d0e3c22c741,Henrys Fork O6 L3 Drainage:7620km2 AvgFlow:2531cfs AvgPrecip:319mm AvgTemp:6C
+BRPN:RGCI,Rigby Weir,43.6856,-111.8539,QC=QJ=0;CH=CJ=1,,,,884.2751;Rfca9c57d8a36e941, 
+BRPN:RICI,RIVERSIDE CANAL,43.2636,-112.3014,QC=QJ=0;CH=CJ=1,,,,998.5951;Rc74b0728a1b7c241,Snake River O7 L2 Drainage:24454km2 AvgFlow:5810cfs AvgPrecip:276mm AvgTemp:7C
+BRPN:RIM,RIMROCK RESERVOIR TIETON RIVER AND WEATHER STATION,46.6528,-121.125,Q=QD=0;GH=GJ=1,,,,554.0471;Re3a5e3e9694ee341,Tieton River O5 L5 Drainage:484km2 AvgFlow:448cfs AvgPrecip:687mm AvgTemp:6C
+BRPN:RIOO,Antelope Creek above Rio Canyon near Eagle Point OR,42.3503,-122.6878,Q=QD=0;GH=GJ=1;WF=WF=2,,,,848.377;Rae4705e04fd2e841,Antelope Creek O3 L3 Drainage:81km2 AvgFlow:39cfs AvgPrecip:718mm AvgTemp:11C
+BRPN:RIR,Ririe Dam and Lake near Ririe ID,43.5975,-111.7586,Q=QD=0,,,,985.7894;Rec5108e78c90c541, O1 L5 Drainage:2km2 AvgFlow:0cfs AvgPrecip:358mm AvgTemp:6C
+BRPN:RIRI,Willow Creek below Ririe Dam (comp from RIR),43.62,-111.8,Q=QD=0,,,,195.0809;Rcff793d52182cd41, 
+BRPN:RJPI,RAY & JOHN BROWN PUMP,43.91,-111.2844,QC=QJ=0,,,,736.5364;Rf2d2d513496adc41, O1 L5 Drainage:2km2 AvgFlow:0cfs AvgPrecip:485mm AvgTemp:4C
+BRPN:ROMO,Owyhee River near Rome OR,42.8664,-117.6489,Q=QD=0;GH=GJ=1;WF=WF=2,,,,751.9434;Ra69b881d8d87ec41,Owyhee River O7 L3 Drainage:16159km2 AvgFlow:742cfs AvgPrecip:221mm AvgTemp:10C
+BRPN:ROZW,ROZA CANAL AT 11.0 MILE,46.6167,-120.4833,QC=QJ=0;CH=CJ=1,,,,775.5084;Rb6f3b9feabcbea41,Yakima River O7 L3 Drainage:8366km2 AvgFlow:3805cfs AvgPrecip:246mm AvgTemp:10C
+BRPN:RRPI,R. BRENT RICKS PIPELINE (TETON RIVER),43.9192,-111.5147,QC=QJ=0,,,,295.9709;R14aee71bfaa9e641,Teton River O5 L4 Drainage:2140km2 AvgFlow:924cfs AvgPrecip:445mm AvgTemp:5C
+BRPN:RRVO,Rogue River Valley Canal at Bradshaw Drop,42.4136,-122.6067,QC=QJ=0;CH=CJ=1,,,,976.244;R1b2f9d5806f3df41,North Fork Little Butte Creek O3 L3 Drainage:146km2 AvgFlow:68cfs AvgPrecip:636mm AvgTemp:11C
+BRPN:RSA,Reservoir A Near Lewiston Orchards ID,46.3711,-116.8575,Q=QD=0,,,,67.445;R1f85db4bfb57d441, O1 L5 Drainage:4km2 AvgFlow:0cfs AvgPrecip:523mm AvgTemp:11C
+BRPN:RSCW,NEW RESERVATION CANAL,46.5194,-120.4778,QC=QJ=0;CH=CJ=1,,,,974.4011;R4c374d033faeef41, 
+BRPN:RSDI,Reservation Drop,43.2444,-112.1844,QC=QJ=0;CH=CJ=1,,,,37.5307;R68918d50664fdc41,Eastern Idaho Slough 
+BRPN:RXRI,REXBURG IRRIGATION CANAL NR REXBURG IDAHO,43.8364,-111.7639,QC=QJ=0;CH=CJ=1,,,,964.8477;R17d9ce663c39d841, 
+BRPN:RYGO,RYGO-Rogue River at Raygold>,42.43,-122.98,Q=QD=0,,,,961.6859;Rf2d20d121028dc41, 
+BRPN:RZCW,ROZA CANAL AT HEADWORKS,46.75,-120.4667,QC=QJ=0;CH=CJ=1;WF=WF=2,,,,103.2103;Rf2d221d514a4e941, 
+BRPN:SALY,Salt River above Reservoir near Etna WY,43.0797,-111.0372,Q=QD=0;GH=GJ=1,,,,949.7003;R986e46433914e941,Salt River O5 L3 Drainage:1959km2 AvgFlow:643cfs AvgPrecip:515mm AvgTemp:5C
+BRPN:SAWO,S. Fork Big Butte Cr abv Willow Cr nr Butte Falls OR,42.5213,-122.4863,Q=QD=0;GH=GJ=1;WF=WF=2,,,,769.9413;R9a99b94eb80cda41,Willow Creek O3 L3 Drainage:121km2 AvgFlow:73cfs AvgPrecip:865mm AvgTemp:10C
+BRPN:SBCO,Mud SPrings Creek near Gateway OR,44.8019,-121.0603,Q=QD=0;GH=GJ=1;WF=WF=2,,,,14.884;R2731e85974efbb41,Mud Springs Creek O4 L4 Drainage:180km2 AvgFlow:2cfs AvgPrecip:277mm AvgTemp:10C
+BRPN:SBEO,Columbia Exchange Canal near Hermiston OR,45.9119,-119.1175,QC=QJ=0;CH=CJ=1,,,,,
+BRPN:SCLO,Scoggins Creek above Henry Hagg Lake OR,45.5017,-123.2517,Q=QD=0;GH=GJ=1;WF=WF=2,,,,975.7761;R250645eeb8b6e641,Scoggins Creek O2 L4 Drainage:45km2 AvgFlow:70cfs AvgPrecip:1321mm AvgTemp:11C
+BRPN:SCOO,Scoggins Creek below Henry Hagg Lake Oregon,45.4694,-123.1989,Q=QD=0;GH=GJ=1;WF=WF=2,,,,671.2436;R8b6c0f3876d8e841,Scoggins Creek O3 L4 Drainage:100km2 AvgFlow:131cfs AvgPrecip:1284mm AvgTemp:11C
+BRPN:SDCO,Soda Creek at Howard Prairie Delivery Canal OR,42.1997,-122.3583,Q=QD=0;GH=GJ=1,,,,259.7389;R8b6c0b8567efed41,Soda Creek O1 L3 Drainage:12km2 AvgFlow:7cfs AvgPrecip:848mm AvgTemp:7C
+BRPN:SFBO,South Fork Little Butte Cr. Canal nr Lakecreek OR,42.2831,-122.4011,QC=QJ=0;CH=CJ=1,,,,,
+BRPN:SFLO,South Fork Little Butte Creek at Mouth OR,42.4181,-122.6125,Q=QD=0;GH=GJ=1;WF=WF=2,,,,838.742;R5a64dbc6178be841,South Fork Little Butte Creek O3 L2 Drainage:363km2 AvgFlow:102cfs AvgPrecip:640mm AvgTemp:11C
+BRPN:SFMO,South Fork Malheur nr Riverside OR,43.5542,-118.1683,Q=QD=0;GH=GJ=1,,,,43.3684;Re7fb09920d70c341,South Fork Malheur River O5 L4 Drainage:1781km2 AvgFlow:23cfs AvgPrecip:237mm AvgTemp:9C
+BRPN:SHYI,Snake River near Shelley ID,43.4133,-112.1342,Q=QD=0;GH=GJ=1,,,,128.8931;R77be9b857155e441,Snake River O7 L2 Drainage:23729km2 AvgFlow:6814cfs AvgPrecip:299mm AvgTemp:7C
+BRPN:SIFI,SNAKE RIVER NR. IDAHO FALLS,43.5897,-112.0575,Q=QD=0;GH=GJ=1,,,,8.612;R2b8716c7a194b941,Snake River O7 L2 Drainage:23527km2 AvgFlow:6529cfs AvgPrecip:313mm AvgTemp:6C
+BRPN:SILO,Silver Creek near Silver Lake OR,43.1133,-121.0675,Q=QD=0;GH=GJ=1,,,,812.5207;R2fdd2c1bcb51ee41,Silver Creek O4 L4 Drainage:463km2 AvgFlow:94cfs AvgPrecip:338mm AvgTemp:7C
+BRPN:SJNO,Snake River at Johnson Bar OR,45.45,-116.55,GH=GJ=1,,,,,
+BRPN:SKHI,Snake River at King Hill ID,43,-115.2,Q=QD=0;GH=GJ=1,,,,207.9222;R7368917bdb607c41,Snake River O7 L2 Drainage:62321km2 AvgFlow:4563cfs AvgPrecip:235mm AvgTemp:11C
+BRPN:SLBO,South Fork Little Butte Cr. Collection Canal OR,42.2836,-122.4003,QC=QJ=0;CH=CJ=1,,,,,
+BRPN:SMCI,Minidoka Southside Canal,42.67,-113.48,QC=QJ=0;CH=CJ=1,,,,801.648;R2db28d3eb582cd41,Snake River O7 L2 Drainage:41576km2 AvgFlow:7620cfs AvgPrecip:255mm AvgTemp:9C
+BRPN:SNAI,Snake River at Blackfoot ID,43.1975,-112.3692,Q=QD=0;GH=GJ=1,,,,436.1082;Rcff70b2296ffe941,Snake River O7 L2 Drainage:24503km2 AvgFlow:5287cfs AvgPrecip:272mm AvgTemp:8C
+BRPN:SNCW,SUNNYSIDE CANAL,46.4944,-120.4278,QC=QJ=0;CH=CJ=1,,,,925.1165;R9eefa7a273d7c741,Yakima River O7 L3 Drainage:9422km2 AvgFlow:2512cfs AvgPrecip:217mm AvgTemp:11C
+BRPN:SNDI,Sand Creek at Wolverine Road,43.2828,-112.1508,QC=QJ=0;CH=CJ=1,,,,,
+BRPN:SNYI,Snake River at Nyssa OR (USGS),43.88,-116.98,Q=QD=0;GH=GJ=1,,,,950.5686;Rd578a91d9d65d541,Snake River O8 L2 Drainage:119062km2 AvgFlow:6971cfs AvgPrecip:266mm AvgTemp:11C
+BRPN:SOL,Soldiers Meadow Reservoir,46.1672,-116.7367,Q=QD=0;GH=GJ=1;WF=WF=2,,,,974.7522;R48e1ba093a0fd141, 
+BRPN:SOUW,SOUTH NACHES CHANNEL COMPANY CANAL,46.7331,-120.7164,QC=QJ=0;CH=CJ=1,,,,905.13;R7f6a8cb876adca41, 
+BRPN:SPBO,Sprague River near Beatty OR,42.4472,-121.2375,Q=QD=0;GH=GJ=1,,,,906.5954;R04569e5616d8d941,Sprague River O5 L2 Drainage:1361km2 AvgFlow:181cfs AvgPrecip:400mm AvgTemp:8C
+BRPN:SPPI,SOUTH PIPELINE (TETON RIVER),43.8414,-111.2439,QC=QJ=0,,,,860.2329;Re5d06ec8b2a7e441, O1 L6 Drainage:3km2 AvgFlow:0cfs AvgPrecip:412mm AvgTemp:4C
+BRPN:SQSO,Whychus Creek at Sisters OR,44.2878,-121.5433,Q=QD=0;GH=GJ=1,,,,24.5763;R2b87ce24962de241,Squaw Creek O3 L3 Drainage:166km2 AvgFlow:115cfs AvgPrecip:402mm AvgTemp:8C
+BRPN:SQWI,Squaw Creek at Sweet ID,43.9733,-116.3243,Q=QD=0;GH=GJ=1,,,,873.0799;Rae476186d44edf41,Squaw Creek O5 L4 Drainage:870km2 AvgFlow:245cfs AvgPrecip:393mm AvgTemp:10C
+BRPN:SUCI,Salem Union Weir,43.9708,-111.6506,QC=QJ=0;CH=CJ=1,,,,291.8288;R426041687855e841,Salem Union Canal 
+BRPN:SUCW,SULPHUR CREEK AT HOLIDAY ROAD NEAR SUNNYSIDE,46.2511,-120.02,Q=QD=0;GH=GJ=1;WC=WC=3,,,,32.3121;R2731a0e14605e241, O5 L3 Drainage:417km2 AvgFlow:4cfs AvgPrecip:182mm AvgTemp:11C
+BRPN:SWAI,Snake River near Murphy ID (Idaho Power),43.3,-116.42,Q=QD=0;GH=GJ=1,,,,887.1752;Rd34d32546551ed41,Snake River O7 L2 Drainage:78642km2 AvgFlow:4986cfs AvgPrecip:221mm AvgTemp:11C
+BRPN:SWBI,Sweetwater Creek below Diversion nr Waha ID (TV),46.3711,-116.8575,QH=QJ=0,,,,67.445;R1f85db4bfb57d441, O1 L5 Drainage:4km2 AvgFlow:0cfs AvgPrecip:523mm AvgTemp:11C
+BRPN:SWCI,Sweetwater Creek canal,46.2742,-116.9126,QH=QJ=0;CH=CJ=1;QC=QJ=0,,,,49.2647;R06818dc21f6fea41, O2 L3 Drainage:19km2 AvgFlow:1cfs AvgPrecip:557mm AvgTemp:10C
+BRPN:SWCO,Swalley Canal,44.0806,-121.3,QC=QJ=0;CH=CJ=1,,,,791.5371;Rc3f54c07a6fde241,Deschutes River O5 L2 Drainage:3890km2 AvgFlow:567cfs AvgPrecip:299mm AvgTemp:8C
+BRPN:SWLW,SWAMP LAKE CR. NR CRYSTAL SPRINGS CAMPGROUND,47.3067,-121.3094,GH=GJ=1,,,,663.3321;Rdf4f4d58d222ed41, O1 L5 Drainage:6km2 AvgFlow:8cfs AvgPrecip:1793mm AvgTemp:6C
+BRPN:SWTI,Sweetwater Creek at Mouth at Sweetwater ID,46.3725,-116.793,Q=QD=0;GH=GJ=1,,,,338.5704;R54e3cd1911a9de41,Sweetwater Creek O4 L5 Drainage:202km2 AvgFlow:19cfs AvgPrecip:504mm AvgTemp:11C
+BRPN:TALO,Talent Lateral near Ashland,42.215,-122.7122,QC=QJ=0;CH=CJ=1;WF=WF=2,,,,662.9517;R1283b0bb59ede741,Bear Creek O4 L2 Drainage:456km2 AvgFlow:103cfs AvgPrecip:507mm AvgTemp:11C
+BRPN:TCNI,TWIN FALLS N.S. CANAL,42.5264,-114.0097,QC=QJ=0;CH=CJ=1,,,,724.9098;R3333b7f45506e341,Snake River O7 L2 Drainage:44011km2 AvgFlow:7589cfs AvgPrecip:266mm AvgTemp:9C
+BRPN:TCSI,TWIN FALLS S.S. CANAL,42.5228,-114.0131,QC=QJ=0;CH=CJ=1,,,,670.0936;R46b66fa0d528ee41,Snake River O7 L2 Drainage:44012km2 AvgFlow:6040cfs AvgPrecip:266mm AvgTemp:9C
+BRPN:TDA,THE DALLES DAM & LAKE CELILO ON COLUMBIA RIV,45.62,-121.15,Q=QD=0,,,,,
+BRPN:TEAI,Teton River near St. Anthony ID,43.9272,-111.6153,Q=QD=0;GH=GJ=1;WF=WF=2,,,,957.3414;R81958b2b21e4df41,Teton River O5 L4 Drainage:2242km2 AvgFlow:934cfs AvgPrecip:359mm AvgTemp:6C
+BRPN:TEAW,TEANAWAY RIVER BELOW LAMBERT ROAD,47.19,-120.8222,Q=QD=0;GH=GJ=1;WF=WF=2,,,,815.5447;R9318c40ff3f9c241,Teanaway River O5 L4 Drainage:526km2 AvgFlow:459cfs AvgPrecip:590mm AvgTemp:7C
+BRPN:TFCO,Tumalo Feed Canal (2 Flow Meters),44.0903,-121.3686,QC=QJ=0,,,,908.9658;R77be0fe85de4c741,Tumalo Creek O3 L3 Drainage:126km2 AvgFlow:71cfs AvgPrecip:302mm AvgTemp:8C
+BRPN:TGCI,TWIN GROVES CANAL NR ST. ANTHONY IDAHO,43.975,-111.6417,QC=QJ=0;CH=CJ=1,,,,930.3823;R08ac84980cd4e141, 
+BRPN:THF,Thief Valley Dam and Reservoir near North Powder OR,45.0125,-117.7811,Q=QD=0;GH=GJ=1;WF=WF=2,,,,20.2494;R2731d0ee97dbed41,Powder River O5 L3 Drainage:2318km2 AvgFlow:282cfs AvgPrecip:467mm AvgTemp:8C
+BRPN:TICI,Teton Irrigation Weir,43.8917,-111.6672,QC=QJ=0;CH=CJ=1,,,,716.4079;R0681cddcc997db41,Teton River O5 L4 Drainage:2301km2 AvgFlow:883cfs AvgPrecip:344mm AvgTemp:6C
+BRPN:TICW,TIETON RIVER NEAR TIETON CANAL HEADWORKS,46.6711,-121,Q=QD=0;GH=GJ=1,,,,947.78;Rc3f5d45795ffe541,Tieton River O5 L5 Drainage:627km2 AvgFlow:436cfs AvgPrecip:517mm AvgTemp:7C
+BRPN:TIEW,TIETON CANAL,46.6694,-121.0056,QC=QJ=0;CH=CJ=1,,,,871.3065;Rcff74f874117e341,Tieton River O5 L5 Drainage:624km2 AvgFlow:435cfs AvgPrecip:579mm AvgTemp:6C
+BRPN:TITI,TETON ISLAND FEEDER CANAL NEAR TETON IDAHO,43.8911,-111.6969,QC=QJ=0;CH=CJ=1,,,,972.1053;R39b450eade99e141,Teton River O5 L4 Drainage:2352km2 AvgFlow:751cfs AvgPrecip:346mm AvgTemp:6C
+BRPN:TLCI,Texas and Liberty Weir,43.7203,-111.8272,QC=QJ=0;CH=CJ=1,,,,671.6725;R96435ba5e84ce741,Texas Slough O1 L4 Drainage:6km2 AvgFlow:0cfs AvgPrecip:332mm AvgTemp:6C
+BRPN:TNAW,TEANAWAY RIVER AT FORKS NEAR CLE ELUM WA,47.2464,-120.8611,Q=QD=0;GH=GJ=1,,,,964.1015;R3f355ed636fcaf41,Teanaway River O5 L4 Drainage:446km2 AvgFlow:426cfs AvgPrecip:833mm AvgTemp:7C
+BRPN:TNCM,South Fork Flathead River near Twincreek MT,47.9792,-113.56,Q=QD=0;GH=GJ=1,,,,669.2957;R3bdf1fa2105ad541,South Fork Flathead River O5 L3 Drainage:3124km2 AvgFlow:2377cfs AvgPrecip:687mm AvgTemp:5C
+BRPN:TRCI,TREGO CANAL NR BLACKFOOT IDAHO,43.2014,-112.3667,QC=QJ=0;CH=CJ=1,,,,865.3825;R295ccf99b308b641, O7 L3 Drainage:24502km2 AvgFlow:0cfs AvgPrecip:272mm AvgTemp:8C
+BRPN:TRDO,Trout Creek OR near Denio NV,42.1556,-118.4539,Q=QD=0;GH=GJ=1,,,,659.0546;R508dfb10046eed41,Trout Creek O3 L4 Drainage:210km2 AvgFlow:25cfs AvgPrecip:237mm AvgTemp:9C
+BRPN:TRGO,Trout Creek at Clements Drive near Gateway OR,44.8014,-121.065,Q=QD=0;GH=GJ=1;WF=WF=2,,,,352.6428;R5c8f02ae9d7ed941,Trout Creek O5 L3 Drainage:1672km2 AvgFlow:39cfs AvgPrecip:279mm AvgTemp:11C
+BRPN:TUMO,Tumalo Creek nr Bend OR,44.0878,-121.3717,Q=QD=0;GH=GJ=1;WF=WF=2,,,,281.3082;R08aca41175f0e141,Tumalo Creek O3 L3 Drainage:126km2 AvgFlow:71cfs AvgPrecip:306mm AvgTemp:8C
+BRPN:UBBO,Umatilla River below Butter Creek,45.8289,-119.3228,Q=QD=0;GH=GJ=1;WF=WF=2,,,,37.4357;R8195d388e513c041,Umatilla River O6 L2 Drainage:5466km2 AvgFlow:600cfs AvgPrecip:234mm AvgTemp:12C
+BRPN:UMAO,Umatilla River near Umatilla OR,45.9,-119.3333,Q=QD=0;GH=GJ=1;WF=WF=2,,,,521.9145;R295c9710ab7ee041,Umatilla River O6 L2 Drainage:5582km2 AvgFlow:549cfs AvgPrecip:222mm AvgTemp:12C
+BRPN:UMDO,Umatilla River ar I84 near Stanfield OR,45.7767,-119.2122,Q=QD=0;GH=GJ=1;WF=WF=2,,,,800.6985;R37895dc19006e341,Umatilla River O6 L2 Drainage:3640km2 AvgFlow:549cfs AvgPrecip:265mm AvgTemp:12C
+BRPN:UMMO,Umatilla River above Butter Creek nr Hermiston,45.7953,-119.3228,Q=QD=0;GH=GJ=1;WF=WF=2,,,,791.5154;R77be47fce360e041,Umatilla River O6 L2 Drainage:4243km2 AvgFlow:553cfs AvgPrecip:241mm AvgTemp:12C
+BRPN:UMTO,Umatilla River at City of Hermiston W.W. Treatment P,45.9167,-119.5667,Q=QD=0;GH=GJ=1;WF=WF=2,,,,518.8207;Rae47714c42e6ce41,Columbia River O9 L1 Drainage:515775km2 AvgFlow:180564cfs AvgPrecip:213mm AvgTemp:12C
+BRPN:UMTW,YAKIMA RIVER NEAR UMTANUM WA.,46.8636,-120.4794,Q=QD=0;GH=GJ=1;WF=WF=2,,,,27.0622;R5c8f42df9bead541,Yakima River O6 L3 Drainage:4115km2 AvgFlow:2507cfs AvgPrecip:297mm AvgTemp:9C
+BRPN:UMUO,Umatilla River nr Echo OR,45.7208,-119.1792,Q=QD=0;GH=GJ=1;WF=WF=2,,,,175.2941;R6abc64b36720e241,Umatilla River O6 L2 Drainage:3452km2 AvgFlow:645cfs AvgPrecip:283mm AvgTemp:11C
+BRPN:UNY,Unity Reservoir and Burnt River near Unity Oregon,44.5036,-118.1958,Q=QD=0;GH=GJ=1;WF=WF=2,,,,860.1464;R6f121397aabdc041, O3 L4 Drainage:65km2 AvgFlow:10cfs AvgPrecip:284mm AvgTemp:7C
+BRPN:VALO,Malheur River below Nevada Dam near Vale OR,43.9889,-117.2194,Q=QD=0;GH=GJ=1,,,,862.209;R6de7234d2397db41,Malheur River O6 L3 Drainage:10027km2 AvgFlow:330cfs AvgPrecip:263mm AvgTemp:10C
+BRPN:VLCI,SNAKE RIVER VALLEY CANAL,43.4536,-112.0881,QC=QJ=0;CH=CJ=1,,,,603.2595;Raaf1024a35dfd241,Snake River O7 L2 Drainage:23674km2 AvgFlow:6480cfs AvgPrecip:308mm AvgTemp:7C
+BRPN:VSPI,VAL SCHWIENDIMAN PUMP NEAR NEWDALE IDAHO,43.9144,-111.4653,QC=QJ=0,,,,925.5812;R6de7bb303b4fc241, O1 L5 Drainage:2km2 AvgFlow:0cfs AvgPrecip:477mm AvgTemp:5C
+BRPN:WACI,WATSON CANAL,43.1958,-112.4,QC=QJ=0;CH=CJ=1,,,,400.2499;Ra2459613a94fb341,Watson Slough 
+BRPN:WAFI,Lake Waha Feeder Canal ID,46.2056,-116.8292,QC=QJ=0;CH=CJ=1,,,,739.9311;Rc3f5087da889b741,Lake Creek O2 L4 Drainage:14km2 AvgFlow:2cfs AvgPrecip:587mm AvgTemp:7C
+BRPN:WAH,Lake Waha ID,46.2125,-116.8375,QC=QJ=0,,,,,
+BRPN:WARO,Malheur River bel Warm Springs Res nr Riverside OR,43.5708,-118.2014,Q=QD=0;GH=GJ=1;WF=WF=2,,,,729.6492;R4a0c9aaa7124d641,Malheur River O5 L3 Drainage:2790km2 AvgFlow:226cfs AvgPrecip:237mm AvgTemp:9C
+BRPN:WAS,Clear Lake nr Government Camp (Wasco Dam) OR,45.1764,-121.6944,Q=QD=0;GH=GJ=1,,,,970.1676;R3bdf27d29eb1ea41,Clear Creek O1 L4 Drainage:6km2 AvgFlow:6cfs AvgPrecip:1334mm AvgTemp:6C
+BRPN:WBCI,Webb Creek near Sweetwater ID,46.3725,-116.793,Q=QD=0;GH=GJ=1,,,,338.5704;R54e325872e6ab941,Lapwai Creek O4 L4 Drainage:378km2 AvgFlow:60cfs AvgPrecip:615mm AvgTemp:10C
+BRPN:WBCO,West Birch Creek at Pilot Rock OR,45.4839,-118.8356,Q=QD=0;GH=GJ=1;WF=WF=2,,,,2.7748;R2fdd04f6eabce541,West Birch Creek O4 L3 Drainage:315km2 AvgFlow:54cfs AvgPrecip:379mm AvgTemp:10C
+BRPN:WBFI,Willow Creek Below Floodway Channel nr. Ukon ID,43.5758,-111.9119,QC=QJ=0;CH=CJ=1,,,,954.8762;Re17a3439023ceb41,Sand Creek O5 L4 Drainage:1706km2 AvgFlow:401cfs AvgPrecip:350mm AvgTemp:6C
+BRPN:WCAO,Willow Creek above Willow Lake near Butte Falls OR,42.4642,-122.4381,Q=QD=0;GH=GJ=1;WF=WF=2,,,,185.6072;Ra245761e27e0c841,Willow Creek O3 L3 Drainage:58km2 AvgFlow:37cfs AvgPrecip:834mm AvgTemp:10C
+BRPN:WCBI,Webb Creek bel Diversion,46.15,-116.77,QH=QJ=0;GH=GJ=1,,,,875.0672;R9a99b1b4abafeb41, 
+BRPN:WCBO,Willow Creek near Butte Falls OR,42.487,-122.4532,Q=QD=0;GH=GJ=1;WF=WF=2,,,,947.1469;R2506ede919b8e641,Willow Creek O3 L3 Drainage:73km2 AvgFlow:45cfs AvgPrecip:836mm AvgTemp:10C
+BRPN:WCCI,Webb Creek canal,46.2516,-116.7571,QH=QJ=0;CH=CJ=1,,,,733.5875;Rba491cf7d0b4dd41,Webb Creek O2 L6 Drainage:57km2 AvgFlow:7cfs AvgPrecip:633mm AvgTemp:8C
+BRPN:WCDO,Willow Creek Dam Outlet near Butte Falls OR,42.4795,-122.4486,Q=QD=0;GH=GJ=1;WF=WF=2,,,,843.7693;R355e7ae381badb41,Willow Creek O3 L3 Drainage:103km2 AvgFlow:65cfs AvgPrecip:848mm AvgTemp:10C
+BRPN:WCGO,Wagner Creel Bl Goose Cr Nr Talent,42.1686,-122.7857,Q=QD=0;GH=GJ=1;WF=WF=2,,,,429.8243;Rdd244a19a21ae141,Wagner Creek O2 L3 Drainage:24km2 AvgFlow:8cfs AvgPrecip:638mm AvgTemp:9C
+BRPN:WCRO,Wildhorse Creek at Pendleton OR,45.6861,-118.7456,Q=QD=0;GH=GJ=1,,,,36.5978;R3108dcc8dc44e541,Wildhorse Creek O4 L3 Drainage:508km2 AvgFlow:33cfs AvgPrecip:363mm AvgTemp:11C
+BRPN:WCTO,Wagner Creek Mouth at Talent OR,42.2458,-122.78,Q=QD=0;GH=GJ=1;WF=WF=2,,,,1.3272;R48e1421c38dfd041,Wagner Creek O2 L3 Drainage:60km2 AvgFlow:15cfs AvgPrecip:502mm AvgTemp:11C
+BRPN:WDGO,West Canal Dump to Griffin Cr.,42.3415,-122.9245,QC=QJ=0;CH=CJ=1,,,,955.8896;Rd7a36044a557dd41,Jackson Creek O3 L3 Drainage:44km2 AvgFlow:10cfs AvgPrecip:497mm AvgTemp:12C
+BRPN:WEII,Snake River at Weiser ID (USGS),44.25,-116.98,Q=QD=0;GH=GJ=1,,,,892.5764;Rd1229b10b957af41,Snake River O8 L2 Drainage:144740km2 AvgFlow:19533cfs AvgPrecip:326mm AvgTemp:10C
+BRPN:WEIO,West Div Main Canal below WEID Pumps nr Umatilla OR,45.8842,-119.325,QC=QJ=0;CH=CJ=1,,,,253.3944;Rcdccf43c07e9db41,Umatilla River O6 L2 Drainage:5550km2 AvgFlow:581cfs AvgPrecip:238mm AvgTemp:12C
+BRPN:WEPO,WEID Exchange Pump Plant near Hermiston OR,45.9197,-119.3275,QC=QJ=0,,,,795.6705;R31089c531e58d241,Umatilla River O6 L2 Drainage:5583km2 AvgFlow:549cfs AvgPrecip:225mm AvgTemp:12C
+BRPN:WESO,Westland Canal near Echo OR,45.7661,-119.2161,QC=QJ=0;CH=CJ=1,,,,23.3858;R37895dc19006e341,Umatilla River O6 L2 Drainage:3640km2 AvgFlow:549cfs AvgPrecip:265mm AvgTemp:12C
+BRPN:WESW,WESTSIDE CANAL,47.0864,-120.6939,QC=QJ=0;CH=CJ=1,,,,604.2887;R6666b68d56e1d341,Yakima River O6 L3 Drainage:2472km2 AvgFlow:2700cfs AvgPrecip:310mm AvgTemp:8C
+BRPN:WEUO,West Division Main Canal near Umatilla OR,45.885,-119.3267,QC=QJ=0;CH=CJ=1;WF=WF=2,,,,383.6747;Rcdccf43c07e9db41,Umatilla River O6 L2 Drainage:5550km2 AvgFlow:581cfs AvgPrecip:238mm AvgTemp:12C
+BRPN:WFCI,Wilford Canal,43.9056,-111.6278,QC=QJ=0;CH=CJ=1,,,,839.45;Rae47adae97aae041,Teton River O5 L4 Drainage:2244km2 AvgFlow:935cfs AvgPrecip:359mm AvgTemp:6C
+BRPN:WGCM,Middle Fork Flathead River near West Glacier MT,48.4953,-114.0092,Q=QD=0;GH=GJ=1,,,,54.083;Rd34df2d005b6e341,Middle Fork Flathead River O5 L2 Drainage:2915km2 AvgFlow:2898cfs AvgPrecip:708mm AvgTemp:6C
+BRPN:WGSO,West Canal at Griffin Cr. Syphon OR,42.3415,-122.9245,QC=QJ=0;CH=CJ=1,,,,955.8896;Rd7a36044a557dd41,Jackson Creek O3 L3 Drainage:44km2 AvgFlow:10cfs AvgPrecip:497mm AvgTemp:12C
+BRPN:WICEWS,Wickiup Dam SOD Instrument,43.6836,-121.69,Q=QD=0;GH=GJ=1,,,,62.9953;R3f35de3ed596d741,Deschutes River O4 L2 Drainage:657km2 AvgFlow:484cfs AvgPrecip:553mm AvgTemp:6C
+BRPN:WICO,Deschutes River below Wickiup Res. OR,43.6861,-121.6869,Q=QD=0;GH=GJ=1;WF=WF=2,,,,379.88;R3f35de3ed596d741,Deschutes River O4 L2 Drainage:657km2 AvgFlow:484cfs AvgPrecip:553mm AvgTemp:6C
+BRPN:WICOWQ,GH-Sensor Depth (m),43.6836,-121.69,GH=GJ=1;WC=WC=3,,,,62.9953;R3f35de3ed596d741,Deschutes River O4 L2 Drainage:657km2 AvgFlow:484cfs AvgPrecip:553mm AvgTemp:6C
+BRPN:WIFI,Sand Creek above Willow Creek Diversion nr Ukon ID,43.5742,-111.895,Q=QD=0;GH=GJ=1,,,,11.5314;Re17a3439023ceb41,Sand Creek O5 L4 Drainage:1706km2 AvgFlow:401cfs AvgPrecip:350mm AvgTemp:6C
+BRPN:WILI,Willow Creek Floodway Channel nr Ukon ID,43.5764,-111.9131,Q=QD=0;GH=GJ=1,,,,,
+BRPN:WLDN,Owyhee River bel Wildhorse Dam nr Gold Creek NV,41.6875,-115.8606,Q=QD=0;GH=GJ=1,,,,779.9736;Rec5148a53c12ce41,Owyhee River O5 L3 Drainage:577km2 AvgFlow:59cfs AvgPrecip:471mm AvgTemp:6C
+BRPN:WLWI,Willow Creek near Bellevue ID,43.3231,-114.3236,Q=QD=0;GH=GJ=1,,,,477.2224;R3bdf0be9211eeb41,Willow Creek O2 L5 Drainage:28km2 AvgFlow:0cfs AvgPrecip:318mm AvgTemp:6C
+BRPN:WMJO,West Main Canal at Jacksonville,42.3157,-122.9687,QC=QJ=0;CH=CJ=1;WF=WF=2,,,,282.7407;R52b8cec6b109e741,Daisy Creek O1 L4 Drainage:6km2 AvgFlow:1cfs AvgPrecip:592mm AvgTemp:11C
+BRPN:WODI,Little Wood River near Carey ID,43.39,-114,Q=QD=0;GH=GJ=1,,,,764.2662;R6de7bbdbb6b1bd41,Little Wood River O5 L5 Drainage:798km2 AvgFlow:163cfs AvgPrecip:382mm AvgTemp:6C
+BRPN:WONW,WILSON CREEK (THRALL RD. KITTITAS VAL),46.9261,-120.5011,Q=QD=0;GH=GJ=1,,,,435.553;Rac1c4274d4fad241,Wilson Creek O4 L5 Drainage:308km2 AvgFlow:111cfs AvgPrecip:232mm AvgTemp:9C
+BRPN:WOPW,WAPATOX POWER CANAL,46.7489,-120.7786,QC=QJ=0;CH=CJ=1,,,,920.645;R54e3f95d0468e641, 
+BRPN:WSLO,Tualatin River near West Linn OR,45.35,-122.68,Q=QD=0;GH=GJ=1,,,,701.7683;Re5d0c2fcb443b241,Tualatin River O5 L3 Drainage:1827km2 AvgFlow:1753cfs AvgPrecip:1219mm AvgTemp:12C
+BRPN:WTXI,Willow Creek below Tex Creek near Ririe ID,43.4417,-111.7283,Q=QD=0;GH=GJ=1,,,,872.0966;R12835851c731e041,Willow Creek O5 L4 Drainage:1338km2 AvgFlow:199cfs AvgPrecip:403mm AvgTemp:5C
+BRPN:WVCI,WOODVILLE CANAL,43.4339,-112.0981,QC=QJ=0;CH=CJ=1,,,,163.3503;R9cc4c07dbefad841,Snake River O7 L2 Drainage:23677km2 AvgFlow:6461cfs AvgPrecip:304mm AvgTemp:7C
+BRPN:YGVW,YAKIMA RIVER AT EUCLID RD. BR. NEAR GRANDVIEW WA.,46.2172,-119.9169,Q=QD=0;GH=GJ=1,,,,464.2316;Rc520f81cd13ed141,Yakima River O7 L2 Drainage:13487km2 AvgFlow:3478cfs AvgPrecip:199mm AvgTemp:11C
+BRPN:YOKO,Umatilla River at Yoakum OR,45.6772,-119.0358,Q=QD=0;GH=GJ=1;WF=WF=2,,,,955.5762;Rec5158e16d65c041,Umatilla River O6 L2 Drainage:3333km2 AvgFlow:716cfs AvgPrecip:298mm AvgTemp:11C
+BRPN:YRCW,YAKIMA RIVER AT CRYSTAL SPRINGS,47.3086,-121.3142,Q=QD=0;GH=GJ=1,,,,436.9451;R3f3522ebd2aced41,Yakima River O3 L3 Drainage:172km2 AvgFlow:395cfs AvgPrecip:1885mm AvgTemp:6C
+BRPN:YRPW,YAKIMA RIVER NEAR PROSSER WA.,46.2175,-119.7464,Q=QD=0;GH=GJ=1;WF=WF=2,,,,33.5873;R8195035ed812db41,Yakima River O7 L2 Drainage:13663km2 AvgFlow:2535cfs AvgPrecip:221mm AvgTemp:11C
+BRPN:YRTW,YAKIMA RIVER AT TERRACE HEIGHTS BRIDGE,46.6058,-120.4742,Q=QD=0;GH=GJ=1;WF=WF=2,,,,773.9655;Rfed404ce44afea41,Yakima River O7 L3 Drainage:8374km2 AvgFlow:4192cfs AvgPrecip:226mm AvgTemp:11C
+BRPN:YRWW,YAKIMA RIVER NEAR HORLICK WA.,47.1242,-120.7392,Q=QD=0;GH=GJ=1,,,,171.3681;Ra01a1f8f4f52c941,Yakima River O6 L3 Drainage:1958km2 AvgFlow:2358cfs AvgPrecip:495mm AvgTemp:8C
+BRPN:YUMW,YAKIMA RIVER AT CLE ELUM WA.,47.1919,-120.9456,Q=QD=0;GH=GJ=1;WF=WF=2,,,,726.8313;R448bace211a2a241,Yakima River O6 L3 Drainage:1272km2 AvgFlow:1799cfs AvgPrecip:638mm AvgTemp:8C

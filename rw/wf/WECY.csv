@@ -1,0 +1,102 @@
+id,desc,lat,lng,modes,extra,equiv
+WECY:01C070,Hutchinson Cr. nr Acme,48.7236,-122.1544,DSG=0;STG=1;WTM=3,,,,5.0899;Ra470955d1cb1d341,Hutchinson Creek O2 L3 Drainage:46km2 AvgFlow:79cfs AvgPrecip:1869mm AvgTemp:9C
+WECY:01F070,S.F. Nooksack R. @ Potter Rd.,48.7892,-122.1975,DSG=0;STG=1,,,,931.0894;R986e4eb89093ef41, 
+WECY:01N060,Bertrand Cr. nr mouth,48.9242,-122.5286,DSG=0;STG=1;WTM=3,,,,690.7061;R9318fc8bda4de241,Bertrand Creek O2 L2 Drainage:94km2 AvgFlow:91cfs AvgPrecip:1138mm AvgTemp:10C
+WECY:01N100,Bertrand Cr. @ 0 St. (Canadian Border),49.0022,-122.3528,WTM=3,,,,687.4576;R96436b473878e841, O0
+WECY:01Q070,Dakota Cr. @ Giles Rd.,48.9628,-122.6806,DSG=0;STG=1;WTM=3,,,,38.0336;Rbc74c3c8036ed641,Dakota Creek O2 L1 Drainage:59km2 AvgFlow:44cfs AvgPrecip:1102mm AvgTemp:10C
+WECY:03C060,Friday Cr. blw Hatchery,48.5583,-122.3283,DSG=0;STG=1;WTM=3,,,,10.1181;Rc74b1b2e1dabe241,Friday Creek O3 L2 Drainage:96km2 AvgFlow:100cfs AvgPrecip:1184mm AvgTemp:10C
+WECY:03C100,Friday Creek @ Nulle Road,48.6447,-122.3698,STG=1;WTM=3;DSG=0,,,,183.7742;R1f856b907b3cc541,Friday Creek O3 L2 Drainage:50km2 AvgFlow:56cfs AvgPrecip:1461mm AvgTemp:10C
+WECY:03G100,E.F. Nookachamps Cr. @ Beaver Lake Rd.,48.4239,-122.2089,DSG=0;STG=1;WTM=3,,,,722.4861;R27317cf22792e941,Cold Spring Creek O1 L4 Drainage:3km2 AvgFlow:3cfs AvgPrecip:1767mm AvgTemp:9C
+WECY:03J100,Hansen Cr. nr Sedro Woolley,48.5,-122.2,DSG=0;STG=1;WTM=3,,,,282.3938;R8d97260b8daadb41,Hansen Creek O2 L2 Drainage:33km2 AvgFlow:35cfs AvgPrecip:1315mm AvgTemp:10C
+WECY:05A070,Stillaguamish R. nr Silvana,48.1972,-122.2089,DSG=0;STG=1,,,,771.237;R3333a35bc74fd641,Stillaguamish River O5 L1 Drainage:1452km2 AvgFlow:3981cfs AvgPrecip:1175mm AvgTemp:11C
+WECY:05A105,S.F. Stillaguamish R. @ Jordan Rd. Bridge,48.0953,-121.9747,DSG=0;STG=1,,,,627.6055;R04567280aa46e341,South Fork Stillaguamish River O4 L2 Drainage:476km2 AvgFlow:1536cfs AvgPrecip:1362mm AvgTemp:11C
+WECY:05B090,N.F. Stillaguamish R. @ Oso,48.2725,-121.8881,DSG=0;STG=1;WTM=3,,,,625.7786;Rd7a314295a2ae841,North Fork Stillaguamish River O3 L1 Drainage:402km2 AvgFlow:1223cfs AvgPrecip:1703mm AvgTemp:10C
+WECY:05D070,Pilchuck Cr. @ Bridge 626,48.2136,-122.2175,DSG=0;STG=1;WTM=3,,,,102.4222;R2b877a0e6de9ec41,Pilchuck Creek O4 L2 Drainage:189km2 AvgFlow:270cfs AvgPrecip:1173mm AvgTemp:11C
+WECY:05H070,Squire Cr. @ Squire Creek Park,48.2703,-121.6714,DSG=0;STG=1;WTM=3,,,,389.2128;Rb6f39553e38cd441,Squire Creek O2 L2 Drainage:68km2 AvgFlow:204cfs AvgPrecip:1890mm AvgTemp:10C
+WECY:08B100,Sammamish River at NE 124th St,47.710998, -122.142470,WTM=3,,,,27.0175;R1283c0be85f1c941,Sammamish River O4 L1 Drainage:419km2 AvgFlow:318cfs AvgPrecip:1050mm AvgTemp:11C
+WECY:08B120,Sammamish River at Marymoor,47.662376, -122.124317,WTM=3,,,,573.3064;Ra470c18dfa65e941,Sammamish River O4 L1 Drainage:392km2 AvgFlow:308cfs AvgPrecip:1045mm AvgTemp:11C
+WECY:08C110,Cedar R. nr Landsburg,47.3914,-121.9206,WTM=3,,,,21.5792;Ra8c67f493d31e241,Cedar River O4 L2 Drainage:310km2 AvgFlow:498cfs AvgPrecip:1760mm AvgTemp:9C
+WECY:17B050,Chimacum Cr. @ mouth,48.05,-122.7842,DSG=0;STG=1;WTM=3,,,,56.7516;R91edecf9e4b9d241,Chimacum Creek O2 L1 Drainage:96km2 AvgFlow:24cfs AvgPrecip:591mm AvgTemp:10C
+WECY:17D060,Little Quilcene R. nr mouth,47.83,-122.8744,DSG=0;STG=1;WTM=3,,,,13.6366;R1d5aec3fe378d141,Little Quilcene River O3 L1 Drainage:93km2 AvgFlow:101cfs AvgPrecip:976mm AvgTemp:11C
+WECY:17E060,Snow Cr. @ WDFW,47.9847,-122.8853,DSG=0;STG=1;WTM=3,,,,89.8642;R2506b1ac2d2bd041,Snow Creek O3 L1 Drainage:63km2 AvgFlow:54cfs AvgPrecip:811mm AvgTemp:10C
+WECY:17F050,Salmon Cr. @ WDFW,47.985,-122.89,DSG=0;STG=1;WTM=3,,,,1.1369;R77be8f4d32d2c341,Salmon Creek O3 L1 Drainage:46km2 AvgFlow:31cfs AvgPrecip:758mm AvgTemp:10C
+WECY:17G060,Tarboo Cr. nr mouth,47.8689,-122.8158,DSG=0;STG=1;WTM=3,,,,163.1463;Re5d05ecbaed3e241,Tarboo Creek O2 L1 Drainage:20km2 AvgFlow:7cfs AvgPrecip:872mm AvgTemp:10C
+WECY:18A050,Dungeness R. nr mouth,48.1433,-123.1272,DSG=0;STG=1;WTM=3,,,,806.312;R7d3f49c5f34ce541,Dungeness River O4 L1 Drainage:510km2 AvgFlow:442cfs AvgPrecip:434mm AvgTemp:10C
+WECY:18B070,Elwha River Nr Port Angeles,48.0654,-123.5777,STG=1,,,,725.6098;R0e2d0aa52e79e241,Elwha River O4 L1 Drainage:696km2 AvgFlow:1545cfs AvgPrecip:1089mm AvgTemp:10C
+WECY:18C150,Morse Cr. blw Aqueduct,48.0381,-123.3492,DSG=0;STG=1;WTM=3,,,,884.6695;Rf8539b7d7296da41,Morse Creek O3 L1 Drainage:132km2 AvgFlow:215cfs AvgPrecip:1003mm AvgTemp:9C
+WECY:18F250,Agnew Irrigation Ditch nr Sequim,48.0256,-123.1381,DSG=0;STG=1;WTM=3,,,,527.4912;R6f1223feda90d441,Dungeness River O4 L1 Drainage:408km2 AvgFlow:396cfs AvgPrecip:820mm AvgTemp:10C
+WECY:18H250,Sequim/Prairie Irrigation Ditch nr Sequim,48.0731,-123.145,DSG=0;STG=1;WTM=3,,,,580.901;R68913d09055dcd41,Dungeness River O4 L1 Drainage:458km2 AvgFlow:436cfs AvgPrecip:503mm AvgTemp:10C
+WECY:18J250,Highland Irrigation Ditch nr Sequim,48.03,-123.1364,DSG=0;STG=1;WTM=3,,,,956.3926;R6f1223feda90d441,Dungeness River O4 L1 Drainage:408km2 AvgFlow:396cfs AvgPrecip:820mm AvgTemp:10C
+WECY:18K250,Independent Irrigation Ditch nr Sequim,48.0572,-123.145,DSG=0;STG=1;WTM=3,,,,754.3624;R0000a0ca1188cb41,Bear Creek O1 L2 Drainage:8km2 AvgFlow:2cfs AvgPrecip:663mm AvgTemp:10C
+WECY:18P070,McDonald Cr. @ Hwy 101,48.0892,-123.235,DSG=0;STG=1;WTM=3,,,,140.1255;R448b8c65587bbc41,McDonald Creek O2 L1 Drainage:58km2 AvgFlow:38cfs AvgPrecip:562mm AvgTemp:10C
+WECY:18R250,McDonald Irrigation Ditch @ Diversion,48.0892,-123.235,DSG=0;STG=1,,,,140.1255;R448b8c65587bbc41,McDonald Creek O2 L1 Drainage:58km2 AvgFlow:38cfs AvgPrecip:562mm AvgTemp:10C
+WECY:19C060,West Twin R. nr mouth,48.1631,-123.9528,DSG=0;STG=1;WTM=3,,,,225.14;R508d5706a61eac41,West Twin River O2 L1 Drainage:31km2 AvgFlow:58cfs AvgPrecip:1636mm AvgTemp:9C
+WECY:19D070,East Twin R. nr Twin,48.1506,-123.9369,DSG=0;STG=1;WTM=3,,,,902.7448;R666666ce297ee341,East Twin River O2 L1 Drainage:22km2 AvgFlow:49cfs AvgPrecip:1817mm AvgTemp:9C
+WECY:19E060,Deep Cr. nr mouth,48.1725,-124.0267,DSG=0;STG=1;WTM=3,,,,32.6162;Rc1caad09e6b5e541,Deep Creek O2 L1 Drainage:45km2 AvgFlow:88cfs AvgPrecip:1958mm AvgTemp:9C
+WECY:19H080,Clallam R. nr Clallam Bay,48.2442,-124.2544,DSG=0;STG=1;WTM=3,,,,971.6655;R8fc2153270babd41,Clallam River O2 L1 Drainage:37km2 AvgFlow:82cfs AvgPrecip:2192mm AvgTemp:9C
+WECY:19J060,Sekiu R. abv Carpenter Creek,48.2814,-124.4286,DSG=0;STG=1;WTM=3,,,,97.0894;R85eba16fc68ed641,Sekiu River O3 L1 Drainage:72km2 AvgFlow:205cfs AvgPrecip:2446mm AvgTemp:9C
+WECY:20A070,Sol Duc R. nr Quillayute,47.9519,-124.4675,DSG=0;STG=1;WTM=3,,,,2.724;Rfa7e5ef8bc0ce541,Sol Duc River O4 L2 Drainage:584km2 AvgFlow:1742cfs AvgPrecip:2698mm AvgTemp:10C
+WECY:23A120,Chehalis River @ Centralia,46.7,-123,WTM=3,,,,450.3162;R7f6afc46b827b141,Scammon Creek O2 L2 Drainage:10km2 AvgFlow:8cfs AvgPrecip:1245mm AvgTemp:11C
+WECY:23A190,Chehalis abv Pe Ell,46.5,-123.3,WTM=3,,,,985.4391;R0ad7733138cbc741,Chehalis River O4 L1 Drainage:129km2 AvgFlow:270cfs AvgPrecip:1808mm AvgTemp:10C
+WECY:23B070,Newaukum NR Chehalis,46.6,-122.9,WTM=3,,,,13.6204;Rd9ce43f39506e841,Newaukum River O4 L2 Drainage:375km2 AvgFlow:441cfs AvgPrecip:1197mm AvgTemp:11C
+WECY:23E060,Black R. @ Hwy 12,46.8306,-123.1847,STG=1;WTM=3;DSG=0,,,,7.6366;Rd34d02e2a4ead641,Black River O3 L2 Drainage:365km2 AvgFlow:381cfs AvgPrecip:1434mm AvgTemp:11C
+WECY:23H060,Salzer Creek @ Airport Rd,46.7,-123,STG=1;WTM=3;DSG=0,,,,450.3162;R7f6afc46b827b141,Scammon Creek O2 L2 Drainage:10km2 AvgFlow:8cfs AvgPrecip:1245mm AvgTemp:11C
+WECY:23I070,Bunker Creek @ Ceres Hill Rd,46.6,-123.1,STG=1;WTM=3;DSG=0,,,,,
+WECY:23J070,Stearns Creek @ Twin Oaks Rd,46.6,-123,STG=1;WTM=3;DSG=0,,,,970.5232;R045612b8ec3be341,Stearns Creek O2 L2 Drainage:49km2 AvgFlow:41cfs AvgPrecip:1277mm AvgTemp:11C
+WECY:23K060,South Fork Chehalis @ Hwy 6,46.6,-123.1,STG=1;WTM=3;DSG=0,,,,,
+WECY:23L070,Dillenbaugh Creek at Riverside Dr,46.7,-123,STG=1;WTM=3;DSG=0,,,,450.3162;R7f6afc46b827b141,Scammon Creek O2 L2 Drainage:10km2 AvgFlow:8cfs AvgPrecip:1245mm AvgTemp:11C
+WECY:24N070,Chinook River at Chinook Valley Rd,46.2833,-123.9375,STG=1;WTM=3,,,,962.2144;Rbe9f96db1a0de441,Chinook River O2 L2 Drainage:16km2 AvgFlow:30cfs AvgPrecip:1983mm AvgTemp:11C
+WECY:24N100,Chinook River near Houchen St,46.2889,-123.9233,DSG=0;STG=1;WTM=3,,,,738.2058;R7b146e79e8dac841, O1 L3 Drainage:2km2 AvgFlow:4cfs AvgPrecip:2269mm AvgTemp:10C
+WECY:25B060,Grays R. nr mouth,46.3542,-123.5814,STG=1;WTM=3,,,,73.9654;R190406cce89bd941,Grays River O4 L2 Drainage:246km2 AvgFlow:681cfs AvgPrecip:2720mm AvgTemp:10C
+WECY:25C060,Elochoman River @ Monroe Dr,46.2256,-123.3589,DSG=0;STG=1;WTM=3,,,,0;R83c01a3cbb02da41,Elochoman River O3 L3 Drainage:177km2 AvgFlow:350cfs AvgPrecip:2032mm AvgTemp:10C
+WECY:25D050,Germany Cr. @ mouth,46.1914,-123.125,DSG=0;STG=1;WTM=3,,,,214.9925;Rb81ecda12343e541,Germany Creek O2 L2 Drainage:59km2 AvgFlow:102cfs AvgPrecip:1386mm AvgTemp:11C
+WECY:25E060,Abernathy Cr. nr mouth,46.1953,-123.1656,DSG=0;STG=1;WTM=3,,,,825.5835;R8b6cf3678867e041,Columbia River O9 L1 Drainage:619686km2 AvgFlow:250482cfs AvgPrecip:1439mm AvgTemp:11C
+WECY:25F060,Mill Cr. nr mouth,46.1906,-123.1786,DSG=0;STG=1;WTM=3,,,,321.5148;R6de72b99e478cd41,Mill Creek O3 L2 Drainage:76km2 AvgFlow:134cfs AvgPrecip:1458mm AvgTemp:11C
+WECY:26C075,Coweeman R. nr Kelso,46.1281,-122.8383,DSG=0;STG=1;WTM=3,,,,32.8882;R48e126057568e841,Coweeman River O4 L3 Drainage:309km2 AvgFlow:425cfs AvgPrecip:1475mm AvgTemp:10C
+WECY:28B080,Washougal R. @ Hathaway Park,45.5839,-122.3433,DSG=0;STG=1;WTM=3,,,,388.6333;R52b86ebf91a3d741,Washougal River O4 L2 Drainage:371km2 AvgFlow:1077cfs AvgPrecip:1414mm AvgTemp:12C
+WECY:29C100,Wind R. @ Stabler,45.8078,-121.9092,DSG=0;STG=1;WTM=3,,,,47.7997;R2db229ed32a4e841,Wind River O4 L2 Drainage:278km2 AvgFlow:706cfs AvgPrecip:2470mm AvgTemp:9C
+WECY:30C070,Little Klickitat R. nr Wahkiacus,45.8431,-121.0581,DSG=0;STG=1;WTM=3,,,,112.4447;R3f357af6b317ef41,Little Klickitat River O4 L3 Drainage:725km2 AvgFlow:173cfs AvgPrecip:377mm AvgTemp:10C
+WECY:32A100,Walla Walla R. @ E. Detour Rd.,46.0431,-118.4908,DSG=0;STG=1;WTM=3,,,,912.1297;R1904a6e287f2ed41,Walla Walla River O5 L2 Drainage:1059km2 AvgFlow:403cfs AvgPrecip:367mm AvgTemp:12C
+WECY:32A105,Walla Walla R. @ Beet Rd.,46.0236,-118.4258,DSG=0;STG=1;WTM=3,,,,717.9201;R08ac08bb0b8fe741,Walla Walla River O5 L2 Drainage:760km2 AvgFlow:308cfs AvgPrecip:419mm AvgTemp:12C
+WECY:32B075,Touchet R. @ Cummins Rd.,46.0567,-118.6675,DSG=0;STG=1;WTM=3,,,,92.0789;R2506419c6f88dd41,Touchet River O6 L3 Drainage:1922km2 AvgFlow:274cfs AvgPrecip:314mm AvgTemp:12C
+WECY:32B100,Touchet R. @ Bolles,46.2744,-118.2211,DSG=0;STG=1;WTM=3,,,,385.3709;R0e2d52bc04c0c141,Touchet River O5 L3 Drainage:915km2 AvgFlow:404cfs AvgPrecip:472mm AvgTemp:11C
+WECY:32E050,N.F. Touchet R. abv Dayton,46.2972,-117.9511,DSG=0;STG=1;WTM=3,,,,914.2053;Rbc7453f1d3cde541, O1 L4 Drainage:1km2 AvgFlow:0cfs AvgPrecip:569mm AvgTemp:10C
+WECY:34H090,Pleasant Valley Cr. @ St. John,47.0933,-117.5872,STG=1;WTM=3;DSG=0,,,,12.1131;R7d3f1d9baacdd841,Pleasant Valley Creek O3 L6 Drainage:106km2 AvgFlow:6cfs AvgPrecip:445mm AvgTemp:9C
+WECY:34P050,SF Pine Creek at Idaho Border,47.0872,-117.0397,STG=1;WTM=3;DSG=0,,,,816.1227;R4e6248683e2fe841,North Fork Pine Creek O2 L6 Drainage:16km2 AvgFlow:4cfs AvgPrecip:611mm AvgTemp:8C
+WECY:34Q100,Pine Creek at Gashous Rd,47.2408,-117.3744,STG=1;WTM=3;DSG=0,,,,8.0725;Ree7c97076b25e641,Pine Creek O5 L5 Drainage:488km2 AvgFlow:56cfs AvgPrecip:473mm AvgTemp:8C
+WECY:34R050,Kamiache Creek on Gene Webb Rd,47.1,-117.7,STG=1;WTM=3,,,,517.5732;R46b683218a4bc541, O1 L6 Drainage:3km2 AvgFlow:0cfs AvgPrecip:421mm AvgTemp:9C
+WECY:34S150,Thorn Creek on Malden Rd,47.1884,-117.5314,STG=1;WTM=3,,,,6.6085;R1b2f2171b78ded41,Thorn Creek O3 L6 Drainage:111km2 AvgFlow:8cfs AvgPrecip:464mm AvgTemp:9C
+WECY:35B150,Tucannon R. nr Marengo,46.4403,-117.7503,DSG=0;STG=1;WTM=3,,,,827.6014;R1b2f6d79c358e441,Tucannon River O4 L3 Drainage:411km2 AvgFlow:231cfs AvgPrecip:444mm AvgTemp:10C
+WECY:35D100,Asotin Cr. abv George Creek,46.3231,-117.135,DSG=0;STG=1;WTM=3,,,,14.6275;R21b0e6141e8ee441,Asotin Creek O4 L3 Drainage:444km2 AvgFlow:73cfs AvgPrecip:404mm AvgTemp:11C
+WECY:35F050,Pataha Cr. nr mouth,46.5119,-117.9731,DSG=0;STG=1;WTM=3,,,,287.1495;Rba491cd5b397e841, O4 L4 Drainage:440km2 AvgFlow:57cfs AvgPrecip:370mm AvgTemp:11C
+WECY:35K050,Alpowa Cr. @ mouth,46.4122,-117.2133,DSG=0;STG=1;WTM=3,,,,700.2729;R6de76b755b87c241,Alpowa Creek O4 L3 Drainage:275km2 AvgFlow:12cfs AvgPrecip:430mm AvgTemp:11C
+WECY:35M100,Deadman Cr. nr Gould City,46.605,-117.6081,DSG=0;STG=1;WTM=3,,,,538.425;R0c020b6f6259b741,Deadman Creek O4 L3 Drainage:188km2 AvgFlow:10cfs AvgPrecip:445mm AvgTemp:11C
+WECY:38A140,Naches River @ Oak Flats,46.7,-120.8,STG=1;WTM=3;DSG=0,,,,861.6751;R1058196c4b4bb641, 
+WECY:38G150,Cowiche Cr. blw confluence,46.6472,-120.6819,DSG=0;STG=1;WTM=3,,,,49.4798;R7f6a144f4857e741,Cowiche Creek O4 L5 Drainage:310km2 AvgFlow:60cfs AvgPrecip:320mm AvgTemp:9C
+WECY:38IR001,CCWUA East,46.6,-120.7,DSG=0,,,,687.5867;Rf2d2517c4735ed41, O1 L5 Drainage:1km2 AvgFlow:0cfs AvgPrecip:347mm AvgTemp:9C
+WECY:38IR002,CCWUA West,46.6,-120.7,DSG=0,,,,687.5867;Rf2d2517c4735ed41, O1 L5 Drainage:1km2 AvgFlow:0cfs AvgPrecip:347mm AvgTemp:9C
+WECY:39D110,Teanaway R. @ Red Bridge Rd.,47.2011,-120.7814,STG=1;WTM=3;DSG=0,,,,555.4274;R9318c40ff3f9c241,Teanaway River O5 L4 Drainage:526km2 AvgFlow:459cfs AvgPrecip:590mm AvgTemp:7C
+WECY:39J070,Manastash Cr. @ Cove Rd.,46.9731,-120.6456,STG=1;WTM=3;DSG=0,,,,832.3312;Rbc74fbf4dfd8d741,Manastash Creek O4 L4 Drainage:202km2 AvgFlow:190cfs AvgPrecip:274mm AvgTemp:9C
+WECY:39M130,Swauk Cr. blw First Cr.,47.2083,-120.7006,DSG=0;STG=1;WTM=3,,,,179.9894;R9eef634cc7d9ec41,Swauk Creek O4 L4 Drainage:235km2 AvgFlow:110cfs AvgPrecip:507mm AvgTemp:7C
+WECY:39P080,Taneum Cr. @ Brain Ranch,47.0867,-120.7658,DSG=0;STG=1;WTM=3,,,,80.7255;R91ed7c949b5ae941,Taneum Creek O4 L4 Drainage:197km2 AvgFlow:234cfs AvgPrecip:759mm AvgTemp:7C
+WECY:39S050,First Cr. @ mouth,47.2081,-120.6997,DSG=0;STG=1;WTM=3,,,,17.4107;R14ae1b3b2da6e141,First Creek O2 L5 Drainage:37km2 AvgFlow:19cfs AvgPrecip:757mm AvgTemp:7C
+WECY:39T060,Indian Cr. nr mouth,47.3011,-120.8544,STG=1;WTM=3;DSG=0,,,,50.8093;Rb072601c3c86d741,Indian Creek O2 L6 Drainage:16km2 AvgFlow:10cfs AvgPrecip:1036mm AvgTemp:6C
+WECY:41A070,Crab Cr. nr Beverly,46.8311,-119.8161,WTM=3,,,,548.8557;R0000107777d9cb41, 
+WECY:45B070,Icicle Cr. nr Leavenworth,47.5636,-120.6678,DSG=0;STG=1;WTM=3,,,,767.0275;Rb0728c912607e341,Icicle Creek O4 L3 Drainage:541km2 AvgFlow:685cfs AvgPrecip:800mm AvgTemp:8C
+WECY:45C060,Chumstick Cr. nr mouth,47.6047,-120.6469,DSG=0;STG=1;WTM=3,,,,324.3838;R2506c16b4dd5e841,Chumstick Creek O4 L3 Drainage:204km2 AvgFlow:102cfs AvgPrecip:895mm AvgTemp:8C
+WECY:45E070,Mission Cr. nr Cashmere,47.5214,-120.4747,DSG=0;STG=1;WTM=3,,,,185.2098;R2506414f952fe041,Mission Creek O4 L3 Drainage:240km2 AvgFlow:82cfs AvgPrecip:376mm AvgTemp:10C
+WECY:45F070,Peshastin Cr. @ Green Bridge Rd.,47.5525,-120.6017,DSG=0;STG=1;WTM=3,,,,414.6888;R7368f139412bda41,Peshastin Creek O3 L3 Drainage:351km2 AvgFlow:216cfs AvgPrecip:473mm AvgTemp:9C
+WECY:45J070,Nason Cr. nr mouth,47.8003,-120.7153,DSG=0;STG=1;WTM=3,,,,91.4904;R448bf8103501ee41,Nason Creek O4 L3 Drainage:282km2 AvgFlow:391cfs AvgPrecip:891mm AvgTemp:7C
+WECY:45K090,White R. nr Plain,47.8747,-120.8692,DSG=0;STG=1;WTM=3,,,,575.4519;R2db26982cd05e241,White River O4 L2 Drainage:381km2 AvgFlow:565cfs AvgPrecip:1210mm AvgTemp:7C
+WECY:46B060,Roaring Cr. nr mouth,47.6858,-120.3431,DSG=0;STG=1;WTM=3,,,,583.722;R3789192c2011d041,Roaring Creek O3 L3 Drainage:66km2 AvgFlow:35cfs AvgPrecip:348mm AvgTemp:9C
+WECY:46W004,Entiat at Cottonwood,48,-120.6,STG=1;WTM=3,,,,550.0335;R0456be9e90a6ea41,Entiat River O3 L2 Drainage:189km2 AvgFlow:199cfs AvgPrecip:914mm AvgTemp:5C
+WECY:46W005,Entiat at Tomie Creek Bridge,48,-120.6,STG=1,,,,550.0335;R0456be9e90a6ea41,Entiat River O3 L2 Drainage:189km2 AvgFlow:199cfs AvgPrecip:914mm AvgTemp:5C
+WECY:48F060,Beaver Cr. nr mouth,48.4233,-120.0372,STG=1;WTM=3;DSG=0,,,,211.173;Rd7a310018f81bc41,Beaver Creek O4 L4 Drainage:173km2 AvgFlow:37cfs AvgPrecip:486mm AvgTemp:7C
+WECY:48F150,Beaver Cr. blw Lester Rd.,48.1433,-123.1272,STG=1;WTM=3;DSG=0,,,,946.7974;Rd34d9aebd91dd341, O1 L1 Drainage:2km2 AvgFlow:0cfs AvgPrecip:446mm AvgTemp:10C
+WECY:49F070,Bonaparte Cr. @ Tonasket,48.7014,-119.4408,DSG=0;STG=1;WTM=3,,,,584.971;Re7fba169829bed41,Bonaparte Creek O3 L3 Drainage:360km2 AvgFlow:17cfs AvgPrecip:313mm AvgTemp:10C
+WECY:56A250,Hangman Cr. @ Ramsey St Tekoa,47.2202,-117.075,STG=1;WTM=3;DSG=0,,,,946.2884;Rb072349cf8dde241,Hangman Creek O3 L3 Drainage:338km2 AvgFlow:102cfs AvgPrecip:522mm AvgTemp:8C
+WECY:56B200,Rock Cr. @ Hwy 27,47.4533,-117.1425,DSG=0;STG=1;WTM=3,,,,497.5819;R4e622c4211e5e141,Rock Creek O4 L4 Drainage:289km2 AvgFlow:51cfs AvgPrecip:554mm AvgTemp:8C
+WECY:56C070,Little Hangman Creek @ Crosby St Tekoa,47.2255,-117.0748,STG=1;WTM=3;DSG=0,,,,148.9273;R8716a5e0ceece741,Little Hangman Creek O4 L4 Drainage:164km2 AvgFlow:30cfs AvgPrecip:530mm AvgTemp:8C
+WECY:59A110,Colville R. @ Blue Cr.,48.32,-117.8197,DSG=0;STG=1;WTM=3,,,,541.1745;R508d733bcfbeee41,Colville River O5 L2 Drainage:1048km2 AvgFlow:197cfs AvgPrecip:549mm AvgTemp:8C
+WECY:LOOST1,Loon Lake @ Granite Point,48.0333,-117.6056,STG=1,,,,883.0889;Rcba15585118fcd41, O2 L2 Drainage:4km2 AvgFlow:1cfs AvgPrecip:580mm AvgTemp:8C
+WECY:SPRAD1,Sprague Lake nr Sprague,47.2803,-118.0239,STG=1,,,,607.2009;R508dab8bfe43eb41, O3 L4 Drainage:748km2 AvgFlow:24cfs AvgPrecip:395mm AvgTemp:9C
