@@ -13,6 +13,8 @@
 //#include "fcgi/include/fcgio.h"
 //#include "fcgi/include/fcgi_config.h"  // HAVE_IOSTREAM_WITHASSIGN_STREAMBUF
 
+//#define WATERFLOW
+
 #define abortfile "abort.rwr"
 #define legendfile "POI\\legend.png"
 
@@ -2166,8 +2168,10 @@ int main(int argc, TCHAR* argv[])
 		if (Command(argv+i))
 			return 0;
 		
+#ifdef WATERFLOW
 	// WebServer mode
 	WaterflowLoadSites();
+#endif
 
 	//CFILE::MDEBUG = MDEBUG;
 	//Log(LOGINFO, "STATMASTER: SM v:%d %s", version, MDEBUG ? "DEBUGMODE" : "");
