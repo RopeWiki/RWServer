@@ -798,6 +798,8 @@ void _process(FCGX_Request *request)
 			return;
 			}
 
+		CString user;
+
 		char * method = FCGX_GetParam("REQUEST_METHOD", envp);
 		if (stricmp(method, "GET")==0 || stricmp(method, "POST")==0) // just headers
             {
@@ -810,6 +812,15 @@ void _process(FCGX_Request *request)
 			//P.PROCESSOUT(query, postdata, postlen);  
 			const char *url = NULL;
 
+			if (url=ucheck(query, "user=")) {
+				user = ExtractString(url, "", "", "&");
+			}
+
+			if (!user || user == "") {
+				user = "<guest>";
+			}
+
+			Log(LOGINFO, "Incoming request from %s at %s", user, ipaddr);
 
 			const char *ext;
 			ext = strrchr(query,'.');
