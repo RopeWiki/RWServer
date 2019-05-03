@@ -122,6 +122,7 @@
     <ClCompile Include="rw\Elevation.cpp" />
     <ClCompile Include="rw\fcgi\libfcgi\fcgiapp.c" />
     <ClCompile Include="rw\GetSet.cpp" />
+    <ClCompile Include="rw\processcommandline.cpp" />
     <ClCompile Include="rw\processrequest.cpp" />
     <ClCompile Include="rw\utils.cpp" />
     <ClCompile Include="rw\inetdata.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="rw\ArrayList.h" />
     <ClInclude Include="rw\BasicExcelVC6.hpp" />
     <ClInclude Include="rw\fcgi\include\fastcgi.h" />
+    <ClInclude Include="rw\processcommandline.h" />
     <ClInclude Include="rw\processrequest.h" />
     <ClInclude Include="rw\utils.h" />
     <ClInclude Include="rw\inetdata.h" />

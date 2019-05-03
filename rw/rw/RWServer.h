@@ -7,6 +7,8 @@
 
 #define legendfile "POI\\legend.png"
 
+static BOOL MDEBUG = FALSE;
+
 int Command(TCHAR *argv[]);
 
 static UINT threadmain(LPVOID pParam);

@@ -66,6 +66,9 @@
     <ClCompile Include="rw\processrequest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="rw\processcommandline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rw\ArrayList.h">
@@ -99,6 +102,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="rw\processrequest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\processcommandline.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
