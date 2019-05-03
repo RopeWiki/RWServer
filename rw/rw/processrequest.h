@@ -1,3 +1,6 @@
+// processrequest.h : main header file
+//
+
 #pragma once
 
 #include "stdafx.h"
@@ -22,4 +25,5 @@ void ProcessProfile(const char* url, FCGX_Stream* FCGX_stdout);
 void ProcessRWZDownload(const char* url, FCGX_Stream* FCGX_stdout);
 void ProcessRWBeta(const char* url, FCGX_Stream* FCGX_stdout);
 void ProcessTest(const char* url, FCGX_Stream* FCGX_stdout);
-void ProcessCTable(const char* url, FCGX_Stream* FCGX_stdout, int i);
+void ProcessCTable(const char* url, FCGX_Stream* FCGX_stdout, char* header);
+

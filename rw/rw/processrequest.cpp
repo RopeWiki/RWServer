@@ -1,6 +1,9 @@
-#include "process.h"
+
+#include "processrequest.h"
 #include "RWServer.h"
 
+
+#define DEBUGRWZ(msg) /*Log(LOGINFO, msg": %s", query)*/
 
 void ProcessUrl(const char* url, FCGX_Stream* FCGX_stdout, CString filename, inetdata* data)
 {
@@ -581,11 +584,11 @@ void ProcessTest(const char* url, FCGX_Stream* FCGX_stdout)
 	FCGX_PutS("<html><body></body></html>", FCGX_stdout);
 }
 
-void ProcessCTable(const char* url, FCGX_Stream* FCGX_stdout, int i)
+void ProcessCTable(const char* url, FCGX_Stream* FCGX_stdout, char* header)
 {
 	// Output response headers
 	FCGX_PutS("Access-Control-Allow-Origin: *\r\n", FCGX_stdout);
-	FCGX_PutS(MkString("Content-Type: %s\r\n", ctable[i].header), FCGX_stdout);
+	FCGX_PutS(MkString("Content-Type: %s\r\n", header), FCGX_stdout);
 	//FCGX_PutS("Content-Type: application/octet-stream\r\n", FCGX_stdout);
 	//FCGX_PutS("Cache-Control: no-cache\r\n", FCGX_stdout);
 	//FCGX_PutS("Pragma: no-cache\r\n", FCGX_stdout);

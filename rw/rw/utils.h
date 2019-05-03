@@ -8,3 +8,4 @@ public:
 
 	static int WriteFile(HANDLE hFile, inetdata *data);
 };
+
