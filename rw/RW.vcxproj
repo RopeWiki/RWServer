@@ -89,7 +89,8 @@
       <StructMemberAlignment>2Bytes</StructMemberAlignment>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
-      <AdditionalOptions> </AdditionalOptions>
+      <AdditionalOptions>
+      </AdditionalOptions>
       <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -121,6 +122,8 @@
     <ClCompile Include="rw\Elevation.cpp" />
     <ClCompile Include="rw\fcgi\libfcgi\fcgiapp.c" />
     <ClCompile Include="rw\GetSet.cpp" />
+    <ClCompile Include="rw\utils.cpp" />
+    <ClCompile Include="rw\inetdata.cpp" />
     <ClCompile Include="rw\jlib.cpp" />
     <ClCompile Include="rw\Lists.cpp" />
     <ClCompile Include="rw\fcgi\libfcgi\os_win32.c" />
@@ -135,8 +138,11 @@
     <ClInclude Include="rw\ArrayList.h" />
     <ClInclude Include="rw\BasicExcelVC6.hpp" />
     <ClInclude Include="rw\fcgi\include\fastcgi.h" />
+    <ClInclude Include="rw\utils.h" />
+    <ClInclude Include="rw\inetdata.h" />
     <ClInclude Include="rw\passwords.h" />
     <ClInclude Include="rw\rw.h" />
+    <ClInclude Include="rw\RWServer.h" />
     <ClInclude Include="rw\stdafx.h" />
     <ClInclude Include="rw\TradeMaster.h" />
   </ItemGroup>

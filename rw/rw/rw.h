@@ -1,3 +1,6 @@
+#pragma once
+
+
 #ifdef DEBUG
 #define server "localhost"
 #else

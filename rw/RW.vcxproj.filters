@@ -57,6 +57,12 @@
     <ClCompile Include="rw\XZip.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="rw\inetdata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rw\ArrayList.h">
@@ -78,6 +84,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="rw\passwords.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\RWServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\inetdata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -189,7 +189,7 @@ char *StrFixPath(char *str);
 // File Time
 
 class CFILE {
-	HANDLE f;
+	
 	char fext;
 	CString fname;
 	// fgetc
@@ -199,6 +199,7 @@ class CFILE {
 	int bufferlen, bufferlenmax;
 	char *buffer;
 public:
+	HANDLE f;
 	static BOOL MDEBUG;
 	enum { MREAD = 0, MWRITE, MAPPEND, MUPDATE };
 	//operator FILE *() { return f; }
@@ -368,7 +369,8 @@ public:
 	//virtual void open(int expectedsize) {};
 	//virtual void close(int receviedsize) {};
 	virtual void write(const void *buffer, int size) = 0;
-	void write(const char *buffer) { write((void *)buffer, strlen(buffer)); };
+	void write(const char *buffer) { write((void *)buffer, strlen(buffer)); };	
+	int PhantomJS(const char *file, volatile int &nfiles);
 };
 
 class inetfile : public inetdata {
