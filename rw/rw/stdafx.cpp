@@ -2835,7 +2835,7 @@ int CFILE::fgetstrbuff(char *buff, int maxbuff)
 	register int ibuff = 0;
 	while (TRUE)
 		{
-		register char c = fgetc();
+		register unsigned char c = fgetc();
 		// skip some chars
 		if (c==0 || c=='\t') 
 			{
