@@ -94,7 +94,7 @@ double StdDev::Shp(double realn)
 	double avg = Avg();
 	double std = Std();
 	if (std!=0) return avg/std;
-	return avg/abs(avg)*100;
+	return avg/fabs(avg)*100;
 	}
 
 /*
@@ -6489,8 +6489,8 @@ tprovider providers[] = {
 	}},
 
 	{ "CNDWO", "m3s/m,1000,800", CNDWO_getsites, CNDWO_getdate, CNDWO_gethistory, "08GB013", FALSE, {
-	  "http://wateroffice.ec.gc.ca/report/real_time_e.html?type=h2oArc&stn=%id"CNDWOMODE,
-	  "http://wateroffice.ec.gc.ca/report/real_time_e.html?mode=Graph&type=realTime&stn=%id&dataType=Real-Time&startDate=%YYYY1-%MM1-%DD1&endDate=%YYYY2-%MM2-%DD2&y1Max=&y1Min=&mean1=1&prm2=-1&y2Max=&y2Min=#rt-graph-tbl-data"CNDWOMODE,
+	  "http://wateroffice.ec.gc.ca/report/real_time_e.html?type=h2oArc&stn=%id" CNDWOMODE,
+	  "http://wateroffice.ec.gc.ca/report/real_time_e.html?mode=Graph&type=realTime&stn=%id&dataType=Real-Time&startDate=%YYYY1-%MM1-%DD1&endDate=%YYYY2-%MM2-%DD2&y1Max=&y1Min=&mean1=1&prm2=-1&y2Max=&y2Min=#rt-graph-tbl-data" CNDWOMODE,
 	}},
 
 	{ "BRPN", "cfs/ft/F,820,700", BRPN_getsites, BRPN_getdate, USGS_gethistory, "YGVW,ELWW", FALSE, {

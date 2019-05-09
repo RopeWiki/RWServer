@@ -300,7 +300,6 @@ CString KMLClickMe(const char *param);
 CString KMLScanBox(const char *param, const char *cookies = NULL, const char *status = NULL);
 
 #define M_PI 3.14159265358979323846
-#define round(x) (int)((x)+0.5)
 #define m2ft 3.28084
 #define km2mi 0.621371
 #define mi2ft 5280

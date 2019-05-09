@@ -107,6 +107,7 @@ public:
 // Invalids
 
 #define EPSILON (1e-6)
+#undef INFINITY			// FF - warning C4005: 'INFINITY': macro redefinition - in 'math.h'
 #define INFINITY ((float)1e30)
 #define InvalidNUM ((float)-3.3e33)
 #define InvalidDATE 0

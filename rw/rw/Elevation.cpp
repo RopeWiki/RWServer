@@ -4396,7 +4396,7 @@ OSCANNER, OFLOWDOWN, OFLOWUP, ORAIN, ONUM };
 
 int GetCacheMaxDays(const char *kmzfile)
 {
-	if (strstr(kmzfile,"\\"RIVERSBASE)) // rivers
+	if (strstr(kmzfile,"\\" RIVERSBASE)) // rivers
 		return MAXEXPIRE;
 	const char *opt=strrchr(kmzfile, ')');
 	if (opt && strchr(opt, copt[OOVERLAY])) // overlays
@@ -4992,8 +4992,8 @@ void Output(CKMLOut &out, const char *networklink = NULL)
 	//out += KMLName("ERROR", MkString("Elevation not available! Check coverage at http://%s/rwr/?rwz=DEM,0,0,0,KC", server), 2);
 	out += "<Placemark>";
 	out += KMLName("ERROR", MkString("Elevation not available! Check coverage at http://%s/rwr/?rwz=DEM,0,0,0,KC", server));
-	out += MkString("<Style><BalloonStyle><text>"CDATAS"<b><font size=\"+1\">$[name]</font></b><br/><br/><div style='width:auto'>$[description]</div>"CDATAE"</text></BalloonStyle><IconStyle><Icon><href>http://sites.google.com/site/rwicons/%s.png</href></Icon><scale>%g</scale><hotSpot x=\"0.5\" y=\"0.5\" xunits=\"fraction\" yunits=\"fraction\"/></IconStyle><LabelStyle><scale>%g</scale></LabelStyle></Style>", "error", 0.5, 0.6);
-  	out += MkString("<Point><coordinates>%s</coordinates></Point>", CCoord3(mappoint.lat,mappoint.lng));
+	out += MkString("<Style><BalloonStyle><text>" CDATAS "<b><font size=\"+1\">$[name]</font></b><br/><br/><div style='width:auto'>$[description]</div>" CDATAE "</text></BalloonStyle><IconStyle><Icon><href>http://sites.google.com/site/rwicons/%s.png</href></Icon><scale>%g</scale><hotSpot x=\"0.5\" y=\"0.5\" xunits=\"fraction\" yunits=\"fraction\"/></IconStyle><LabelStyle><scale>%g</scale></LabelStyle></Style>", "error", 0.5, 0.6);
+	out += MkString("<Point><coordinates>%s</coordinates></Point>", CCoord3(mappoint.lat,mappoint.lng));
 	out += "</Placemark>\n";
 	return;
 	}
@@ -6506,7 +6506,7 @@ void createLineString(CKMLOut &out, const char *networklink)
 
   CString summaryid = id+"summary";   
   CString plotstyle = "<styleUrl>#"+summaryid+"</styleUrl>";
-  out += "<Style id=\""+summaryid+"\"><ListStyle><listItemType>checkHideChildren</listItemType></ListStyle><BalloonStyle><text>"CDATAS"<b><font size=\"+1\">"+fname+"</font></b><br/><br/><div style='width:45em'>"+desc+"</div>"CDATAE"</text></BalloonStyle></Style>";
+  out += "<Style id=\""+summaryid+"\"><ListStyle><listItemType>checkHideChildren</listItemType></ListStyle><BalloonStyle><text>" CDATAS "<b><font size=\"+1\">"+fname+"</font></b><br/><br/><div style='width:45em'>"+desc+"</div>" CDATAE "</text></BalloonStyle></Style>";
 //<Style id=\"rwresstyle\"><ListStyle><listItemType>checkHideChildren</listItemType></ListStyle></Style><styleUrl>#rwresstyle</styleUrl>
   out += KMLName(fname, summary, 1);  //+ MkString(" <a href=\"#%s;balloon\">more</a>"
   out += plotstyle;
@@ -6583,7 +6583,7 @@ void createLineString(CKMLOut &out, const char *networklink)
 			style += MkString("<IconStyle><Icon><href>http://sites.google.com/site/rwicons/%s.png</href></Icon><scale>1.0</scale></IconStyle>", icon);
 		    out += MkString("<Style id=\"%s\">", rapstyle); out+=style;
 			out += MkString("<ListStyle><listItemType>checkHideChildren</listItemType><ItemIcon><href>http://sites.google.com/site/rwicons/%s.png</href></ItemIcon></ListStyle>", icon);
-			out += MkString("<BalloonStyle><text>"CDATAS"<b><font size=\"+1\">%s</font></b><br/><br/><div style='width:45em;height:auto'>%s</div>", name, desc);
+			out += MkString("<BalloonStyle><text>" CDATAS "<b><font size=\"+1\">%s</font></b><br/><br/><div style='width:45em;height:auto'>%s</div>", name, desc);
 			out += MkString(CDATAE"</text></BalloonStyle>");
 			out += "</Style>";
 			out += MkString("<Folder id=\"%sR%d\"><name>%s</name><styleUrl>#%s</styleUrl>", fname, rapnum, name, rapstyle);
@@ -10403,7 +10403,7 @@ void POIRiverList(CKMLOut &out, const char *folder, const char *file, LLRect *cl
 			CRiver r(sym);
 			desc.Replace("<ul", "<br>Additional tools:<ul");
 			desc.Replace(CDATAS, CDATAS"<div style='width:22em'>" + button + button2 + "<br>" +WatershedSummary(sym).join("<br>") + MkString("<br>RiverID:%s<br>", IdStr(r.id)));
-			desc.Replace(CDATAE, "</div>"CDATAE );
+			desc.Replace(CDATAE, "</div>" CDATAE );
 			//MkString("<li><a href=\"%s\">Canyon Explorer Analysis</a></li></ul>", url));			
 
 			// min 1 max 5
@@ -11356,8 +11356,8 @@ void RWE(CKMLOut &out, const char *line)
 		{
 		const char *name = "US Streams";
 		out += KMLFolderStart(name, "rivers", TRUE, FALSE);
-		out += KMLName(NULL, CDATAS"<ul style=\"width:45em\">http://water.epa.gov/scitech/datait/tools/waters</ul>"CDATAE, -1 );
-		out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz="RIVERSUS",0,0,0,GRC", server));
+		out += KMLName(NULL, CDATAS "<ul style=\"width:45em\">http://water.epa.gov/scitech/datait/tools/waters</ul>" CDATAE, -1 );
+		out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=" RIVERSUS ",0,0,0,GRC", server));
 		out += KMLFolderEnd();
 		return;
 		}
@@ -11366,8 +11366,8 @@ void RWE(CKMLOut &out, const char *line)
 		{
 		const char *name = "Canada Streams";
 		out += KMLFolderStart(name, "rivers", TRUE, FALSE);
-		out += KMLName(NULL, CDATAS"<ul style=\"width:45em\">http://ftp2.cits.rncan.gc.ca/pub/geobase/official/nhn_rhn/doc/NHN.pdf</ul>"CDATAE, -1 );
-		out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz="RIVERSCA",0,0,0,GRC", server));
+		out += KMLName(NULL, CDATAS "<ul style=\"width:45em\">http://ftp2.cits.rncan.gc.ca/pub/geobase/official/nhn_rhn/doc/NHN.pdf</ul>" CDATAE, -1 );
+		out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=" RIVERSCA ",0,0,0,GRC", server));
 		out += KMLFolderEnd();
 		return;
 		}
@@ -11376,8 +11376,8 @@ void RWE(CKMLOut &out, const char *line)
 		{
 		const char *name = "Mexico Streams";
 		out += KMLFolderStart(name, "rivers", TRUE, FALSE);
-		out += KMLName(NULL, CDATAS"<ul style=\"width:45em\">http://www.inegi.org.mx/geo/contenidos/topografia/regiones_hidrograficas.aspx</ul>"CDATAE, -1 );
-		out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz="RIVERSMX",0,0,0,GRC", server));
+		out += KMLName(NULL, CDATAS"<ul style=\"width:45em\">http://www.inegi.org.mx/geo/contenidos/topografia/regiones_hidrograficas.aspx</ul>" CDATAE, -1 );
+		out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=" RIVERSMX ",0,0,0,GRC", server));
 		out += KMLFolderEnd();
 		return;
 		}
@@ -14196,7 +14196,7 @@ void DownloadRiversUS(int mode, const char *folder)
 	CBox cb(Savebox);
 	for (LLRect *bbox = cb.Start(); bbox!=NULL; bbox = cb.Next())
 	  {
-	  CString file = MkString("%s\\%s"CSV, folder, cb.file());  //filename(cb.file(), RIVERSUS);
+	  CString file = MkString("%s\\%s" CSV, folder, cb.file());  //filename(cb.file(), RIVERSUS);
 	  if (cb.DaysOld(file)>MAXRIVERSUSDAYS || INVESTIGATE>=0)
 		{
 		vara urls;
@@ -16983,7 +16983,7 @@ CString NetworkLink(const char *name, const char *ourl)
 			CString kmllink = MkString("http://%s/rwr/?rwzdownload=%s", server, CString(url,ulen-1));
 			out += MkString("<Document id=\"doc\"><name>MapperLink %s</name>\r\n", fname);
 			CString download = jlink(kmllink, "Download KML File");
-			out += "<description>"CDATAS+download+CDATAE"</description><Snippet maxLines=\"0\"></Snippet>";
+			out += "<description>" CDATAS+download+CDATAE "</description><Snippet maxLines=\"0\"></Snippet>";
 
 
 			if (rivers)
@@ -17106,7 +17106,7 @@ CString KMLClickMe(const char *param)
 		icon += MkString("%d", resnum(coord.res));
 	else
 		icon += 'n';
-	out += MkString("<Style><BalloonStyle><text>"CDATAS"<b><font size=\"+1\">Start Location</font></b><br/><br/><div style='width:22em'>$[description]</div>"CDATAE"</text></BalloonStyle>"
+	out += MkString("<Style><BalloonStyle><text>" CDATAS "<b><font size=\"+1\">Start Location</font></b><br/><br/><div style='width:22em'>$[description]</div>" CDATAE "</text></BalloonStyle>"
 		"<IconStyle><Icon><href>http://sites.google.com/site/rwicons/%s.png</href></Icon><scale>%g</scale><hotSpot x=\"0.5\" y=\"0.5\" xunits=\"fraction\" yunits=\"fraction\"/></IconStyle>"
 		"<LabelStyle><scale>%g</scale></LabelStyle></Style>", icon, 0.5, 0.7);
   	out += MkString("<Point><coordinates>%s,%s,0</coordinates></Point>", lookat[2], lookat[1]);
@@ -17227,9 +17227,9 @@ CString KMLScanBox(const char *config, const char *cookies, const char *status)
 
 	//CString url = MkString("http://%s/rwr/?rwl=%s,%s,%s,%s,*C", server, box[0],box[1],box[2],box[3]);
 
-	out += "<Style id=\"scanner\"><IconStyle><Icon><href>"+icon+"</href></Icon></IconStyle><BalloonStyle><text>"CDATAS;
+	out += "<Style id=\"scanner\"><IconStyle><Icon><href>"+icon+"</href></Icon></IconStyle><BalloonStyle><text>" CDATAS;
 	out += html;
-	out += CDATAE"</text></BalloonStyle></Style>";
+	out += CDATAE "</text></BalloonStyle></Style>";
 
 	out += KMLBox(name, boxdesc, bbox,  color, 5, 
 		"<IconStyle><Icon><href>"+icon+"</href></Icon></IconStyle>"+
@@ -17299,7 +17299,7 @@ void FixPanoramio(const char *folder, const char *outfolder)
 				blist.Add( list[i] );
 
 		CSymList outlist;
-		CString file = MkString("%s\\%s"CSV, outfolder, cb.file());
+		CString file = MkString("%s\\%s" CSV, outfolder, cb.file());
 		int errors = PanoramioKML( file, outlist, box, &blist);
 		ASSERT( !errors );
 
@@ -17485,7 +17485,7 @@ void CopyCSV(const char *from, const char *to)
 	CBox cb(Savebox);
 	for (LLRect *box =cb.Start(); box!=NULL; box=cb.Next())
 		{
-		CString file = MkString("%s\\%s"CSV, from, cb.file());
+		CString file = MkString("%s\\%s" CSV, from, cb.file());
 		if (CFILE::exist(file))
 			filelist.push( file );
 		}
@@ -20417,7 +20417,7 @@ public:
 				continue;
 			symlist.Add(CSym(IdStr(rap->lle.Id()), rap->Summary(rap->scan, TRUE)));
 			}
-		symlist.Save("SCORE-RAPS"CSV);
+		symlist.Save("SCORE-RAPS" CSV);
 		}
 
 		// integrity check
@@ -20504,7 +20504,7 @@ public:
 			CRapGroup &group = grouplist[i];
 			symlist.Add(CSym(IdStr(group.id), group.Summary(TRUE, FALSE)));
 			}
-		symlist.Save("SCORE-GRPS"CSV);
+		symlist.Save("SCORE-GRPS" CSV);
 		}
 
 		// integrity check

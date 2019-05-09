@@ -344,7 +344,7 @@ CString InstagramAuthenticate(void)
 
 	//vars url = "https://instagram.com/oauth/authorize/?client_id=INSTAGRAM_CLIENT_ID&redirect_uri=http://localhost&response_type=token&scope=public_content";
 	Throttle(instaticks, INSTAGRAMTICKS);
-	url = "https://api.instagram.com/oauth/authorize/?client_id="CLIENTID"&redirect_uri="AUTHORIZATION_REDIRECT_URI"&response_type=code&scope=public_content";
+	url = "https://api.instagram.com/oauth/authorize/?client_id=" CLIENTID "&redirect_uri=" AUTHORIZATION_REDIRECT_URI "&response_type=code&scope=public_content";
 	if (f.Download(url, "itest1.html"))
 		{
 		Log(LOGERR, "Could not get instagram auth #1");
@@ -381,7 +381,7 @@ CString InstagramAuthenticate(void)
 		Log(LOGERR, "Could not get instagram code #4");
 		return "";
 		}
-	url = "https://api.instagram.com/oauth/access_token?POST?client_id="CLIENTID"&client_secret="CLIENT_SECRET"&grant_type=authorization_code&redirect_uri="AUTHORIZATION_REDIRECT_URI"&code="+code;
+	url = "https://api.instagram.com/oauth/access_token?POST?client_id=" CLIENTID "&client_secret=" CLIENT_SECRET "&grant_type=authorization_code&redirect_uri=" AUTHORIZATION_REDIRECT_URI "&code=" + code;
 	if (f.Download(url, "itest2.html"))
 		{
 		Log(LOGERR, "Could not get instagram token_access #5");
