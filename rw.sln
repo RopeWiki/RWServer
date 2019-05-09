@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RW", "rw\RW.vcxproj", "{792430AD-2BD4-43AE-B4D6-6BB7364A5484}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "httprobot", "httprobot\httprobot.vcxproj", "{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}"
@@ -26,8 +28,8 @@ Global
 		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Release|Win32.Build.0 = Release|Win32
 		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Unicode|Win32.ActiveCfg = Release|Win32
 		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Unicode|Win32.Build.0 = Release|Win32
-		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Debug|Win32.ActiveCfg = Release|Win32
-		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Debug|Win32.Build.0 = Release|Win32
+		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Debug|Win32.Build.0 = Debug|Win32
 		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Release|Win32.ActiveCfg = Release|Win32
 		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Release|Win32.Build.0 = Release|Win32
 		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Unicode|Win32.ActiveCfg = Unicode|Win32
@@ -35,5 +37,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A20499FF-CE78-490F-90E1-ADF33DCB8881}
 	EndGlobalSection
 EndGlobal
