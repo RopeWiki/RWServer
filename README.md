@@ -48,16 +48,20 @@ It's likely that there will be more bugs due to the differences between compiler
   * gdal111.dll
   * geos.dll
   * geos_c.dll
+  * iconv.dll
   * libcurl.dll
+  * libeay32.dll
   * libexpat.dll
   * libmysql.dll
   * libpq.dll
   * openjp2.dll
+  * phantomjs.exe
+  * phantomjs.js
+  * proj.dll
   * spatialite.dll
+  * ssleay32.dll
   * xerces-c_2_8.dll
   * zlib1.dll
-  * libeay32.dll
-  * ssleay32.dll
 
 * run rwr.exe and make sure it starts up ok. You should see the line 'Actively Listening'
 * test from a KML/GPX download link from RopeWiki.com.
