@@ -424,7 +424,8 @@ CString GetToken(const char *str, int n, const char *separator)
 
 int GetTokenPre(const char *line, int count, char sep)
 {
-	for (register int i=0, c=0; line[i]!=0; ++i)
+	register int i, c;
+	for (i=0, c=0; line[i]!=0; ++i)
 		if (line[i]==sep)
 			if (++c>=count)
 				return i;
@@ -433,7 +434,8 @@ int GetTokenPre(const char *line, int count, char sep)
 
 int GetTokenPos(register const char *line, register int count, register char sep)
 {
-	for (register int i=0, c=0; line[i]!=0 && c<count; ++i)
+	register int i, c;
+	for (i=0, c=0; line[i]!=0 && c<count; ++i)
 		if (line[i]==sep)
 			++c;
 	return i;
@@ -2168,7 +2170,8 @@ int MessageBox(LPCTSTR lpszText, BOOL newline)
 		{
 		char space[80];
 		int len = 75-strlen(lpszText);
-		for (int i=0; i<len; ++i) space[i] = ' ';
+		int i;
+		for (i=0; i<len; ++i) space[i] = ' ';
 		space[i]=0;
 		ThreadLock();
 		_cprintf("%s%s\r", lpszText, space);
@@ -2300,7 +2303,8 @@ char *StrFixChar(char *str, char from, char to)
 
 	// trim string
 	for ( ; *str!=0 && isspace(*str); ++str);
-	for (int n=strlen(str)-1; n>=0 && isspace(str[n]); --n);
+	int n;
+	for (n=strlen(str)-1; n>=0 && isspace(str[n]); --n);
 	str[n+1] = 0;
     return str;
 }
@@ -3137,7 +3141,8 @@ void CStringArrayList::Reset(int presetsize)
 void CStringArrayList::Remove(int n)
 {
 	CString *del = data[n];
-	for (int i=n; i<size-1; ++i)
+	int i;
+	for (i=n; i<size-1; ++i)
 		data[i] = data[i+1];
 	data[i] = del;
 	del->Empty();
@@ -3611,7 +3616,9 @@ vara::vara(const char *ptr, const char *sep)
 	if (!ptr)
 		return;
 	int seplen = strlen(sep), len = strlen(ptr);
-    for (int i=0, lasti=0; i<len; ++i)
+	int i;
+	int lasti;
+    for (i=0, lasti=0; i<len; ++i)
 	  if (strnicmp(ptr+i, sep, seplen)==0)
 	     {
          Add(vars(ptr+lasti, i-lasti));
@@ -3656,7 +3663,8 @@ vars vars::trim()
 	const char *str = GetBuffer();
 	while (isspace(*str) && *str!=0)
 		++str;
-	for (var len=strlen(str)-1; len>=0 && isspace(str[len]); --len);
+	var len;
+	for (len=strlen(str)-1; len>=0 && isspace(str[len]); --len);
 	return vars(str, len+1);
 }
 

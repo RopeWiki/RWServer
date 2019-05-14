@@ -348,7 +348,8 @@ void RunHistory(CString sym, int runw, int rulew, int simw);
 
 inline int GetLength(const char *strval)
 {
-for (register int len=0; strval[len]!=0 && strval[len]!=','; ++len);
+register int len;
+for (len=0; strval[len]!=0 && strval[len]!=','; ++len);
 return len;
 }
 

@@ -91,7 +91,8 @@ for (int i=0; str[i]!=0; ++i)
  if (str[i]=='\\' && tolower(str[i+1])=='u')
 	{
 	const char *s = str;
-	for (int j=i+2; ishex(str[j]); ++j);
+	int j;
+	for (j=i+2; ishex(str[j]); ++j);
 	CString rep(s+i, j-i);
 	str.Replace(rep, "&#x"+rep.Mid(2)+";");
 	i = j;

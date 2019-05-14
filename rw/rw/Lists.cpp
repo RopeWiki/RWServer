@@ -865,7 +865,8 @@ int CSymList::Save(const char *sfile, BOOL withdata, BOOL hash, BOOL append)
 			int n = 0;
 			if (!append)
 				file.fputstr((withdata && !header.IsEmpty()) ? header : sfile);
-			for (int i=0; i<scount; ++i)
+			int i;
+			for (i=0; i<scount; ++i)
 				{
 				CString str = slist[i]->Save();
 				if (str.IsEmpty()) continue;
@@ -1833,7 +1834,8 @@ void CIdxList::Flush(void)
 // ============================= CLineList ===================================
 int cmpid(const char *line, const char *id, int idlen)
 {
-	for (register int i=0; line[i]!=0 && id[i]!=0 && i<idlen; ++i)
+	register int i;
+	for (i=0; line[i]!=0 && id[i]!=0 && i<idlen; ++i)
 		{
 		if (i==DATELEN)
 			{
@@ -1935,7 +1937,8 @@ void CLineList::Sort(int idxcol, int order)
 void CLineList::DeleteLine(int n)
 {
 	PROFILE("CLineList::Delete()");
-	for (int j=n; j<GetSize()-1; ++j)
+	int j;
+	for (j=n; j<GetSize()-1; ++j)
 		lines[j] = lines[j+1];
 	lines[j] = NULL;
 	lines.SetSize(GetSize()-1);
@@ -2417,7 +2420,8 @@ BOOL match(const char *str1, const char *str2, int tok, char col)
 	//CString t = GetToken(str2, tok, col);
 	int s = GetTokenPos(str2, tok, col);
 	str2 += s;
-	for (int len=0; str2[len]!=0 && str2[len]!=col; ++len);
+	int len;
+	for (len=0; str2[len]!=0 && str2[len]!=col; ++len);
 
 	if (*str1=='-') 
 		++str1;

@@ -766,7 +766,8 @@ int DistantPoint(tcoords &trkcoords, double maxdist, tcoord *newpoint = NULL, do
 {
 	double dist = 0, d = 0;
 	int size1 = trkcoords.GetSize()-1;
-	for (int i=0; i<size1; ++i, dist+=d)
+	int i;
+	for (i=0; i<size1; ++i, dist+=d)
 		if ((dist+(d=Distance(trkcoords[i],trkcoords[i+1])))>maxdist)
 			break;
 	if (remainer)
@@ -786,7 +787,8 @@ int DistantPoint(tpoints &trkcoords, double maxdist, tpoint *newpoint = NULL, do
 {
 	double dist = 0, d = 0;
 	int size1 = trkcoords.GetSize()-1;
-	for (int i=0; i<size1; ++i, dist+=d)
+	int i;
+	for (i=0; i<size1; ++i, dist+=d)
 		if ((dist+(d=Distance(trkcoords[i],trkcoords[i+1])))>maxdist)
 			break;
 	if (remainer)
@@ -806,7 +808,8 @@ int ReverseDistantPoint(tcoords &trkcoords, double maxdist, tpoint *newpoint = N
 {
 	double dist = 0, d = 0;
 	int size1 = trkcoords.GetSize()-1;
-	for (int i=size1; i>0; --i, dist+=d)
+	int i;
+	for (i=size1; i>0; --i, dist+=d)
 		if ((dist+(d=Distance(trkcoords[i],trkcoords[i-1])))>maxdist)
 			break;
 	if (remainer)
@@ -826,7 +829,8 @@ int ReverseDistantPoint(tpoints &trkcoords, double maxdist, tpoint *newpoint = N
 {
 	double dist = 0, d = 0;
 	int size1 = trkcoords.GetSize()-1;
-	for (int i=size1; i>0; --i, dist+=d)
+	int i;
+	for (i=size1; i>0; --i, dist+=d)
 		if ((dist+(d=Distance(trkcoords[i],trkcoords[i-1])))>maxdist)
 			break;
 	if (remainer)
@@ -2778,7 +2782,8 @@ public:
 		error = 0;
 		
 		CArrayList <LLER>llelist(olist.length()-1);
-		for (int j=1, i=0; j<olist.length() && i<end; ++i)
+		int i=0;
+		for (int j=1; j<olist.length() && i<end; ++i)
 			{
 			llelist[i].elev = (float)ExtractNum(olist[j], "", ":", ",");
 			llelist[i].res = (float)ExtractNum(olist[j], "\"resolution\"", ":", ",");
@@ -4018,7 +4023,8 @@ public:
 		trappel *last = NULL;
 		//double mincfs, maxcfs, mintemp, maxtemp;
 		//mincfs = maxcfs = mintemp = maxtemp = InvalidNUM;
-		for (int i=0; i<n; ++i)
+		int i;
+		for (i=0; i<n; ++i)
 			{
 			trappel *rap = raplist[i];
 			if (raplist[i]->m() > maxlen)
@@ -6022,7 +6028,8 @@ void processTrk(void)
   ntiles = tilecache.GetModes();
   heighttotal = height + 2 + TEXTSIZE*2 + TILEHEIGHT*ntiles + FLAGSIZE+3;
 
-  for (int i = 1; i<n-1; ++i)
+  int i;
+  for (i = 1; i<n-1; ++i)
     {
 	trk[i].grade = (float)GRADEI(i,trk); //GRADE(trk[i-1].elev-trk[i+1].elev, trk[i+1].tdist-trk[i-1].tdist);
 	trk[i].grade2 = trk[i].grade-trk[i-1].grade;
@@ -6109,7 +6116,8 @@ void makeRappels(void)
 		
 		// do not start too early
 		int lastdelta=i;
-		for (int j=i+1; j<n-1 && Rap(trk[j].grade)>0; ++j)
+		int j;
+		for (j=i+1; j<n-1 && Rap(trk[j].grade)>0; ++j)
 			{
 			int deltaup = Rap(trk[j].grade+0.05) - Rap(oldg);
 			int deltadn = Rap(trk[j].grade-0.05) - Rap(oldg);
@@ -7149,7 +7157,8 @@ int Guide(const tcoord &coord, int &guide, tpoints *guiding, double distance = M
 		if (d>distance)
 			{
 			// check if other segments match better
-			for (int g=guide+1; g<guiding->length() && (d = DistanceToSegment(coord, (*guiding)[g-1], (*guiding)[g], t))>distance; ++g);
+			int g;
+			for (g=guide+1; g<guiding->length() && (d = DistanceToSegment(coord, (*guiding)[g-1], (*guiding)[g], t))>distance; ++g);
 			if (g>=guiding->length())
 				return FALSE; // out of track
 			guide = max(g, guide);
@@ -8113,7 +8122,8 @@ NULL
 	for (int i=0; i<id.GetLength(); ++i)
 		if (id[i]=='&')
 			{
-			for (int j=0; j<=5 && id[i+j]!=0 && id[i+j]!=';'; ++j);
+			int j;
+			for (j=0; j<=5 && id[i+j]!=0 && id[i+j]!=';'; ++j);
 			if (id[i+j]!=';')
 				id.Insert(i+1, AMP+ 1);
 			}
@@ -9432,7 +9442,8 @@ int AddRiver(CRiver *r)
 {		
 	int n = idlist.GetSize();
 	register double id = r->id;
-	for (int i=0; i<n && idlist[i]!=id; ++i);
+	int i;
+	for (i=0; i<n && idlist[i]!=id; ++i);
 	if (i<n)
 		return FALSE;
 	idlist.AddTail(id);
@@ -9735,7 +9746,8 @@ int RiverListPoint(const char *param, CSym *sym, CSymList *ulist, CSymList *dlis
 		LLRect bbox; 
 		bbox = LLDistance(lle.lat, lle.lng, distance);
 
-		for (int i=0; isdigit(dist[i]); ++i);
+		int i;
+		for (i=0; isdigit(dist[i]); ++i);
 		if (dist[i]=='A')
 			{
 			// area
@@ -10343,7 +10355,8 @@ CString WatershedURL(CSym &sym)
 		// get watershed info
 		const char *match = "watershed_characterization";
 		vara httplist(sym.GetStr(ITEM_DESC), "http:");
-		for (int h=0; h<httplist.length() && !strstr(httplist[h], match); ++h);
+		int h;
+		for (h=0; h<httplist.length() && !strstr(httplist[h], match); ++h);
 		if (h>=httplist.length())
 			return "";
 
@@ -11513,7 +11526,8 @@ int CanyonMap(const char *param, CKMLOut &out, BOOL map, CStringArrayList *filel
 	double n[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 	BOOL err = FALSE;
-	for (int i=1; i<4 && i<argv.length(); ++i)
+	int i;
+	for (i=1; i<4 && i<argv.length(); ++i)
 		err |= (n[i] = CGetNum(argv[i]) ) == InvalidNUM;
 	if (err || i<3)
 		{
@@ -13526,7 +13540,8 @@ float dmstodeg(const char *str, char spc)
 	if (deg == 0 || deg<-180 || deg>180) 
 		return InvalidNUM;
 
-	for (int i=0; str[i]!=0 && !isalpha(str[i]); ++i);
+	int i;
+	for (i=0; str[i]!=0 && !isalpha(str[i]); ++i);
 	char last = str[i];
 	
 	if (!sig && toupper(last)=='W') sig = -1;
@@ -13994,7 +14009,9 @@ http://arcgis-owarcgis-1022610217.us-east-1.elb.amazonaws.com/arcgis/services/OW
 
 int SkipNumId(CString &id)
 {
-	for (int i=0, n=id.GetLength(); i<n && (isdigit(id[i]) || isspace(id[i])); ++i);
+	int i;
+	int n=id.GetLength();
+	for (i=0; i<n && (isdigit(id[i]) || isspace(id[i])); ++i);
 	if (i>0)
 		{
 		id.Delete(0, i);
@@ -17740,7 +17757,8 @@ public:
 		ptrlist.Sort(cmpid);
 
 		int max = newlist.GetSize();
-		for (int i=0, j=0; i<max && j<ptrlist.GetSize(); )
+		int i, j;
+		for (i=0, j=0; i<max && j<ptrlist.GetSize(); )
 			{
 			switch (cmpid(&newlist[i], &ptrlist[j]))
 				{
@@ -18971,7 +18989,8 @@ int Map(BOOL delnull = FALSE)
 			  }
 			else
 			  {
-			  for (int dup=0; dup<i && scanlist[dup].id!=scan->id; ++dup);
+			  int dup;
+			  for (dup=0; dup<i && scanlist[dup].id!=scan->id; ++dup);
 			  if (scanlist[dup].oid == scan->oid)
 				{
 				++invalids;
@@ -20764,7 +20783,8 @@ public:
 			vars raps;
 			vara list;
 			float dist = 0;
-			for (int r=0; r<group.raplist.GetSize(); r++)
+			int r;
+			for (r=0; r<group.raplist.GetSize(); r++)
 				{
 				trappel *rap = group.raplist[r];
 				if (r>0)
@@ -21100,7 +21120,8 @@ void ScanSave(CSymList &list)
 	list.Sort(cmpscan);
 
 	// compute order
-	for (int mid=0; mid<list.GetSize() && list[mid].GetNum(SCPR)>=0; ++mid);
+	int mid;
+	for (mid=0; mid<list.GetSize() && list[mid].GetNum(SCPR)>=0; ++mid);
 	for (int i=0; i<list.GetSize(); ++i)
 		list[i].SetNum(SCORDER, i<mid ? i+1 : i-list.GetSize());
 	list.Save(SCANFILE);

@@ -844,7 +844,8 @@ void ComputeFlow(void)
 			{
 			// find nearest match, avoid i out of bounds
 			double G = CDATA::GetNum(line[2]);
-			for (int i=1; i<GQ.GetSize()-1 && GQ[i].G<G; ++i);
+			int i;
+			for (i=1; i<GQ.GetSize()-1 && GQ[i].G<G; ++i);
 			double minG = GQ[i-1].G;
 			double minQ = GQ[i-1].Q;
 			double maxG = GQ[i].G;
@@ -1191,7 +1192,8 @@ int USGS_getsites(DownloadFile &f, CSymList &list, const char *params)
 		  vara table(f.memory, "\n");
 
 		  // skip header
-		  for (int i=0; i<table.length() && table[i][0]=='#'; ++i);
+		  int i;
+		  for (i=0; i<table.length() && table[i][0]=='#'; ++i);
 
 		  for (i=i+2; i<table.length(); ++i)
 			{
@@ -1247,8 +1249,10 @@ BOOL CompareDescription(const char *desc1, const char *desc2)
 
 	vara riverp = vars(desc1).split(" ");
 	vara descp = vars(desc2).split(" ");
-	for (int p=0; p<riverp.length() && riverp[p].length()<=2; ++p);
-	for (int q=0; q<descp.length() && descp[q].length()<=2; ++q);
+	int p;
+	for (p=0; p<riverp.length() && riverp[p].length()<=2; ++p);
+	int q;
+	for (q=0; q<descp.length() && descp[q].length()<=2; ++q);
 
 	// match river name
 	if (p<riverp.length() && q<descp.length() && riverp[p]==descp[q])
@@ -4989,7 +4993,8 @@ void getnooasites(CSymList &nooa)
 		  vara table(f.memory, "\n");
 
 		  // skip header
-		  for (int i=0; i<table.length() && table[i][0]!='-'; ++i);
+		  int i;
+		  for (i=0; i<table.length() && table[i][0]!='-'; ++i);
 
 		  for (i=i+1; i<table.length(); ++i)
 			{
@@ -5302,7 +5307,8 @@ class counters {
 
 	void add(const char *mode, int res, const char *url)
 	{
-	for (int mi=0; mi<mn && strcmp(mid[mi],mode)!=0; ++mi);
+	int mi;
+	for (mi=0; mi<mn && strcmp(mid[mi],mode)!=0; ++mi);
 	if (mi==mn) 
 		{
 		// setup new mode
@@ -5737,7 +5743,7 @@ void WaterflowLoadSites(int loadusgs)
 
 	// load sort
 	sortlist.SetSize(sites.GetSize());
-	for (i=0; i<sites.GetSize(); ++i)
+	for (int i=0; i<sites.GetSize(); ++i)
 		{
 		tsite &s = sortlist[i] = tsite( csites[i] );
 		if (s.lat==InvalidNUM || s.lng==InvalidNUM)
