@@ -5,16 +5,16 @@ This repository houses code originally developed by Luca Chiarabini run by an ex
 ## Changes
 
 Before beginning the repository, these changes were made to the original code recovered from Luca's computer:
-* Moved sensitive information in code (passwords, etc) into sensitive.h which is not included in this repository
-* Identified close to the minimum number of files for the build to succeed, out of the thousands of files in the original folder
+* Moved passwords and other sensitive information in the code to passwords.h, which is not included in this repository
+* Identified the minimum number of files for the build to succeed, out of the thousands of files in the original folder
 
 ## Development environment setup
 
-The RopeWiki executables can be built with Visual Studio 2010, but not the free Express edition.
+The RopeWiki codebase is upgraded to use Visual Studio 2017. (The original work by Luca was in VS2008).
 
 ## HTTP server
 
-'rw.exe' listens for FastCGI commands on port 9001. In order to use it from a web browser, a HTTP server is needed. For local testing purposes, on Windows this can be set up using nginx. Instructions are in the 'Installation steps' below.
+'rw.exe' listens for FastCGI commands on port 9001. Nginx is a commonly paired HTTP server that will forward incoming requests using this protocol, and is what Luca chose for the RW server to use. Instructions to configure nginx are in the 'Installation steps' below.
 
 ## Notes
 
@@ -77,16 +77,11 @@ It's likely that there will be more bugs due to the differences between compiler
   - ZIP: Page+Maps (http://localhost/rwr?filename=Behunin_Canyon.zip&zipx=Behunin_Canyon&bslinks=off&trlinks=off&summary=off&docwidth=1903&ext=.rw) - seems to work
   - ZIP: P+M+Links (http://localhost/rwr?filename=Behunin_Canyon+.zip&zipx=Behunin_Canyon&bslinks=on&summary=off&docwidth=1903&ext=.rw) - probably not working - took long time, produced truncated zip
 
-Other commands have not been attempted yet. We hava not tried to run the 'httprobot' executable. Waterflow analysis broke when loading and is turned off in code.
+Other commands have not been attempted yet. We have not tried to run the 'httprobot' executable. Waterflow analysis broke when loading and is turned off in code.
 
 ## RopeWiki references
 
-To have RopeWiki call a new RWServer, the server location must be updated in the ropewiki.com MediaWiki content.  References to luca.ropewiki.com (or old server) must be changed in the following [Templates](http://ropewiki.com/index.php?title=Special:Templates)
-
-* KMLDisplay
-* KMLDisplay2
-* KMLLink
-* KMLExtract
+To have RopeWiki call a new RWServer, the server URL must be updated in the ropewiki.com MediaWiki content.  For templates, a global variable is set as its own template, named 'RWServerUrl'. Currently this resolves to "http://luca.ropewiki.com". For the .js code, a similar global variable is named at the top of the Common.js file.
 
 ## Contributors
 
