@@ -68,20 +68,26 @@ It's likely that there will be more bugs due to the differences between compiler
 * if that does not succeed, you can test from a local web browser on the server, with something like this URL: "http://localhost/rwr?gpx=on&filename=Behunin_Canyon&url=http://ropewiki.com/images/c/cb/Behunin_Canyon.kml"
 * You should see in the rw.exe output that it received the command, and the web browser should give you a "Behunin_Canyon.gpx" file to download.
 
-## Tests
-
-- KML->GPX conversion commands are working. Make sure all links in the RopeWiki.com templates point to the luca.ropewiki.com server address.
+## Development TODO:
+Working:
+- KML->GPX conversion commands are working. 
 - ZIP/PDF download:
-  - PDF: Page (http://localhost/rwr?filename=Behunin_Canyon.pdf&pdfx=Behunin_Canyon&summary=off&docwidth=1903&ext=.rw) - seems to work
+  - PDF: Page (http://localhost/rwr?filename=Behunin_Canyon.pdf&pdfx=Behunin_Canyon&summary=off&docwidth=1903&ext=.rw)
   - PDF: Map (http://localhost/rwr?filename=Behunin_Canyon_MAP.pdf&pdfx=Map?pagename=Behunin_Canyon&summary=off&docwidth=1903&ext=.rw)
-  - ZIP: Page+Maps (http://localhost/rwr?filename=Behunin_Canyon.zip&zipx=Behunin_Canyon&bslinks=off&trlinks=off&summary=off&docwidth=1903&ext=.rw) - seems to work
-  - ZIP: P+M+Links (http://localhost/rwr?filename=Behunin_Canyon+.zip&zipx=Behunin_Canyon&bslinks=on&summary=off&docwidth=1903&ext=.rw) - probably not working - took long time, produced truncated zip
+  - ZIP: Page+Maps (http://localhost/rwr?filename=Behunin_Canyon.zip&zipx=Behunin_Canyon&bslinks=off&trlinks=off&summary=off&docwidth=1903&ext=.rw)
 
-Other commands have not been attempted yet. We have not tried to run the 'httprobot' executable. Waterflow analysis broke when loading and is turned off in code.
+Not working / TODO:
+  - Wikiloc waypoint downloading not working (example: map here: http://ropewiki.com/Matacanes_(upper) )
+  - ZIP: P+M+Links (http://localhost/rwr?filename=Behunin_Canyon+.zip&zipx=Behunin_Canyon&bslinks=on&summary=off&docwidth=1903&ext=.rw) - took long time, produced truncated zip
+  - we have not tried to run the 'httprobot' executable. 
+  - Waterflow analysis broke when loading and is turned off in code.
 
 ## RopeWiki references
 
-To have RopeWiki call a new RWServer, the server URL must be updated in the ropewiki.com MediaWiki content.  For templates, a global variable is set as its own template, named 'RWServerUrl'. Currently this resolves to "http://luca.ropewiki.com". For the .js code, a similar global variable is named at the top of the Common.js file.
+To have RopeWiki point to a new RWServer, the server URL must be updated in the ropewiki.com MediaWiki content at the following locations:
+  - For Templates, a global variable is set as its own template, named 'RWServerUrl', which resolves to "http://luca.ropewiki.com".
+  - For the .js code, a similar global variable is named at the top of the Common.js file.
+  - Also, similar variable at the top of ropewiki.com/PDFScript (this page is called by ropewiki.com/PDFList)
 
 ## Contributors
 
