@@ -74,6 +74,7 @@ To have RopeWiki point to a new RWServer, the server URL must be updated in the 
   - For Templates, a global variable is set as its own template, named 'RWServerUrl', which resolves to "http://luca.ropewiki.com".
   - For the .js code, a similar global variable is named at the top of the Common.js file.
   - Also, similar variable at the top of ropewiki.com/PDFScript (this page is called by ropewiki.com/PDFList)
+  - Templates KMLDisplay & KMLDisplay2 are unable to use the RWServerURL macro and must be manually changed
 
 ## Contributors
 
@@ -89,9 +90,9 @@ Working / Tested:
 
 Not working / TODO:
   - Update MediaWiki version so RopeWiki searchbar handles partial matches and spaces correctly
-  - Wikiloc waypoint downloading not working (example: map here: http://ropewiki.com/Matacanes_(upper) )
-  - Descente canyon kml downloading not working (example: map here: http://ropewiki.com/Vero )
-  - BluuGnome charges $2.25 for GPX file downloads. Not sure if Luca scraped it off the public page or not (example: http://ropewiki.com/Not_Imlay_Canyon)
+  - Wikiloc waypoint downloading not working; needs sign-in account (example: map here: http://ropewiki.com/Matacanes_(upper) )
+  - Descente-canyon kml downloading not working; site is redesigned (example: map here: http://ropewiki.com/Vero )
+  - BluuGnome kml downloading not working; now charges $2.25 for GPX file downloads. Not sure if Luca scraped it off the public page or not (example: http://ropewiki.com/Not_Imlay_Canyon)
   - ZIP: P+M+Links (http://localhost/rwr?filename=Behunin_Canyon+.zip&zipx=Behunin_Canyon&bslinks=on&summary=off&docwidth=1903&ext=.rw) - took long time, produced truncated zip
   - we have not tried to run the 'httprobot' executable. 
   - Waterflow analysis broke when loading and is turned off in code.
