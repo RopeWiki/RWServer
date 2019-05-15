@@ -80,16 +80,18 @@ To have RopeWiki point to a new RWServer, the server URL must be updated in the 
 This original codebase was created by Luca Chiarabini. Michelle Nilles brought the code back online and installed to an AWS server provided by Dav, and also brought the code to a state that could be distributed publicly and published here to Github.  Some of this document attributed to Ben on GitHub was written by Fredrik.
 
 ## Development TODO:
-Working:
+Working / Tested:
 - KML->GPX conversion commands are working. 
-- ZIP/PDF download:
-  - PDF: Page (http://localhost/rwr?filename=Behunin_Canyon.pdf&pdfx=Behunin_Canyon&summary=off&docwidth=1903&ext=.rw)
-  - PDF: Map (http://localhost/rwr?filename=Behunin_Canyon_MAP.pdf&pdfx=Map?pagename=Behunin_Canyon&summary=off&docwidth=1903&ext=.rw)
-  - ZIP: Page+Maps (http://localhost/rwr?filename=Behunin_Canyon.zip&zipx=Behunin_Canyon&bslinks=off&trlinks=off&summary=off&docwidth=1903&ext=.rw)
+- ZIP/PDF download (pop-up link to right of canyon name):
+  - PDF: Page
+  - PDF: Map
+  - ZIP: Page+Maps
 
 Not working / TODO:
+  - Update MediaWiki version so RopeWiki searchbar handles partial matches and spaces correctly
   - Wikiloc waypoint downloading not working (example: map here: http://ropewiki.com/Matacanes_(upper) )
   - Descente canyon kml downloading not working (example: map here: http://ropewiki.com/Vero )
+  - BluuGnome charges $2.25 for GPX file downloads. Not sure if Luca scraped it off the public page or not (example: http://ropewiki.com/Not_Imlay_Canyon)
   - ZIP: P+M+Links (http://localhost/rwr?filename=Behunin_Canyon+.zip&zipx=Behunin_Canyon&bslinks=on&summary=off&docwidth=1903&ext=.rw) - took long time, produced truncated zip
   - we have not tried to run the 'httprobot' executable. 
   - Waterflow analysis broke when loading and is turned off in code.
