@@ -238,6 +238,88 @@ void inetrwzip::write(const void *buffer, int size)
 		vars str = opt.join("\n");
 		f->write((void *)((const char *)str), strlen(str));
 		*/
+
+		// This is a workaround for a problem where the PDFList script gives us some newlines that makes phantomjs hang
+		// and eventually time out without any useful error message. Example, the results of this query
+		//	http://ropewiki.com/index.php/PDFList?action=raw&templates=expand&ctype=application/x-zope-edit&noscript=on&pagename=Behunin_Canyon&bslinks=on&summary=off&docwidth=1903&ext=.rw
+		// contains this:
+		//	var linedata="\
+		//	*Behunin_Canyon http://ropewiki.com/index.php/PDFList?pagename=Behunin+Canyon\n\
+		//	**(INFO).pdf http://ropewiki.com/Behunin_Canyon\n\
+		//	**(MAP).pdf http://ropewiki.com/index.php/Map?pagename=Behunin+Canyon\n\
+		//	**(MAP).kml http://ropewiki.com/images/c/cb/Behunin_Canyon.kml\n\
+		//	**BS1.kml 
+		//	http://luca.ropewiki.com/rwr?gpx=off&filename=X&kmlx=http://bluugnome.com/cyn_route/zion_behunin/zion_behunin-canyon.aspx&ext=.kml\n\
+		//	...
+		//
+		// The problem there is that the **BS1.kml line ends with a newline without a backslash indicating
+		// that the string contains on the next line. The code below tries to fix up this situation by concatenating
+		// these lines. A more proper fix would be to figure out why PDFList gives us these lines, and fix it there.
+		// - Fredrik
+		//
+		// TODO: Remove the code block below when we have fixed the PDFList issue.
+		do
+		{
+			// Create an array of lines from the input string.
+			vara lines(data, "\n");
+
+			// Loop over the lines.
+			bool parsingstring = false;		// Not parsing a string initially.
+			for(int i = 0; i < lines.length(); i++)
+			{
+				// Remember if we were parsing a string when we started this line.
+				bool wasparsingstring = parsingstring;
+
+				// Get the current line and look for " characters.
+				vars currentline = lines[i];
+				int len = currentline.length();
+				for(int j = 0; j < len; j++)
+				{
+					if(currentline[j] == '\"')
+					{
+						// This " indicates that we started parsing a string, or stopped.
+						parsingstring = !parsingstring;
+					}
+				}
+
+				// Having reached the end of the line, check if we are currently parsing a string.
+				if(parsingstring)
+				{
+					// Does it end with a backslash?
+					if(len >= 1 && currentline[len - 1] == '\\')
+					{
+						// This line has the proper ending for the string to continue on the next line.
+					}
+					else
+					{
+						// printf("Found possible problem: '%s'\n", currentline);
+
+						// In this case, we seem to have a line in a string that ends without a backslash.
+						// Check if there is a line after this, which we can add in (eventually essentially removing the newline character).
+						if(i + 1 < lines.length())
+						{
+							// Add the next line to this line.
+							lines[i] = currentline + lines[i + 1];
+
+							// Remove that next line.
+							lines.RemoveAt(i + 1);
+
+							// Go back one step - we need to look at this line again, since the concatenated line might also
+							// have an improper ending.
+							i--;
+
+							// Also, since we are looking at this whole line again, any " we found on this line before don't
+							// count, we will find them again.
+							parsingstring = wasparsingstring;
+						}
+					}
+				}
+			}
+
+			// Put the lines back together into a string.
+			data = lines.join("\n");
+		}
+		while(0);
 			
 		vara lines(data, "\n");
 		for (int i=0; i<lines.length(); ++i)
