@@ -68,20 +68,6 @@ It's likely that there will be more bugs due to the differences between compiler
 * if that does not succeed, you can test from a local web browser on the server, with something like this URL: "http://localhost/rwr?gpx=on&filename=Behunin_Canyon&url=http://ropewiki.com/images/c/cb/Behunin_Canyon.kml"
 * You should see in the rw.exe output that it received the command, and the web browser should give you a "Behunin_Canyon.gpx" file to download.
 
-## Development TODO:
-Working:
-- KML->GPX conversion commands are working. 
-- ZIP/PDF download:
-  - PDF: Page (http://localhost/rwr?filename=Behunin_Canyon.pdf&pdfx=Behunin_Canyon&summary=off&docwidth=1903&ext=.rw)
-  - PDF: Map (http://localhost/rwr?filename=Behunin_Canyon_MAP.pdf&pdfx=Map?pagename=Behunin_Canyon&summary=off&docwidth=1903&ext=.rw)
-  - ZIP: Page+Maps (http://localhost/rwr?filename=Behunin_Canyon.zip&zipx=Behunin_Canyon&bslinks=off&trlinks=off&summary=off&docwidth=1903&ext=.rw)
-
-Not working / TODO:
-  - Wikiloc waypoint downloading not working (example: map here: http://ropewiki.com/Matacanes_(upper) )
-  - ZIP: P+M+Links (http://localhost/rwr?filename=Behunin_Canyon+.zip&zipx=Behunin_Canyon&bslinks=on&summary=off&docwidth=1903&ext=.rw) - took long time, produced truncated zip
-  - we have not tried to run the 'httprobot' executable. 
-  - Waterflow analysis broke when loading and is turned off in code.
-
 ## RopeWiki references
 
 To have RopeWiki point to a new RWServer, the server URL must be updated in the ropewiki.com MediaWiki content at the following locations:
@@ -92,3 +78,22 @@ To have RopeWiki point to a new RWServer, the server URL must be updated in the 
 ## Contributors
 
 This original codebase was created by Luca Chiarabini. Michelle Nilles brought the code back online and installed to an AWS server provided by Dav, and also brought the code to a state that could be distributed publicly and published here to Github.  Some of this document attributed to Ben on GitHub was written by Fredrik.
+
+## Development TODO:
+Working:
+- KML->GPX conversion commands are working. 
+- ZIP/PDF download:
+  - PDF: Page (http://localhost/rwr?filename=Behunin_Canyon.pdf&pdfx=Behunin_Canyon&summary=off&docwidth=1903&ext=.rw)
+  - PDF: Map (http://localhost/rwr?filename=Behunin_Canyon_MAP.pdf&pdfx=Map?pagename=Behunin_Canyon&summary=off&docwidth=1903&ext=.rw)
+  - ZIP: Page+Maps (http://localhost/rwr?filename=Behunin_Canyon.zip&zipx=Behunin_Canyon&bslinks=off&trlinks=off&summary=off&docwidth=1903&ext=.rw)
+
+Not working / TODO:
+  - Wikiloc waypoint downloading not working (example: map here: http://ropewiki.com/Matacanes_(upper) )
+  - Descente canyon kml downloading not working (example: map here: http://ropewiki.com/Vero )
+  - ZIP: P+M+Links (http://localhost/rwr?filename=Behunin_Canyon+.zip&zipx=Behunin_Canyon&bslinks=on&summary=off&docwidth=1903&ext=.rw) - took long time, produced truncated zip
+  - we have not tried to run the 'httprobot' executable. 
+  - Waterflow analysis broke when loading and is turned off in code.
+  - Check other errors in the RWR.exe output window and fix as needed
+  - Replace FastCGI and nginx with a more integrated webserver
+  - Implement watchdog/heartbeat to alert if RWR.exe crashes
+  
