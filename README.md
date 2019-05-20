@@ -71,10 +71,9 @@ It's likely that there will be more bugs due to the differences between compiler
 ## RopeWiki references
 
 To have RopeWiki point to a new RWServer, the server URL must be updated in the ropewiki.com MediaWiki content at the following locations:
-  - For Templates, a global variable is set as its own template, named 'RWServerUrl', which resolves to "http://luca.ropewiki.com".
+  - For Templates, a global variable is set as its own template, named 'RWServerUrl', which resolves to "http://luca.ropewiki.com". Usage of this template throughout the ropewiki.com site should be as follows: {{RWServerUrl}}
   - For the .js code, a similar global variable is named at the top of the Common.js file.
   - Also, similar variable at the top of ropewiki.com/PDFScript (this page is called by ropewiki.com/PDFList)
-  - Templates KMLDisplay & KMLDisplay2 are unable to use the RWServerURL macro and must be manually changed
 
 ## Contributors
 
