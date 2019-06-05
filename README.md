@@ -72,7 +72,7 @@ It's likely that there will be more bugs due to the differences between compiler
 
 To have RopeWiki point to a new RWServer, the server URL must be updated in the ropewiki.com MediaWiki content at the following locations:
   - For Templates, a global variable is set as its own template, named 'RWServerUrl', which resolves to "http://luca.ropewiki.com". Usage of this template throughout the ropewiki.com site should be as follows: {{RWServerUrl}}
-  - For the .js code, a similar global variable is named at the top of the Common.js file.
+  - For the .js code, a similar global variable is named at the top of the Common.js file. (http://ropewiki.com/MediaWiki:Common.js)
   - Also, similar variable at the top of ropewiki.com/PDFScript (this page is called by ropewiki.com/PDFList)
 
 ## Contributors
