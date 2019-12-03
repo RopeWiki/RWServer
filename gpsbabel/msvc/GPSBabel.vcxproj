@@ -17,6 +17,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{EB2609DB-5800-45B2-BCB2-06D72F389DCA}</ProjectGuid>
     <RootNamespace>GPSBabel</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode|Win32'" Label="Configuration">
