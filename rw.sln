@@ -9,31 +9,59 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "httprobot", "httprobot\http
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GPSBabel", "gpsbabel\msvc\GPSBabel.vcxproj", "{EB2609DB-5800-45B2-BCB2-06D72F389DCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWHeartbeat", "RWHeartbeat\RWHeartbeat.csproj", "{28A41AB9-DF84-4151-93A9-4D98CBA271AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|Win32 = Debug|Win32
+		Release|Any CPU = Release|Any CPU
 		Release|Win32 = Release|Win32
+		Unicode|Any CPU = Unicode|Any CPU
 		Unicode|Win32 = Unicode|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{792430AD-2BD4-43AE-B4D6-6BB7364A5484}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{792430AD-2BD4-43AE-B4D6-6BB7364A5484}.Debug|Win32.ActiveCfg = Debug|Win32
 		{792430AD-2BD4-43AE-B4D6-6BB7364A5484}.Debug|Win32.Build.0 = Debug|Win32
+		{792430AD-2BD4-43AE-B4D6-6BB7364A5484}.Release|Any CPU.ActiveCfg = Release|Win32
 		{792430AD-2BD4-43AE-B4D6-6BB7364A5484}.Release|Win32.ActiveCfg = Release|Win32
 		{792430AD-2BD4-43AE-B4D6-6BB7364A5484}.Release|Win32.Build.0 = Release|Win32
+		{792430AD-2BD4-43AE-B4D6-6BB7364A5484}.Unicode|Any CPU.ActiveCfg = Release|Win32
+		{792430AD-2BD4-43AE-B4D6-6BB7364A5484}.Unicode|Any CPU.Build.0 = Release|Win32
 		{792430AD-2BD4-43AE-B4D6-6BB7364A5484}.Unicode|Win32.ActiveCfg = Release|Win32
 		{792430AD-2BD4-43AE-B4D6-6BB7364A5484}.Unicode|Win32.Build.0 = Release|Win32
+		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Debug|Win32.ActiveCfg = Debug|Win32
 		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Debug|Win32.Build.0 = Debug|Win32
+		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Release|Any CPU.ActiveCfg = Release|Win32
 		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Release|Win32.ActiveCfg = Release|Win32
 		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Release|Win32.Build.0 = Release|Win32
+		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Unicode|Any CPU.ActiveCfg = Release|Win32
+		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Unicode|Any CPU.Build.0 = Release|Win32
 		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Unicode|Win32.ActiveCfg = Release|Win32
 		{F88CB53A-CECE-4D1E-AC82-A4A9FD14FDA8}.Unicode|Win32.Build.0 = Release|Win32
+		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Debug|Win32.ActiveCfg = Debug|Win32
 		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Debug|Win32.Build.0 = Debug|Win32
+		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Release|Any CPU.ActiveCfg = Release|Win32
 		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Release|Win32.ActiveCfg = Release|Win32
 		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Release|Win32.Build.0 = Release|Win32
+		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Unicode|Any CPU.ActiveCfg = Unicode|Win32
 		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Unicode|Win32.ActiveCfg = Unicode|Win32
 		{EB2609DB-5800-45B2-BCB2-06D72F389DCA}.Unicode|Win32.Build.0 = Unicode|Win32
+		{28A41AB9-DF84-4151-93A9-4D98CBA271AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28A41AB9-DF84-4151-93A9-4D98CBA271AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28A41AB9-DF84-4151-93A9-4D98CBA271AB}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{28A41AB9-DF84-4151-93A9-4D98CBA271AB}.Debug|Win32.Build.0 = Debug|Any CPU
+		{28A41AB9-DF84-4151-93A9-4D98CBA271AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28A41AB9-DF84-4151-93A9-4D98CBA271AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28A41AB9-DF84-4151-93A9-4D98CBA271AB}.Release|Win32.ActiveCfg = Release|Any CPU
+		{28A41AB9-DF84-4151-93A9-4D98CBA271AB}.Release|Win32.Build.0 = Release|Any CPU
+		{28A41AB9-DF84-4151-93A9-4D98CBA271AB}.Unicode|Any CPU.ActiveCfg = Release|Any CPU
+		{28A41AB9-DF84-4151-93A9-4D98CBA271AB}.Unicode|Any CPU.Build.0 = Release|Any CPU
+		{28A41AB9-DF84-4151-93A9-4D98CBA271AB}.Unicode|Win32.ActiveCfg = Release|Any CPU
+		{28A41AB9-DF84-4151-93A9-4D98CBA271AB}.Unicode|Win32.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
