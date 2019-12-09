@@ -46,6 +46,7 @@
             this.txtSMTPKey = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnTestEmail = new System.Windows.Forms.Button();
+            this.btnHeartbeat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -70,11 +71,11 @@
             // 
             // btnRestart
             // 
-            this.btnRestart.Location = new System.Drawing.Point(433, 47);
+            this.btnRestart.Location = new System.Drawing.Point(582, 248);
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(137, 65);
+            this.btnRestart.Size = new System.Drawing.Size(101, 40);
             this.btnRestart.TabIndex = 2;
-            this.btnRestart.Text = "Restart Server";
+            this.btnRestart.Text = "Restart";
             this.btnRestart.UseVisualStyleBackColor = true;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
@@ -93,7 +94,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRWProcess.Location = new System.Drawing.Point(237, 250);
             this.txtRWProcess.Name = "txtRWProcess";
-            this.txtRWProcess.Size = new System.Drawing.Size(446, 31);
+            this.txtRWProcess.Size = new System.Drawing.Size(339, 31);
             this.txtRWProcess.TabIndex = 4;
             this.txtRWProcess.Text = "C:\\rw\\RWR.exe";
             // 
@@ -149,7 +150,7 @@
             this.txtLastHeartbeat.Location = new System.Drawing.Point(237, 150);
             this.txtLastHeartbeat.Name = "txtLastHeartbeat";
             this.txtLastHeartbeat.ReadOnly = true;
-            this.txtLastHeartbeat.Size = new System.Drawing.Size(446, 31);
+            this.txtLastHeartbeat.Size = new System.Drawing.Size(339, 31);
             this.txtLastHeartbeat.TabIndex = 10;
             // 
             // label4
@@ -187,7 +188,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSMTPKey.Location = new System.Drawing.Point(237, 350);
             this.txtSMTPKey.Name = "txtSMTPKey";
-            this.txtSMTPKey.Size = new System.Drawing.Size(366, 31);
+            this.txtSMTPKey.Size = new System.Drawing.Size(339, 31);
             this.txtSMTPKey.TabIndex = 14;
             // 
             // label6
@@ -202,19 +203,31 @@
             // btnTestEmail
             // 
             this.btnTestEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTestEmail.Location = new System.Drawing.Point(609, 348);
+            this.btnTestEmail.Location = new System.Drawing.Point(582, 350);
             this.btnTestEmail.Name = "btnTestEmail";
-            this.btnTestEmail.Size = new System.Drawing.Size(74, 38);
+            this.btnTestEmail.Size = new System.Drawing.Size(101, 40);
             this.btnTestEmail.TabIndex = 15;
             this.btnTestEmail.Text = "Test";
             this.btnTestEmail.UseVisualStyleBackColor = true;
             this.btnTestEmail.Click += new System.EventHandler(this.btnTestEmail_Click);
+            // 
+            // btnHeartbeat
+            // 
+            this.btnHeartbeat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHeartbeat.Location = new System.Drawing.Point(582, 148);
+            this.btnHeartbeat.Name = "btnHeartbeat";
+            this.btnHeartbeat.Size = new System.Drawing.Size(101, 40);
+            this.btnHeartbeat.TabIndex = 16;
+            this.btnHeartbeat.Text = "Test";
+            this.btnHeartbeat.UseVisualStyleBackColor = true;
+            this.btnHeartbeat.Click += new System.EventHandler(this.btnHeartbeat_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(718, 563);
+            this.Controls.Add(this.btnHeartbeat);
             this.Controls.Add(this.btnTestEmail);
             this.Controls.Add(this.txtSMTPKey);
             this.Controls.Add(this.label6);
@@ -257,6 +270,7 @@
         private System.Windows.Forms.TextBox txtSMTPKey;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnTestEmail;
+        private System.Windows.Forms.Button btnHeartbeat;
     }
 }
 

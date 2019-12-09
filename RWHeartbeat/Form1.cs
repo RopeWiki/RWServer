@@ -56,7 +56,11 @@ namespace RWHeartbeat
                 var message = "RW server failed heartbeat - restarting";
                 SendEmail(message);
 
+                timer1.Stop();
+
                 RestartProcess();
+
+                Thread.Sleep(10000); //wait 10 sec for server to come back up
 
                 result = Ping(url);
 
@@ -68,9 +72,23 @@ namespace RWHeartbeat
 
                     StopHeartbeat();
                 }
+                else
+                {
+                    timer1.Start();
+                }
             }
         }
-        
+
+        private void btnHeartbeat_Click(object sender, EventArgs e)
+        {
+            var url = txtRWurl.Text;
+            var result = Ping(url);
+
+            txtLastHeartbeat.Text = result
+                ? DateTime.Now.ToString()
+                : "failed heartbeat";
+        }
+
         private void btnTestEmail_Click(object sender, EventArgs e)
         {
             SendEmail("RW Test Email");
@@ -190,6 +208,5 @@ namespace RWHeartbeat
             {
             }
         }
-
     }
 }
