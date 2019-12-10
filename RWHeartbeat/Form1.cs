@@ -186,7 +186,18 @@ namespace RWHeartbeat
                 Subject = subject,
                 Body = ""
             };
-            mailMsg.To.Add(txtEmailRecipients.Text);
+
+            var addresses = txtEmailRecipients.Text.Split(new[] {"\r\n", "\r", "\n"}, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (var entry in addresses)
+            {
+                try
+                {
+                    mailMsg.To.Add(entry);
+                }
+                catch (FormatException) { }
+                catch (ArgumentException) { }
+            }
 
             smtpClient.Send(mailMsg);
         }
