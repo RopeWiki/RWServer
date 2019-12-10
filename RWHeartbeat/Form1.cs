@@ -199,7 +199,11 @@ namespace RWHeartbeat
                 catch (ArgumentException) { }
             }
 
-            smtpClient.Send(mailMsg);
+            try
+            {
+                smtpClient.Send(mailMsg);
+            }
+            catch (InvalidOperationException) { }
         }
 
         private void LoadSMTPKey()
