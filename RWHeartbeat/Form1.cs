@@ -140,6 +140,7 @@ namespace RWHeartbeat
             var path = txtRWProcess.Text;
 
             var processName = Path.GetFileNameWithoutExtension(path);
+            var workingDirectory = Path.GetDirectoryName(path);
 
             var processes = Process.GetProcessesByName(processName);
 
@@ -153,7 +154,12 @@ namespace RWHeartbeat
 
             try
             {
-                Process.Start(path);
+                using (Process process = new Process())
+                {
+                    process.StartInfo.FileName = path;
+                    process.StartInfo.WorkingDirectory = workingDirectory ?? "";
+                    process.Start();
+                }
             }
             catch (Exception)
             {
