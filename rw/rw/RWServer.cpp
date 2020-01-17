@@ -449,11 +449,14 @@ void _process(FCGX_Request *request)
 		}
 
 		if (url = ucheck(query, "user=")) {
-			user = "from user " + ExtractString(url, "", "", "&") + " at";			
+			user = ExtractString(url, "", "", "&");			
 		}
 
 		if (!user || user == "") {
 			user = "from";
+		}
+		else {
+			user = "from user " + user + " at";
 		}
 
 		Log(LOGINFO, "Incoming request %s %s", user, ipaddr);
