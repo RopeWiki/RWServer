@@ -25,5 +25,6 @@ void ProcessProfile(const char* url, FCGX_Stream* FCGX_stdout);
 void ProcessRWZDownload(const char* url, FCGX_Stream* FCGX_stdout);
 void ProcessRWBeta(const char* url, FCGX_Stream* FCGX_stdout);
 void ProcessTest(const char* url, FCGX_Stream* FCGX_stdout);
+void ProcessHeartbeat(const char* url, FCGX_Stream* FCGX_stdout);
 void ProcessCTable(const char* url, FCGX_Stream* FCGX_stdout, char* header);
 

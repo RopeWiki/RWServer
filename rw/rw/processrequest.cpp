@@ -584,6 +584,13 @@ void ProcessTest(const char* url, FCGX_Stream* FCGX_stdout)
 	FCGX_PutS("<html><body></body></html>", FCGX_stdout);
 }
 
+void ProcessHeartbeat(const char* url, FCGX_Stream* FCGX_stdout)
+{
+	FCGX_PutS("Access-Control-Allow-Origin: *\r\n", FCGX_stdout);
+	FCGX_PutS("Content-Type: text/html\r\n", FCGX_stdout);
+	FCGX_PutS("\r\n", FCGX_stdout);
+	FCGX_PutS("<html><body></body></html>", FCGX_stdout);
+}
 void ProcessCTable(const char* url, FCGX_Stream* FCGX_stdout, char* header)
 {
 	// Output response headers

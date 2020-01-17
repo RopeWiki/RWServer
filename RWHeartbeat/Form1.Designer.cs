@@ -132,7 +132,7 @@
             this.txtRWurl.Name = "txtRWurl";
             this.txtRWurl.Size = new System.Drawing.Size(446, 31);
             this.txtRWurl.TabIndex = 8;
-            this.txtRWurl.Text = "http://luca.ropewiki.com/rwr?test=heartbeat";
+            this.txtRWurl.Text = "http://luca.ropewiki.com/rwr?heartbeat";
             // 
             // label3
             // 

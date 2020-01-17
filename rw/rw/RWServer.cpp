@@ -431,69 +431,75 @@ void _process(FCGX_Request *request)
 	CString user;
 
 	char * method = FCGX_GetParam("REQUEST_METHOD", envp);
-	if (stricmp(method, "GET")==0 || stricmp(method, "POST")==0) // just headers
-        {
-			// Output query results
-			CString q = FCGX_GetParam("QUERY_STRING", envp); 
-			q.Replace("%25", "%");
-			q.Replace("%3D", "=");
+	if (stricmp(method, "GET") == 0 || stricmp(method, "POST") == 0) // just headers
+	{
+		// Output query results
+		CString q = FCGX_GetParam("QUERY_STRING", envp);
+		q.Replace("%25", "%");
+		q.Replace("%3D", "=");
 
-			const char *query = q;
-			//P.PROCESSOUT(query, postdata, postlen);  
-			const char *url = NULL;
+		const char *query = q;
+		//P.PROCESSOUT(query, postdata, postlen);  
+		const char *url = NULL;
 
-			if (url=ucheck(query, "user=")) {
-				user = ExtractString(url, "", "", "&");
+		if (url = ucheck(query, "heartbeat"))
+		{
+			ProcessHeartbeat(url, FCGX_stdout);
+			return;
+		}
+
+		if (url = ucheck(query, "user=")) {
+			user = "from user " + ExtractString(url, "", "", "&") + " at";			
 		}
 
 		if (!user || user == "") {
-			user = "<guest>";
+			user = "from";
 		}
 
-		Log(LOGINFO, "Incoming request from %s at %s", user, ipaddr);
+		Log(LOGINFO, "Incoming request %s %s", user, ipaddr);
 
 		const char *ext;
-		ext = strrchr(query,'.');
-		if (!ext || strlen(ext)>4) 
-			ext = KML;				
+		ext = strrchr(query, '.');
+		if (!ext || strlen(ext) > 4)
+			ext = KML;
 
-		const char *gpx = strstr(query, "gpx=on")!=NULL ? GPX : NULL;
+		const char *gpx = strstr(query, "gpx=on") != NULL ? GPX : NULL;
 		if (gpx) ext = GPX;
 
-		CString filename = CString("download")+ext; 
-		if (url=ucheck(query, "filename=")) {
-			filename = ExtractString(url, "", "", "&")+ext;
+		CString filename = CString("download") + ext;
+		if (url = ucheck(query, "filename=")) {
+			filename = ExtractString(url, "", "", "&") + ext;
 		}
-						
+
 		const char *domain = "; domain=ropewiki.com";
 
 		inetproxy urldata(FCGX_stdout);
 		inetgpx gpxdata(FCGX_stdout, url);
 		inetdata *data = &urldata;
-		if (gpx) data = &gpxdata; 
+		if (gpx) data = &gpxdata;
 		//data->open(0);
 
 		// ----------------------------------------------------------------------
 
-		if (url=ucheck(query, "url="))
+		if (url = ucheck(query, "url="))
 		{
-			ProcessUrl(url, FCGX_stdout, filename, data);				
+			ProcessUrl(url, FCGX_stdout, filename, data);
 			return;
 		}
 
-		if (url=ucheck(query, "iprogress="))
+		if (url = ucheck(query, "iprogress="))
 		{
 			ProcessIProgress(url, FCGX_stdout);
 			return;
 		}
-			
-		if (url=ucheck(query, "pdfx="))
+
+		if (url = ucheck(query, "pdfx="))
 		{
 			ProcessPDFx(url, FCGX_stdout, filename, domain);
 			return;
 		}
-			
-		if (url=ucheck(query, "zipx="))
+
+		if (url = ucheck(query, "zipx="))
 		{
 			ProcessZipx(url, FCGX_stdout, filename, domain, ipaddr);
 			return;
@@ -511,38 +517,38 @@ void _process(FCGX_Request *request)
 			return;
 		}
 
-  		if (url = ucheck(query, "waterflow="))
+		if (url = ucheck(query, "waterflow="))
 		{
-			ProcessWaterflow(request, FCGX_stdout, query);			
+			ProcessWaterflow(request, FCGX_stdout, query);
 			return;
-        }
-/*				
-  		if (url = ucheck(query, "BBOX="))
-		{
-			static CString str;
-			vara bbox = vars(url).split(",");
-			double west = atof(bbox[0]);
-			double south = atof(bbox[1]);
-			double east = atof(bbox[2]);
-			double north = atof(bbox[3]);
-
-			double center_lng = ((east - west) / 2) + west;
-			double center_lat = ((north - south) / 2) + south;
-			query = str = MkString("rwl=box,%.6f,%.6f,0", center_lat, center_lng);
 		}
-*/
-   
-  		if (url = ucheck(query, "code="))
+		/*
+				if (url = ucheck(query, "BBOX="))
+				{
+					static CString str;
+					vara bbox = vars(url).split(",");
+					double west = atof(bbox[0]);
+					double south = atof(bbox[1]);
+					double east = atof(bbox[2]);
+					double north = atof(bbox[3]);
+
+					double center_lng = ((east - west) / 2) + west;
+					double center_lat = ((north - south) / 2) + south;
+					query = str = MkString("rwl=box,%.6f,%.6f,0", center_lat, center_lng);
+				}
+		*/
+
+		if (url = ucheck(query, "code="))
 		{
 			ProcessCode(url, FCGX_stdout);
 			return;
 		}
-			
+
 		if (url = ucheck(query, "pictures="))
 		{
 			ProcessPictures(url, FCGX_stdout, ipaddr);
 			return;
-        }
+		}
 
 		if (url = ucheck(query, "rws="))
 		{
@@ -550,26 +556,26 @@ void _process(FCGX_Request *request)
 				return;
 			//Luca didn't have a return at the end of this function, but did potentially return from 3 places within the function
 		}
-			
+
 		if (url = ucheck(query, "rwl="))
 		{
-			ProcessRWL(url, FCGX_stdout);				
+			ProcessRWL(url, FCGX_stdout);
 			return;
 		}
 
-  		if (url = ucheck(query, "rwz="))
+		if (url = ucheck(query, "rwz="))
 		{
 			ProcessRWZ(url, request, FCGX_stdout, query);
 			return;
-        }
+		}
 
 		if (url = ucheck(query, "profile="))
 		{
 			ProcessProfile(url, FCGX_stdout);
 			return;
-        }
+		}
 
-  		if (url = ucheck(query, "rwzdownload="))
+		if (url = ucheck(query, "rwzdownload="))
 		{
 			ProcessRWZDownload(url, FCGX_stdout);
 			//Luca didn't have a return here
@@ -583,13 +589,13 @@ void _process(FCGX_Request *request)
 
 		if (url = ucheck(query, "test="))
 		{
-			ProcessTest(url, FCGX_stdout);				
+			ProcessTest(url, FCGX_stdout);
 			return;
 		}
 
-		for (int i=0; ctable[i].name!=NULL; ++i) 
+		for (int i = 0; ctable[i].name != NULL; ++i)
 		{
-  			if (url = ucheck(query, ctable[i].name))
+			if (url = ucheck(query, ctable[i].name))
 			{
 				ProcessCTable(url, FCGX_stdout, ctable[i].header);
 				return;
