@@ -4096,6 +4096,8 @@ int DESCENTECANYON_ExtractPoints(const char *url, vara &styles, vara &points, va
 
 	vars id = CData(code).Mid(1);
 
+	// Note by Michelle: this link below no longer works. The url for the map page is the following but the points are not in the page source:
+	// CString url2 = "http://www.descente-canyon.com/canyoning/canyon-carte/"+id+"/carte.html";	
 	CString url2 = "http://www.descente-canyon.com/canyoning/localized-point-search?t=xml2&idc="+id;
 	if (DownloadRetry(f, url2))
 		{
@@ -4453,6 +4455,35 @@ int DESCENTECANYON_ExtractKML(const char *ubase, const char *url, inetdata *out,
 		}
 */
 	DownloadFile f;
+
+	// Added by Michelle:  This is a 3rd party tool to extract points from Descente Canyon website:
+	// https://pujonline.000webhostapp.com/descente-canyon.htm
+	// from this forum post: https://www.descente-canyon.com/forums/viewtopic.php?id=24314
+	// get id from url
+	double code = InvalidNUM;
+	vara urla(vars(url), "/");
+	for (int i = urla.length() - 1; i > 0 && code == InvalidNUM; --i)
+		code = CDATA::GetNum(urla[i]);
+
+	if (code == InvalidNUM)
+	{
+		if (ubase) Log(LOGERR, "ERROR: can't get descente-canyon code for url %.128s", url);
+		return FALSE;
+	}
+
+	vars id = CData(code);
+
+	CString url2 = "http://pujonline.000webhostapp.com/dc_to_gpx.php?id=" + id;
+	
+	if (f.Download(url2))
+	{
+		Log(LOGERR, "ERROR: can't download url %.128s", url2);
+		return FALSE;
+	}
+	CString gpxData = CString(f.memory);
+	gpxData.Replace("\'", "\"");
+	return GPX_ExtractKML(credit, url2, gpxData, out);
+	// End of code added by Michelle
 
 	vara styles, points, lines;
 	if (!DESCENTECANYON_ExtractPoints(url, styles, points, lines, ubase))
@@ -5370,7 +5401,7 @@ int HIKEAZ_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
 
 
 	DownloadFile f;
-	vars id = GetKMLIDX(f, url, "'Download Route'", "data-gps='", "'");	
+	vars id = GetKMLIDX(f, url, "'Download GPX Route'", "data-gps='", "'");	
 	if (id.IsEmpty())
 		return FALSE; // not available
 	
@@ -20252,6 +20283,8 @@ int KMLExtract(const char *urlstr, inetdata *out, int fx)
 	url.Replace("%3D","=");
 	url.Replace("&ext=.kml","");
 	url.Replace("&ext=.gpx","");
+	int timestampIndex = url.Find("&timestamp=");
+	if (timestampIndex > 0) url = url.Left(timestampIndex);
 
 	//direct extraction
 	if (!IsSimilar(url, "http"))
