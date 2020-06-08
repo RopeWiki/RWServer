@@ -4067,13 +4067,13 @@ int DESCENTECANYON_ExtractPoints(const char *url, vara &styles, vara &points, va
 		"Waypoint Descent,"
 		"Waypoint Approach/Exit,", ",");	
 	static vara icons(
-		"http://caltopo.com/static/images/icons/nps-parking.png,"
-		"http://caltopo.com/static/images/icons/nps-parking.png,"
-		"http://caltopo.com/static/images/icons/nps-parking.png,"
-		"http://www.descente-canyon.com/design/images/icon/map-markers/marker-canyon-depart.png,"
-		"http://www.descente-canyon.com/design/images/icon/map-markers/marker-canyon-arrivee.png,"
-		"http://www.descente-canyon.com/design/images/icon/map-markers/marker-canyon-point_interne.png,"
-		"http://www.descente-canyon.com/design/images/icon/map-markers/marker-canyon-point_externe.png,", ",");
+		"http://maps.google.com/mapfiles/kml/pal4/icon15.png,"
+		"http://maps.google.com/mapfiles/kml/pal4/icon62.png,"
+		"http://maps.google.com/mapfiles/kml/pal4/icon62.png,"
+		"http://www.descente-canyon.com/design/img/map-markers/marker-canyon-depart.png,"
+		"http://www.descente-canyon.com/design/img/map-markers/marker-canyon-arrivee.png,"
+		"http://www.descente-canyon.com/design/img/map-markers/marker-canyon-point_interne.png,"
+		"http://www.descente-canyon.com/design/img/map-markers/marker-canyon-point_externe.png,", ",");
 
 	if (icons.length()!=labels.length()) {
 		if (ubase) Log(LOGERR, "ERROR: DESCENTECANYON_Extract #icons!=#labels");
@@ -4094,44 +4094,39 @@ int DESCENTECANYON_ExtractPoints(const char *url, vara &styles, vara &points, va
 		return FALSE;
 		}
 
-	vars id = CData(code).Mid(1);
+	vars id = CData(code);
 
-	// Note by Michelle: this link below no longer works. The url for the map page is the following but the points are not in the page source:
-	// CString url2 = "http://www.descente-canyon.com/canyoning/canyon-carte/"+id+"/carte.html";	
-	CString url2 = "http://www.descente-canyon.com/canyoning/localized-point-search?t=xml2&idc="+id;
+	CString url2 = "http://www.descente-canyon.com/canyoning/canyon-carte/"+id+"/carte.html";
 	if (DownloadRetry(f, url2))
 		{
 		if (ubase) Log(LOGERR, "ERROR: can't download url %.128s", url2);
 		return FALSE;
 		}
 	
-	vara markers(f.memory, "<marker ");
+	vara markers(f.memory, "maps.LatLng(");
 	for (int i=1; i<markers.length(); ++i) {
 		const char *data = markers[i];
-		double lat = CDATA::GetNum(strval(data, "lat=\"", "\""));
-		double lng = CDATA::GetNum(strval(data, "lng=\"", "\""));
+		double lat = CDATA::GetNum(strval(data, "", ","));
+		double lng = CDATA::GetNum(strval(data, ",", ")"));
 		if (!CheckLL(lat,lng))
-			{
+		{
 			if (ubase) Log(LOGERR, "Invalid descent-canyon marker lat/lng marker='%s'", markers[i]);
 			continue;
-			}
-		CString user = strval(data, "u=\"", "\"");
-		CString namedesc = strval(data, "r=\"", "\"");
-		namedesc.Replace("&lt;b&gt;", "");
-		namedesc.Replace("&lt;/b&gt;", "");
-		CString name = stripHTML(GetToken(namedesc, 0, ':'));
-		CString desc = stripHTML(GetToken(namedesc, 1, ':'));
-		CString label = strval(data, "label=\"", "\"");
+		}
+		CString user = strval(data, "</div><b>", "</b>");
+		CString namedesc = strval(data, "remarque: '", "'");
+		CString date = strval(data, "date: '", "'");
+		CString label = strval(data, "type: '", "'");
 		int l = labels.indexOf(label);
-		if (name.IsEmpty() || l<0)
-			{
+		if (l<0)
+		{
 			if (ubase) Log(LOGERR, "Invalid descent-canyon marker name/label marker='%s'", markers[i]);
 			continue;
-			}
+		}
 
 		CString credit;
 		if (ubase)
-			credit = CDATAS + desc + " (Data by "+user+" at "+CString(ubase)+")" + CDATAE;
+			credit = CDATAS + namedesc + " (Data by "+user+" on " + date + ")" + CDATAE;
 		points.push( KMLMarker(label, lat, lng, enlabels[l], credit) );
 	}
 
@@ -4439,51 +4434,7 @@ int DESCENTECANYON_ExtractKML(const char *ubase, const char *url, inetdata *out,
 {
 	CString credit = " (Data by " + CString(ubase) + ")";
 
-
-/*
-	if (f.Download(url))
-		{
-		Log(LOGERR, "ERROR: can't download url %.128s", url);
-		return FALSE;
-		}
-	CString id;
-	GetSearchString(f.memory, "href=\"/login/", id, "?0=", "&");
-	if (id.IsEmpty())
-		{
-		Log(LOGERR, "ERROR: invalid canyon id '%s' %.128s", id, url);
-		return FALSE;
-		}
-*/
 	DownloadFile f;
-
-	// Added by Michelle:  This is a 3rd party tool to extract points from Descente Canyon website:
-	// https://pujonline.000webhostapp.com/descente-canyon.htm
-	// from this forum post: https://www.descente-canyon.com/forums/viewtopic.php?id=24314
-	// get id from url
-	double code = InvalidNUM;
-	vara urla(vars(url), "/");
-	for (int i = urla.length() - 1; i > 0 && code == InvalidNUM; --i)
-		code = CDATA::GetNum(urla[i]);
-
-	if (code == InvalidNUM)
-	{
-		if (ubase) Log(LOGERR, "ERROR: can't get descente-canyon code for url %.128s", url);
-		return FALSE;
-	}
-
-	vars id = CData(code);
-
-	CString url2 = "http://pujonline.000webhostapp.com/dc_to_gpx.php?id=" + id;
-	
-	if (f.Download(url2))
-	{
-		Log(LOGERR, "ERROR: can't download url %.128s", url2);
-		return FALSE;
-	}
-	CString gpxData = CString(f.memory);
-	gpxData.Replace("\'", "\"");
-	return GPX_ExtractKML(credit, url2, gpxData, out);
-	// End of code added by Michelle
 
 	vara styles, points, lines;
 	if (!DESCENTECANYON_ExtractPoints(url, styles, points, lines, ubase))
