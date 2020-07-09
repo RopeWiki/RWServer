@@ -13,61 +13,76 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Source Files\BetaExtract">
+      <UniqueIdentifier>{35f1fccb-885a-421a-b3df-b255d91721e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Waterflow">
+      <UniqueIdentifier>{edeff04e-28c2-49ac-bdf4-c0b055386d46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CanyonMapper">
+      <UniqueIdentifier>{5ff65e80-d055-4807-ac26-6c1e5937dba2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{ca3852cd-1cc5-4e54-b44a-fd1873ffdce3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Server">
+      <UniqueIdentifier>{d178f9f8-dae7-4a32-8689-dfee7dfad070}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="rw\BasicExcelVC6.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="rw\BETAExtract.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rw\Elevation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rw\fcgi\libfcgi\fcgiapp.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rw\GetSet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rw\jlib.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rw\Lists.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rw\fcgi\libfcgi\os_win32.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rw\picextract.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rw\RWServer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rw\stdafx.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\BetaExtract</Filter>
     </ClCompile>
     <ClCompile Include="rw\Waterflow.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Waterflow</Filter>
     </ClCompile>
-    <ClCompile Include="rw\XUnzip.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="rw\Elevation.cpp">
+      <Filter>Source Files\CanyonMapper</Filter>
     </ClCompile>
-    <ClCompile Include="rw\XZip.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rw\inetdata.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="rw\BasicExcelVC6.cpp">
+      <Filter>Source Files\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="rw\utils.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="rw\processrequest.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="rw\XZip.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\XUnzip.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\RWServer.cpp">
+      <Filter>Source Files\Server</Filter>
     </ClCompile>
     <ClCompile Include="rw\processcommandline.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\processrequest.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\GetSet.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\fcgi\libfcgi\fcgiapp.c">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\inetdata.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\jlib.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\Lists.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\fcgi\libfcgi\os_win32.c">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\picextract.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\stdafx.cpp">
+      <Filter>Source Files\Utilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

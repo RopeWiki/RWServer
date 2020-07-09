@@ -20088,7 +20088,7 @@ int KMLMerge(const char *url, inetdata *data)
 					// download file
 					//for (int u=0; u<urls.length(); ++u) {
 #ifdef DEBUG
-					url.Replace("lucac.no-ip.org", "localhost");
+					url.Replace(server, "localhost");
 #endif
 						if (f.Download(url))
 							{

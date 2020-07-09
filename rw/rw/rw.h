@@ -4,7 +4,7 @@
 #ifdef DEBUG
 #define server "localhost"
 #else
-#define server "lucac.no-ip.org"
+#define server "luca.ropewiki.com"
 //#define server "localhost"
 #endif
 

@@ -336,7 +336,7 @@ static double instaticks;
 
 CString InstagramAuthenticate(void)
 {
-	#define AUTHORIZATION_REDIRECT_URI "http://lucac.no-ip.org/rwr"
+	#define AUTHORIZATION_REDIRECT_URI "http://luca.ropewiki.com/rwr"
 
 	vars url;
 	DownloadFile f;
