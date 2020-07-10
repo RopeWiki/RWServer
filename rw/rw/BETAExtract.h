@@ -3,6 +3,7 @@
 #include "stdafx.h"
 #include "trademaster.h"
 #include "rw.h"
+#include "GeoRegion.h"
 
 #define BETA "BETA"
 
@@ -91,6 +92,13 @@ vars stripSuffixes(register const char* name);
 vars stripAccents(register const char* p);
 vars stripAccentsL(register const char* p);
 BOOL IsSeasonValid(const char *season, CString *validated = NULL);
+vars ACP8(const char *val, int cp = CP_UTF8);
+vars ExtractHREF(const char *str);
+const char *skipnoalpha(const char *str);
+CString GetMetric(const char *str);
+void GetCoords(const char *memory, float &lat, float &lng);
+BOOL isanum(unsigned char c);
+CString ExtractStringDel(CString &memory, const char *pre, const char *start, const char *end, int ext = FALSE, int del = TRUE);
 
 
 //static functions

@@ -129,6 +129,27 @@
     <ClCompile Include="rw\GeoRegion.cpp">
       <Filter>Source Files\BetaExtract</Filter>
     </ClCompile>
+    <ClCompile Include="rw\Reunion.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\ZionCanyoneering.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\ShortBetaSites.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\CanyonMag.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\Tahiti.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\Martinique.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\SwissCanyon.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rw\passwords.h">
@@ -198,6 +219,15 @@
       <Filter>Header Files\BetaExtract</Filter>
     </ClInclude>
     <ClInclude Include="rw\GeoRegion.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\Reunion.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\BetaWPC.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\SwissCanyon.h">
       <Filter>Header Files\BetaExtract</Filter>
     </ClInclude>
   </ItemGroup>
