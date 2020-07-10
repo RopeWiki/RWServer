@@ -6512,95 +6512,6 @@ int ALTOPIRINEO_DownloadBeta(const char *ubase, CSymList &symlist)
 }
 
 // ===============================================================================================
-class OREGONCAVES4U : public BETAC
-{
-public:
-
-	OREGONCAVES4U(const char *base) : BETAC(base)
-	{
-		ubase = base;
-		umain = "http://www.oregoncaves4u.com";
-	}
-
-	virtual int DownloadBeta(CSymList &symlist) 
-	{
-	vara regions;
-	DownloadFile f;
-
-	// download base
-	CString url = umain;
-	if (f.Download(url))
-		{
-		Log(LOGERR, "Can't download OregonCaves4U base url %s", url);
-		return FALSE;
-		}
-	vara headers;
-	vara list(f.memory, "<tr");
-	for (int i=1; i<list.length(); ++i)
-		{
-		vara vals;
-		vara line = list[i].split("<td");
-		for (int l=1; l<line.length(); ++l)
-			{
-			CString val;
-			GetSearchString(line[l], "", val, ">", "</td");
-			vals.push(val);
-			}
-
-		if (vals.length()<1)
-			continue;
-
-		// get url
-		CString nurl;
-		GetSearchString(vals[0], "href=", nurl, "\"", "\"");
-		if (nurl.IsEmpty())
-			{
-			Log(LOGERR, "Can't find OregonCaves4U url in %s", vals[0]);
-			continue;
-			}
-		if (strnicmp(nurl, "http", 4)!=0)
-			{
-			CString lurl = nurl;
-			nurl = url + lurl;
-			vals[0].Replace(lurl, nurl);
-			}
-
-		// get coordinates
-		if (f.Download(nurl))
-			{
-			Log(LOGERR, "Can't download OregonCaves4U from %s", nurl);
-			continue;
-			}
-
-		CString coords;
-		const char *sep = ", \t\a\n";
-		GetSearchString(f.memory, "<caption", coords, ":", "</caption");
-		coords.Trim(sep);
-		double lat = CGetNum(GetToken(coords, 0, sep));
-		double lng = CGetNum(GetToken(coords, 1, sep));
-		
-		if (lat==InvalidNUM || lng==InvalidNUM)
-			{
-			Log(LOGERR, "Invalid coord for OregonCaves4U url %s", nurl); 
-			continue;
-			}
-
-		// add to list
-		if (lng>0) lng = -lng;
-
-		CSym sym(urlstr(nurl), stripHTML(vals[0]));
-		sym.SetNum(ITEM_LAT, lat);
-		sym.SetNum(ITEM_LNG, lng);
-		sym.SetStr(ITEM_CLASS, "2:Cave");
-		Update(symlist, sym, NULL, FALSE);
-		}
-
-	return TRUE;
-	}
-
-};
-
-// ===============================================================================================
 
 int ZIONCANYON_DownloadBeta(const char *ubase, CSymList &symlist) 
 {
@@ -8859,7 +8770,6 @@ static Code codelist[] = {
 	Code(1,1,"wro", "pl", "Canyoning.Wroclaw.pl", "Canyoning.Wroclaw.pl",new BETAC( "canyoning.wroclaw.pl",WROCLAW_DownloadBeta), "Europe", "1-5" ),
 	
 	// caves
-	Code(1,1,"oc4", NULL, "OregonCaves4U.com",  NULL,new OREGONCAVES4U("oregoncaves4u.com"), "USA"),
 	Code(1,1,"sph", NULL, "Speleosphere.org",  NULL,new BETAC( "speleosphere.org",SPHERE_DownloadBeta), "Guatemala" ),
 	Code(1,1,"lao", NULL, "LaosCaveProject.de",  NULL,new BETAC( "laoscaveproject.de",LAOS_DownloadBeta), "Laos" ),
 	//Code(1,"wpc", NULL, "Wikipedia Cave List",  NULL,new BETAC( "en.wikipedia.org/wiki", WIKIPEDIA_DownloadBeta, "World" ),
