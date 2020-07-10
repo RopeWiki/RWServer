@@ -119,12 +119,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="rw\BasicExcelVC6.cpp" />
+    <ClCompile Include="rw\BetaC.cpp" />
     <ClCompile Include="rw\BETAExtract.cpp" />
+    <ClCompile Include="rw\BluuGnome.cpp" />
+    <ClCompile Include="rw\CBrennen.cpp" />
+    <ClCompile Include="rw\DescenteCanyon.cpp" />
     <ClCompile Include="rw\Elevation.cpp" />
     <ClCompile Include="rw\fcgi\libfcgi\fcgiapp.c" />
     <ClCompile Include="rw\GetSet.cpp" />
     <ClCompile Include="rw\processcommandline.cpp" />
     <ClCompile Include="rw\processrequest.cpp" />
+    <ClCompile Include="rw\RoadTripRyan.cpp" />
+    <ClInclude Include="rw\BetaC.h" />
+    <ClInclude Include="rw\BetaX.h" />
+    <ClInclude Include="rw\CBrennen.h" />
+    <ClInclude Include="rw\RoadTripRyan.h" />
     <ClCompile Include="rw\utils.cpp" />
     <ClCompile Include="rw\inetdata.cpp" />
     <ClCompile Include="rw\jlib.cpp" />
@@ -140,6 +149,9 @@
   <ItemGroup>
     <ClInclude Include="rw\ArrayList.h" />
     <ClInclude Include="rw\BasicExcelVC6.hpp" />
+    <ClInclude Include="rw\BETAExtract.h" />
+    <ClInclude Include="rw\BluuGnome.h" />
+    <ClInclude Include="rw\DescenteCanyon.h" />
     <ClInclude Include="rw\fcgi\include\fastcgi.h" />
     <ClInclude Include="rw\processcommandline.h" />
     <ClInclude Include="rw\processrequest.h" />

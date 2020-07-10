@@ -28,6 +28,18 @@
     <Filter Include="Source Files\Server">
       <UniqueIdentifier>{d178f9f8-dae7-4a32-8689-dfee7dfad070}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\BetaExtract\Locations">
+      <UniqueIdentifier>{757c2f85-4f45-4e69-989d-ae605e430334}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BetaExtract">
+      <UniqueIdentifier>{032932fd-72d3-4c51-8388-4460ad2a89eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Server">
+      <UniqueIdentifier>{6b5d8c7a-a549-4939-b759-c1095c300afd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{aa8de9a1-e971-4ad9-af0e-a4470b6dc047}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="rw\BETAExtract.cpp">
@@ -84,43 +96,79 @@
     <ClCompile Include="rw\stdafx.cpp">
       <Filter>Source Files\Utilities</Filter>
     </ClCompile>
+    <ClCompile Include="rw\DescenteCanyon.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\BluuGnome.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\RoadTripRyan.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\CBrennen.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\BetaC.cpp">
+      <Filter>Source Files\BetaExtract</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="rw\ArrayList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rw\BasicExcelVC6.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rw\fcgi\include\fastcgi.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rw\rw.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rw\stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rw\TradeMaster.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="rw\passwords.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="rw\RWServer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rw\inetdata.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rw\utils.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="rw\processcommandline.h">
+      <Filter>Header Files\Server</Filter>
     </ClInclude>
     <ClInclude Include="rw\processrequest.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Server</Filter>
     </ClInclude>
-    <ClInclude Include="rw\processcommandline.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="rw\rw.h">
+      <Filter>Header Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\RWServer.h">
+      <Filter>Header Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\fcgi\include\fastcgi.h">
+      <Filter>Header Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\inetdata.h">
+      <Filter>Header Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\ArrayList.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\BasicExcelVC6.hpp">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\TradeMaster.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\utils.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\stdafx.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\BETAExtract.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\DescenteCanyon.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\BluuGnome.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\RoadTripRyan.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\CBrennen.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\BetaC.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\BetaX.h">
+      <Filter>Header Files\BetaExtract</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

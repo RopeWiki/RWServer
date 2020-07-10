@@ -1,23 +1,18 @@
+
 #include <afxinet.h>
 #include <atlimage.h>
 #include "stdafx.h"
 #include "trademaster.h"
 #include "rw.h"
 #include "math.h"
+#include "BETAExtract.h"
+#include "BluuGnome.h"
+#include "DescenteCanyon.h"
+#include "RoadTripRyan.h"
 
 #include "passwords.h"
 
 extern int INVESTIGATE;
-
-#define DESCENT RGB(0xFF, 0x00, 0x00)
-#define EXIT RGB(0xFF, 0xFF, 0x00)
-#define APPROACH RGB(0x00, 0xFF, 0x00)
-#define ROAD RGB(0x00, 0x00, 0x00)
-
-#define OTHER RGB(0xFF, 0x00, 0xFF)
-
-
-#define BETA "BETA"
 
 #define KMLFOLDER "BETAKML"
 #define KMLFIXEDFOLDER "BETAKML\\FIXED"
@@ -56,25 +51,18 @@ const char *andstr[] = { " and ", " y ", " et ", " e ", " und ", "&", "+", "/", 
 #define ITEM_MATCH ITEM_LAT2
 #define ITEM_NEWMATCH ITEM_LNG2
 //UTF:\xEF\xBB\xBF         to add columns use CheckBeta() 
-enum                                                                         { ITEM_INFO = ITEM_SUMMARY, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, ITEM_BETAMAX, ITEM_BESTMATCH, ITEM_MATCHLIST }; //, ITEM_BOAT, , ITEM_AELEV, ITEM_EELEV,  };
 static const char *headers ="ITEM_URL, ITEM_DESC, ITEM_LAT, ITEM_LNG, ITEM_MATCH, ITEM_MODE, ITEM_INFO, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, https://maps.googleapis.com/maps/api/geocode/xml?address=,\"=+HYPERLINK(+CONCATENATE(\"\"http://ropewiki.com/index.php/Location?jform&locsearchchk=on&locname=\"\",C1,\"\",\"\",D1,\"\"&locdist=5mi&skinuser=&sortby=-Has_rank_rating&kmlx=\"\",A1),\"\"@check\"\")\"";
 static const char *rwprop =                     "Has pageid|Has coordinates|Has geolocation|Has BetaSites list|Has TripReports list|Has info|Has info major region|Has info summary|Has info rappels|Has longest rappel|Has length of hike|Has fastest typical time|Has slowest typical time|Has best season|Has shuttle length|Has vehicle type|Has location class|Has user counter|Has AKA|Requires permits|Has KML file|Has condition date|Has approach elevation gain|Has exit elevation gain|Has length|Has depth|Has fastest approach time|Has slowest approach time|Has fastest descent time|Has slowest descent time|Has fastest exit time|Has slowest exit time|Has rock type|Has SketchList"; //|Has user counter";
 static const char *rwform =                     "=|=|=|=|=|=|Region|=ACA|Number of rappels|Longest rappel|Hike length|Fastest typical time|Slowest typical time|Best season|NeedsShuttle;Shuttle|Vehicle|Location type|=Stars|AKA|Permits|=KML|=COND|Approach elevation gain|Exit elevation gain|Length|Depth|Fastest approach time|Slowest approach time|Fastest descent time|Slowest descent time|Fastest exit time|Slowest exit time|Rock type|=SKETCH"; //|Has user counter";
 
-
-enum { COND_DATE, COND_STARS, COND_WATER, COND_TEMP, COND_DIFF, COND_LINK, COND_USER, COND_USERLINK, COND_TEXT, COND_NOTSURE, COND_TIME, COND_PEOPLE, COND_MAX };
 static vara cond_stars("0 - Unknown,1 - Poor,2 - Ok,3 - Good,4 - Great,5 - Amazing");
 enum { W_DRY=0, W_WADING=1, W_SWIMMING=2, W_VERYLOW=3, W_LOW=4, W_MODLOW=5, W_MODERATE=6, W_MODHIGH=7, W_HIGH=8, W_VERYHIGH=9, W_EXTREME=10 };
 //static vara cond_water("0 - Dry,1 - Low flow,2 - Moderate flow,3 - High flow,4 - Very High flow,5 - Extreme flow");
 //static vara cond_water("a1 - A - Dry,a2 - B - Very Low flow,a2+ - B+ - Deep pools,a2 - B - Very Low flow,a3 - B/C - Low flow,a4- - C1- - Moderate Low flow,a4 - C1 - Moderate flow,a4+ - C1+ - Moderate High flow,a5 - C2 - High flow,a6 - C3 - Very High flow,a7 - C4 - Extreme flow");
-static vara cond_water("0 - Dry (class A = a1),1 - Very Low (class B = a2),2 - Deep pools (class B+ = a2+),1 - Very Low (class B = a2),3 - Low (class B/C = a3),4 - Moderate Low (class C1- = a4-),5 - Moderate (class C1 = a4),6 - Moderate High (class C1+ = a4+),7 - High (class C2 = a5),8 - Very High (class C3 = a6),9 - Extreme (class C4 = a7)");
 
 
 static vara cond_temp("0 - None,1 - Rain jacket (1mm-2mm),2 - Thin wetsuit (3mm-4mm),3 - Full wetsuit (5mm-6mm),4 - Thick wetsuit (7mm-10mm),5 - Drysuit");
 //static vara cond_temp("0mm - None,1mm - Rain jacket,3mm - Thin wetsuit,5mm - Full wetsuit,7mm - Thick wetsuit,Xmm - Drysuit");
-
-
-
 
 
 static vara cond_diff("0 - Nontechnical,1 - Easy,2 - Normal,3 - Special challenges,4 - Advanced,5 - Extreme");
@@ -83,13 +71,6 @@ enum { R_T = 0, R_W, R_I, R_X, R_V, R_A, R_C, R_SUMMARY, R_STARS, R_TEMP, R_TIME
 static const char *rwformaca =                  "Technical rating;Water rating;Time rating;Extra risk rating;Vertical rating;Aquatic rating;Commitment rating";
 
 enum { M_MATCH=ITEM_ACA, M_SCORE, M_LEN, M_NUM, M_RETRY };
-
-extern int MODE;
-
-static CString filename(const char *name )
-{
-	return BETA + vars("\\") + vars(name) +".csv";
-}
 
 
 int iReplace(vars &line, const char *ostr, const char *nstr)
@@ -166,28 +147,13 @@ int IsGPX(const char *url)
 	return ext && IsMatch(vars(ext).lower(), fileext);
 }
 
-#if 0
-int DownloadRetry(DownloadFile &f, const char *url, int retrywait = 5)
-{
-	
-	for (int r=0; r<2; ++r) {
-		if (!f.Download(url))
-			return FALSE;
-		Sleep(retrywait*1000);
-	}
-	return TRUE;
-}
-#else
-#define DownloadRetry(f, url) f.Download(url)
-#endif
-
 static CSymList rwlist, titlebetalist;
 int LoadBetaList(CSymList &bslist, int title = FALSE, int rwlinks = FALSE);
 
 // ===============================================================================================
 
 
-vars UTF8(const char *val, int cp = CP_ACP)
+vars UTF8(const char *val, int cp)
 {
 	int len = strlen(val);
 	int wlen = (len+10)*3;
@@ -241,7 +207,7 @@ vars makeurl(const char *ubase, const char *folder)
 	}
 
 
-vars urlstr(const char *url, int stripkmlidx = TRUE)
+vars urlstr(const char *url, int stripkmlidx)
 {
 	// normalize url
 	vars u(url);
@@ -344,7 +310,7 @@ CString starstr(double stars, double ratings)
 }
 
 
-int Update(CSymList &list, CSym &newsym, CSym *chgsym = NULL, BOOL trackchanges = TRUE)
+int Update(CSymList &list, CSym &newsym, CSym *chgsym, BOOL trackchanges)
 {
 	int f;
 	++newsym.index;
@@ -442,7 +408,7 @@ int UpdateOldestCond(CSymList &list, CSym &newsym, CSym *chgsym = NULL, BOOL tra
 	return TRUE;
 }
 
-int UpdateCond(CSymList &list, CSym &newsym, CSym *chgsym = NULL, BOOL trackchanges = TRUE)
+int UpdateCond(CSymList &list, CSym &newsym, CSym *chgsym, BOOL trackchanges)
 {
 	int f = list.Find(newsym.id);
 	//ASSERT(!strstr(newsym.id, "=15546"));
@@ -474,13 +440,9 @@ CString ExtractStringDel(CString &memory, const char *pre, const char *start, co
 		return text;
 }
 
-
-
-typedef struct { const char *unit; double cnv; } unit;
-
-unit utime[] = { {"h", 1}, {"hr", 1}, {"hour", 1}, {"min", 1.0/60}, {"minute", 1.0/60}, { "day", 24}, {"hs", 1}, {"hrs", 1}, {"hours", 1}, {"mins", 1.0/60}, {"minutes", 1.0/60}, { "days", 24}, NULL };
-unit udist[] = { {"mi", 1}, {"mile", 1}, {"km", km2mi}, {"kilometer", km2mi}, {"mis", 1}, {"miles", 1}, {"kms", km2mi}, {"kilometers", km2mi}, {"m", km2mi/1000}, {"meter", km2mi/1000}, {"ms", km2mi/1000}, NULL };
-unit ulen[] = {  {"ft", 1}, {"feet", 1}, {"'", 1}, {"&#039;",1}, {"meter", m2ft}, {"m", m2ft}, {"fts", 1}, {"feets", 1}, {"'s", 1}, {"&#039;s",1}, {"meters", m2ft}, {"ms", m2ft}, NULL };
+unit utime[] = { {"h", 1}, {"hr", 1}, {"hour", 1}, {"min", 1.0 / 60}, {"minute", 1.0 / 60}, { "day", 24}, {"hs", 1}, {"hrs", 1}, {"hours", 1}, {"mins", 1.0 / 60}, {"minutes", 1.0 / 60}, { "days", 24}, NULL };
+unit udist[] = { {"mi", 1}, {"mile", 1}, {"km", km2mi}, {"kilometer", km2mi}, {"mis", 1}, {"miles", 1}, {"kms", km2mi}, {"kilometers", km2mi}, {"m", km2mi / 1000}, {"meter", km2mi / 1000}, {"ms", km2mi / 1000}, NULL };
+unit ulen[] = { {"ft", 1}, {"feet", 1}, {"'", 1}, {"&#039;",1}, {"meter", m2ft}, {"m", m2ft}, {"fts", 1}, {"feets", 1}, {"'s", 1}, {"&#039;s",1}, {"meters", m2ft}, {"ms", m2ft}, NULL };
 
 int matchtag(const char *tag, const char *utag)
 {
@@ -1221,25 +1183,6 @@ int CheckLL(double lat, double lng, const char *url)
 	return TRUE;
 }
 
-
-static CString burl(const char *base, const char *folder)
-{
-	if (IsSimilar(folder, "../"))
-		folder += 2;
-	if (IsSimilar(folder, "http"))
-		return folder;
-	if (folder[0]=='/' && folder[1]=='/')
-		return CString("http:")+folder;
-	CString str;
-	if (!IsSimilar(base, "http"))
-		str += "http://";
-	str += base;
-	if (folder[0]!='/')
-		str += "/";
-	return str + folder;
-}
-
-
 vara getwords(const char *text)
 {
 	vars word;
@@ -1274,7 +1217,7 @@ BOOL TranslateMatch(const char *str, const char *pattern)
 	return str[i]==pattern[i] || pattern[i]=='*';
 }
 
-vars Translate(const char *str, CSymList &list, const char *onlytrans = NULL) 
+vars Translate(const char *str, CSymList &list, const char *onlytrans) 
 {
 	vara transwords;
 	vara words = getwords(str);
@@ -1545,7 +1488,7 @@ BOOL IsSeasonValid(const char *season, CString *validated = NULL)
 	return ok;
 }
 
-vars invertregion(const char *str, const char *add = "")
+vars invertregion(const char *str, const char *add)
 {
 	vara nlist(add), list(vars(str).replace(",",";"), ";");
 	for (int i=nlist.length()-1; i>=0; --i)
@@ -1586,236 +1529,11 @@ int SaveKML(const char *title, const char *credit, const char *url, vara &styles
 	return points.length()+lines.length();
 }
 
-// ===============================================================================================
-
-int BLUUGNOME_ll(const char *item, double &lat, double &lng)
-{
-		CString ll = stripHTML(item);
-		lat = CDATA::GetNum(strval(ll, " N "));
-		lng = CDATA::GetNum(strval(ll, " W "));
-		if (ll.Find("WGS84")<0)
-			{
-			Log(LOGERR, "BG No WGS84 in ll='%s'", ll);
-			return FALSE;
-			}
-		if (!CheckLL(lat, lng, MkString("BG Invalid ll='%s'", ll)))
-			return FALSE;
-		return TRUE;
-}
-
-
-
-int BLUUGNOME_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
-{
-	CString credit = " (Data by " + CString(ubase) + ")";
-	DownloadFile f;
-	if (DownloadRetry(f, url))
-		{
-		Log(LOGERR, "ERROR: can't download url %.128s", url);
-		return FALSE;
-		}
-
-	vars data = xmlval(f.memory, "<table", "</table");
-
-	vara lines;
-	CSymList list;
-	vara sec = data.split("font-size: 170%");
-	if (sec.length()<2)
-		{
-		Log(LOGERR, "Invalid BLUUGNOME sec page %.128s", url);
-		return FALSE;
-		}
-
-	for (int s=1; s<sec.length(); ++s) 
-	{
-	vara linelist; 
-	CString title = stripHTML(xmlval(sec[s],"<strong","</strong"));
-	int color = DESCENT;
-	if (title.Find("Exit")>0)
-		 color = EXIT;
-	if (title.Find("Approach")>0)
-		 color = APPROACH;
-	if (title.Find("Canyon")>0)
-		 color = RGB(0xFF, 0x00, 0x00);
-	if (title.Find("Drive")>0)
-		 color = ROAD;
-	if (title.Find("Descent")>0)
-		 color = RGB(0xFF, 0x00, 0x00);
-
-
-	vara li = sec[s].split("<li");
-	for (int i=1; i<li.length(); ++i) {
-		vara li3 = li[i].split("<strong>");
-		if (li3.length()<4)
-			{
-			Log(LOGERR, "Invalid li3 (%d!=3) %s", li3.length(), li[i]);
-			continue;
-			}
-
-		// get data
-		CString id = stripHTML(li3[1]);
-		if (id.IsEmpty())
-			{
-			Log(LOGERR, "Invalid li3 id='%s'", id);
-			continue;
-			}
-
-		vara desca = li3[3].split("<br"); desca[0] ="";
-		CString desc = stripHTML(desca.join("<br"));
-
-		double lat, lng;
-		if (!BLUUGNOME_ll(li3[2], lat, lng))
-			continue;
-
-		// add line 
-
-		// add only DESCENT waypoints & start and end of EXIT & APPROACH
-		BOOL add = color==DESCENT;
-		add += (color!=ROAD) && (i==1 || i==li.length()-1);
-		if (add && list.Find(id)<0)
-			{
-			// add marker
-			CSym item(id);
-			item.SetNum(ITEM_LAT, lat);
-			item.SetNum(ITEM_LNG, lng);
-			item.SetStr(ITEM_DESC, desc+credit );
-			list.Add(item);
-			}
-
-		// add line coords
-		linelist.push(CCoord3(lat, lng));
-		}
-
-	  lines.push( KMLLine(title, credit, linelist, color, 3) );
-	}
-
-	if (list.GetSize()==0 && lines.length()==0)
-		return FALSE;
-
-	// generate kml
-	vara styles, points;
-	styles.push( "dot=http://maps.google.com/mapfiles/kml/shapes/open-diamond.png" );
-	for (int i=0; i<list.GetSize(); ++i)
-		points.push( KMLMarker( "dot", list[i].GetNum(ITEM_LAT), list[i].GetNum(ITEM_LNG), list[i].id, list[i].GetStr(ITEM_DESC)) );
-	SaveKML(ubase, credit, url, styles, points, lines, out);
- 
-	return TRUE;
-}
-
-
-int BLUUGNOME_DownloadBeta(const char *ubase, CSymList &symlist)
-{
-	DownloadFile f;
-	CString url = burl(ubase, "canyoneer_tripreport_list.aspx");
-	if (f.Download(url))
-		{
-		Log(LOGERR, "ERROR: can't download url %.128s", url);
-		return FALSE;
-		}
-
-	vars base = "canyoneer_tripreport_list_";
-	vara list(f.memory, base);
-	for (int i=1; i<list.length(); ++i) {
-		CString region = ExtractString(list[i], "", ">", "<");
-		CString url = burl(ubase, base + GetToken(list[i], 0, '\"'));
-		if (f.Download(url))
-			{
-			Log(LOGERR, "ERROR: can't download url %.128s", url);
-			continue;
-			}
-		vars cbase = "cyn_route/";
-		vara clist(f.memory, cbase);
-		for (int c=1; c<clist.length(); ++c) {
-			const char *cdata = clist[c];
-			CString name;
-			GetSearchString(cdata, "", name, ">", "<"); 
-			CString summary;
-			GetSearchString(cdata, "</a>", summary, "-", "<"); 
-			CString link = burl(ubase, cbase + GetToken(cdata, 0, '\"'));
-			link.Trim();
-			name = stripHTML(name);
-			summary = stripHTML(summary);
-			while (!summary.IsEmpty() && !isdigit(summary[0]))
-				summary.Delete(0);
-			if (name.IsEmpty() || link.IsEmpty())
-				{
-				Log(LOGERR, "ERROR: invalid name/link %s from %.128s", cdata, url);
-				continue;
-				}
-			CSym sym(urlstr(link));
-			if (!UpdateCheck(symlist, sym) && MODE>-2)
-				continue;
-			// download detail only if new
-			printf("Downloading %d/%d %d/%d\r   ", c, clist.length(), i, list.length());
-			CString url = link;
-			if (f.Download(url))
-				{
-				Log(LOGERR, "ERROR: can't download url %.128s", url);
-				continue;
-				}
-		
-			CString RP1;
-			const char *RP1s[] = { "RP-01", "RP01", "RP-1", "RP1", "R1", "Tp", "", NULL };
-			for (int r=0; RP1.IsEmpty() && RP1s[r]!=NULL; ++r)
-				GetSearchString(f.memory, "<table", RP1, RP1s[r], "</li>");
-			if (RP1.IsEmpty())
-				{
-				Log(LOGERR, "ERROR: No valid RP1 from url %.128s", url);
-				continue;
-				}
-
-
-			double lat, lng;
-			if (!BLUUGNOME_ll(RP1, lat, lng))
-				{
-				Log(LOGERR, "ERROR: bad RP1 %s from url %.128s", RP1, url);
-				continue;
-				}
-
-			CDoubleArrayList longest, raps;
-			if (GetValues(f.memory, ">Rappels", ">", "<br", ulen, longest))
-				sym.SetNum(ITEM_LONGEST, longest.Tail());
-			if (GetValues(f.memory, ">Rappels", ">", "<br", NULL, raps)) {
-				if (raps.Tail()>=50)
-					Log(LOGERR, "Too many rappels %d from %.128s", raps.Tail(), url);
-				else
-					sym.SetStr(ITEM_RAPS, Pair(raps));
-			}
-
-			CDoubleArrayList time, dist;
-			if (GetValues(f.memory, ">Time Required", ">", "<br", utime, time))
-				{
-				sym.SetNum(ITEM_MINTIME, time.Head());
-				sym.SetNum(ITEM_MAXTIME, time.Tail());
-				}
-			if (GetValues(f.memory, ">Distance", ">", "<br", udist, dist))
-				sym.SetNum(ITEM_HIKE, dist.Tail());
-
-			sym.SetStr(ITEM_PERMIT, stripHTML(ExtractString(f.memory, ">Permit Required", "</strong>", "<")));
-			sym.SetStr(ITEM_AKA, stripHTML(ExtractString(f.memory, "Aka -", "", "<br").replace(",",";")));
-			//sym.SetStr(ITEM_VEHICLE, stripHTML(ExtractString(f.memory, ">Vehicle", "</strong>", "<")));
-			//sym.SetStr(ITEM_SHUTTLE, stripHTML(ExtractString(f.memory, ">Shuttle", "</strong>", "<")));
-			sym.SetStr(ITEM_DESC, stripHTML(name));
-			GetSummary(sym, stripHTML(summary));
-			sym.SetNum(ITEM_LAT, lat);
-			sym.SetNum(ITEM_LNG, lng);
-			sym.SetStr(ITEM_REGION, stripHTML(region));
-			sym.SetStr(ITEM_KML, "X");
-			Update(symlist, sym);
-		}
-
-	}
-	
-	return TRUE;
-}
-
-
-
 
 // ===============================================================================================
 
 
-vars GetKMLIDX(DownloadFile &f, const char *url, const char *search = NULL, const char *start = NULL, const char *end = NULL)
+vars GetKMLIDX(DownloadFile &f, const char *url, const char *search, const char *start, const char *end)
 {
 	vara ids(url, "kmlidx=");
 	if (ids.length()>1 && !ids[1].IsEmpty() && ids[1]!="X")
@@ -1884,232 +1602,6 @@ int GPX_ExtractKML(const char *credit, const char *url, const char *memory, inet
 	SaveKML("gpx", credit, url, styles, points, lines, out);
 	return TRUE;
 }
-
-
-
-int ROADTRIPRYAN_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
-{
-	//if (!fx)
-	return FALSE;
-
-
-	DownloadFile f;
-	CString credit = " (Data by " + CString(ubase) + ")";
-	// requires login, app may fix but rw does not
-	/*
-	CString login = burl(ubase, "go/login/authenticate?POST?spring-security-redirect=%2F&username=ROADTRIPRYAN_USERNAME&password=ROADTRIPRYAN_PASSWORD");
-	if (f.Download(login, "login.htm"))
-		{
-		Log(LOGERR, "ERROR: can't login roadtripryan.com");
-		//return FALSE;
-		}
-	*/
-
-	vars id = GetKMLIDX(f, url);
-	if (id.IsEmpty())
-		return FALSE; // not available
-
-	//alternate go/gpx/download/578
-	CString url2 = burl(ubase, id);
-	if (f.Download(url2))
-		{
-		Log(LOGERR, "ERROR: can't download url %.128s", url2);
-		return FALSE;
-		}
-
-	return GPX_ExtractKML(credit, url, f.memory, out);
-}
-
-
-int ROADTRIPRYAN_DownloadDetails(DownloadFile &f, const char *url, CSymList &symlist) {	
-	if (f.Download(url))
-		{
-		Log(LOGERR, "ERROR: can't download url %.128s", url);
-		return FALSE;
-		}
-	const char *data =f.memory;
-
-
-
-	CSym sym(urlstr(url));
-	CString summary = stripHTML(ExtractString(data, "id=\"beta_rating\"", ":", "</div>"));
-	CString time = stripHTML(ExtractString(data, "id=\"beta_length\"", ":", "</div>"));
-	time.Replace("Approach - 1 hour. Headless Hen - 2 hours; Raven - 2-3 hours; Exit - 1 hour.", "4-5 hours");
-	CString raps = stripHTML(ExtractString(data, "id=\"beta_rappels\"", ":", "</div>")); 
-	raps.Replace(" - ", " to "); 
-	raps.Replace(" to ", " upto ");
-	raps.Replace("None", "0");
-	raps.Replace("1-60 m", "1 upto 60 m");
-	raps.Replace("1-20 m", "1 upto 20 m");
-	CString season = stripHTML(ExtractString(data, "id=\"beta_season\"", ":", "</div>"));
-	season.Replace("to pass", "");
-
-	CString kmlidx = "X"; //ExtractLink(data, "gpx");
-	//ASSERT(strstr(url,"/five-mile")==NULL);
-	//ASSERT(!strstr(sym.id,"wild-horse"));
-	GetSummary(sym, summary);
-	// fix ratings for hikes / scrambles
-	vars summtext = sym.GetStr(ITEM_ACA);
-	vara summ(summtext,  ";");
-	if (sym.GetNum(ITEM_CLASS)==0)
-	  if (summ.length()>1 && summ[0].IsEmpty())
-		{
-		if (strstr(summtext, "Class") || strstr(summtext, "crambl"))
-			summ[0] = '2';
-		else
-			summ[0] = '1';
-		if (summ[1].IsEmpty())
-			summ[1] = "A";
-		sym.SetStr(ITEM_ACA, summ.join(";"));
-		}
-
-
-	GetTimeDistance(sym, time);
-	GetRappels(sym, raps);
-	sym.SetStr(ITEM_KML, kmlidx);
-	sym.SetStr(ITEM_SEASON, season);
-	return Update(symlist, sym, NULL, FALSE);
-}
-
-int ROADTRIPRYAN_DownloadXML(DownloadFile &f, const char *url, CSymList &symlist) {
-	if (f.Download(url))
-		{
-		Log(LOGERR, "ERROR: can't download url %.128s", url);
-		return FALSE;
-		}
-	vara markers(f.memory, "<marker ");
-	for (int m=1; m<markers.length(); ++m) {
-		vars &marker = markers[m];
-		CString link, name, action, summary, len, kmlidx;
-		GetSearchString(marker, "url=", link, '\"', '\"');
-		GetSearchString(marker, "name=", name, '\"', '\"');
-		GetSearchString(marker, "type=", action, '\"', '\"');
-		GetSearchString(marker, "rating=", summary, '\"', '\"');
-		//GetSearchString(marker, "length=", len, '\"', '\"');
-		if (name.IsEmpty() || link.IsEmpty() || summary.IsEmpty() || action.IsEmpty())
-			{
-			Log(LOGERR, "ERROR: invalid name/link %s from %.128s", marker, url);
-			continue;
-			}
-		double vlat = ExtractNum(marker, "lat=", "\"", "\"");
-		double vlng = ExtractNum(marker, "lng=", "\"", "\"");
-		if (!CheckLL(vlat, vlng, NULL))
-			{
-			Log(LOGERR, "ERROR: invalid ll %s from %.128s", marker, url);
-			continue;
-			}
-
-		CSym sym(urlstr(link));
-		CString nameregion = stripHTML(name), n = GetToken(nameregion, 0, '-').Trim(), r = GetToken(nameregion, 1, '-').Trim();
-		sym.SetStr(ITEM_DESC, n);
-		sym.SetStr(ITEM_REGION, r);
-		GetSummary(sym, stripHTML(summary));
-		sym.SetNum(ITEM_LAT, vlat);
-		sym.SetNum(ITEM_LNG, vlng);
-
-		// set class
-		int typen[] = { 2, 3, 1, 0, -1 };
-		const char *types[] = { "Cave", "Ferrata", "Canyon", "Hike", NULL };
-		int a = GetClass(action, types, typen);
-		if (strstr(n, "Ferrata")) a = 3;
-		SetClass(sym, a, action);
-		//GetTimeDistance(sym, len);
-		CSym osym(sym.id);
-		if (!UpdateCheck(symlist, osym) && osym.GetNum(ITEM_CLASS)>=sym.GetNum(ITEM_CLASS) && MODE>=-1)
-			continue;			
-		if (!Update(symlist, sym, NULL, FALSE) && MODE>=-1)
-			continue;
-		ROADTRIPRYAN_DownloadDetails(f, link, symlist);
-		}
-	return TRUE;
-}
-
-
-
-int ROADTRIPRYAN_DownloadBeta(const char *ubase, CSymList &symlist2) 
-{
-	DownloadFile f;
-	/*
-	CString login = burl(ubase, "go/login/authenticate?POST?spring-security-redirect=%2F&username=ROADTRIPRYAN_USERNAME&password=ROADTRIPRYAN_PASSWORD&remember-me=on");
-	if (f.Download(login))
-		{
-		Log(LOGERR, "ERROR: can't login roadtripryan.com");
-		//return FALSE;
-		}
-	*/
-	// ALL map 
-	CSymList symlist(symlist2);
-	ROADTRIPRYAN_DownloadXML(f, "http://www.roadtripryan.com/maps/mapdata.xml", symlist);
-
-	CString url = burl(ubase, "/go/trips/");
-	if (f.Download(url))
-		{
-		Log(LOGERR, "ERROR: can't download url %.128s", url);
-		return FALSE;
-		}
-
-	// tables for ratings
-	vara list(f.memory, "border:0px solid red");
-	for (int i=1; i<list.length(); ++i) {
-	  CString data = list[i].split("</td").first();
-	  vara jlist(data, "<a href=\"");
-	   for (int j=1; j<jlist.length(); ++j) {
-		CString url = burl(ubase, GetToken(jlist[j], 0, '\"'));
-		if (f.Download(url))
-			{
-			Log(LOGERR, "ERROR: can't download url %.128s", url);
-			continue;
-			}
-
-		// get star rates
-		vara tables(f.memory, "<table cellpadding=\"0\"");
-		for (int t=1; t<tables.length(); ++t) {
-			vara rows(tables[t].split("</table").first(), "<tr");
-			for (int r=2; r<rows.length(); ++r) {
-				const char *row = rows[r];
-				CString link;
-				GetSearchString(row, "<a href=", link, 0, '>');
-				link = link.Trim("\"' ");
-				//GetSearchString(row, "</a", summary, "<td>", "</td");
-				double stars = ExtractNum(row, "class=\"stars\"", ">", "<");
-				double ratings = ExtractNum(row, "class=\"stars\"", "(", " Rating");
-				if (link.IsEmpty())
-					{
-					Log(LOGERR, "ERROR: invalid name/link %s from %.128s", row, url);
-					continue;
-					}
-				link = burl(ubase, link);
-				CSym sym(urlstr(link));
-				//sym.SetStr(ITEM_DESC, name);
-				if (stars==InvalidNUM || ratings==InvalidNUM)
-					Log(LOGWARN, "WARNING: No star rating for %s", link);
-				else
-					sym.SetStr(ITEM_STARS, starstr(stars, ratings));
-				//sym.SetStr(ITEM_ACA, summary);
-				Update(symlist, sym, NULL, FALSE);
-			}
-		}
-
-		/*
-		// map
-		CString xml;
-		GetSearchString(f.memory, "/go/map/iframe?data", xml, "=", "\"");
-		if (xml.IsEmpty())
-			{
-			Log(LOGERR, "ERROR: can't finx xml link in url %.128s", url);
-			continue;
-			}
-		ROADTRIPRYAN_DownloadXML(rr + xml, symlist);
-		*/
-		}
-
-	}
-	
-	for (int i=0; i<symlist.GetSize(); ++i)
-		Update(symlist2, symlist[i]);
-	return TRUE;
-}
-
 
 
 // ===============================================================================================
@@ -3945,7 +3437,7 @@ double round2(double val)
 	return ival + fval;
 }
 
-void GetTotalTime(CSym &sym, vara &times, const char *url, double maxtmin = 24)  // -1 to skip tmin checks
+void GetTotalTime(CSym &sym, vara &times, const char *url, double maxtmin)  // -1 to skip tmin checks
 {
 		if (times.length()!=3)
 			{
@@ -4013,436 +3505,6 @@ CString noHTML(const char *str)
 	ret.Trim("*");
 	ret.Trim(".");
 	return  ret;
-}
-
-int DESCENTECANYON_DownloadPage2(DownloadFile &f, const char *urlc, CSym &sym) 
-{
-			if (f.Download(urlc))
-				{
-				Log(LOGERR, "ERROR: can't download url %.128s", urlc);
-				return FALSE;
-				}
-
-			vars season = ExtractString(f.memory, "aquatique</h2>", "", "</div");
-			season = stripHTML(ExtractString(season, "", "", "<h2"));
-			if (!season.IsEmpty())
-				sym.SetStr(ITEM_SEASON, season);
-
-			vars rock = noHTML(ExtractString(strstr(f.memory, "roche.gif"), "<td", ">", "</td"));
-			sym.SetStr(ITEM_ROCK, rock);
-
-			return TRUE;
-}
-
-double DESCENTECANYON_GetDate(const char *date)
-{
-	static CSymList months;
-	if (months.GetSize()==0)
-		{
-		vara monthsa(UTF8("Jan*=Jan,Fév*=Feb,Mars=Mar,Avr*=Apr,Mai=May,Juin*=Jun,Juil*=Jul,Aoû*=Aug,Sep*=Sep,Oct*=Oct,Nov*=Nov,Déc*=Dec"));	
-		for (int i=0; i<monthsa.length(); ++i)
-			months.Add(CSym(GetToken(monthsa[i],0,'='),GetToken(monthsa[i],1,'=')));
-		}
-	vars sdate = Translate(date, months);
-	if (CGetNum(sdate)<=0) return 0;
-	return CDATA::GetDate(sdate, "DD MMM YY");
-}
-
-int DESCENTECANYON_ExtractPoints(const char *url, vara &styles, vara &points, vara &lines, const char *ubase)
-{
-	static vara labels(
-		"parking_aval,"
-		"parking_amont,"
-		"parking," 
-		"depart,"
-		"arrivee,"
-		"point_interne,"
-		"point_externe,", ",");
-	static vara enlabels(
-		"Parking Exit,"
-		"Parking Approach,"
-		"Parking," 
-		"Start,"
-		"End,"
-		"Waypoint Descent,"
-		"Waypoint Approach/Exit,", ",");	
-	static vara icons(
-		"http://maps.google.com/mapfiles/kml/pal4/icon15.png,"
-		"http://maps.google.com/mapfiles/kml/pal4/icon62.png,"
-		"http://maps.google.com/mapfiles/kml/pal4/icon62.png,"
-		"http://www.descente-canyon.com/design/img/map-markers/marker-canyon-depart.png,"
-		"http://www.descente-canyon.com/design/img/map-markers/marker-canyon-arrivee.png,"
-		"http://www.descente-canyon.com/design/img/map-markers/marker-canyon-point_interne.png,"
-		"http://www.descente-canyon.com/design/img/map-markers/marker-canyon-point_externe.png,", ",");
-
-	if (icons.length()!=labels.length()) {
-		if (ubase) Log(LOGERR, "ERROR: DESCENTECANYON_Extract #icons!=#labels");
-		return FALSE;
-		}
-
-	DownloadFile f;
-
-	// get id from url
-	double code = InvalidNUM;
-	vara urla(vars(url), "/");
-	for (int i=urla.length()-1; i>0 && code==InvalidNUM; --i)
-		code = CDATA::GetNum(urla[i]);
-		
-	if (code==InvalidNUM)
-		{
-		if (ubase) Log(LOGERR, "ERROR: can't get descente-canyon code for url %.128s", url);
-		return FALSE;
-		}
-
-	vars id = CData(code);
-
-	CString url2 = "http://www.descente-canyon.com/canyoning/canyon-carte/"+id+"/carte.html";
-	if (DownloadRetry(f, url2))
-		{
-		if (ubase) Log(LOGERR, "ERROR: can't download url %.128s", url2);
-		return FALSE;
-		}
-	
-	vara markers(f.memory, "maps.LatLng(");
-	for (int i=1; i<markers.length(); ++i) {
-		const char *data = markers[i];
-		double lat = CDATA::GetNum(strval(data, "", ","));
-		double lng = CDATA::GetNum(strval(data, ",", ")"));
-		if (!CheckLL(lat,lng))
-		{
-			if (ubase) Log(LOGERR, "Invalid descent-canyon marker lat/lng marker='%s'", markers[i]);
-			continue;
-		}
-		CString user = strval(data, "</div><b>", "</b>");
-		CString namedesc = strval(data, "remarque: '", "'");
-		CString date = strval(data, "date: '", "'");
-		CString label = strval(data, "type: '", "'");
-		int l = labels.indexOf(label);
-		if (l<0)
-		{
-			if (ubase) Log(LOGERR, "Invalid descent-canyon marker name/label marker='%s'", markers[i]);
-			continue;
-		}
-
-		CString credit;
-		if (ubase)
-			credit = CDATAS + namedesc + " (Data by "+user+" on " + date + ")" + CDATAE;
-		points.push( KMLMarker(label, lat, lng, enlabels[l], credit) );
-	}
-
-	for (int i=0; i<labels.length(); ++i)
-		styles.push(  labels[i]+"="+icons[i] );
-
-	return TRUE;
-}
-
-int DESCENTECANYON_DownloadLatLng(CSym &sym) 
-{
-			// lat lng (in case not reported properly)
-			if (sym.GetNum(ITEM_LAT)==InvalidNUM || sym.GetNum(ITEM_LNG)==InvalidNUM)
-				{
-				vara styles, points, lines;
-				if (DESCENTECANYON_ExtractPoints(sym.id, styles, points, lines, NULL))
-					{
-					double xlat = InvalidNUM, xlng = InvalidNUM;
-					for (int i=0; i<points.length(); ++i)
-						{
-						vars name = ExtractString(points[i], "<name>", "", "</name>");
-						vars coords = ExtractString(points[i], "<coordinates>", "", "</coordinates>");
-						double lat = CGetNum(GetToken(coords,1));
-						double lng = CGetNum(GetToken(coords,0));
-						if (!CheckLL(lat,lng))
-							continue;
-						xlat = lat; xlng = lng;
-						if (name=="Start")
-							break;
-						}
-					if (xlat!=InvalidNUM && xlng!=InvalidNUM)
-						{
-						Log(LOGWARN, "Salvaged lat,lng for %s %s", sym.GetStr(ITEM_DESC), sym.id);
-						sym.SetNum(ITEM_LAT, xlat);
-						sym.SetNum(ITEM_LNG, xlng);
-						sym.SetStr(ITEM_KML, "X");
-						return TRUE;
-						}
-					}
-				}
-	return FALSE;
-}
-
-int DESCENTECANYON_DownloadPage(DownloadFile &f, const char *urlc, CSym &sym, BOOL condonly = FALSE) 
-{
-			if (f.Download(urlc))
-				{
-				Log(LOGERR, "ERROR: can't download url %.128s", urlc);
-				return FALSE;
-				}
-
-			//ASSERT(sym.id!="http://descente-canyon.com/canyoning/canyon-description/21850");
-
-			// cond
-			vars condstr = noHTML(ExtractString(f.memory, "Dernier d", "", "<br"));
-			vars conddate = stripHTML(ExtractString(condstr, "Le ", "", ":"));
-			vars condwater = stripHTML(ExtractString(condstr, "Le ", ":", "("));
-			if (!conddate.IsEmpty())
-				{
-				double date = DESCENTECANYON_GetDate(conddate);
-				if (date<=0)
-					Log(LOGERR, "Intelligeble date %s : %s", sym.id, condstr);
-				else
-					{
-					vara cond; cond.SetSize(COND_MAX);
-					cond[COND_DATE] = CDate(date);
-					//enum { W_DRY=0, W_WADING=1, W_SWIMMING=2, W_VERYLOW=3, W_LOW=4, W_MODLOW=5, W_MODERATE=6, W_MODHIGH=7, W_HIGH=8, W_VERYHIGH=9, W_EXTREME=10 };
-					static vara waterdc(UTF8("Sec=0,Petit filet d'eau=3,Débit correct=6,Gros débit=8,Très gros débit=9,Trop d'eau=10"));
-					cond[COND_WATER] = TableMatch(condwater, waterdc, cond_water);
-					cond[COND_LINK] = MkString("http://descente-canyon.com/canyoning/canyon-debit/%s/observations.html", vara(sym.id,"/").last());
-					
-					sym.SetStr(ITEM_CONDDATE, cond.join(";"));
-					}
-				if (condonly)
-					return TRUE;
-				}
-
-			// properties 
-			sym.SetStr(ITEM_LONGEST, noHTML(ExtractString(f.memory, "alt=\"Corde\"", "</td>", "</td")));
-			GetSummary(sym, noHTML(ExtractString(f.memory, "alt=\"Cot\"", "</td>", "</td")));
-			sym.SetStr(ITEM_LENGTH, noHTML(ExtractString(f.memory, "alt=\"Long\"", "</td>", "</td")));
-			sym.SetStr(ITEM_DEPTH, noHTML(ExtractString(f.memory, "alt=\"Deniv\"", "</td>", "</td")));
-
-			vars region = noHTML(ExtractString(f.memory, "Situation", ":", "<br"));
-			vars city = noHTML(ExtractString(f.memory, "Commune", ":", "<br"));
-			sym.SetStr(ITEM_REGION, region);
-			if (sym.GetNum(ITEM_LAT)==InvalidNUM)
-				{
-				sym.SetStr(ITEM_LAT, "@"+invertregion(sym.GetStr(ITEM_REGION), city) );
-				//sym.SetStr(ITEM_LNG, "X" );
-				}
-
-			vars shuttle = noHTML(ExtractString(f.memory, "alt=\"Nav\"", "</td>", "</td"));
-			if (shuttle[0]=='n') shuttle="No";
-			sym.SetStr(ITEM_SHUTTLE, shuttle);
-
-			// set stars //érêt\"
-			vars stars = noHTML(ExtractString(f.memory, "alt=\"int", ">", "votes"));
-			vara starsa(stars, "("); 
-			if (starsa.length()>=2) {
-				double s = CDATA::GetNum(starsa[0]);
-				double c = CDATA::GetNum(starsa[1]);
-				if (s==InvalidNUM || c==InvalidNUM) {					
-					if (!IsSimilar(stars, "Pas d'infos")) // no info
-						Log(LOGERR, "Bad star vote %.50s for %.128s", stars, urlc);
-					}
-				else
-					sym.SetStr(ITEM_STARS, CData(s+1)+"*"+CData(c));
-				}
-
-			sym.SetStr(ITEM_AKA, sym.GetStr(ITEM_DESC)+";"+noHTML(ExtractString(f.memory, "<h1", "<h1>", "</h1>")));
-
-			// time
-			vara times;
-			const char *ids[] = { "Appr", "Desc", "Ret" };
-			for (int t=0; t<sizeof(ids)/sizeof(*ids); ++t)
-				times.push( noHTML(ExtractString(f.memory, MkString("alt=\"%s\"",ids[t]), "</td>", "</td")) );	
-			GetTotalTime(sym, times, urlc, -1);
-
-
-			return TRUE;
-}
-
-
-
-int DESCENTECANYON_DownloadBeta(const char *ubase, CSymList &symlist) 
-{
-
-	vara recentlist, urllist;
-	const char *canyonlink = "href=\"/canyoning/canyon/";
-	const char *canyondesclink = "/canyoning/canyon-description/";
-
-	DownloadFile f;
-	CString dc = "http://www.descente-canyon.com";
-
-	// download list of recent additions
-	{
-	CString url = dc + "/canyoning/suivi-fichescanyons";
-	if (f.Download(url))
-		{
-		Log(LOGERR, "ERROR: can't download url %.128s", url);
-		return FALSE;
-		}
-	vara list(f.memory, canyonlink);
-	for (int i=0; i<list.length(); ++i)
-		{
-			CString id = ExtractString(f.memory, "href=", "/2", "/");
-			if (!id.IsEmpty())
-				recentlist.push(id);
-		}
-	recentlist.sort();
-	}
-
-
-	CString url = dc + "/canyoning/";
-	if (f.Download(url))
-		{
-		Log(LOGERR, "ERROR: can't download url %.128s", url);
-		return FALSE;
-		}
-
-	// tables for ratings
-	const char *sep = "/canyoning/lieu/13";
-	vara list(f.memory, sep);
-	for (int i=1; i<list.length(); ++i) {
-		CString url = dc+sep+GetToken(list[i], 0, '\"');
-		if (urllist.indexOf(url)>=0)
-			continue;
-		urllist.push(url);
-		urllist.sort();
-		if (f.Download(url))
-			{
-			Log(LOGERR, "ERROR: can't download url %.128s", url);
-			continue;
-			}
-
-		// process markers (located canyons)
-		vara markersidx; markersidx.push("");
-		vara markers(ExtractString(f.memory, "", "canyonMarkers=[", "];"), "{\"i\":");
-		for (int m=1; m<markers.length(); ++m) 
-			markersidx.push(ExtractString(markers[m], "", "\"", "\""));
-
-		const char *sep2 = canyonlink;
-		vara canyons(f.memory, sep2);
-		for (int c=1; c<canyons.length(); ++c) {
-			vars canyon = canyons[c];
-			if (canyon[0]!='2')
-				Log(LOGERR, "2 missing from %s%s", sep2, canyon);
-			vars endlink = GetToken(GetToken(canyon, 0, '\"'), 0, "/");
-			vars link = dc+canyondesclink+endlink;
-			//vars linkinfo = dc+"/canyoning/canyon/"+endlink;
-			vars name = ExtractString(canyon, "", "<b>", "</b>").Trim();
-
-			// set marker
-			vars marker = "";
-			vars id = ExtractString(link, "", "/2", "/");
-			if (id.IsEmpty())
-				{
-				Log(LOGERR, "Invalid id %s", id);
-				continue;
-				}
-			int m = markersidx.indexOf(id);
-			if (m>=0) {
-				marker = markers[m];
-				markersidx[m] = ""; //done!
-				}
-
-			// process marker (only located canyons)			
-			if (name.IsEmpty())
-				name = ExtractString(marker, "\"n\":", "\"", "\"").Trim();
-			//vars uname = ExtractString(marker, "\"u\":", "\"", "\"");
-			double lat = ExtractNum(marker, "\"la\":", "", ",");
-			double lng = ExtractNum(marker, "\"ln\":", "", ",");
-			if (!CheckLL(lat,lng) )
-				{
-				if (MODE>=0) 
-					Log(LOGWARN, "Invalid ll %s from %s", name, url);
-				lat = lng = InvalidNUM;
-				//continue
-				// allow invalid coordinates!
-				}
-
-			vars symbol = ExtractString(marker, "\"s\":", "\"", "\"").Trim();
-			//double stars = ExtractNum(marker, "\"it\":", "\"", "\"").Trim();
-			vars summary = ExtractString(marker, "\"cot\":", "\"", "\"").Trim();
-			vars er = ExtractString(marker, "\"er\":", "\"", "\"").Trim();
-			//"ii":"","ed":"1","ep":"1","eb":"1",
-			vars cond = ExtractString(marker, "\"dm\":", "\"", "\"").Trim();
-
-			// set sym
-			CSym sym(urlstr(link));
-			name.Replace(",", ";");
-			sym.SetStr(ITEM_DESC, name);
-			GetSummary(sym, summary); 
-			sym.SetNum(ITEM_LAT, lat);
-			sym.SetNum(ITEM_LNG, lng);
-			if (lat!=InvalidNUM && lng!=InvalidNUM)
-				sym.SetStr(ITEM_KML, "X");
-			if (symbol=="exclam")
-				sym.SetStr(ITEM_PERMIT, "Closed");
-			if (er=="1")
-				sym.SetStr(ITEM_PERMIT, "Yes");
-
-			// lat,lng
-			DESCENTECANYON_DownloadLatLng(sym);
-
-			// latest conditions
-			if (!cond.IsEmpty() && cond != "??")
-				{
-				double date = DESCENTECANYON_GetDate(cond);
-				vars ncond = CDate(date);
-				if (ncond.IsEmpty())
-					Log(LOGERR, "Intelligeble date %s : %s", name, cond);
-				else
-					sym.SetStr(ITEM_CONDDATE, ncond);
-				}
-
-			// update changes
-			if (!Update(symlist, sym) && MODE>=-1)
-				if (recentlist.indexOf(id)<0)
-					continue;
-
-			// download more information (for located and unlocated canyons)
-			DESCENTECANYON_DownloadPage(f, "http://www.descente-canyon.com/canyoning/canyon/2"+id, sym);
-			DESCENTECANYON_DownloadPage2(f, sym.id, sym); //"http://www.descente-canyon.com/canyoning/canyon-description/2"+id+"/topo.html", sym);
-			Update(symlist, sym, NULL, FALSE);
-		}
-
-		// check consistency
-		for (int m=0; m<markersidx.length(); ++m)
-			if (!markersidx[m].IsEmpty())
-				Log(LOGERR, "Unused marker id %s from %s", markersidx[m], url);
-
-		// update
-		printf("Downloading %d/%d = %d ...\r", i, list.length(), symlist.GetSize());
-		symlist.Save(filename("dcnew"));
-	}
-
-	return TRUE;
-}
-
-
-int DESCENTECANYON_DownloadConditions(const char *ubase, CSymList &symlist) 
-{
-	DownloadFile f;
-	CString url = "http://www.descente-canyon.com/derniers_debits_canyon";
-	if (f.Download(url))
-		{
-		Log(LOGERR, "ERROR: can't download url %.128s", url);
-		return FALSE;
-		}
-	vara list(f.memory, "/canyon-debit/");
-	for (int i=1; i<list.length(); ++i)
-		{
-		vars id = ExtractString(list[i],"", "", "/");		
-		CSym sym( urlstr("http://descente-canyon.com/canyoning/canyon-description/"+id));
-		if (DESCENTECANYON_DownloadPage(f, "http://www.descente-canyon.com/canyoning/canyon/"+id ,sym, TRUE))
-			UpdateCond(symlist, sym, NULL, FALSE);
-		}
-	return TRUE;
-}
-
-
-int DESCENTECANYON_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
-{
-	CString credit = " (Data by " + CString(ubase) + ")";
-
-	DownloadFile f;
-
-	vara styles, points, lines;
-	if (!DESCENTECANYON_ExtractPoints(url, styles, points, lines, ubase))
-		return FALSE;
-
-	// generate kml
-	SaveKML(ubase, credit, url, styles, points, lines, out);
-	return TRUE;
 }
 
 // ===============================================================================================
@@ -16731,9 +15793,6 @@ BOOL Exists()
 {
 	return open>0 && lines.length()>0;
 }
-
-
-class CPage;
 
 CPage(DownloadFile &f, const char *_id, const char *_title, const char *_oldid = "")
 {
