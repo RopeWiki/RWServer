@@ -13,6 +13,7 @@
 #include "CBrennen.h"
 #include "Code.h"
 #include "DescenteCanyon.h"
+#include "GeoRegion.h"
 #include "RoadTripRyan.h"
 #include "UKCanyonGuides.h"
 #include "SuperAmazingMap.cpp"
@@ -42,7 +43,6 @@ extern int INVESTIGATE;
 
 #define RWTITLE "RWTITLE:"
 #define RWLINK "@"
-#define RWREGIONS "rwreg"
 #define RWBASE vars("http://ropewiki.com/")
 #define DISAMBIGUATION " (disambiguation)"
 
@@ -73,6 +73,8 @@ static const char *rwformaca =                  "Technical rating;Water rating;T
 
 enum { M_MATCH=ITEM_ACA, M_SCORE, M_LEN, M_NUM, M_RETRY };
 
+GeoCache _GeoCache;
+GeoRegion _GeoRegion;
 
 int iReplace(vars &line, const char *ostr, const char *nstr)
 {
@@ -4984,549 +4986,6 @@ int SCHLUCHT_DownloadConditions(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
-// ===============================================================================================
-#define GEOCODETICKS 200
-static double geocodeticks;
-
-#define GEOCODE "geocode"
-#define NOGEOCODE "geocodeerr"
-
-class GeoCache {
-	BOOL init;
-	CSymList list, nolist;
-
-public:
-	GeoCache(void)
-	{
-		init = FALSE;
-	}
-
-	~GeoCache(void)
-	{
-		/*
-		if (init<0)
-			{
-			list.Save(filename(GEOCODE));
-			nolist.Save(filename(NOGEOCODE));
-			}
-		*/
-	}
-
-
-	vars idstr(const char *addr)
-	{
-		return vars(addr).replace(",",";");
-	}
-
-	int GetNoCache(const char *address, double &lat, double &lng)
-	{
-		// get new geocode
-		init = -1;
-		DownloadFile f;
-		Throttle(geocodeticks, GEOCODETICKS);
-		vars url = vars("https://maps.googleapis.com/maps/api/geocode/xml?address=")+url_encode(stripAccents(address));
-		if (f.Download(url))
-			return FALSE;
-		lat = ExtractNum(f.memory, "", "<lat>", "</lat>");
-		lng = ExtractNum(f.memory, "", "<lng>", "</lng>");	
-		return (lat!=InvalidNUM && lng!=InvalidNUM);
-	}
-
-	int Get(const char *address, double &lat, double &lng)
-	{
-		if (!init)
-			{
-			init = TRUE;
-			list.Load(filename(GEOCODE));
-			list.Sort();
-			if (CFILE::exist(filename(NOGEOCODE)))
-				nolist.Load(filename(NOGEOCODE));
-			nolist.Sort();
-			}
-
-		if (!address || *address==0)
-			return FALSE;
-
-		// lat;lng
-		lat = CDATA::GetNum(address);
-		lng = CDATA::GetNum(GetToken(address, 1, ",;"));
-		if (CheckLL(lat,lng))
-			return TRUE;
-
-		int found = list.Find(idstr(address));
-		if (found>=0)
-			{
-			lat = list[found].GetNum(0);
-			lng = list[found].GetNum(1);
-			return TRUE;
-			}
-		if (nolist.Find(idstr(address))>=0)
-			return FALSE;
-		
-		GetNoCache(address, lat, lng);
-
-/*
-		if (!CheckLL(lat,lng) && address.Find("/")>=0)
-			{
-			vars naddress = address;
-			ExtractStringDel(naddress, "/", "", ".");
-			if (vara(naddress, ".")>2)
-				GetNoCache(naddress, lat, lng);	
-			}
-*/
-		if (lat!=InvalidNUM && lng!=InvalidNUM)
-			{
-			CSym sym(idstr(address), CData(lat)+","+CData(lng));
-			list.Add(sym);
-			list.Sort();
-			list.Save(filename(GEOCODE));
-			return TRUE;
-			}
-		nolist.Add(CSym(idstr(address)));
-		nolist.Sort();
-		nolist.Save(filename(NOGEOCODE));
-		return FALSE;
-	}	
-
-} GeoCode;
-
-
-#define GEOREGION "georegion"
-#define NOGEOREGION "georegionerr"
-#define GEOREGIONFIX "georegionfix"
-#define GEOREGIONTRANS "georegiontrans"
-#define GEOREGIONITRANS "georegionredir"
-#define GEOREGIONNOMAJOR "georegionnomaj"
-#define GEOREGIONLEV "georegionlev"
-
-
-
-
-
-
-
-
-class GeoRegion {
-	BOOL init;
-	vars key;
-	CSymList list, nolist, translist, levlist;
-
-public:
-	int overlimit;
-
-	GeoRegion(void)
-	{
-		init = FALSE;
-		overlimit = 0;
-		key = "&key=AIzaSyA5GHhRPXaJTiD-lbTOE3I3sn2dQ5lUlq0";
-		
-		/*
-		// Patch georegion
-		CSymList list;
-		vars replace = "TOBEREPLACED"; 
-		list.Load(filename(GEOREGION));
-		for (int i=0; i<list.GetSize(); ++i)
-			list[i].data = GeoRegion::bestgeoregion(list[i].data);
-		list.Save(filename(GEOREGION));	
-		*/
-	}
-
-
-	~GeoRegion(void)
-	{
-		/*
-		if (init)
-			{
-			list.Save(filename(GEOREGION));
-			nolist.Save(filename(NOGEOREGION));
-			}
-		*/
-	}
-
-
-	int Translate(vara &regions)
-	{
-	// apply translations
-	vars region = regions.join(";");
-	for (int d=0; d<translist.GetSize(); ++d)
-		region.Replace(translist[d].id, translist[d].data);
-	while(region.Replace(" ;", ";"));
-	while(region.Replace("; ", ";"));
-
-	regions = vara(region, ";");
-	return regions.length()>0;
-	}
-
-	static vars bestgeoregion(const char *data)
-	{
-		vara list(data);
-		int maxbest = 10;
-		vara best; best.SetSize(maxbest);
-
-		for (int i=1; i<list.length(); ++i)
-			{
-			if (list[i]=="TOBEREPLACED")
-				continue;
-			vara glist(list[i], ";");
-			for (int g=0; g<glist.length(); ++g)
-				{
-				double n = CDATA::GetNum(GetToken(glist[g],1,':'));
-				if (n<0 || n>=maxbest)
-					continue;
-
-				vars &bestn = best[(int)n];
-				if (bestn.IsEmpty())
-					bestn = glist[g];
-				}
-			}
-
-		// truncate incomplete lists
-		for (int i=0; i<best.length(); ++i)
-			if (best[i].IsEmpty())
-				best.SetSize(i);
-
-
-		list[0] = best.join(";");
-		return list.join().Trim(" ;");
-	}
-
-
-	static int okgeoregion(const char *reg)
-	{
-		vara r(reg, ";");
-
-		char last = 0;
-		for (int i=0; i<r.length(); ++i)
-			{
-			vars n = GetToken(r[i],1,':');
-			if (last!=0 && n[0]!=last+1)
-				return FALSE;
-			last = n[0];
-			}
-		return TRUE;
-	}
-
-	static int cmpgeoregion( const void *arg1, const void *arg2)
-	{
-		const char *s1 = *((const char **)arg1);
-		const char *s2 = *((const char **)arg2);
-		const char *a1 = strrchr(s1, ':');
-		const char *a2 = strrchr(s2, ':');
-		/*
-		int ok = okgeoregion(s1)-okgeoregion(s2);
-		if (ok!=0)
-			return ok;
-		*/
-		int a = -strcmp(a1, a2);
-		if (a!=0)
-			return a;
-		/*
-		int s = -strcmp(s1, s2);
-		if (s!=0)
-			return s;
-		*/
-		return 0;
-	}
-
-	int Get(CSym &sym, vara &regions)
-	{
-		if (!init)
-			{
-			init = TRUE;
-			list.Load(filename(GEOREGION));
-			list.Sort();
-			/*
-			for (int i=0; i<list.GetSize(); ++i)
-				{
-				vars data = list[i].data;
-				data = invertregion(data, "");
-				list[i].data = data;
-				}
-			*/
-
-			if (CFILE::exist(filename(NOGEOREGION)))
-				nolist.Load(filename(NOGEOREGION));
-			nolist.Sort();
-
-			// translate regions
-			translist.Load(filename(GEOREGIONTRANS));
-
-			// max level
-			levlist.Load(filename(GEOREGIONLEV));
-			}
-
-		double olat = sym.GetNum(ITEM_LAT);
-		double olng = sym.GetNum(ITEM_LNG);
-		if (!CheckLL(olat,olng))
-			{
-			// check geocode
-			vars geocode = GetToken(sym.GetStr(ITEM_LAT), 1, '@');
-			if (geocode.IsEmpty() || !GeoCode.Get(geocode, olat, olng) || !CheckLL(olat,olng))
-				return FALSE;
-			}
-
-		double eps = 1e-4;
-		double lat = round(olat/eps)*eps, lng = round(olng/eps)*eps;
-		vars address = CData(lat)+"x"+CData(lng);
-		address.Replace(" ","");
-		int found = list.Find(address);
-		if (found>=0)
-			{
-			regions = vara(list[found].GetStr(0), ";");
-			return Translate(regions);
-			}
-		if (nolist.Find(address)>=0)
-			return FALSE;
-
-		// get new geocode
-		if (overlimit>5)
-			{
-			++overlimit;
-			return FALSE;
-			}
-	
-		init = -1;
-		DownloadFile f;
-
-	// retry 3 times untill it can get maxlev>=2
-	double maxlev = -1;
-	const double eval[] = { 0, -eps, eps };
-	vara georegions, georegionsxtra; georegions.push("");
-	for (int e=0; e<3 && maxlev<2; ++e)
-	{
-		Throttle(geocodeticks, GEOCODETICKS);
-		vars address = CData(lat+eval[e])+","+CData(lng+eval[e]);
-		vars url = vars("https://maps.googleapis.com/maps/api/geocode/xml?latlng=")+address.replace(" ","")+"&language=en"+key; //&key=AIzaSyBCOHje4lTAB2-P1UZjtNvEmP7HsntdUh8"; //&key=AIzaSyA5GHhRPXaJTiD-lbTOE3I3sn2dQ5lUlq0"; //"&key=";
-		
-		if (f.Download(url))
-			return FALSE;
-		if (strstr(f.memory, "OVER_QUERY_LIMIT"))
-			{
-			if (!key.IsEmpty())
-				{
-				key = "";
-				return Get(sym, regions);
-				}
-			++overlimit;
-			return FALSE;
-			}
-
-		regions.RemoveAll();
-		vara rlist(f.memory,"<result>");
-
-		for (int r=1; r<rlist.length(); ++r)
-			{
-			vara alist(rlist[r], "<address_component>");
-			if (alist.length()<=0)
-				continue;
-
-			// result type has to be 'political' (different from address
-			int rpolitical = strstr(alist[0],"<type>political</type")!=NULL;
-
-			vara current;
-			for (int i=1; i<alist.length(); ++i)
-				{
-				double lev = ExtractNum(alist[i],"<type>administrative_area_level_", "", "</type>");
-				if (strstr(alist[i],"<type>country")) lev = 0;
-				if (lev<0)
-					continue;
-				if (lev>maxlev)
-					maxlev = lev;
-				vars name = ExtractString(alist[i], "<long_name>", "", "</long_name>").trim();
-				int political = strstr(alist[i],"<type>political</type>")!=NULL;
-				current.push(MkString("%s:%s%s", stripAccents(name), CData(lev), political ? "P" : ""));
-				}
-
-			// store result
-			if (current.length()>0)
-				{
-				vars georegion = invertregion(current.join(), "");
-				if (georegions.indexOf(georegion)<0 && georegionsxtra.indexOf(georegion)<0)
-					if (rpolitical) 
-						georegions.push( georegion );
-					else
-						georegionsxtra.push( georegion );
-				}
-			}
-	}	
-		// unify in one list
-		georegions.Append(georegionsxtra);
-		if (georegions.GetSize()>1)
-			{
-			CSym sym(address, GeoRegion::bestgeoregion(georegions.join()) );
-
-			list.Add(sym);
-			list.Sort();
-			list.Save(filename(GEOREGION));
-			regions = vara(sym.GetStr(0), ";");
-			return Translate(regions);
-			}
-		// error
-		nolist.Add(CSym(address));
-		nolist.Sort();
-		nolist.Save(filename(NOGEOREGION));
-		return FALSE;
-	}	
-
-
-
-	int GetRegion(CSym &sym, vara &georegions, int *forced = NULL)
-	{
-		if (!Get(sym, georegions))
-			return -1;
-
-		int maxr = -1;
-		// auto detect max level
-		vars country = GetToken(georegions[0],0,':');
-		for (int r=georegions.length()-1; r>=0; --r)
-			{
-			int f;
-			vars region = GetToken(georegions[r],0,':');
-			if ((f=levlist.Find(georegions[r]))>=0)
-				{
-				int maxlev = (int)levlist[f].GetNum(0);
-				if (forced) *forced = maxlev;
-				return maxlev; // level is specified in levlist
-				}
-			if (!GetRegion(region, TRUE).IsEmpty())
-				if (strstri(GetFullRegion(region), country))
-					if (r>maxr)
-						maxr = r;
-			}
-
-		return maxr;
-	}
-
-	vars GetSubRegion(const char *region, const char *region2, int exact = FALSE)
-	{
-		if (exact)
-			{
-			vara list(GetFullRegion(region), ";");
-			int n = list.indexOfi(region2);
-			return n<0 ? "" : region2;
-			}
-		vars fullreg = GetFullRegion(region);
-		const char *subreg = strstri(fullreg, region2);
-		return !subreg ? "" : subreg;
-	}
-
-	CSymList oregionlist, oredirectlist;
-
-	CSymList &Redirects(void)
-	{
-		return oredirectlist;
-	}
-
-	CSymList &Regions(void)
-	{
-		if (oregionlist.GetSize()==0)
-			{
-			oregionlist.Load(filename(RWREGIONS));
-			oregionlist.iSort();
-
-			CSymList tmp;
-			tmp.Load(filename(RWREDIR));
-			for (int i=0; i<tmp.GetSize(); ++i)
-				{
-				CSym &sym = tmp[i];
-				vars name = sym.GetStr(ITEM_DESC);
-				if (oregionlist.Find(name)<0)
-					continue;
-				// process only region redirects
-				vara aka(sym.GetStr(ITEM_AKA), ";");
-				for (int a=0; a<aka.length(); ++a)
-					oredirectlist.AddUnique(CSym(aka[a], name));
-				}
-
-			oredirectlist.iSort();
-			oregionlist.iSort();
-			}
-		return oregionlist;
-	}
-
-	vars GetRegion(const char *oregion, BOOL check = FALSE)
-	{
-		CSymList &oregionlist = Regions();
-
-		if (oregion==NULL || *oregion==0)
-			return "";
-
-		vars region = vara(oregion, ";").last().Trim();
-
-		while (!region.IsEmpty())
-		{
-			int found;
-			if ((found=oregionlist.Find(region))>=0)
-				return oregionlist[found].id;
-			if ((found=oredirectlist.Find(region))>=0)
-				{
-				region = oredirectlist[found].data;
-				continue; // there may be more redirects
-				}
-			break;
-		}
-
-		if (!check)
-			Log(LOGERR, "Unknown region '%s'", oregion);
-		return "";
-	}
-
-	void AddRegion(const char *region, const char *parent)
-	{
-		if (!GetRegion(region).IsEmpty())
-			return;	
-		oregionlist.AddUnique(CSym(region, parent));				
-	}
-
-	vars GetFullRegion(const char *oregion)
-	{
-	if (!oregion || *oregion==0)
-		return "";
-
-	vars region = GetRegion(GetToken(vara(oregion, ";").last(), 0, ':'));
-	if (region.IsEmpty())
-		return "";
-
-	// precomputed
-	CSymList &regions = Regions();
-	int or = regions.Find(region);
-	if (or<0)
-		return "";
-	vars fullregion = regions[or].GetStr(ITEM_MATCH);
-	if (!fullregion.IsEmpty())
-		return fullregion;
-
-	// compute now
-	vara regionlist;
-	vara parent;
-	parent.push(region);
-	while (parent.length()>0 && !IsSimilar(parent.last(),"world"))
-	  {
-	  regionlist.Append(parent);
-
-	  vara newparent;
-	  for (int i=0; i<parent.length(); ++i)
-		{
-		
-		int r = regions.Find(parent[i]);
-		if (r>=0) 
-			{
-			vara newparents(regions[r].GetStr(0), ";");
-			newparent.Append(newparents);
-			}
-		else
-			r=r;
-		}
-	  parent = newparent;
-	  }
-	fullregion = invertregion(regionlist.join(), "");
-	regions[or].SetStr(ITEM_MATCH, fullregion);
-	return fullregion;
-	}
-
-} GeoRegion;
-
-
 
 vars url2url(const char *url, const char *baseurl)
 {
@@ -5751,10 +5210,10 @@ int BARRANQUISMO_DownloadPage(DownloadFile &fout, const char *url, CSym &sym)
 		loc1 = GetToken(loc1, 0, ".(,;/").Trim();
 		loc2 = GetToken(loc2, 0, ".(,;/").Trim();
 		if (sym.GetNum(ITEM_LAT)==InvalidNUM && !loc3.IsEmpty())
-			if (!GeoCode.Get(loc = loc1!=loc2 ? loc1+"."+loc2+"."+loc3 : loc1+"."+loc3, glat, glng))
-				if (!GeoCode.Get(loc = loc1+"."+loc3, glat, glng))
-					//if (!GeoCode.Get(loc = loc2+"."+loc3, glat, glng))
-						//if (!GeoCode.Get(loc = GetToken(sym.GetStr(ITEM_LAT), 1, '@'), glat, glng))
+			if (!_GeoCache.Get(loc = loc1!=loc2 ? loc1+"."+loc2+"."+loc3 : loc1+"."+loc3, glat, glng))
+				if (!_GeoCache.Get(loc = loc1+"."+loc3, glat, glng))
+					//if (!_GeoCache.Get(loc = loc2+"."+loc3, glat, glng))
+						//if (!_GeoCache.Get(loc = GetToken(sym.GetStr(ITEM_LAT), 1, '@'), glat, glng))
 						Log(LOGERR, "Bad Geocode for %s : '%s'", sym.id, loc);
 		if (sym.GetNum(ITEM_LAT)==InvalidNUM && !loc.IsEmpty())
 			sym.SetStr(ITEM_LAT, "@"+loc);
@@ -8989,13 +8448,13 @@ public:
 
 		vars address, oaddress;
 		double lat, lng;
-		if (!GeoCode.Get(oaddress = address = city+";"+GetToken(region,0,",;-")+";Italy", lat, lng))
+		if (!_GeoCache.Get(oaddress = address = city+";"+GetToken(region,0,",;-")+";Italy", lat, lng))
 			{
 			while (!ExtractStringDel(address,"(", "", ")").IsEmpty());
-			if (!GeoCode.Get(address, lat, lng))
-			  if (!GeoCode.Get(address = city+";"+region+";Italy", lat, lng))
-				if (!GeoCode.Get(address = city+";Italy", lat, lng))
-					if (!GeoCode.Get(address = city+";"+region+";Italy", lat, lng))
+			if (!_GeoCache.Get(address, lat, lng))
+			  if (!_GeoCache.Get(address = city+";"+region+";Italy", lat, lng))
+				if (!_GeoCache.Get(address = city+";Italy", lat, lng))
+					if (!_GeoCache.Get(address = city+";"+region+";Italy", lat, lng))
 						address = address;
 			}
 
@@ -12326,7 +11785,7 @@ void MatchList(CSymList &symlist, Code &code)
 		if (lat!=InvalidNUM && lng==InvalidNUM)
 			lng = CDATA::GetNum(GetToken(slat,1,';'));
 		if (lat==InvalidNUM && slat[0]=='@')
-			GeoCode.Get(slat.Mid(1), lat, lng);
+			_GeoCache.Get(slat.Mid(1), lat, lng);
 		if (CheckLL(lat,lng))
 			llrlist.AddTail( PLLRect(lat, lng, DIST150KM, &sym) ); // 150km
 		++i;
@@ -14196,7 +13655,7 @@ int UpdatePage(CSym &sym, int code, vara &lines, vara &comment, const char *titl
 				geoloc[1].Replace(";East;", ";");
 				geoloc[1].Replace(";", ",");
 				double lat, lng;
-				if (!GeoCode.Get(geoloc[1], lat, lng))
+				if (!_GeoCache.Get(geoloc[1], lat, lng))
 					{
 					Log(LOGERR, "Invalid Geolocation for %s [%s]", sym.id, geoloc[1]);
 					return FALSE;
@@ -14919,7 +14378,7 @@ int AutoRegion(CSym &sym)
 
 	// AutoRegion
 	vara georegions;
-	int r = GeoRegion.GetRegion(sym, georegions);
+	int r = _GeoRegion.GetRegion(sym, georegions);
 	if (r<0)
 		{
 		Log(LOGWARN, "WARNING: No AutoRegion for %s [%s] (%s,%s), using '%s'", sym.id, sym.GetStr(ITEM_DESC), sym.GetStr(ITEM_LAT), sym.GetStr(ITEM_LNG), oregion);
@@ -14932,7 +14391,7 @@ int AutoRegion(CSym &sym)
 	vars aregion = aregions.join(";");
 
 	// check if auto region needed
-	vars fregion = GeoRegion.GetFullRegion(oregion);
+	vars fregion = _GeoRegion.GetFullRegion(oregion);
 	if (strstri(fregion, aregions.last()))
 		return TRUE; 
 
@@ -14945,39 +14404,39 @@ int AutoRegion(CSym &sym)
 
 int UploadRegion(CSym &sym, CSymList &newregions)
 {
-  vars region = sym.GetStr(ITEM_REGION);
-  if (region.IsEmpty())
-	return FALSE;
+	vars region = sym.GetStr(ITEM_REGION);
+	if (region.IsEmpty())
+		return FALSE;
 
-  vara rlist(region, ";");
-  vars lastregion = GeoRegion.GetRegion(rlist.last());
-  if (!lastregion.IsEmpty())
-	return TRUE;
+	vara rlist(region, ";");
+	vars lastregion = _GeoRegion.GetRegion(rlist.last());
+	if (!lastregion.IsEmpty())
+		return TRUE;
 
 
-  // new region 
-  Log(LOGWARN, "WARNING: Region '%s' [%s] needs to be created", lastregion, region);
+	// new region 
+	Log(LOGWARN, "WARNING: Region '%s' [%s] needs to be created", lastregion, region);
 
-  if (rlist.length()<=1)
+	if (rlist.length() <= 1)
 	{
-	GeoRegion.AddRegion(region, "");
+		_GeoRegion.AddRegion(region, "");
+		return TRUE;
+	}
+
+	sym.SetStr(ITEM_REGION, rlist.last());
+
+	// build region tree  
+	for (int i = 1; i < rlist.length(); ++i) {
+		if (!_GeoRegion.GetRegion(rlist[i]).IsEmpty())
+			continue;
+
+		vars title = rlist[i];
+		vars parent = rlist[i - 1];
+		_GeoRegion.AddRegion(title, parent);
+		newregions.Add(CSym(title, parent));
+	}
+
 	return TRUE;
-	}
-
-  sym.SetStr(ITEM_REGION, rlist.last() );
-
-  // build region tree  
-  for (int i=1; i<rlist.length(); ++i) {
-	  if (!GeoRegion.GetRegion(rlist[i]).IsEmpty())
-		  continue;
-
-	  vars title = rlist[i];
-	  vars parent = rlist[i-1];
-	  GeoRegion.AddRegion(title, parent);
-	  newregions.Add(CSym(title, parent));
-	}
-
-  return TRUE;
 }
 
 
@@ -17025,7 +16484,7 @@ void FixInconsistencies(void)
 			comment.push("Bad LAT vs LNG");	
 		double lat, lng;
 		if (FixCheckEmpty(data[D_LAT], data[D_GEOCODE], -1))
-			if (GeoCode.Get(data[D_GEOCODE], lat, lng))
+			if (_GeoCache.Get(data[D_GEOCODE], lat, lng))
 				comment.push("Bad Geocode LAT");
 
 		// Summary
@@ -18793,7 +18252,7 @@ vars GetFullGeoRegion(const char *georegion)
 
 	vara list;
 	vara glist(georegion, ";");
-	GeoRegion.Translate(glist);
+	_GeoRegion.Translate(glist);
 	for (int i=0; i<glist.length(); ++i)
 		{
 		vars reg = GetToken(glist[i], 0, ':');
@@ -18862,7 +18321,7 @@ int CheckRegions(CSymList &rwlist, CSymList &chglist)
 			Log(LOGERR, "Invalid lat/lng %s %s: %s,%s (geocode:%s)", sym.id, sym.GetStr(ITEM_DESC), CData(lat), CData(lng), geocode);
 			continue;
 			}
-		if (GeoCode.Get(geocode.replace(";", ","), glat, glng))
+		if (_GeoCache.Get(geocode.replace(";", ","), glat, glng))
 			{
 			double dist = Distance(lat, lng, glat, glng);
 			if (dist>MAXGEOCODEDIST)
@@ -18900,7 +18359,7 @@ int CheckRegions(CSymList &rwlist, CSymList &chglist)
 		for (int j=0; j<res.length(); ++j)
 			if (res[j]=="(0)" && fakelist.Find(regions10[j])<0)
 				{
-				Log(LOGWARN, "WARNING: '%s' is an empty region (use -deletebeta delete.csv to delete)", GeoRegion.GetFullRegion(regions10[j]));
+				Log(LOGWARN, "WARNING: '%s' is an empty region (use -deletebeta delete.csv to delete)", _GeoRegion.GetFullRegion(regions10[j]));
 				dellist.Add(CSym(regions10[j]));
 				}
 		}
@@ -18947,7 +18406,7 @@ int CheckRegions(CSymList &rwlist, CSymList &chglist)
 
 		// check GeoRegion
 		vara georegions;
-		if (GeoRegion.GetRegion(sym, georegions)>=0)
+		if (_GeoRegion.GetRegion(sym, georegions)>=0)
 			continue;
 
 		prect->closest.Sort(prect->closest[0].cmp);
@@ -18973,8 +18432,8 @@ int CheckRegions(CSymList &rwlist, CSymList &chglist)
 			}
 		if (!matchedregion && !region.IsEmpty() && !nearregion.IsEmpty())
 			{
-			vara aregion( GeoRegion.GetSubRegion(region, mregion), ";");
-			vara anearregion( GeoRegion.GetSubRegion(nearregion, mregion), ";");
+			vara aregion(_GeoRegion.GetSubRegion(region, mregion), ";");
+			vara anearregion(_GeoRegion.GetSubRegion(nearregion, mregion), ";");
 			if (anearregion.length() < aregion.length())
 				continue; // avoid de-refining
 
@@ -18997,7 +18456,7 @@ int CheckRegions(CSymList &rwlist, CSymList &chglist)
 		{
 		CSym &sym = rwlist[i];
 		vars title = sym.GetStr(ITEM_DESC);
-		vars region = GeoRegion.GetRegion(sym.GetStr(ITEM_REGION));
+		vars region = _GeoRegion.GetRegion(sym.GetStr(ITEM_REGION));
 
 		if (region.IsEmpty() || regions.Find(region)<0)
 			{
@@ -19016,8 +18475,8 @@ int CheckRegions(CSymList &rwlist, CSymList &chglist)
 
 			// official region
 			vara georegions;
-			int r = GeoRegion.GetRegion(sym, georegions);
-			vars georegion = r<0 ? "?" : GeoRegion.GetFullRegion(georegions[r]);
+			int r = _GeoRegion.GetRegion(sym, georegions);
+			vars georegion = r<0 ? "?" : _GeoRegion.GetFullRegion(georegions[r]);
 
 			// closest match
 			int llr = -1;
@@ -19029,7 +18488,7 @@ int CheckRegions(CSymList &rwlist, CSymList &chglist)
 					for (int c=1; c<closest.length() && nearregion.IsEmpty(); ++c)
 						{
 						CSym *csym = llrlist[r].closest[c].ll->ptr;
-						nearregion = GeoRegion.GetFullRegion(csym->GetStr(ITEM_REGION));
+						nearregion = _GeoRegion.GetFullRegion(csym->GetStr(ITEM_REGION));
 						}
 					}
 
@@ -19074,7 +18533,7 @@ int FixBetaRegionGetFix(CSymList &idlist)
 			printf("Processing %s %d/%d [err:%d]       \r", idlist[i].GetStr(ITEM_DESC), i, idlist.GetSize(), error);
 
 			vars symregion = sym.GetStr(ITEM_REGION);
-			vars tomatch = GeoRegion.GetRegion(symregion);
+			vars tomatch = _GeoRegion.GetRegion(symregion);
 			if (tomatch.IsEmpty())
 				{
 				Log(LOGWARN, "Possible #REDIRECT for %s [%s] (ignored)", sym.GetStr(ITEM_DESC), sym.id);
@@ -19083,7 +18542,7 @@ int FixBetaRegionGetFix(CSymList &idlist)
 
 			vara georegions;
 			int maxlev = -1;
-			int maxr = GeoRegion.GetRegion(sym, georegions, &maxlev);
+			int maxr = _GeoRegion.GetRegion(sym, georegions, &maxlev);
 			if (maxr<0)
 				{
 				++error;
@@ -19105,7 +18564,7 @@ int FixBetaRegionGetFix(CSymList &idlist)
 				if (curlev==maxlev)
 					{
 					//int ni = i + maxlev - curlev;
-					if (!GeoRegion.GetSubRegion(tomatch, GetToken(georegion,0,':'), TRUE).IsEmpty()) // && ni<afullregion.length()) 
+					if (!_GeoRegion.GetSubRegion(tomatch, GetToken(georegion,0,':'), TRUE).IsEmpty()) // && ni<afullregion.length()) 
 						continue;
 					else
 						tomatch = tomatch;
@@ -19144,7 +18603,7 @@ int FixBetaRegionGetFix(CSymList &idlist)
 			vars georegion = GetToken(sym.id,0,':');
 			vars region = GetToken(list[list.length()/2], 0, '=');
 			vars fullgeoregion = GetFullGeoRegion(sym.GetStr(ITEM_DESC));
-			vars fullregion = GeoRegion.GetFullRegion(region);
+			vars fullregion = _GeoRegion.GetFullRegion(region);
 
 			sym.SetStr(ITEM_LAT, fullregion);
 			if (georegion!=region)
@@ -19228,9 +18687,9 @@ int FixBetaRegionGetFix(CSymList &idlist)
 		geomatch.header = "Sub Region,GEORegion,RWRegion (<-Fix),Chg,Fix,In,InList,Out,OutList";
 		geomatch.Sort(sortgeomatch);
 		geomatch.Save(filename(GEOREGIONFIX));
-		if (GeoRegion.overlimit)
+		if (_GeoRegion.overlimit)
 			{
-			Log(LOGERR, "ERROR: OVER LIMIT reached (%d errors), change IP to continue", GeoRegion.overlimit);
+			Log(LOGERR, "ERROR: OVER LIMIT reached (%d errors), change IP to continue", _GeoRegion.overlimit);
 			//return FALSE;
 			}
 		// Output: GeoRegionFix.csv file
@@ -19241,81 +18700,81 @@ int FixBetaRegionGetFix(CSymList &idlist)
 
 int FixBetaRegionUseFix(CSymList &idlist)
 {
-		// uses georegionfix!!!
+	// uses georegionfix!!!
 
-		CSymList geomatch, chglist;
-		geomatch.Load(filename(GEOREGIONFIX));
-		geomatch.Sort();
+	CSymList geomatch, chglist;
+	geomatch.Load(filename(GEOREGIONFIX));
+	geomatch.Sort();
 
-		for (int i=0; i<idlist.GetSize(); ++i)
+	for (int i = 0; i < idlist.GetSize(); ++i)
+	{
+		CSym &rwsym = idlist[i];
+		CSym sym(rwsym.id, rwsym.GetStr(ITEM_DESC));
+
+		vars geocode = GetToken(rwsym.GetStr(ITEM_LAT), 1, '@');
+		if (!geocode.IsEmpty())
+		{
+			// check geocode
+			double lat, lng;
+			if (_GeoCache.Get(geocode, lat, lng))
 			{
-			CSym &rwsym = idlist[i];	
-			CSym sym(rwsym.id, rwsym.GetStr(ITEM_DESC));
-
-			vars geocode = GetToken(rwsym.GetStr(ITEM_LAT), 1, '@');
-			if (!geocode.IsEmpty())
+				double dist = Distance(lat, lng, rwsym.GetNum(ITEM_LAT), rwsym.GetNum(ITEM_LNG));
+				if (dist > MAXGEOCODEDIST)
 				{
-				// check geocode
-				double lat, lng;
-				if (GeoCode.Get(geocode, lat, lng))
-					{
-					double dist = Distance(lat, lng, rwsym.GetNum(ITEM_LAT), rwsym.GetNum(ITEM_LNG));
-					if (dist>MAXGEOCODEDIST)
-						{
-						vars err = MkString("Geocode '%s' (%g;%g) = %dkm", geocode, rwsym.GetNum(ITEM_LAT), rwsym.GetNum(ITEM_LNG), (int)(dist/1000));
-						Log(LOGERR, "Mismatched geocode %s %s: %s", rwsym.id, rwsym.GetStr(ITEM_DESC), err);
-						sym.SetStr(ITEM_NEWMATCH, err);
-						}
-					}
+					vars err = MkString("Geocode '%s' (%g;%g) = %dkm", geocode, rwsym.GetNum(ITEM_LAT), rwsym.GetNum(ITEM_LNG), (int)(dist / 1000));
+					Log(LOGERR, "Mismatched geocode %s %s: %s", rwsym.id, rwsym.GetStr(ITEM_DESC), err);
+					sym.SetStr(ITEM_NEWMATCH, err);
 				}
-
-			vara georegions;
-			if (GeoRegion.Get(rwsym, georegions))
-				{	
-				// check georegion
-				vars georegion = georegions.join(";");
-				for (int j=0; j<geomatch.GetSize(); ++j)
-					{
-					CSym &geosym = geomatch[j];
-					if (georegions.indexOf(geosym.id)>=0)
-						{
-						vars rwreg = rwsym.GetStr(ITEM_REGION);
-						vars georeg = geosym.GetStr(ITEM_LAT);
-						vars fixreg = geosym.GetStr(ITEM_MATCH);
-						if (!fixreg.IsEmpty())
-							georeg = fixreg;
-						vara rwregions( rwreg, ";" );
-						vara georegions( georeg, ";" );
-						if (rwregions.last() != georegions.last())
-							{
-							vara fullregions( GeoRegion.GetFullRegion(rwregions.last()), ";" );
-							if (fullregions.indexOfi(georegions.last())<0)
-								{
-								vara diffregions;
-								for (int d=0; d<fullregions.length(); ++d)
-									if (d>=georegions.length() || fullregions[d]!=georegions[d])
-										diffregions.push(fullregions[d]);
-
-								vars code = (diffregions.length()>0 && !geocode.IsEmpty()) ? "@" : "";
-								sym.SetStr(ITEM_REGION, georegions.join(";"));
-								sym.SetStr(ITEM_MATCH, diffregions.join(";") + code);
-								}
-							}
-						break;
-						}
-					}
-				}
-
-			if (*GetTokenRest(sym.data,1)!=0)
-				chglist.Add(sym);
 			}
+		}
 
-		Log(LOGINFO, "%d changes saved to file %s", chglist.GetSize(), filename(CHGFILE));
-		chglist.header = headers;
-		chglist.header.Replace("ITEM_", "");
-		chglist.Save(filename(CHGFILE));
-		//system(filename(CHGFILE));
-		return TRUE;
+		vara georegions;
+		if (_GeoRegion.Get(rwsym, georegions))
+		{
+			// check georegion
+			vars georegion = georegions.join(";");
+			for (int j = 0; j < geomatch.GetSize(); ++j)
+			{
+				CSym &geosym = geomatch[j];
+				if (georegions.indexOf(geosym.id) >= 0)
+				{
+					vars rwreg = rwsym.GetStr(ITEM_REGION);
+					vars georeg = geosym.GetStr(ITEM_LAT);
+					vars fixreg = geosym.GetStr(ITEM_MATCH);
+					if (!fixreg.IsEmpty())
+						georeg = fixreg;
+					vara rwregions(rwreg, ";");
+					vara georegions(georeg, ";");
+					if (rwregions.last() != georegions.last())
+					{
+						vara fullregions(_GeoRegion.GetFullRegion(rwregions.last()), ";");
+						if (fullregions.indexOfi(georegions.last()) < 0)
+						{
+							vara diffregions;
+							for (int d = 0; d < fullregions.length(); ++d)
+								if (d >= georegions.length() || fullregions[d] != georegions[d])
+									diffregions.push(fullregions[d]);
+
+							vars code = (diffregions.length() > 0 && !geocode.IsEmpty()) ? "@" : "";
+							sym.SetStr(ITEM_REGION, georegions.join(";"));
+							sym.SetStr(ITEM_MATCH, diffregions.join(";") + code);
+						}
+					}
+					break;
+				}
+			}
+		}
+
+		if (*GetTokenRest(sym.data, 1) != 0)
+			chglist.Add(sym);
+	}
+
+	Log(LOGINFO, "%d changes saved to file %s", chglist.GetSize(), filename(CHGFILE));
+	chglist.header = headers;
+	chglist.header.Replace("ITEM_", "");
+	chglist.Save(filename(CHGFILE));
+	//system(filename(CHGFILE));
+	return TRUE;
 }
 
 
@@ -20711,7 +20170,7 @@ int GetCraigList(const char *keyfile, const char *htmfile)
 		{
 		double lat, lng, dist;
 		vara geo(geolist[g], "<");
-		if (geo.length()<2 || (dist=CDATA::GetNum(geo[1]))<=0 || !GeoCode.Get(geo[0], lat, lng))
+		if (geo.length()<2 || (dist=CDATA::GetNum(geo[1]))<=0 || !_GeoCache.Get(geo[0], lat, lng))
 			{
 			Log(LOGERR, "Invalid geoset 'loc < dist' %s", geolist[g]);
 			continue;
@@ -22029,7 +21488,7 @@ void FACEBOOK_InitAKA(void)
 		else
 			akalist[i].aka = vara(loadlist[f].GetStr(ITEM_MATCH), ";");
 
-		sym.SetStr(ITEM_REGION, GeoRegion.GetFullRegion(sym.GetStr(ITEM_REGION)));
+		sym.SetStr(ITEM_REGION, _GeoRegion.GetFullRegion(sym.GetStr(ITEM_REGION)));
 		}
 	AKA_Save(file);
 }
@@ -22127,7 +21586,7 @@ double FACEBOOK_Score(CSym &sym, int retry, const char *line, const char *match,
 		double score = (len - commlen/2) / (retry+1);
 
 		// advantage for region mentioned in line
-		vara matchregions( GeoRegion.GetFullRegion(sym.GetStr(ITEM_REGION)), ";" );
+		vara matchregions(_GeoRegion.GetFullRegion(sym.GetStr(ITEM_REGION)), ";" );
 		for (int r=0; r<matchregions.length(); ++r)
 			if (prefregions.indexOfi(matchregions[r])>=0)
 				score += score/2; // 50% more
@@ -22524,7 +21983,7 @@ void FACEBOOK_Init()
 		redir.Load(filename("facebookredir"));
 
 		// main regions
-		CSymList &regionlist = GeoRegion.Regions();
+		CSymList &regionlist = _GeoRegion.Regions();
 		for (int i=0; i<regionlist.GetSize(); ++i)
 			//if (!IsMatchList(regionlist[i].id, commonlist))
 				{
@@ -22579,8 +22038,8 @@ void FACEBOOK_Init()
 		commonlist.AddUnique(ignorelistpost);
 
 		commonlist.AddUnique(reglist);
-		commonlist.AddUnique(GeoRegion.Regions());
-		commonlist.AddUnique(GeoRegion.Redirects());
+		commonlist.AddUnique(_GeoRegion.Regions());
+		commonlist.AddUnique(_GeoRegion.Redirects());
 		
 		CSymList tmp;
 		tmp.Load(filename(TRANSBASIC"DATE"));

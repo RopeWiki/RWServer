@@ -128,6 +128,7 @@
     <ClCompile Include="rw\DescenteCanyon.cpp" />
     <ClCompile Include="rw\Elevation.cpp" />
     <ClCompile Include="rw\fcgi\libfcgi\fcgiapp.c" />
+    <ClCompile Include="rw\GeoRegion.cpp" />
     <ClCompile Include="rw\GetSet.cpp" />
     <ClCompile Include="rw\processcommandline.cpp" />
     <ClCompile Include="rw\processrequest.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="rw\Books.h" />
     <ClInclude Include="rw\CBrennen.h" />
     <ClInclude Include="rw\Code.h" />
+    <ClInclude Include="rw\GeoRegion.h" />
     <ClInclude Include="rw\RoadTripRyan.h" />
     <ClCompile Include="rw\SuperAmazingMap.cpp" />
     <ClCompile Include="rw\ToddMartin.cpp" />

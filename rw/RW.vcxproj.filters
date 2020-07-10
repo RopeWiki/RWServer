@@ -126,6 +126,9 @@
     <ClCompile Include="rw\Code.cpp">
       <Filter>Source Files\BetaExtract</Filter>
     </ClCompile>
+    <ClCompile Include="rw\GeoRegion.cpp">
+      <Filter>Source Files\BetaExtract</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rw\passwords.h">
@@ -192,6 +195,9 @@
       <Filter>Header Files\BetaExtract</Filter>
     </ClInclude>
     <ClInclude Include="rw\Code.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\GeoRegion.h">
       <Filter>Header Files\BetaExtract</Filter>
     </ClInclude>
   </ItemGroup>
