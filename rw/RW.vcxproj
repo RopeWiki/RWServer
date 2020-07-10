@@ -119,6 +119,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="rw\BasicExcelVC6.cpp" />
+    <ClCompile Include="rw\BetaC.cpp" />
     <ClCompile Include="rw\BETAExtract.cpp" />
     <ClCompile Include="rw\BluuGnome.cpp" />
     <ClCompile Include="rw\CBrennen.cpp" />

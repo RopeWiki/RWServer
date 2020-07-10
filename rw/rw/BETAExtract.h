@@ -65,6 +65,8 @@ CString starstr(double stars, double ratings);
 CString KML_Watermark(const char *scredit, const char *memory, int size);
 int KMZ_ExtractKML(const char *credit, const char *url, inetdata *out, kmlwatermark *watermark = KML_Watermark);
 vars makeurl(const char *ubase, const char *folder);
+CString CoordsMemory(const char *memory);
+int ExtractCoords(const char *memory, float &lat, float &lng, CString &desc);
 
 
 //static functions

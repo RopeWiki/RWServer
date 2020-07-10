@@ -1,6 +1,5 @@
 #pragma once
 
-#include "ArrayList.h"
 #include <afx.h>
 
 class BETAX
@@ -16,5 +15,3 @@ public:
 		this->bend = bend;
 	}
 };
-
-typedef CArrayList<BETAX> BETAXL;
