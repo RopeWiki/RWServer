@@ -9,9 +9,14 @@
 #include "BetaC.h"
 #include "BETAExtract.h"
 #include "BluuGnome.h"
+#include "Books.h"
 #include "CBrennen.h"
+#include "Code.h"
 #include "DescenteCanyon.h"
 #include "RoadTripRyan.h"
+#include "UKCanyonGuides.h"
+#include "SuperAmazingMap.cpp"
+#include "ToddMartin.cpp"
 
 #include "passwords.h"
 
@@ -22,9 +27,6 @@ extern int INVESTIGATE;
 #define ROPEWIKIFILE "http://ropewiki.com/File:"
 
 #define WIKILOC "wikiloc.com"
-#define TRANSBASIC "trans-basic"
-#define TTRANSLATED "(Translated)" 
-#define TORIGINAL "(Original)"
 
 #define CHGFILE "CHG"
 #define MATCHFILE "MATCH"
@@ -38,11 +40,9 @@ extern int INVESTIGATE;
 #define MINCHARMATCH 3
 
 
-#define RWID "RWID:"
 #define RWTITLE "RWTITLE:"
 #define RWLINK "@"
 #define RWREGIONS "rwreg"
-#define RWREDIR "rwredir"
 #define RWBASE vars("http://ropewiki.com/")
 #define DISAMBIGUATION " (disambiguation)"
 
@@ -51,8 +51,6 @@ extern int INVESTIGATE;
 const char *andstr[] = { " and ", " y ", " et ", " e ", " und ", "&", "+", "/", ":", " -", "- ", NULL };
 
 
-#define ITEM_MATCH ITEM_LAT2
-#define ITEM_NEWMATCH ITEM_LNG2
 //UTF:\xEF\xBB\xBF         to add columns use CheckBeta() 
 static const char *headers ="ITEM_URL, ITEM_DESC, ITEM_LAT, ITEM_LNG, ITEM_MATCH, ITEM_MODE, ITEM_INFO, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, https://maps.googleapis.com/maps/api/geocode/xml?address=,\"=+HYPERLINK(+CONCATENATE(\"\"http://ropewiki.com/index.php/Location?jform&locsearchchk=on&locname=\"\",C1,\"\",\"\",D1,\"\"&locdist=5mi&skinuser=&sortby=-Has_rank_rating&kmlx=\"\",A1),\"\"@check\"\")\"";
 static const char *rwprop =                     "Has pageid|Has coordinates|Has geolocation|Has BetaSites list|Has TripReports list|Has info|Has info major region|Has info summary|Has info rappels|Has longest rappel|Has length of hike|Has fastest typical time|Has slowest typical time|Has best season|Has shuttle length|Has vehicle type|Has location class|Has user counter|Has AKA|Requires permits|Has KML file|Has condition date|Has approach elevation gain|Has exit elevation gain|Has length|Has depth|Has fastest approach time|Has slowest approach time|Has fastest descent time|Has slowest descent time|Has fastest exit time|Has slowest exit time|Has rock type|Has SketchList"; //|Has user counter";
@@ -1248,7 +1246,7 @@ CString SeasonCompare(const char *season)
 	return str;
 }
 
-BOOL IsSeasonValid(const char *season, CString *validated = NULL)
+BOOL IsSeasonValid(const char *season, CString *validated)
 {
 	//vara sep("!?,(,but,");
 	vara seasonst("Winter,Spring,Summer,Fall,Autumn");
@@ -1486,7 +1484,7 @@ vars invertregion(const char *str, const char *add)
 }
 
 
-vars regionmatch(const char *region, const char *matchregion = NULL)
+vars regionmatch(const char *region, const char *matchregion)
 {
 	vars reg = GetToken(region, 0, '@').Trim();
 	if (matchregion)
@@ -2554,26 +2552,6 @@ int ExtractCoords(const char *memory, float &lat, float &lng, CString &desc)
 			}
 	return -1; // end search
 }
-
-
-int BOOK_DownloadBeta(const char *ubase, CSymList &symlist) 
-{
-	CSymList list = symlist;
-	//list.Load(filename(ubase));
-	for (int i=0; i<list.GetSize(); ++i)
-		UpdateCheck(symlist, list[i]);
-	return TRUE;
-}
-
-class BOOK : public BETAC
-{
-public:
-
-	BOOK(const char *base) : BETAC(base, BOOK_DownloadBeta)
-	{
-	}
-
-};
 
 
 // ===============================================================================================
@@ -4281,125 +4259,6 @@ int SUMMIT_DownloadBeta(const char *ubase, CSymList &symlist)
 		break;
 	}
 
-	return TRUE;
-}
-
-
-
-// ===============================================================================================
-
-//https://www.google.com/maps/d/u/0/viewer?mid=1SXfd6dNXXIVNgnna4bKq_4SOK4c
-#define UKCGKML "http://www.google.com/maps/d/u/0/kml?mid=1NiNQaWJLW6amt87I06KU9CM49DA&forcekml=1";
-
-int GetKMLCoords(const char *str, double &lat, double &lng)
-{
-	vara coords(str);
-	lat = lng = InvalidNUM;
-	if (coords.length()>=2)
-		{
-		lat = CDATA::GetNum(coords[1]);
-		lng = CDATA::GetNum(coords[0]);
-		}
-	return CheckLL(lat,lng);
-}
-
-
-int UKCG_DownloadPage(const char *memory, CSym &sym) 
-{
-	vars url = sym.id;
-
-	//http://www.canyonguides.org/guide-book/canyon-locations-map/
-
-	double lat = InvalidNUM, lng = InvalidNUM;
-	if (!GetKMLCoords(ExtractString(memory, "<coordinates", ">", "</coordinates"), lat, lng))
-		{
-		Log(LOGERR, "Invalid KML Start coords from %s", url);
-		return FALSE;
-		}
-	sym.SetNum(ITEM_LAT, lat);
-	sym.SetNum(ITEM_LNG, lng);
-
-	//sym.SetStr(ITEM_SEASON, stripHTML(ExtractString(f.memory, ">Periodo", ":", "<br")));
-	
-	vars grade = stripHTML(ExtractString(memory, "Grade:", "", "<br"));
-	GetSummary(sym, grade.upper().replace("-",""));
-
-	/*
-	sym.SetNum(ITEM_RAPS, CDATA::GetNum(stripHTML(ExtractString(memory, " rappels:", "", "<br"))));
-	sym.SetStr(ITEM_LONGEST, GetMetric(stripHTML(ExtractString(memory, " rappel:", "", "<br"))));
-	//sym.SetStr(ITEM_LENGTH, GetMetric(stripHTML(ExtractString(f.memory, "Sviluppo:", "", "<br"))));
-	sym.SetStr(ITEM_DEPTH, GetMetric(stripHTML(ExtractString(memory, "level:", "", "<br"))));
-	*/
-	
-	//sym.SetStr(ITEM_SHUTTLE, stripHTML(ExtractString(memory, "Navetta:", "", "<br").replace(" ","").replace("Circa","").replace("No/","Optional ").replace(",",".")));
-
-	vars interest = stripHTML(ExtractString(memory, "Quality:", "", "<br"));
-	double stars = CDATA::GetNum(interest.replace(";","."));
-	if (stars>0)
-		sym.SetStr(ITEM_STARS, starstr(stars,1));
-
-	/*
-	vara times;
-	const char *ids[] = { "Access:", "Time:", "Return:" };
-	//ASSERT( !strstr(url,"/kanion.php?id=41"));
-	for (int t=0; t<sizeof(ids)/sizeof(*ids); ++t)
-		{
-		CString time = stripHTML(ExtractString(memory, ids[t], "", "<br"));
-		while (!ExtractStringDel(time, "(", "", ")").IsEmpty());
-		times.push(vars(time).replace("hours", "h").replace("days", "j").replace(";","."));	
-		}
-	GetTotalTime(sym, times, url);
-	*/
-
-	return TRUE;
-}
-
-
-int UKCG_DownloadBeta(const char *ubase, CSymList &symlist) 
-{
-	vars url = UKCGKML;
-	DownloadFile f;
-	if (f.Download(url))
-		{
-		Log(LOGERR, "Can't download base url %s", url);
-		return TRUE;
-		}	
-	 if (!strstr(f.memory, "<Placemark>"))
-		Log(LOGERR, "ERROR: Could not download kml %s", url);
-
-	 vara lines(f.memory, "<Placemark>");
-	 for (int i=1; i<lines.length(); ++i)
-		{
-		vars name = stripHTML(ExtractString(lines[i], "<name", ">", "</name"));
-		name.Trim(" .");
-	
-		if (name.IsEmpty())
-			continue;
-
-		CSym sym(urlstr(MkString("http://www.canyonguides.org/guide-book/canyon-locations-map?id=%s", name.replace(" ", "_"))), name);
-		//sym.SetStr(ITEM_REGION, "United Kingdom");
-
-		int stars = 0;
-		vars style = ExtractString(lines[i], "<styleUrl>","#","</styleUrl>");
-		vars styledef = ExtractString(f.memory, "<Style id='"+style+"'", ">", "</Style>");
-		vars icon = ExtractString(styledef, "<Icon>", "<href>", "</href>");
-		if (strstr(icon, "-yellow"))
-			stars = 2;
-		else if (strstr(icon, "-green"))
-			stars = 3;
-		else if (strstr(icon, "-blue"))
-			stars = 4;
-		else if (strstr(icon, "-red"))
-			stars = 5;
-		if (stars>0)
-			sym.SetStr(ITEM_ACA, MkString("%d;;;;;;;", stars));
-
-		// update sym
-		if (UKCG_DownloadPage(lines[i], sym))
-			Update(symlist, sym, NULL, FALSE);
-		}
-
-	
 	return TRUE;
 }
 
@@ -6998,211 +6857,6 @@ int ALTISUD_DownloadBeta(const char *ubase, CSymList &symlist)
 
 // ===============================================================================================
 	
-// ===============================================================================================
-class SAM : public BETAC
-{
-public:
-
-	SAM(const char *base) : BETAC(base, BOOK_DownloadBeta)
-	{
-		umain = "http://ropewiki.com/Super_Amazing_Map";
-	}
-
-	int DownloadBeta(CSymList &symlist) 
-	{
-		CFILE fm;
-		vars kml = "beta\\SuperAmazingMap.kml";
-		if (!fm.fopen(kml))
-			Log(LOGERR, "could not read %s", kml);
-
-		int mode = 0;
-		const char *line;
-		vara links;
-		vars canyon, region;
-		while (line=fm.fgetstr())
-			{
-			if (strstr(line, "<Folder"))
-				mode = 0;
-			if (strstr(line, "</Folder"))
-				mode = -1;
-			if (strstr(line, "<Placemark"))
-				mode = 1;
-			if (strstr(line, "</Placemark"))
-				mode = -1;
-			if (strstr(line, "<name")) {
-				vars name = stripHTML(ExtractString(line, "<name", ">", "</name"));
-				if (mode<0) 
-					Log(LOGERR, "Invalid name %.256s", line);
-				else if (mode>0)
-					canyon = name;
-				else
-					region = name;
-				}
-			if (strstr(line, "<coord")) {
-				vars coord = ExtractString(line, "<coord", ">", "</coord");
-				if (mode!=1)
-					Log(LOGERR, "Invalid coords %s", line);
-				else
-					{
-					vars permit;
-					const char *status;
-					if (strstr(canyon, status="(closed)")) {
-						canyon.Replace(status, "");
-						permit = "Closed";
-						}
-					if (strstr(canyon, status="(restricted)")) {
-						canyon.Replace(status, "");
-						permit = "Restricted";
-						}
-					//canyon.Replace("'","");
-					canyon.Replace(";","-");
-					canyon.Trim();
-					CSym sym(urlstr(MkString("http://ropewiki.com/User:Super_Amazing_Map?id=%s_-_%s", canyon.replace(" ", "_").split("aka").first().Trim(" ("), region.replace(" ", "_"))));
-					if (links.indexOf(sym.id)>=0) {
-						Log(LOGERR, "Duplicated Super Amazing Map ID  %s", sym.id);
-						continue;
-						}
-					links.push(sym.id);
-					//ASSERT(!strstr(canyon, "apos"));
-					sym.SetStr(ITEM_DESC, canyon);
-					sym.SetStr(ITEM_REGION, region);
-					sym.SetStr(ITEM_PERMIT, permit);
-					double lat = CDATA::GetNum(GetToken(coord,1));
-					double lng = CDATA::GetNum(GetToken(coord,0));
-					if (!CheckLL(lat,lng)) {
-						Log(LOGERR, "Invalid coords %s", coord);
-						continue;
-					}
-					sym.SetNum(ITEM_LAT, lat);
-					sym.SetNum(ITEM_LNG, lng);
-
-					// match based on coords
-					int match = 0;
-					double eps = 1e-5;
-					for (int s=0; s<symlist.GetSize(); ++s)
-						{
-						if (fabs(lat-symlist[s].GetNum(ITEM_LAT))<eps)
-							if (fabs(lng-symlist[s].GetNum(ITEM_LNG))<eps)
-								if (symlist[s].id != sym.id)
-									{
-									++match;
-									Log(LOGWARN, "SAM ID override %s -> %s", symlist[s].id, sym.id);
-									symlist[s].id = sym.id;
-									sym.SetStr(ITEM_CONDDATE, symlist[s].GetStr(ITEM_MATCH));
-									if (match>1)
-										Log(LOGERR, "SAM ID override multiple times!?!");
-									}
-						}
-					if (match) symlist.ReSort();
-
-					Update(symlist, sym, NULL, FALSE);
-					}
-				}
-			}
-
-		return TRUE;
-	}
-
-};
-
-
-class TODDMARTIN : public BETAC
-{
-public:
-
-	TODDMARTIN(const char *base) : BETAC(base, BOOK_DownloadBeta)
-	{
-		umain = "http://toddshikingguide.com/Hikes/Hikes.htm";
-	}
-
-	int DownloadBeta(CSymList &symlist) 
-	{
-		// ALL map 
-		ubase = "toddshikingguide.com";
-
-		DownloadFile f;
-		CString url = umain;
-		if (f.Download(url))
-			{
-			Log(LOGERR, "ERROR: can't download url %.128s", url);
-			return FALSE;
-			}
-
-		// tables for ratings
-		vars table = ExtractString(f.memory, "Warning.htm", "<table", "</table>");
-		vara list(table, "href=");
-		if (list.length()<=1)
-			Log(LOGERR, "Could not extract sections from url %.128s", url);
-		for (int i=1; i<list.length(); ++i) {
-				vars lnk = ExtractString(list[i], "\"", "", "\"");
-				CString url = burl(ubase, "/Hikes/"+lnk);
-				if (f.Download(url))
-					{
-					Log(LOGERR, "ERROR: can't download url %.128s", url);
-					continue;
-					}
-
-				if (!strstr(f.memory, ">Required Skills"))
-					continue;
-
-				vars link = url;
-				vars nameregion = stripHTML(ExtractString(f.memory, "<b>", "", "</b"));
-				vars name = GetToken(nameregion,0,'-').Trim();
-				vars region = GetToken(nameregion,1,'-').Trim();
-				// improved region
-				vara rlink(link, "/");
-				int rlen = rlink.length()-1;
-				if (rlen>2)
-				region = rlink[rlen-2] + ";" + rlink[rlen-1];
-				vars geoloc = rlink[rlen-1] + "." + rlink[rlen-2];
-				vars hike = stripHTML(ExtractString(f.memory, ">Length:", "<td", "</td>"));
-				vars road = stripHTML(ExtractString(f.memory, ">Road Conditions:", "<td>", "</td>"));
-			
-				vars type = "-1", summary = "", swim = "A";
-				if (strstr(f.memory, "swimming.gif"))
-					swim = "B";
-				if (strstr(f.memory, "hiking.gif"))
-					type = "0:Hiking", summary = "1"+swim;
-				if (strstr(f.memory, "backpacking.gif"))
-					type = "0:Backpacking", summary = "1"+swim;
-				if (strstr(f.memory, "climbing.gif"))
-					type = "0:Climbing", summary = "2"+swim;
-				if (strstr(f.memory, "Rappel") || strstr(f.memory, "rappel") || strstr(f.memory, "abseil") || strstr(f.memory, " rap ") || strstr(f.memory, " raps "))
-					type = "1:Rappel", summary = "3"+swim;
-
-				// ratings
-				double stars = 0;
-				vars rating = ExtractString(f.memory, "(1-5 stars):", "<td>", "</td>");
-				vara num(rating, "<br>");
-				for (int n=0; n<num.length(); ++n)
-					{
-					vara nstars(num[n], "/star.gif");
-					vara nhstars(num[n], "/halfstar.gif");
-					double newstars = nstars.length()-1 + (nhstars.length()-1)*0.5;
-					if (newstars>stars)
-						stars = newstars;
-					}
-				//vars kmlidx = ExtractLink(f.memory, ".gpx");
-
-				CSym sym(urlstr(link));
-				sym.SetStr(ITEM_DESC, name);
-				sym.SetStr(ITEM_REGION, region);
-				//sym.SetStr(ITEM_LAT, "@"+geoloc);
-				GetSummary(sym, summary);
-				sym.SetStr(ITEM_CLASS, type);
-				sym.SetStr(ITEM_STARS, starstr(stars, 1));
-				SetVehicle(sym, road);
-
-				Update(symlist, sym, NULL, FALSE);
-				printf("Downloading %d/%d   \r", i, list.length());
-				}
-
-		return TRUE;
-	}
-};
-
-
-
 class CANISCIOLTI : public BETAC
 {
 public:
@@ -11528,18 +11182,22 @@ double ExtractNum(const char *mbuffer, const char *searchstr, const char *startc
 
 
 
-
-
-
-
-
-
-
 //https://www.google.com/maps/d/u/0/viewer?mid=1SXfd6dNXXIVNgnna4bKq_4SOK4c
 #define AZORESKML "http://www.google.com/maps/d/u/0/kml?mid=1SXfd6dNXXIVNgnna4bKq_4SOK4c&forcekml=1";
 
 
-	
+int GetKMLCoords(const char *str, double &lat, double &lng)
+{
+	vara coords(str);
+	lat = lng = InvalidNUM;
+	if (coords.length() >= 2)
+	{
+		lat = CDATA::GetNum(coords[1]);
+		lng = CDATA::GetNum(coords[0]);
+	}
+	return CheckLL(lat, lng);
+}
+
 
 int AZORES_DownloadPage(const char *memory, CSym &sym) 
 {
@@ -11783,8 +11441,6 @@ typedef int textract(const char *base, const char *url, inetdata *out, int fx);
 typedef int tcond(const char *base, CSymList &symlist);
 */
 
-enum { T_NAME=0, T_REGION, T_SEASON, T_TROCK, T_MAX };
-
 #define FCHK strstr
 
 #define F_MATCHMANY "M"
@@ -11795,443 +11451,6 @@ enum { T_NAME=0, T_REGION, T_SEASON, T_TROCK, T_MAX };
 #define F_NOMATCH "X"
 #define F_GROUP "G"
 #define F_REGSTRICT "R"
-
-class Code {
-public:
-	int order;
-	int goodtitle;
-	const char *code; 
-	const char *name; 
-	const char *staruser;
-	BETAC *betac;
-	const char *xregion; 
-	const char *xstar, *xmap, *xcond;
-	/*
-	tbeta *downloadbeta; 
-	textract *extractkml;
-	tcond *downloadcond;
-	*/
-
-	// translation
-	const char *translink;
-	int transfile[T_MAX];
-	CSymList translate[T_MAX];
-	int flags;
-
-	CSymList list;
-
-	vars Filename(int sec)
-	{
-	static const char *transfiles[T_MAX] = { "N", "R", "S", "T" };
-	return filename(MkString("trans-%s%s", code, transfiles[sec]));
-	}
-
-	Code(int order, int goodtitle,
-		const char *code,
-		const char *translink,
-		const char *name,		
-		const char *staruser,
-		BETAC *betac,
-		const char *xregion,
-		const char *xstar = "", 
-		const char *xmap = "", 
-		const char *xcond = ""
-		//int flags = 0
-		)
-	{
-		this->order = order;
-		this->goodtitle = goodtitle;
-		this->code = code;
-		this->name = name;
-		this->staruser = staruser;
-		this->betac = betac;
-
-		/*
-		this->downloadbeta = downloadbeta;
-		this->extractkml = extractkml;
-		this->downloadcond = downloadcond;
-		*/
-
-
-		this->translink = translink;
-
-		this->xregion = xregion; //region;
-		this->xstar = xstar;
-		this->xmap = xmap;
-		this->xcond = xcond;
-
-		this->flags = 0; //flags;
-
-		for (int i=0; i<T_MAX; ++i)
-			transfile[i] = 0;
-	}
-
-	BOOL IsRW(void)
-	{
-		return IsEqual(code, "rw");
-	}
-
-	BOOL IsRedirects(void)
-	{
-		return IsEqual(code, RWREDIR);
-	}
-
-	BOOL IsWIKILOC(void)
-	{
-		return IsEqual(code, "wik");
-	}
-
-	BOOL IsCandition(void)
-	{
-		return IsEqual(code, "cond_can");	
-	}
-
-	BOOL IsTripReport(void)
-	{
-		return IsSimilar(code, "cond_")!=NULL || IsWIKILOC();
-	}
-
-	BOOL IsBook(void)
-	{
-		return IsSimilar(code, "book_")!=NULL;
-	}
-
-
-	CString BetaLink(CSym &sym, vars &pre, vars &post)
-	{
-		CString url = sym.id;
-		if (!IsSimilar(url, "http")) // BQN: KML: etc.
-			return "";
-
-		CString kmlidx = sym.GetStr(ITEM_KML);
-		if (IsSimilar(kmlidx, "http")) 
-			kmlidx = "X"; // skip complex ids
-		if (betac->kfunc) 
-			url = KMLIDXLink(url, kmlidx);
-		vars pattern = "["+url+" "+name+"]";
-		vars language = translink ? translink : "en";
-		//if (translink)
-			{
-			vars flag = MkString("[[File:%s.png|alt=|link=]]", IsBook() ? "book" : vars("rwl_")+language);
-			//pattern = flag+"[http://translate.google.com/translate?hl=en&sl="+vars(translink)+"&tl=en&u="+vars(url).replace("&","%26")+" "+name+" "TTRANSLATED"] ["+url+" "TORIGINAL"]";
-			vars trans = "[http://translate.google.com/translate?hl=en&sl="+language+"&tl=en&u="+vars(url).replace("&","%26")+" " TTRANSLATED "] ";
-			pattern = flag+"["+url+" "+name+"]";
-			//if (!IsBook())
-			//	pattern += MkString("<span class='translink' %s>%s</span> ", !translink ? "style='display:none'" : "", trans);
-
-			}
-		//if (IsWIKILOC())
-			post = " : "+sym.GetStr(ITEM_DESC);
-		CString ret;
-		if (pre.IsEmpty())
-			pre = "*";
-		if (!pre.IsEmpty())
-			ret += pre + " ";
-		ret += pattern;
-		if (!post.IsEmpty())
-			ret += " "+post;
-		return ret.Trim();
-	}
-
-	BOOL FindLink(const char *url)
-	{
-		if (!(url = strstr(url, "http")))
-			return -1;
-		vars id = urlstr( "http:"+GetToken(GetTokenRest(url, 1, ':'), 0, " ]") );
-		if (list.GetSize()==0) {
-			list.Load(filename(code));
-			list.Sort();
-			}
-		return list.Find(id);
-	}
-
-	static int IsBulletLine(const char *oline, vars &pre, vars &post)
-	{
-		vars line(oline);
-		line.Replace("\t", " ");
-		line.Replace("\r", " ");
-		line.Replace("  ", " ");
-		int http = line.Find("http");
-		if (http<0) return -1;
-
-		pre = line.Mid(0, http).Trim("* [");
-		const char *match[] = { "File:rwl_", "File:book.png", "File:es.png", "File:en.png", "File:fr.png", "File:pl.png", "File:fr.png", "File:it.png", "File:pt.png", "File:pl.png", "File:auto.png", "File:.png", NULL };
-		if (IsMatch(pre, match)) 
-			pre = "";
-		int bracket = line.Find("]", http);
-		if (bracket<0) bracket = line.Find(" ", http);
-		post = line.Mid(bracket+1).Trim(" .");
-		if (bracket<0 || (strstr(line, "translate.google.com") && strstr(post, " " TORIGINAL "]")))
-			post = "";
-		if (bracket<0 || (strstr(line, "translate.google.com") && strstr(post, " " TTRANSLATED "]")))
-			post = "";
-		//if (GetTokenCount(post, ' ')>5 || GetTokenCount(pre, ' ')>5)
-		if (!pre.IsEmpty())
-			return 0;
-		return 1;
-	}
-
-
-~Code(void)
-{
-	for (int i=0; i<T_MAX; ++i)
-	  if (transfile[i]>1)
-		{
-		translate[i].Sort();
-		translate[i].Save( Filename(i) );
-		}
-
-	  delete betac;
-}
-	
-
-
-BOOL NeedTranslation(int sec) {
-
-		if (!transfile[sec])
-			{
-			transfile[sec] = -1;
-			vars file = Filename(sec);
-			if (CFILE::exist(file))
-				{
-				transfile[sec] = 1;
-				translate[sec].Load( file );
-				translate[sec].Sort();
-				}
-			}
-		
-		return transfile[sec]>0;
-}
-
-
-vars Region(const char *region, BOOL addnew = TRUE)
-{	
-	if (!NeedTranslation(T_REGION) || strstr(region, RWID))
-		return region;
-
-	CSymList &list =translate[T_REGION];
-	vara ret(regionmatch(region), ";");
-	for (int i=0; i<ret.length(); ++i) {
-		vars &str = ret[i];
-		// eliminate (#)
-		CString num;
-		GetSearchString(str, "", num, "(", ")");
-		if (!num.IsEmpty())
-			{
-			int n;
-			for (n=0; num[n]!=0 && isdigit(num[n]); ++n);
-			if (num[n]==0)
-				str.Replace("("+num+")", "");
-			}
-		str.Trim();
-		int f = list.Find(str);
-		if (f<0) {
-			// NEW!
-			if (addnew)
-				{
-				++transfile[T_REGION];
-				list.Add(CSym(str));
-				}
-			continue;
-		}
-		// TRANS
-		if (list[f].data[0]!=0 && list[f].data[0]!='=')
-			str = list[f].data;
-		}
-
-	vara newreg;
-	for (int i=0; i<ret.length(); ++i)
-		if (newreg.indexOf(ret[i])<0)
-			newreg.push(ret[i]);
-
-	vars newregs = newreg.join(";");
-	if (strstr(region, "@"))
-		newregs = regionmatch(newregs, GetTokenRest(region, 1, '@'));
-	return newregs;
-}
-
-
-
-vars SuffixTranslate(const char *name)
-{
-	if (!name || name[0]==0)
-		return name;
-
-	return Description(stripSuffixes(name));
-}
-
-vars Description(const char *desc)
-{
-
-	static CSymList list;
-	if (list.GetSize() == 0)
-		{
-		list.Load(filename(TRANSBASIC));
-		list.iSort();
-		}
-
-	// suffix
-	vara words(stripAccents(desc), " ");
-	int n = words.length()-1;
-	if (n>=0)
-		{
-		int find = list.Find(words[n]);
-		if (find>=0 && !list[find].data.IsEmpty())
-			words[n] = list[find].data;
-		}
-
-	vars ret = words.join(" ").Trim();
-	return 	ret;
-}
-
-vars Rock(const char *orock, BOOL addnew = TRUE)
-{
-	if (!NeedTranslation(T_TROCK))
-		return vars(orock).trim();
-
-	CSymList &list =translate[T_TROCK];
-	vara ret(vars(orock).replace("-",";").replace("/",";").replace(".", ";"), ";");
-	for (int i=0; i<ret.length(); ++i) {
-		vars &str = ret[i];
-		str.Trim();
-		int f = list.Find(str);
-		if (f<0) {
-			// NEW!
-			if (addnew)
-				{
-				++transfile[T_TROCK];
-				list.Add(CSym(str));
-				}
-			continue;
-		}
-		// TRANS
-		if (list[f].data[0]!=0 && list[f].data[0]!='=')
-			{
-			str = list[f].data;
-			if (str.trim().IsEmpty())
-				ret.RemoveAt(i--);
-			}
-		}
-
-	return ret.join(";");
-}
-
-vars Season(const char *_oseason)
-{
-	//ASSERT( !strstr(oseason, "Evit"));
-	if (!_oseason || _oseason[0]==0)
-		return "";
-	vars oseason = stripAccentsL(_oseason);
-	vars tseason = oseason;
-		
-	tseason.Replace("...", "-");
-	tseason.Replace("..", "-");
-	tseason.Replace("", "'");
-	tseason.trim();
-
-	//ASSERT( !strstr(_oseason, "ideal"));
-
-	if (NeedTranslation(T_SEASON))
-		tseason = Translate(tseason, translate[T_SEASON], ";").replace(";;",";").Trim(";-");				
-
-	if (tseason.IsEmpty())
-		return "";
-
-	// validate season
-	vars res;
-	vars sep = " ! ";
-	if (!IsSeasonValid(tseason, &res) || strstr(tseason, "?"))
-		{
-#ifdef DEBUG
-		//Log(LOGWARN, "WARNING BAD SEASON?=%s\n%s\n%s", res, tseason, oseason);
-#endif
-		sep = " !!! "+tseason+" ??? ";
-		}
-	if (!res.IsEmpty())
-		return res + sep + oseason;
-	else
-		return "";
-}
-
-
-
-
-vars Name(const char *name, BOOL removesuffix = TRUE)
-{	
-	vars ret(name);
-
-	// basic translation
-	if (removesuffix)
-		ret = SuffixTranslate(name);
-
-	if (!NeedTranslation(T_NAME))
-		return ret.trim();
-
-	CSymList &list =translate[T_NAME];
-	ret.Trim();
-	ret.Replace("[", "(");
-	ret.Replace("]", ")");
-	ret.Replace("(", "{");
-	ret.Replace(")", "}");
-	while (TRUE) 
-		{
-		CString str, ostr;
-		GetSearchString(ret, "", str, "{", "}");
-		if (str.IsEmpty())
-			break;
-		ostr = str;
-		str.Trim();
-		if (!strstr(ret, "}"))
-			ret += "}";
-		int f = list.Find(str);
-		if (f<0) {
-			// NEW!
-			++transfile[T_NAME];
-			list.Add(CSym(str));
-			}
-		else
-			{
-			// TRANS
-			if (list[f].data[0]!=0 && list[f].data[0]!='=')
-				str = list[f].data;
-			}
-		ret.Replace("{"+ostr+"}", "("+str+")");
-		}
-	//ASSERT(strstr(name, "Neste")==NULL);
-	// without parenthesis
-	int updated = 0;
-	vara reta(ret, " ");
-	const char *replace[] = { "s", "i", "a", "m", NULL };
-	for (int i=1; i<reta.length(); ++i)
-	  for (int j=0; replace[j]!=NULL; ++j)
-		if (strnicmp(reta[i], replace[j], 1)==0) {
-			int f = list.Find(reta[i]);
-			if (f>=0) {
-				++updated;
-				reta[i] = "("+list[f].data+")";	
-				}
-		}
-	vars ret2 = reta.join(" ");
-#ifdef DEBUGX
-	if(updated)
-		Log(LOGINFO, "translated %s = %s", ret, ret2);
-#endif
-
-	// patches
-	ret2.Replace("\xc3 ", "\xc3\xa0 ");
-	ret2.Replace("- Partie (", "(");
-	ret2.Replace("\"", "");
-	ret2.Replace("(=)", "");
-	ret2.Replace("+ Quirino (Lower)", "");
-	ret2.Replace("1\xc3\xa8re partie", "1st part");
-	ret2.Replace("2\xc3\xa8me partie", "2nd part");
-	ret2.Replace("(Upper) III", "(Upper III)");
-	ret2.Replace("Lower section}", "");
-	return ret2.Trim();
-}
-
-};
-
 
 
 // ===============================================================================================

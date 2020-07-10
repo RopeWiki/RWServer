@@ -111,6 +111,21 @@
     <ClCompile Include="rw\BetaC.cpp">
       <Filter>Source Files\BetaExtract</Filter>
     </ClCompile>
+    <ClCompile Include="rw\Books.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\UKCanyonGuides.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\SuperAmazingMap.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\ToddMartin.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
+    <ClCompile Include="rw\Code.cpp">
+      <Filter>Source Files\BetaExtract</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rw\passwords.h">
@@ -168,6 +183,15 @@
       <Filter>Header Files\BetaExtract</Filter>
     </ClInclude>
     <ClInclude Include="rw\BetaX.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\UKCanyonGuides.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\Books.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\Code.h">
       <Filter>Header Files\BetaExtract</Filter>
     </ClInclude>
   </ItemGroup>

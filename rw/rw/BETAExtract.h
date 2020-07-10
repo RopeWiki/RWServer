@@ -1,5 +1,9 @@
 #pragma once
 
+#include "stdafx.h"
+#include "trademaster.h"
+#include "rw.h"
+
 #define BETA "BETA"
 
 #define DESCENT RGB(0xFF, 0x00, 0x00)
@@ -8,6 +12,16 @@
 #define ROAD RGB(0x00, 0x00, 0x00)
 
 #define OTHER RGB(0xFF, 0x00, 0xFF)
+
+#define ITEM_MATCH ITEM_LAT2
+#define ITEM_NEWMATCH ITEM_LNG2
+
+#define RWREDIR "rwredir"
+#define RWID "RWID:"
+
+#define TTRANSLATED "(Translated)" 
+#define TRANSBASIC "trans-basic"
+#define TORIGINAL "(Original)"
 
 extern int MODE;
 
@@ -36,6 +50,8 @@ typedef CString kmlwatermark(const char *scredit, const char *memory, int size);
 enum { ITEM_INFO = ITEM_SUMMARY, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, ITEM_BETAMAX, ITEM_BESTMATCH, ITEM_MATCHLIST }; //, ITEM_BOAT, , ITEM_AELEV, ITEM_EELEV,  };
 enum { COND_DATE, COND_STARS, COND_WATER, COND_TEMP, COND_DIFF, COND_LINK, COND_USER, COND_USERLINK, COND_TEXT, COND_NOTSURE, COND_TIME, COND_PEOPLE, COND_MAX };
 static vara cond_water("0 - Dry (class A = a1),1 - Very Low (class B = a2),2 - Deep pools (class B+ = a2+),1 - Very Low (class B = a2),3 - Low (class B/C = a3),4 - Moderate Low (class C1- = a4-),5 - Moderate (class C1 = a4),6 - Moderate High (class C1+ = a4+),7 - High (class C2 = a5),8 - Very High (class C3 = a6),9 - Extreme (class C4 = a7)");
+
+enum { T_NAME = 0, T_REGION, T_SEASON, T_TROCK, T_MAX };
 
 class CPage;
 
@@ -67,6 +83,14 @@ int KMZ_ExtractKML(const char *credit, const char *url, inetdata *out, kmlwaterm
 vars makeurl(const char *ubase, const char *folder);
 CString CoordsMemory(const char *memory);
 int ExtractCoords(const char *memory, float &lat, float &lng, CString &desc);
+int GetKMLCoords(const char *str, double &lat, double &lng);
+void SetVehicle(CSym &sym, const char *text);
+vars KMLIDXLink(const char *purl, const char *pkmlidx);
+vars regionmatch(const char *region, const char *matchregion = NULL);
+vars stripSuffixes(register const char* name);
+vars stripAccents(register const char* p);
+vars stripAccentsL(register const char* p);
+BOOL IsSeasonValid(const char *season, CString *validated = NULL);
 
 
 //static functions

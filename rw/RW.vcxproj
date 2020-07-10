@@ -122,7 +122,9 @@
     <ClCompile Include="rw\BetaC.cpp" />
     <ClCompile Include="rw\BETAExtract.cpp" />
     <ClCompile Include="rw\BluuGnome.cpp" />
+    <ClCompile Include="rw\Books.cpp" />
     <ClCompile Include="rw\CBrennen.cpp" />
+    <ClCompile Include="rw\Code.cpp" />
     <ClCompile Include="rw\DescenteCanyon.cpp" />
     <ClCompile Include="rw\Elevation.cpp" />
     <ClCompile Include="rw\fcgi\libfcgi\fcgiapp.c" />
@@ -132,8 +134,13 @@
     <ClCompile Include="rw\RoadTripRyan.cpp" />
     <ClInclude Include="rw\BetaC.h" />
     <ClInclude Include="rw\BetaX.h" />
+    <ClInclude Include="rw\Books.h" />
     <ClInclude Include="rw\CBrennen.h" />
+    <ClInclude Include="rw\Code.h" />
     <ClInclude Include="rw\RoadTripRyan.h" />
+    <ClCompile Include="rw\SuperAmazingMap.cpp" />
+    <ClCompile Include="rw\ToddMartin.cpp" />
+    <ClCompile Include="rw\UKCanyonGuides.cpp" />
     <ClCompile Include="rw\utils.cpp" />
     <ClCompile Include="rw\inetdata.cpp" />
     <ClCompile Include="rw\jlib.cpp" />
@@ -155,6 +162,7 @@
     <ClInclude Include="rw\fcgi\include\fastcgi.h" />
     <ClInclude Include="rw\processcommandline.h" />
     <ClInclude Include="rw\processrequest.h" />
+    <ClInclude Include="rw\UKCanyonGuides.h" />
     <ClInclude Include="rw\utils.h" />
     <ClInclude Include="rw\inetdata.h" />
     <ClInclude Include="rw\passwords.h" />
