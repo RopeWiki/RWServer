@@ -1,6 +1,4 @@
-//typedef CArray <int,int&> CIntArray;
-
-
+#pragma once
 
 template<class TYPE>
 class CArrayListPtr {

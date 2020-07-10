@@ -1,7 +1,7 @@
 #pragma once
 
-#include <afx.h>
 #include "ArrayList.h"
+#include <afx.h>
 
 class BETAX
 {

@@ -108,9 +108,6 @@
     <ClCompile Include="rw\CBrennen.cpp">
       <Filter>Source Files\BetaExtract\Locations</Filter>
     </ClCompile>
-    <ClCompile Include="rw\BetaC.cpp">
-      <Filter>Source Files\BetaExtract</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rw\passwords.h">

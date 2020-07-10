@@ -1,8 +1,13 @@
 #pragma once
 
+#include "BETAExtract.h"
 #include "trademaster.h"
 #include "inetdata.h"
 #include "BetaX.h"
+
+typedef int DownloadBetaFunc(const char *ubase, CSymList &symlist);
+typedef int DownloadKMLFunc(const char *ubase, const char *url, inetdata *out, int fx);
+typedef int DownloadConditionsFunc(const char *ubase, CSymList &symlist);
 
 class BETAC
 {
