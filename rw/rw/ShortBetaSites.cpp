@@ -4,6 +4,10 @@
 #include "trademaster.h"
 #include "SwissCanyon.h"
 
+
+extern GeoCache _GeoCache;
+extern GeoRegion _GeoRegion;
+
 class FLREUNION : public BETAC
 {
 public:
@@ -810,8 +814,7 @@ public:
 
 		vars address, oaddress;
 		double lat, lng;
-		//Michelle: I commented this out. Need to uncomment this and add a reference to the _GeoCache object
-		/*if (!_GeoCache.Get(oaddress = address = city + ";" + GetToken(region, 0, ",;-") + ";Italy", lat, lng))
+		if (!_GeoCache.Get(oaddress = address = city + ";" + GetToken(region, 0, ",;-") + ";Italy", lat, lng))
 		{
 			while (!ExtractStringDel(address, "(", "", ")").IsEmpty());
 			if (!_GeoCache.Get(address, lat, lng))
@@ -819,7 +822,7 @@ public:
 					if (!_GeoCache.Get(address = city + ";Italy", lat, lng))
 						if (!_GeoCache.Get(address = city + ";" + region + ";Italy", lat, lng))
 							address = address;
-		}*/
+		}
 
 		//if (CheckLL(lat,lng))
 		//	if (address!=oaddress)

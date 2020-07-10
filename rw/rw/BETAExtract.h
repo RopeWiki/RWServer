@@ -24,6 +24,13 @@
 #define TRANSBASIC "trans-basic"
 #define TORIGINAL "(Original)"
 
+#define MINCHARMATCH 3
+
+#define FBLIST "\n*"
+#define FBCOMMA "|"
+
+#define CONDITIONS "Conditions:"
+
 extern int MODE;
 
 #if 0
@@ -54,13 +61,28 @@ static vara cond_water("0 - Dry (class A = a1),1 - Very Low (class B = a2),2 - D
 
 enum { T_NAME = 0, T_REGION, T_SEASON, T_TROCK, T_MAX };
 
+enum { M_MATCH = ITEM_ACA, M_SCORE, M_LEN, M_NUM, M_RETRY };
+enum { R_T = 0, R_W, R_I, R_X, R_V, R_A, R_C, R_SUMMARY, R_STARS, R_TEMP, R_TIME, R_PEOPLE, R_LINE, R_EXTENDED };
+
+static vara cond_temp("0 - None,1 - Rain jacket (1mm-2mm),2 - Thin wetsuit (3mm-4mm),3 - Full wetsuit (5mm-6mm),4 - Thick wetsuit (7mm-10mm),5 - Drysuit");
+//static vara cond_temp("0mm - None,1mm - Rain jacket,3mm - Thin wetsuit,5mm - Full wetsuit,7mm - Thick wetsuit,Xmm - Drysuit");
+
+static vara cond_diff("0 - Nontechnical,1 - Easy,2 - Normal,3 - Special challenges,4 - Advanced,5 - Extreme");
+
+static vara cond_stars("0 - Unknown,1 - Poor,2 - Ok,3 - Good,4 - Great,5 - Amazing");
+
+static const char *headers = "ITEM_URL, ITEM_DESC, ITEM_LAT, ITEM_LNG, ITEM_MATCH, ITEM_MODE, ITEM_INFO, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, https://maps.googleapis.com/maps/api/geocode/xml?address=,\"=+HYPERLINK(+CONCATENATE(\"\"http://ropewiki.com/index.php/Location?jform&locsearchchk=on&locname=\"\",C1,\"\",\"\",D1,\"\"&locdist=5mi&skinuser=&sortby=-Has_rank_rating&kmlx=\"\",A1),\"\"@check\"\")\"";
+
 class CPage;
+
+static CSymList rwlist, titlebetalist;
 
 CString noHTML(const char *str);
 vars UTF8(const char *val, int cp = CP_ACP);
 vars Translate(const char *str, CSymList &list, const char *onlytrans = NULL);
 vars TableMatch(const char *str, vara &inlist, vara &outlist);
 int GetSummary(CSym &sym, const char *str);
+int GetSummary(vara &rating, const char *str);
 vars invertregion(const char *str, const char *add = "");
 void GetTotalTime(CSym &sym, vara &times, const char *url, double maxtmin = 24);
 vars urlstr(const char *url, int stripkmlidx = TRUE);
@@ -99,6 +121,14 @@ CString GetMetric(const char *str);
 void GetCoords(const char *memory, float &lat, float &lng);
 BOOL isanum(unsigned char c);
 CString ExtractStringDel(CString &memory, const char *pre, const char *start, const char *end, int ext = FALSE, int del = TRUE);
+BOOL isa(unsigned char c);
+int LoadBetaList(CSymList &bslist, int title, int rwlinks);
+int UploadCondition(CSym &sym, const char *title, const char *credit, int trackdate = FALSE);
+int Login(DownloadFile &f);
+int rwftitle(const char *line, CSymList &idlist);
+void  PurgePage(DownloadFile &f, const char *id, const char *title);
+int UpdateProp(const char *name, const char *value, vara &lines, int force = FALSE);
+int FindSection(vara &lines, const char *section, int *iappend);
 
 
 //static functions

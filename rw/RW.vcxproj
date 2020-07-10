@@ -126,8 +126,10 @@
     <ClCompile Include="rw\CanyonMag.cpp" />
     <ClCompile Include="rw\CBrennen.cpp" />
     <ClCompile Include="rw\Code.cpp" />
+    <ClCompile Include="rw\CPage.cpp" />
     <ClCompile Include="rw\DescenteCanyon.cpp" />
     <ClCompile Include="rw\Elevation.cpp" />
+    <ClCompile Include="rw\Facebook.cpp" />
     <ClCompile Include="rw\fcgi\libfcgi\fcgiapp.c" />
     <ClCompile Include="rw\Martinique.cpp" />
     <ClCompile Include="rw\ShortBetaSites.cpp" />
@@ -146,6 +148,7 @@
     <ClInclude Include="rw\Books.h" />
     <ClInclude Include="rw\CBrennen.h" />
     <ClInclude Include="rw\Code.h" />
+    <ClInclude Include="rw\CPage.h" />
     <ClInclude Include="rw\GeoRegion.h" />
     <ClInclude Include="rw\Reunion.h" />
     <ClInclude Include="rw\RoadTripRyan.h" />
