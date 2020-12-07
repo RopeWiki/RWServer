@@ -4,24 +4,21 @@
 #include "RoadTripRyan.h"
 #include "BETAExtract.h"
 #include "trademaster.h"
+#include "passwords.h"
 
 int ROADTRIPRYAN_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
 {
-	//if (!fx)
-	return FALSE;
-
+	//return FALSE;
 
 	DownloadFile f;
 	CString credit = " (Data by " + CString(ubase) + ")";
 	// requires login, app may fix but rw does not
-	/*
-	CString login = burl(ubase, "go/login/authenticate?POST?spring-security-redirect=%2F&username=ROADTRIPRYAN_USERNAME&password=ROADTRIPRYAN_PASSWORD");
+	CString login = burl("www.roadtripryan.com", "go/perform_login?POST?spring-security-redirect=&username=" ROADTRIPRYAN_USERNAME "&password=" ROADTRIPRYAN_PASSWORD, true);
 	if (f.Download(login, "login.htm"))
 		{
 		Log(LOGERR, "ERROR: can't login roadtripryan.com");
 		//return FALSE;
 		}
-	*/
 
 	vars id = GetKMLIDX(f, url);
 	if (id.IsEmpty())

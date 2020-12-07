@@ -138,7 +138,7 @@ static CString filename(const char *name)
 	return BETA + vars("\\") + vars(name) + ".csv";
 }
 
-static CString burl(const char *base, const char *folder)
+static CString burl(const char *base, const char *folder, bool useHttps)
 {
 	if (IsSimilar(folder, "../"))
 		folder += 2;
@@ -147,10 +147,19 @@ static CString burl(const char *base, const char *folder)
 	if (folder[0] == '/' && folder[1] == '/')
 		return CString("http:") + folder;
 	CString str;
-	if (!IsSimilar(base, "http"))
-		str += "http://";
+	if (!IsSimilar(base, "http")) {
+		if (!useHttps)
+			str += "http://";
+		else
+			str += "https://";
+	}
 	str += base;
 	if (folder[0] != '/')
 		str += "/";
 	return str + folder;
+}
+
+static CString burl(const char *base, const char *folder)
+{
+	return burl(base, folder, false);
 }

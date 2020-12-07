@@ -156,6 +156,9 @@
     <ClCompile Include="rw\CPage.cpp">
       <Filter>Source Files\BetaExtract</Filter>
     </ClCompile>
+    <ClCompile Include="rw\Wikiloc.cpp">
+      <Filter>Source Files\BetaExtract\Locations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rw\passwords.h">
@@ -237,6 +240,9 @@
       <Filter>Header Files\BetaExtract</Filter>
     </ClInclude>
     <ClInclude Include="rw\CPage.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
+    <ClInclude Include="rw\Wikiloc.h">
       <Filter>Header Files\BetaExtract</Filter>
     </ClInclude>
   </ItemGroup>
