@@ -733,7 +733,10 @@ char *GetSearchString(const char *mbuffer, const char *searchstr, CString &symbo
 		for (i=0; sym[i]!=0 && sym[i]!='&' && sym[i]!='\"' && sym[i]!='<'; ++i);
 	
 	symbol=CString(sym, i);
-	return (char *)(sym+i);
+	symbol.Replace("Ã±", "n"); //ñ (doesn't display right)
+	symbol.Replace("Ã³", "o"); //ó
+	
+	return reinterpret_cast<char *>(&symbol);
 }
 
 

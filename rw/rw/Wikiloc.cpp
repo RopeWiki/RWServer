@@ -9,13 +9,12 @@
 
 // ===============================================================================================
 
-#define WIKILOCTICKS 1000
+#define WIKILOCTICKS 3000
 static double wikilocticks;
 
 int WIKILOC_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
 {
 	DownloadFile f;
-	static double wikilocticks;
 	Throttle(wikilocticks, WIKILOCTICKS);
 	if (DownloadRetry(f, url))
 	{
@@ -23,32 +22,75 @@ int WIKILOC_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx
 		return FALSE;
 	}
 
-	vars user = stripHTML(ExtractString(f.memory, ">Author:", "", "</div"));
+	const vars user = stripHTML(ExtractString(f.memory, "\"author\":", R"("name": ")", "\","));
 	CString credit = " (Data by " + user + " at " + CString(ubase) + ")";
-	vars desc = stripHTML(ExtractString(f.memory, "<h1", ">", "<a")) + " " + credit;
+	const vars desc = stripHTML(ExtractString(f.memory, "\"mainEntity\":", R"("name": ")", "\",")) + " " + credit;
 
-	vara styles, points, lines;
-	styles.push("dot=http://maps.google.com/mapfiles/kml/shapes/open-diamond.png");
-
-	vara wpt(f.memory, "maps.LatLng(");
-	for (int i = 2; i < wpt.length(); ++i)
+	vara styles, waypoints, tracks;
+	styles.push(  "dot=http://maps.google.com/mapfiles/kml/shapes/open-diamond.png");
+	styles.push("begin=http://maps.google.com/mapfiles/kml/paddle/go.png");
+	styles.push(  "end=http://maps.google.com/mapfiles/kml/paddle/red-square.png");
+	
+	const vars mapData = stripHTML(ExtractString(f.memory, "\"mapData\":", "[", "]"));
+		
+	vara wpt(mapData, "{");
+	for (int i = 1; i < wpt.length(); ++i)
 	{
-		vara coords(ExtractString(wpt[i], "", "", ");"));
-		vara attr(ExtractString(wpt[i], "buildAndCache(", "", ");"));
-		if (coords.length() < 2 || attr.length() < 6)
-			continue;
-		vars id = stripHTML(attr[5].Trim("'\""));
-		double lat = CDATA::GetNum(coords[0]);
-		double lng = CDATA::GetNum(coords[1]);
-		if (id.IsEmpty() || !CheckLL(lat, lng, url))
-			continue;
+		vars isWaypoint = ExtractString(wpt[i], "\"waypoint\"", ":", ";");
 
-		// add markers
-		points.push(KMLMarker("dot", lat, lng, id, credit));
+		if (isWaypoint == "true")
+		{
+			WIKILOC_ProcessWaypoint(&wpt[i], &waypoints, &credit, url);
+		}
+		else
+		{
+			WIKILOC_ProcessTrack(&wpt[i], &tracks, &waypoints, &credit, url);
+		}		
 	}
 
-	// process lines
+	if (waypoints.length() == 0 && tracks.length() == 0)
+		return FALSE;
+
+	// generate kml
+	SaveKML("WikiLoc", desc, url, styles, waypoints, tracks, out);
+	return TRUE;
+}
+
+void WIKILOC_ProcessWaypoint(vars* entry, vara* waypoints, CString* credit, const char* url)
+{
+	vars name = ExtractString(*entry, "\"nom\":", "\"", "\"");
+	if (name.IsEmpty()) return;
+
+	CString type = "b";	
+	WIKILOC_ExtractWaypointCoords(entry, &type, "dot", &name, waypoints, credit, url);
+}
+
+void WIKILOC_ProcessTrack(vars* entry, vara* tracks, vara* waypoints, CString* credit, const char *url)
+{
+	CString type;  vars name;
+
+	//begin waypoint
+	type = "b"; name = "Start";
+	WIKILOC_ExtractWaypointCoords(entry, &type, "begin", &name, waypoints, credit, url);
+
+	//end waypoint
+	type = "e"; name = "End";
+	WIKILOC_ExtractWaypointCoords(entry, &type, "end",&name, waypoints, credit, url);
+
+	name = ExtractString(*entry, "\"nom\":", "\"", "\"");
+
+	vars encodedPolyline = "geom:" + ExtractString(*entry, "\"geom\":", "\"", "\"");
+
+	//the following flow to decode the polyline string were converted from the embedded javascript on wikiloc:
+	//TODO: convert the javascript to decode the line to c++. For now, just pass it off to our javascript
 	vara linelist;
+	linelist.push(encodedPolyline);
+	
+	tracks->push(KMLLine(name, *credit, linelist, OTHER, 3));
+
+	//luca's original code to add coordinates:
+		
+	/*vara linelist;
 	vara lats(ExtractString(f.memory, "lat:", "[", "]"));
 	vara lngs(ExtractString(f.memory, "lng:", "[", "]"));
 	for (int i = 0; i < lats.length() && i < lngs.length(); ++i)
@@ -56,17 +98,24 @@ int WIKILOC_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx
 		double lat = CDATA::GetNum(lats[i]);
 		double lng = CDATA::GetNum(lngs[i]);
 		linelist.push(CCoord3(lat, lng));
-	}
-	lines.push(KMLLine("Track", desc, linelist, OTHER, 3));
-
-	if (points.length() == 0 && lines.length() == 0)
-		return FALSE;
-
-	// generate kml
-	SaveKML("WikiLoc", desc, url, styles, points, lines, out);
-	return TRUE;
+	}	
+	tracks->push(KMLLine("Track", name, linelist, OTHER, 3));*/
 }
 
+void WIKILOC_ExtractWaypointCoords(vars* entry, CString* type, const char* style, vars* name, vara* waypoints, CString* credit, const char *url)
+{
+	const vars latStr = ExtractString(*entry, "\"" + *type + "lat\"", ":", ";");
+	const vars lngStr = ExtractString(*entry, "\"" + *type + "lng\"", ":", ";");
+
+	if (latStr.IsEmpty() || lngStr.IsEmpty()) return;
+
+	const double lat = CDATA::GetNum(latStr);
+	const double lng = CDATA::GetNum(lngStr);
+
+	if (!CheckLL(lat, lng, url)) return;
+
+	waypoints->push(KMLMarker(style, lat, lng, *name, *credit));
+}
 
 int WIKILOC_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 {
