@@ -57,9 +57,9 @@ int DESCENTECANYON_ExtractPoints(const char *url, vara &styles, vara &points, va
 		"Waypoint Descent,"
 		"Waypoint Approach/Exit,", ",");
 	static vara icons(
-		"http://maps.google.com/mapfiles/kml/pal4/icon15.png,"
-		"http://maps.google.com/mapfiles/kml/pal4/icon62.png,"
-		"http://maps.google.com/mapfiles/kml/pal4/icon62.png,"
+		/*"http://maps.google.com/mapfiles/kml/pal4/icon15.png,"*/ "http://maps.google.com/mapfiles/kml/paddle/S.png,"
+		/*"http://maps.google.com/mapfiles/kml/pal4/icon62.png,"*/ "http://maps.google.com/mapfiles/kml/paddle/P.png,"
+		/*"http://maps.google.com/mapfiles/kml/pal4/icon62.png,"*/ "http://maps.google.com/mapfiles/kml/paddle/P.png,"
 		"http://www.descente-canyon.com/design/img/map-markers/marker-canyon-depart.png,"
 		"http://www.descente-canyon.com/design/img/map-markers/marker-canyon-arrivee.png,"
 		"http://www.descente-canyon.com/design/img/map-markers/marker-canyon-point_interne.png,"
