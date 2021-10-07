@@ -730,7 +730,7 @@ char *GetSearchString(const char *mbuffer, const char *searchstr, CString &symbo
 		for (i=0; sym[i]!=0 && strnicmp(sym+i, endchar, len)!=0; ++i);
 		}
 	else
-		for (i=0; sym[i]!=0 && sym[i]!='&' && sym[i]!='\"' && sym[i]!='<'; ++i);
+		for (i=0; sym[i]!=0 && sym[i]!='&' && sym[i]!='\"' && sym[i]!='<' && sym[i] != '}'; ++i);
 	
 	symbol=CString(sym, i);
 	symbol.Replace("Ã±", "n"); //ñ (doesn't display right)

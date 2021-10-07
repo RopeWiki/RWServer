@@ -33,7 +33,7 @@ int WIKILOC_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx
 	vara wpt(mapData, "{");
 	for (int i = 1; i < wpt.length(); ++i)
 	{
-		vars isWaypoint = ExtractString(wpt[i], "\"waypoint\"", ":", ";");
+		vars isWaypoint = ExtractString(wpt[i], "\"waypoint\"", ":", nullptr); //empty endchar will default to terminate with & " < }
 
 		if (isWaypoint == "true")
 		{
