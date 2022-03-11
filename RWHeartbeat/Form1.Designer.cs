@@ -47,11 +47,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnTestEmail = new System.Windows.Forms.Button();
             this.btnHeartbeat = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNginxProcess = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnRebootServer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(72, 47);
+            this.btnStart.Location = new System.Drawing.Point(28, 30);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(137, 65);
             this.btnStart.TabIndex = 0;
@@ -61,7 +66,7 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(237, 47);
+            this.btnStop.Location = new System.Drawing.Point(193, 30);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(137, 65);
             this.btnStop.TabIndex = 1;
@@ -71,7 +76,7 @@
             // 
             // btnRestart
             // 
-            this.btnRestart.Location = new System.Drawing.Point(582, 248);
+            this.btnRestart.Location = new System.Drawing.Point(538, 231);
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.Size = new System.Drawing.Size(101, 40);
             this.btnRestart.TabIndex = 2;
@@ -82,7 +87,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 253);
+            this.label1.Location = new System.Drawing.Point(30, 236);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 25);
             this.label1.TabIndex = 3;
@@ -92,7 +97,7 @@
             // 
             this.txtRWProcess.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRWProcess.Location = new System.Drawing.Point(237, 250);
+            this.txtRWProcess.Location = new System.Drawing.Point(193, 233);
             this.txtRWProcess.Name = "txtRWProcess";
             this.txtRWProcess.Size = new System.Drawing.Size(339, 31);
             this.txtRWProcess.TabIndex = 4;
@@ -100,10 +105,9 @@
             // 
             // txtEmailRecipients
             // 
-            this.txtEmailRecipients.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtEmailRecipients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmailRecipients.Location = new System.Drawing.Point(237, 400);
+            this.txtEmailRecipients.Location = new System.Drawing.Point(193, 383);
             this.txtEmailRecipients.Multiline = true;
             this.txtEmailRecipients.Name = "txtEmailRecipients";
             this.txtEmailRecipients.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -113,7 +117,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 403);
+            this.label2.Location = new System.Drawing.Point(30, 386);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 25);
             this.label2.TabIndex = 5;
@@ -128,7 +132,7 @@
             // 
             this.txtRWurl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRWurl.Location = new System.Drawing.Point(237, 300);
+            this.txtRWurl.Location = new System.Drawing.Point(193, 283);
             this.txtRWurl.Name = "txtRWurl";
             this.txtRWurl.Size = new System.Drawing.Size(446, 31);
             this.txtRWurl.TabIndex = 8;
@@ -137,7 +141,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(74, 303);
+            this.label3.Location = new System.Drawing.Point(30, 286);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 25);
             this.label3.TabIndex = 7;
@@ -147,7 +151,7 @@
             // 
             this.txtLastHeartbeat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLastHeartbeat.Location = new System.Drawing.Point(237, 150);
+            this.txtLastHeartbeat.Location = new System.Drawing.Point(193, 133);
             this.txtLastHeartbeat.Name = "txtLastHeartbeat";
             this.txtLastHeartbeat.ReadOnly = true;
             this.txtLastHeartbeat.Size = new System.Drawing.Size(339, 31);
@@ -156,7 +160,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(74, 153);
+            this.label4.Location = new System.Drawing.Point(30, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(156, 25);
             this.label4.TabIndex = 9;
@@ -166,7 +170,7 @@
             // 
             this.txtTimerInterval.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTimerInterval.Location = new System.Drawing.Point(237, 200);
+            this.txtTimerInterval.Location = new System.Drawing.Point(193, 183);
             this.txtTimerInterval.Name = "txtTimerInterval";
             this.txtTimerInterval.Size = new System.Drawing.Size(446, 31);
             this.txtTimerInterval.TabIndex = 12;
@@ -176,7 +180,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(74, 203);
+            this.label5.Location = new System.Drawing.Point(30, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 25);
             this.label5.TabIndex = 11;
@@ -186,7 +190,7 @@
             // 
             this.txtSMTPKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSMTPKey.Location = new System.Drawing.Point(237, 350);
+            this.txtSMTPKey.Location = new System.Drawing.Point(193, 333);
             this.txtSMTPKey.Name = "txtSMTPKey";
             this.txtSMTPKey.Size = new System.Drawing.Size(339, 31);
             this.txtSMTPKey.TabIndex = 14;
@@ -194,7 +198,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(74, 353);
+            this.label6.Location = new System.Drawing.Point(30, 336);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 25);
             this.label6.TabIndex = 13;
@@ -203,7 +207,7 @@
             // btnTestEmail
             // 
             this.btnTestEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTestEmail.Location = new System.Drawing.Point(582, 350);
+            this.btnTestEmail.Location = new System.Drawing.Point(538, 333);
             this.btnTestEmail.Name = "btnTestEmail";
             this.btnTestEmail.Size = new System.Drawing.Size(101, 40);
             this.btnTestEmail.TabIndex = 15;
@@ -214,7 +218,7 @@
             // btnHeartbeat
             // 
             this.btnHeartbeat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHeartbeat.Location = new System.Drawing.Point(582, 148);
+            this.btnHeartbeat.Location = new System.Drawing.Point(538, 131);
             this.btnHeartbeat.Name = "btnHeartbeat";
             this.btnHeartbeat.Size = new System.Drawing.Size(101, 40);
             this.btnHeartbeat.TabIndex = 16;
@@ -222,11 +226,63 @@
             this.btnHeartbeat.UseVisualStyleBackColor = true;
             this.btnHeartbeat.Click += new System.EventHandler(this.btnHeartbeat_Click);
             // 
+            // label7
+            // 
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label7.Location = new System.Drawing.Point(28, 540);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(611, 2);
+            this.label7.TabIndex = 17;
+            // 
+            // txtNginxProcess
+            // 
+            this.txtNginxProcess.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNginxProcess.Location = new System.Drawing.Point(193, 597);
+            this.txtNginxProcess.Name = "txtNginxProcess";
+            this.txtNginxProcess.Size = new System.Drawing.Size(446, 31);
+            this.txtNginxProcess.TabIndex = 19;
+            this.txtNginxProcess.Text = "c:\\nginx-1.16.0\\nginx.exe";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(30, 600);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 25);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "nginx path:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(30, 555);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(201, 25);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Full machine reboot";
+            // 
+            // btnRebootServer
+            // 
+            this.btnRebootServer.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnRebootServer.Location = new System.Drawing.Point(35, 652);
+            this.btnRebootServer.Name = "btnRebootServer";
+            this.btnRebootServer.Size = new System.Drawing.Size(101, 40);
+            this.btnRebootServer.TabIndex = 21;
+            this.btnRebootServer.Text = "Reboot";
+            this.btnRebootServer.UseVisualStyleBackColor = false;
+            this.btnRebootServer.Click += new System.EventHandler(this.btnRebootServer_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 563);
+            this.ClientSize = new System.Drawing.Size(674, 729);
+            this.Controls.Add(this.btnRebootServer);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtNginxProcess);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnHeartbeat);
             this.Controls.Add(this.btnTestEmail);
             this.Controls.Add(this.txtSMTPKey);
@@ -271,6 +327,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnTestEmail;
         private System.Windows.Forms.Button btnHeartbeat;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtNginxProcess;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnRebootServer;
     }
 }
 
