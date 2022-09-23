@@ -80,7 +80,7 @@ void WIKILOC_ProcessTrack(vars* entry, vara* tracks, vara* waypoints, CString* c
 
 	//the following code to decode the polyline string was converted from the embedded javascript on wikiloc:
 	vara linelist;
-	//linelist.push("geom:" + encodedPolyline.c_str()); //<- this was to pass it off to our javascript, before the decoding code was converted to C++
+	//linelist.push("geom:" + encodedPolyline); //<- this was to pass it off to our javascript, before the decoding code was converted to C++
 	
 	auto coords = WikilocCPPDecode::decodeWikilocEncodedPath(encodedPolyline);
 
