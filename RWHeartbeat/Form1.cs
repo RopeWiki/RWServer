@@ -9,297 +9,324 @@ using System.Windows.Forms;
 
 namespace RWHeartbeat
 {
-    public partial class Form1 : Form
-    {
-        private readonly BackgroundWorker enterKeyWorker = new BackgroundWorker();
+	public partial class Form1 : Form
+	{
+		public Form1()
+		{
+			InitializeComponent();
 
-        public Form1()
-        {
-            InitializeComponent();
+			StopHeartbeat();
 
-            enterKeyWorker.DoWork += enterKeyWorker_DoWork;
+			LoadSMTPKey();
 
-            StopHeartbeat();
+			Application.DoEvents();
 
-            LoadSMTPKey();
+			CheckForAutostart();
+		}
 
-            CheckForAutostart();
-        }
-        
-        #region UI events
+		#region UI events
 
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            StartHeartbeat();
-        }
+		private void btnStart_Click(object sender, EventArgs e)
+		{
+			StartHeartbeat();
+		}
 
-        private void btnStop_Click(object sender, EventArgs e)
-        {
-            StopHeartbeat();
-        }
+		private void btnStop_Click(object sender, EventArgs e)
+		{
+			StopHeartbeat();
+		}
 
-        private void btnRestart_Click(object sender, EventArgs e)
-        {
-            RestartProcess();
-        }
+		private void btnRestart_Click(object sender, EventArgs e)
+		{
+			RestartProcess();
+		}
 
-        private void txtTimerInterval_TextChanged(object sender, EventArgs e)
-        {
-            StopHeartbeat();
-        }
+		private void txtTimerInterval_TextChanged(object sender, EventArgs e)
+		{
+			StopHeartbeat();
+		}
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            var url = txtRWurl.Text;
-            var result = Ping(url);
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			var url = txtRWurl.Text;
+			var result = Ping(url);
 
-            if (result)
-            {
-                txtLastHeartbeat.Text = DateTime.Now.ToString();
-            }
-            else
-            {
-                enterKeyWorker.RunWorkerAsync();
+			if (result)
+			{
+				txtLastHeartbeat.Text = DateTime.Now.ToString();
+			}
+			else
+			{
+				// a) see if rw.exe is running. If not, restart. If it is, reboot
 
-                if (MessageBox.Show("Reboot server?\r\n\r\nTimeout in 5 seconds", "Reboot imminent!",
-                        MessageBoxButtons.YesNo) != DialogResult.Yes)
-                    return;
+				var rwProcess = GetRWProcess();
 
-                //email people that server failed heartbeat
-                var message = "RW server failed heartbeat - rebooting server";
-                SendEmail(message);
+				if (rwProcess == null)
+				{
+					SendEmail("RW server app crashed - restarting");
 
-                timer1.Stop();
+					RestartProcess();
+					return;
+				}
 
-                Thread.Sleep(5000);
+				//email people that server failed heartbeat
+				SendEmail("RW server failed heartbeat - rebooting server");
 
-                RebootServer();
-            }
-        }
+				StartRebootSequence();
+			}
+		}
 
-        private void btnHeartbeat_Click(object sender, EventArgs e)
-        {
-            var url = txtRWurl.Text;
-            var result = Ping(url);
+		private void StartRebootSequence()
+		{
+			timer1.Stop();
 
-            txtLastHeartbeat.Text = result
-                ? DateTime.Now.ToString()
-                : "failed heartbeat";
-        }
+			BackColor = System.Drawing.Color.LightCoral;
 
-        private void btnTestEmail_Click(object sender, EventArgs e)
-        {
-            SendEmail("RW Test Email");
-        }
+			Text = "REBOOTING - press Stop to cancel";
+			
+			Application.DoEvents();
 
-        private void btnRebootServer_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Reboot server now?", "Reboot", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                RebootServer();
-        }
+			Thread.Sleep(5000);
 
-        #endregion
+			Application.DoEvents();
 
-        private void StartHeartbeat()
-        {
-            if (!Int32.TryParse(txtTimerInterval.Text, out var interval)) return;
+			RebootServer();
+		}
 
-            timer1_Tick(null, null);
+		private void btnHeartbeat_Click(object sender, EventArgs e)
+		{
+			var url = txtRWurl.Text;
+			var result = Ping(url);
 
-            btnStart.Enabled = false;
-            btnStop.Enabled = true;
-            timer1.Interval = interval * 1000;
-            timer1.Start();
-        }
+			txtLastHeartbeat.Text = result
+				? DateTime.Now.ToString()
+				: "failed heartbeat";
+		}
 
-        private void StopHeartbeat()
-        {
-            btnStart.Enabled = true;
-            btnStop.Enabled = false;
-            timer1.Stop();
-        }
+		private void btnTestEmail_Click(object sender, EventArgs e)
+		{
+			SendEmail("RW Test Email");
+		}
 
-        private bool Ping(string url)
-        {
-            try
-            {
-                var request = (HttpWebRequest)WebRequest.Create(url);
-                request.Timeout = 3000;
-                request.AllowAutoRedirect = false;
-                request.Method = "POST";
+		private void btnRebootServer_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("Reboot server now?", "Reboot", MessageBoxButtons.YesNo) == DialogResult.Yes)
+				RebootServer();
+		}
 
-                using (request.GetResponse())
-                {
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
+		#endregion
 
-        private void RestartProcess()
-        {
-            var path = txtRWProcess.Text;
+		private void StartHeartbeat()
+		{
+			if (!int.TryParse(txtTimerInterval.Text, out var interval)) return;
 
-            var processName = Path.GetFileNameWithoutExtension(path);
-            var workingDirectory = Path.GetDirectoryName(path);
+			btnStart.Enabled = false;
+			btnStop.Enabled = true;
+			timer1.Interval = interval * 1000;
+			timer1.Start();
 
-            var processes = Process.GetProcessesByName(processName);
+			timer1_Tick(null, null);
+		}
 
-            if (processes.Length > 0)
-            {
-                var process = processes[0];
-                process?.Kill();
+		private void StopHeartbeat()
+		{
+			timer1.Stop();
 
-                Thread.Sleep(3000);
-            }
+			btnStart.Enabled = true;
+			btnStop.Enabled = false;
+			BackColor = System.Drawing.SystemColors.Control;
+			Text = "RW Heartbeat";
+		}
 
-            try
-            {
-                using (Process process = new Process())
-                {
-                    process.StartInfo.FileName = path;
-                    process.StartInfo.WorkingDirectory = workingDirectory ?? "";
-                    process.Start();
-                }
-            }
-            catch (Exception)
-            {
-                //email people that error occured
-                var message = "!!!RW server unable to restart!!!";
-                SendEmail(message);
+		private bool Ping(string url)
+		{
+			try
+			{
+				var request = (HttpWebRequest) WebRequest.Create(url);
+				request.Timeout = 3000;
+				request.AllowAutoRedirect = false;
+				request.Method = "POST";
 
-                StopHeartbeat();
-            }
-        }
+				using (request.GetResponse())
+				{
+					return true;
+				}
+			}
+			catch
+			{
+				return false;
+			}
+		}
 
-        private void SendEmail(string subject)
-        {
-            var smtpHostUrl = "smtp.sendgrid.net";
-            var username = "apikey";
-            var password = txtSMTPKey.Text;
+		private void RestartProcess()
+		{
+			var rwProcess = GetRWProcess();
 
-            SmtpClient smtpClient = new SmtpClient(smtpHostUrl, 587)
-            {
-                EnableSsl = true,
-                Timeout = 10000,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(username, password)
-            };
+			if (rwProcess != null)
+			{
+				rwProcess.Kill();
 
-            MailMessage mailMsg = new MailMessage
-            {
-                From = new MailAddress("noreply@rwserver.com"),
-                Subject = subject,
-                Body = ""
-            };
+				Thread.Sleep(3000);
+			}
 
-            var addresses = txtEmailRecipients.Text.Split(new[] {"\r\n", "\r", "\n"}, StringSplitOptions.RemoveEmptyEntries);
+			var path = txtRWProcess.Text;
+			var workingDirectory = Path.GetDirectoryName(path) ?? "";
 
-            foreach (var entry in addresses)
-            {
-                try
-                {
-                    mailMsg.To.Add(entry);
-                }
-                catch (FormatException) { }
-                catch (ArgumentException) { }
-            }
+			try
+			{
+				using (Process process = new Process())
+				{
+					process.StartInfo.FileName = path;
+					process.StartInfo.WorkingDirectory = workingDirectory;
+					process.Start();
+				}
+			}
+			catch (Exception)
+			{
+				//email people that error occured
+				var message = "RW server unable to restart - manual intervention needed";
+				SendEmail(message);
 
-            try
-            {
-                smtpClient.Send(mailMsg);
-            }
-            catch (InvalidOperationException) { }
-        }
+				StopHeartbeat();
+			}
+		}
 
-        private void LoadSMTPKey()
-        {
-            try
-            {
-                var lines = File.ReadAllLines(@"SMTPKey.txt");
+		private Process GetRWProcess()
+		{
+			var path = txtRWProcess.Text;
 
-                txtSMTPKey.Text = lines[0];
+			var processName = Path.GetFileNameWithoutExtension(path);
+			
+			var processes = Process.GetProcessesByName(processName);
 
-                for (int i = 1; i < lines.Length; i++)
-                {
-                    txtEmailRecipients.Text += lines[i] + "\r\n";
-                }
-            }
-            catch
-            {
-            }
-        }
+			return processes.Length > 0 ? processes[0] : null;
+		}
 
-        private void CheckForAutostart()
-        {
-            //check if nginx is running
-            var path = txtNginxProcess.Text;
-            if (string.IsNullOrEmpty(path)) return;
+		private void SendEmail(string subject)
+		{
+			var smtpHostUrl = "smtp.sendgrid.net";
+			var username = "apikey";
+			var password = txtSMTPKey.Text;
 
-            var processName = Path.GetFileNameWithoutExtension(path);
+			SmtpClient smtpClient = new SmtpClient(smtpHostUrl, 587)
+			{
+				EnableSsl = true,
+				Timeout = 10000,
+				DeliveryMethod = SmtpDeliveryMethod.Network,
+				UseDefaultCredentials = false,
+				Credentials = new NetworkCredential(username, password)
+			};
 
-            var processes = Process.GetProcessesByName(processName);
+			MailMessage mailMsg = new MailMessage
+			{
+				From = new MailAddress("noreply@rwserver.com"),
+				Subject = subject,
+				Body = ""
+			};
 
-            if (processes.Length > 0)
-                return; //nginx already started
+			var addresses =
+				txtEmailRecipients.Text.Split(new[] {"\r\n", "\r", "\n"}, StringSplitOptions.RemoveEmptyEntries);
 
-            //ask for confirmation
-            enterKeyWorker.RunWorkerAsync();
+			foreach (var entry in addresses)
+			{
+				try
+				{
+					mailMsg.To.Add(entry);
+				}
+				catch (FormatException)
+				{
+				}
+				catch (ArgumentException)
+				{
+				}
+			}
 
-            if (MessageBox.Show("Autostart nginx?\r\n\r\nTimeout in 5 seconds", "Nginx process not found",
-                    MessageBoxButtons.YesNo) != DialogResult.Yes)
-                return;
+			try
+			{
+				smtpClient.Send(mailMsg);
+			}
+			catch (InvalidOperationException)
+			{
+			}
+		}
 
-            //start nginx
-            var startInfo = new ProcessStartInfo
-            {
-                WorkingDirectory = Path.GetDirectoryName(path) ?? "",
-                FileName = processName
-            };
+		private void LoadSMTPKey()
+		{
+			try
+			{
+				var lines = File.ReadAllLines(@"SMTPKey.txt");
 
-            try
-            {
-                Process.Start(startInfo);
-            }
-            catch (Win32Exception)
-            {
-                MessageBox.Show("Invalid path for nginx");
-                return;
-            }
+				txtSMTPKey.Text = lines[0];
 
-            Thread.Sleep(5000);
+				for (int i = 1; i < lines.Length; i++)
+				{
+					txtEmailRecipients.Text += lines[i] + "\r\n";
+				}
+			}
+			catch
+			{
+			}
+		}
 
-            //start rw server
-            RestartProcess();
+		private void CheckForAutostart()
+		{
+			//check if nginx is running
+			var path = txtNginxProcess.Text;
+			if (string.IsNullOrEmpty(path)) return;
 
-            Thread.Sleep(3000);
+			var processName = Path.GetFileNameWithoutExtension(path);
 
-            StartHeartbeat();
+			var processes = Process.GetProcessesByName(processName);
 
-            btnHeartbeat_Click(null, null);
-            var succeeded = txtLastHeartbeat.Text != "failed heartbeat";
+			if (processes.Length > 0)
+				return; //nginx already started
 
-            //send email
-            var message = succeeded
-                ? "RW server successfully rebooted and passed heartbeat"
-                : "RW server failed heartbeat after reboot -- needs manual intervention";
+			//start nginx
+			var startInfo = new ProcessStartInfo
+			{
+				WorkingDirectory = Path.GetDirectoryName(path) ?? "",
+				FileName = processName
+			};
 
-            SendEmail(message);
-        }
+			try
+			{
+				Process.Start(startInfo);
+			}
+			catch (Win32Exception)
+			{
+				MessageBox.Show("Invalid path for nginx");
+				return;
+			}
 
-        private void enterKeyWorker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            Thread.Sleep(5000);
-            SendKeys.SendWait("{Enter}");//or Esc
-        }
+			Thread.Sleep(5000);
 
-        private void RebootServer()
-        {
-            Process.Start("shutdown.exe", "-r -t 0");
-        }
-    }
+			//start rw server
+			RestartProcess();
+
+			Thread.Sleep(3000);
+
+			StartHeartbeat();
+
+			btnHeartbeat_Click(null, null);
+			var succeeded = txtLastHeartbeat.Text != "failed heartbeat";
+
+			//send email
+			var message = succeeded
+				? "RW server successfully rebooted and passed heartbeat"
+				: "RW server failed heartbeat after reboot -- needs manual intervention";
+
+			SendEmail(message);
+		}
+
+		private void RebootServer()
+		{
+			if (!btnStop.Enabled)
+			{
+				StopHeartbeat();
+				return;
+			}
+
+			Process.Start("shutdown.exe", "-r -t 0");
+		}
+	}
 }
