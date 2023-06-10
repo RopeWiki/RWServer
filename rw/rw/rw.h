@@ -288,7 +288,7 @@ CString KMLEnd(int clink = FALSE);
 CString KMLFolderStart(const char *name, const char *icon = NULL, int hidechildren = FALSE, int visibility = TRUE);
 CString KMLFolderEnd(void);
 CString KMLMarker(const char *style, double lat, double lng, const char *name, const char *desc = NULL);
-CString KMLMarkerStyle(const char *name, const char *url = NULL, double scale = 1, double textscale = 0, int hotcenter = 0, const char *extra = NULL);
+CString KMLMarkerStyle(const char *name, const char *url = NULL, double scale = 1, double textscale = 0, int ismarker = 0, const char *extra = NULL);
 CString KMLLineStyle(COLORREF color, int width = -1);
 CString KMLLine(const char *name, const char *desc, vara &list, int color, int width = 1, const char *extra = NULL, const char *extrastyle = NULL);
 CString KMLBox(const char *name, const char *desc, LLRect &box, int color, int width, const char *extra = NULL, const char *extrastyle = NULL);

@@ -24,25 +24,23 @@ int WIKILOC_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx
 	const vars desc = stripHTML(ExtractString(f.memory, "\"mainEntity\":", R"("name": ")", "\",")) + " " + credit;
 
 	vara styles, waypoints, tracks;
-	styles.push(  "dot=http://maps.google.com/mapfiles/kml/shapes/open-diamond.png");
-	styles.push("begin=http://maps.google.com/mapfiles/kml/paddle/go.png");
-	styles.push(  "end=http://maps.google.com/mapfiles/kml/paddle/red-square.png");
+	styles.push(         "dot=http://maps.google.com/mapfiles/kml/shapes/open-diamond.png");
+	styles.push("yellowmarker=http://maps.google.com/mapfiles/ms/micons/yellow-dot.png=marker");
+	styles.push(       "begin=http://maps.google.com/mapfiles/kml/paddle/go.png=marker");
+	styles.push(         "end=http://maps.google.com/mapfiles/kml/paddle/red-square.png=marker");
 	
-	const vars mapData = stripHTML(ExtractString(f.memory, "\"mapData\":", "[", "]"));
-		
-	vara wpt(mapData, "{");
+	const vars jsonMapItems = stripHTML(ExtractString(f.memory, "var mapData", "=", ";"));
+
+	vars wikilocTrack = ExtractString(jsonMapItems, "\"mapData\":", "[", "]");
+	const vars wikilocWaypoints = ExtractString(jsonMapItems, "\"waypoints\":", "[", "]");
+
+	WIKILOC_ProcessTrack(&wikilocTrack, &tracks, &waypoints, &credit, url);
+	
+	vara wpt(wikilocWaypoints, "{");
 	for (int i = 1; i < wpt.length(); ++i)
 	{
-		vars isWaypoint = ExtractString(wpt[i], "\"waypoint\"", ":", nullptr); //empty endchar will default to terminate with & " < }
-
-		if (isWaypoint == "true")
-		{
-			WIKILOC_ProcessWaypoint(&wpt[i], &waypoints, &credit, url);
-		}
-		else
-		{
-			WIKILOC_ProcessTrack(&wpt[i], &tracks, &waypoints, &credit, url);
-		}		
+		vars waypoint = wpt[i];
+		WIKILOC_ProcessWaypoint(&waypoint, &waypoints, &credit, url);
 	}
 
 	if (waypoints.length() == 0 && tracks.length() == 0)
@@ -55,11 +53,11 @@ int WIKILOC_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx
 
 void WIKILOC_ProcessWaypoint(vars* entry, vara* waypoints, CString* credit, const char* url)
 {
-	vars name = ExtractString(*entry, "\"nom\":", "\"", "\"");
+	vars name = ExtractString(*entry, "\"name\":", "\"", "\"");
 	if (name.IsEmpty()) return;
 
-	CString type = "b";	
-	WIKILOC_ExtractWaypointCoords(entry, &type, "dot", &name, waypoints, credit, url);
+	CString type = "";	
+	WIKILOC_ExtractWaypointCoords(entry, &type, "yellowmarker", &name, waypoints, credit, url);	
 }
 
 void WIKILOC_ProcessTrack(vars* entry, vara* tracks, vara* waypoints, CString* credit, const char *url)
@@ -109,8 +107,12 @@ void WIKILOC_ProcessTrack(vars* entry, vara* tracks, vara* waypoints, CString* c
 
 CString WIKILOC_ExtractWaypointCoords(vars* entry, CString* type, const char* style, vars* name, vara* waypoints, CString* credit, const char *url)
 {
+	//lat
 	const vars latStr = ExtractString(*entry, "\"" + *type + "lat\"", ":", ";");
-	const vars lngStr = ExtractString(*entry, "\"" + *type + "lng\"", ":", ";");
+
+	//lng
+	vars lngStr = ExtractString(*entry, "\"" + *type + "lng\"", ":", ";");
+	if (lngStr.IsEmpty()) lngStr = ExtractString(*entry, "\"" + *type + "lon\"", ":", ";");
 
 	if (latStr.IsEmpty() || lngStr.IsEmpty()) return nullptr;
 

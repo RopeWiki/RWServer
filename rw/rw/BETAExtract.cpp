@@ -1455,8 +1455,8 @@ int SaveKML(const char *title, const char *credit, const char *url, vara &styles
 	// generate kml
 	out->write( KMLStart() );
 	out->write( KMLName( MkString("%s %s", title, credit), vars(url).replace("&", "&amp;")) );
-	for (int i=0; i<styles.length(); ++i)
-		out->write( KMLMarkerStyle( GetToken(styles[i],0,'='), GetToken(styles[i],1,'=')) );
+	for (int i = 0; i < styles.length(); ++i)
+		out->write(KMLMarkerStyle(GetToken(styles[i], 0, '='), GetToken(styles[i], 1, '='), 1, 0, GetToken(styles[i], 2, '=') == "marker"));
 	for (int i=0; i<points.GetSize(); ++i)
 		out->write( points[i] );
 	for (int i=0; i<lines.length(); ++i)

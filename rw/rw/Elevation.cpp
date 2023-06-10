@@ -12669,7 +12669,7 @@ CString KMLFolderEnd(void)
 	return "</Folder>\n";
 }
 
-CString KMLMarkerStyle(const char *name, const char *url, double scale, double textscale, int hotcenter, const char *extra)
+CString KMLMarkerStyle(const char *name, const char *url, double scale, double textscale, int ismarker, const char *extra)
 {
    BOOL hidetext = textscale==0;
    CString defurl = "http://sites.google.com/site/rwicons/"+CString(name)+".png";
@@ -12681,8 +12681,8 @@ CString KMLMarkerStyle(const char *name, const char *url, double scale, double t
    style += hidetext ? MkString("<Style id=\"%s%d\">", name, i) : MkString("<Style id=\"%s\">", name);
    style += MkString("<LabelStyle><scale>%g</scale></LabelStyle>", hidetext ? (!i ? 0.0 : 1.1) : textscale);
    style += MkString("<IconStyle><Icon><href>%s</href></Icon><scale>%g</scale>", url, scale);
-   if (hotcenter)
-	   style += MkString("<hotSpot x=\"%g\" y=\"%g\" xunits=\"fraction\" yunits=\"fraction\"/>", 0.5, 0.5);
+   if (ismarker) //set hotspot to bottom center point
+	   style += MkString(R"(<hotSpot x="%g" y="%g" xunits="fraction" yunits="fraction"/>)", 0.5, 0);
    style += "</IconStyle>";
    if (extra)
 	   style += extra;
