@@ -105,32 +105,34 @@ int BLUUGNOME_ExtractKML(const char *ubase, const char *url, inetdata *out, int 
 int BLUUGNOME_DownloadBeta(const char *ubase, CSymList &symlist)
 {
 	DownloadFile f;
-	CString url = burl(ubase, "canyoneer_tripreport_list.aspx");
+	
+	CString url = burl(ubase, "cyn_route/canyon-area-list.aspx");
 	if (f.Download(url))
 	{
 		Log(LOGERR, "ERROR: can't download url %.128s", url);
 		return FALSE;
 	}
 
-	vars base = "canyoneer_tripreport_list_";
+	vars base = "canyon-routes__";
 	vara list(f.memory, base);
 	for (int i = 1; i < list.length(); ++i) {
 		CString region = ExtractString(list[i], "", ">", "<");
-		CString url = burl(ubase, base + GetToken(list[i], 0, '\"'));
+		CString regionAbbr = GetToken(list[i], 0, '.');
+		CString url = burl(ubase, "cyn_route/" + regionAbbr + "/" + base + regionAbbr + ".aspx");
 		if (f.Download(url))
 		{
 			Log(LOGERR, "ERROR: can't download url %.128s", url);
 			continue;
 		}
-		vars cbase = "cyn_route/";
-		vara clist(f.memory, cbase);
+		vars cbase = regionAbbr + "_";
+		vara clist(f.memory, "href=\"" + cbase);
 		for (int c = 1; c < clist.length(); ++c) {
 			const char *cdata = clist[c];
 			CString name;
 			GetSearchString(cdata, "", name, ">", "<");
 			CString summary;
 			GetSearchString(cdata, "</a>", summary, "-", "<");
-			CString link = burl(ubase, cbase + GetToken(cdata, 0, '\"'));
+			CString link = burl(ubase, "cyn_route/" + regionAbbr + "/" + cbase + GetToken(cdata, 0, '\"'));
 			link.Trim();
 			name = stripHTML(name);
 			summary = stripHTML(summary);
@@ -144,8 +146,9 @@ int BLUUGNOME_DownloadBeta(const char *ubase, CSymList &symlist)
 			CSym sym(urlstr(link));
 			if (!UpdateCheck(symlist, sym) && MODE > -2)
 				continue;
+			
 			// download detail only if new
-			printf("Downloading %d/%d %d/%d\r   ", c, clist.length(), i, list.length());
+			printf("Downloading %d/%d %d/%d      \r", c, clist.length(), i, list.length());
 			CString url = link;
 			if (f.Download(url))
 			{
@@ -162,7 +165,6 @@ int BLUUGNOME_DownloadBeta(const char *ubase, CSymList &symlist)
 				Log(LOGERR, "ERROR: No valid RP1 from url %.128s", url);
 				continue;
 			}
-
 
 			double lat, lng;
 			if (!BLUUGNOME_ll(RP1, lat, lng))
@@ -202,7 +204,6 @@ int BLUUGNOME_DownloadBeta(const char *ubase, CSymList &symlist)
 			sym.SetStr(ITEM_KML, "X");
 			Update(symlist, sym);
 		}
-
 	}
 
 	return TRUE;
