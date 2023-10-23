@@ -266,7 +266,7 @@ static UINT threadzip(LPVOID pParam)
 	CKMLOut out(&data, map ? q->name : NULL, link); 
 	if (link)
 		{
-		out += MkString("<NetworkLinkControl id=\"%s\"><Update><targetHref>http://%s/rwr/?rwz=RWE.KC</targetHref>\n", q->name, server);
+		out += MkString("<NetworkLinkControl id=\"%s\"><Update><targetHref>http://%s/rwr/?rwz=RWE.KC</targetHref>\n", q->name, SERVER);
 		out += MkString("<Delete><Document targetId=\"%s\"></Document></Delete>\n", q->name);
 		out += MkString("<Delete><NetworkLink targetId=\"%s\"></NetworkLink></Delete>\n", q->name);
 		out += MkString("<Create><Folder targetId=\"rwres\"><open>0</open><Document id=\"%s\">\n", q->name);

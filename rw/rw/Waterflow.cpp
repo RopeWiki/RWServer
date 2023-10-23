@@ -5884,7 +5884,7 @@ CString KMLFolder(tsitelist &sitelist, const char *name, const char *rwicon, con
 		if (link)
 		{
 			out += KMLFolderStart(name, rwicon, TRUE, FALSE);		
-			out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=%s;%s;%s,0,0,0,%s", server, name, rwicon, url_encode(linkref), link));
+			out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=%s;%s;%s,0,0,0,%s", SERVER, name, rwicon, url_encode(linkref), link));
 			out += KMLFolderEnd();
 		}
 		else

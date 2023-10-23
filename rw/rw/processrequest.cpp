@@ -287,7 +287,7 @@ int ProcessRWS(const char* url, FCGX_Request* request, FCGX_Stream* FCGX_stdout)
 
 	vars name = ExtractString(url_decode(url), "scanname=", "" ,";");
 	FCGX_PutS( KMLStart(NULL, TRUE), FCGX_stdout);
-	FCGX_PutS("<NetworkLink><name>"+name+"</name><open>1</open><Link><href>"+MkString("http://%s/rwr/?rws=!;", server)+vars(url)+"</href></Link></NetworkLink>", FCGX_stdout);
+	FCGX_PutS("<NetworkLink><name>"+name+"</name><open>1</open><Link><href>"+MkString("http://%s/rwr/?rws=!;", SERVER)+vars(url)+"</href></Link></NetworkLink>", FCGX_stdout);
 	FCGX_PutS( KMLEnd(TRUE), FCGX_stdout);
 
 	/* 
@@ -555,10 +555,10 @@ void ProcessRWZDownload(const char* url, FCGX_Stream* FCGX_stdout)
 	FCGX_PutS("\r\n", FCGX_stdout);
 
 	CString body = "Click the link below to download the data (without links)<br><ul>";
-	body += MkString("<li><a href=\"%s\">Download All Data as KMZ</a></li>", MkString("http://%s/rwr/?rwz=%s", server, url));
-	body += MkString("<li><a href=\"%s\">Download All Data as KML</a></li>", MkString("http://%s/rwr/?nozip=on&rwz=%s", server, url));
-	body += MkString("<li><a href=\"%s\">Download Only Rap Data as KML</a></li>", MkString("http://%s/rwr/?nozip=on&nolines=on&rwz=%s", server, url));
-	body += MkString("<li><a href=\"%s\">Download Only Rap Waypoints as KML</a></li>", MkString("http://%s/rwr/?nozip=on&nolines2=on&rwz=%s", server, url));
+	body += MkString("<li><a href=\"%s\">Download All Data as KMZ</a></li>", MkString("http://%s/rwr/?rwz=%s", SERVER, url));
+	body += MkString("<li><a href=\"%s\">Download All Data as KML</a></li>", MkString("http://%s/rwr/?nozip=on&rwz=%s", SERVER, url));
+	body += MkString("<li><a href=\"%s\">Download Only Rap Data as KML</a></li>", MkString("http://%s/rwr/?nozip=on&nolines=on&rwz=%s", SERVER, url));
+	body += MkString("<li><a href=\"%s\">Download Only Rap Waypoints as KML</a></li>", MkString("http://%s/rwr/?nozip=on&nolines2=on&rwz=%s", SERVER, url));
 	FCGX_PutS("<html><body>"+body+"</body></html>", FCGX_stdout);
 }
 

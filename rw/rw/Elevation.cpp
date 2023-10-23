@@ -4995,9 +4995,9 @@ void Output(CKMLOut &out, const char *networklink = NULL)
 {
   if (trk.length()<=0)
 	{
-	//out += KMLName("ERROR", MkString("Elevation not available! Check coverage at http://%s/rwr/?rwz=DEM,0,0,0,KC", server), 2);
+	//out += KMLName("ERROR", MkString("Elevation not available! Check coverage at http://%s/rwr/?rwz=DEM,0,0,0,KC", SERVER), 2);
 	out += "<Placemark>";
-	out += KMLName("ERROR", MkString("Elevation not available! Check coverage at http://%s/rwr/?rwz=DEM,0,0,0,KC", server));
+	out += KMLName("ERROR", MkString("Elevation not available! Check coverage at http://%s/rwr/?rwz=DEM,0,0,0,KC", SERVER));
 	out += MkString("<Style><BalloonStyle><text>" CDATAS "<b><font size=\"+1\">$[name]</font></b><br/><br/><div style='width:auto'>$[description]</div>" CDATAE "</text></BalloonStyle><IconStyle><Icon><href>http://sites.google.com/site/rwicons/%s.png</href></Icon><scale>%g</scale><hotSpot x=\"0.5\" y=\"0.5\" xunits=\"fraction\" yunits=\"fraction\"/></IconStyle><LabelStyle><scale>%g</scale></LabelStyle></Style>", "error", 0.5, 0.6);
 	out += MkString("<Point><coordinates>%s</coordinates></Point>", CCoord3(mappoint.lat,mappoint.lng));
 	out += "</Placemark>\n";
@@ -6452,7 +6452,7 @@ void moveInDirection(tcoord &coord, double theta, double dist) {
 CString PicLink(void)
 {
 	if (iopts[OLINK] || iopts[OKML])
-		return MkString("http://%s/rwr/?profile=%s", server, fname);
+		return MkString("http://%s/rwr/?profile=%s", SERVER, fname);
 	else
 		return fname+PNG;
 }
@@ -6461,7 +6461,7 @@ void createLineString(CKMLOut &out, const char *networklink)
 {
   CString download;
   if (iopts[OLINK] && query!=NULL)
-	  download = jlink( MkString("http://%s/rwr/?rwzdownload=%s", server, CString(query, strlen(query)-1)), "Download KML File");
+	  download = jlink( MkString("http://%s/rwr/?rwzdownload=%s", SERVER, CString(query, strlen(query)-1)), "Download KML File");
 
   double rapdist = 0;
   int rlast = rappels.GetSize()-1;
@@ -6494,7 +6494,7 @@ void createLineString(CKMLOut &out, const char *networklink)
   desc += MkString("Height Calls: %d<br>", groundHeightCnt);
 #endif
   //desc += "<br/>Click on the profile below to display full screen. Click on R markers for rappel info. <br/>";
-  //desc += MkString("<a href=\"http://%s/rwr/?profile=%s\"><img src=\"http://%s/rwr/?profile=%s\" width=\"100%%\"/></a><br/>", server, fname, server, fname);
+  //desc += MkString("<a href=\"http://%s/rwr/?profile=%s\"><img src=\"http://%s/rwr/?profile=%s\" width=\"100%%\"/></a><br/>", SERVER, fname, SERVER, fname);
   //desc += "<br>";
   for (int i=0; i<rappels.length(); ++i)
 	{
@@ -6504,7 +6504,7 @@ void createLineString(CKMLOut &out, const char *networklink)
 	desc += MkString(" <a href=\"#%sR%d;balloon\">[Profile]</a><br/>",fname,i);
 	}
   desc += /*MkString("<a href=\"%s\">Download Full Profile</a> ", PicLink())+*/ download+" <br/>";
-  desc += MkString("<br><div style=\"float:right\"><a href=\"http://%s/rwr/?profile=legend\">Color Scale</a></div>", server);
+  desc += MkString("<br><div style=\"float:right\"><a href=\"http://%s/rwr/?profile=legend\">Color Scale</a></div>", SERVER);
   desc += "<div style=\"float:left\">" + res + resg + "</div>";
 
   summary.Replace("<br>", " ");
@@ -6579,7 +6579,7 @@ void createLineString(CKMLOut &out, const char *networklink)
 				resg += "   " + resCredit(0) + " 2nd pass: "+resText(trk[r.start].resg);
 			int x = xcoord(dist), y = ycoord(trk[i].elev); 
 			desc += MkString("<div style=\"width:100%%;overflow:auto\"><img style=\"margin-left:-%dpx;margin-top:-%dpx\" width=\"%d\" height=\"%d\" alt=\"Chart\" src=\"%s\"/></div>", x, y, width, heighttotal, PicLink());
-			desc += MkString("<div style=\"float:right\"><a href=\"http://%s/rwr/?profile=legend\">Color Scale</a></div>", server);
+			desc += MkString("<div style=\"float:right\"><a href=\"http://%s/rwr/?profile=legend\">Color Scale</a></div>", SERVER);
             desc += "<div style=\"float:left\">"+ resg  + "</div>";
 
 #ifdef DEBUGX
@@ -10272,7 +10272,7 @@ void POIKMLSites(CKMLOut &out, const char *link = NULL)
 				path = filename(GetFileName(filelist[i].id)); // CSV file
 			else				
 				CFILE::getheader(filelist[i].id, path); // DIR file
-			out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=%s;%s,0,0,0,%s", server, path, marker, link));
+			out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=%s;%s,0,0,0,%s", SERVER, path, marker, link));
 			}
 		else
 			POIMarkerList(out, filelist[i].id, marker);
@@ -10400,8 +10400,8 @@ void POIRiverList(CKMLOut &out, const char *folder, const char *file, LLRect *cl
 			CString url, button, button2;
 			//if (!postfix.IsEmpty())
 			//	name += '_' + postfix + '_';
-			url = MkString("http://%s/rwr/?rwl=%s,R$", server, RiverSummary(sym));
-			//CString url = MkString("http://%s/rwr/?rwz=%s,%s,%s,%s,R",server, sym.id, info[0], info[1], info[2]);
+			url = MkString("http://%s/rwr/?rwl=%s,R$", SERVER, RiverSummary(sym));
+			//CString url = MkString("http://%s/rwr/?rwz=%s,%s,%s,%s,R",SERVER, sym.id, info[0], info[1], info[2]);
 			button = MkString("<b><input type=\"button\" id=\"map\" onclick=\"window.open('%s', '_blank');\" value=\"Run Canyon Mapper on this stream\"></b><br>", url);
 			LLE lle;
 			if (RiverLL(list[list.length()/2], lle))
@@ -10591,7 +10591,7 @@ int GridList(CKMLOut &out, const char *name, const char *p1, const char *p2, dou
 			if (valid && !valid(name, lat, lng, n+1))
 				continue;
 			CString id = MkString("%gx%gx%g", lat, lng, n);
-			CString url = MkString("http://%s/rwr/?rwz=%s", server, GridName(name, o, lat, lng, step, n+1));
+			CString url = MkString("http://%s/rwr/?rwz=%s", SERVER, GridName(name, o, lat, lng, step, n+1));
 			out += "<NetworkLink>";
 			out += KMLName(id);
 			out += KMLRegion(LLRect(lat, lng, lat+step, lng+step));
@@ -11218,7 +11218,7 @@ int OverlayRecurse(CKMLOut &out, CMapSym *m, int px, int py, int pz, int lev = 0
 		out += "<NetworkLink>";
 		//out += KMLName(id);
 		out += KMLRegion(box, MINOVERLAY);
-		CString url = MkString("http://%s/rwr/?rwz=%s,%d,%d,%d,OC", server, m->id, px, py, pz);
+		CString url = MkString("http://%s/rwr/?rwz=%s,%d,%d,%d,OC", SERVER, m->id, px, py, pz);
 		out += "<Link><href>";
 		out += url;
 		out +="</href><viewRefreshMode>onRegion</viewRefreshMode></Link>";
@@ -11286,7 +11286,7 @@ int OverlayRecurse(CKMLOut &out, int m, int px, int py, int pz, int lev = 0)
 			out += "<NetworkLink>";
 			out += KMLName(id);
 			out += KMLRegion(box, MAXOVERLAY, -1);
-			CString url = MkString("http://%s/rwr/?rwz=%s,%d,%d,%d,OC", server, maps[m].id, sx+x, sy+y, sz);
+			CString url = MkString("http://%s/rwr/?rwz=%s,%d,%d,%d,OC", SERVER, maps[m].id, sx+x, sy+y, sz);
 			out += MkString("<Link><href>%s</href><viewRefreshMode>onRegion</viewRefreshMode></Link></NetworkLink>", url);
 #endif
 			}
@@ -11304,7 +11304,7 @@ int OverlayRecurse(CKMLOut &out, int m, int px, int py, int pz, int lev = 0)
 		//out += "<visibility>0</visibility>";
 		KMLOverlay(out, m, px, py, pz, box);
 
-		out += MkString("<NetworkLinkControl><Update><targetHref>http://%s/rwr/?rwz=CTOPO,0,0,0,O</targetHref>\n", server);
+		out += MkString("<NetworkLinkControl><Update><targetHref>http://%s/rwr/?rwz=CTOPO,0,0,0,O</targetHref>\n", SERVER);
 		out += MkString("<Change><Folder targetId=\"%s\"><visibility>0</visibility></Folder></Change>", children);
 		out += MkString("</Update></NetworkLinkControl>");
 		out += "</Folder>";
@@ -11370,7 +11370,7 @@ void RWE(CKMLOut &out, const char *line)
 		const char *name = "US Streams";
 		out += KMLFolderStart(name, "rivers", TRUE, FALSE);
 		out += KMLName(NULL, CDATAS "<ul style=\"width:45em\">http://water.epa.gov/scitech/datait/tools/waters</ul>" CDATAE, -1 );
-		out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=" RIVERSUS ",0,0,0,GRC", server));
+		out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=" RIVERSUS ",0,0,0,GRC", SERVER));
 		out += KMLFolderEnd();
 		return;
 		}
@@ -11380,7 +11380,7 @@ void RWE(CKMLOut &out, const char *line)
 		const char *name = "Canada Streams";
 		out += KMLFolderStart(name, "rivers", TRUE, FALSE);
 		out += KMLName(NULL, CDATAS "<ul style=\"width:45em\">http://ftp2.cits.rncan.gc.ca/pub/geobase/official/nhn_rhn/doc/NHN.pdf</ul>" CDATAE, -1 );
-		out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=" RIVERSCA ",0,0,0,GRC", server));
+		out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=" RIVERSCA ",0,0,0,GRC", SERVER));
 		out += KMLFolderEnd();
 		return;
 		}
@@ -11390,7 +11390,7 @@ void RWE(CKMLOut &out, const char *line)
 		const char *name = "Mexico Streams";
 		out += KMLFolderStart(name, "rivers", TRUE, FALSE);
 		out += KMLName(NULL, CDATAS"<ul style=\"width:45em\">http://www.inegi.org.mx/geo/contenidos/topografia/regiones_hidrograficas.aspx</ul>" CDATAE, -1 );
-		out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=" RIVERSMX ",0,0,0,GRC", server));
+		out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=" RIVERSMX ",0,0,0,GRC", SERVER));
 		out += KMLFolderEnd();
 		return;
 		}
@@ -11399,7 +11399,7 @@ void RWE(CKMLOut &out, const char *line)
 		{
 		// Grid Test
 		out += KMLFolderStart("Grid");
-		out += KMLLink("Grid", NULL, MkString("http://%s/rwr/?rwz=Grid,0,0,0,GTC", server));
+		out += KMLLink("Grid", NULL, MkString("http://%s/rwr/?rwz=Grid,0,0,0,GTC", SERVER));
 		out += KMLFolderEnd();
 		return;
 		}
@@ -11408,7 +11408,7 @@ void RWE(CKMLOut &out, const char *line)
 		{
 		// Grid Test
 		out += KMLFolderStart("Ropewiki Locations");
-		out += KMLLink(RWLOC, NULL, MkString("http://%s/rwr/?rwz=%s,0,0,0,%s", server, RWLOC, RWLOCOPT));
+		out += KMLLink(RWLOC, NULL, MkString("http://%s/rwr/?rwz=%s,0,0,0,%s", SERVER, RWLOC, RWLOCOPT));
 		out += KMLFolderEnd();
 		return;
 		}
@@ -11418,7 +11418,7 @@ void RWE(CKMLOut &out, const char *line)
 	if (strstr(line, localhost))
 		{
 		CString nline(line);
-		nline.Replace(localhost, vars("http://")+server);
+		nline.Replace(localhost, vars("http://")+ SERVER);
 		out += nline;
 		return;
 		}
@@ -11440,7 +11440,7 @@ void RWEPLUS(CKMLOut &out, const char *line)
 		"<Snippet maxLines=\"0\"></Snippet>"
 		"<flyToView>0</flyToView>"
 		"<Link>"
-		"<href>http://"+vars(server)+"/rwr</href>"
+		"<href>http://"+vars(SERVER)+"/rwr</href>"
 		"<refreshMode>onChange</refreshMode>"
 		"<viewRefreshMode>onStop</viewRefreshMode>"
 		"<viewRefreshTime>0.5</viewRefreshTime>"
@@ -11712,7 +11712,7 @@ int CanyonMap(const char *param, CKMLOut &out, BOOL map, CStringArrayList *filel
 		else
 			{
 			// Map a specific point segment S;E;D  S/E=Lat;Lng;Dist
-			// MkString("http://%s/rwr/?rwl=%s,R$", server, RiverSummary(sym))
+			// MkString("http://%s/rwr/?rwl=%s,R$", SERVER, RiverSummary(sym))
 			CRiver *river;
 			CRiverCache obj(param, river);
 			if (!river)
@@ -11783,7 +11783,7 @@ int CanyonMap(const char *param, CKMLOut &out, BOOL map, CStringArrayList *filel
 			vars link = list[i]+","+opt;
 			vars name = ElevationFilename(link);
 #if 0 // embed as network link
-			out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=%s,MC", server, link));
+			out += KMLLink(name, NULL, MkString("http://%s/rwr/?rwz=%s,MC", SERVER, link));
 #else // embed as true data
 			out += MkString("<Document id=\"%s\">", name);
 			CanyonMap(link, out, TRUE, filelist);
@@ -16929,7 +16929,7 @@ CString NetworkLink(const char *name, const char *ourl)
 		if (url[ulen-1]=='!')
 			{
 			// Delete Loading link with NetworkLinkControl
-			CString link = MkString("http://%s/rwr/?rwl=%s", server, CString(url,ulen-1));
+			CString link = MkString("http://%s/rwr/?rwl=%s", SERVER, CString(url,ulen-1));
 			out += MkString("<NetworkLinkControl id=\"%s\"><Update><targetHref>%s</targetHref>\n", name, link);
 			out += "<Delete><Document targetId=\"doc\"></Document></Delete>\n";
 			out += "</Update></NetworkLinkControl>";	
@@ -16937,7 +16937,7 @@ CString NetworkLink(const char *name, const char *ourl)
 		else if (url[ulen-2]=='@')
 			{
 			// NetworkLinkControl
-			out += MkString("<NetworkLinkControl><Update><targetHref>http://%s/rwr/?rwz=RWE.KC</targetHref>\n", server);
+			out += MkString("<NetworkLinkControl><Update><targetHref>http://%s/rwr/?rwz=RWE.KC</targetHref>\n", SERVER);
 			if(url[ulen-3]=='R')
 				{
 				// river list
@@ -16951,7 +16951,7 @@ CString NetworkLink(const char *name, const char *ourl)
 					out += MkString("<Delete><Document targetId=\"%s\"></Document></Delete>\n", name);
 					out += MkString("<Create><Folder targetId=\"rwres\">", name, name);		
 					//CString name1 = ElevationFilename("North%20Fork%20San%20Jacinto%20River,-116.790977;33.748631;1011.900000,-116.799679;33.739198;739.900000,2459.62,$MC");
-					CString nlink = MkString("http://%s/rwr/?rwz=%s", server, link);
+					CString nlink = MkString("http://%s/rwr/?rwz=%s", SERVER, link);
 					out += MkString("<NetworkLink id=\"%s\"><name>Loading</name><Link><href>%s</href></Link></NetworkLink>", name, nlink);
 					out += "</Folder></Create>\n";  //</Document><open>0</open><visibility>1</visibility>
 					}
@@ -16963,7 +16963,7 @@ CString NetworkLink(const char *name, const char *ourl)
 					CString name = ElevationFilename(link);			
 					out += MkString("<Delete><Document targetId=\"%s\"></Document></Delete>\n", name);
 					out += MkString("<Create><Folder targetId=\"rwres\"><Document id=\"%s\"><name>%s</name>", name, name);		
-					out += MkString("<NetworkLink><Link><href>%s</href></Link></NetworkLink>", MkString("http://%s/rwr/?rwz=%s,MC", server, link));
+					out += MkString("<NetworkLink><Link><href>%s</href></Link></NetworkLink>", MkString("http://%s/rwr/?rwz=%s,MC", SERVER, link));
 					out += "</Document></Folder></Create>\n"; //<open>0</open><visibility>1</visibility><
 				}
 			out += "</Update></NetworkLinkControl>";	 					
@@ -16971,12 +16971,12 @@ CString NetworkLink(const char *name, const char *ourl)
 		else if (url[ulen-1]=='@')
 			{
 			// NetworkLink to load NetworkLinkControl
-			CString link = MkString("http://%s/rwr/?rwl=%s", server, url);
+			CString link = MkString("http://%s/rwr/?rwl=%s", SERVER, url);
 			out += MkString("<Document id=\"doc\"><name>MapperLink %s</name>\r\n", name);
 			out += MkString("<description>%s</description>", link);
 			out += MkString("<NetworkLink id=\"nlink\"><name>%s</name><Link><href>%s@</href></Link></NetworkLink>", "Network Link", link);
 			// GE crashes with this
-			//link = MkString("http://%s/rwr/?rwl=%s!", server, url);
+			//link = MkString("http://%s/rwr/?rwl=%s!", SERVER, url);
 			//out += MkString("<NetworkLink><name>%s</name><Link><href>%s</href></Link></NetworkLink>", "Cleaning up", link);
 			out += "</Document>";
 			}
@@ -16997,7 +16997,7 @@ CString NetworkLink(const char *name, const char *ourl)
 					}
 				fname = MkString("@%s,%s", urlp[1], urlp[2]);
 				}
-			CString kmllink = MkString("http://%s/rwr/?rwzdownload=%s", server, CString(url,ulen-1));
+			CString kmllink = MkString("http://%s/rwr/?rwzdownload=%s", SERVER, CString(url,ulen-1));
 			out += MkString("<Document id=\"doc\"><name>MapperLink %s</name>\r\n", fname);
 			CString download = jlink(kmllink, "Download KML File");
 			out += "<description>" CDATAS+download+CDATAE "</description><Snippet maxLines=\"0\"></Snippet>";
@@ -17011,13 +17011,13 @@ CString NetworkLink(const char *name, const char *ourl)
 				out += GetRiverSRSUMmary(url, list);		
 #if 0 // Crashes Google Earth
 				// self delete
-				CString link = MkString("http://%s/rwr/?rwl=%s!", server, url);
+				CString link = MkString("http://%s/rwr/?rwl=%s!", SERVER, url);
 				out += MkString("<NetworkLink><name>%s</name><Link><href>%s</href></Link></NetworkLink>", "Cleanup", link);
 #endif
 				for (int i=0; i<list.GetSize(); ++i)
 					{
 					CString fname = ElevationFilename(list[i]); friendly(fname);
-					CString link = MkString("http://%s/rwr/?rwz=%s,$MC", server, list[i]);
+					CString link = MkString("http://%s/rwr/?rwz=%s,$MC", SERVER, list[i]);
 					out += MkString("<NetworkLink><name>%s</name><Link><href>%s</href></Link></NetworkLink>", "LoadLink "+fname, link);
 					}
 				}
@@ -17028,7 +17028,7 @@ CString NetworkLink(const char *name, const char *ourl)
 				out += MkString("<Style><IconStyle><Icon><href>http://sites.google.com/site/rwicons/%s.png</href></Icon><scale>%g</scale><hotSpot x=\"0.5\" y=\"0.5\" xunits=\"fraction\" yunits=\"fraction\"/></IconStyle></Style>", "clicked", 0.5);
   				out += MkString("<Point><coordinates>%s,%s,0</coordinates></Point>", urlp[2], urlp[1]);
 				out += "</Placemark>\n";
-				CString link = MkString("http://%s/rwr/?rwz=%s", server, url);
+				CString link = MkString("http://%s/rwr/?rwz=%s", SERVER, url);
 				out += MkString("<NetworkLink><name>%s</name><Link><href>%s</href></Link></NetworkLink>", "LoadLink "+fname, link);
 				}
 			out += "</Document>";
@@ -17083,7 +17083,7 @@ CString KMLClickMe(const char *param)
 	tcoord coord(lat, lng);
 	DEMARRAY.height(&coord);
 
-	CString url = MkString("http://%s/rwr/?rwl=@,%s,%s,0,MC$", server, lookat[1], lookat[2]);
+	CString url = MkString("http://%s/rwr/?rwl=@,%s,%s,0,MC$", SERVER, lookat[1], lookat[2]);
 	//http://www.bing.com/mapspreview?&=&ty=18&q=33.05111%2c-116.98161&lvl=18&style=b&ftst=0&ftics=False&v=2&sV=1&form=S00027
 	//http://www.bing.com/mapspreview?&=&ty=18&q=33.05111%2c-116.98161&lvl=18&style=b&ftst=0&ftics=False&v=2&sV=1&form=S00027
 	CString url1 = MkString("http://www.bing.com/mapspreview?&=&ty=18&q=%s%%2c%s&lvl=18&style=b&ftst=0&ftics=False&v=2&sV=1&form=S00027", lookat[1], lookat[2]);
@@ -17102,7 +17102,7 @@ CString KMLClickMe(const char *param)
 	const char *urlrdesc[] = { "Flow down", "Flow up", "Simulate Rain", NULL };
 	for (int i=0; urlrdesc[i]!=NULL; ++i)
 		{
-		CString urlr = MkString("http://%s/rwr/?rwl=@,%s,%s,0,%cMC$", server, lookat[1], lookat[2], '5'+i);
+		CString urlr = MkString("http://%s/rwr/?rwl=@,%s,%s,0,%cMC$", SERVER, lookat[1], lookat[2], '5'+i);
 		desc += MkString("<b><input type=\"button\" id=\"map\" onclick=\"window.open('%s', '_blank');\" value=\"%s\"></b> ", urlr, urlrdesc[i]);
 		}
 	desc += "<br>";
@@ -17185,7 +17185,7 @@ CString KMLScanBox(const char *config, const char *cookies, const char *status)
 		vars nokeyconfig = deletekey(config);
 		html.Replace("#CONFIG#", nokeyconfig);
 		html.Replace("Run Canyon Scanner", "Re-Run Canyon Scanner");
-		vars url = MkString("http://%s/rwr/?rws=", server)+nokeyconfig;
+		vars url = MkString("http://%s/rwr/?rws=", SERVER)+nokeyconfig;
 
 		int cfgstart = html.Find("<a id=\"cfglink\"");
 		int cfgend = html.Find("</a>", cfgstart);
@@ -17194,7 +17194,7 @@ CString KMLScanBox(const char *config, const char *cookies, const char *status)
 
 		/*
 		found = list.indexOfSimilar("URL=");
-		//out += MkString("<NetworkLinkControl><Update><targetHref>http://%s/rwr</targetHref>\n", server);
+		//out += MkString("<NetworkLinkControl><Update><targetHref>http://%s/rwr</targetHref>\n", SERVER);
 		if (found>=0)
 			{
 			out += MkString("<NetworkLinkControl><Update><targetHref>%s</targetHref>\n", list[found].Mid(4));
@@ -17242,7 +17242,7 @@ CString KMLScanBox(const char *config, const char *cookies, const char *status)
 	html.Replace("#COORD1#", MkString("%s,%s", box[0],box[1]));
 	html.Replace("#COORD2#", MkString("%s,%s", box[2],box[3]));
 
-	//CString url = MkString("http://%s/rwr/?rwl=%s,%s,%s,%s,*C", server, box[0],box[1],box[2],box[3]);
+	//CString url = MkString("http://%s/rwr/?rwl=%s,%s,%s,%s,*C", SERVER, box[0],box[1],box[2],box[3]);
 
 	out += "<Style id=\"scanner\"><IconStyle><Icon><href>"+icon+"</href></Icon></IconStyle><BalloonStyle><text>" CDATAS;
 	out += html;
@@ -20935,7 +20935,7 @@ color:rgb(255,127,0);
 
 			// WARNING! not using maplinks for this shit! because it does not go with RWE!!!
 			vars linkname = "@"; //url_encode(name.replace(",",";"))
-			//CString url = MkString("http://%s/rwr/?rwl=%s,%s,%s,%s,SMC$", server, linkname, CCoord(scan->mappoint.lat), CCoord(scan->mappoint.lng), CData(lastrap->end.elev) + ";" + IdStr(scan->oid));
+			//CString url = MkString("http://%s/rwr/?rwl=%s,%s,%s,%s,SMC$", SERVER, linkname, CCoord(scan->mappoint.lat), CCoord(scan->mappoint.lng), CData(lastrap->end.elev) + ";" + IdStr(scan->oid));
 
 			// -112.193447;31.933110;562.500 -112.101144;32.000084;613.200 13224
 			vara sum;
@@ -20982,7 +20982,7 @@ color:rgb(255,127,0);
 #endif
 			sum.push(vars(CCoord4(lastrap->end.lat, lastrap->end.lng, lastrap->end.elev, 0)).replace(",",";")); // last rappel (always enabled)
 			//sum.push(MkString("%.0f", LLE::Distance(&scan2->mappoint, &lastrap->end)));
-			CString url = MkString("http://%s/rwr/?rwl=%sS%d,R$", server, sum.join(","), scan2->version);
+			CString url = MkString("http://%s/rwr/?rwl=%sS%d,R$", SERVER, sum.join(","), scan2->version);
 			desc += MkString("<br><b><input type=\"button\" id=\"map\" onclick=\"window.open('%s', '_blank');\" value=\"Run Canyon Mapper at this location\"></b><br>", url);
 
 			CString url2 = MkString("http://ropewiki.com/index.php/Waterflow?location=%g,%g&watershed=on", group.pivot->lle.lat, group.pivot->lle.lng );

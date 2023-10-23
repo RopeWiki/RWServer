@@ -468,7 +468,7 @@ int InstagramPicList(double lat, double lng, double dist, CSymList &list)
 				if (nloc++>MAXLOCATIONS)
 					break;
 
-				CSym sym(MkString("http://%s/rwr?pictures=%s,%s,%s&mode=I,%s,%s", server, CData(llat), CData(llng), CData(dist), url_encode(locid), url_encode(locname)));
+				CSym sym(MkString("http://%s/rwr?pictures=%s,%s,%s&mode=I,%s,%s", SERVER, CData(llat), CData(llng), CData(dist), url_encode(locid), url_encode(locname)));
 				sym.SetNum(0, Distance(lat, lng, llat, llng));
 				list.Add(sym);
 				}
@@ -602,7 +602,7 @@ int FacebookPicList(double lat, double lng, double dist, CSymList &list)
 				if (Distance(lat, lng, lats[i], lngs[i])>dist)
 					continue;
 
-				CSym sym(MkString("http://%s/rwr?pictures=%s,%s,%s&mode=F,%s,%s", server, CData(lats[i]), CData(lngs[i]), CData(dist), url_encode(ids[i]), url_encode(names[i])));
+				CSym sym(MkString("http://%s/rwr?pictures=%s,%s,%s&mode=F,%s,%s", SERVER, CData(lats[i]), CData(lngs[i]), CData(dist), url_encode(ids[i]), url_encode(names[i])));
 				sym.SetNum(0, Distance(lat, lng, lats[i], lngs[i]));
 				list.Add(sym);				
 				}
@@ -702,8 +702,8 @@ int GetPicturesList(double lat, double lng, double dist, CSymList &list)
 	if (lat==InvalidNUM || lng==InvalidNUM || dist==InvalidNUM)
 		return 0;
 
-	list.Add( CSym(MkString("http://%s/rwr?pictures=%s,%s,%s&mode=R", server, CData(lat), CData(lng), CData(dist)), "0") );
-	//list.Add( CSym(MkString("http://%s/rwr?pictures=%s,%s,%s&mode=P", server, CData(lat), CData(lng), CData(dist)), "0") );
+	list.Add( CSym(MkString("http://%s/rwr?pictures=%s,%s,%s&mode=R", SERVER, CData(lat), CData(lng), CData(dist)), "0") );
+	//list.Add( CSym(MkString("http://%s/rwr?pictures=%s,%s,%s&mode=P", SERVER, CData(lat), CData(lng), CData(dist)), "0") );
 	FacebookPicList(lat, lng, dist, list);
 	InstagramPicList(lat, lng, dist, list);
 	list.SortNum(0);

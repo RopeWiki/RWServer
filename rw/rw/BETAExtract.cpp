@@ -11058,7 +11058,7 @@ int Login(DownloadFile &f)
 
 	
 	int ret = 0;
-	ret += f.Download("http://ropewiki.com/index.php?title=Special:UserLogin");
+	ret += f.Download(RWBASE + "index.php?title=Special:UserLogin");
 	f.GetForm("name=\"userlogin\"");
 	f.SetFormValue("wpName",loginstr[0]);
 	f.SetFormValue("wpPassword",loginstr[1]);
@@ -11068,7 +11068,7 @@ int Login(DownloadFile &f)
 	/*
 	CString lgtoken = f.GetFormValue("wpLoginToken");
 	vars login = "wpName="+loginstr[0]+"&wpPassword="+loginstr[1];
-	ret += f.Download("http://ropewiki.com/index.php?title=Special:UserLogin&action=submitlogin&type=login&returnto=Main+Page?POST?"+login+"&wpRemember=1&wpLoginAttempt=Log+in&wpLoginToken="+lgtoken, "login.htm");
+	ret += f.Download(RWBASE + "index.php?title=Special:UserLogin&action=submitlogin&type=login&returnto=Main+Page?POST?"+login+"&wpRemember=1&wpLoginAttempt=Log+in&wpLoginToken="+lgtoken, "login.htm");
 	*/
 	if (ret)
 		{
@@ -14076,7 +14076,7 @@ int KMLMerge(const char *url, inetdata *data)
 					// download file
 					//for (int u=0; u<urls.length(); ++u) {
 #ifdef DEBUG
-					url.Replace(server, "localhost");
+					url.Replace(SERVER, "localhost");
 #endif
 						if (f.Download(url))
 							{
