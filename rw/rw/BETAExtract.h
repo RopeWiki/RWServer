@@ -129,7 +129,7 @@ int rwftitle(const char *line, CSymList &idlist);
 void  PurgePage(DownloadFile &f, const char *id, const char *title);
 int UpdateProp(const char *name, const char *value, vara &lines, int force = FALSE);
 int FindSection(vara &lines, const char *section, int *iappend);
-
+vars url2file(const char *url, const char *folder);
 
 //static functions
 
