@@ -45,7 +45,7 @@ public:
 
 	int Section(const char *section, int *iappend);
 
-	void Purge(void);
+	void Purge(void) const;
 
 	int Update(int forceupdate = FALSE);
 
@@ -97,10 +97,10 @@ public:
 #endif
 
 
-	int FileExists(const char *rfile);
+	int FileExists(const char *rfile) const;
 
 	int UploadFile(const char *lfile, const char *rfile, const char *desc = NULL);
 
-	BOOL IsID(const char *id);
+	static BOOL IsID(const char *id);
 };
 

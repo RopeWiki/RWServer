@@ -1,7 +1,6 @@
 
 #include "CPage.h"
 #include "BETAExtract.h"
-#include "trademaster.h"
 
 
 int CPage::Open(DownloadFile &f, const char *url, int retries, const char *action)
@@ -80,7 +79,7 @@ CPage::CPage(DownloadFile &f, const char *_id, const char *_title, const char *_
 	if (_oldid)
 	{
 		// Edit
-		pageurl = CString("http://ropewiki.com/index.php?");
+		pageurl = CString(RWBASE + "index.php?");
 		if (id.IsEmpty())
 			pageurl += CString("title=") + url_encode(title);
 		else
@@ -94,7 +93,7 @@ CPage::CPage(DownloadFile &f, const char *_id, const char *_title, const char *_
 
 int CPage::NeedsUpdate()
 {
-	int ret = !pageurl.IsEmpty() && comment.length() != 0 && oldlines.trim() != lines.join("\n").trim();
+	const int ret = !pageurl.IsEmpty() && comment.length() != 0 && oldlines.trim() != lines.join("\n").trim();
 #ifdef DEBUGXXX
 	if (ret)
 	{
@@ -110,8 +109,8 @@ int CPage::NeedsUpdate()
 
 vars CPage::Get(const char *name)
 {
-	vars prop = "|" + vars(name) + "=";
-	int len = prop.GetLength();
+	const vars prop = "|" + vars(name) + "=";
+	const int len = prop.GetLength();
 	for (int i = 0; i < lines.length(); ++i)
 		if (strncmp(prop, lines[i], len) == 0)
 		{
@@ -147,7 +146,7 @@ int CPage::Section(const char *section, int *iappend)
 	return FindSection(lines, section, iappend);
 }
 
-void CPage::Purge(void)
+void CPage::Purge() const
 {
 	DownloadFile &f = *fp;
 	PurgePage(f, id, title);
@@ -207,7 +206,7 @@ int CPage::Update(int forceupdate)
 	return FALSE;
 }
 
-void CPage::Delete(void)
+void CPage::Delete()
 {
 	if (comment.length() <= 0)
 		return;
@@ -225,7 +224,7 @@ void CPage::Delete(void)
 
 	// Delete
 	DownloadFile &f = *fp;
-	vars url = "http://ropewiki.com/index.php?action=delete&title=" + url_encode(title.replace(" ", "_"));
+	const vars url = RWBASE + "index.php?action=delete&title=" + url_encode(title.replace(" ", "_"));
 	if (!Open(f, url, 1, "action=delete"))
 	{
 		Log(LOGERR, "ERROR: could not open submit page %s (3 retries)", url);
@@ -273,12 +272,12 @@ void CPage::Move(const char *newtitle)
 	if (comment.length() <= 0)
 		return;
 
-	vars pageurl = this->pageurl;
+	const vars pageurl = this->pageurl;
 	Log(LOGINFO, "MOVING %s %s -> %s", id, title, newtitle);
 
 	// Move
 	DownloadFile &f = *fp;
-	vars url = "http://ropewiki.com/Special:MovePage/" + url_encode(title.replace(" ", "_"));
+	const vars url = RWBASE + "Special:MovePage/" + url_encode(title.replace(" ", "_"));
 	if (!Open(f, url)) {
 		Log(LOGERR, "ERROR: could not open submit page %s (3 retries)", url);
 		return;
@@ -302,7 +301,7 @@ void CPage::Move(const char *newtitle)
 	for (int i = 0; i < lists[0].GetSize(); ++i) Log(LOGINFO, "'%s' = '%s'", lists[0][i], lists[1][i]);
 #endif
 	/*
-	url = "http://ropewiki.com/index.php?title=Special:MovePage&action=submit?POST?";
+	url = RWBASE + "index.php?title=Special:MovePage&action=submit?POST?";
 	url += f.SetFormValues(lists, FALSE);
 	*/
 	//printf("SUBMITTING %s ...\r", title);
@@ -329,11 +328,11 @@ void CPage::Move(const char *newtitle)
 	//	system("start \"check\" \"+url+"&action=history\"");
 }
 
-int CPage::FileExists(const char *rfile)
+int CPage::FileExists(const char *rfile) const
 {
 	DownloadFile &f = *fp;
-	vars ufile = url_encode(vars(rfile).replace(" ", "_"));
-	vars url = "http://ropewiki.com/File:" + ufile;
+	const vars ufile = url_encode(vars(rfile).replace(" ", "_"));
+	const vars url = RWBASE + "File:" + ufile;
 	if (!f.Download(url))
 		if (!strstr(f.memory, "No file by this name exists"))
 			return TRUE;
@@ -347,8 +346,8 @@ int CPage::UploadFile(const char *lfile, const char *rfile, const char *desc)
 	Log(LOGINFO, "UPLOADING FILE %s -> File:%s", lfile, rfile);
 
 	// Upload
-	vars ufile = url_encode(vars(rfile).replace(" ", "_"));
-	vars url = "http://ropewiki.com/index.php?title=Special:Upload&wpDestFile=" + ufile + "&wpForReUpload=1";
+	const vars ufile = url_encode(vars(rfile).replace(" ", "_"));
+	const vars url = RWBASE + "index.php?title=Special:Upload&wpDestFile=" + ufile + "&wpForReUpload=1";
 	if (!Open(f, url, 3, "action=\"/Special:Upload\"")) {
 		Log(LOGERR, "ERROR: could not open upload page %s (3 retries)", url);
 		return FALSE;
@@ -356,13 +355,13 @@ int CPage::UploadFile(const char *lfile, const char *rfile, const char *desc)
 
 	/*
 	f.SetPostFile(UploadFileHandler);
-	url = "http://ropewiki.com/index.php/Special:Upload?POSTFILE?";
+	url = RWBASE + "index.php/Special:Upload?POSTFILE?";
 	url += lfile +vars(">")+rfile;
 	*/
 	//printf("SUBMITTING %s ...\r", title);
-	vars ext = GetFileExt(lfile);
+	const vars ext = GetFileExt(lfile);
 	varas mime("kml=application/vnd.google-earth.kml+xml,pdf=application/pdf,jpg=image/jpeg,gif=image/gif,png=image/png,tif=image/tiff");
-	int found = mime[0].indexOf(ext);
+	const int found = mime[0].indexOf(ext);
 	if (found < 0)
 	{
 		Log(LOGERR, "Invalid mime for file %s", lfile);
