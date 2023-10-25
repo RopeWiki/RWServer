@@ -92,6 +92,9 @@ static vara cond_stars("0 - Unknown,1 - Poor,2 - Ok,3 - Good,4 - Great,5 - Amazi
 
 static const char *headers = "ITEM_URL, ITEM_DESC, ITEM_LAT, ITEM_LNG, ITEM_MATCH, ITEM_MODE, ITEM_INFO, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, https://maps.googleapis.com/maps/api/geocode/xml?address=,\"=+HYPERLINK(+CONCATENATE(\"\"http://ropewiki.com/index.php/Location?jform&locsearchchk=on&locname=\"\",C1,\"\",\"\",D1,\"\"&locdist=5mi&skinuser=&sortby=-Has_rank_rating&kmlx=\"\",A1),\"\"@check\"\")\"";
 
+static const char *rwprop = "Has pageid|Has coordinates|Has geolocation|Has BetaSites list|Has TripReports list|Has info|Has info major region|Has info summary|Has info rappels|Has longest rappel|Has length of hike|Has fastest typical time|Has slowest typical time|Has best season|Has shuttle length|Has vehicle type|Has location class|Has user counter|Has AKA|Requires permits|Has KML file|Has condition date|Has approach elevation gain|Has exit elevation gain|Has length|Has depth|Has fastest approach time|Has slowest approach time|Has fastest descent time|Has slowest descent time|Has fastest exit time|Has slowest exit time|Has rock type|Has SketchList"; //|Has user counter";
+static const char *rwform = "=|=|=|=|=|=|Region|=ACA|Number of rappels|Longest rappel|Hike length|Fastest typical time|Slowest typical time|Best season|NeedsShuttle;Shuttle|Vehicle|Location type|=Stars|AKA|Permits|=KML|=COND|Approach elevation gain|Exit elevation gain|Length|Depth|Fastest approach time|Slowest approach time|Fastest descent time|Slowest descent time|Fastest exit time|Slowest exit time|Rock type|=SKETCH"; //|Has user counter";
+
 class CPage;
 
 static CSymList rwlist, titlebetalist;
@@ -157,6 +160,9 @@ void LoadRWList();
 int Download_Save(const char *url, const char *folder, CString &memory);
 int LoadBetaList(CSymList &bslist, int title = FALSE, int rwlinks = FALSE);
 vara getwords(const char *text);
+int rwfregion(const char *line, CSymList &regions);
+vars getfulltext(const char *line, const char *label = "fulltext=");
+vars getlabel(const char *label);
 
 //static functions
 

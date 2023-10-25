@@ -51,8 +51,6 @@ GeoRegion _GeoRegion;
 
 
 //UTF:\xEF\xBB\xBF         to add columns use CheckBeta() 
-static const char *rwprop = "Has pageid|Has coordinates|Has geolocation|Has BetaSites list|Has TripReports list|Has info|Has info major region|Has info summary|Has info rappels|Has longest rappel|Has length of hike|Has fastest typical time|Has slowest typical time|Has best season|Has shuttle length|Has vehicle type|Has location class|Has user counter|Has AKA|Requires permits|Has KML file|Has condition date|Has approach elevation gain|Has exit elevation gain|Has length|Has depth|Has fastest approach time|Has slowest approach time|Has fastest descent time|Has slowest descent time|Has fastest exit time|Has slowest exit time|Has rock type|Has SketchList"; //|Has user counter";
-static const char *rwform = "=|=|=|=|=|=|Region|=ACA|Number of rappels|Longest rappel|Hike length|Fastest typical time|Slowest typical time|Best season|NeedsShuttle;Shuttle|Vehicle|Location type|=Stars|AKA|Permits|=KML|=COND|Approach elevation gain|Exit elevation gain|Length|Depth|Fastest approach time|Slowest approach time|Fastest descent time|Slowest descent time|Fastest exit time|Slowest exit time|Rock type|=SKETCH"; //|Has user counter";
 
 enum { W_DRY=0, W_WADING=1, W_SWIMMING=2, W_VERYLOW=3, W_LOW=4, W_MODLOW=5, W_MODERATE=6, W_MODHIGH=7, W_HIGH=8, W_VERYHIGH=9, W_EXTREME=10 };
 //static vara cond_water("0 - Dry,1 - Low flow,2 - Moderate flow,3 - High flow,4 - Very High flow,5 - Extreme flow");
@@ -2497,8 +2495,6 @@ vars KMLIDXLink(const char *purl, const char *pkmlidx)
 
 
 // ===============================================================================================
-int ROPEWIKI_DownloadBeta(const char *ubase, CSymList &symlist);
-int ROPEWIKI_DownloadRedirects(const char *ubase, CSymList &symlist);
 
 Code codelist[] = {
 	Code(0,0,"rw", NULL, "Ropewiki", NULL,new BETAC(RWID, ROPEWIKI_DownloadBeta), NULL ),
@@ -3534,7 +3530,7 @@ vars skipItalics(const char *oldstr)
 	return ret;
 }
 
-vars getfulltext(const char *line, const char *label = "fulltext=")
+vars getfulltext(const char *line, const char *label)
 {
 	vars res = ExtractString(line,label);
 	res.Replace(",", "%2C");
@@ -3573,73 +3569,6 @@ vars getlabel(const char *label)
 }
 
 
-int ROPEWIKI_DownloadItem(const char *line, CSymList &symlist)
-			{
-			vara labels(line, "label=\"");
-			vars id = ExtractString(labels[1], "Has pageid", "<value>", "</value>");
-			if (id.IsEmpty()) {
-				Log(LOGWARN, "Error empty ID from %.50s", line);
-				return FALSE;
-				}
-			CSym sym(RWID+id);
-			vars name = getfulltext( line );
-			sym.SetStr(ITEM_DESC, name);
-			//ASSERT(!IsSimilar(sym.GetStr(ITEM_DESC), "Goblin"));
-			sym.SetStr(ITEM_LAT, ExtractString(line,"lat=") );
-			sym.SetStr(ITEM_LNG, ExtractString(line,"lon=") );
-			for (int l=3, m=ITEM_LNG; l<labels.length(); ++l, ++m) {
-				vars val = getlabel(labels[l]);
-				switch (m)
-				{
-				case ITEM_LNG:
-					// geolocation
-					if (!val.IsEmpty())
-						sym.SetStr(ITEM_LAT, sym.GetStr(ITEM_LAT)+"@"+val);
-					continue;
-				case ITEM_NEWMATCH:
-					// trip reports
-					if (!val.IsEmpty())
-						sym.SetStr(ITEM_MATCH, sym.GetStr(ITEM_MATCH)+";"+val);
-					continue;
-				case ITEM_RAPS:
-					val.Trim("r");
-					break;
-				case ITEM_REGION:
-					val.Replace("[[","");
-					val.Replace("]]","");
-					val.Replace(":","");
-					val = GetToken(val, 0, '|');
-					val = GetToken(val, 1, '(') + ";" + GetToken(val, 0, '(');
-					val.Trim(" ;");
-					break;
-				case ITEM_AKA:
-					val = name + (val.IsEmpty() ? "" : "; " + val);
-					break;
-				default:
-					break;
-				}
-
-				sym.SetStr(m, val );
-			}
-			//ASSERT(strstr(sym.data, "Snowflake")==NULL);
-			// processing
-			//GetSummary(sym, stripHTML(skipItalics(sym.GetStr(ITEM_ACA))) );
-		
-			Update(symlist, sym, FALSE);
-			return TRUE;
-			}
-
-vars ROPEWIKI_DownloadList(const char *timestamp, CSymList &symlist, const char *q, const char *prop, rwfunc func)
-{
-	CString query = MkString("%s[[Max_Modification_date::>%s]] OR %s[[Modification_date::>%s]]", q, timestamp, q, timestamp);
-	CString querysort = "|sort=Modification_date|order=asc";
-	return GetASKList(symlist, query+prop+querysort, func);
-}
-
-
-
-
-
 int rwfregion(const char *line, CSymList &regions)
 		{
 		vara labels(line, "label=\"");
@@ -3657,74 +3586,6 @@ int rwfregion(const char *line, CSymList &regions)
 		Update(regions, sym, FALSE);
 		return TRUE;
 		}
-
-
-int ROPEWIKI_DownloadBeta(const char *ubase, CSymList &symlist) 
-{
-	/*
-	CString timestampurl= base+"|%3FModification_date|sort=Modification_date|order=desc|limit=1";
-	if (f.Download(timestampurl))
-		{
-		Log(LOGERR, "ERROR: can't download url %.128s", timestampurl);
-		return FALSE;
-		}
-	double timestamp = ExtractNum(f.memory, "<results>", "<value>", "</value>");
-	*/	
-
-	// sym
-	const char *STAMP0 = "2000-01-01T00:00:00Z";
-	CString timestamp = STAMP0;
-	CString hdr = GetToken(symlist.header,0);
-	if (IsSimilar(hdr, "TS:"))
-		timestamp = hdr.Mid(3);
-
-	vars newtimestamp = ROPEWIKI_DownloadList(timestamp, symlist, "[[Category:Canyons]]", "|%3F"+vara(rwprop,"|").join("|%3F"), ROPEWIKI_DownloadItem);
-	if (!newtimestamp.IsEmpty())
-		symlist.header = "TS:"+newtimestamp+","+GetTokenRest(symlist.header,1);		
-
-	// regions
-	CSymList regionlist;
-	regionlist.Load(filename(RWREGIONS));
-	if (!CFILE::exist(filename(RWREGIONS)))
-		timestamp = STAMP0;;
-	ROPEWIKI_DownloadList(timestamp, regionlist, "[[Category:Regions]]", "|%3FLocated in region|%3FIs major region", rwfregion);
-	regionlist.Save(filename(RWREGIONS));
-
-	return TRUE;
-}
-
-
-int ROPEWIKI_DownloadKML(const char *line, CSymList &symlist)
-{
-			vars file = getfulltext(line);
-			const char *ext = GetFileExt(file);
-			if (!IsSimilar(file.Right(4),".kml"))
-				return TRUE;
-
-			vars mod = ExtractString(line, "<value>", "", "</value>");
-			symlist.Add(CSym(file,mod));
-			return TRUE;
-}
-
-int ROPEWIKI_DownloadKML(CSymList &symlist) 
-{
-	CString timestamp = "1";
-	CString hdr = GetToken(symlist.header,0);
-	if (IsSimilar(hdr, "TS:"))
-		timestamp = hdr.Mid(3);
-
-	CString query = MkString("[[File:%%2B]][[Modification_date::>%s]]|%%3FModification_date", timestamp);
-	timestamp = GetASKList(symlist, query+"|sort=Modification_date|order=asc", ROPEWIKI_DownloadKML);
-
-	if (!timestamp.IsEmpty())
-		symlist.header = "TS:"+timestamp+","+GetTokenRest(symlist.header,1);
-	return TRUE;
-}
-
-
-
-
-
 
 int rwxredirect(const char *line, CSymList &redirects)
 		{
