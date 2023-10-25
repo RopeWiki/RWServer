@@ -2478,6 +2478,7 @@ Code codelist[] = {
 	Code(1,0,"cond_can", NULL, "Candition.com",  NULL,new BETAC("candition.com/canyons",CANDITION_DownloadBeta, NULL, CANDITION_DownloadBeta), "USA", "", "", "From Conditions"),
 	Code(1,0,"cond_karl", NULL, "Karl Helser's NW Adventures",  NULL, new KARL("karl-helser.com"), "Pacific Northwest"),
 	Code(1,0,"cond_sixgun", NULL, "Mark Kilian's Adventures",  NULL, new SIXGUN("6ixgun.com"), "USA"),
+
 	// UK & english
 	Code(1,1,"ukg", NULL, "UK CanyonGuides.org", "UK CanyonGuides.org",new BETAC("canyonguides.org",UKCG_DownloadBeta), "United Kingdom", "1-4 -> 2-5"),
 	Code(1,1,"kcc", NULL, "KiwiCanyons.org", "KiwiCanyons.org",new BETAC("kiwicanyons.org",KIWICANYONS_DownloadBeta), "New Zealand", "1-4 -> 2-5"),
@@ -2499,7 +2500,6 @@ Code codelist[] = {
 	Code(1,0,"tec", "es", "TeamEspeleoCanyons Blog",  NULL, new ESPELEOCANYONS("teamespeleocanyons.blogspot.com.es"), "Spain / Europe"),
 	Code(1,0,"sime", "es", "SiMeBuscasEstoyConLasCabras Blog",  NULL, new SIMEBUSCAS("simebuscasestoyconlascabras.blogspot.com"), "Spain / Europe", "", "From MAP"),
 	Code(1,0,"rocj", "es", "RocJumper.com",  NULL, new ROCJUMPER("rocjumper.com/barranco/"), "Spain / Europe"),
-
 
 	// Blogs
 	Code(1,0,"cond_nko", "es", "NKO-Extreme.com",  NULL, new NKO("nko-extreme.com"), "Spain / Europe"),

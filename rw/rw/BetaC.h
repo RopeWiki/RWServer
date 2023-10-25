@@ -74,4 +74,3 @@ public:
 
 	static vars GetKMLIDX(DownloadFile &f, const char *url, ExtractKMLIDXF fid);
 };
-
