@@ -53,6 +53,7 @@
 
 #define KMLEXTRACT 1
 
+
 typedef CString kmlwatermark(const char *scredit, const char *memory, int size);
 
 typedef struct { const char *unit; double cnv; } unit;
@@ -62,6 +63,7 @@ extern unit ulen[];
 
 extern int MODE;
 extern int INVESTIGATE;
+
 
 class CPage;
 
@@ -166,6 +168,7 @@ static CString filename(const char *name)
 	return BETA + vars("\\") + vars(name) + ".csv";
 }
 
+
 static CString burl(const char *base, const char *folder, bool useHttps)
 {
 	if (IsSimilar(folder, "../"))
@@ -186,6 +189,7 @@ static CString burl(const char *base, const char *folder, bool useHttps)
 		str += "/";
 	return str + folder;
 }
+
 
 static CString burl(const char *base, const char *folder)
 {
