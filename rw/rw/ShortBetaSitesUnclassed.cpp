@@ -6,8 +6,6 @@
 
 // ===============================================================================================
 
-
-
 int CCOLLECTIVE_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
 {
 	DownloadFile f;
@@ -29,9 +27,6 @@ int CCOLLECTIVE_ExtractKML(const char *ubase, const char *url, inetdata *out, in
 		KMZ_ExtractKML(credit, "http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&output=kml&msid=" + msid, out);
 	return TRUE;
 }
-
-
-
 
 int CCOLLECTIVE_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 {
@@ -245,9 +240,8 @@ int CCOLLECTIVE_DownloadConditions(const char *ubase, CSymList &symlist)
 }
 
 
-
-
 // ===============================================================================================
+
 vara visited;
 
 int CNORTHWEST_DownloadSelect(DownloadFile &f, const char *ubase, const char *url, CSymList &symlist, vara &region)
@@ -328,7 +322,9 @@ int CNORTHWEST_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
+
 // ===============================================================================================
+
 int CUSA_DownloadBeta(DownloadFile &f, const char *ubase, const char *lnk, const char *region, CSymList &symlist)
 {
 	vars url = burl(ubase, lnk);
@@ -464,6 +460,7 @@ int CUSA_DownloadBeta(const char *ubase2, CSymList &symlist)
 
 
 // ===============================================================================================
+
 int ASOUTHWEST_DownloadLL(DownloadFile &f, CSym &sym, CSymList &symlist)
 {
 	if (!UpdateCheck(symlist, sym) && sym.GetNum(ITEM_LAT) != InvalidNUM && MODE > -2)
@@ -543,7 +540,6 @@ int ASOUTHWEST_DownloadBeta(DownloadFile &f, const char *ubase, const char *sub,
 	return TRUE;
 }
 
-
 int ASOUTHWEST_DownloadBeta(const char *ubase, CSymList &symlist)
 {
 	DownloadFile f;
@@ -552,8 +548,8 @@ int ASOUTHWEST_DownloadBeta(const char *ubase, CSymList &symlist)
 }
 
 
-
 // ===============================================================================================
+
 int DAVEPIMENTAL_DownloadBeta(const char *ubase, CSymList &symlist)
 {
 	// ALL map 
@@ -578,8 +574,6 @@ int DAVEPIMENTAL_DownloadBeta(const char *ubase, CSymList &symlist)
 			Log(LOGERR, "ERROR: can't download url %.128s", url);
 			continue;
 		}
-
-
 
 		vars link = url;
 		vars name = stripHTML(ExtractString(f.memory, "class=\"ttl\"", ">", "<"));
@@ -610,7 +604,6 @@ int ONROPE_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
 	//if (!fx)
 	//	return FALSE;
 
-
 	DownloadFile f;
 	vars id = GetKMLIDX(f, url);
 	if (id.IsEmpty())
@@ -628,9 +621,6 @@ int ONROPE_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
 
 	return GPX_ExtractKML(credit, url, f.memory, out);
 }
-
-
-
 
 int ONROPE_DownloadBeta(const char *ubase, CSymList &symlist)
 {
@@ -696,6 +686,7 @@ int ONROPE_DownloadBeta(const char *ubase, CSymList &symlist)
 
 
 // ===============================================================================================
+
 #define CANYONCARTOTICKS 3000
 static double canyoncartoticks;
 double CANYONCARTO_Stars(double stars)
@@ -924,7 +915,6 @@ CString CANYONCARTO_Watermark(const char *scredit, const char *memory, int size)
 	return names.join(name);
 }
 
-
 //http://canyon.carto.net/cwiki/bin/view/Canyons/Bodengo3Canyon
 int CANYONCARTO_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
 {
@@ -933,6 +923,7 @@ int CANYONCARTO_ExtractKML(const char *ubase, const char *url, inetdata *out, in
 	Throttle(canyoncartoticks, CANYONCARTOTICKS);
 	return KMZ_ExtractKML(credit, kmlurl, out, CANYONCARTO_Watermark);
 }
+
 
 // ===============================================================================================
 
@@ -972,7 +963,6 @@ int WROCLAW_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 	}
 	if (n > 0)
 		sym.SetStr(ITEM_STARS, starstr(sum / n, n));
-
 
 	sym.SetStr(ITEM_LONGEST, GetMetric(stripHTML(ExtractString(f.memory, "max kaskada:", "", "<"))));
 
@@ -1042,6 +1032,7 @@ int WROCLAW_DownloadBeta(const char *ubase, CSymList &symlist)
 
 
 // ===============================================================================================
+
 int COND365_DownloadBeta(const char *ubase, CSymList &symlist)
 {
 	DownloadFile f;
@@ -1123,9 +1114,6 @@ int CANDITION_DownloadBeta(const char *ubase, CSymList &symlist)
 	}
 	return TRUE;
 }
-
-
-// ===============================================================================================
 
 
 // ===============================================================================================
@@ -1230,6 +1218,7 @@ int CANYONEAST_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
+
 // ===============================================================================================
 
 int TNTCANYONING_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
@@ -1324,8 +1313,8 @@ int TNTCANYONING_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
-// ===============================================================================================
 
+// ===============================================================================================
 
 vars VWExtractString(const char *memory, const char *id)
 {
@@ -1351,7 +1340,6 @@ double VWExtractStars(const char *memory, const char *id)
 
 	return (n + (r > 0 ? 0.5 : 0))*5.0 / 7.0; // 0-7 scale
 }
-
 
 int VWCANYONING_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 {
@@ -1401,7 +1389,6 @@ int VWCANYONING_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 		sym.SetStr(ITEM_REGION, region = aregion[4]);
 	if (!loc.IsEmpty())
 		sym.SetStr(ITEM_LAT, "@" + loc + "." + region);
-
 
 	/*
 	vars interest = stripHTML(ExtractString(f.memory, "Interesse:", "", "<br"));
@@ -1481,7 +1468,6 @@ int VWCANYONING_DownloadBeta(const char *ubase, CSymList &symlist)
 			continue;
 		}
 
-
 		// profili/region/somewhere
 		CSym sym(urlstr(link), name);
 		printf("%d/%d   \r", i, list.length());
@@ -1496,7 +1482,9 @@ int VWCANYONING_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
+
 // ===============================================================================================
+
 int HIKEAZ_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
 {
 	//if (!fx)
@@ -1545,7 +1533,6 @@ int HIKEAZ_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
 	return SaveKML("data", credit, url, styles, points, lines, out);
 }
 
-
 int HIKEAZ_GetCondition(const char *memory, CSym &sym)
 {
 	vara cond; cond.SetSize(COND_MAX);
@@ -1570,7 +1557,6 @@ int HIKEAZ_GetCondition(const char *memory, CSym &sym)
 	sym.SetStr(ITEM_CONDDATE, cond.join(";"));
 	return TRUE;
 }
-
 
 int HIKEAZ_DownloadBeta(const char *ubase, CSymList &symlist)
 {
@@ -1767,8 +1753,6 @@ int HIKEAZ_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
-
-
 int HIKEAZ_DownloadConditions(const char *ubase, CSymList &symlist)
 {
 
@@ -1813,9 +1797,8 @@ int HIKEAZ_DownloadConditions(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
+
 // ===============================================================================================
-
-
 
 int SUMMIT_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 {
@@ -1868,7 +1851,6 @@ int SUMMIT_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 
 	return TRUE;
 }
-
 
 int SUMMIT_DownloadBeta(const char *ubase, CSymList &symlist)
 {
@@ -1927,7 +1909,6 @@ int SUMMIT_DownloadBeta(const char *ubase, CSymList &symlist)
 
 // ===============================================================================================
 
-
 int CLIMBUTAH_DownloadDetails(DownloadFile &f, CSym &sym, CSymList &symlist)
 {
 	const char *url = sym.id;
@@ -1955,7 +1936,6 @@ int CLIMBUTAH_DownloadDetails(DownloadFile &f, CSym &sym, CSymList &symlist)
 	Update(symlist, sym, NULL, FALSE);
 	return FALSE;
 }
-
 
 int CLIMBUTAH_DownloadBeta(const char *ubase, CSymList &symlist)
 {
@@ -2020,11 +2000,11 @@ int CLIMBUTAH_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
+
 // ===============================================================================================
 
 #define CCHRONICLESTICKS 1000
 static double cchroniclesticks;
-
 
 int CCHRONICLES_ExtractKML(const char *ubase, const char *url, inetdata *out, int fx)
 {
@@ -2039,7 +2019,6 @@ int CCHRONICLES_ExtractKML(const char *ubase, const char *url, inetdata *out, in
 	KMZ_ExtractKML(credit, "http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&output=kml&msid=" + id, out);
 	return TRUE;
 }
-
 
 int CCHRONICLES_DownloadBeta(const char *ubase, CSymList &symlist)
 {
@@ -2098,8 +2077,6 @@ int CCHRONICLES_DownloadBeta(const char *ubase, CSymList &symlist)
 	}
 	return TRUE;
 }
-
-// ===============================================================================================
 
 
 // ===============================================================================================
@@ -2177,7 +2154,9 @@ int KARSTPORTAL_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
+
 // ===============================================================================================
+
 int CICARUDECLAN_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 {
 	if (f.Download(url))
@@ -2307,10 +2286,13 @@ int CICARUDECLAN_DownloadBeta(const char *ubase, CSymList &symlist)
 			}
 		}
 	}
+
 	return TRUE;
 }
 
+
 // ===============================================================================================
+
 int SCHLUCHT_DownloadBeta(const char *ubase, CSymList &symlist)
 {
 	DownloadFile f;
@@ -2352,9 +2334,9 @@ int SCHLUCHT_DownloadBeta(const char *ubase, CSymList &symlist)
 			Update(symlist, sym, NULL, FALSE);
 		}
 	}
+
 	return TRUE;
 }
-
 
 int SCHLUCHT_DownloadConditions(const char *ubase, CSymList &symlist)
 {
@@ -2404,7 +2386,6 @@ int SCHLUCHT_DownloadConditions(const char *ubase, CSymList &symlist)
 	}
 	return TRUE;
 }
-
 
 int INFO_DownloadBeta(const char *ubase, CSymList &symlist)
 {
@@ -2637,9 +2618,8 @@ int ALTISUD_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
-// ===============================================================================================
 
-//static double altisudticks;
+// ===============================================================================================
 
 int GUARAINFO_DownloadBeta(const char *ubase, CSymList &symlist)
 {
@@ -2687,8 +2667,6 @@ int GUARAINFO_DownloadBeta(const char *ubase, CSymList &symlist)
 
 
 // ===============================================================================================
-
-//static double altisudticks;
 
 int TRENCANOUS_DownloadBeta(const char *ubase, CSymList &symlist)
 {
@@ -2880,10 +2858,7 @@ int TRENCANOUS_DownloadBeta(const char *ubase, CSymList &symlist)
 }
 
 
-
 // ===============================================================================================
-
-//static double altisudticks;
 
 int ALTOPIRINEO_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 {
@@ -2952,7 +2927,6 @@ int ALTOPIRINEO_DownloadBeta(const char *ubase, CSymList &symlist)
 			urllist.push(link);
 	}
 
-
 	for (int u = 0; u < urllist.length(); ++u)
 	{
 		// download base
@@ -2984,6 +2958,7 @@ int ALTOPIRINEO_DownloadBeta(const char *ubase, CSymList &symlist)
 
 	return TRUE;
 }
+
 
 // ===============================================================================================
 
@@ -3032,6 +3007,7 @@ int ZIONCANYON_DownloadBeta(const char *ubase, CSymList &symlist)
 	}
 	return TRUE;
 }
+
 
 // ===============================================================================================
 
@@ -3212,6 +3188,7 @@ int KIWICANYONS_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
+
 // ===============================================================================================
 
 int CANONISMO_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
@@ -3272,7 +3249,6 @@ int CANONISMO_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 		sym.SetStr(ITEM_LNG, "");
 	}
 
-
 	double longest = CDATA::GetNum(stripHTML(ExtractString(f.memory, ">Rappel", ":", "</div")));
 	if (longest >= 0)
 		sym.SetStr(ITEM_LONGEST, MkString("%.0fm", longest));
@@ -3327,7 +3303,6 @@ int CANONISMO_DownloadBeta(const char *ubase, CSymList &symlist)
 		if (CANONISMO_DownloadPage(f, sym.id, sym))
 			Update(symlist, sym, NULL, FALSE);
 	}
-
 
 	return TRUE;
 }
@@ -3447,7 +3422,6 @@ int SPHERE_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 	return TRUE;
 }
 
-
 int SPHERE_DownloadBeta(const char *ubase, CSymList &symlist)
 {
 	vara regions;
@@ -3523,7 +3497,9 @@ int SPHERE_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
+
 // ===============================================================================================
+
 /*
 int WIKIPEDIA_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 {
@@ -3556,7 +3532,6 @@ int WIKIPEDIA_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 	return TRUE;
 }
 
-
 int WIKIPEDIA_DownloadBeta(const char *ubase, CSymList &symlist)
 {
 	vara regions;
@@ -3579,7 +3554,6 @@ int WIKIPEDIA_DownloadBeta(const char *ubase, CSymList &symlist)
 		{
 
 		}
-
 
 	CString url = MkString("http://speleosphere.org/index.php?content=guatesearch&checkdept=on&whatdept=%s&search=Search", val);
 	if (f.Download(url))
@@ -3636,6 +3610,7 @@ int WIKIPEDIA_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 */
+
 
 // ===============================================================================================
 
@@ -3757,6 +3732,7 @@ int LAOS_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
+
 // ===============================================================================================
 
 int JALISCO_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
@@ -3841,7 +3817,6 @@ int JALISCO_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 		sym.SetStr(ITEM_LNG, "");
 	}
 
-
 	double longest = CDATA::GetNum(stripHTML(ExtractString(memory, "Rapel mas alto", "-", "<br")));
 	if (longest >= 0)
 		sym.SetStr(ITEM_LONGEST, MkString("%.0fm", longest));
@@ -3875,7 +3850,6 @@ int JALISCO_DownloadPage(DownloadFile &f, const char *url, CSym &sym)
 	sym.SetStr(ITEM_LENGTH, GetMetric(stripHTML(ExtractString(memory, ">Longitud", "-", "<br"))));
 
 	sym.SetStr(ITEM_ROCK, stripHTML(ExtractString(memory, ">Tipo de Roca", "-", "<br")));
-
 
 	return TRUE;
 }
@@ -3978,20 +3952,16 @@ int DESCENSO_DownloadBeta(const char *ubase, CSymList &symlist)
 			//ASSERT( !strstr(link,"centelles"));
 			urls.push(link);
 		}
-
-
 	}
-
 
 	return TRUE;
 }
 
 
-
+// ===============================================================================================
 
 //https://www.google.com/maps/d/u/0/viewer?mid=1SXfd6dNXXIVNgnna4bKq_4SOK4c
 #define AZORESKML "http://www.google.com/maps/d/u/0/kml?mid=1SXfd6dNXXIVNgnna4bKq_4SOK4c&forcekml=1";
-
 
 int GetKMLCoords(const char *str, double &lat, double &lng)
 {
@@ -4004,7 +3974,6 @@ int GetKMLCoords(const char *str, double &lat, double &lng)
 	}
 	return CheckLL(lat, lng);
 }
-
 
 int AZORES_DownloadPage(const char *memory, CSym &sym)
 {
@@ -4211,6 +4180,7 @@ int BOOKAZORES_DownloadBeta(const char *ubase, CSymList &symlist)
 }
 
 
+// ===============================================================================================
 
 void ReplaceIfDigit(CString &str, const char *match, const char *rmatch)
 {
@@ -4260,8 +4230,8 @@ int BARRANQUISMO_DownloadPage(DownloadFile &fout, const char *url, CSym &sym)
 		//		//if (!_GeoCache.Get(loc = loc2+"."+loc3, glat, glng))
 		//			//if (!_GeoCache.Get(loc = GetToken(sym.GetStr(ITEM_LAT), 1, '@'), glat, glng))
 		//		Log(LOGERR, "Bad Geocode for %s : '%s'", sym.id, loc);
-	if (sym.GetNum(ITEM_LAT) == InvalidNUM && !loc.IsEmpty())
-		sym.SetStr(ITEM_LAT, "@" + loc);
+		if (sym.GetNum(ITEM_LAT) == InvalidNUM && !loc.IsEmpty())
+			sym.SetStr(ITEM_LAT, "@" + loc);
 
 	double longest = CDATA::GetNum(stripHTML(ExtractString(memory, "mas largo:", "", "<br")));
 	if (longest != InvalidNUM)
@@ -4490,7 +4460,6 @@ int BARRANQUISMO_DownloadPage(DownloadFile &fout, const char *url, CSym &sym)
 		}
 	}
 
-
 	vara times;
 	const char *ids[] = { "Horario de aproximaci", "Horario de descenso:", "Horario de retorno:" };
 	const char *ids2[] = { "d'approche:", "de parcours:", "de retour:" };
@@ -4610,7 +4579,6 @@ int istrash(char c)
 
 static double barranquismoticks;
 
-
 int BARRANQUISMO_GetName(const char *title, vars &name, vars &aka)
 {
 	//ASSERT( !strstr(title, "GIRONA"));
@@ -4720,7 +4688,6 @@ int BARRANQUISMOKML_DownloadBeta(const char *ubase, CSymList &symlist)
 	}
 	return TRUE;
 }
-
 
 varas BARRANQUISMO_trans(
 	"http://barranquismo.net/paginas1/barrancos/canon_de_taourarte.htm=http://barranquismo.net/paginas/barrancos1/canon_de_taourarte.htm,"
@@ -4872,8 +4839,6 @@ int BARRANQUISMO_DownloadBeta(const char *ubase, CSymList &symlist, int(*Downloa
 		}
 	}
 
-
-
 	return TRUE;
 }
 
@@ -4882,7 +4847,6 @@ int BARRANQUISMO_DownloadBeta(const char *ubase, CSymList &symlist)
 	ubase = "barranquismo.net";
 	return BARRANQUISMO_DownloadBeta(ubase, symlist, BARRANQUISMO_DownloadPage);
 }
-
 
 int BARRANQUISMODB_DownloadBeta(const char *ubase, CSymList &symlist)
 {
@@ -4984,9 +4948,6 @@ int BARRANQUISMODB_DownloadBeta(const char *ubase, CSymList &symlist)
 		vars Capitalize(const char *oldval);
 		sym.SetStr(ITEM_DESC, name);
 		sym.SetStr(ITEM_AKA, Capitalize(name));
-
-
-
 
 		// try mapping
 		//if (!IsSimilar(sym.GetStr(ITEM_INFO),RWID))
@@ -5104,13 +5065,11 @@ int BARRANQUISMODB_DownloadBeta(const char *ubase, CSymList &symlist)
 
 	}
 
-
-
-
 	return TRUE;
 }
 
 
+// ===============================================================================================
 
 int BARRANCOSORG_DownloadBeta(const char *ubase, CSymList &symlist)
 {
@@ -5217,13 +5176,14 @@ int BARRANCOSORG_DownloadBeta(const char *ubase, CSymList &symlist)
 }
 
 
+// ===============================================================================================
+
 vars ROPEWIKI_DownloadList(const char *timestamp, CSymList &symlist, const char *q, const char *prop, rwfunc func)
 {
 	CString query = MkString("%s[[Max_Modification_date::>%s]] OR %s[[Modification_date::>%s]]", q, timestamp, q, timestamp);
 	CString querysort = "|sort=Modification_date|order=asc";
 	return GetASKList(symlist, query + prop + querysort, func);
 }
-
 
 int ROPEWIKI_DownloadBeta(const char *ubase, CSymList &symlist)
 {
@@ -5259,7 +5219,6 @@ int ROPEWIKI_DownloadBeta(const char *ubase, CSymList &symlist)
 	return TRUE;
 }
 
-
 int ROPEWIKI_DownloadKML(const char *line, CSymList &symlist)
 {
 	vars file = getfulltext(line);
@@ -5286,7 +5245,6 @@ int ROPEWIKI_DownloadKML(CSymList &symlist)
 		symlist.header = "TS:" + timestamp + "," + GetTokenRest(symlist.header, 1);
 	return TRUE;
 }
-
 
 int ROPEWIKI_DownloadItem(const char *line, CSymList &symlist)
 {
@@ -5341,5 +5299,6 @@ int ROPEWIKI_DownloadItem(const char *line, CSymList &symlist)
 	//GetSummary(sym, stripHTML(skipItalics(sym.GetStr(ITEM_ACA))) );
 
 	Update(symlist, sym, FALSE);
+
 	return TRUE;
 }

@@ -25,7 +25,7 @@ typedef int tcond(const char *base, CSymList &symlist);
 
 extern GeoCache _GeoCache;
 extern GeoRegion _GeoRegion;
-extern Code codelist[];
+extern Code *codelist[];
 
 extern int INVESTIGATE;
 
@@ -3752,13 +3752,13 @@ int ResetBetaColumn(int MODE, const char *value)
 		return FALSE;
 	}
 
-	for (int i = 0; codelist[i].code != NULL; ++i)
+	for (int i = 0; codelist[i]->code != NULL; ++i)
 	{
 		//if (value && *value!=0 && strcmp(codelist[i].code, value)!=0)
 		//	continue;
 
 		CSymList list;
-		vars file = filename(codelist[i].code);
+		vars file = filename(codelist[i]->code);
 		list.Load(file);
 		for (int l = 0; l < list.GetSize(); ++l)
 		{

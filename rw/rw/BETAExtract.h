@@ -130,6 +130,7 @@ int IsImage(const char *url);
 BOOL IsSeasonValid(const char *season, CString *validated = NULL);
 CString KML_Watermark(const char *scredit, const char *memory, int size);
 vars KMLIDXLink(const char *purl, const char *pkmlidx);
+int KMLMAP_DownloadBeta(const char *ubase, CSymList &symlist);
 int KMZ_ExtractKML(const char *credit, const char *url, inetdata *out, kmlwatermark *watermark = KML_Watermark);
 int LoadBetaList(CSymList &bslist, int title = FALSE, int rwlinks = FALSE);
 void LoadRWList();

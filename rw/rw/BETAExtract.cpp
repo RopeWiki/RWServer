@@ -2,10 +2,10 @@
 #include <afxinet.h>
 #include <atlimage.h>
 #include "stdafx.h"
-#include "trademaster.h"
+#include "Trademaster.h"
 #include "rw.h"
-#include "math.h"
-#include "Xunzip.h"
+#include "Math.h"
+#include <Xunzip.h>
 #include "BetaC.h"
 #include "BETAExtract.h"
 #include "Code.h"
@@ -18,6 +18,185 @@
 
 GeoCache _GeoCache;
 GeoRegion _GeoRegion;
+
+
+// ===============================================================================================
+
+Code *codelist[] = {
+	new Code(0,0,"rw", NULL, "Ropewiki", NULL,new BETAC(RWID, ROPEWIKI_DownloadBeta), NULL),
+	new Code(0,0,RWREDIR, NULL, "Redirects", NULL,new BETAC(RWTITLE, ROPEWIKI_DownloadRedirects), NULL),
+
+	// local databases
+	new Code(0,1,"kmlmap", NULL, NULL, NULL, new BETAC("KML:", KMLMAP_DownloadBeta), "World"),
+	new Code(0,1,"book_GrandCanyon", NULL, "Grand Canyoneering Book by Todd Martin", "Grand Canyoneering Book", new BOOK("ropewiki.com/User:Grand_Canyoneering_Book"), "USA (Arizona)"),
+	new Code(0,1,"book_Arizona", NULL, "Arizona Technical Canyoneering Book by Todd Martin", "Arizona Technical Canyoneering Book", new BOOK("ropewiki.com/User:Arizona_Technical_Canyoneering_Book"), "USA (Grand Canyon)"),
+	new Code(0,1,"book_Zion", NULL, "Zion Canyoneering Book by Tom Jones", "Zion Canyoneering Book", new BOOK("ropewiki.com/User:Zion_Canyoneering_Book"), "USA (Zion)"),
+	new Code(0,1,"book_Vegas", NULL, "Las Vegas Slots Book by Rick Ianiello", "Las Vegas Slots Book", new BOOK("ropewiki.com/User:Las_Vegas_Slots_Book"), "USA (Las Vegas)"),
+	new Code(0,1,"book_Moab", NULL, "Moab Canyoneering Book by Derek A. Wolfe", "Moab Canyoneering Book", new BOOK("ropewiki.com/User:Moab_Canyoneering_Book"), "USA (Moab)"),
+	new Code(0,1,"book_Ossola", NULL, "Canyons du Haut-Piemont Italien Book by Speleo Club de la Valle de la Vis", "Canyons du Haut-Piemont Italien Book", new BOOK("ropewiki.com/User:Canyons_du_Haut-Piemont_Italien_Book"), "Italy (Piemonte)"),
+	new Code(0,1,"book_Alps", NULL, "Canyoning in the Alps Book by Simon Flower", "Canyoning in the Alps Book ", new BOOK("ropewiki.com/User:Canyoning_in_the_Alps_Book"), "Europe (Alps)"),
+	new Code(0,1,"book_SwissAlps", NULL, "Canyoning in the Swiss Alps Book by Association Openbach", "Canyoning in the Swiss Alps Book ", new BOOK("ropewiki.com/User:Canyoning_in_the_Swiss_Alps_Book"), "Switzerland"),
+	new Code(0,1,"book_NordItalia", NULL, "Canyoning Nord Italia Book by Pascal van Duin", "Canyoning Nord Italia Book ", new BOOK("ropewiki.com/User:Canyoning_Nord_Italia_Book"), "Italy (North)"),
+	//new Code(0,"book_Azores", NULL, "Azores Canyoning Book by Desnivel", "Azores Canyoning Book ", new BETAC( "ropewiki.com/User:Azores_Canyoning_Book"), BOOKAZORES_DownloadBeta, "Azores" ),
+
+	// USA kml extract
+	new Code(1,1,"rtr", NULL, "RoadTripRyan.com", "RoadTripRyan.com", new BETAC("roadtripryan.com",ROADTRIPRYAN_DownloadBeta, ROADTRIPRYAN_ExtractKML), "USA", "1-5", "Disabled"),
+	new Code(1,1,"cco", NULL, "CanyonCollective.com", "CanyonCollective.com", new BETAC("canyoncollective.com/betabase",CCOLLECTIVE_DownloadBeta, CCOLLECTIVE_ExtractKML, CCOLLECTIVE_DownloadConditions), "World", "1-5", "From KML data", "From Conditions"),
+	new Code(1,1,"cch", NULL, "CanyonChronicles.com",  NULL, new BETAC("canyonchronicles.com",CCHRONICLES_DownloadBeta, CCHRONICLES_ExtractKML), "World", "", "From KML data"),
+	new Code(1,1,"haz", NULL, "HikeArizona.com", "HikeArizona.com",new BETAC("hikearizona.com",HIKEAZ_DownloadBeta, HIKEAZ_ExtractKML, HIKEAZ_DownloadConditions), "USA", "1-5", "From Custom Data", "From Trip Reports"),
+	new Code(1,1,"orc", NULL, "OnRopeCanyoneering.com",  NULL,new BETAC("onropecanyoneering.com",ONROPE_DownloadBeta, ONROPE_ExtractKML), "USA", "", "From GPX data"),
+	new Code(1,1,"blu", NULL, "BluuGnome.com",  NULL,new BETAC("bluugnome.com",BLUUGNOME_DownloadBeta, BLUUGNOME_ExtractKML), "USA", "", "From HTML data"),
+	new Code(1,1,"cba", NULL, "Chris Brennen's Adventure Hikes (St Gabriels)", "Chris Brennen's Adventure Hikes (St Gabriels)", new CBRENNEN("brennen.caltech.edu/advents"), "USA", "1-3 -> 1.5-4.5", "From HTML data"),
+	new Code(1,1,"cbs", NULL, "Chris Brennen's Adventure Hikes (Southwest)", "Chris Brennen's Adventure Hikes (Southwest)", new CBRENNEN("brennen.caltech.edu/swhikes"), "USA", "1-3 -> 1.5-4.5", "From HTML data"),
+	new Code(1,1,"cbw", NULL, "Chris Brennen's Adventure Hikes (World)", "Chris Brennen's Adventure Hikes (World)", new CBRENNEN("brennen.caltech.edu/world"), "World", "1-3 -> 1.5-4.5", "From HTML data"),
+
+	// USA star extract
+	new Code(1,1,"cus", NULL, "CanyoneeringUSA.com", "CanyoneeringUSA.com",new BETAC("canyoneeringusa.com",CUSA_DownloadBeta), "USA", "1-3 -> 1.5-4.5"),
+	new Code(1,1,"zcc", NULL, "ZionCanyoneering.com", "ZionCanyoneering.com",new ZIONCANYONEERING("zioncanyoneering.com"), "USA", "1-5"),
+	new Code(1,1,"asw", NULL, "AmericanSouthwest.net", "AmericanSouthwest.net",new BETAC("americansouthwest.net/slot_canyons",ASOUTHWEST_DownloadBeta),"USA", "1-5"),
+	new Code(1,1,"thg", NULL, "ToddsHikingGuide.com", "ToddsHikingGuide.com",new TODDMARTIN("toddshikingguide.com/Hikes"), "USA", "1-5"),
+	new Code(1,1,"dpm", NULL, "Dave Pimental's Minislot Guide", "Dave Pimental's Minislot Guide",new BETAC("math.utah.edu/~sfolias/minislot",DAVEPIMENTAL_DownloadBeta), "USA", "1-5"),
+
+	// USA no extract
+	new Code(1,1,"cnw", NULL, "CanyoneeringNorthwest.com",  NULL,new BETAC("canyoneeringnorthwest.com",CNORTHWEST_DownloadBeta), "USA / Canada"),
+	new Code(1,1,"cut", NULL, "Climb-Utah.com",  NULL,new BETAC("climb-utah.com",CLIMBUTAH_DownloadBeta), "USA (Utah)"),
+	new Code(1,1,"spo", NULL, "SummitPost.org",  NULL,new BETAC("summitpost.org",SUMMIT_DownloadBeta), "USA / World"),
+	new Code(1,1,"cnm", NULL, "CanyoneeringNM.org",  NULL,new BETAC("canyoneeringnm.org",CNEWMEXICO_DownloadBeta), "USA (New Mexico)"),
+	new Code(1,1,"nms", NULL, "Doug Scott's New Mexico Slot Canyons",  NULL,new NEWMEXICOS("dougscottart.com/hobbies/SlotCanyons/"), "USA (New Mexico)"),
+	new Code(1,1,"SuperAmazingMap", NULL, "Super Amazing Map", NULL,new SAM("ropewiki.com/User:Super_Amazing_Map"), "USA"),
+	new Code(1,0,"cond_can", NULL, "Candition.com",  NULL,new BETAC("candition.com/canyons",CANDITION_DownloadBeta, NULL, CANDITION_DownloadBeta), "USA", "", "", "From Conditions"),
+	new Code(1,0,"cond_karl", NULL, "Karl Helser's NW Adventures",  NULL, new KARL("karl-helser.com"), "Pacific Northwest"),
+	new Code(1,0,"cond_sixgun", NULL, "Mark Kilian's Adventures",  NULL, new SIXGUN("6ixgun.com"), "USA"),
+
+	// UK & english
+	new Code(1,1,"ukg", NULL, "UK CanyonGuides.org", "UK CanyonGuides.org",new BETAC("canyonguides.org",UKCG_DownloadBeta), "United Kingdom", "1-4 -> 2-5"),
+	new Code(1,1,"kcc", NULL, "KiwiCanyons.org", "KiwiCanyons.org",new BETAC("kiwicanyons.org",KIWICANYONS_DownloadBeta), "New Zealand", "1-4 -> 2-5"),
+	new Code(1,1,"ico", NULL, "Icopro.org",  NULL, new ICOPRO("icopro.org"), "World"),
+	new Code(1,1,"cmag", NULL, "CanyonMag.net",  "CanyonMag.net", new CMAGAZINE("canyonmag.net/database"), "Japan / World", "1-4 -> 2-5"),
+
+	// Spanish
+	new Code(1,0,"bqn", "es", "Barranquismo.net", NULL, new BETAC("barranquismo.net" /*, BARRANQUISMO_DownloadBeta*/), "World"),
+	new Code(1,1,"can", "es", "Ca\xC3\xB1onismo.com",  NULL,new BETAC("xn--caonismo-e3a.com",CANONISMO_DownloadBeta), "Mexico"),
+	new Code(1,1,"jal", "es", "JaliscoVertical.Weebly.com",  NULL,new BETAC("jaliscovertical.weebly.com",JALISCO_DownloadBeta), "Mexico"),
+	new Code(1,1,"alp", "es", "Altopirineo.com", "Altopirineo.com",new BETAC("altopirineo.com",ALTOPIRINEO_DownloadBeta), "Spain", "1-4 -> 2-5"),
+	new Code(1,1,"ltn", "es", "Latrencanous.com",  NULL,new BETAC("latrencanous.com",TRENCANOUS_DownloadBeta), "Spain"),
+	new Code(1,1,"bqo", "es", "Barrancos.org", "Barrancos.org",new BETAC("barrancos.org",BARRANCOSORG_DownloadBeta), "Spain / Europe", "1-10 -> 1-5"),
+	new Code(1,1,"ddb", "es", "DescensoDeBarrancos.com",  NULL,new BETAC("descensodebarrancos.com",DESCENSO_DownloadBeta), "Spain / Europe"),
+	new Code(9,1,"gua", "es", "Guara.info",  NULL,new BETAC("guara.info",GUARAINFO_DownloadBeta), "Guara (Spain)"),
+	new Code(1,1,"4x4", "es", "Actionman4x4.com",  NULL,new ACTIONMAN4X4("actionman4x4.com/canonesybarrancos"), "Andalucia (Spain)"),
+	new Code(1,1,"bcan", "es", "BarrancosCanarios.com",  NULL,new BCANARIOS("barrancoscanarios.com"), "Canarias (Spain)"),
+	new Code(1,0,"bcue", "es", "BarrancosEnCuenca.es",  NULL,new BCUENCA("barrancosencuenca.es"), "Spain"),
+	new Code(1,0,"tec", "es", "TeamEspeleoCanyons Blog",  NULL, new ESPELEOCANYONS("teamespeleocanyons.blogspot.com.es"), "Spain / Europe"),
+	new Code(1,0,"sime", "es", "SiMeBuscasEstoyConLasCabras Blog",  NULL, new SIMEBUSCAS("simebuscasestoyconlascabras.blogspot.com"), "Spain / Europe", "", "From MAP"),
+	new Code(1,0,"rocj", "es", "RocJumper.com",  NULL, new ROCJUMPER("rocjumper.com/barranco/"), "Spain / Europe"),
+
+	// Blogs
+	new Code(1,0,"cond_nko", "es", "NKO-Extreme.com",  NULL, new NKO("nko-extreme.com"), "Spain / Europe"),
+	new Code(1,0,"cond_bqe", "es", "Barranquistas.es",  NULL, new BARRANQUISTAS("barranquistas.es"), "Spain / Europe"),
+
+	// Mallorca
+	new Code(1,0,"dvc", "es", "Doblevuit.com",  NULL, new DOBLEVUIT("doblevuit.com"), "Mallorca (Spain)"),
+	new Code(1,0,"nts", "es", "NeoToposSport",  NULL, new NEOTOPO("neotopossport.blogspot.com"), "Mallorca (Spain)"),
+	new Code(1,0,"mve", "es", "MallorcaVerde.es",  NULL, new MALLORCAV("mallorcaverde.es"), "Mallorca (Spain)"),
+	new Code(1,0,"enc", "es", "EscoNatura.com",  NULL, new ESCONAT("esconatura.com"), "Mallorca (Spain)"),
+	new Code(1,0,"cond_365", "es", "365DiasDeUnaGuia",  NULL,new BETAC("http://365diasdeunaguia.wordpress.com",BOOK_DownloadBeta, NULL, COND365_DownloadBeta), "Spain", "", "", "From group updates"),
+	new Code(1,0,"cond_inf", "es", "Caudal.info",  NULL,new BETAC("http://www.caudal.info",INFO_DownloadBeta, NULL, INFO_DownloadBeta), "World", "", "", "From Conditions"),
+
+	// German
+	new Code(1,1,"ccn", "de", "Canyon.Carto.net", "Canyon.Carto.net",new BETAC("canyon.carto.net",CANYONCARTO_DownloadBeta, CANYONCARTO_ExtractKML), "World", "1-7 -> 1-5", "From KML data"),
+
+	// French
+	new Code(1,1,"dcc", "fr", "Descente-Canyon.com", "Descente-Canyon.com",new BETAC("descente-canyon.com",DESCENTECANYON_DownloadBeta, DESCENTECANYON_ExtractKML, DESCENTECANYON_DownloadConditions), "World", "0-4 -> 1-5", "From Custom Data", "From Conditions"),
+	new Code(1,1,"alt", "fr", "Altisud.com", "Altisud.com",new BETAC("altisud.com",ALTISUD_DownloadBeta), "Europe", "1-5"),
+	new Code(1,1,"climb7", "fr", "Climbing7",  "Climbing7", new CLIMBING7("climbing7.wordpress.com"), "Europe", "1-3 -> 1.5-4.5"),
+	new Code(1,1,"yad", "fr", "Yadugaz07", "Yadugaz07", new YADUGAZ("yadugaz07.com"), "France", "1-10 -> 1->5"),
+	new Code(1,1,"reu", "fr", "Ligue Reunionnaise de Canyon", "Ligue Reunionnaise de Canyon", new REUNION("lrc-ffs"), "Reunion", "0-4 -> 1-5"),
+	new Code(1,1,"flr", "fr", "Francois Leroux's Canyoning Reunion",  NULL, new FLREUNION("francois.leroux.free.fr/canyoning"), "Reunion"),
+	new Code(1,1,"agc", "fr", "Alpes-Guide.com",  NULL, new ALPESGUIDE("alpes-guide.com/sources/topo/"), "France"),
+	new Code(1,1,"tahiti", "fr", "Canyon de Tahiti", NULL,new TAHITI("canyon-a-tahiti.shost.ca"), "French Polynesia", "", "From PDF Index"),
+	new Code(1,1,"mad", "fr", "An Kanion La-madinina", NULL,new MADININA("ankanionla-madinina.com"), "French Caribbean", "", "From PDF Index"),
+	new Code(1,1,"mur", "fr", "Mur d'Eau Caraibe", "Mur d'Eau Caraibe",new MURDEAU("murdeau-caraibe.com"), "French Caribbean", "0-4 -> 1-5", "From KML data"),
+
+	// Swiss
+	new Code(1,1,"sch", "it", "SwissCanyon.ch", "SwissCanyon.ch",new BETAC("swisscanyon.ch",SWISSCANYON_DownloadBeta), "Switzerland", "1-4 -> 2-5"),
+	new Code(1,1,"wch", "fr", "SwestCanyon.ch", "SwestCanyon.ch",new BETAC("swestcanyon.ch",SWESTCANYON_DownloadBeta), "Switzerland", "1-4 -> 2-5"),
+	new Code(1,1,"sht", "de", "Schlucht.ch",  NULL,new BETAC("schlucht.ch",SCHLUCHT_DownloadBeta, NULL, SCHLUCHT_DownloadConditions), "Switzerland", "", "", "From Conditions"),
+
+	// Italian
+	new Code(1,1,"crc", "it", "CicaRudeClan.com", "CicaRudeClan.com",new BETAC("cicarudeclan.com",CICARUDECLAN_DownloadBeta), "World", "1-3 -> 1.5-4.5"),
+	new Code(1,1,"est", "it", "Canyoneast.it", "Canyoneast.it",new BETAC("canyoneast.it",CANYONEAST_DownloadBeta), "Italy", "1-3 -> 3-5"),
+	new Code(1,1,"tnt", "it", "TNTcanyoning.it",  NULL,new BETAC("tntcanyoning.it",TNTCANYONING_DownloadBeta), "Europe"),
+	new Code(1,1,"vwc", "it", "VerticalWaterCanyoning.com", "VerticalWaterCanyoning.com",new BETAC("verticalwatercanyoning.com",VWCANYONING_DownloadBeta), "Europe", "0-4 / 1-7-> 1-5"),
+	new Code(1,1,"aic", "it", "Catastoforre AIC-Canyoning.it",  NULL,new AICCATASTO("catastoforre.aic-canyoning.it"), "Italy", "", "", "From Conditions"),
+	new Code(1,1,"osp", "it", "OpenSpeleo.org",  NULL, new OPENSPELEO("openspeleo.org/openspeleo/"), "Italy / Europe"),
+	new Code(1,1,"gul", "it", "Gulliver.it",  NULL, new GULLIVER("gulliver.it"), "Italy / Europe"),
+	new Code(1,1,"cens", "it", "Cens.it",  NULL, new CENS("cens.it"), "Italy"),
+	//new Code(1,"aicf", "it", "Forum AIC-Canyoning.it",  NULL, new AICFORUM ( "aic-canyoning.it/forum"), "Italy / Europe"),
+	new Code(1,1,"mac", "it", "Michele Angileri's Canyons",  NULL, new MICHELEA("micheleangileri.com"), "Italy"),
+
+	// Others
+	new Code(1,1,"ecdc", "pt", "ECDCPortugal.com",  NULL, new ECDC("media.wix.com"), "Portugal"),
+	new Code(1,1,"cmad", "pt", "CaMadeira.com",  NULL, new CMADEIRA("canyoning.camadeira.com"), "Madeira"),
+	new Code(1,1,"wro", "pl", "Canyoning.Wroclaw.pl", "Canyoning.Wroclaw.pl",new BETAC("canyoning.wroclaw.pl",WROCLAW_DownloadBeta), "Europe", "1-5"),
+
+	// caves
+	new Code(1,1,"sph", NULL, "Speleosphere.org",  NULL,new BETAC("speleosphere.org",SPHERE_DownloadBeta), "Guatemala"),
+	new Code(1,1,"lao", NULL, "LaosCaveProject.de",  NULL,new BETAC("laoscaveproject.de",LAOS_DownloadBeta), "Laos"),
+	//new Code(1,"wpc", NULL, "Wikipedia Cave List",  NULL,new BETAC( "en.wikipedia.org/wiki", WIKIPEDIA_DownloadBeta, "World" ),
+	//new Code(8,"kpo", NULL, "KarstPortal.org",  NULL, KARSTPORTAL_DownloadBeta( "karstportal.org"), "World"),
+
+	// Wikiloc
+	new Code(5,0,"wik", "auto", "Wikiloc.com", "Wikiloc.com",new BETAC("wikiloc.com",WIKILOC_DownloadBeta, WIKILOC_ExtractKML), "World", "1-5", "From Custom data"),
+
+	// manual invokation
+	new Code(-1,0,"ccs", NULL, NULL, NULL,new CANYONINGCULT(NULL), "Europe"),
+	new Code(-1,0,"bqnkml", NULL, NULL, NULL,new BETAC(NULL,BARRANQUISMOKML_DownloadBeta), "World"),
+	new Code(-1,0,"bqndb", NULL, NULL, NULL, new BETAC("BQN:", BARRANQUISMODB_DownloadBeta), "World"),
+	new Code(-1,0,"bqndbtest", NULL, NULL, NULL, new BETAC("BQN:", BARRANQUISMODB_DownloadBeta), "World"),
+
+	new Code(-1,0, NULL,NULL,NULL,NULL,new BETAC(NULL), NULL)
+};
+
+
+int GetCode(const char *url) {
+
+	// patch!
+	if (strstr(url, "canyoneeringusa.com/rave"))
+		return 0;
+
+	for (int i = 1; codelist[i]->code; ++i)
+	{
+		const char *ubase = codelist[i]->betac->ubase;
+		if (ubase && strstr(url, ubase))
+		{
+			// special case BQN:
+			if (ubase[strlen(ubase) - 1] == ':')
+				return i;
+
+			// bad urls
+			vara urla(url, "/");
+			if (urla.length() < 3)
+				return 0;
+			return i;
+		}
+	}
+
+	return 0;
+}
+
+
+const char *GetCodeStr(const char *url) {
+	int c = GetCode(url);
+	return c > 0 ? codelist[c]->code : NULL;
+}
+
+
+void LoadRWList()
+{
+	rwlist.Empty();
+	rwlist.Load(filename(codelist[0]->code));
+	rwlist.Sort();
+}
 
 
 BOOL isa(unsigned char c)
@@ -2431,186 +2610,6 @@ vars KMLIDXLink(const char *purl, const char *pkmlidx)
 }
 
 
-// ===============================================================================================
-
-Code codelist[] = {
-	Code(0,0,"rw", NULL, "Ropewiki", NULL,new BETAC(RWID, ROPEWIKI_DownloadBeta), NULL),
-	Code(0,0,RWREDIR, NULL, "Redirects", NULL,new BETAC(RWTITLE, ROPEWIKI_DownloadRedirects), NULL),
-
-	// local databases
-	Code(0,1,"kmlmap", NULL, NULL, NULL, new BETAC("KML:", KMLMAP_DownloadBeta), "World"),
-	Code(0,1,"book_GrandCanyon", NULL, "Grand Canyoneering Book by Todd Martin", "Grand Canyoneering Book", new BOOK("ropewiki.com/User:Grand_Canyoneering_Book"), "USA (Arizona)"),
-	Code(0,1,"book_Arizona", NULL, "Arizona Technical Canyoneering Book by Todd Martin", "Arizona Technical Canyoneering Book", new BOOK("ropewiki.com/User:Arizona_Technical_Canyoneering_Book"), "USA (Grand Canyon)"),
-	Code(0,1,"book_Zion", NULL, "Zion Canyoneering Book by Tom Jones", "Zion Canyoneering Book", new BOOK("ropewiki.com/User:Zion_Canyoneering_Book"), "USA (Zion)"),
-	Code(0,1,"book_Vegas", NULL, "Las Vegas Slots Book by Rick Ianiello", "Las Vegas Slots Book", new BOOK("ropewiki.com/User:Las_Vegas_Slots_Book"), "USA (Las Vegas)"),
-	Code(0,1,"book_Moab", NULL, "Moab Canyoneering Book by Derek A. Wolfe", "Moab Canyoneering Book", new BOOK("ropewiki.com/User:Moab_Canyoneering_Book"), "USA (Moab)"),
-	Code(0,1,"book_Ossola", NULL, "Canyons du Haut-Piemont Italien Book by Speleo Club de la Valle de la Vis", "Canyons du Haut-Piemont Italien Book", new BOOK("ropewiki.com/User:Canyons_du_Haut-Piemont_Italien_Book"), "Italy (Piemonte)"),
-	Code(0,1,"book_Alps", NULL, "Canyoning in the Alps Book by Simon Flower", "Canyoning in the Alps Book ", new BOOK("ropewiki.com/User:Canyoning_in_the_Alps_Book"), "Europe (Alps)"),
-	Code(0,1,"book_SwissAlps", NULL, "Canyoning in the Swiss Alps Book by Association Openbach", "Canyoning in the Swiss Alps Book ", new BOOK("ropewiki.com/User:Canyoning_in_the_Swiss_Alps_Book"), "Switzerland"),
-	Code(0,1,"book_NordItalia", NULL, "Canyoning Nord Italia Book by Pascal van Duin", "Canyoning Nord Italia Book ", new BOOK("ropewiki.com/User:Canyoning_Nord_Italia_Book"), "Italy (North)"),
-	//Code(0,"book_Azores", NULL, "Azores Canyoning Book by Desnivel", "Azores Canyoning Book ", new BETAC( "ropewiki.com/User:Azores_Canyoning_Book"), BOOKAZORES_DownloadBeta, "Azores" ),
-
-	// USA kml extract
-	Code(1,1,"rtr", NULL, "RoadTripRyan.com", "RoadTripRyan.com", new BETAC("roadtripryan.com",ROADTRIPRYAN_DownloadBeta, ROADTRIPRYAN_ExtractKML), "USA", "1-5", "Disabled"),
-	Code(1,1,"cco", NULL, "CanyonCollective.com", "CanyonCollective.com", new BETAC("canyoncollective.com/betabase",CCOLLECTIVE_DownloadBeta, CCOLLECTIVE_ExtractKML, CCOLLECTIVE_DownloadConditions), "World", "1-5", "From KML data", "From Conditions"),
-	Code(1,1,"cch", NULL, "CanyonChronicles.com",  NULL, new BETAC("canyonchronicles.com",CCHRONICLES_DownloadBeta, CCHRONICLES_ExtractKML), "World", "", "From KML data"),
-	Code(1,1,"haz", NULL, "HikeArizona.com", "HikeArizona.com",new BETAC("hikearizona.com",HIKEAZ_DownloadBeta, HIKEAZ_ExtractKML, HIKEAZ_DownloadConditions), "USA", "1-5", "From Custom Data", "From Trip Reports"),
-	Code(1,1,"orc", NULL, "OnRopeCanyoneering.com",  NULL,new BETAC("onropecanyoneering.com",ONROPE_DownloadBeta, ONROPE_ExtractKML), "USA", "", "From GPX data"),
-	Code(1,1,"blu", NULL, "BluuGnome.com",  NULL,new BETAC("bluugnome.com",BLUUGNOME_DownloadBeta, BLUUGNOME_ExtractKML), "USA", "", "From HTML data"),
-	Code(1,1,"cba", NULL, "Chris Brennen's Adventure Hikes (St Gabriels)", "Chris Brennen's Adventure Hikes (St Gabriels)", new CBRENNEN("brennen.caltech.edu/advents"), "USA", "1-3 -> 1.5-4.5", "From HTML data"),
-	Code(1,1,"cbs", NULL, "Chris Brennen's Adventure Hikes (Southwest)", "Chris Brennen's Adventure Hikes (Southwest)", new CBRENNEN("brennen.caltech.edu/swhikes"), "USA", "1-3 -> 1.5-4.5", "From HTML data"),
-	Code(1,1,"cbw", NULL, "Chris Brennen's Adventure Hikes (World)", "Chris Brennen's Adventure Hikes (World)", new CBRENNEN("brennen.caltech.edu/world"), "World", "1-3 -> 1.5-4.5", "From HTML data"),
-
-	// USA star extract
-	Code(1,1,"cus", NULL, "CanyoneeringUSA.com", "CanyoneeringUSA.com",new BETAC("canyoneeringusa.com",CUSA_DownloadBeta), "USA", "1-3 -> 1.5-4.5"),
-	Code(1,1,"zcc", NULL, "ZionCanyoneering.com", "ZionCanyoneering.com",new ZIONCANYONEERING("zioncanyoneering.com"), "USA", "1-5"),
-	Code(1,1,"asw", NULL, "AmericanSouthwest.net", "AmericanSouthwest.net",new BETAC("americansouthwest.net/slot_canyons",ASOUTHWEST_DownloadBeta),"USA", "1-5"),
-	Code(1,1,"thg", NULL, "ToddsHikingGuide.com", "ToddsHikingGuide.com",new TODDMARTIN("toddshikingguide.com/Hikes"), "USA", "1-5"),
-	Code(1,1,"dpm", NULL, "Dave Pimental's Minislot Guide", "Dave Pimental's Minislot Guide",new BETAC("math.utah.edu/~sfolias/minislot",DAVEPIMENTAL_DownloadBeta), "USA", "1-5"),
-
-	// USA no extract
-	Code(1,1,"cnw", NULL, "CanyoneeringNorthwest.com",  NULL,new BETAC("canyoneeringnorthwest.com",CNORTHWEST_DownloadBeta), "USA / Canada"),
-	Code(1,1,"cut", NULL, "Climb-Utah.com",  NULL,new BETAC("climb-utah.com",CLIMBUTAH_DownloadBeta), "USA (Utah)"),
-	Code(1,1,"spo", NULL, "SummitPost.org",  NULL,new BETAC("summitpost.org",SUMMIT_DownloadBeta), "USA / World"),
-	Code(1,1,"cnm", NULL, "CanyoneeringNM.org",  NULL,new BETAC("canyoneeringnm.org",CNEWMEXICO_DownloadBeta), "USA (New Mexico)"),
-	Code(1,1,"nms", NULL, "Doug Scott's New Mexico Slot Canyons",  NULL,new NEWMEXICOS("dougscottart.com/hobbies/SlotCanyons/"), "USA (New Mexico)"),
-	Code(1,1,"SuperAmazingMap", NULL, "Super Amazing Map", NULL,new SAM("ropewiki.com/User:Super_Amazing_Map"), "USA"),
-	Code(1,0,"cond_can", NULL, "Candition.com",  NULL,new BETAC("candition.com/canyons",CANDITION_DownloadBeta, NULL, CANDITION_DownloadBeta), "USA", "", "", "From Conditions"),
-	Code(1,0,"cond_karl", NULL, "Karl Helser's NW Adventures",  NULL, new KARL("karl-helser.com"), "Pacific Northwest"),
-	Code(1,0,"cond_sixgun", NULL, "Mark Kilian's Adventures",  NULL, new SIXGUN("6ixgun.com"), "USA"),
-
-	// UK & english
-	Code(1,1,"ukg", NULL, "UK CanyonGuides.org", "UK CanyonGuides.org",new BETAC("canyonguides.org",UKCG_DownloadBeta), "United Kingdom", "1-4 -> 2-5"),
-	Code(1,1,"kcc", NULL, "KiwiCanyons.org", "KiwiCanyons.org",new BETAC("kiwicanyons.org",KIWICANYONS_DownloadBeta), "New Zealand", "1-4 -> 2-5"),
-	Code(1,1,"ico", NULL, "Icopro.org",  NULL, new ICOPRO("icopro.org"), "World"),
-	Code(1,1,"cmag", NULL, "CanyonMag.net",  "CanyonMag.net", new CMAGAZINE("canyonmag.net/database"), "Japan / World", "1-4 -> 2-5"),
-
-	// Spanish
-	Code(1,0,"bqn", "es", "Barranquismo.net", NULL, new BETAC("barranquismo.net" /*, BARRANQUISMO_DownloadBeta*/), "World"),
-	Code(1,1,"can", "es", "Ca\xC3\xB1onismo.com",  NULL,new BETAC("xn--caonismo-e3a.com",CANONISMO_DownloadBeta), "Mexico"),
-	Code(1,1,"jal", "es", "JaliscoVertical.Weebly.com",  NULL,new BETAC("jaliscovertical.weebly.com",JALISCO_DownloadBeta), "Mexico"),
-	Code(1,1,"alp", "es", "Altopirineo.com", "Altopirineo.com",new BETAC("altopirineo.com",ALTOPIRINEO_DownloadBeta), "Spain", "1-4 -> 2-5"),
-	Code(1,1,"ltn", "es", "Latrencanous.com",  NULL,new BETAC("latrencanous.com",TRENCANOUS_DownloadBeta), "Spain"),
-	Code(1,1,"bqo", "es", "Barrancos.org", "Barrancos.org",new BETAC("barrancos.org",BARRANCOSORG_DownloadBeta), "Spain / Europe", "1-10 -> 1-5"),
-	Code(1,1,"ddb", "es", "DescensoDeBarrancos.com",  NULL,new BETAC("descensodebarrancos.com",DESCENSO_DownloadBeta), "Spain / Europe"),
-	Code(9,1,"gua", "es", "Guara.info",  NULL,new BETAC("guara.info",GUARAINFO_DownloadBeta), "Guara (Spain)"),
-	Code(1,1,"4x4", "es", "Actionman4x4.com",  NULL,new ACTIONMAN4X4("actionman4x4.com/canonesybarrancos"), "Andalucia (Spain)"),
-	Code(1,1,"bcan", "es", "BarrancosCanarios.com",  NULL,new BCANARIOS("barrancoscanarios.com"), "Canarias (Spain)"),
-	Code(1,0,"bcue", "es", "BarrancosEnCuenca.es",  NULL,new BCUENCA("barrancosencuenca.es"), "Spain"),
-	Code(1,0,"tec", "es", "TeamEspeleoCanyons Blog",  NULL, new ESPELEOCANYONS("teamespeleocanyons.blogspot.com.es"), "Spain / Europe"),
-	Code(1,0,"sime", "es", "SiMeBuscasEstoyConLasCabras Blog",  NULL, new SIMEBUSCAS("simebuscasestoyconlascabras.blogspot.com"), "Spain / Europe", "", "From MAP"),
-	Code(1,0,"rocj", "es", "RocJumper.com",  NULL, new ROCJUMPER("rocjumper.com/barranco/"), "Spain / Europe"),
-
-	// Blogs
-	Code(1,0,"cond_nko", "es", "NKO-Extreme.com",  NULL, new NKO("nko-extreme.com"), "Spain / Europe"),
-	Code(1,0,"cond_bqe", "es", "Barranquistas.es",  NULL, new BARRANQUISTAS("barranquistas.es"), "Spain / Europe"),
-
-	// Mallorca
-	Code(1,0,"dvc", "es", "Doblevuit.com",  NULL, new DOBLEVUIT("doblevuit.com"), "Mallorca (Spain)"),
-	Code(1,0,"nts", "es", "NeoToposSport",  NULL, new NEOTOPO("neotopossport.blogspot.com"), "Mallorca (Spain)"),
-	Code(1,0,"mve", "es", "MallorcaVerde.es",  NULL, new MALLORCAV("mallorcaverde.es"), "Mallorca (Spain)"),
-	Code(1,0,"enc", "es", "EscoNatura.com",  NULL, new ESCONAT("esconatura.com"), "Mallorca (Spain)"),
-	Code(1,0,"cond_365", "es", "365DiasDeUnaGuia",  NULL,new BETAC("http://365diasdeunaguia.wordpress.com",BOOK_DownloadBeta, NULL, COND365_DownloadBeta), "Spain", "", "", "From group updates"),
-	Code(1,0,"cond_inf", "es", "Caudal.info",  NULL,new BETAC("http://www.caudal.info",INFO_DownloadBeta, NULL, INFO_DownloadBeta), "World", "", "", "From Conditions"),
-
-	// German
-	Code(1,1,"ccn", "de", "Canyon.Carto.net", "Canyon.Carto.net",new BETAC("canyon.carto.net",CANYONCARTO_DownloadBeta, CANYONCARTO_ExtractKML), "World", "1-7 -> 1-5", "From KML data"),
-
-	// French
-	Code(1,1,"dcc", "fr", "Descente-Canyon.com", "Descente-Canyon.com",new BETAC("descente-canyon.com",DESCENTECANYON_DownloadBeta, DESCENTECANYON_ExtractKML, DESCENTECANYON_DownloadConditions), "World", "0-4 -> 1-5", "From Custom Data", "From Conditions"),
-	Code(1,1,"alt", "fr", "Altisud.com", "Altisud.com",new BETAC("altisud.com",ALTISUD_DownloadBeta), "Europe", "1-5"),
-	Code(1,1,"climb7", "fr", "Climbing7",  "Climbing7", new CLIMBING7("climbing7.wordpress.com"), "Europe", "1-3 -> 1.5-4.5"),
-	Code(1,1,"yad", "fr", "Yadugaz07", "Yadugaz07", new YADUGAZ("yadugaz07.com"), "France", "1-10 -> 1->5"),
-	Code(1,1,"reu", "fr", "Ligue Reunionnaise de Canyon", "Ligue Reunionnaise de Canyon", new REUNION("lrc-ffs"), "Reunion", "0-4 -> 1-5"),
-	Code(1,1,"flr", "fr", "Francois Leroux's Canyoning Reunion",  NULL, new FLREUNION("francois.leroux.free.fr/canyoning"), "Reunion"),
-	Code(1,1,"agc", "fr", "Alpes-Guide.com",  NULL, new ALPESGUIDE("alpes-guide.com/sources/topo/"), "France"),
-	Code(1,1,"tahiti", "fr", "Canyon de Tahiti", NULL,new TAHITI("canyon-a-tahiti.shost.ca"), "French Polynesia", "", "From PDF Index"),
-	Code(1,1,"mad", "fr", "An Kanion La-madinina", NULL,new MADININA("ankanionla-madinina.com"), "French Caribbean", "", "From PDF Index"),
-	Code(1,1,"mur", "fr", "Mur d'Eau Caraibe", "Mur d'Eau Caraibe",new MURDEAU("murdeau-caraibe.com"), "French Caribbean", "0-4 -> 1-5", "From KML data"),
-
-	// Swiss
-	Code(1,1,"sch", "it", "SwissCanyon.ch", "SwissCanyon.ch",new BETAC("swisscanyon.ch",SWISSCANYON_DownloadBeta), "Switzerland", "1-4 -> 2-5"),
-	Code(1,1,"wch", "fr", "SwestCanyon.ch", "SwestCanyon.ch",new BETAC("swestcanyon.ch",SWESTCANYON_DownloadBeta), "Switzerland", "1-4 -> 2-5"),
-	Code(1,1,"sht", "de", "Schlucht.ch",  NULL,new BETAC("schlucht.ch",SCHLUCHT_DownloadBeta, NULL, SCHLUCHT_DownloadConditions), "Switzerland", "", "", "From Conditions"),
-
-	// Italian
-	Code(1,1,"crc", "it", "CicaRudeClan.com", "CicaRudeClan.com",new BETAC("cicarudeclan.com",CICARUDECLAN_DownloadBeta), "World", "1-3 -> 1.5-4.5"),
-	Code(1,1,"est", "it", "Canyoneast.it", "Canyoneast.it",new BETAC("canyoneast.it",CANYONEAST_DownloadBeta), "Italy", "1-3 -> 3-5"),
-	Code(1,1,"tnt", "it", "TNTcanyoning.it",  NULL,new BETAC("tntcanyoning.it",TNTCANYONING_DownloadBeta), "Europe"),
-	Code(1,1,"vwc", "it", "VerticalWaterCanyoning.com", "VerticalWaterCanyoning.com",new BETAC("verticalwatercanyoning.com",VWCANYONING_DownloadBeta), "Europe", "0-4 / 1-7-> 1-5"),
-	Code(1,1,"aic", "it", "Catastoforre AIC-Canyoning.it",  NULL,new AICCATASTO("catastoforre.aic-canyoning.it"), "Italy", "", "", "From Conditions"),
-	Code(1,1,"osp", "it", "OpenSpeleo.org",  NULL, new OPENSPELEO("openspeleo.org/openspeleo/"), "Italy / Europe"),
-	Code(1,1,"gul", "it", "Gulliver.it",  NULL, new GULLIVER("gulliver.it"), "Italy / Europe"),
-	Code(1,1,"cens", "it", "Cens.it",  NULL, new CENS("cens.it"), "Italy"),
-	//Code(1,"aicf", "it", "Forum AIC-Canyoning.it",  NULL, new AICFORUM ( "aic-canyoning.it/forum"), "Italy / Europe"),
-	Code(1,1,"mac", "it", "Michele Angileri's Canyons",  NULL, new MICHELEA("micheleangileri.com"), "Italy"),
-
-	// Others
-	Code(1,1,"ecdc", "pt", "ECDCPortugal.com",  NULL, new ECDC("media.wix.com"), "Portugal"),
-	Code(1,1,"cmad", "pt", "CaMadeira.com",  NULL, new CMADEIRA("canyoning.camadeira.com"), "Madeira"),
-	Code(1,1,"wro", "pl", "Canyoning.Wroclaw.pl", "Canyoning.Wroclaw.pl",new BETAC("canyoning.wroclaw.pl",WROCLAW_DownloadBeta), "Europe", "1-5"),
-
-	// caves
-	Code(1,1,"sph", NULL, "Speleosphere.org",  NULL,new BETAC("speleosphere.org",SPHERE_DownloadBeta), "Guatemala"),
-	Code(1,1,"lao", NULL, "LaosCaveProject.de",  NULL,new BETAC("laoscaveproject.de",LAOS_DownloadBeta), "Laos"),
-	//Code(1,"wpc", NULL, "Wikipedia Cave List",  NULL,new BETAC( "en.wikipedia.org/wiki", WIKIPEDIA_DownloadBeta, "World" ),
-	//Code(8,"kpo", NULL, "KarstPortal.org",  NULL, KARSTPORTAL_DownloadBeta( "karstportal.org"), "World"),
-
-	// Wikiloc
-	Code(5,0,"wik", "auto", "Wikiloc.com", "Wikiloc.com",new BETAC("wikiloc.com",WIKILOC_DownloadBeta, WIKILOC_ExtractKML), "World", "1-5", "From Custom data"),
-
-	// manual invokation
-	Code(-1,0,"ccs", NULL, NULL, NULL,new CANYONINGCULT(NULL), "Europe"),
-	Code(-1,0,"bqnkml", NULL, NULL, NULL,new BETAC(NULL,BARRANQUISMOKML_DownloadBeta), "World"),
-	Code(-1,0,"bqndb", NULL, NULL, NULL, new BETAC("BQN:", BARRANQUISMODB_DownloadBeta), "World"),
-	Code(-1,0,"bqndbtest", NULL, NULL, NULL, new BETAC("BQN:", BARRANQUISMODB_DownloadBeta), "World"),
-
-	Code(-1,0, NULL,NULL,NULL,NULL,new BETAC(NULL), NULL)
-};
-
-
-int GetCode(const char *url) {
-
-	// patch!
-	if (strstr(url, "canyoneeringusa.com/rave"))
-		return 0;
-
-	for (int i = 1; codelist[i].code; ++i)
-	{
-		const char *ubase = codelist[i].betac->ubase;
-		if (ubase && strstr(url, ubase))
-		{
-			// special case BQN:
-			if (ubase[strlen(ubase) - 1] == ':')
-				return i;
-
-			// bad urls
-			vara urla(url, "/");
-			if (urla.length() < 3)
-				return 0;
-			return i;
-		}
-	}
-
-	return 0;
-}
-
-
-const char *GetCodeStr(const char *url) {
-	int c = GetCode(url);
-	return c > 0 ? codelist[c].code : NULL;
-}
-
-
-void LoadRWList()
-{
-	rwlist.Empty();
-	rwlist.Load(filename(codelist[0].code));
-	rwlist.Sort();
-
-}
-
-
 const char *GetPageName(const char *url)
 {
 	const char *sep = strrchr(url, '/');
@@ -4181,7 +4180,7 @@ int UpdateChanges(CSymList &olist, CSymList &nlist, Code &cod)
 		CString &title = _bslist[i].GetStr(ITEM_DESC);
 		CString &link = _bslist[i].id;
 		int c = GetCode(link);
-		if (c > 0 && &codelist[c] == &cod)
+		if (c > 0 && codelist[c] == &cod)
 			if (nlist.Find(link) < 0)
 				BSLinkInvalid(title, link);
 	}
@@ -4375,18 +4374,18 @@ CString findsym(CSymList &list, const char *str)
 
 int CheckBeta(int mode, const char *codeid)
 {
-	rwlist.Load(filename(codelist[0].code));
+	rwlist.Load(filename(codelist[0]->code));
 	rwlist.Sort();
 
 	int run = 0;
-	for (int i = 1; codelist[i].code != NULL; ++i) {
+	for (int i = 1; codelist[i]->code != NULL; ++i) {
 		if (codeid && *codeid)
 		{
-			if (stricmp(codeid, codelist[i].code) != 0)
+			if (stricmp(codeid, codelist[i]->code) != 0)
 				continue;
 		}
 		CSymList symlist;
-		symlist.Load(filename(codelist[i].code));
+		symlist.Load(filename(codelist[i]->code));
 		symlist.Sort();
 
 		/*
@@ -4404,7 +4403,7 @@ int CheckBeta(int mode, const char *codeid)
 		*/
 
 		// match again
-		MatchList(symlist, codelist[i]);
+		MatchList(symlist, *codelist[i]);
 
 		// find duplicates
 		CSymList dup;
@@ -4472,23 +4471,23 @@ int DownloadBeta(int mode, const char *codeid)
 
 	int run = 0, cnt = 0;
 	for (int order = codeid ? -1 : 0; order < 10; ++order)
-		for (int i = 0; codelist[i].code != NULL; ++i) {
-			if (order != codelist[i].order)
+		for (int i = 0; codelist[i]->code != NULL; ++i) {
+			if (order != codelist[i]->order)
 				continue;
-			if (codeid && stricmp(codeid, codelist[i].code) != 0)
+			if (codeid && stricmp(codeid, codelist[i]->code) != 0)
 				continue;
-			if (!codeid && !codelist[i].betac->ubase)
+			if (!codeid && !codelist[i]->betac->ubase)
 				continue;
 			if (mode == 1 && i == 0)
 				continue;
 
 			++run;
-			Log(LOGINFO, "Running Beta %s MODE %d", codelist[i].code, mode);
+			Log(LOGINFO, "Running Beta %s MODE %d", codelist[i]->code, mode);
 
 			// load code list
 			CSymList symlist;
 			symlist.header = symheaders;
-			symlist.Load(filename(codelist[i].code));
+			symlist.Load(filename(codelist[i]->code));
 			//symlist.Sort(strcmp(codelist[i].code,WIK)==0 ? cmpclass : cmpdata);
 			//symlist.Sort();
 
@@ -4499,7 +4498,7 @@ int DownloadBeta(int mode, const char *codeid)
 			if (MODE < 1)
 			{
 				oldlist = symlist;
-				ret = codelist[i].betac->DownloadBeta(symlist);
+				ret = codelist[i]->betac->DownloadBeta(symlist);
 				if (i > 0)
 				{
 					for (int s = 0; s < symlist.GetSize(); ++s)
@@ -4508,10 +4507,10 @@ int DownloadBeta(int mode, const char *codeid)
 				}
 			}
 
-			int chg = UpdateChanges(oldlist, symlist, codelist[i]);
-			Log(LOGINFO, "CHG.CSV : [%dD/%dT] %s => %d changes/additions from #%d %s [%s]", counter, symlist.GetSize(), ret ? "OK" : "ERROR!!!", chg, ++cnt, codelist[i].code, codelist[i].betac->ubase);
+			int chg = UpdateChanges(oldlist, symlist, *codelist[i]);
+			Log(LOGINFO, "CHG.CSV : [%dD/%dT] %s => %d changes/additions from #%d %s [%s]", counter, symlist.GetSize(), ret ? "OK" : "ERROR!!!", chg, ++cnt, codelist[i]->code, codelist[i]->betac->ubase);
 			if (i > 0 && mode < 0 && counter < symlist.GetSize() / 2)
-				Log(LOGERR, "ERROR: Download malfunction for code %s [%s] (D<T/2)", codelist[i].code, codelist[i].betac->obase);
+				Log(LOGERR, "ERROR: Download malfunction for code %s [%s] (D<T/2)", codelist[i]->code, codelist[i]->betac->obase);
 
 			// check duplicates
 			symlist.Sort();
@@ -4523,16 +4522,16 @@ int DownloadBeta(int mode, const char *codeid)
 				}
 
 			// save
-			symlist.Sort(codelist[i].IsWIKILOC() ? cmpclass : cmpdata);
-			symlist.Save(filename(codelist[i].code));
+			symlist.Sort(codelist[i]->IsWIKILOC() ? cmpclass : cmpdata);
+			symlist.Save(filename(codelist[i]->code));
 			//if (!codelist[i].base) // rw
 			//	MoveFileEx(filename(CHGFILE), filename(CString(CHGFILE)+codelist[i].code), MOVEFILE_REPLACE_EXISTING | MOVEFILE_WRITE_THROUGH );
 		}
 
 	if (!run) {
 		vara all;
-		for (int i = 0; codelist[i].code != NULL; ++i)
-			all.push(codelist[i].code);
+		for (int i = 0; codelist[i]->code != NULL; ++i)
+			all.push(codelist[i]->code);
 		Log(LOGERR, "Wrong code %s [%s]", codeid, all.join(" "));
 		return FALSE;
 	}
@@ -4728,7 +4727,7 @@ int ReplaceLinks(vara &lines, int code, CSym &sym)
 {
 	vars newline;
 	CSymList wiklines;
-	Code &cod = codelist[code];
+	Code &cod = *codelist[code];
 
 	if (code > 0)
 	{
@@ -4771,7 +4770,7 @@ int ReplaceLinks(vara &lines, int code, CSym &sym)
 					if (httpcode <= 0)
 						continue;
 
-					Code &cod = codelist[httpcode];
+					Code &cod = *codelist[httpcode];
 					if (cod.IsWIKILOC())
 					{
 						// check if bulleted list
@@ -5256,7 +5255,7 @@ int BQNupdate(int code, const char *id, double rwidnum)
 		return FALSE;
 
 	CSymList list;
-	vars file = filename(codelist[code].code);
+	vars file = filename(codelist[code]->code);
 	list.Load(file);
 	int find = list.Find(id);
 	if (find < 0)
@@ -5282,7 +5281,7 @@ int UploadBeta(int mode, const char *file)
 		chgfile = file;
 	list.Load(chgfile);
 	CSymList clist[sizeof(codelist) / sizeof(*codelist)];
-	rwlist.Load(filename(codelist[0].code));
+	rwlist.Load(filename(codelist[0]->code));
 	rwlist.Sort();
 
 	// log in as RW_ROBOT_USERNAME [RW_ROBOT_PASSWORD]
@@ -5346,7 +5345,7 @@ int UploadBeta(int mode, const char *file)
 			continue;
 
 		// check codebase
-		const char *user = code >= 0 ? codelist[code].betac->ubase : NULL;
+		const char *user = code >= 0 ? codelist[code]->betac->ubase : NULL;
 		if (code < 0 || !user) {
 			Log(LOGERR, "Invalid code/name for %s", sym.Line());
 			continue;
@@ -5652,7 +5651,7 @@ int UpdateBetaBQN(int mode, const char *ynfile)
 	list.Sort();
 
 	//CSymList clist[sizeof(codelist)/sizeof(*codelist)];
-	rwlist.Load(filename(codelist[0].code));
+	rwlist.Load(filename(codelist[0]->code));
 	rwlist.Sort();
 
 	// log in 
@@ -6219,7 +6218,7 @@ int UpdateBetaCCS(int mode, const char *ynfile)
 	list.Sort();
 
 	//CSymList clist[sizeof(codelist)/sizeof(*codelist)];
-	rwlist.Load(filename(codelist[0].code));
+	rwlist.Load(filename(codelist[0]->code));
 	rwlist.Sort();
 
 	// log in 
@@ -6384,7 +6383,7 @@ int UpdateBetaCCS(int mode, const char *ynfile)
 			CSym chgsym;
 			int code = GetCode(sym.id);
 			CCS_DownloadPage(data, sym);
-			if (CompareSym(sym, rwsym, chgsym, codelist[code]))
+			if (CompareSym(sym, rwsym, chgsym, *codelist[code]))
 			{
 				chgsym.SetStr(ITEM_DESC, "");
 				chgsym.SetStr(ITEM_REGION, "");
@@ -6536,8 +6535,8 @@ int rwfstars(const char *line, CSymList &list)
 
 int UploadStars(int code)
 {
-	const char *codestr = codelist[code].code;
-	const char *user = codelist[code].staruser;
+	const char *codestr = codelist[code]->code;
+	const char *user = codelist[code]->staruser;
 	if (!user) {
 		Log(LOGERR, "Invalid user for code '%s'", codestr);
 		return FALSE;
@@ -6688,11 +6687,11 @@ int UploadStars(int code)
 
 int UploadStars(int mode, const char *codestr)
 {
-	for (int code = 0; codelist[code].code != NULL; ++code)
+	for (int code = 0; codelist[code]->code != NULL; ++code)
 	{
-		if (codestr && strcmp(codelist[code].code, codestr) != 0)
+		if (codestr && strcmp(codelist[code]->code, codestr) != 0)
 			continue;
-		if (!codelist[code].staruser)
+		if (!codelist[code]->staruser)
 			continue;
 		UploadStars(code);
 	}
@@ -6835,16 +6834,16 @@ int UploadConditions(int mode, const char *codestr)
 	if (!LoadBetaList(titlebetalist, TRUE, TRUE))
 		return FALSE;
 
-	for (int code = 0; codelist[code].code != NULL; ++code)
+	for (int code = 0; codelist[code]->code != NULL; ++code)
 	{
-		if (!codelist[code].betac->cfunc)
+		if (!codelist[code]->betac->cfunc)
 			continue;
-		if (codestr && strcmp(codelist[code].code, codestr) != 0)
+		if (codestr && strcmp(codelist[code]->code, codestr) != 0)
 			continue;
-		if (!codestr && !codelist[code].name)
+		if (!codestr && !codelist[code]->name)
 			continue;
 
-		Code &c = codelist[code];
+		Code &c = *codelist[code];
 
 		CSymList clist;
 		if (MODE < -2 || MODE>0)
@@ -7799,7 +7798,7 @@ int FixBetaPage(CPage &p, int MODE)
 				{
 					int code = GetCode(httplink);
 					if (code <= 0) continue;
-					Code &cod = codelist[code];
+					Code &cod = *codelist[code];
 
 					// check if bulleted list
 					vars pre, post;
@@ -8140,9 +8139,9 @@ int KMLAutoExtract(const char *_id, inetdata *out, int fx)
 		inetmemory mem;
 		int code = GetCode(bslist[i]);
 		if (code > 0)
-			if (RunExtract(codelist[code].betac->kfunc, codelist[code].betac->ubase, bslist[i], &mem, fx))
+			if (RunExtract(codelist[code]->betac->kfunc, codelist[code]->betac->ubase, bslist[i], &mem, fx))
 			{
-				out->write(KMLFolderMerge(MkString("%s:%s", codelist[code].code, id), mem.memory, MkString("%s:", codelist[code].code)));
+				out->write(KMLFolderMerge(MkString("%s:%s", codelist[code]->code, id), mem.memory, MkString("%s:", codelist[code]->code)));
 				++num;
 			}
 	}
@@ -8185,9 +8184,9 @@ int KMLExtract(const char *urlstr, inetdata *out, int fx)
 		return TRUE;
 	}
 
-	for (int i = 1; codelist[i].betac->ubase != NULL; ++i)
-		if (strstr(url, codelist[i].betac->ubase))
-			if (RunExtract(codelist[i].betac->kfunc, codelist[i].betac->ubase, url, out, fx))
+	for (int i = 1; codelist[i]->betac->ubase != NULL; ++i)
+		if (strstr(url, codelist[i]->betac->ubase))
+			if (RunExtract(codelist[i]->betac->kfunc, codelist[i]->betac->ubase, url, out, fx))
 				return TRUE;
 
 	Log(LOGWARN, "Could not extract KML for %s", url);
@@ -8244,9 +8243,9 @@ int ListBeta(void)
 		return FALSE;
 
 	int count = 0;
-	for (int i = 1; codelist[i].code != NULL; ++i)
+	for (int i = 1; codelist[i]->code != NULL; ++i)
 	{
-		if (!codelist[i].name || codelist[i].IsBook())
+		if (!codelist[i]->name || codelist[i]->IsBook())
 			continue;
 		++count;
 	}
@@ -8263,12 +8262,12 @@ int ListBeta(void)
 		qsort(codelist, num, sizeof(codelist[0]), (qfunc*)codesort);
 	*/
 	DownloadFile f;
-	for (int i = 1; codelist[i].code != NULL; ++i)
+	for (int i = 1; codelist[i]->code != NULL; ++i)
 	{
-		if (!codelist[i].name || codelist[i].IsBook())
+		if (!codelist[i]->name || codelist[i]->IsBook())
 			continue;
 
-		Code *c = &codelist[i];
+		Code *c = codelist[i];
 		vars rwlang = c->translink ? c->translink : "en";
 		vars flag = MkString("[[File:rwl_%s.png|alt=|link=]]", rwlang);
 		file.fputstr(MkString("| %s[%s  %s] || %s || %s || %s || %s", flag, c->betac->umain, c->name, c->xregion, c->xstar, c->xmap, c->xcond));
