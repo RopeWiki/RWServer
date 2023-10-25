@@ -1,7 +1,7 @@
 #pragma once
 
 #include "stdafx.h"
-#include "trademaster.h"
+#include "TradeMaster.h"
 #include "rw.h"
 #include "GeoRegion.h"
 
@@ -11,7 +11,6 @@
 #define EXIT RGB(0xFF, 0xFF, 0x00)
 #define APPROACH RGB(0x00, 0xFF, 0x00)
 #define ROAD RGB(0x00, 0x00, 0x00)
-
 #define OTHER RGB(0xFF, 0x00, 0xFF)
 
 #define ITEM_MATCH ITEM_LAT2
@@ -40,129 +39,125 @@
 
 #define BQNFOLDER "BQN"
 
-extern int MODE;
-
-#if 0
-int DownloadRetry(DownloadFile &f, const char *url, int retrywait = 5)
-{
-
-	for (int r = 0; r < 2; ++r) {
-		if (!f.Download(url))
-			return FALSE;
-		Sleep(retrywait * 1000);
-	}
-	return TRUE;
-}
-#else
 #define DownloadRetry(f, url) f.Download(url)
-#endif
 
+#define CHGFILE "CHG"
+#define MATCHFILE "MATCH"
+#define DIST15KM (25*1000)
+#define DIST150KM (150*1000)
+#define MAXGEOCODEDIST 50000 // 50km
+#define MAXGEOCODENEAR 5 // nearby
+#define REPLACEBETALINK FALSE
 
-static const char *rtech[] = { "1", "2", "3", "4", NULL };
-static const char *rwater[] = { "A", "B", "C", NULL };
-static const char *rxtra[] = { "R-", "R+", "R", "PG-", "PG+", "PG", "XX", "X", NULL };
-static const char *rclassc[] = { "B+", "B-", "C+", "C-", "B/C", "C0", "C1+", "C1-", "C1", "C2", "C3", "C4", NULL };
-static const char *rverticalu[] = { "V1", "V2", "V3", "V4", "V5", "V6", "V7", NULL };
-static const char *raquaticu[] = { "A1", "A2-", "A2+", "A2", "A3", "A4-", "A4+", "A4", "A5", "A6", "A7", NULL };
-static const char *rtime[] = { "IV", "VI", "III", "II", "I", "V", NULL };
+#define DISAMBIGUATION " (disambiguation)"
 
+#define KMLEXTRACT 1
+
+typedef CString kmlwatermark(const char *scredit, const char *memory, int size);
 
 typedef struct { const char *unit; double cnv; } unit;
 extern unit utime[];
 extern unit udist[];
 extern unit ulen[];
 
-typedef CString kmlwatermark(const char *scredit, const char *memory, int size);
-
-enum { ITEM_INFO = ITEM_SUMMARY, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, ITEM_BETAMAX, ITEM_BESTMATCH, ITEM_MATCHLIST }; //, ITEM_BOAT, , ITEM_AELEV, ITEM_EELEV,  };
-enum { COND_DATE, COND_STARS, COND_WATER, COND_TEMP, COND_DIFF, COND_LINK, COND_USER, COND_USERLINK, COND_TEXT, COND_NOTSURE, COND_TIME, COND_PEOPLE, COND_MAX };
-static vara cond_water("0 - Dry (class A = a1),1 - Very Low (class B = a2),2 - Deep pools (class B+ = a2+),1 - Very Low (class B = a2),3 - Low (class B/C = a3),4 - Moderate Low (class C1- = a4-),5 - Moderate (class C1 = a4),6 - Moderate High (class C1+ = a4+),7 - High (class C2 = a5),8 - Very High (class C3 = a6),9 - Extreme (class C4 = a7)");
-
-enum { T_NAME = 0, T_REGION, T_SEASON, T_TROCK, T_MAX };
-
-enum { M_MATCH = ITEM_ACA, M_SCORE, M_LEN, M_NUM, M_RETRY };
-enum { R_T = 0, R_W, R_I, R_X, R_V, R_A, R_C, R_SUMMARY, R_STARS, R_TEMP, R_TIME, R_PEOPLE, R_LINE, R_EXTENDED };
-
-static vara cond_temp("0 - None,1 - Rain jacket (1mm-2mm),2 - Thin wetsuit (3mm-4mm),3 - Full wetsuit (5mm-6mm),4 - Thick wetsuit (7mm-10mm),5 - Drysuit");
-//static vara cond_temp("0mm - None,1mm - Rain jacket,3mm - Thin wetsuit,5mm - Full wetsuit,7mm - Thick wetsuit,Xmm - Drysuit");
-
-static vara cond_diff("0 - Nontechnical,1 - Easy,2 - Normal,3 - Special challenges,4 - Advanced,5 - Extreme");
-
-static vara cond_stars("0 - Unknown,1 - Poor,2 - Ok,3 - Good,4 - Great,5 - Amazing");
-
-static const char *headers = "ITEM_URL, ITEM_DESC, ITEM_LAT, ITEM_LNG, ITEM_MATCH, ITEM_MODE, ITEM_INFO, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, https://maps.googleapis.com/maps/api/geocode/xml?address=,\"=+HYPERLINK(+CONCATENATE(\"\"http://ropewiki.com/index.php/Location?jform&locsearchchk=on&locname=\"\",C1,\"\",\"\",D1,\"\"&locdist=5mi&skinuser=&sortby=-Has_rank_rating&kmlx=\"\",A1),\"\"@check\"\")\"";
-
-static const char *rwprop = "Has pageid|Has coordinates|Has geolocation|Has BetaSites list|Has TripReports list|Has info|Has info major region|Has info summary|Has info rappels|Has longest rappel|Has length of hike|Has fastest typical time|Has slowest typical time|Has best season|Has shuttle length|Has vehicle type|Has location class|Has user counter|Has AKA|Requires permits|Has KML file|Has condition date|Has approach elevation gain|Has exit elevation gain|Has length|Has depth|Has fastest approach time|Has slowest approach time|Has fastest descent time|Has slowest descent time|Has fastest exit time|Has slowest exit time|Has rock type|Has SketchList"; //|Has user counter";
-static const char *rwform = "=|=|=|=|=|=|Region|=ACA|Number of rappels|Longest rappel|Hike length|Fastest typical time|Slowest typical time|Best season|NeedsShuttle;Shuttle|Vehicle|Location type|=Stars|AKA|Permits|=KML|=COND|Approach elevation gain|Exit elevation gain|Length|Depth|Fastest approach time|Slowest approach time|Fastest descent time|Slowest descent time|Fastest exit time|Slowest exit time|Rock type|=SKETCH"; //|Has user counter";
+extern int MODE;
+extern int INVESTIGATE;
 
 class CPage;
 
 static CSymList rwlist, titlebetalist;
 
-CString noHTML(const char *str);
-vars UTF8(const char *val, int cp = CP_ACP);
-vars Translate(const char *str, CSymList &list, const char *onlytrans = NULL);
-vars TableMatch(const char *str, vara &inlist, vara &outlist);
+
+static const char *andstr[] = { " and ", " y ", " et ", " e ", " und ", "&", "+", "/", ":", " -", "- ", NULL };
+static const char *headers = "ITEM_URL, ITEM_DESC, ITEM_LAT, ITEM_LNG, ITEM_MATCH, ITEM_MODE, ITEM_INFO, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, https://maps.googleapis.com/maps/api/geocode/xml?address=,\"=+HYPERLINK(+CONCATENATE(\"\"http://ropewiki.com/index.php/Location?jform&locsearchchk=on&locname=\"\",C1,\"\",\"\",D1,\"\"&locdist=5mi&skinuser=&sortby=-Has_rank_rating&kmlx=\"\",A1),\"\"@check\"\")\"";
+static const char *raquaticu[] = { "A1", "A2-", "A2+", "A2", "A3", "A4-", "A4+", "A4", "A5", "A6", "A7", NULL };
+static const char *rclassc[] = { "B+", "B-", "C+", "C-", "B/C", "C0", "C1+", "C1-", "C1", "C2", "C3", "C4", NULL };
+static const char *rtech[] = { "1", "2", "3", "4", NULL };
+static const char *rtime[] = { "IV", "VI", "III", "II", "I", "V", NULL };
+static const char *rverticalu[] = { "V1", "V2", "V3", "V4", "V5", "V6", "V7", NULL };
+static const char *rwform = "=|=|=|=|=|=|Region|=ACA|Number of rappels|Longest rappel|Hike length|Fastest typical time|Slowest typical time|Best season|NeedsShuttle;Shuttle|Vehicle|Location type|=Stars|AKA|Permits|=KML|=COND|Approach elevation gain|Exit elevation gain|Length|Depth|Fastest approach time|Slowest approach time|Fastest descent time|Slowest descent time|Fastest exit time|Slowest exit time|Rock type|=SKETCH"; //|Has user counter";
+static const char *rwformaca = "Technical rating;Water rating;Time rating;Extra risk rating;Vertical rating;Aquatic rating;Commitment rating";
+static const char *rwprop = "Has pageid|Has coordinates|Has geolocation|Has BetaSites list|Has TripReports list|Has info|Has info major region|Has info summary|Has info rappels|Has longest rappel|Has length of hike|Has fastest typical time|Has slowest typical time|Has best season|Has shuttle length|Has vehicle type|Has location class|Has user counter|Has AKA|Requires permits|Has KML file|Has condition date|Has approach elevation gain|Has exit elevation gain|Has length|Has depth|Has fastest approach time|Has slowest approach time|Has fastest descent time|Has slowest descent time|Has fastest exit time|Has slowest exit time|Has rock type|Has SketchList"; //|Has user counter";
+static const char *rwater[] = { "A", "B", "C", NULL };
+static const char *rxtra[] = { "R-", "R+", "R", "PG-", "PG+", "PG", "XX", "X", NULL };
+
+static vara cond_diff("0 - Nontechnical,1 - Easy,2 - Normal,3 - Special challenges,4 - Advanced,5 - Extreme");
+static vara cond_stars("0 - Unknown,1 - Poor,2 - Ok,3 - Good,4 - Great,5 - Amazing");
+static vara cond_temp("0 - None,1 - Rain jacket (1mm-2mm),2 - Thin wetsuit (3mm-4mm),3 - Full wetsuit (5mm-6mm),4 - Thick wetsuit (7mm-10mm),5 - Drysuit");
+static vara cond_water("0 - Dry (class A = a1),1 - Very Low (class B = a2),2 - Deep pools (class B+ = a2+),1 - Very Low (class B = a2),3 - Low (class B/C = a3),4 - Moderate Low (class C1- = a4-),5 - Moderate (class C1 = a4),6 - Moderate High (class C1+ = a4+),7 - High (class C2 = a5),8 - Very High (class C3 = a6),9 - Extreme (class C4 = a7)");
+static vara months("Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec");
+
+enum { ITEM_INFO = ITEM_SUMMARY, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, ITEM_BETAMAX, ITEM_BESTMATCH, ITEM_MATCHLIST }; //, ITEM_BOAT, , ITEM_AELEV, ITEM_EELEV,  };
+enum { COND_DATE, COND_STARS, COND_WATER, COND_TEMP, COND_DIFF, COND_LINK, COND_USER, COND_USERLINK, COND_TEXT, COND_NOTSURE, COND_TIME, COND_PEOPLE, COND_MAX };
+enum { T_NAME = 0, T_REGION, T_SEASON, T_TROCK, T_MAX };
+enum { M_MATCH = ITEM_ACA, M_SCORE, M_LEN, M_NUM, M_RETRY };
+enum { R_T = 0, R_W, R_I, R_X, R_V, R_A, R_C, R_SUMMARY, R_STARS, R_TEMP, R_TIME, R_PEOPLE, R_LINE, R_EXTENDED };
+enum { W_DRY = 0, W_WADING = 1, W_SWIMMING = 2, W_VERYLOW = 3, W_LOW = 4, W_MODLOW = 5, W_MODERATE = 6, W_MODHIGH = 7, W_HIGH = 8, W_VERYHIGH = 9, W_EXTREME = 10 };
+
+
+vars ACP8(const char *val, int cp = CP_UTF8);
+double Avg(CDoubleArrayList &time);
+const char *skipnoalpha(const char *str);
+CString CoordsMemory(const char *memory);
+int Download_Save(const char *url, const char *folder, CString &memory);
+int ExtractCoords(const char *memory, float &lat, float &lng, CString &desc);
+vars ExtractHREF(const char *str);
+CString ExtractStringDel(CString &memory, const char *pre, const char *start, const char *end, int ext = FALSE, int del = TRUE);
+int FindSection(vara &lines, const char *section, int *iappend);
+int GetClass(const char *type, const char *types[], int typen[]);
+void GetCoords(const char *memory, float &lat, float &lng);
+vars getfulltext(const char *line, const char *label = "fulltext=");
+void GetHourMin(const char *str, double &vmin, double &vmax, const char *url);
+int GetKMLCoords(const char *str, double &lat, double &lng);
+vars GetKMLIDX(DownloadFile &f, const char *url, const char *search = NULL, const char *start = NULL, const char *end = NULL);
+vars getlabel(const char *label);
+CString GetMetric(const char *str);
+int GetRappels(CSym &sym, const char *str);
 int GetSummary(CSym &sym, const char *str);
 int GetSummary(vara &rating, const char *str);
-vars invertregion(const char *str, const char *add = "");
+int GetTimeDistance(CSym &sym, const char *str);
 void GetTotalTime(CSym &sym, vara &times, const char *url, double maxtmin = 24);
-vars urlstr(const char *url, int stripkmlidx = TRUE);
-int Update(CSymList &list, CSym &newsym, CSym *chgsym = NULL, BOOL trackchanges = TRUE);
-int UpdateCond(CSymList &list, CSym &newsym, CSym *chgsym = NULL, BOOL trackchanges = TRUE);
-int SaveKML(const char *title, const char *credit, const char *url, vara &styles, vara &points, vara &lines, inetdata *out);
-CString stripHTML(const char *data);
-int UpdateCheck(CSymList &symlist, CSym &sym);
 int GetValues(const char *str, unit *units, CDoubleArrayList &time);
 int GetValues(const char *data, const char *str, const char *sep1, const char *sep2, unit *units, CDoubleArrayList &time);
-CString Pair(CDoubleArrayList &raps);
+vara getwords(const char *text);
 int GPX_ExtractKML(const char *credit, const char *url, const char *memory, inetdata *out);
-vars GetKMLIDX(DownloadFile &f, const char *url, const char *search = NULL, const char *start = NULL, const char *end = NULL);
-int GetTimeDistance(CSym &sym, const char *str);
-int GetRappels(CSym &sym, const char *str);
-int GetClass(const char *type, const char *types[], int typen[]);
-void SetClass(CSym &sym, int t, const char *type);
-CString starstr(double stars, double ratings);
+vars invertregion(const char *str, const char *add = "");
+BOOL isa(unsigned char c);
+BOOL isanum(unsigned char c);
+int IsImage(const char *url);
+BOOL IsSeasonValid(const char *season, CString *validated = NULL);
 CString KML_Watermark(const char *scredit, const char *memory, int size);
-int KMZ_ExtractKML(const char *credit, const char *url, inetdata *out, kmlwatermark *watermark = KML_Watermark);
-vars makeurl(const char *ubase, const char *folder);
-CString CoordsMemory(const char *memory);
-int ExtractCoords(const char *memory, float &lat, float &lng, CString &desc);
-int GetKMLCoords(const char *str, double &lat, double &lng);
-void SetVehicle(CSym &sym, const char *text);
 vars KMLIDXLink(const char *purl, const char *pkmlidx);
+int KMZ_ExtractKML(const char *credit, const char *url, inetdata *out, kmlwatermark *watermark = KML_Watermark);
+int LoadBetaList(CSymList &bslist, int title = FALSE, int rwlinks = FALSE);
+void LoadRWList();
+int Login(DownloadFile &f);
+vars makeurl(const char *ubase, const char *folder);
+CString noHTML(const char *str);
+CString Pair(CDoubleArrayList &raps);
+void PurgePage(DownloadFile &f, const char *id, const char *title);
 vars regionmatch(const char *region, const char *matchregion = NULL);
-vars stripSuffixes(register const char* name);
+int rwfregion(const char *line, CSymList &regions);
+int rwftitle(const char *line, CSymList &idlist);
+int SaveKML(const char *title, const char *credit, const char *url, vara &styles, vara &points, vara &lines, inetdata *out);
+void SetClass(CSym &sym, int t, const char *type);
+void SetVehicle(CSym &sym, const char *text);
+CString starstr(double stars, double ratings);
 vars stripAccents(register const char* p);
 vars stripAccentsL(register const char* p);
-BOOL IsSeasonValid(const char *season, CString *validated = NULL);
-vars ACP8(const char *val, int cp = CP_UTF8);
-vars ExtractHREF(const char *str);
-const char *skipnoalpha(const char *str);
-CString GetMetric(const char *str);
-void GetCoords(const char *memory, float &lat, float &lng);
-BOOL isanum(unsigned char c);
-CString ExtractStringDel(CString &memory, const char *pre, const char *start, const char *end, int ext = FALSE, int del = TRUE);
-BOOL isa(unsigned char c);
-int LoadBetaList(CSymList &bslist, int title, int rwlinks);
-int UploadCondition(CSym &sym, const char *title, const char *credit, int trackdate = FALSE);
-int Login(DownloadFile &f);
-int rwftitle(const char *line, CSymList &idlist);
-void  PurgePage(DownloadFile &f, const char *id, const char *title);
-int UpdateProp(const char *name, const char *value, vara &lines, int force = FALSE);
-int FindSection(vara &lines, const char *section, int *iappend);
-vars url2file(const char *url, const char *folder);
+CString stripHTML(const char *data);
+vars stripSuffixes(register const char* name);
 vars TableMatch(const char *str, vara &inlist, vara &outlist);
-int IsImage(const char *url);
-void GetHourMin(const char *str, double &vmin, double &vmax, const char *url);
-double Avg(CDoubleArrayList &time);
-void LoadRWList();
-int Download_Save(const char *url, const char *folder, CString &memory);
-int LoadBetaList(CSymList &bslist, int title = FALSE, int rwlinks = FALSE);
-vara getwords(const char *text);
-int rwfregion(const char *line, CSymList &regions);
-vars getfulltext(const char *line, const char *label = "fulltext=");
-vars getlabel(const char *label);
+vars Translate(const char *str, CSymList &list, const char *onlytrans = NULL);
+int Update(CSymList &list, CSym &newsym, CSym *chgsym = NULL, BOOL trackchanges = TRUE);
+int UpdateCheck(CSymList &symlist, CSym &sym);
+int UpdateCond(CSymList &list, CSym &newsym, CSym *chgsym = NULL, BOOL trackchanges = TRUE);
+int UpdateProp(const char *name, const char *value, vara &lines, int force = FALSE);
+int UploadCondition(CSym &sym, const char *title, const char *credit, int trackdate = FALSE);
+vars url2file(const char *url, const char *folder);
+vars urlstr(const char *url, int stripkmlidx = TRUE);
+vars UTF8(const char *val, int cp = CP_ACP);
+
 
 //static functions
 

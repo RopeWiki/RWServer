@@ -1,3 +1,4 @@
+#pragma once
 
 #include "BluuGnome.h"
 #include "Books.h"
