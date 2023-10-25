@@ -19,6 +19,7 @@
 
 #define RWREDIR "rwredir"
 #define RWID "RWID:"
+#define RWTITLE "RWTITLE:"
 
 #define TTRANSLATED "(Translated)" 
 #define TRANSBASIC "trans-basic"
@@ -30,6 +31,14 @@
 #define FBCOMMA "|"
 
 #define CONDITIONS "Conditions:"
+
+#define KMLFOLDER "BETAKML"
+#define KMLFIXEDFOLDER "BETAKML\\FIXED"
+#define ROPEWIKIFILE "http://ropewiki.com/File:"
+
+#define RWLINK "@"
+
+#define BQNFOLDER "BQN"
 
 extern int MODE;
 
@@ -47,6 +56,16 @@ int DownloadRetry(DownloadFile &f, const char *url, int retrywait = 5)
 #else
 #define DownloadRetry(f, url) f.Download(url)
 #endif
+
+
+static const char *rtech[] = { "1", "2", "3", "4", NULL };
+static const char *rwater[] = { "A", "B", "C", NULL };
+static const char *rxtra[] = { "R-", "R+", "R", "PG-", "PG+", "PG", "XX", "X", NULL };
+static const char *rclassc[] = { "B+", "B-", "C+", "C-", "B/C", "C0", "C1+", "C1-", "C1", "C2", "C3", "C4", NULL };
+static const char *rverticalu[] = { "V1", "V2", "V3", "V4", "V5", "V6", "V7", NULL };
+static const char *raquaticu[] = { "A1", "A2-", "A2+", "A2", "A3", "A4-", "A4+", "A4", "A5", "A6", "A7", NULL };
+static const char *rtime[] = { "IV", "VI", "III", "II", "I", "V", NULL };
+
 
 typedef struct { const char *unit; double cnv; } unit;
 extern unit utime[];
@@ -130,6 +149,14 @@ void  PurgePage(DownloadFile &f, const char *id, const char *title);
 int UpdateProp(const char *name, const char *value, vara &lines, int force = FALSE);
 int FindSection(vara &lines, const char *section, int *iappend);
 vars url2file(const char *url, const char *folder);
+vars TableMatch(const char *str, vara &inlist, vara &outlist);
+int IsImage(const char *url);
+void GetHourMin(const char *str, double &vmin, double &vmax, const char *url);
+double Avg(CDoubleArrayList &time);
+void LoadRWList();
+int Download_Save(const char *url, const char *folder, CString &memory);
+int LoadBetaList(CSymList &bslist, int title = FALSE, int rwlinks = FALSE);
+vara getwords(const char *text);
 
 //static functions
 

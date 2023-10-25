@@ -22,7 +22,7 @@ public:
 
 	// translation
 	const char *translink;
-	int transfile[T_MAX];
+	int transfile[T_MAX]{};
 	CSymList translate[T_MAX];
 	int flags;
 

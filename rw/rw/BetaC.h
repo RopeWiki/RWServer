@@ -13,6 +13,7 @@ protected:
 	BETAX x;
 
 public:
+	virtual ~BETAC() = default;
 	const char *ubase;
 	vars obase;
 	vars umain;

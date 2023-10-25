@@ -139,6 +139,7 @@
     <ClCompile Include="rw\processrequest.cpp" />
     <ClCompile Include="rw\Reunion.cpp" />
     <ClCompile Include="rw\RoadTripRyan.cpp" />
+    <ClCompile Include="rw\ShortBetaSitesUnclassed.cpp" />
     <ClCompile Include="rw\SwissCanyon.cpp" />
     <ClCompile Include="rw\Tahiti.cpp" />
     <ClCompile Include="rw\Wikiloc.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="rw\Waterflow.cpp" />
     <ClCompile Include="rw\XUnzip.cpp" />
     <ClCompile Include="rw\XZip.cpp" />
+    <ClInclude Include="rw\ShortBetaSitesUnclassed.h" />
     <ClInclude Include="rw\Wikiloc.h" />
   </ItemGroup>
   <ItemGroup>

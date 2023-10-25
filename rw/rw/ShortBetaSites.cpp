@@ -3,7 +3,7 @@
 #include "BETAExtract.h"
 #include "trademaster.h"
 #include "SwissCanyon.h"
-
+#include "ShortBetaSitesUnclassed.h"
 
 extern GeoCache _GeoCache;
 extern GeoRegion _GeoRegion;
@@ -1043,7 +1043,6 @@ public:
 
 class CANYONINGCULT : public AICFORUM
 {
-#define CCS "CCS"
 public:
 
 	CANYONINGCULT(const char *base) : AICFORUM(base)
@@ -1518,3 +1517,4 @@ public:
 	}
 
 };
+
