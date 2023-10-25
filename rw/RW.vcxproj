@@ -144,6 +144,7 @@
     <ClCompile Include="rw\Tahiti.cpp" />
     <ClCompile Include="rw\Wikiloc.cpp" />
     <ClCompile Include="rw\ZionCanyoneering.cpp" />
+    <ClInclude Include="rw\AllBetaSiteHeaders.h" />
     <ClInclude Include="rw\BetaC.h" />
     <ClInclude Include="rw\BetaWPC.h" />
     <ClInclude Include="rw\BetaX.h" />

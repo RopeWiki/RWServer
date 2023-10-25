@@ -251,6 +251,9 @@
     <ClInclude Include="rw\ShortBetaSitesUnclassed.h">
       <Filter>Header Files\BetaExtract</Filter>
     </ClInclude>
+    <ClInclude Include="rw\AllBetaSiteHeaders.h">
+      <Filter>Header Files\BetaExtract</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="gdal\gdalwin\lib\gdal_i.lib">
