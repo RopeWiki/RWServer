@@ -89,6 +89,7 @@ Code *codelist[] = {
 	new Code(1,0,"tec", "es", "TeamEspeleoCanyons Blog",  NULL, new ESPELEOCANYONS("teamespeleocanyons.blogspot.com.es"), "Spain / Europe"),
 	new Code(1,0,"sime", "es", "SiMeBuscasEstoyConLasCabras Blog",  NULL, new SIMEBUSCAS("simebuscasestoyconlascabras.blogspot.com"), "Spain / Europe", "", "From MAP"),
 	new Code(1,0,"rocj", "es", "RocJumper.com",  NULL, new ROCJUMPER("rocjumper.com/barranco/"), "Spain / Europe"),
+	new Code(1,1,"uno", "es", "UnoDeAventuras.com",  NULL, new UNODEAVENTURAS("unodeaventuras.com"), "World"),
 
 	// Blogs
 	new Code(1,0,"cond_nko", "es", "NKO-Extreme.com",  NULL, new NKO("nko-extreme.com"), "Spain / Europe"),
@@ -400,20 +401,26 @@ int Update(CSymList &list, CSym &newsym, CSym *chgsym, BOOL trackchanges)
 	int f;
 	++newsym.index;
 	newsym.id = urlstr(newsym.id);
+
 	if ((f = list.Find(newsym.id)) >= 0) {
 		CSym &sym = list[f];
 		++sym.index;
 		vara o(sym.data), n(newsym.data);
 		o.SetSize(ITEM_BETAMAX);
 		n.SetSize(ITEM_BETAMAX);
+
 		if (o.join() == n.join())
 			return 0;
+
 		if (n[ITEM_LAT][0] == '@' && o[ITEM_LAT][0] != '@' && o[ITEM_LAT][0] != 0)
 			n[ITEM_LAT] = "";
+
 		for (int i = 0; i < ITEM_BETAMAX; ++i)
 			if (n[i].IsEmpty())
 				n[i] = o[i];
+
 		vars odata = o.join(), ndata = n.join();
+
 		if (odata == ndata)
 			return 0;
 
@@ -425,10 +432,14 @@ int Update(CSymList &list, CSym &newsym, CSym *chgsym, BOOL trackchanges)
 		for (int i = 0; i < ITEM_BETAMAX; ++i)
 			if (n[i] == o[i])
 				n[i] = "";
+
 		CSym tmpsym(sym.id, n.join().TrimRight(","));
+
 		//ASSERT(!strstr(sym.data, "Lucky"));
+
 		if (chgsym)
 			*chgsym = tmpsym;
+
 		if (trackchanges) {
 			// test extracting kml
 			if (MODE >= 0) {
@@ -437,33 +448,39 @@ int Update(CSymList &list, CSym &newsym, CSym *chgsym, BOOL trackchanges)
 				Log(LOGINFO, "CHG KML:%d %s\n%s\n%s", kml, sym.id, odata, ndata);
 			}
 		}
+
 		return -1;
 	}
-	else {
-		list.Add(newsym);
-		list.Sort();
-		if (chgsym)
-			*chgsym = newsym;
-		if (trackchanges) {
-			if (MODE >= 0) {
-				inetfile out(MkString("%u.kml", GetTickCount()));
-				int kml = KMLEXTRACT ? KMLExtract(newsym.id, &out, TRUE) : -1;
-				Log(LOGINFO, "NEW kml:%d %s", kml, newsym.Line());
-			}
+
+	list.Add(newsym);
+	list.Sort();
+
+	if (chgsym)
+		*chgsym = newsym;
+
+	if (trackchanges) {
+		if (MODE >= 0) {
+			inetfile out(MkString("%u.kml", GetTickCount()));
+			int kml = KMLEXTRACT ? KMLExtract(newsym.id, &out, TRUE) : -1;
+
+			Log(LOGINFO, "NEW kml:%d %s", kml, newsym.Line());
 		}
-		return 1;
 	}
+
+	return 1;
 }
 
 
 int UpdateCheck(CSymList &symlist, CSym &sym)
 {
-	int found = symlist.Find(sym.id);
+	const int found = symlist.Find(sym.id);
+
 	if (found < 0)
 		return TRUE;
 
 	Update(symlist, sym, NULL, FALSE);
 	sym = symlist[found];
+
 	return FALSE;
 }
 
@@ -471,10 +488,12 @@ int UpdateCheck(CSymList &symlist, CSym &sym)
 int cmpconddate(const char *date1, const char *date2)
 {
 	int cmp = strncmp(date1, date2, 10);
+
 	if (*date1 == 0)
 		return -1;
 	if (*date2 == 0)
 		return 1;
+
 	return cmp;
 }
 
@@ -489,6 +508,7 @@ int UpdateOldestCond(CSymList &list, CSym &newsym, CSym *chgsym = NULL, BOOL tra
 			return FALSE;
 	}
 	Update(list, newsym, NULL, FALSE);
+
 	return TRUE;
 }
 
@@ -500,6 +520,7 @@ int UpdateCond(CSymList &list, CSym &newsym, CSym *chgsym, BOOL trackchanges)
 	if (f >= 0 && cmpconddate(newsym.GetStr(ITEM_CONDDATE), list[f].GetStr(ITEM_CONDDATE)) < 0)
 		return FALSE;
 	Update(list, newsym, NULL, FALSE);
+
 	return TRUE;
 }
 
@@ -518,10 +539,12 @@ CString ExtractStringDel(CString &memory, const char *pre, const char *start, co
 	//Log(LOGINFO, "pre:%s start:%s end:%s", pre, start, end);
 	//Log(LOGINFO, "%s", text);
 	//ASSERT(!strstr(text,end));
+
 	if (del > 0)
 		memory.Delete(f1, f3end - f1);
 	if (del < 0)
 		memory.Delete(f1, f3 - f1);
+
 	return text;
 }
 
@@ -534,8 +557,11 @@ unit ulen[] = { {"ft", 1}, {"feet", 1}, {"'", 1}, {"&#039;",1}, {"meter", m2ft},
 int matchtag(const char *tag, const char *utag)
 {
 	int c;
+
 	for (c = 0; tag[c] == utag[c] && utag[c] != 0; ++c);
+
 	if (c >= 3) return TRUE;
+
 	return utag[c] == 0 && !isa(tag[c]);
 }
 
@@ -768,29 +794,33 @@ int GetSummary(vara &rating, const char *str)
 	if (!str || *str == 0)
 		return FALSE;
 
-	int extended = rating.length() == R_EXTENDED;
+	const int extended = rating.length() == R_EXTENDED;
 
 	vars strc(str);
 	strc.Replace("&nbsp;", " ");
-	if (!extended)
-		strc.Replace(" ", "");
+	if (!extended) strc.Replace(" ", "");
 	strc.Replace("\"", "");
 	strc.Replace("\'", "");
 	strc.MakeUpper();
 	strc += "  ";
 	str = strc;
 
-	int v = -1, count = -1;
+	int v, count = -1;
 	int getaca = TRUE, getx = 0, getv = TRUE, geta = TRUE, geti = TRUE, getc = TRUE, getstar = TRUE, getmm = TRUE, gethr = TRUE, getpp = TRUE;
-	for (int i = 0; str[i] != 0; ++i) {
-		register char c = str[i], c1 = str[i + 1];
+
+	for (int i = 0; str[i] != 0; ++i)
+	{
+		char c = str[i], c1 = str[i + 1];
+		
 		if (c == '%' && isanum(c1))
 		{
 			// %3C
 			i += 2;
 			continue;
 		}
+		
 		if (c >= '1' && c <= '4')
+		{
 			if (getaca)
 			{
 				if (c1 == '(') {
@@ -798,16 +828,20 @@ int GetSummary(vara &rating, const char *str)
 					if (end != NULL)
 						c1 = end[1];
 				}
+
 				if (c1 >= 'A' && c1 <= 'C')
 				{
 					++i;
+
 					if (IsSimilar(str + i, "AM")) //am/pm
 					{
 						i += 2;
 						continue;
 					}
+
 					rating[R_T] = c;
 					rating[R_W] = c1;
+
 					// C1-C4
 					//char c2 = str[i+1];
 					if ((v = IsMatchN(str + i, rclassc)) >= 0)
@@ -815,20 +849,28 @@ int GetSummary(vara &rating, const char *str)
 						rating[R_W] = rclassc[v];
 						i += strlen(rclassc[v]) - 1;
 					}
+
 					getx = TRUE;
 					getaca = FALSE;
 					count = 0;
 					continue;
 				}
 			}
-		if (getx && count < 3 && (v = IsMatchN(str + i, rxtra)) >= 0) {
+		}
+		
+		if (getx && count < 3 && (v = IsMatchN(str + i, rxtra)) >= 0)
+		{
 			static const char *ignore[] = { "RIGHT", NULL };
+			
 			if (IsMatch(str + i, ignore))
 				continue;
+			
 			// avoid 'for' 'or' etc
 			const char *prior = "ABCIV1234+-/;";
+			
 			if (!strchr(prior, str[i - 1]))
 				continue;
+			
 			rating[R_X] = rxtra[v];
 			i += strlen(rxtra[v]) - 1;
 			getx = FALSE;
@@ -837,7 +879,9 @@ int GetSummary(vara &rating, const char *str)
 		}
 
 		if (c == 'V' && isdigit(c1))
-			if (getv && (v = IsMatchN(str + i, rverticalu)) >= 0) {
+		{
+			if (getv && (v = IsMatchN(str + i, rverticalu)) >= 0)
+			{
 				rating[R_V] = rverticalu[v];
 				rating[R_V].MakeLower();
 				i += strlen(rverticalu[v]) - 1;
@@ -845,9 +889,12 @@ int GetSummary(vara &rating, const char *str)
 				count = 0;
 				continue;
 			}
+		}
 
 		if (c == 'A' && isdigit(c1))
-			if (geta && (v = IsMatchN(str + i, raquaticu)) >= 0) {
+		{
+			if (geta && (v = IsMatchN(str + i, raquaticu)) >= 0)
+			{
 				rating[R_A] = raquaticu[v];
 				rating[R_A].MakeLower();
 				i += strlen(raquaticu[v]) - 1;
@@ -855,8 +902,10 @@ int GetSummary(vara &rating, const char *str)
 				count = 0;
 				continue;
 			}
+		}
 
-		if (!getaca && count < 3 && geti && (v = IsMatchN(str + i, rtime)) >= 0) {
+		if (!getaca && count < 3 && geti && (v = IsMatchN(str + i, rtime)) >= 0)
+		{
 			rating[R_I] = rtime[v];
 			i += strlen(rtime[v]) - 1;
 			geti = FALSE;
@@ -878,6 +927,7 @@ int GetSummary(vara &rating, const char *str)
 		if (extended)
 		{
 			vars num;
+			
 			if (c == '*' && getstar)
 				if (GetNum(str, i, num))
 				{
@@ -885,57 +935,64 @@ int GetSummary(vara &rating, const char *str)
 					getstar = FALSE;
 					continue;
 				}
+			
 			if (c == 'M' && c1 == 'M' && getmm)
+			{
 				if (str[i - 1] == 'X')
 				{
 					rating[R_TEMP] = "X";
 					getmm = FALSE;
 					continue;
 				}
-				else
-					if (GetNum(str, i, num))
-					{
-						rating[R_TEMP] = num;
-						getmm = FALSE;
-						continue;
-					}
+				
+				if (GetNum(str, i, num))
+				{
+					rating[R_TEMP] = num;
+					getmm = FALSE;
+					continue;
+				}
+			}
+			
 			if (c == 'P' && c1 == 'P' && getpp)
+			{
 				if (GetNum(str, i, num))
 				{
 					rating[R_PEOPLE] = num;
 					getpp = FALSE;
 					continue;
 				}
+			}
+			
 			if (c == 'H' && c1 == 'R' && gethr)
+			{
 				if (GetNum(str, i, num))
 				{
 					rating[R_TIME] = num;
 					gethr = FALSE;
 					continue;
 				}
+			}
 		}
 
-
-		if (count >= 0)
-			if (++count > 2)
-				if (!extended)
-					break;
+		if (count >= 0 && (++count > 2 && !extended))
+			break;
 	}
 
-	if (!getaca || (!getv && !geta))
+	if (!getaca || !getv && !geta)
 		return TRUE;
-	if (extended)
-		if (!getstar || !getmm)
-			return TRUE;
+	
+	if (extended && (!getstar || !getmm))
+		return TRUE;
+	
 	return FALSE;
 }
 
 
 int GetSummary(CSym &sym, const char *str)
 {
-
 	vara rating; rating.SetSize(R_SUMMARY + 1);
-	int ret = GetSummary(rating, rating[R_SUMMARY] = str);
+
+	const int ret = GetSummary(rating, rating[R_SUMMARY] = str);
 
 	vars sum = rating.join(";");
 	sum.Replace("+", "");
@@ -1597,14 +1654,13 @@ int GPX_ExtractKML(const char *credit, const char *url, const char *memory, inet
 		vars data = wpt[i].split("</wpt>").first();
 		vars id = stripHTML(xmlval(data, "<name", "</name"));
 		vars desc = stripHTML(xmlval(data, "<desc", "</desc"));
-		vars cmt = stripHTML(xmlval(data, "<cmt", "</cmt"));
+		const vars cmt = stripHTML(xmlval(data, "<cmt", "</cmt"));
 		if (desc.IsEmpty())
 			desc = cmt;
-		double lat = CDATA::GetNum(strval(data, "lat=\"", "\""));
-		double lng = CDATA::GetNum(strval(data, "lon=\"", "\""));
+		const double lat = CDATA::GetNum(strval(data, "lat=\"", "\""));
+		const double lng = CDATA::GetNum(strval(data, "lon=\"", "\""));
 		if (id.IsEmpty() || !CheckLL(lat, lng, url)) continue;
-
-
+		
 		// add markers
 		points.push(KMLMarker("dot", lat, lng, id, desc + credit));
 	}
@@ -1617,11 +1673,12 @@ int GPX_ExtractKML(const char *credit, const char *url, const char *memory, inet
 		vars data = trk[i].split("</trkseg").first();
 		vara trkpt(data, "<trkpt");
 		for (int p = 1; p < trkpt.length(); ++p) {
-			double lat = CDATA::GetNum(strval(trkpt[p], "lat=\"", "\""));
-			double lng = CDATA::GetNum(strval(trkpt[p], "lon=\"", "\""));
+			const double lat = CDATA::GetNum(strval(trkpt[p], "lat=\"", "\""));
+			const double lng = CDATA::GetNum(strval(trkpt[p], "lon=\"", "\""));
 			if (!CheckLL(lat, lng, url)) continue;
 			linelist.push(CCoord3(lat, lng));
 		}
+		
 		CString name = "Track";
 		if (i > 1) name += MkString("%d", i);
 		lines.push(KMLLine(name, credit, linelist, OTHER, 3));
@@ -1632,6 +1689,7 @@ int GPX_ExtractKML(const char *credit, const char *url, const char *memory, inet
 
 	// generate kml
 	SaveKML("gpx", credit, url, styles, points, lines, out);
+	
 	return TRUE;
 }
 
@@ -3509,65 +3567,6 @@ int rwfregion(const char *line, CSymList &regions)
 		sym.SetStr(i - 1, getfulltextorvalue(labels[i]));
 
 	Update(regions, sym, FALSE);
-	return TRUE;
-}
-
-
-int rwxredirect(const char *line, CSymList &redirects)
-{
-	vars id = htmltrans(ExtractString(line, "", "pageid=\"", "\""));
-	vars name = htmltrans(ExtractString(line, "", "title=\"", "\""));
-	if (name.IsEmpty() || id.IsEmpty()) {
-		Log(LOGWARN, "Error empty ID/name from %.50s", line);
-		return FALSE;
-	}
-	if (strstri(name, DISAMBIGUATION))
-		return FALSE;
-	vara aka;
-	vara list(line, "<lh ");
-	for (int i = 1; i < list.length(); ++i)
-		aka.push(ExtractString(list[i], "", "title=\"", "\""));
-
-	CSym sym(RWID + id, name);
-	sym.SetStr(ITEM_CLASS, "-1:redirect");
-	sym.SetStr(ITEM_AKA, aka.join(";"));
-	Update(redirects, sym, FALSE);
-	return TRUE;
-}
-
-
-int ROPEWIKI_DownloadRedirects(const char *ubase, CSymList &symlist)
-{
-	CSymList redirects;
-	GetAPIList(redirects, "generator=allredirects&garunique&prop=linkshere&lhshow=redirect&lhnamespace=0&garnamespace=0&lhlimit=1000&garlimit=1000", rwxredirect);
-	//GetAPIList(redirects, "generator=recentchanges&grcshow=redirect&grctoponly&grcnamespace=0&prop=links&grclimit=1000&grcend="+timestamp, rwxredirect);  Max 30 days!?!
-	//GetAPIList(redirects, "generator=allredirects&garnamespace=0&garlimit=100&prop=links&pllimit=100&plnamespace=0", rwxredirect);
-
-	redirects.Sort();
-	for (int i = 0; i < redirects.GetSize(); ++i)
-	{
-		CSym &isym = redirects[i];
-		vars title = isym.GetStr(ITEM_DESC);
-		for (int j = 0; j < redirects.GetSize(); ++j)
-			if (i != j)
-			{
-				CSym &jsym = redirects[j];
-				vara aka(jsym.GetStr(ITEM_AKA), ";");
-				if (aka.indexOf(title) < 0)
-					continue;
-
-				// merge syms
-				aka.push(isym.GetStr(ITEM_AKA));
-				jsym.SetStr(ITEM_AKA, aka.join(";"));
-				redirects.Delete(i--);
-			}
-	}
-
-	// always download new
-	if (redirects.GetSize() < 1)
-		return FALSE;
-
-	symlist = redirects;
 	return TRUE;
 }
 
@@ -9037,8 +9036,6 @@ int CheckRegion(const char *region, CSymList &regions)
 
 int CheckRegions(CSymList &rwlist, CSymList &chglist)
 {
-
-
 	// check region structure
 	CSymList regions;
 	GetASKList(regions, "[[Category:Regions]]|%3FLocated in region|%3FIs major region|sort=Modification_date|order=asc", rwfregion);
@@ -9127,6 +9124,7 @@ int CheckRegions(CSymList &rwlist, CSymList &chglist)
 		if (CheckLL(lat, lng))
 			lllist.AddTail(PLL(LL(lat, lng), &sym));
 	}
+	
 	PLLRectArrayList llrlist;
 	for (int i = 0; i < rwlist.GetSize(); ++i)
 	{
@@ -9136,6 +9134,7 @@ int CheckRegions(CSymList &rwlist, CSymList &chglist)
 		if (lat != InvalidNUM && lat != 0 && lng != InvalidNUM && lng != 0)
 			llrlist.AddTail(PLLRect(lat, lng, MAXGEOCODEDIST, &sym)); // 150km
 	}
+	
 	LLMatch<PLLRect, PLL> mlist(llrlist, lllist, addmatch);
 	for (int i = 0; i < llrlist.GetSize(); ++i)
 	{
@@ -9170,6 +9169,7 @@ int CheckRegions(CSymList &rwlist, CSymList &chglist)
 					if (GetToken(cregion, 0, ';') == mregion)
 						nearregion = cregion;
 			}
+		
 		if (!matchedregion && !region.IsEmpty() && !nearregion.IsEmpty())
 		{
 			vara aregion(_GeoRegion.GetSubRegion(region, mregion), ";");
@@ -9211,7 +9211,6 @@ int CheckRegions(CSymList &rwlist, CSymList &chglist)
 				if (strstr(f.memory, "redirect="))
 					continue;
 			}
-
 
 			// official region
 			vara georegions;
@@ -9304,7 +9303,6 @@ int FixBetaRegionGetFix(CSymList &idlist)
 					continue;
 				else
 					tomatch = tomatch;
-
 			}
 		}
 

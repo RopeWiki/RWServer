@@ -8,6 +8,7 @@
 extern GeoCache _GeoCache;
 extern GeoRegion _GeoRegion;
 
+
 class FLREUNION : public BETAC
 {
 public:
@@ -18,13 +19,12 @@ public:
 		urls.push("http://francois.leroux.free.fr/canyoning/classics.htm");
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 		sym.SetStr(ITEM_DESC, UTF8(sym.GetStr(ITEM_DESC)));
 		sym.SetStr(ITEM_REGION, "Reunion");
 		return TRUE;
 	}
-
 };
 
 
@@ -36,7 +36,7 @@ public:
 		urls.push("http://teamespeleocanyons.blogspot.com.es");
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 		vars id = ExtractString(sym.id, ".blogspot.", "", "/");
 		if (id != "com.es")
@@ -64,7 +64,7 @@ public:
 		urls.push(umain = "http://www.barranquistas.es/");
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 		sym.id = vars(sym.id).replace("www.", "").replace("WWW.", "").replace("//", "//WWW.");
 		return TRUE;
@@ -86,21 +86,20 @@ public:
 		//x = BETAX("itemprop=\"blogPost\"", NULL);
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 		sym.id = urlstr(GetToken(sym.id, 0, '#'));
 		sym.SetStr(ITEM_CLASS, strstr(sym.id, "/barranco/") ? "1:Barranco" : "-1:NoBarranco");
 		return strstr(sym.id, "/barranco/") != NULL;
 	}
 
-	vars DownloadMore(const char *memory)
+	vars DownloadMore(const char *memory) override
 	{
 		double maxp = ExtractNum(f.memory, "'pagination-meta'", " de ", "<span");
 		if (maxp < 0 || p >= maxp)
 			return "";
 		return umain + MkString("page/%d/", ++p);
 	}
-
 };
 
 
@@ -113,7 +112,7 @@ public:
 		x = BETAX("<article", "</article");
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 		if (!strstri(data, "Canyoneering")) // && c<0)
 			return FALSE;
@@ -129,7 +128,7 @@ public:
 		return TRUE;
 	}
 
-	vars DownloadMore(const char *memory)
+	vars DownloadMore(const char *memory) override
 	{
 		return ::ExtractLink(f.memory, ">Next<");
 	}
@@ -144,7 +143,7 @@ public:
 		urls.push("http://karl-helser.com/");
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 		vars name = sym.GetStr(ITEM_DESC);
 		int f = name.indexOf("Canyonee");
@@ -173,7 +172,7 @@ public:
 		x = BETAX("<tr", "</tr", ">Liste des ", "</table");
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 		double val = CDATA::GetNum(stripHTML(ExtractString(data, "smiley", ">", "</td")));
 		if (val > 0)
@@ -182,7 +181,6 @@ public:
 		sym.SetStr(ITEM_REGION, "France");
 		return TRUE;
 	}
-
 };
 
 
@@ -201,7 +199,7 @@ public:
 		x = BETAX("<!-- .preview -->", "<!-- #post");
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 		const char *star = "\xE2\x9C\xAF";
 
@@ -229,7 +227,7 @@ public:
 		return TRUE;
 	}
 
-	vars DownloadMore(const char *memory)
+	vars DownloadMore(const char *memory) override
 	{
 		vars next = ExtractHREF(ExtractString(memory, "class=\"nav-previous\"", "", "</div>"));
 		return next;
@@ -250,7 +248,7 @@ public:
 		x = BETAX("<h2", "</h2");
 	}
 
-	vars DownloadMore(const char *memory)
+	vars DownloadMore(const char *memory) override
 	{
 		double maxp = ExtractNum(f.memory, ">&rsaquo;<", "page/", ">");
 		if (maxp<0 || p>maxp)
@@ -270,7 +268,6 @@ public:
 		x = BETAX("<td", NULL, ">BARRANCOS DE ANDALUC", "</table");
 		region = "Spain";
 	}
-
 };
 
 
@@ -286,7 +283,7 @@ public:
 		region = "Spain";
 	}
 
-	virtual int DownloadPage(const char *url, CSym &sym)
+	int DownloadPage(const char *url, CSym &sym) override
 	{
 		Throttle(tickscounter, ticks);
 		if (f.Download(url))
@@ -314,7 +311,6 @@ public:
 		x = BETAX("<td", NULL, "NDICE DE BARRANCOS<", "</table");
 		region = "Spain";
 	}
-
 };
 
 
@@ -332,7 +328,7 @@ public:
 		//aregion.push(region);
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 
 		sym.SetStr(ITEM_REGION, aregion.join(";"));
@@ -371,7 +367,6 @@ public:
 
 		return TRUE;
 	}
-
 };
 
 
@@ -382,18 +377,108 @@ public:
 	GULLIVER(const char *base) : BETAC(base)
 	{
 		ticks = 500;
+		
 		urls.push("http://www.gulliver.it/canyoning/");
-		x = BETAX("<tr", "</tr", ">nome itinerario", "</table");
-
+		//urls.push("http://www.gulliver.it/via-ferrata/");
+		x = BETAX("<a  class=\"summary-card route-summary\"", "</a>", "<div class=\"col results w-full py-4\">", "<div class=\'wp-pagenavi\' role=\'navigation\'>");
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	vars DownloadMore(const char *memory) override
 	{
-		const char *str = strstr(data, "href=");
+		const vars pagination = ExtractString(memory, "<link rel=\"next\"", "", "/>");
+		vars url = burl("www.gulliver.it", ExtractHREF(pagination));
+		if (!strstr(url, "page"))
+			return "";
+
+		return url;
+	}
+
+	int DownloadLink(const char *data, CSym &sym) override
+	{
+		vars name = stripHTML(ExtractString(data, "summary-card-title", ">", "</h3"));
+
+		if (utf)
+			name = UTF8(name);
+
+		vars link = ExtractString(data, "href=", "", ">");
+		link = GetToken(link, 0, ' ');
+		link.Trim(" \"'\r\n");
+
+		if (link.IsEmpty())
+		{
+			Log(LOGERR, "ERROR: can't find link for %s", name);
+			return FALSE;
+		}
+
+		if (!IsSimilar(link, "http"))
+		{
+			link = makeurl(ubase, link);
+		}
+
+		sym = CSym(urlstr(link), name);
+
+		return TRUE;
+	}
+	
+	int DownloadInfo(const char *data, CSym &sym) override
+	{
+		//description
+		vars title = sym.GetStr(ITEM_DESC);
+		sym.SetStr(ITEM_DESC, title.split(" - ").first());
+
+		//lat/lon
+		const double lat = ExtractNum(data, "data-lat", "=\"", "\"");
+		const double lng = ExtractNum(data, "data-lng", "=\"", "\"");
+		
+		if (CheckLL(lat, lng))
+			sym.SetStr(ITEM_LAT, MkString("@%s;%s", CData(lat), CData(lng)));
+
+		//region(theirs)
+		//skip -- use Ropewiki's
+		//const vars region = ExtractString(data, "class=\"s-info-2\"", ">", "</");
+		
+		//length
+		const vars length = ExtractString(data, "class=\"s-info-3\"", ">", "</");
+		sym.SetStr(ITEM_LENGTH, length);
+		
+		//commit (III)
+		const vars summary = ExtractString(data, "class=\"s-info-4\"", ">", "</");
+		GetSummary(sym, summary);
+
+		//photo
+		const vars banner = ExtractString(data, "<img class=\"lazyload attachment-thumbnail size-thumbnail\"", "data-src=\"", "\"");
+		//sym.SetStr(ITEM_?, banner);
+		
+		return TRUE;
+	}
+
+	int DownloadPage(const char *url, CSym &sym) override
+	{
+		Throttle(tickscounter, ticks);
+		
+		if (f.Download(url))
+		{
+			Log(LOGERR, "ERROR: can't download url %.128s", url);
+			return FALSE;
+		}
+
+		//altitude diff
+		const double alt_high = ExtractNum(f.memory, "Quota partenza", "\">", "</dd>");
+		const double alt_low = ExtractNum(f.memory, "Quota arrivo", "\">", "</dd>");
+		if (alt_high != InvalidNUM && alt_low != InvalidNUM)
+		{
+			const double diff = alt_high - alt_low;
+			sym.SetNum(ITEM_DEPTH, diff);
+		}
+		
+		//conditions
+		/*
+		const char *str = strstr(f.memory, "href=");
 		if (str) str = strstr(str, "<td");
 		if (str) str += 2;
 
 		CSym condsym;
+		
 		if (ExtractLink(str, curl, condsym))
 		{
 			double vdate = CDATA::GetDate(condsym.data, "DD/MM/YY");
@@ -407,46 +492,33 @@ public:
 			cond[COND_LINK] = condsym.id;
 			sym.SetStr(ITEM_CONDDATE, cond.join(";"));
 		}
-
-		vars title = sym.GetStr(ITEM_DESC);
-		sym.SetStr(ITEM_DESC, title.split(" - ").first());
-
-		vars summary = ExtractString(str, "<td", ">", "</td");
-		GetSummary(sym, summary);
-
-		/*
-		vars pre, aka = GetToken( sym.GetStr(ITEM_DESC), 0, '-').Trim();
-		while (!(pre = ExtractStringDel(aka, "(", "", ")")).IsEmpty())
-			aka = pre.Trim() + " " + aka.Trim();
-		sym.SetStr(ITEM_AKA, aka.replace("  "," "));
 		*/
-
+		
+		//gpx tracks(if available)
+		const vars gpx_file = ExtractString(f.memory, "download=", "\"", "\"");
+		sym.SetStr(ITEM_KML, gpx_file);
+		
 		return TRUE;
 	}
-
-	virtual int DownloadPage(const char *url, CSym &sym)
+	
+	int ExtractKML(const char *ubase, const char *url, inetdata *out, int fx) const
 	{
-		Throttle(tickscounter, ticks);
-		if (f.Download(url))
+		DownloadFile f;
+		vars id = GetKMLIDX(f, url, NULL);
+		if (id.IsEmpty())
+			return FALSE; // not available
+
+		const CString credit = " (Data by " + CString(ubase) + ")";
+
+		//alternate go/gpx/download/578
+		const CString url2 = burl(ubase, id);
+		if (DownloadRetry(f, url2))
 		{
-			Log(LOGERR, "ERROR: can't download url %.128s", url);
+			Log(LOGERR, "ERROR: can't download url %.128s", url2);
 			return FALSE;
 		}
-		double lat = ExtractNum(f.memory, "place:location:latitude", "=\"", "\"");
-		double lng = ExtractNum(f.memory, "place:location:longitude", "=\"", "\"");
-		if (CheckLL(lat, lng))
-			sym.SetStr(ITEM_LAT, MkString("@%s;%s", CData(lat), CData(lng)));
 
-		return TRUE;
-	}
-
-	vars DownloadMore(const char *memory)
-	{
-		vars pagination = ExtractString(memory, "class=\"pagination\"", "", "</ul");
-		vars url = burl("www.gulliver.it", ExtractHREF(strstr(pagination, "ref=\"#\"")));
-		if (!strstr(url, "?"))
-			return "";
-		return url;
+		return GPX_ExtractKML(credit, url, f.memory, out);
 	}
 };
 
@@ -463,7 +535,7 @@ public:
 
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 		vara td(data, "<td");
 
@@ -475,7 +547,7 @@ public:
 		return TRUE;
 	}
 
-	virtual int DownloadPage(const char *url, CSym &sym)
+	int DownloadPage(const char *url, CSym &sym) override
 	{
 		Throttle(tickscounter, ticks);
 		if (f.Download(url))
@@ -516,7 +588,6 @@ public:
 
 		return TRUE;
 	}
-
 };
 
 
@@ -554,7 +625,7 @@ public:
 		x = BETAX("<tr", "</tr", "</th", "</table");
 	}
 
-	virtual int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 		sym.id.Replace("//murdeau", "//WWW.murdeau");
 		if (strstr(sym.id, "/dominique/"))
@@ -564,7 +635,7 @@ public:
 		return TRUE;
 	}
 
-	virtual int DownloadPage(const char *url, CSym &sym)
+	int DownloadPage(const char *url, CSym &sym) override
 	{
 		Throttle(tickscounter, ticks);
 		if (f.Download(url))
@@ -584,7 +655,6 @@ public:
 		sym.SetStr(ITEM_KML, "X");
 		return TRUE;
 	}
-
 };
 
 
@@ -600,7 +670,7 @@ public:
 		x = BETAX("class=\'liste\'", "En savoir plus...");
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 		vars title = sym.GetStr(ITEM_DESC);
 		sym.SetStr(ITEM_DESC, UTF8(skipnoalpha(title)));
@@ -641,7 +711,7 @@ public:
 		}
 	*/
 
-	virtual int DownloadLink(const char *data, CSym &sym)
+	int DownloadLink(const char *data, CSym &sym) override
 	{
 		vars name, link;
 		name = stripHTML(ExtractString(data, "<b", ">", "</b"));
@@ -662,14 +732,13 @@ public:
 		return TRUE;
 	}
 
-	virtual vars DownloadMore(const char *memory)
+	vars DownloadMore(const char *memory) override
 	{
 		vars page = MkString("&ppage=%d", ++p);
 		if (!strstr(f.memory, page))
 			return "";
 		return "http://alpes-guide.com/sources/topo/index.asp?pacti=1%2C14&psecteur=&pmotcle=" + page;
 	}
-
 };
 
 
@@ -685,7 +754,7 @@ public:
 		x = BETAX("class=\"searchresult2\"");
 	}
 
-	virtual int DownloadPage(const char *url, CSym &sym)
+	int DownloadPage(const char *url, CSym &sym) override
 	{
 		Throttle(tickscounter, ticks);
 		if (f.Download(url))
@@ -724,13 +793,12 @@ public:
 		return TRUE;
 	}
 
-	virtual vars DownloadMore(const char *memory)
+	vars DownloadMore(const char *memory) override
 	{
 		if (!strstr(f.memory, "class=\"searchresult2\""))
 			return "";
 		return MkString("http://www.openspeleo.org/openspeleo/canyons.html?page=%d", ++p);
 	}
-
 };
 
 
@@ -745,7 +813,7 @@ public:
 		region = " Italy";
 	}
 
-	virtual int DownloadPage(const char *url, CSym &sym)
+	int DownloadPage(const char *url, CSym &sym) override
 	{
 		CSymList links;
 		DownloadUrl(url, links, BETAX("<h2"), D_LINK);
@@ -758,7 +826,6 @@ public:
 
 		return TRUE;
 	}
-
 };
 
 
@@ -775,7 +842,7 @@ public:
 		umain = "http://www.ecdcportugal.com/portugal-cds5l";
 	}
 
-	int DownloadBeta(CSymList &symlist)
+	int DownloadBeta(CSymList &symlist) override
 	{
 		return DownloadHTML("beta\\ecdc.html", symlist, x);
 	}
@@ -794,7 +861,7 @@ public:
 	}
 
 
-	int DownloadPage(const char *url, CSym &sym)
+	int DownloadPage(const char *url, CSym &sym) override
 	{
 		Throttle(tickscounter, ticks);
 		if (f.Download(url))
@@ -869,12 +936,10 @@ public:
 		return urllist.GetSize();
 	}
 
-
-	int DownloadBeta(CSymList &symlist)
+	int DownloadBeta(CSymList &symlist) override
 	{
 		return DownloadRegion("http://www.micheleangileri.com/cgi-bin/index.cgi?it", symlist);
 	}
-
 };
 
 
@@ -891,7 +956,7 @@ public:
 	}
 
 
-	void DownloadPatch(vars &memory)
+	void DownloadPatch(vars &memory) override
 	{
 		memory.Replace("\\/", "/");
 		memory.Replace("\\\"", "\"");
@@ -911,7 +976,7 @@ public:
 		memory = UTF8(memory);
 	}
 
-	int DownloadInfo(const char *data, CSym &sym)
+	int DownloadInfo(const char *data, CSym &sym) override
 	{
 		sym.data = sym.data;
 		vars summary = ExtractString(strstr(data, "<dt>Rate"), "<dd", ">", "</dd");
@@ -937,18 +1002,16 @@ public:
 		return TRUE;
 	}
 
-	vars DownloadMore(const char *memory)
+	vars DownloadMore(const char *memory) override
 	{
 		vars last = ExtractString(memory, "\"isLast\"", ":", ",");
 		if (IsSimilar(last, "true"))
 			return "";
 		return MkString("http://www.icopro.org/canyon/map-data/p/%d", ++page);
 	}
-
 };
 
 
-// ===============================================================================================
 class AICFORUM : public BETAC
 {
 public:
@@ -956,7 +1019,7 @@ public:
 	{
 	}
 
-	int DownloadBeta(CSymList &symlist)
+	int DownloadBeta(CSymList &symlist) override
 	{
 		ubase = "win.aic-canyoning.it/forum";
 
@@ -1035,10 +1098,7 @@ public:
 
 		return TRUE;
 	}
-
 };
-
-
 
 
 class CANYONINGCULT : public AICFORUM
@@ -1048,8 +1108,7 @@ public:
 	CANYONINGCULT(const char *base) : AICFORUM(base)
 	{
 	}
-
-
+	
 	int Download_File(const char *url, const char *folderfile, int pdf2html = FALSE)
 	{
 		if (CFILE::exist(folderfile))
@@ -1082,7 +1141,7 @@ public:
 		return TRUE;
 	}
 
-	int DownloadPage(const char *url, CSym &sym)
+	int DownloadPage(const char *url, CSym &sym) override
 	{
 		//ASSERT(!strstr(sym.data, "Brezzi"));
 		double maxpg = 1;
@@ -1134,10 +1193,6 @@ public:
 		return TRUE;
 	}
 };
-
-
-
-// ===============================================================================================
 
 
 class AICCATASTO : public BETAC
@@ -1220,7 +1275,7 @@ public:
 		return name.Trim(" ;");
 	}
 
-	int DownloadBeta(CSymList &symlist)
+	int DownloadBeta(CSymList &symlist) override
 	{
 		vars rurl = "http://catastoforre.aic-canyoning.it/index/regioni";
 		if (f.Download(rurl))
@@ -1271,8 +1326,7 @@ public:
 
 		return TRUE;
 	}
-
-
+	
 	static int DownloadConditions(const char *ubase, CSymList &symlist)
 	{
 		DownloadFile f;
@@ -1312,11 +1366,8 @@ public:
 
 		return TRUE;
 	}
-
 };
 
-
-// ===============================================================================================
 
 class NEWMEXICOS : public BETAC
 {
@@ -1328,7 +1379,7 @@ public:
 	}
 
 #define AKAMARK "*AKA*"
-	int DownloadPage(const char *url, CSym &sym)
+	int DownloadPage(const char *url, CSym &sym) override
 	{
 		//ASSERT( !strstr(url, "chuveje") );
 		if (f.Download(url))
@@ -1336,8 +1387,7 @@ public:
 			Log(LOGERR, "ERROR: can't download url %.128s", url);
 			return FALSE;
 		}
-
-
+		
 		vara aka;
 		vara akalist(ExtractString(f.memory, "class=WordSection", ">", ">ACA ").replace(">Spanish<", ">" AKAMARK "<").replace(">English<", ">" AKAMARK "<"), "<p");
 		for (int i = 0; i < akalist.length(); ++i)
@@ -1392,9 +1442,7 @@ public:
 		return TRUE;
 	}
 
-
-
-	int DownloadBeta(CSymList &symlist)
+	int DownloadBeta(CSymList &symlist) override
 	{
 		DownloadFile f;
 		vars rurl = burl(ubase, umain);
@@ -1427,11 +1475,6 @@ public:
 };
 
 
-
-
-// ===============================================================================================
-
-
 class DOBLEVUIT : public BETAC
 {
 public:
@@ -1441,7 +1484,7 @@ public:
 		x = BETAX("<h4", "</tr");
 	}
 
-	int DownloadPage(const char *url, CSym &sym)
+	int DownloadPage(const char *url, CSym &sym) override
 	{
 		if (strstr(url, "/wp.me") || strstr(url, "?p="))
 		{
@@ -1469,7 +1512,6 @@ public:
 };
 
 
-
 class NEOTOPO : public BETAC
 {
 public:
@@ -1480,16 +1522,14 @@ public:
 		x = BETAX("<br", NULL, ">REALIZADOS", ">PENDIENTES");
 	}
 
-	int DownloadPage(const char *url, CSym &sym)
+	int DownloadPage(const char *url, CSym &sym) override
 	{
 		if (strstr(url, "picasaweb.google.com"))
 			return FALSE;
 		sym.SetStr(ITEM_REGION, "Spain");
 		return TRUE;
 	}
-
 };
-
 
 
 class MALLORCAV : public BETAC
@@ -1505,6 +1545,7 @@ public:
 
 };
 
+
 class ESCONAT : public BETAC
 {
 public:
@@ -1515,6 +1556,79 @@ public:
 		x = BETAX("<tr", "</tr", ">Nombre", "</table");
 		region = "Spain";
 	}
-
 };
 
+
+class UNODEAVENTURAS : public BETAC
+{
+public:
+
+	UNODEAVENTURAS(const char *base) : BETAC(base)
+	{
+		ticks = 500;
+		urls.push("http://unodeaventuras.com/tag/canyoning/");
+		x = BETAX("<tr", "</tr", ">nome itinerario", "</table");
+	}
+
+	int DownloadInfo(const char *data, CSym &sym) override
+	{
+		const char *str = strstr(data, "href=");
+		if (str) str = strstr(str, "<td");
+		if (str) str += 2;
+
+		CSym condsym;
+		if (ExtractLink(str, curl, condsym))
+		{
+			double vdate = CDATA::GetDate(condsym.data, "DD/MM/YY");
+			if (vdate <= 0)
+				return FALSE;
+
+			vara cond;
+			cond.SetSize(COND_MAX);
+
+			cond[COND_DATE] = CDate(vdate);
+			cond[COND_LINK] = condsym.id;
+			sym.SetStr(ITEM_CONDDATE, cond.join(";"));
+		}
+
+		vars title = sym.GetStr(ITEM_DESC);
+		sym.SetStr(ITEM_DESC, title.split(" - ").first());
+
+		vars summary = ExtractString(str, "<td", ">", "</td");
+		GetSummary(sym, summary);
+
+		/*
+		vars pre, aka = GetToken( sym.GetStr(ITEM_DESC), 0, '-').Trim();
+		while (!(pre = ExtractStringDel(aka, "(", "", ")")).IsEmpty())
+			aka = pre.Trim() + " " + aka.Trim();
+		sym.SetStr(ITEM_AKA, aka.replace("  "," "));
+		*/
+
+		return TRUE;
+	}
+
+	int DownloadPage(const char *url, CSym &sym) override
+	{
+		Throttle(tickscounter, ticks);
+		if (f.Download(url))
+		{
+			Log(LOGERR, "ERROR: can't download url %.128s", url);
+			return FALSE;
+		}
+		double lat = ExtractNum(f.memory, "place:location:latitude", "=\"", "\"");
+		double lng = ExtractNum(f.memory, "place:location:longitude", "=\"", "\"");
+		if (CheckLL(lat, lng))
+			sym.SetStr(ITEM_LAT, MkString("@%s;%s", CData(lat), CData(lng)));
+
+		return TRUE;
+	}
+
+	vars DownloadMore(const char *memory) override
+	{
+		vars pagination = ExtractString(memory, "class=\"pagination\"", "", "</ul");
+		vars url = burl("www.gulliver.it", ExtractHREF(strstr(pagination, "ref=\"#\"")));
+		if (!strstr(url, "?"))
+			return "";
+		return url;
+	}
+};

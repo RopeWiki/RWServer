@@ -120,9 +120,9 @@ int BARRANQUISMO_DownloadBeta(const char *ubase, CSymList &symlist);
 int BARRANQUISMODB_DownloadBeta(const char *ubase, CSymList &symlist);
 int BARRANCOSORG_DownloadBeta(const char *ubase, CSymList &symlist);
 
-vars ROPEWIKI_DownloadList(const char *timestamp, CSymList &symlist, const char *q, const char *prop, rwfunc func);
 int ROPEWIKI_DownloadBeta(const char *ubase, CSymList &symlist);
+vars ROPEWIKI_DownloadList(const char *timestamp, CSymList &symlist, const char *q, const char *prop, rwfunc func);
+int ROPEWIKI_DownloadItem(const char *line, CSymList &symlist);
 int ROPEWIKI_DownloadKML(const char *line, CSymList &symlist);
 int ROPEWIKI_DownloadKML(CSymList &symlist);
 int ROPEWIKI_DownloadRedirects(const char *ubase, CSymList &symlist);
-int ROPEWIKI_DownloadItem(const char *line, CSymList &symlist);

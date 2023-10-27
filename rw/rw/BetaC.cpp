@@ -138,6 +138,7 @@ int BETAC::ExtractLink(const char *data, const char *ubase, CSym &sym, int utf)
 	if (utf)
 		name = UTF8(name);
 	sym = CSym(urlstr(link), name);
+	
 	return TRUE;
 }
 
@@ -177,8 +178,10 @@ int BETAC::DownloadSym(CSym &sym, CSymList &symlist)
 {
 	if (!UpdateCheck(symlist, sym) && MODE > -2)
 		return FALSE;
+	
 	if (!DownloadPage(sym.id, sym))
 		return FALSE;
+	
 	return Update(symlist, sym, NULL, FALSE);
 }
 

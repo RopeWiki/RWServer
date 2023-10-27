@@ -11,5 +11,4 @@ public:
 	BOOK(const char *base) : BETAC(base, BOOK_DownloadBeta)
 	{
 	}
-
 };
