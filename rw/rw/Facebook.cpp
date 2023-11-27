@@ -3477,7 +3477,7 @@ int UploadPics(int mode, const char *file)
 	DownloadFile f;
 
 	// upload pictures
-	Login(f);
+	RWLogin(f);
 	CPage up(f, NULL, NULL, NULL);
 	DownloadFile fb(TRUE);
 

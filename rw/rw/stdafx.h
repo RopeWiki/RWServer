@@ -698,3 +698,4 @@ vars ExtractString(const char *mbuffer, const char *searchstr, const char *start
 vars ExtractLink(const char *mbuffer, const char *searchstr);
 
 
+char* stristr(const char* str1, const char* str2);

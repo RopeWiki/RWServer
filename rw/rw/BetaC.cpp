@@ -227,7 +227,12 @@ int BETAC::DownloadHTML(const char *path, CSymList &symlist, BETAX &x, int mode)
 
 int BETAC::DownloadMemory(const char *memory, CSymList &symlist, BETAX &x, int mode)
 {
-	vara list((x.bstart && x.bend) ? ExtractString(memory, x.bstart, "", x.bend) : memory, x.start);
+	vara list(
+		x.bstart && x.bend
+		? ExtractString(memory, x.bstart, "", x.bend)
+		: memory,
+		x.start);
+	
 	for (int i = 1; i < list.length(); ++i)
 	{
 		vars line = list[i];

@@ -15,7 +15,7 @@ int CPage::Open(DownloadFile &f, const char *url, int retries, const char *actio
 #endif
 			//Log(LOGERR, "ERROR: can't EDIT %.128s, retrying", pageurl);
 			if (retries > 1)
-				Login(f);
+				RWLogin(f);
 			continue;
 		}
 
@@ -49,7 +49,7 @@ int CPage::Open(DownloadFile &f, const char *url, int retries, const char *actio
 		// get values
 		if (!f.GetForm(action)) {
 			//Log(LOGERR, "ERROR: could not edit/submit, retrying %s", title);
-			Login(f);
+			RWLogin(f);
 			continue;
 		}
 		return TRUE;
@@ -195,7 +195,7 @@ int CPage::Update(int forceupdate)
 	for (int retry = 0; retry < 3; ++retry)
 	{
 		if (f.SubmitForm()) {
-			Login(f);
+			RWLogin(f);
 			continue;
 		}
 		Purge();
@@ -249,7 +249,7 @@ void CPage::Delete()
 	for (int retry = 0; retry < 3; ++retry)
 	{
 		if (f.SubmitForm()) {
-			Login(f);
+			RWLogin(f);
 			continue;
 		}
 		DownloadFile f;
@@ -308,7 +308,7 @@ void CPage::Move(const char *newtitle)
 	for (int retry = 0; retry < 3; ++retry)
 	{
 		if (f.SubmitForm()) {
-			Login(f);
+			RWLogin(f);
 			continue;
 		}
 		DownloadFile f;
@@ -381,7 +381,7 @@ int CPage::UploadFile(const char *lfile, const char *rfile, const char *desc)
 	for (int retry = 0; retry < 3; ++retry)
 	{
 		if (f.SubmitForm()) {
-			Login(f);
+			RWLogin(f);
 			continue;
 		}
 		if (FileExists(rfile))

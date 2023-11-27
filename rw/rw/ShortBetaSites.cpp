@@ -426,7 +426,7 @@ public:
 		vars title = sym.GetStr(ITEM_DESC);
 		sym.SetStr(ITEM_DESC, title.split(" - ").first());
 
-		//lat/lon
+		//lat/lng
 		const double lat = ExtractNum(data, "data-lat", "=\"", "\"");
 		const double lng = ExtractNum(data, "data-lng", "=\"", "\"");
 		
@@ -462,9 +462,11 @@ public:
 			return FALSE;
 		}
 
+		const vars data = f.memory;
+
 		//altitude diff
-		const double alt_high = ExtractNum(f.memory, "Quota partenza", "\">", "</dd>");
-		const double alt_low = ExtractNum(f.memory, "Quota arrivo", "\">", "</dd>");
+		const double alt_high = ExtractNum(data, "Quota partenza", "\">", "</dd>");
+		const double alt_low = ExtractNum(data, "Quota arrivo", "\">", "</dd>");
 		if (alt_high != InvalidNUM && alt_low != InvalidNUM)
 		{
 			const double diff = alt_high - alt_low;
@@ -473,7 +475,7 @@ public:
 		
 		//conditions
 		/*
-		const char *str = strstr(f.memory, "href=");
+		const char *str = strstr(data, "href=");
 		if (str) str = strstr(str, "<td");
 		if (str) str += 2;
 
@@ -495,7 +497,7 @@ public:
 		*/
 		
 		//gpx tracks(if available)
-		const vars gpx_file = ExtractString(f.memory, "download=", "\"", "\"");
+		const vars gpx_file = ExtractString(data, "download=", "\"", "\"");
 		sym.SetStr(ITEM_KML, gpx_file);
 		
 		return TRUE;
@@ -1558,77 +1560,3 @@ public:
 	}
 };
 
-
-class UNODEAVENTURAS : public BETAC
-{
-public:
-
-	UNODEAVENTURAS(const char *base) : BETAC(base)
-	{
-		ticks = 500;
-		urls.push("http://unodeaventuras.com/tag/canyoning/");
-		x = BETAX("<tr", "</tr", ">nome itinerario", "</table");
-	}
-
-	int DownloadInfo(const char *data, CSym &sym) override
-	{
-		const char *str = strstr(data, "href=");
-		if (str) str = strstr(str, "<td");
-		if (str) str += 2;
-
-		CSym condsym;
-		if (ExtractLink(str, curl, condsym))
-		{
-			double vdate = CDATA::GetDate(condsym.data, "DD/MM/YY");
-			if (vdate <= 0)
-				return FALSE;
-
-			vara cond;
-			cond.SetSize(COND_MAX);
-
-			cond[COND_DATE] = CDate(vdate);
-			cond[COND_LINK] = condsym.id;
-			sym.SetStr(ITEM_CONDDATE, cond.join(";"));
-		}
-
-		vars title = sym.GetStr(ITEM_DESC);
-		sym.SetStr(ITEM_DESC, title.split(" - ").first());
-
-		vars summary = ExtractString(str, "<td", ">", "</td");
-		GetSummary(sym, summary);
-
-		/*
-		vars pre, aka = GetToken( sym.GetStr(ITEM_DESC), 0, '-').Trim();
-		while (!(pre = ExtractStringDel(aka, "(", "", ")")).IsEmpty())
-			aka = pre.Trim() + " " + aka.Trim();
-		sym.SetStr(ITEM_AKA, aka.replace("  "," "));
-		*/
-
-		return TRUE;
-	}
-
-	int DownloadPage(const char *url, CSym &sym) override
-	{
-		Throttle(tickscounter, ticks);
-		if (f.Download(url))
-		{
-			Log(LOGERR, "ERROR: can't download url %.128s", url);
-			return FALSE;
-		}
-		double lat = ExtractNum(f.memory, "place:location:latitude", "=\"", "\"");
-		double lng = ExtractNum(f.memory, "place:location:longitude", "=\"", "\"");
-		if (CheckLL(lat, lng))
-			sym.SetStr(ITEM_LAT, MkString("@%s;%s", CData(lat), CData(lng)));
-
-		return TRUE;
-	}
-
-	vars DownloadMore(const char *memory) override
-	{
-		vars pagination = ExtractString(memory, "class=\"pagination\"", "", "</ul");
-		vars url = burl("www.gulliver.it", ExtractHREF(strstr(pagination, "ref=\"#\"")));
-		if (!strstr(url, "?"))
-			return "";
-		return url;
-	}
-};

@@ -5618,7 +5618,7 @@ void WaterflowSaveSites(const char *name)
 
 void WaterflowTestSites(const char *name)
 {
-	ShellExecute(NULL, "open", "http://ropewiki.com/Waterflow?location=Parker+Canyon&debug=test", NULL, NULL, SW_SHOWNORMAL);
+	ShellExecute(NULL, "open", RWBASE + "Waterflow?location=Parker+Canyon&debug=test", NULL, NULL, SW_SHOWNORMAL);
 }
 
 
@@ -5723,37 +5723,45 @@ void WaterflowLoadSites(int loadusgs)
 	//test();
 
 	// load providers
-	for (int i=0; providers[i].name!=NULL; ++i)
-		if (loadusgs || providers[i].getdate!=NULL)
+	for (int i = 0; providers[i].name != NULL; ++i)
+	{
+		if (loadusgs || providers[i].getdate != NULL)
 			LoadSite(providers[i].name, sites);
-
+	}
+	
 	// set up sites
 	sites.Sort();
 	csites = new CSitePtr[sites.GetSize()] ;
-	for (int i=0; i<sites.GetSize(); ++i)
+	for (int i = 0; i < sites.GetSize(); ++i)
+	{
 		csites[i] = new CSite(&sites[i]);
+	}
 
 	// find group ids
-	for (int i=0; i<sites.GetSize(); ++i)
+	for (int i = 0; i < sites.GetSize(); ++i)
+	{
 		if (csites[i]->prv->calcgroup)
-			for (int j=0; j<sites.GetSize(); ++j)
-			  if (csites[i]->prv==csites[j]->prv)
-				if (csites[i]->gid==csites[j]->gid)
-					csites[i]->group.AddTail(csites[j]);
+			for (int j = 0; j < sites.GetSize(); ++j)
+			{
+				if (csites[i]->prv == csites[j]->prv)
+					if (csites[i]->gid == csites[j]->gid)
+						csites[i]->group.AddTail(csites[j]);
+			}
+	}
 
 	// load sort
 	sortlist.SetSize(sites.GetSize());
-	for (int i=0; i<sites.GetSize(); ++i)
+	for (int i = 0; i < sites.GetSize(); ++i)
+	{
+		tsite &s = sortlist[i] = tsite(csites[i]);
+		if (s.lat == InvalidNUM || s.lng == InvalidNUM)
 		{
-		tsite &s = sortlist[i] = tsite( csites[i] );
-		if (s.lat==InvalidNUM || s.lng==InvalidNUM)
-			{
 			Log(LOGINFO, "Invalid lat/lng for %s", s.csite->Info());
 			continue;
-			}
+		}
 		//lat.AddTail(tsiteval(s.lat, &s) );
 		//lng.AddTail(tsiteval(s.lng, &s) );
-		}
+	}
 
 	//lat.Sort();
 	//lng.Sort();

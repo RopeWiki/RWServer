@@ -20,6 +20,202 @@ GeoCache _GeoCache;
 GeoRegion _GeoRegion;
 
 
+
+class UNODEAVENTURAS : public BETAC
+{
+public:
+
+	UNODEAVENTURAS(const char *base) : BETAC(base)
+	{
+		ticks = 500;
+
+		urls.push("http://unodeaventuras.com/tag/canyoning/page/2/");
+		//urls.push("http://unodeaventuras.com/tag/canyoning/");
+
+		x = BETAX("<article", "</article>", "<div class=\"col-sm-9\">", "<div class=\"pagination\">");
+	}
+
+	vars DownloadMore(const char *memory) override
+	{
+		const vars pagination = ExtractString(memory, "class=\"page-numbers current\"", "paged=", "\"");
+
+		if (CDATA::GetNum(pagination) == InvalidNUM)
+			return "";
+
+		vars url = burl("unodeaventuras.com", "/tag/canyoning/page/" + pagination + "/");
+
+		return url;
+	}
+
+	int DownloadInfo(const char *data, CSym &sym) override
+	{
+		//description
+		vars title = ExtractString(data, "<h3 class=\"blog-item-title\">", ">", "</");
+		title = title.split(": ").last();
+		title = title.split("Cañón de").last();
+		title = title.split("Quebrada").last();
+		title = title.Trim();
+		sym.SetStr(ITEM_DESC, title);
+
+		//photo
+		vars banner = ExtractString(data, "data-src=", "\"", "\"");
+		banner = ExtractString(banner, "", "", "?");
+		//sym.SetStr(ITEM_?, banner);
+
+		return TRUE;
+	}
+
+	int DownloadPage(const char *url, CSym &sym) override
+	{
+		Throttle(tickscounter, ticks);
+
+		if (f.Download(url))
+		{
+			Log(LOGERR, "ERROR: can't download url %.128s", url);
+			return FALSE;
+		}
+
+		const vars data = f.memory;
+
+		//region(theirs)
+		vars region = ExtractString(data, "articleSection", "[", "]");
+		region = region.split(",").last().Trim("\"");
+		sym.SetStr(ITEM_REGION, region);
+
+		//stars
+		vars starblock = ExtractString(data, "class=\"wp-block-jetpack-rating-star\"", "<p>", "</p>");
+		vara starcount = starblock.split("<span");
+		sym.SetStr(ITEM_STARS, starstr(starcount.length(), 1));
+
+		
+		//Datos GPS section
+		const vars coords(ExtractString(data, "Datos GPS", "", "</div"));
+
+		// start
+		extract_coords(sym, coords, ITEM_LAT, "inicio");
+
+		// end
+		//extract_coords(sym, coords, ITEM_LATEND, "final");
+
+		// parking
+		extract_coords(sym, coords, ITEM_LATPARKING, "Aparcamiento de inicio");		
+		
+		// shuttle
+		extract_coords(sym, coords, ITEM_LATSHUTTLE, "Aparcamiento final");
+
+		
+		//Datos del descenso section
+		const vars datos(ExtractString(data, "Datos del descenso", "", "<h3"));
+
+		// elevation diff
+		// Desnivel: 645 metros.
+		const vars depth = stripHTML(ExtractString(datos, "Desnivel", ">", "</p>"));
+		sym.SetStr(ITEM_DEPTH, depth);
+
+		// length
+		// Longitud: 6 Kilómetros (3Km- Condor Mayu + 3Km. Torotoro y Sucusuma).
+		const vars length = stripHTML(ExtractString(datos, "Longitud", ">", "</p>"));
+		sym.SetStr(ITEM_LENGTH, length);
+
+		// rock type
+		// Roca: Areniscas y calizas.
+		const vars rock = stripHTML(ExtractString(datos, "Roca", ">", "</p>"));
+		sym.SetStr(ITEM_ROCK, rock);
+
+		// approach time
+		// Horario de aproximación: 30 minutos. Datos del descenso
+		const vars approach = stripHTML(ExtractString(datos, "Aproximacion", ">", "</p>"));
+		sym.SetStr(ITEM_HIKE, approach);
+
+		// descent time
+		// Descenso: 8 horas.
+		const vars descent = stripHTML(ExtractString(datos, "Descenso", ">", "</p>"));
+		sym.SetStr(ITEM_MINTIME, descent);
+
+		// return time
+		// Retorno: 20 minutos.
+		const vars exit = stripHTML(ExtractString(datos, "Retorno", ">", "</p>"));
+		sym.SetStr(ITEM_EXIT, exit);
+
+		// longest rap
+		// Rápel más largo: 65 metros.
+		const vars longest = stripHTML(ExtractString(datos, "más largo", ">", "</p>"));
+		sym.SetStr(ITEM_LONGEST, longest);
+
+		
+		//Description section
+		
+		// shuttle length
+		// Combinación de vehículos: Obligatoria (16 km.)
+		const vars shuttle = ExtractString(data, "vehículos", "(", ")");
+		sym.SetStr(ITEM_SHUTTLE, shuttle);
+
+		//number of raps
+		//need to manually enter this based on the profile photo(s)
+
+		//difficulty
+		// Actividad de dificultad Baja
+		// Actividad de dificultad Media
+		// Actividad de dificultad Alta
+
+
+		//commit (III)
+		const vars summary = ExtractString(data, "class=\"s-info-4\"", ">", "</");
+		GetSummary(sym, summary);
+
+		//flow
+		//Información sobre el caudal:
+
+
+		//description
+
+
+		//video
+
+
+		//red tape
+		//Restricciones:
+
+
+		//season
+		//Época: De abril a noviembre evitando épocas de tormentas.
+
+
+		//history
+		//Historia: Descendido el 2 de noviembre de 2017 por...
+
+
+		//kml file
+
+
+		return TRUE;
+	}
+
+	static void extract_coords(CSym& sym, vars coords, int token, const char* searchstr)
+	{
+		coords = stripHTML(ExtractString(coords, searchstr, ">", "</p>"));
+		const CString wgs = "(WGS 84)";
+		const int foundPos = coords.Find(wgs);
+		if (foundPos != -1) {
+			coords.Delete(foundPos, wgs.GetLength());
+		}
+
+		vars lat1s = ExtractString(coords, "N ", "", "W");
+
+		double lat = CDATA::GetNum(lat1s);
+		if (lat == InvalidNUM) {
+			lat1s = ExtractString(coords, "S ", "", "W");
+			lat = -CDATA::GetNum(lat1s);
+		}
+		const vars lngs = ExtractString(coords, "W ", "", " ");
+		const double lng = CDATA::GetNum(lngs);
+
+		if (CheckLL(lat, lng))
+			sym.SetStr(token, MkString("@%s;%s", CData(lat), CData(lng)));
+	}
+};
+
+
 // ===============================================================================================
 
 Code *codelist[] = {
@@ -4167,8 +4363,7 @@ int UpdateChanges(CSymList &olist, CSymList &nlist, Code &cod)
 	static CSymList ignorelist;
 	if (!ignorelist.GetSize())
 		ignorelist.Load(filename("ignore"));
-
-
+	
 	// match again
 	if (MODE > 0)
 		MatchList(nlist, cod);
@@ -4183,7 +4378,6 @@ int UpdateChanges(CSymList &olist, CSymList &nlist, Code &cod)
 			if (nlist.Find(link) < 0)
 				BSLinkInvalid(title, link);
 	}
-
 
 	// find changes
 	CSym usym;
@@ -4204,6 +4398,7 @@ int UpdateChanges(CSymList &olist, CSymList &nlist, Code &cod)
 			if (c != InvalidNUM) {
 				if (c < 1) {
 					BOOL skip = TRUE;
+					
 					// skip anything not canyoneering except for perfect matches that are not duplicate links
 					if (strstr(id, RWID)) {
 						if (strstr(id, RWLINK))
@@ -4218,6 +4413,7 @@ int UpdateChanges(CSymList &olist, CSymList &nlist, Code &cod)
 			}
 
 			CSym rwsym, chgsym;
+			
 			// if completely new just add
 			if (!IsSimilar(id, RWID))
 			{
@@ -4237,6 +4433,7 @@ int UpdateChanges(CSymList &olist, CSymList &nlist, Code &cod)
 						Log(LOGERR, "Mismatched MATCH %s for %s", id, usym.Line());
 						continue;
 					}
+					
 					// MATCHED!
 					rwsym = rwlist[f];
 					if (CompareSym(usym, rwsym, chgsym, cod))
@@ -4266,9 +4463,12 @@ int UpdateChanges(CSymList &olist, CSymList &nlist, Code &cod)
 			CString name = chglist[i].GetStr(ITEM_MATCH);
 			if (IsSimilar(name, RWID))
 				continue;
+			
 			namelist.Add(CSym(name));
 		}
+		
 		namelist.Sort(); rnamelist.Sort();
+		
 		for (int i = 1; i < namelist.GetSize(); ++i)
 			if (namelist[i - 1].id == namelist[i].id)
 				dupnamelist.Add(namelist[i]);
@@ -4292,17 +4492,20 @@ int UpdateChanges(CSymList &olist, CSymList &nlist, Code &cod)
 	}
 
 	// accumulate prioretizing by match
-
 	CSymList chglists[5][2];
+	
 	for (int i = 0; i < chglist.GetSize(); ++i)
 	{
 		CSym sym = chglist[i];
 		CString match = sym.GetStr(ITEM_NEWMATCH);
 		const char *num = match;
+		
 		while (*num != 0 && !isdigit(*num))
 			++num;
+		
 		sym.SetNum(ITEM_BETAMAX, CGetNum(num));
 		BOOL km = strstr(match, "km ") != NULL;
+		
 		if (match.IsEmpty())
 			chglists[0][km].Add(sym);
 		else if (strstr(match, "!"))
@@ -4324,12 +4527,15 @@ int UpdateChanges(CSymList &olist, CSymList &nlist, Code &cod)
 		{
 			int km = 1;
 			vara rwids;
+			
 			for (int j = 0; j < chglists[i][km].GetSize(); ++j)
 			{
 				vars match = chglists[i][km][j].GetStr(ITEM_NEWMATCH);
 				vars rwid = RWID + ExtractString(match, RWID, "", ":");
+				
 				// check saturated match
 				int f = rwlist.Find(rwid);
+				
 				if (f >= 0)
 				{
 					vara wikilinks(rwlist[f].GetStr(ITEM_MATCH), "wikiloc.com");
@@ -4339,17 +4545,18 @@ int UpdateChanges(CSymList &olist, CSymList &nlist, Code &cod)
 						continue;
 					}
 				}
+				
 				// check already matched
 				if (rwids.indexOf(rwid) >= 0)
 				{
 					chglists[i][km].Delete(j--);
 					continue;
 				}
+				
 				rwids.push(rwid);
 			}
 		}
-
-
+		
 		allchglist.Add(chglists[i][1]);
 		allchglist.Add(chglists[i][0]);
 	}
@@ -4357,6 +4564,7 @@ int UpdateChanges(CSymList &olist, CSymList &nlist, Code &cod)
 	allchglist.header = headers;
 	allchglist.header.Replace("ITEM_", "");
 	allchglist.Save(filename(CHGFILE));
+	
 	return chglist.GetSize();
 }
 
@@ -5026,22 +5234,20 @@ void  RefreshPage(DownloadFile &f, const char *id, const char *title)
 vara loginstr(RW_ROBOT_LOGIN);
 
 
-int Login(DownloadFile &f)
+int RWLogin(DownloadFile &f)
 {
-	//static DWORD lasttickcnt = 0;
-	//if (GetTickCount()-lasttickcnt<10*60*1000)
-	//	return TRUE;
-	//lasttickcnt = GetTickCount();
-
 	extern int URLTIMEOUT; // change default timeout
 	URLTIMEOUT = 60;
 
 	int ret = 0;
-	ret += f.Download(RWBASE + "index.php?title=Special:UserLogin");
+	CString url = RWBASE + "index.php?title=Special:UserLogin";
+	ret += f.Download(url);
+	
 	f.GetForm("name=\"userlogin\"");
 	f.SetFormValue("wpName", loginstr[0]);
 	f.SetFormValue("wpPassword", loginstr[1]);
 	f.SetFormValue("wpRemember", "1");
+	
 	ret += f.SubmitForm();
 
 	/*
@@ -5049,6 +5255,7 @@ int Login(DownloadFile &f)
 	vars login = "wpName="+loginstr[0]+"&wpPassword="+loginstr[1];
 	ret += f.Download(RWBASE + "index.php?title=Special:UserLogin&action=submitlogin&type=login&returnto=Main+Page?POST?"+login+"&wpRemember=1&wpLoginAttempt=Log+in&wpLoginToken="+lgtoken, "login.htm");
 	*/
+	
 	if (ret)
 	{
 		Log(LOGERR, "ERROR: can't login");
@@ -5241,7 +5448,7 @@ int UploadRegions(int mode, const char *file)
 
 	// create regions
 	DownloadFile f;
-	if (!Login(f))
+	if (!RWLogin(f))
 		return FALSE;
 	CreateRegions(f, newregionslist);
 	return TRUE;
@@ -5278,6 +5485,7 @@ int UploadBeta(int mode, const char *file)
 	vars chgfile = filename(CHGFILE);
 	if (file != NULL && *file != 0)
 		chgfile = file;
+	
 	list.Load(chgfile);
 	CSymList clist[sizeof(codelist) / sizeof(*codelist)];
 	rwlist.Load(filename(codelist[0]->code));
@@ -5286,7 +5494,7 @@ int UploadBeta(int mode, const char *file)
 	// log in as RW_ROBOT_USERNAME [RW_ROBOT_PASSWORD]
 	int ret = 0;
 	DownloadFile f;
-	if (!Login(f))
+	if (!RWLogin(f))
 		return FALSE;
 
 	CSymList newregionslist;
@@ -5657,7 +5865,7 @@ int UpdateBetaBQN(int mode, const char *ynfile)
 	loginstr = vara("Barranquismo.net,sentomillan");
 	int ret = 0;
 	DownloadFile f;
-	if (!Login(f))
+	if (!RWLogin(f))
 		return FALSE;
 
 	// Canyons
@@ -6224,7 +6432,7 @@ int UpdateBetaCCS(int mode, const char *ynfile)
 	loginstr = vara("Canyoning Cult,slovenia");
 	int ret = 0;
 	DownloadFile f;
-	if (!Login(f))
+	if (!RWLogin(f))
 		return FALSE;
 
 	// Canyons
@@ -6650,7 +6858,7 @@ int UploadStars(int code)
 	// post new votes or changed votes
 	// log in as RW_ROBOT_USERNAME [RW_ROBOT_PASSWORD]
 	DownloadFile f;
-	if (!Login(f))
+	if (!RWLogin(f))
 		return FALSE;
 
 	for (int i = 0; i < vlist.GetSize(); ++i)
@@ -7001,7 +7209,7 @@ int QueryBeta(int MODE, const char *query, const char *file)
 int PurgeBeta(int MODE, const char *fileregion)
 {
 	DownloadFile f;
-	if (!Login(f))
+	if (!RWLogin(f))
 		return FALSE;
 	CSymList list;
 
@@ -7034,7 +7242,7 @@ void RefreshBeta(int MODE, const char *fileregion)
 		list.Add(CSym("", fileregion));
 
 	DownloadFile f;
-	if (!Login(f))
+	if (!RWLogin(f))
 		return;
 
 	for (int i = 0; i < list.GetSize(); ++i)
@@ -7077,7 +7285,7 @@ int ReplaceBetaProp(int MODE, const char *prop, const char *fileregion)
 	CString pval = UTF8(GetToken(prop, 1, '='));
 	Log(LOGINFO, "REPLACING %s=%s for %d", pname, pval, idlist.GetSize());
 
-	if (!Login(f))
+	if (!RWLogin(f))
 		return FALSE;
 
 	if (MODE < 0)
@@ -7892,7 +8100,7 @@ int FixBeta(int MODE, const char *fileregion)
 	Log(LOGINFO, "REPLACING %s=%s for %d", pname, pval, idlist.GetSize());
 	*/
 
-	if (!Login(f))
+	if (!RWLogin(f))
 		return FALSE;
 
 	for (int i = 0; i < idlist.GetSize(); ++i)
@@ -7930,7 +8138,7 @@ int UndoBeta(int MODE, const char *fileregion)
 	Log(LOGINFO, "REPLACING %s=%s for %d", pname, pval, idlist.GetSize());
 	*/
 
-	if (!Login(f))
+	if (!RWLogin(f))
 		return FALSE;
 
 	if (MODE < 0)
@@ -8168,7 +8376,7 @@ int KMLExtract(const char *urlstr, inetdata *out, int fx)
 	url.Replace("%3D", "=");
 	url.Replace("&ext=.kml", "");
 	url.Replace("&ext=.gpx", "");
-	int timestampIndex = url.Find("&timestamp=");
+	const int timestampIndex = url.Find("&timestamp=");
 	if (timestampIndex > 0) url = url.Left(timestampIndex);
 
 	//direct extraction
@@ -8181,6 +8389,40 @@ int KMLExtract(const char *urlstr, inetdata *out, int fx)
 		if (f.Download(url))
 			Log(LOGERR, "ERROR: can't download url %.128s", url);
 		return TRUE;
+	}
+
+	const CString kmlidxToken("kmlidx=");
+	const int kmlidxIndex = url.Find(kmlidxToken);
+	if (kmlidxIndex > 0) {
+		CString kmlidx(url.Mid(kmlidxIndex + kmlidxToken.GetLength()));
+
+		if (kmlidx.Mid(0, 1) == "/")
+		{
+			int currentIndex = 0;
+			int instanceCount = 0;
+			const int targetInstance = 3;
+			
+			while ((currentIndex = url.Find("/", currentIndex)) > 0) {
+				instanceCount++;
+
+				if (instanceCount == targetInstance) break;
+				
+				currentIndex++;
+			}
+
+			if (instanceCount == targetInstance)
+			{
+				kmlidx = url.Mid(0, currentIndex) + kmlidx;
+			}
+		}
+		
+		if (kmlidx.Mid(0, 4) == "http")
+		{
+			DownloadFile f(TRUE, out);
+			if (f.Download(kmlidx))
+				Log(LOGERR, "ERROR: can't download kmlidx url %.128s", kmlidx);
+			return TRUE;
+		}
 	}
 
 	for (int i = 1; codelist[i]->betac->ubase != NULL; ++i)
@@ -8490,7 +8732,7 @@ int DisambiguateBeta(int MODE, const char *movefile)
 
 	idlist.Sort();
 
-	if (!Login(f))
+	if (!RWLogin(f))
 		return FALSE;
 
 	for (int i = 0; i < idlist.GetSize(); ++i)
@@ -8642,7 +8884,7 @@ int MoveBeta(int mode, const char *file)
 	regions.Sort();
 	*/
 
-	Login(f);
+	RWLogin(f);
 	for (int i = 0; i < symlist.GetSize(); ++i)
 	{
 		CString from = PageName(symlist[i].id);
@@ -8827,7 +9069,7 @@ int DeleteBeta(int mode, const char *file, const char *comment)
 	CSymList symlist;
 	symlist.Load(file);
 
-	Login(f);
+	RWLogin(f);
 	for (int i = 0; i < symlist.GetSize(); ++i)
 	{
 		CString from = PageName(symlist[i].id);
@@ -10773,7 +11015,7 @@ int UploadBetaKML(int mode, const char *filecsv)
 
 	//loginstr = vara("Barranquismo.net,sentomillan");
 	DownloadFile f;
-	if (!Login(f))
+	if (!RWLogin(f))
 		return FALSE;
 
 	for (int i = 0; i < files.GetSize(); ++i)

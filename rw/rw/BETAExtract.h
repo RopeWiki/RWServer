@@ -71,7 +71,7 @@ static CSymList rwlist, titlebetalist;
 
 
 static const char *andstr[] = { " and ", " y ", " et ", " e ", " und ", "&", "+", "/", ":", " -", "- ", NULL };
-static const char *headers = "ITEM_URL, ITEM_DESC, ITEM_LAT, ITEM_LNG, ITEM_MATCH, ITEM_MODE, ITEM_INFO, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, https://maps.googleapis.com/maps/api/geocode/xml?address=,\"=+HYPERLINK(+CONCATENATE(\"\"http://ropewiki.com/index.php/Location?jform&locsearchchk=on&locname=\"\",C1,\"\",\"\",D1,\"\"&locdist=5mi&skinuser=&sortby=-Has_rank_rating&kmlx=\"\",A1),\"\"@check\"\")\"";
+static const char *headers = "ITEM_URL, ITEM_DESC, ITEM_LAT, ITEM_LNG, ITEM_MATCH, ITEM_MODE, ITEM_INFO, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, https://maps.googleapis.com/maps/api/geocode/xml?address=,\"=+HYPERLINK(+CONCATENATE(\"\"http://ropewiki.com/index.php/Location?jform&locsearchchk=on&locname=\"\",C1,\"\",\"\",D1,\"\"&locdist=5mi&skinuser=&sortby=-Has_rank_rating&kmlx=\"\",A1),\"\"@check\"\")\", ";
 static const char *raquaticu[] = { "A1", "A2-", "A2+", "A2", "A3", "A4-", "A4+", "A4", "A5", "A6", "A7", NULL };
 static const char *rclassc[] = { "B+", "B-", "C+", "C-", "B/C", "C0", "C1+", "C1-", "C1", "C2", "C3", "C4", NULL };
 static const char *rtech[] = { "1", "2", "3", "4", NULL };
@@ -89,7 +89,7 @@ static vara cond_temp("0 - None,1 - Rain jacket (1mm-2mm),2 - Thin wetsuit (3mm-
 static vara cond_water("0 - Dry (class A = a1),1 - Very Low (class B = a2),2 - Deep pools (class B+ = a2+),1 - Very Low (class B = a2),3 - Low (class B/C = a3),4 - Moderate Low (class C1- = a4-),5 - Moderate (class C1 = a4),6 - Moderate High (class C1+ = a4+),7 - High (class C2 = a5),8 - Very High (class C3 = a6),9 - Extreme (class C4 = a7)");
 static vara months("Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec");
 
-enum { ITEM_INFO = ITEM_SUMMARY, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, ITEM_BETAMAX, ITEM_BESTMATCH, ITEM_MATCHLIST }; //, ITEM_BOAT, , ITEM_AELEV, ITEM_EELEV,  };
+enum { ITEM_INFO = ITEM_SUMMARY, ITEM_REGION, ITEM_ACA, ITEM_RAPS, ITEM_LONGEST, ITEM_HIKE, ITEM_MINTIME, ITEM_MAXTIME, ITEM_SEASON, ITEM_SHUTTLE, ITEM_VEHICLE, ITEM_CLASS, ITEM_STARS, ITEM_AKA, ITEM_PERMIT, ITEM_KML, ITEM_CONDDATE, ITEM_AGAIN, ITEM_EGAIN, ITEM_LENGTH, ITEM_DEPTH, ITEM_AMINTIME, ITEM_AMAXTIME, ITEM_DMINTIME, ITEM_DMAXTIME, ITEM_EMINTIME, ITEM_EMAXTIME, ITEM_ROCK, ITEM_LINKS, ITEM_EXTRA, ITEM_BETAMAX, ITEM_BESTMATCH, ITEM_MATCHLIST,  };
 enum { COND_DATE, COND_STARS, COND_WATER, COND_TEMP, COND_DIFF, COND_LINK, COND_USER, COND_USERLINK, COND_TEXT, COND_NOTSURE, COND_TIME, COND_PEOPLE, COND_MAX };
 enum { T_NAME = 0, T_REGION, T_SEASON, T_TROCK, T_MAX };
 enum { M_MATCH = ITEM_ACA, M_SCORE, M_LEN, M_NUM, M_RETRY };
@@ -134,7 +134,7 @@ int KMLMAP_DownloadBeta(const char *ubase, CSymList &symlist);
 int KMZ_ExtractKML(const char *credit, const char *url, inetdata *out, kmlwatermark *watermark = KML_Watermark);
 int LoadBetaList(CSymList &bslist, int title = FALSE, int rwlinks = FALSE);
 void LoadRWList();
-int Login(DownloadFile &f);
+int RWLogin(DownloadFile &f);
 vars makeurl(const char *ubase, const char *folder);
 CString noHTML(const char *str);
 CString Pair(CDoubleArrayList &raps);
