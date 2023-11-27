@@ -5,7 +5,7 @@
 #define SERVER "localhost"
 #define RWBASE vars("http://localhost:8080/")
 #else
-#define server "ropewiki.com/luca"
+#define SERVER "ropewiki.com/luca"
 #define RWBASE vars("https://ropewiki.com/")
 //#define server "localhost"
 #endif
