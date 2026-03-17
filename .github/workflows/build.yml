@@ -30,7 +30,7 @@ jobs:
     - name: List artifacts tree
       run: |
         echo "=== Recursive listing of all files ==="
-        dir /s /b
+        tree /f
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
