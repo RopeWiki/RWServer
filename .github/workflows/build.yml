@@ -21,13 +21,11 @@ jobs:
     - name: Restore NuGet packages
       run: nuget restore rw.sln
 
+    - name: Build GPSBabel project (required dependency)
+      run: msbuild gpsbabel\msvc\GPSBabel.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:PlatformToolset=v143
+
     - name: Build RW project
       run: msbuild rw\RW.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:PlatformToolset=v143
-      continue-on-error: true
-
-    - name: Build GPSBabel project
-      run: msbuild gpsbabel\msvc\GPSBabel.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:PlatformToolset=v143
-      continue-on-error: true
 
     - name: Upload RW artifacts
       uses: actions/upload-artifact@v4
