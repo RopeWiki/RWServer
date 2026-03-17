@@ -22,15 +22,10 @@ jobs:
       run: nuget restore rw.sln
 
     - name: Build GPSBabel project (required dependency)
-      run: msbuild gpsbabel\msvc\GPSBabel.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:PlatformToolset=v143
+      run: msbuild gpsbabel\msvc\GPSBabel.vcxproj /p:Configuration=Release /p:Platform=Win32 /p:PlatformToolset=v143
 
     - name: Build RW project
-      run: msbuild rw\RW.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:PlatformToolset=v143
-
-    - name: List artifacts tree
-      run: |
-        echo "=== Recursive listing of all files ==="
-        tree /f
+      run: msbuild rw\RW.vcxproj /p:Configuration=Release /p:Platform=Win32 /p:PlatformToolset=v143
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
@@ -38,9 +33,7 @@ jobs:
       with:
         name: rw-debug-build
         path: |
-          rw/Debug/RW.exe
-          rw/GPSBabel.exe
-          Debug/RW.pdb
-          gpsbabel/msvc/Debug/GPSBabel.exe
           rw/*.dll
+          rw/RWR.exe
+          rw/GPSBabel.exe
         if-no-files-found: warn
