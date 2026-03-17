@@ -16732,9 +16732,6 @@ BOOL Exists()
 	return open>0 && lines.length()>0;
 }
 
-
-class CPage;
-
 CPage(DownloadFile &f, const char *_id, const char *_title, const char *_oldid = "")
 {
 	fp = &f;
